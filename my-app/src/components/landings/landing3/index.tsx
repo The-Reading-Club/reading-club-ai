@@ -17,6 +17,7 @@ import {
   FaGooglePlay,
   FaAppStore,
   FaAppStoreIos,
+  FaPinterest,
 } from "react-icons/fa"; // Import social media icons
 
 interface SocialLinkProps {
@@ -75,6 +76,10 @@ export default function Landing3() {
           <SocialLink
             href="https://www.linkedin.com/company/ReadingClubAI"
             icon={<FaLinkedinIn />}
+          />
+          <SocialLink
+            href="https://www.pinterest.com/readingclubai"
+            icon={<FaPinterest />}
           />
           <SocialLink
             href="https://www.instagram.com/ReadingClubAI"
