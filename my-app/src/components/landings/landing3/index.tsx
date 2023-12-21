@@ -71,10 +71,10 @@ export default function Landing3() {
             href="https://www.twitter.com/ReadingClubAI"
             icon={<FaTwitter />}
           />
-          {/* <SocialLink
+          <SocialLink
             href="https://www.instagram.com/ReadingClubAI"
             icon={<FaInstagram />}
-          /> */}
+          />
           <SocialLink
             href="https://www.linkedin.com/company/ReadingClubAI"
             icon={<FaLinkedinIn />}
@@ -138,7 +138,7 @@ export default function Landing3() {
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                Join Waiting List
+                Join waitlist
               </Link>
             </Button>
           </div>
