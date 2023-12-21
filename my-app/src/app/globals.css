@@ -8,7 +8,7 @@
 }
 
 :root {
-  --foreground-rgb: 255, 193, 43;
+  --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 193, 43;
   --background-end-rgb: 255, 193, 43;
 }
@@ -21,6 +21,12 @@ body {
       rgb(var(--background-end-rgb))
     )
     rgb(var(--background-start-rgb));
+}
+
+/* Style links */
+a {
+  color: rgb(var(--foreground-rgb));
+  text-decoration: none;
 }
 
 /* @media (prefers-color-scheme: dark) {

@@ -14,6 +14,9 @@ import {
   FaLinkedinIn,
   FaTiktok,
   FaYoutube,
+  FaGooglePlay,
+  FaAppStore,
+  FaAppStoreIos,
 } from "react-icons/fa"; // Import social media icons
 
 interface SocialLinkProps {
@@ -139,9 +142,6 @@ export default function Landing3() {
             <h1 className="bg-[#FFC122] text-5xl font-bold">
               {`Write & Publish Children's Books with AI`}
             </h1>
-            {/* <p className="bg-[#FFC122] mt-4 text-lg">
-              Join our community and start your journey.
-            </p> */}
             <Button className="mt-8 px-16 py-8 bg-[#FFF] text-[#000] rounded hover:bg-[#FCF29A] rounded-full text-2xl font-bold">
               <Link
                 href="https://forms.gle/eDiYjELhFcGiZ58T6"
@@ -151,6 +151,29 @@ export default function Landing3() {
                 Join waitlist
               </Link>
             </Button>
+            <p className="bg-[#FFC122] mt-5 text-lg text-bold">
+              {/* Join our community and start your journey. */}
+              Download our learn-to-read app on{" "}
+              <Link
+                href={
+                  "https://play.google.com/store/apps/details?id=com.TheReadingClub.TheReadingClub&hl=en_US&gl=US"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Google Play
+              </Link>{" "}
+              &{" "}
+              <Link
+                href={
+                  "https://apps.apple.com/us/app/reading-club-childrens-books/id1528070520"
+                }
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                App Store
+              </Link>
+            </p>
           </div>
         </section>
         {false && (
