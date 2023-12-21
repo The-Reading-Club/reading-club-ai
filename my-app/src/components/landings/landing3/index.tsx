@@ -1,3 +1,4 @@
+"use client";
 /**
  * v0 by Vercel.
  * @see https://v0.dev/t/qnIuqfgX9Uh
@@ -52,7 +53,7 @@ export default function Landing3() {
       }}
     >
       <header
-        className="px-6 py-4 flex items-center"
+        className="px-6 py-4 flex items-center justify-center"
         style={
           {
             // backgroundImage: "url(/BG-Honeycomb.jpg)",
@@ -62,13 +63,24 @@ export default function Landing3() {
           }
         }
       >
-        <Link className="flex items-center" href="#">
-          {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
-          <span className="ml-2 text-2xl bg-[#FFC122] font-bold text-[#FFF] ">
-            Reading Club AI
-          </span>
-        </Link>
-        <nav className="ml-auto flex gap-4">
+        {
+          <Link className="items-center hidden lg:flex" href="#">
+            {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
+            <span className="ml-2 text-2xl bg-[#FFC122] font-bold text-[#FFF] ">
+              Reading Club AI
+            </span>
+          </Link>
+        }
+        <nav
+          className="
+        lg:ml-auto
+        flex gap-4
+        flex-wrap
+        justify-center
+        mb-10
+        lg:mb-0
+        "
+        >
           <SocialLink
             href="https://www.twitter.com/ReadingClubAI"
             icon={<FaTwitter />}
@@ -156,7 +168,7 @@ export default function Landing3() {
                 Join waitlist
               </Link>
             </Button>
-            <p className="bg-[#FFC122] mt-5 text-lg text-bold">
+            <p className="bg-[#FFC122] mt-5 text-lg text-bold p-5 lg:p-0">
               {/* Join our community and start your journey. */}
               Download our learn-to-read app on{" "}
               <Link
