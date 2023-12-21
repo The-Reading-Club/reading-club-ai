@@ -174,6 +174,9 @@ export default function Landing3() {
                 App Store
               </Link>
             </p>
+            <p className="bg-[#FFC122] text-lg text-bold">
+              {`30,000+ downloads and counting!`}
+            </p>
           </div>
         </section>
         {false && (
