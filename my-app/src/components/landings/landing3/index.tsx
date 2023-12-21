@@ -12,6 +12,8 @@ import {
   FaTwitter,
   FaInstagram,
   FaLinkedinIn,
+  FaTiktok,
+  FaYoutube,
 } from "react-icons/fa"; // Import social media icons
 
 interface SocialLinkProps {
@@ -63,21 +65,29 @@ export default function Landing3() {
           </span>
         </Link>
         <nav className="ml-auto flex gap-4">
-          {/* <SocialLink
-            href="https://www.facebook.com/ReadingClubAI"
-            icon={<FaFacebookF />}
-          /> */}
           <SocialLink
             href="https://www.twitter.com/ReadingClubAI"
             icon={<FaTwitter />}
+          />
+          <SocialLink
+            href="https://www.linkedin.com/company/ReadingClubAI"
+            icon={<FaLinkedinIn />}
           />
           <SocialLink
             href="https://www.instagram.com/ReadingClubAI"
             icon={<FaInstagram />}
           />
           <SocialLink
-            href="https://www.linkedin.com/company/ReadingClubAI"
-            icon={<FaLinkedinIn />}
+            href="https://www.facebook.com/ReadingClubAI"
+            icon={<FaFacebookF />}
+          />
+          <SocialLink
+            href="https://www.youtube.com/@ReadingClubAI  "
+            icon={<FaYoutube />}
+          />
+          <SocialLink
+            href="https://www.tiktok.com/@ReadingClubAI"
+            icon={<FaTiktok />}
           />
           {false && (
             <>
