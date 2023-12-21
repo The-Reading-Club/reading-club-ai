@@ -63,7 +63,7 @@ export default function Landing3() {
       >
         <Link className="flex items-center" href="#">
           {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
-          <span className="ml-2 text-2xl bg-[#FFC122] font-bold text-[#FAF8DA] ">
+          <span className="ml-2 text-2xl bg-[#FFC122] font-bold text-[#FFF] ">
             Reading Club AI
           </span>
         </Link>
