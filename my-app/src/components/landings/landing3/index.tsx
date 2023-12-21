@@ -63,20 +63,20 @@ export default function Landing3() {
           </span>
         </Link>
         <nav className="ml-auto flex gap-4">
-          <SocialLink
+          {/* <SocialLink
             href="https://www.facebook.com/ReadingClubAI"
             icon={<FaFacebookF />}
-          />
+          /> */}
           <SocialLink
             href="https://www.twitter.com/ReadingClubAI"
             icon={<FaTwitter />}
           />
-          <SocialLink
+          {/* <SocialLink
             href="https://www.instagram.com/ReadingClubAI"
             icon={<FaInstagram />}
-          />
+          /> */}
           <SocialLink
-            href="https://www.linkedin.com/ReadingClubAI"
+            href="https://www.linkedin.com/company/ReadingClubAI"
             icon={<FaLinkedinIn />}
           />
           {false && (
