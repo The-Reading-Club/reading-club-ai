@@ -7,11 +7,14 @@ import Link from "next/link";
 import { NavigationMenu } from "@/components/ui/navigation-menu";
 import { Button } from "@/components/ui/button";
 import { CardHeader, CardContent, Card } from "@/components/ui/card";
+import Logo from "@/components/Logo";
 
 export default function Landing2() {
   return (
     <main className="w-full py-0 md:py-0 lg:py-0 bg-[#FAF8DA]">
       <header className="flex justify-between items-center p-5 bg-[#FFC122]">
+        <Logo />
+
         <h1 className="text-3xl font-bold tracking-tighter text-[#FFF]">
           Reading Club AI
         </h1>

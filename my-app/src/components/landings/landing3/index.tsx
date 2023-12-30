@@ -20,6 +20,7 @@ import {
   FaAppStoreIos,
   FaPinterest,
 } from "react-icons/fa"; // Import social media icons
+import Logo from "@/components/Logo";
 
 interface SocialLinkProps {
   href: string;
@@ -30,7 +31,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => {
   return (
     <a
       // className="mt-0 px-8 py-1 bg-[#FFF] text-[#000] rounded hover:bg-[#FCF29A] rounded-full inline-flex items-center justify-center"
-      className="mt-0 px-2 py-2 bg-[#FFF] text-[#000] rounded-full hover:bg-[#FCF29A] rounded-full inline-flex items-center justify-center"
+      className="mt-0 px-2 py-2 bg-[#FFC122] text-[#FFF] rounded-full hover:bg-[#FCF29A] rounded-full inline-flex items-center justify-center"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -44,16 +45,18 @@ export default function Landing3() {
   return (
     <div
       className="flex flex-col min-h-screen bg-[#FAF8DA]"
-      style={{
-        backgroundImage: "url(/BG-Honeycomb.jpg)",
-        // backgroundRepeat: "repeat",
-        // backgroundSize: "cover", // Ensures the background image covers the entire section
-        // backgroundRepeat: "no-repeat", // Prevents repeating the background image
-        // backgroundPosition: "center", // Centers the background image
-      }}
+      style={
+        {
+          // backgroundImage: "url(/BG-Archiv3.jpg)",
+          // backgroundRepeat: "repeat",
+          // backgroundSize: "cover", // Ensures the background image covers the entire section
+          // backgroundRepeat: "no-repeat", // Prevents repeating the background image
+          // backgroundPosition: "center", // Centers the background image
+        }
+      }
     >
       <header
-        className="px-6 py-4 flex items-center justify-center"
+        className="px-6 py-1 flex items-center justify-center"
         style={
           {
             // backgroundImage: "url(/BG-Honeycomb.jpg)",
@@ -63,14 +66,17 @@ export default function Landing3() {
           }
         }
       >
-        {
+        <div className="items-center hidden lg:flex">
+          <Logo />
+        </div>
+        {false && (
           <Link className="items-center hidden lg:flex" href="#">
             {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
             <span className="ml-2 text-2xl bg-[#FFC122] font-bold text-[#FFF] ">
               Reading Club AI
             </span>
           </Link>
-        }
+        )}
         <nav
           className="
         lg:ml-auto
@@ -79,6 +85,9 @@ export default function Landing3() {
         justify-center
         mb-10
         lg:mb-0
+
+        mr-0
+        lg:mr-9
         "
         >
           <SocialLink
@@ -147,28 +156,35 @@ export default function Landing3() {
         <section
           className="w-full h-[500px] bg-center bg-cover flex items-center justify-center"
           // style={{
-          //   backgroundImage: "url(/placeholder.svg?height=500&width=1920)",
+          //   backgroundImage: "url(/BG-Archiv3.jpg)",
           // }}
-          style={
-            {
-              // backgroundImage: "url(/BG-Honeycomb.jpg?height=500&width=1920)",
-            }
-          }
+          style={{
+            backgroundImage: "url(/BG-Registro.jpg)",
+            // backgroundRepeat: "repeat",
+            backgroundSize: "contain", // Ensures the background image covers the entire section
+            // backgroundRepeat: "no-repeat", // Prevents repeating the background image
+            // backgroundPosition: "center", // Centers the background image
+            // border: "2px solid red",
+          }}
         >
-          <div className="text-center text-[#FFF]">
-            <h1 className="bg-[#FFC122] text-5xl font-bold">
-              {`Write & Publish Children's Books with AI`}
+          <div className="text-center text-[#FFC122] p-5">
+            <h1 className="text-6xl font-bold">
+              {`Write & Publish`}
+              <br />
+              {`Children's Books with AI`}
             </h1>
-            <Button className="mt-8 px-16 py-8 bg-[#FFF] text-[#000] rounded hover:bg-[#FCF29A] rounded-full text-2xl font-bold">
+            {/* https://tailwind-hover-effects.vercel.app */}
+            <Button className="mt-8 px-16 py-8 bg-[#FFF] text-[#FFC122] rounded hover:bg-[#FFF] rounded-full text-2xl font-bold border-4 border-[#FFC122]">
               <Link
                 href="https://forms.gle/eDiYjELhFcGiZ58T6"
                 target="_blank"
                 rel="noopener noreferrer"
+                className="text-[#3c4043]"
               >
                 Join waitlist
               </Link>
             </Button>
-            <p className="bg-[#FFC122] mt-5 text-lg text-bold p-5 lg:p-0">
+            <p className="bg-[#FAF8DA] mt-5 text-2xl text-bold p-5 lg:p-0 text-[#3c4043]">
               {/* Join our community and start your journey. */}
               Download our learn-to-read app on{" "}
               <Link
@@ -177,6 +193,7 @@ export default function Landing3() {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
+                className="hover:text-underline"
               >
                 Google Play
               </Link>{" "}
@@ -187,18 +204,19 @@ export default function Landing3() {
                 }
                 target="_blank"
                 rel="noopener noreferrer"
+                // className="text-[#FFC122]"
               >
                 App Store
               </Link>
             </p>
-            <p className="bg-[#FFC122] text-lg text-bold">
+            <p className="bg-[#FAF8DA] text-2xl text-bold text-[#3c4043]">
               {`30,000+ downloads and counting!`}
             </p>
           </div>
         </section>
         {false && (
           <section
-            className="py-12 px-6 bg-[#FFC122]"
+            className="py-12 px-6 bg-[#FAF8DA]"
             style={
               {
                 // backgroundImage: "url(/BG-Archiv3.jpg)",
@@ -209,7 +227,7 @@ export default function Landing3() {
               }
             }
           >
-            <h2 className="text-4xl font-bold text-center text-[#FFF]">
+            <h2 className="text-4xl font-bold text-center text-[#FFC122]">
               Our Mission
             </h2>
             <p className="mt-4 max-w-2xl mx-auto text-center text-lg text-[#FFF]">
@@ -218,7 +236,7 @@ export default function Landing3() {
           </section>
         )}
         <section
-          className="py-12 bg-[#FFC122]"
+          className="py-12"
           style={
             {
               // backgroundImage: "url(/BG-Honeycomb.jpg)",
@@ -229,17 +247,17 @@ export default function Landing3() {
             }
           }
         >
-          <h2 className="text-4xl font-bold text-center text-[#FFF] bg-[#FFC122]">
+          <h2 className="text-4xl font-bold text-center text-[#FFC122] bg-[#FAF8DA]">
             Powerful Features
           </h2>
           <div className="mt-8 max-w-4xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-center">
-            <Card className="bg-[#FFF]">
-              <CardHeader className="text-[#000]">
+            <Card className="bg-[#F5911F]">
+              <CardHeader className="text-[#FFF]">
                 {/* <BotIcon className="w-6 h-6 mx-auto mb-2" /> */}
                 <h3 className="text-2xl font-semibold">AI Writing Assistant</h3>
               </CardHeader>
-              <CardContent className="text-[#000]">
-                <p className="text-sm">
+              <CardContent className="text-[#FFF]">
+                <p className="text-lg">
                   Our AI assistant helps you generate creative and engaging
                   stories for children.
                 </p>
@@ -259,25 +277,25 @@ export default function Landing3() {
                 </p>
               </CardContent>
             </Card> */}
-            <Card className="bg-[#FFF]">
-              <CardHeader className="text-[#000]">
+            <Card className="bg-[#F5911F]">
+              <CardHeader className="text-[#FFF]">
                 {/* <BookIcon className="w-6 h-6 mx-auto mb-2" /> */}
                 <h3 className="text-2xl font-semibold">Publishing Support</h3>
               </CardHeader>
-              <CardContent className="text-[#000]">
-                <p className="text-sm">
+              <CardContent className="text-[#FFF]">
+                <p className="text-lg">
                   We guide you through the publishing process to make your book
-                  available to the world.
+                  available worldwide.
                 </p>
               </CardContent>
             </Card>
-            <Card className="bg-[#FFF]">
-              <CardHeader className="text-[#000]">
+            <Card className="bg-[#F5911F]">
+              <CardHeader className="text-[#FFF]">
                 {/* <MessageCircleIcon className="w-6 h-6 mx-auto mb-2" /> */}
                 <h3 className="text-2xl font-semibold">Community</h3>
               </CardHeader>
-              <CardContent className="text-[#000]">
-                <p className="text-sm">
+              <CardContent className="text-[#FFF]">
+                <p className="text-lg">
                   Join a community of like-minded authors and share your
                   journey.
                 </p>
@@ -331,7 +349,7 @@ export default function Landing3() {
           </section>
         )}
       </main>
-      <footer className="py-6 px-6 bg-[#000] text-[#FFF]">
+      <footer className="py-6 px-6 bg-[#FFC122] text-[#FFF]">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-between items-center">
           <div>
             {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
@@ -340,7 +358,7 @@ export default function Landing3() {
             </span>
           </div>
           <div className="mt-4 md:mt-0 text-[#FAF8DA]">
-            <p className="text-sm">Vaughan St, Ottawa, ON, Canada</p>
+            <p className="text-sm">Ottawa, ON, Canada</p>
             <p className="mt-1 text-sm">contact@thereadingclubapp.com</p>
           </div>
         </div>

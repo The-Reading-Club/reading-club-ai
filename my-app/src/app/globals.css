@@ -26,7 +26,10 @@ body {
 /* Style links */
 a {
   color: rgb(var(--foreground-rgb));
-  text-decoration: none;
+  /* Steel blue */
+  color: #4682b4;
+  /* color: #7cb9e8; */
+  /* text-decoration: none; */
 }
 
 /* @media (prefers-color-scheme: dark) {
