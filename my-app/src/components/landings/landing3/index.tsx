@@ -56,7 +56,7 @@ export default function Landing3() {
       }
     >
       <header
-        className="px-6 py-1 flex items-center justify-center"
+        className="px-6 lg:py-1 py-4 flex items-center justify-center"
         style={
           {
             // backgroundImage: "url(/BG-Honeycomb.jpg)",
@@ -154,21 +154,21 @@ export default function Landing3() {
       </header>
       <main className="flex-1">
         <section
-          className="w-full h-[500px] bg-center bg-cover flex items-center justify-center"
+          className="w-full lg:h-[500px] bg-center bg-cover flex items-center justify-center lg:bg-contain lg:pb-0 pb-20"
           // style={{
           //   backgroundImage: "url(/BG-Archiv3.jpg)",
           // }}
           style={{
             backgroundImage: "url(/BG-Registro.jpg)",
             // backgroundRepeat: "repeat",
-            backgroundSize: "contain", // Ensures the background image covers the entire section
+            // backgroundSize: "contain", // Ensures the background image covers the entire section
             // backgroundRepeat: "no-repeat", // Prevents repeating the background image
             // backgroundPosition: "center", // Centers the background image
             // border: "2px solid red",
           }}
         >
           <div className="text-center text-[#FFC122] p-5">
-            <h1 className="text-6xl font-bold">
+            <h1 className="lg:text-6xl text-5xl  font-bold">
               {`Write & Publish`}
               <br />
               {`Children's Books with AI`}
@@ -184,7 +184,7 @@ export default function Landing3() {
                 Join waitlist
               </Link>
             </Button>
-            <p className="bg-[#FAF8DA] mt-5 text-2xl text-bold p-5 lg:p-0 text-[#3c4043]">
+            <p className="mt-5 lg:text-2xl text-xl text-bold p-5 lg:p-0 text-[#3c4043]">
               {/* Join our community and start your journey. */}
               Download our learn-to-read app on{" "}
               <Link
@@ -209,7 +209,7 @@ export default function Landing3() {
                 App Store
               </Link>
             </p>
-            <p className="bg-[#FAF8DA] text-2xl text-bold text-[#3c4043]">
+            <p className="lg:text-2xl text-xl text-bold text-[#3c4043] lg:mb-0 mb-0">
               {`30,000+ downloads and counting!`}
             </p>
           </div>
