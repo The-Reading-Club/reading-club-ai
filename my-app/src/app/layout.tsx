@@ -11,6 +11,7 @@ const font = Nunito({
   // https://nextjs.org/docs/pages/api-reference/components/font
   weight: ["400", "800"], // can add more weights, pretty cool
   // style: "italic",
+  variable: "--font-title",
 });
 
 export const metadata: Metadata = {

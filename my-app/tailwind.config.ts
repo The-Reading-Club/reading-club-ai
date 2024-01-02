@@ -3,6 +3,14 @@ import type { Config } from "tailwindcss";
 // import { DarkModeConfig } from "tailwindcss/types/config";
 
 const config: Config = {
+  // theme: {
+  //   extend: {
+  //     fontFamily: {
+  //       title: ["var(--font-title)", "system-ui", "sans-serif"],
+  //       default: ["var(--font-default)", "system-ui", "sans-serif"],
+  //     },
+  //   },
+  // },
   content: [
     "./src/pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./src/components/**/*.{js,ts,jsx,tsx,mdx}",
