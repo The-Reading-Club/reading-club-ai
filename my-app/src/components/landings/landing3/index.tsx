@@ -21,6 +21,7 @@ import {
   FaPinterest,
 } from "react-icons/fa"; // Import social media icons
 import Logo from "@/components/Logo";
+import ReadingClubEditor from "@/app/editor/ReadingClubEditor";
 
 interface SocialLinkProps {
   href: string;
@@ -236,9 +237,11 @@ export default function Landing3() {
           </section>
         )}
         <section
-          className="py-12"
+          className="py-12 lg:px-0 px-10"
           style={
             {
+              // backgroundImage: "url(/BG-Registro.jpg)",
+              // backgroundImage: "url(/BG-Archiv3.jpg)",
               // backgroundImage: "url(/BG-Honeycomb.jpg)",
               // // https://chat.openai.com/c/91c904c0-186c-46b5-817a-2312a35ca980
               // backgroundSize: "cover", // Ensures the background image covers the entire section
@@ -303,6 +306,27 @@ export default function Landing3() {
             </Card>
           </div>
         </section>
+
+        {true && (
+          <section
+            className="bg-cover lg:pt-12"
+            style={{ backgroundImage: "url(/BG-Archiv2.jpg)" }}
+          >
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                alignItems: "center",
+                height: "850px",
+              }}
+            >
+              <ReadingClubEditor
+              // defaultBGClassName="bg-white"
+              />
+            </div>
+          </section>
+        )}
+
         {false && (
           <section className="py-12 px-6 bg-[#FAF8DA]">
             <h2 className="text-4xl font-bold text-center text-[#F5911F]">

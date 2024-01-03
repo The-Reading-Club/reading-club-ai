@@ -25,8 +25,9 @@ body {
 }
 
 /* Style links */
-a {
-  color: rgb(var(--foreground-rgb));
+/* https://chat.openai.com/c/9cf40038-53dc-46d3-9303-4cc6b7ed95cb */
+html a {
+  /* color: rgb(var(--foreground-rgb)); */
   /* Steel blue */
   color: #4682b4;
   /* color: #7cb9e8; */
