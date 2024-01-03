@@ -1255,9 +1255,9 @@ agent-base@6:
     debug "4"
 
 ai@^2.2.11:
-  version "2.2.30"
-  resolved "https://registry.yarnpkg.com/ai/-/ai-2.2.30.tgz#3b0af50859b44cfc7e168c170974a93637e90792"
-  integrity sha512-7dRgnEbYkbVjxyjiS7WEhNvO8ebeI4Om74D9OKXLK0yis4+s272pJ5I3vOAv3HaUBbVEiIFYQ7E34JH8XT1EeQ==
+  version "2.2.31"
+  resolved "https://registry.yarnpkg.com/ai/-/ai-2.2.31.tgz#bab1556adb4bd3107d6e7d9da7477bc6a85ada3c"
+  integrity sha512-WQH13RxP+RYo9IE/FX8foNQh9gcKO/dhl9OGy5JL2bHJVBlnugPmH2CYJWaRt+mvjXHaU8txB+jzGo/fbtH2HA==
   dependencies:
     eventsource-parser "1.0.0"
     nanoid "3.3.6"
@@ -3537,10 +3537,9 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
 
-novel@^0.1.22:
+"novel@https://github.com/josealvarez97/novel/releases/download/v0.0.2/novel-0.1.22.tgz":
   version "0.1.22"
-  resolved "https://registry.yarnpkg.com/novel/-/novel-0.1.22.tgz#a08d2d57639f5df26673e2687642203dcfa638e2"
-  integrity sha512-hdZ3iV4kvCISNjRNXqQk6fRVkMZmvzWjA3zXM1bU2SXVEufBxZL+77qsdEK/XETkJkeEdQl0mk8ERwLiL0BvRg==
+  resolved "https://github.com/josealvarez97/novel/releases/download/v0.0.2/novel-0.1.22.tgz#e690994cf4cfd8afd520f3731babe5907b177e27"
   dependencies:
     "@radix-ui/react-popover" "^1.0.6"
     "@tiptap/core" "^2.1.7"
