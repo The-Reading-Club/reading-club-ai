@@ -18,50 +18,50 @@ const garamondFont = EB_Garamond({
 
 import { useEditor, BubbleMenu } from "@tiptap/react";
 
-const MyCustomBubbleMenu = ({ editor }) => {
-  if (!editor) {
-    return null;
-  }
+// const MyCustomBubbleMenu = ({ editor }) => {
+//   if (!editor) {
+//     return null;
+//   }
 
-  // Assuming 'secondary', 'isPronoun', and 'objectivePronoun' are attributes in the mark.
-  const metadata = editor.getAttributes("customBold");
+//   // Assuming 'secondary', 'isPronoun', and 'objectivePronoun' are attributes in the mark.
+//   const metadata = editor.getAttributes("customBold");
 
-  const updateMetadata = (key, value) => {
-    // Update the metadata attribute for the custom mark.
-    editor
-      .chain()
-      .focus()
-      .extendMarkRange("customMark")
-      .setMark("customMark", { ...metadata, [key]: value })
-      .run();
-  };
+//   const updateMetadata = (key, value) => {
+//     // Update the metadata attribute for the custom mark.
+//     editor
+//       .chain()
+//       .focus()
+//       .extendMarkRange("customMark")
+//       .setMark("customMark", { ...metadata, [key]: value })
+//       .run();
+//   };
 
-  return (
-    <>
-      <h1>TEST TEST TEST</h1>
-      <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
-        <div>
-          {/* Render your UI components to edit metadata here */}
-          <input
-            type="text"
-            value={metadata.secondary}
-            onChange={(e) => updateMetadata("secondary", e.target.value)}
-          />
-          <input
-            type="text"
-            value={metadata.isPronoun}
-            onChange={(e) => updateMetadata("isPronoun", e.target.value)}
-          />
-          <input
-            type="text"
-            value={metadata.objectivePronoun}
-            onChange={(e) => updateMetadata("objectivePronoun", e.target.value)}
-          />
-        </div>
-      </BubbleMenu>
-    </>
-  );
-};
+//   return (
+//     <>
+//       <h1>TEST TEST TEST</h1>
+//       <BubbleMenu editor={editor} tippyOptions={{ duration: 100 }}>
+//         <div>
+//           {/* Render your UI components to edit metadata here */}
+//           <input
+//             type="text"
+//             value={metadata.secondary}
+//             onChange={(e) => updateMetadata("secondary", e.target.value)}
+//           />
+//           <input
+//             type="text"
+//             value={metadata.isPronoun}
+//             onChange={(e) => updateMetadata("isPronoun", e.target.value)}
+//           />
+//           <input
+//             type="text"
+//             value={metadata.objectivePronoun}
+//             onChange={(e) => updateMetadata("objectivePronoun", e.target.value)}
+//           />
+//         </div>
+//       </BubbleMenu>
+//     </>
+//   );
+// };
 
 const EditorPage = () => {
   // I want to check out my database
