@@ -1,6 +1,13 @@
 "use client";
+
+// NOVEL IS OVERWRITING GLOBALS.CSS
+// https://github.com/steven-tey/novel/issues/209
+// https://github.com/Roman86/tailwindcss-scoped-preflight
+// https://github.com/steven-tey/novel/issues/201
+// https://github.com/steven-tey/novel/issues/219
+
 import { Editor as NovelEditor } from "novel";
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useRef, useState } from "react";
 
 import { EB_Garamond } from "next/font/google";
 
@@ -16,7 +23,9 @@ const garamondFont = EB_Garamond({
   //   variable: "--font-title",
 });
 
-import { useEditor, BubbleMenu } from "@tiptap/react";
+import { useEditor, BubbleMenu, JSONContent } from "@tiptap/react";
+
+import { Editor as EditorClass } from "@tiptap/core";
 
 // const MyCustomBubbleMenu = ({ editor }) => {
 //   if (!editor) {
@@ -63,7 +72,36 @@ import { useEditor, BubbleMenu } from "@tiptap/react";
 //   );
 // };
 
-const EditorPage = () => {
+// import { Plugin } from "prosemirror-state";
+import { TextSelection } from "prosemirror-state"; // Import TextSelection
+
+// const focusAtStartPlugin = new Plugin({
+//   view() {
+//     return {
+//       update(view, prevState) {
+//         if (
+//           prevState.doc.eq(view.state.doc) &&
+//           prevState.selection.eq(view.state.selection)
+//         ) {
+//           // Focus and set the cursor to the start only if the document or selection has not changed
+//           const transaction = view.state.tr.setSelection(
+//             TextSelection.atStart(view.state.doc)
+//           );
+//           view.dispatch(transaction);
+//           view.focus();
+//         }
+//       },
+//     };
+//   },
+// });
+
+interface ReadingClubEditorProps {
+  defaultBGClassName?: string;
+}
+
+const ReadingClubEditor: React.FC<ReadingClubEditorProps> = ({
+  defaultBGClassName = "bg-[#FAF8DA]",
+}) => {
   // I want to check out my database
   // I want to download my JSON files
   // Cache this shit please with Redis instead and use secure links
@@ -74,21 +112,22 @@ const EditorPage = () => {
 
   //   const [editorInstance, setEditorInstance] = useState(null);
 
-  //   const handleUpdate = useCallback((editor) => {
-  //     // Update the state with the current instance of the editor
-  //     setEditorInstance(editor);
-  //   }, []);
+  const handleUpdate = useCallback((editor: EditorClass) => {
+    // Update the state with the current instance of the editor
+    //   setEditorInstance(editor);
+    // https://github.com/ueberdosis/tiptap/discussions/1383
+    // editor.chain().focus().setTextSelection(10).run();
+    // https://tiptap.dev/docs/editor/api/commands/focus
+    // editor.commands.focus("start");
+    // alert("editor updated!");
+    // console.log("editor updated!");
+  }, []);
+
+  const initialFocusDone = useRef(false);
 
   return (
-    <div
-      style={{
-        display: "flex",
-        flexDirection: "column",
-        alignItems: "center",
-        // border: "5px solid red",
-      }}
-      className="bg-[#FCF29A]"
-    >
+    <>
+      {" "}
       {/* {`Write & Publish Children's Books with AI`} */}
       {/* <MyCustomBubbleMenu editor={editorInstance} /> */}
       <NovelEditor
@@ -98,12 +137,35 @@ const EditorPage = () => {
         /**
          * "relative min-h-[500px] w-full max-w-screen-lg border-stone-200 bg-white sm:mb-[calc(20vh)] sm:rounded-lg sm:border sm:shadow-lg"
          */
-        className={`${garamondFont.className} bg-[#FAF8DA] text-[#7B3F00] max-w-screen-sm`}
+        className={`${garamondFont.className} ${defaultBGClassName} text-[#7B3F00] max-w-screen-sm overflow-scroll`}
         editorProps={{
           attributes: {
             class: `novel-prose-lg novel-prose-stone dark:novel-prose-invert  novel-font-default focus:novel-outline-none novel-max-w-full`,
           },
           //prose-headings-CANCEL-THIS:novel-font-title-CANCEL-THIS
+
+          // Focus the cursor at the start
+          //   plugins: [focusAtStartPlugin],
+          //   https://chat.openai.com/c/95ee8f80-0e81-4540-9d9a-69d8551c7bd6
+
+          //   handleDOMEvents: {
+          //     focus: (view, event) => {
+          //       // Check if the document is empty or if the selection is not at the start
+          //       if (
+          //         !initialFocusDone.current &&
+          //         view.state.doc.content.size > 0 &&
+          //         view.state.selection.from > 1
+          //       ) {
+          //         // Create and dispatch a transaction to set the selection at the start
+          //         const transaction = view.state.tr.setSelection(
+          //           TextSelection.atStart(view.state.doc)
+          //         );
+          //         view.dispatch(transaction);
+          //         initialFocusDone.current = true; // Set the flag to true after initial focus
+          //       }
+          //       return false;
+          //     },
+          //   },
         }}
         extensions={[
           UpdatedImage.configure({
@@ -114,21 +176,61 @@ const EditorPage = () => {
         ]}
         storageKey="reading__club__ai__novel__content"
         // https://chat.openai.com/c/33fd5bda-118c-47b1-9e5d-101c32f79c40
-        // onUpdate={handleUpdate}
+        onUpdate={(editor) => handleUpdate(editor as EditorClass)}
       />
-    </div>
+    </>
   );
 };
 
-export default EditorPage;
+export default ReadingClubEditor;
+
+// interface ReadingClubEditorProps {
+//   defaultValue?: string | JSONContent | undefined;
+// }
+
+// export const ReadingClubEditor: React.FC<ReadingClubEditorProps> = ({
+//   defaultValue,
+// }) => {
+//   return <div>index</div>;
+// };
 
 const myOwnDamnEditorContent = {
   type: "doc",
   content: [
     {
       type: "heading",
+      attrs: { level: 1 },
+      content: [
+        {
+          type: "text",
+          marks: [
+            {
+              type: "bold",
+            },
+          ],
+          text: "Small World?",
+        },
+      ],
+    },
+    {
+      type: "heading",
       attrs: { level: 2 },
-      content: [{ type: "text", text: "Small World" }],
+      content: [
+        {
+          type: "text",
+          text: "By Alexis Diamond.",
+        },
+      ],
+    },
+    {
+      type: "heading",
+      attrs: { level: 2 },
+      content: [
+        {
+          type: "text",
+          text: "© 2023 The Reading Club, Inc. All Rights Reserved.",
+        },
+      ],
     },
     {
       type: "paragraph",
@@ -179,7 +281,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/1-cave-crowd.jpg",
         alt: "1-cave-crowd.jpg",
         title: "1-cave-crowd.jpg",
         width: "100%",
@@ -207,7 +309,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/2-bat.jpg",
         alt: "2-bat.jpg",
         title: "2-bat.jpg",
         width: "100%",
@@ -244,7 +346,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/3-bat-2.jpg",
         alt: "3-bat-2.jpg",
         title: "3-bat-2.jpg",
         width: "100%",
@@ -272,7 +374,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/4-bat-3.jpg",
         alt: "4-bat-3.jpg",
         title: "4-bat-3.jpg",
         width: "100%",
@@ -300,7 +402,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/5-river.jpg",
         alt: "5-river.jpg",
         title: "5-river.jpg",
         width: "100%",
@@ -328,7 +430,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/6-cave-2.jpg",
         alt: "6-cave-2.jpg",
         title: "6-cave-2.jpg",
         width: "100%",
@@ -347,7 +449,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/7-bat-cave.jpg",
         alt: "7-bat-cave.jpg",
         title: "7-bat-cave.jpg",
         width: "100%",
@@ -375,7 +477,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/8-bat-flying.jpg",
         alt: "8-bat-flying.jpg",
         title: "8-bat-flying.jpg",
         width: "100%",
@@ -457,7 +559,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/9-cave-crowd-2.jpg",
         alt: "9-cave-crowd-2.jpg",
         title: "9-cave-crowd-2.jpg",
         width: "100%",
@@ -557,7 +659,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/10-bat-flying-night.jpg",
         alt: "10-bat-flying-night.jpg",
         title: "10-bat-flying-night.jpg",
         width: "100%",
@@ -585,7 +687,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/11-tree.jpg",
         alt: "11-tree.jpg",
         title: "11-tree.jpg",
         width: "100%",
@@ -604,7 +706,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/12-bat-flower.jpg",
         alt: "12-bat-flower.jpg",
         title: "12-bat-flower.jpg",
         width: "100%",
@@ -668,7 +770,7 @@ const myOwnDamnEditorContent = {
     {
       type: "image",
       attrs: {
-        src: "https://pjrjxbdononaezaz.public.blob.vercel-storage.com/1-cave-crowd.jpg-HJ59IUC563MnlCkNz9S9lxm3AiuqXd.jpeg",
+        src: "https://storage.googleapis.com/reading-club-covers/images/13-bats-moon.jpg",
         alt: "13-bats-moon.jpg",
         title: "13-bats-moon.jpg",
         width: "100%",
@@ -676,10 +778,16 @@ const myOwnDamnEditorContent = {
       },
     },
     {
-      type: "paragraph",
+      type: "heading",
+      attrs: { level: 1 },
       content: [
         {
           type: "text",
+          marks: [
+            {
+              type: "bold",
+            },
+          ],
           text: `The End.`,
         },
       ],
