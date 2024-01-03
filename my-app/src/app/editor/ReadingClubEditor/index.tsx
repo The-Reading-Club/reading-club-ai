@@ -25,7 +25,7 @@ const garamondFont = EB_Garamond({
 
 import { useEditor, BubbleMenu, JSONContent } from "@tiptap/react";
 
-import { Editor as EditorClass } from "@tiptap/core";
+import { Editor as EditorClass, FocusPosition } from "@tiptap/core";
 
 // const MyCustomBubbleMenu = ({ editor }) => {
 //   if (!editor) {
@@ -97,10 +97,13 @@ import { TextSelection } from "prosemirror-state"; // Import TextSelection
 
 interface ReadingClubEditorProps {
   defaultBGClassName?: string;
+  // autofocus
+  autofocus?: FocusPosition;
 }
 
 const ReadingClubEditor: React.FC<ReadingClubEditorProps> = ({
   defaultBGClassName = "bg-[#FAF8DA]",
+  autofocus = false,
 }) => {
   // I want to check out my database
   // I want to download my JSON files
@@ -131,6 +134,7 @@ const ReadingClubEditor: React.FC<ReadingClubEditorProps> = ({
       {/* {`Write & Publish Children's Books with AI`} */}
       {/* <MyCustomBubbleMenu editor={editorInstance} /> */}
       <NovelEditor
+        autofocus={autofocus}
         defaultValue={myOwnDamnEditorContent}
         disableLocalStorage={true}
         // https://www.npmjs.com/package/novel
