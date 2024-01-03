@@ -103,6 +103,7 @@ interface ReadingClubEditorProps {
 
 const ReadingClubEditor: React.FC<ReadingClubEditorProps> = ({
   defaultBGClassName = "bg-[#FAF8DA]",
+  // only works on mac
   autofocus = false,
 }) => {
   // I want to check out my database
