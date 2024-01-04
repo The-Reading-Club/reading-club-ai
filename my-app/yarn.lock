@@ -3537,9 +3537,9 @@ normalize-range@^0.1.2:
   resolved "https://registry.yarnpkg.com/normalize-range/-/normalize-range-0.1.2.tgz#2d10c06bdfd312ea9777695a4d28439456b75942"
   integrity sha512-bdok/XvKII3nUpklnV6P2hxtMNrCboOjAcyBuQnWEhO665FwrSNRxU+AqpsyvO6LgGYPspN+lu5CLtw4jPRKNA==
 
-"novel@https://github.com/josealvarez97/novel/releases/download/v0.0.2/novel-0.1.22.tgz":
+"novel@https://github.com/josealvarez97/novel/releases/download/v0.0.4/novel-0.1.22.tgz":
   version "0.1.22"
-  resolved "https://github.com/josealvarez97/novel/releases/download/v0.0.2/novel-0.1.22.tgz#e690994cf4cfd8afd520f3731babe5907b177e27"
+  resolved "https://github.com/josealvarez97/novel/releases/download/v0.0.4/novel-0.1.22.tgz#25b827e1c33919d00160c9f5633c8fc21f5f324f"
   dependencies:
     "@radix-ui/react-popover" "^1.0.6"
     "@tiptap/core" "^2.1.7"
