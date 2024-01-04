@@ -7,6 +7,7 @@
 // https://github.com/steven-tey/novel/issues/219
 
 import { Editor as NovelEditor } from "novel";
+
 import React, { useCallback, useRef, useState } from "react";
 
 import { EB_Garamond } from "next/font/google";
@@ -182,6 +183,8 @@ const ReadingClubEditor: React.FC<ReadingClubEditorProps> = ({
         storageKey="reading__club__ai__novel__content"
         // https://chat.openai.com/c/33fd5bda-118c-47b1-9e5d-101c32f79c40
         onUpdate={(editor) => handleUpdate(editor as EditorClass)}
+        customBubbleMenu={(editor) => <></>}
+        // customBubbleMenu={<>Hello World</>}
       />
     </>
   );

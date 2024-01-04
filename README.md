@@ -3,6 +3,8 @@
 https://chat.openai.com/c/3d899e2e-6846-4581-a65c-1ed823434f06
 
 ```
+pnpm turbo run build
+
 cd packages/core
 pnpm pack
 
