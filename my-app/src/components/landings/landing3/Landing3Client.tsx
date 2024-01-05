@@ -362,7 +362,8 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
               {data["storiesTiptapFormat"].map((storyData: any, i: number) => {
                 // return <>HELLO</>;
                 //mobile class
-                const mobileClass = i > 0 ? `hidden` : `flex`;
+                // const mobileClass = i > 0 ? `hidden` : `flex`;
+                const mobileClass = i != 4 ? `hidden` : `flex`;
                 return (
                   <div
                     key={`read-editor-${i}`}

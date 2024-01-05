@@ -1,0 +1,2228 @@
+{
+  "metadata": "This is the source file for Aesop's Fable of The Crane and the Peacock.. Chapter 1.",
+  "paragraphs": [
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "The",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Peacock",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Crane",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "By",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Alexis",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Diamond",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "adapted",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "from",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "original",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Aesop",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Children",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "\""
+            },
+            {
+              "word": "by",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Milo",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Winter",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "©",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "2023",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "The",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Reading",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Club",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Inc",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "All",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Rights",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Reserved",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "It",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "warm",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sunny",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "day",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "perfect",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "weather",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Florida",
+              "wordType": "place-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "peacock",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "peacockname-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "way",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "beach",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "visit",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "with",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "peacockname-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "friend",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Carl",
+              "wordType": "crane_name-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Carl",
+              "wordType": "crane_name-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "crane",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "1-peacockbeach.jpeg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "For",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "beach",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "place",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "show",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "off",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "peacockname-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "looks",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Like",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "many",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "peacocks",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "very",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "proud",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "peacockname-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "colorful",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tail",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "feathers",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "2-peacockcolorful.jpeg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Hey",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Carl",
+              "wordType": "crane_name-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "!\""
+            },
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "called",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Her",
+              "wordType": "peacockname-isPronoun-possessivePronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tail",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sparkled",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sunlight",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "5-pamcarl.jpeg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Look",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "at",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "my",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tail",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!\""
+            },
+            {
+              "word": "she",
+              "wordType": "peacockname-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Don't",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wish",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "feathers",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "like",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mine",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?\""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Carl",
+              "wordType": "crane_name-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "crane",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "knew",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "his",
+              "wordType": "crane_name-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "friend",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "proud",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "peacock",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "He",
+              "wordType": "crane_name-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "knew",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "peacockname-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wasn’t",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "trying",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "be",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mean",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "6-pamshowingoff.jpeg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Still",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Carl",
+              "wordType": "crane_name-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "happy",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "with",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "saying",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "thinking",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "only",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "peacockname-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "looked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "he",
+              "wordType": "crane_name-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "looked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Carl",
+              "wordType": "crane_name-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "decided",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "teach",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "peacockname-isPronoun-objectivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "lesson",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "7-1-carlplans.jpeg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "You",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sure",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "fancy",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!”"
+            },
+            {
+              "word": "Carl",
+              "wordType": "crane_name-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Then",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "like",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "rocket",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Carl",
+              "wordType": "crane_name-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "launched",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "himself",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "high",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "air",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "zoomed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "among",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "clouds",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "8-carlflies.jpeg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Look",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "high",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "can",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "go",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!\""
+            },
+            {
+              "word": "he",
+              "wordType": "crane_name-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "shouted",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "down",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "peacock",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "far",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "below",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Come",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "join",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "me",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "up",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "here",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!\""
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "8-1-carlclouds.jpeg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "didn’t",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "answer",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "peacockname-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "stayed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "where",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "peacockname-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "9-carlflies2.jpeg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "She",
+              "wordType": "peacockname-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "knew",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "feathers",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tail",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "were",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "pretty",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "but",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "peacockname-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "also",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "knew",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "they",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "weren't",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "good",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "flying",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "peacockname-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "could",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "fly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "as",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "high",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "as",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Carl",
+              "wordType": "crane_name-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "like",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "my",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "plain",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "feathers",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "way",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "they",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Carl",
+              "wordType": "crane_name-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "as",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "he",
+              "wordType": "crane_name-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "joined",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "beach",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wouldn’t",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "trade",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "my",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "plain-looking",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "feathers",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "anything",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "10-carlteaches.jpeg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "understood",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "peacockname-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "learned",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "something",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "important",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "What",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "did",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "learn",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "First",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "all",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "learned",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "bragging",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "showing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "off",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "can",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "annoy",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "others",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "--",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "even",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "friends",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Pam",
+              "wordType": "peacockname-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "also",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "learned",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "looks",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "good",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "is",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "always",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "’s"
+            },
+            {
+              "word": "best",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Looks",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "aren’t",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "everything",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Looks",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "don’t",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tell",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "whole",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "story",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "People",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "say",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Don't",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "judge",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "book",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "by",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "its",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cover",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "\"."
+            },
+            {
+              "word": "This",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "is",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "good",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "advice",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "books",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "book",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "covers",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "THE",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "END",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

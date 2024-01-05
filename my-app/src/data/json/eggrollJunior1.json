@@ -1,0 +1,5679 @@
+{
+  "metadata": "This is the source file for Egg on A Roll short story.. Chapter 1.",
+  "paragraphs": [
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "An",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Egg",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "A",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Roll",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "By",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Alexis",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Diamond",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "©",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "2023",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "The",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Reading",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Club",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Inc",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "All",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Rights",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Reserved",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "an",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ordinary",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "egg",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "living",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "quiet",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "life",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "egg",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "refrigerator",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "always",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "dreamed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "seeing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "world",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "having",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "adventures",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "but",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "knew",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "chances",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "were",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "pretty",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "slim",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "1-cartoon.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "One",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "day",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "however",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "luck",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "changed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "A",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "clumsy",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cook",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "dropped",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-objectivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "while",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "trying",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "crack",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-objectivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "into",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mixing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "bowl",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "found",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "herself",
+              "wordType": "egg-isPronoun-reflexivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "rolling",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "kitchen",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "into",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "great",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "unknown",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "thrilled",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "little",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "bit",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "scared",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "As",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "rolled",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "door",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "stood",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "up",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "began",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "run",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Little",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "bits",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "yolk",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "egg",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "white",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "flew",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "off",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "back",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "leaving",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "thin",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "trails",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "air",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "behind",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-objectivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "2-emily.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "didn’t",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "know",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "where",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "going",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "or",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "would",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "find",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "As",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ran",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "along",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "encountered",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "all",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "kinds",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strange",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wonderful",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sights",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "small",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "egg",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "so",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "things",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "saw",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "were",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "quite",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "close",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ground",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "One",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "first",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "things",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "saw",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "flower",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "growing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "from",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "bottom",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "brick",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wall",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "It",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "beautiful",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "purple",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "gold",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "blossoms",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "few",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "green",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "leaves",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "were",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "paper-thin",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Somehow",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "this",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "small",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "delicate",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "flower",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "managed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "anchor",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "its",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "roots",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "rock-hard",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "brick",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "make",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "its",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "way",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "up",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wall",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "3-flower.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "am",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "like",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "flower",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!”"
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "thought",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "herself",
+              "wordType": "egg-isPronoun-reflexivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "am",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tough",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "even",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "though",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "am",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "delicate",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "And",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "am",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "making",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "my",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "way",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "world",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!”"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "kept",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "running",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "stopped",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "at",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "piece",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "paper",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ground",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "It",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "showed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mysterious",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "woman",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "squinting",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "into",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "distance",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "4-woman.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wondered",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "if",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "person",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sketch",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "real",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "or",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "imaginary",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "am",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "like",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "protected",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "thought",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "protected",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "looks",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strong",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ready",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "anything",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".”"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Next",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "scrap",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "paper",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "green",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "bicycle",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "5-bike.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wanted",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ride",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "bicycle",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "but",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "hers",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "its",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "owner",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "nowhere",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "be",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "seen",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Then",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "heard",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "music",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "looked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "down",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "street",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "great",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "happiness",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "saw",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "parade",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!"
+            },
+            {
+              "word": "There",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "were",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "floats",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "musicians",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "people",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "all",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "dressed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "up",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "colorful",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "costumes",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "couldn't",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "believe",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "luck",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "finally",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "living",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "dream",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "having",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "an",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "adventure",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "As",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "parade",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "passed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "by",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ran",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "right",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "into",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "middle",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "dancing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "singing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "along",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "with",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "crowd",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tried",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "climb",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "up",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "onto",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "one",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "floats",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "but",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "too",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "short",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "A",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "girl",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "skateboard",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "saw",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "trying",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "do",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "decided",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "help",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Hop",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "my",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "skateboard",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "told",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Tie",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "this",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "blue",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ribbon",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "around",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "your",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "waist",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!"
+            },
+            {
+              "word": "Then",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "can",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "follow",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "this",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "float",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "down",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "street",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "My",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "skateboard",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "can",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "be",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "your",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "very",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "own",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "float",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!”"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "That",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "did",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "loved",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "6-skater.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "When",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "parade",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "over",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "returned",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "skateboard",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "knew",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "go",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "home",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "So",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ran",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "back",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "kitchen",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "where",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cook",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "waiting",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-objectivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "with",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "big",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "smile",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "7-chef.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "I'm",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "very",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sorry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "dropped",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ",\""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cook",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "And",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "I'm",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "so",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "glad",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "such",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "fun",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "adventure",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!\""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "smiled",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "back",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "feeling",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "grateful",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "But",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "little",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "did",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "know",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cook",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "surprise",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "store",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-objectivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "have",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "treat",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ",\""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cook",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "holding",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "up",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "frying",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "pan",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "I'm",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "going",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "make",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "into",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "an",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "omelette",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!\""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "eyes",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "widened",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "always",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "dreamed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "having",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "an",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "adventure",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "but",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "never",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "expected",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "end",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "like",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "this",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "As",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cook",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cracked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "into",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "pan",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "something",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strange",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "happened",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "began",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sizzle",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "but",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "instead",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "turning",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "into",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "an",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "omelette",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "started",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "grow",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "grow",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "didn’t",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "know",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "going",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "As",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "grew",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "almost",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "lost",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "balance",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "so",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "grabbed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "large",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "spoon",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "chef",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "been",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "using",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "When",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "touched",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "spoon",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "also",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "started",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "grow",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "spoon",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "kept",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "growing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "until",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "they",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "were",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "both",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "larger",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "than",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "chef",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "jumped",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "pan",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "landed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "feet",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "next",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "kitchen",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "counter",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "holding",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "huge",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "spoon",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "looked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "different",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "because",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "bigger",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Even",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "though",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "shell",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "hot",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "pan",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "made",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-objectivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "solid",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "also",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "spices",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "all",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "over",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-objectivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "The",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cook",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "stared",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "amazement",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "as",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "stood",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "before",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "him",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "standing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "own",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "two",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "feet",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "looked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "down",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "at",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "chef",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "looked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "directly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "into",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "his",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "eyes",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "am",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "more",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "than",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "an",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ordinary",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "egg",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".\""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Yes",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "chef",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "replied",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "I’m",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "NEVER",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "going",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "back",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "anyone",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "’s"
+            },
+            {
+              "word": "pan",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "ever",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "again",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!”"
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Of",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "course",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "you’re",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "right",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cook",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "You",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "absolutely",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "right",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "doing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "my",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "job",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".”"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Do",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "think",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "can",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "have",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "spoon",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "back",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?”"
+            },
+            {
+              "word": "asked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cook",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "thought",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "moment",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "You",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "were",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "doing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "your",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "job",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Well",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ","
+            },
+            {
+              "word": "from",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "now",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "I’m",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "taking",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "care",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "myself",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "And",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "I’m",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "keeping",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "spoon",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".”"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Um",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ","
+            },
+            {
+              "word": "OK",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "chef",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "looking",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "up",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "at",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "knew",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "would",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "always",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "remember",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "amazing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "day",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "as",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "parade",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "egg",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "And",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "also",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "knew",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "egg-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "same",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "egg",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "who",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "left",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "egg",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "morning",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Emily",
+              "wordType": "egg-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "an",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "egg",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "transformed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "now",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "truly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ready",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "anything",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "She",
+              "wordType": "egg-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "could",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "hardly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wait",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "find",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "egg-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "next",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "adventure",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "would",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "be",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "8-parade.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "THE",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "END",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
