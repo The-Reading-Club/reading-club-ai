@@ -22,6 +22,9 @@ const garamondFont = EB_Garamond({
   weight: ["400", "800"], // can add more weights, pretty cool
   // style: "italic",
   //   variable: "--font-title",
+  // https://github.com/vercel/next.js/issues/44456
+  // const bebas = Bebas_Neue({ subsets: ['latin'], weight: ['400'], variable: '--font-bebas', display: 'swap' })
+  display: "swap",
 });
 
 import { useEditor, BubbleMenu, JSONContent } from "@tiptap/react";
@@ -97,16 +100,19 @@ import { TextSelection } from "prosemirror-state"; // Import TextSelection
 // });
 
 interface ReadingClubEditorProps {
+  editorContent?: JSONContent | string;
   defaultBGClassName?: string;
   // autofocus
   autofocus?: FocusPosition;
 }
 
 const ReadingClubEditor: React.FC<ReadingClubEditorProps> = ({
+  editorContent,
   defaultBGClassName = "bg-[#FAF8DA]",
   // only works on mac
   autofocus = false,
 }) => {
+  // alert(JSON.stringify(editorContent, null, 2));
   // I want to check out my database
   // I want to download my JSON files
   // Cache this shit please with Redis instead and use secure links
@@ -137,7 +143,7 @@ const ReadingClubEditor: React.FC<ReadingClubEditorProps> = ({
       {/* <MyCustomBubbleMenu editor={editorInstance} /> */}
       <NovelEditor
         autofocus={autofocus}
-        defaultValue={myOwnDamnEditorContent}
+        defaultValue={editorContent ?? myOwnDamnEditorContent}
         disableLocalStorage={true}
         // https://www.npmjs.com/package/novel
         /**
