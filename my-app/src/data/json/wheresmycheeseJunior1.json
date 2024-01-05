@@ -1,0 +1,2698 @@
+{
+  "metadata": "This is the source file for Where is my Cheese? short story.. Chapter 1.",
+  "paragraphs": [
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Where",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "My",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Cheese?",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "By",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Alexis",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Diamond",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "©",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "2023",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "The",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Reading",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Club",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Inc",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "All",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Rights",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Reserved",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Once",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "upon",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "time",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cozy",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "little",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mousehole",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "there",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "lived",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mouse",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "named",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "friendly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mouse",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "He",
+              "wordType": "mainCharacter-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "always",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "willing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "lend",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "paw",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "his",
+              "wordType": "mainCharacter-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mouse",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "friends",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "need",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "1-mouse.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "One",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "day",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "best",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "friend",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mouse",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "named",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Minnie",
+              "wordType": "secondary-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "came",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "him",
+              "wordType": "mainCharacter-isPronoun-objectivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "with",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "problem",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Minnie",
+              "wordType": "secondary-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "dropped",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "secondary-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "favorite",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "down",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "deep",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "hole",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "floor",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "She",
+              "wordType": "secondary-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "couldn't",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "reach",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "secondary-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "no",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "matter",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "hard",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "she",
+              "wordType": "secondary-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tried",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "2-hole.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Minnie",
+              "wordType": "secondary-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "problem",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "made",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "secondary-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "feel",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "unhappy",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "There",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "almost",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "nothing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Minnie",
+              "wordType": "secondary-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "liked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "better",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "than",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "being",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "kind",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mouse",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "he",
+              "wordType": "mainCharacter-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "decided",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "help",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Minnie",
+              "wordType": "secondary-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "get",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "secondary-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "He",
+              "wordType": "mainCharacter-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "thought",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "moment",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "then",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "an",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "idea",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "He",
+              "wordType": "mainCharacter-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "would",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "use",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "his",
+              "wordType": "mainCharacter-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "long",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tail",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "reach",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "down",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "hole",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "grab",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wiggled",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "his",
+              "wordType": "mainCharacter-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tail",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "down",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "hole",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "feeling",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "around",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Finally",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "he",
+              "wordType": "mainCharacter-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "felt",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "something",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "smooth",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "round",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "He",
+              "wordType": "mainCharacter-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "gave",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "good",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "yank",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "pulled",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "shiny",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "red",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "apple",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "3-apple.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Minnie",
+              "wordType": "secondary-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "happy",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "at",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sight",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "apple",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "but",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "confused",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "He",
+              "wordType": "mainCharacter-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "been",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "so",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sure",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "he",
+              "wordType": "mainCharacter-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "felt",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "But",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "as",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "turned",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "rolled",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "all",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "way",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "other",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "side",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "hole",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "now",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "reach",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "felt",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "little",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "guilty",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "being",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "able",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "help",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "his",
+              "wordType": "mainCharacter-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "friend",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "But",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Minnie",
+              "wordType": "secondary-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "didn't",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mind",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "She",
+              "wordType": "secondary-isPronoun-personalPronoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "turned",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Thanks",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "trying",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "help",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "me",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "There",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "almost",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "nothing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "like",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "better",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "than",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".\""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "But",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "there",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "is",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ONE",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "thing",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Do",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "know",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "is",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?\""
+            },
+            {
+              "word": "she",
+              "wordType": "secondary-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "asked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "What",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "is",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "like",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "better",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "than",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?\""
+            },
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "asked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Apple",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "pie",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!\""
+            },
+            {
+              "word": "Minnie",
+              "wordType": "secondary-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "shouted",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "And",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "now",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "we",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "can",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "make",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "some",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!\""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "couldn't",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "help",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "but",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "laugh",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Even",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "though",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "he",
+              "wordType": "mainCharacter-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "made",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mistake",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "he",
+              "wordType": "mainCharacter-isPronoun-personalPronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "still",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "able",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "make",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "his",
+              "wordType": "mainCharacter-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "friend",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "happy",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "4-cheese.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "And",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "my",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "friends",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "shows",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "importance",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "trying",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "help",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "others",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "even",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "if",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "things",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "don't",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "always",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "go",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "as",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "planned",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "5-happy.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "THE",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "END",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "1",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Why",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "did",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "decide",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "help",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Minnie",
+              "wordType": "secondary-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "retrieve",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "her",
+              "wordType": "secondary-isPronoun-possessivePronoun",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "2",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "How",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "did",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Max",
+              "wordType": "mainCharacter-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "try",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "help",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Minnie",
+              "wordType": "secondary-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "retrieve",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "cheese",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "3",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "What",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "twist",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ending",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "story",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "4",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "What",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "is",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "importance",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "trying",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "help",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "others",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "even",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "if",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "things",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "don't",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "always",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "go",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "as",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "planned",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "5",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Can",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "think",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "time",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "when",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tried",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "help",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "someone",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "things",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "didn't",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "go",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "as",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "planned",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            },
+            {
+              "word": "How",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "did",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "handle",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "situation",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

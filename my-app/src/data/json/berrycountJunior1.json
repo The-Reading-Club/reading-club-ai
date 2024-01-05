@@ -1,0 +1,4617 @@
+{
+  "metadata": "This is the source file for A Berry You Can Count On short story.. Chapter 1.",
+  "paragraphs": [
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "A",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Berry",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "You",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Can",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Count",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "On",
+              "wordType": "bold",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "By",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Alexis",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Diamond",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "©",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "2023",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "The",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Reading",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Club",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Inc",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "All",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Rights",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Reserved",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Once",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "at",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "grocery",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "store",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "named",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Javi",
+              "wordType": "bananaName-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "talking",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "after",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "store",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "closed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "night",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Hey",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "do",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "know",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "many",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "berries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "your",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?\""
+            },
+            {
+              "word": "asked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Javi",
+              "wordType": "bananaName-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "1-banana.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Well",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ","
+            },
+            {
+              "word": "I",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "don't",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "know",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "exactly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "but",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "we",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "can",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "count",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ourselves",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "one",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "by",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "one",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "\""
+            },
+            {
+              "word": "replied",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Let",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": "’s"
+            },
+            {
+              "word": "go",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "everybody",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!”"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "And",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "began",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "count",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "one",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "by",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "one",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ":"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "One",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "sang",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "first",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "who",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "perfect",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "shade",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "fire",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "engine",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "red",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "2-berry-1.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Two",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "shouted",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "second",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "who",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "lovely",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "leafy",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "green",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "crown",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "sprouting",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "from",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "top",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "his",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "head",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "3-berry-2.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Three",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "whispered",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "third",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "with",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "shy",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wave",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "This",
+              "wordType": "normal",
+              "startPunctuation": "(",
+              "endPunctuation": ""
+            },
+            {
+              "word": "third",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "wasn’t",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "fully",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ripe",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".)"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "4-berry-3.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Four",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "fourth",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "with",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "mischievous",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "smile",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "5-berry-4.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Wait",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ","
+            },
+            {
+              "word": "hold",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "stop",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!”"
+            },
+            {
+              "word": "shouted",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Javi",
+              "wordType": "bananaName-isProperNoun-isCapitalized",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "who",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "first",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "asked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "number",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "This",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "is",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "taking",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "forever",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "There",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "’s"
+            },
+            {
+              "word": "got",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "be",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "faster",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "way",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".”"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "We",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "could",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "estimate",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "second",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "That",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "means",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "we",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "could",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "look",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "at",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "few",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "facts",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "make",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "smart",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "guess",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".”"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "For",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "example",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "We",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "could",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "check",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "see",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "many",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "each",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "row",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".”"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Hey",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "berries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!”"
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "How",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "many",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "each",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "row",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            },
+            {
+              "word": "Not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "exactly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "but",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "roughly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "6-banana-2.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "There",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "five",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "each",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "row",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "And",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ","
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "many",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "rows",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "there",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "your",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            },
+            {
+              "word": "About",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "many",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "exactly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "many",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "asked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "There",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "four",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "rows",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "another",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "answered",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "OK",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ",”"
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "About",
+              "wordType": "normal",
+              "startPunctuation": "“",
+              "endPunctuation": ""
+            },
+            {
+              "word": "four",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "rows",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "each",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "row",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "has",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "five",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "berries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "That",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "means",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "total",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "there",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "must",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "be",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "five",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "plus",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "five",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "plus",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "five",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "plus",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "five",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Four",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "fives",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "–",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "four",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "fives",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "is",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "20",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "So",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "there",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "must",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "be",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "20",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Amazing",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": "!\""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Estimating",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "is",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "so",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "much",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "faster",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "than",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "counting",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "every",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "single",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "berry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Let",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "go",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "with",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "answer",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".\""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "then",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "talking",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tomato",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "rolled",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "by",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "overheard",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "their",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "conversation",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "7-tomato.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "Ha",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": "!"
+            },
+            {
+              "word": "You",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "guys",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "so",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "silly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",\""
+            },
+            {
+              "word": "laughed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tomato",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "You",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "don't",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "need",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "do",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "any",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "math",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "or",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "estimating",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "know",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "many",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "are",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "You",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "just",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "need",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "read",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "label",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "back",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!\""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "The",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "looked",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "at",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "each",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "other",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "surprise",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "then",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "rushed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "back",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "read",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "label",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Sure",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "enough",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "contains",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "21",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".\""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Oh",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "no",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "we",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "were",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "off",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "by",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "one",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "!\""
+            },
+            {
+              "word": "said",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "feeling",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "embarrassed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "Don't",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "worry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ",\""
+            },
+            {
+              "word": "chuckled",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tomato",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "At",
+              "wordType": "normal",
+              "startPunctuation": "\"",
+              "endPunctuation": ""
+            },
+            {
+              "word": "least",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "fun",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "trying",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "figure",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "And",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "hey",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "now",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "know",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "there",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "better",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "way",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "find",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "answer",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "next",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "time",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ".\""
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "All",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "laughed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "agreed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            }
+          ]
+        }
+      ],
+      "illustration": "8-berries.jpg"
+    },
+    {
+      "sentences": [
+        {
+          "words": [
+            {
+              "word": "The",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "all",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "good",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "time",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "telling",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "more",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "silly",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "stories",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "jokes",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "until",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "time",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "for",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "store",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "open",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "again",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "morning",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "The",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "end",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "1",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "How",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "did",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "use",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "math",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "estimation",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "try",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "solve",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "problem",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "counting",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "number",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "2",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Why",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "do",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "think",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "decided",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "use",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "estimation",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "instead",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "counting",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "every",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "single",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "berry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "3",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "In",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "situations",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "might",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "be",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "helpful",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "use",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "estimation",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "instead",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "precise",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "calculations",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "4",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Have",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ever",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "had",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "make",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "an",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "estimate",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "order",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "solve",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "problem",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "or",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "answer",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "a",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "question",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            },
+            {
+              "word": "If",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "so",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "was",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "situation",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "how",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "did",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "go",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "making",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "your",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "estimate",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "5",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "How",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "do",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "think",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "felt",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "when",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "they",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "found",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "out",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "they",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "were",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "off",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "by",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "one",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberry",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "their",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "estimate",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            },
+            {
+              "word": "Why",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "do",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "think",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "they",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "felt",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "that",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "way",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "6",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "What",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "can",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "we",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "learn",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "from",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "this",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "story",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "about",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "value",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "using",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "different",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strategies",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "approaches",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "solve",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "problems",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "7",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "How",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "do",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "think",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tomato",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "suggestion",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "read",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "label",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "on",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "back",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "changed",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "way",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "approached",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "problem",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "8",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "In",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "what",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "other",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "ways",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "could",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "banana",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "have",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "tried",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "solve",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "problem",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "of",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "counting",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "strawberries",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "the",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "carton",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "9",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "Do",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "you",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "think",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "it",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "'s"
+            },
+            {
+              "word": "important",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "be",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "able",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "make",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "estimates",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "and",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "use",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "math",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "to",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "solve",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "problems",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "in",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "everyday",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "life",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            },
+            {
+              "word": "Why",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "or",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "why",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "not",
+              "wordType": "normal",
+              "startPunctuation": "",
+              "endPunctuation": "?"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

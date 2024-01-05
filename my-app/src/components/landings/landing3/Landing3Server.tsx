@@ -8,9 +8,15 @@ import { readFileSync } from "fs";
 
 const Landing3Server = async () => {
   const trcStoriesTestFileNames = [
-    "sunrisesuperpowerJunior1",
+    "monkeyupdownJunior1",
+    "peacockandcraneJunior1",
+    "goodelephantJunior1",
     "fairestcontestJunior1",
+    "sunrisesuperpowerJunior1",
+    "berrycountJunior1",
     "bearchangedJunior1",
+    "eggrollJunior1",
+    "wheresmycheeseJunior1",
   ];
 
   const storiesTiptapFormat: any[] = [];
