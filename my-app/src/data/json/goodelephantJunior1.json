@@ -28,6 +28,86 @@
         {
           "words": [
             {
+              "word": "By",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Alexis",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Diamond",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
+              "word": "©",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "2023",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "The",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Reading",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Club",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ","
+            },
+            {
+              "word": "Inc",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            },
+            {
+              "word": "All",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Rights",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": ""
+            },
+            {
+              "word": "Reserved",
+              "wordType": "italic",
+              "startPunctuation": "",
+              "endPunctuation": "."
+            }
+          ]
+        },
+        {
+          "words": [
+            {
               "word": "Once",
               "wordType": "normal",
               "startPunctuation": "",
