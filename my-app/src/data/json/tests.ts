@@ -1,7 +1,7 @@
 export function fromTRCtoTiptapFormat(data: any) {
   const trcPages = data["paragraphs"];
 
-  const paragraphsArray: any = [];
+  let paragraphsArray: any = [];
 
   trcPages.forEach((page: any, page_i: number) => {
     const paragraphs = page["sentences"];
@@ -58,6 +58,54 @@ export function fromTRCtoTiptapFormat(data: any) {
       paragraphsArray.push(tiptapContentNode);
     });
   });
+
+  paragraphsArray = [
+    ...paragraphsArray.slice(0, paragraphsArray.length / 2),
+    {
+      type: "heading",
+      attrs: { level: 1 },
+      content: [{ type: "text", text: "To be continued..." }],
+    },
+    {
+      type: "heading",
+      attrs: { level: 2 },
+      content: [
+        { type: "text", text: "Download on " },
+        {
+          type: "text",
+          marks: [
+            {
+              type: "link",
+              attrs: {
+                href: "https://play.google.com/store/apps/details?id=com.TheReadingClub.TheReadingClub&hl=en_US&gl=US",
+                target: "_blank",
+                // class:
+                //   "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+              },
+            },
+          ],
+          text: "Google Play",
+        },
+        { type: "text", text: " & " },
+        {
+          type: "text",
+          marks: [
+            {
+              type: "link",
+              attrs: {
+                href: "https://apps.apple.com/us/app/reading-club-childrens-books/id1528070520",
+                target: "_blank",
+                // class:
+                //   "text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer text-stone-400 underline underline-offset-[3px] hover:text-stone-600 transition-colors cursor-pointer",
+              },
+            },
+          ],
+          text: "App Store",
+        },
+        { type: "text", text: "." },
+      ],
+    },
+  ];
 
   const tiptapFormat = {
     type: "doc",
