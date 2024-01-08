@@ -44,7 +44,19 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
       //Paragraph,
       // Text,
       TextAlign,
-      Image,
+      Image.extend({
+        addAttributes() {
+          return {
+            ...this.parent?.(),
+            width: {
+              default: "100%",
+            },
+            height: {
+              default: null,
+            },
+          };
+        },
+      }),
       Link,
     ],
     content: editorContent,
