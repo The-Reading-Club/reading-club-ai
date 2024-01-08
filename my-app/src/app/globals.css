@@ -65,3 +65,7 @@ body {
     )
     rgb(var(--background-start-rgb));
 } */
+
+button {
+  border: "2px solid black";
+}
