@@ -59,7 +59,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
       }),
       Link,
     ],
-    content: editorContent,
+    content: editorContent ?? myOwnDamnEditorContent,
     editorProps: {
       attributes: {
         //    class: `novel-prose-lg novel-prose-stone dark:novel-prose-invert prose-headings:novel-font-title novel-font-default focus:novel-outline-none novel-max-w-full`,

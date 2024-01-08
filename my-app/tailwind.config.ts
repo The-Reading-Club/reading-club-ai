@@ -3,6 +3,17 @@ import type { Config } from "tailwindcss";
 // import { DarkModeConfig } from "tailwindcss/types/config";
 
 const config: Config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#FFC122",
+        secondary: "#FAF8DA",
+        secondary2: "#FCF29A",
+        brownFont: "#7B3F00",
+        darkFont: "#3c4043",
+      },
+    },
+  },
   // theme: {
   //   extend: {
   //     fontFamily: {
