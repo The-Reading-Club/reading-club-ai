@@ -1,5 +1,6 @@
 import React from "react";
-import ReadingClubEditor from "./ReadingClubEditor";
+// import ReadingClubEditor from "./ReadingClubEditor";
+import Tiptap from "@/components/tiptap-tests/Tiptap";
 
 const page = () => {
   return (
@@ -15,7 +16,8 @@ const page = () => {
       }}
       className="bg-[#FCF29A]"
     >
-      <ReadingClubEditor />
+      {/* <ReadingClubEditor /> */}
+      <Tiptap />
     </div>
   );
 };

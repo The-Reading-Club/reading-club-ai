@@ -21,8 +21,9 @@ import {
   FaPinterest,
 } from "react-icons/fa"; // Import social media icons
 import Logo from "@/components/Logo";
-import ReadingClubEditor from "@/app/editor/ReadingClubEditor";
+// import ReadingClubEditor from "@/app/editor/ReadingClubEditor";
 import { useEffect, useRef, useState } from "react";
+import TRCEditorV2 from "@/components/TRCEditorV2";
 
 interface SocialLinkProps {
   href: string;
@@ -378,11 +379,8 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                       // border: "5px solid black",
                     }}
                   >
-                    <ReadingClubEditor
-                      // defaultBGClassName="bg-white"
-                      // editorContent={testTipTapContentState}
-                      editorContent={storyData}
-                    />
+                    {/* <ReadingClubEditor editorContent={storyData} /> */}
+                    <TRCEditorV2 editorContent={storyData} />
                   </div>
                 );
               })}

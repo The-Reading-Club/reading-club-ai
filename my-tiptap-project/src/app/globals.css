@@ -1,0 +1,68 @@
+/* https://byby.dev/at-rule-tailwind */
+
+/* https://github.com/ueberdosis/tiptap/discussions/2960 */
+/* https://github.com/ueberdosis/tiptap/discussions/2786 */
+/* https://www.reddit.com/r/vuejs/comments/17w7m6f/how_can_i_override_my_general_styles_in_the/ */
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+/* 
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+
+body {
+  color: rgb(var(--foreground-rgb));
+  background: linear-gradient(
+      to bottom,
+      transparent,
+      rgb(var(--background-end-rgb))
+    )
+    rgb(var(--background-start-rgb));
+} */
+
+button {
+  border: 1px solid black;
+  padding: 5px 30px;
+  margin: 5px;
+}
+
+.editor-content h1 {
+  font-size: 2.25rem;
+  font-weight: bold;
+}
+
+.editor-content h2 {
+  font-size: 1.875rem;
+  font-weight: bold;
+}
+
+.editor-content h3 {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.editor-content a {
+  color: green;
+  text-decoration: underline;
+}
+
+/* Add additional styles for other elements */
+
+.callout {
+  padding: 16px;
+  margin: 8px 0;
+  border-left: 4px solid #38bdf8; /* A nice blue border */
+  background-color: #f1f5f9; /* A light grey background */
+  border-radius: 4px;
+}
