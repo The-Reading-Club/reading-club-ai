@@ -6,7 +6,7 @@ import Text from "@tiptap/extension-text";
 import { EditorContent, useEditor } from "@tiptap/react";
 import React from "react";
 
-export default () => {
+const TiptapTest = () => {
   const editor = useEditor({
     extensions: [
       Document,
@@ -57,3 +57,5 @@ export default () => {
     </>
   );
 };
+
+export default TiptapTest;

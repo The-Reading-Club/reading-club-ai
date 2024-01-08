@@ -23,6 +23,7 @@ import {
 import Logo from "@/components/Logo";
 // import ReadingClubEditor from "@/app/editor/ReadingClubEditor";
 import { useEffect, useRef, useState } from "react";
+import TRCEditorV2 from "@/components/TRCEditorV2";
 
 interface SocialLinkProps {
   href: string;
@@ -379,6 +380,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                     }}
                   >
                     {/* <ReadingClubEditor editorContent={storyData} /> */}
+                    <TRCEditorV2 editorContent={storyData} />
                   </div>
                 );
               })}
