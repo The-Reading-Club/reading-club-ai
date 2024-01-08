@@ -33,7 +33,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   editorContent,
   bgClass = "bg-[#FAF8DA]",
   fontClass = garamondFont.className,
-  editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm`,
+  editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll`,
 }) => {
   const editor = useEditor({
     extensions: [
