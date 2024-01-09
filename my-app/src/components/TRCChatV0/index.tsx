@@ -1,6 +1,8 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
-import { useChat } from "ai/react";
+import { Message, useChat } from "ai/react";
+
+import { useDebouncedCallback } from "use-debounce";
 
 const TRCChatVO = () => {
   const { input, handleInputChange, handleSubmit, isLoading, messages } =
@@ -25,8 +27,9 @@ const TRCChatVO = () => {
   const handleScroll = () => {
     if (containerRef.current) {
       const isAtBottom =
-        containerRef.current.scrollHeight - containerRef.current.scrollTop ===
+        containerRef.current.scrollHeight - containerRef.current.scrollTop <=
         containerRef.current.clientHeight;
+
       setIsAutoScrollActive(isAtBottom);
     }
   };
@@ -59,46 +62,65 @@ const TRCChatVO = () => {
       }}
     >
       <h2 className="text-2xl font-bold mb-8">Reading Club Coauthor</h2>
-      <div
-        ref={containerRef}
-        className="basis-2/3 b-4 border-black overflow-scroll"
-      >
-        <div>
-          <h3 className="text-lg font-semibold mt-2">Coauthor</h3>
-          <p>I am here to help you write a story 10x faster</p>
-        </div>
-        <div>
-          <h3 className="text-lg font-semibold mt-2">Jose</h3>
-          <p>
-            Write a story that teaches a kid about the economy. The morale is
-            that a free market is not a zero-sum game.
-          </p>
-        </div>
-        {messages.map((msg) => (
+      <div className="relative basis-2/3 b-4 border-black overflow-hidden flex flex-col">
+        <div ref={containerRef} className="overflow-scroll">
           <div>
-            <h3 className="text-lg font-semibold mt-2">
-              {msg.role == "assistant" ? "Coauthor" : "Jose"}
-            </h3>
-            <p style={{ whiteSpace: "preserve-breaks" }}>{msg.content}</p>
+            <h3 className="text-lg font-semibold mt-2">Coauthor</h3>
+            <p>I am here to help you write a story 10x faster</p>
           </div>
-        ))}
-        <div ref={messagesEndRef} />
-      </div>
-      {!isAutoScrollActive && (
-        <button
-          onClick={scrollToBottom}
-          style={
-            {
-              // position: "absolute", // Or 'fixed' depending on the layout
-              // right: "1rem",
-              // bottom: "1rem",
-              // cursor: "pointer",
+          <div>
+            <h3 className="text-lg font-semibold mt-2">Jose</h3>
+            <p>
+              Write a story that teaches a kid about the economy. The morale is
+              that a free market is not a zero-sum game.
+            </p>
+          </div>
+          {messages.map((msg: Message, i: number) => (
+            <div key={`msg-${msg.id}-${i}`}>
+              <h3 className="text-lg font-semibold mt-2">
+                {msg.role == "assistant" ? "Coauthor" : "Jose"}
+              </h3>
+              <p style={{ whiteSpace: "preserve-breaks" }}>{msg.content}</p>
+            </div>
+          ))}
+          <div ref={messagesEndRef} />
+        </div>
+        {!isAutoScrollActive && (
+          <button
+            className="cursor-pointer absolute z-10 rounded-full bg-clip-padding border text-gray-600 dark:border-white/10
+              bg-black/20
+              dark:bg-white/10 dark:text-gray-200 right-1/2 border-black/20 bottom-4"
+            onClick={scrollToBottom}
+            style={
+              {
+                // position: "absolute", // Or 'fixed' depending on the layout
+                // right: "1rem",
+                // bottom: "1rem",
+                // cursor: "pointer",
+              }
             }
-          }
-        >
-          {/* You can replace the text with an icon or image */}↓TEST
-        </button>
-      )}
+          >
+            {/* You can replace the text with an icon or image */}
+            <svg
+              width="24"
+              height="24"
+              viewBox="0 0 24 24"
+              fill="none"
+              className="m-1 text-white dark:text-white"
+            >
+              <path
+                d="M17 13L12 18L7 13M12 6L12 17"
+                stroke="currentColor"
+                //   className="text-primary"
+                stroke-width="3"
+                stroke-linecap="round"
+                stroke-linejoin="round"
+              ></path>
+            </svg>
+          </button>
+        )}
+      </div>
+
       <form className="mt-8" onSubmit={handleSubmit}>
         <p className="font-semibold">You</p>
         <div className="[&:has(textarea:focus)]:border-token-border-xheavy [&:has(textarea:focus)]:shadow-[0_2px_6px_rgba(0,0,0,.05)] border border-token-border-heavy rounded-2xl">
