@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { useEffect, useRef } from "react";
 
 import { EditorContent, JSONContent, useEditor } from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
@@ -21,6 +21,8 @@ const garamondFont = EB_Garamond({
 });
 
 import "@/styles/prosemirror.css";
+import { getPrevText } from "@/lib/editor";
+import { useCompletion } from "ai/react";
 
 interface TRCEditorV2Props {
   editorContent?: JSONContent | string;
@@ -35,6 +37,30 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   fontClass = garamondFont.className,
   editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll`,
 }) => {
+  //#region ****** USE COMPLETION START ******
+  const { complete, completion, isLoading, stop } = useCompletion({
+    id: "trc-editor-v2",
+    api: "api/generate",
+    onFinish: (prompt, completion) => {
+      editor?.commands.setTextSelection({
+        // basically you set the cursor back to where it was
+        from: editor.state.selection.from - completion.length,
+        to: editor.state.selection.from,
+      });
+    },
+    onError: (err) => {
+      // toast.error(err.message)
+      alert(err.message);
+      // there's gotta be a more formal status code for this
+      if (err.message == "You have reached your request liit for the day.") {
+        //va.track("Rate Limit Reached")
+        alert("Rate Limit Reached");
+      }
+    },
+  });
+  //#endregion ****** USE COMPLETION END ******
+
+  //#region ****** TIPTAP EDITOR START ******
   const editor = useEditor({
     extensions: [
       StarterKit,
@@ -66,12 +92,44 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
         class: `prose-lg focus:outline-none max-w-full`,
       },
     },
+    onUpdate: (e) => {
+      // this is to know wherever the cursor is really
+      // the next function only uses the cursor position
+      const selection = e.editor.state.selection;
+      const lastTwo = getPrevText(e.editor, {
+        chars: 2, // should change the name of this prop to lastManyChars
+        // and lastManyOffset
+      });
+
+      if (lastTwo == "++" && !isLoading) {
+        alert("Autocomplete Shortcut Used");
+        e.editor.commands.deleteRange({
+          from: selection.from - 2,
+          to: selection.from,
+        });
+        complete(getPrevText(e.editor, { chars: 5000 })); // I probably should aim for the whole story text
+        // va.track("Autocomplete Shortcut Used")
+        console.log("Autocomplete Shortcut Used");
+      } else {
+        // whatever you would do if last two are not ++
+        // I wonder if I could trigger spontaneous feedback by the AI
+        // with a voiceover, that would be cool
+      }
+    },
   });
+
+  //#endregion ****** TIPTAP EDITOR END ******
+
+  const prev = useRef("");
+  useEffect(() => {
+    const diff = completion.slice(prev.current.length);
+    prev.current = completion;
+    editor?.commands.insertContent(diff);
+  }, [isLoading, editor, completion]);
 
   if (!editor) {
     return null;
   }
-
   return (
     <div className={editorContainerClass}>
       <EditorContent editor={editor} />
