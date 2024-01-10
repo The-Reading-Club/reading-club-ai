@@ -1,3 +1,5 @@
+// https://github.com/ueberdosis/tiptap/blob/develop/packages/react/src/BubbleMenu.tsx
+
 import {
   BubbleMenuPlugin,
   BubbleMenuPluginProps,
@@ -34,7 +36,18 @@ export const CustomBubbleMenu = (props: BubbleMenuProps) => {
     const {
       pluginKey = "bubbleMenu",
       editor,
-      tippyOptions = {},
+      tippyOptions = {
+        getReferenceClientRect: (): DOMRect => {
+          const element = document.querySelector(".custom-suggestion");
+          if (element) {
+            // Assuming getBoundingClientRect is available on the element
+            return element.getBoundingClientRect();
+          } else {
+            // Fallback to a default DOMRect if the element is not found
+            return new DOMRect();
+          }
+        },
+      },
       updateDelay,
       shouldShow = () => true,
     } = props;
@@ -79,14 +92,14 @@ export const CustomBubbleMenu = (props: BubbleMenuProps) => {
 
             // document.querySelector(".custom-suggestion")?.insertAdjacentHTML()
 
-            setElement(
-              document.querySelector(".custom-suggestion") as HTMLDivElement
-            );
-          } else {
-            dom.textContent = dom.textContent == "HELLO" ? "WORLD" : "HELLO";
-
-            setElement(dom);
+            // setElement(
+            //   document.querySelector(".custom-suggestion") as HTMLDivElement
+            // );
           }
+          dom.textContent = dom.textContent == "HELLO" ? "WORLD" : "HELLO";
+
+          setElement(dom);
+
           //   setElement(
           //     dom.parentElement.querySelector(".custom-suggestion") as HTMLElement
           //   );
