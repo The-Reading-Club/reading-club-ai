@@ -3,10 +3,22 @@ import React, { useEffect, useRef, useState } from "react";
 import { Message, useChat } from "ai/react";
 
 import { useDebouncedCallback } from "use-debounce";
+import { caveStoryTestTipTapJSON } from "../TRCEditorV2";
 
 const TRCChatVO = () => {
   const { input, handleInputChange, handleSubmit, isLoading, messages } =
-    useChat();
+    useChat({
+      initialMessages: [
+        {
+          id: "1",
+          content:
+            "\n\nCurrent story draft context: \n```\n" +
+            JSON.stringify(caveStoryTestTipTapJSON) +
+            "\n```",
+          role: "system",
+        },
+      ],
+    });
 
   // msgs
   console.log("TRCChatVO messages", messages);
@@ -51,11 +63,22 @@ const TRCChatVO = () => {
     }
   }, []);
 
+  // Ref for the submit button
+  const submitButtonRef = useRef<HTMLButtonElement>(null);
+
+  // Function to handle key press in textarea
+  const handleKeyPress = (event: React.KeyboardEvent<HTMLTextAreaElement>) => {
+    if (event.key === "Enter" && !event.shiftKey) {
+      event.preventDefault();
+      submitButtonRef.current?.click();
+    }
+  };
+
   return (
     <div
       className="bg-secondary p-3 rounded-md text-brownFont"
       style={{
-        border: "5px solid purple",
+        // border: "5px solid purple",
         height: "100vh", // could be max height
         display: "flex",
         flexDirection: "column",
@@ -66,23 +89,34 @@ const TRCChatVO = () => {
         <div ref={containerRef} className="overflow-scroll">
           <div>
             <h3 className="text-lg font-semibold mt-2">Coauthor</h3>
-            <p>I am here to help you write a story 10x faster</p>
+            {/* <p>I am here to help you write a story 10x faster</p> */}
+            <p>
+              I am here to help you write a story <strong>10x faster</strong>,
+              so that you can share it with your kids and extended family!
+            </p>
+            {/* <p>
+              I am here to help you write a story you can share with your kids
+              and extended family 10x faster
+            </p> */}
           </div>
-          <div>
+          {/* <div>
             <h3 className="text-lg font-semibold mt-2">Jose</h3>
             <p>
               Write a story that teaches a kid about the economy. The morale is
               that a free market is not a zero-sum game.
             </p>
-          </div>
-          {messages.map((msg: Message, i: number) => (
-            <div key={`msg-${msg.id}-${i}`}>
-              <h3 className="text-lg font-semibold mt-2">
-                {msg.role == "assistant" ? "Coauthor" : "Jose"}
-              </h3>
-              <p style={{ whiteSpace: "preserve-breaks" }}>{msg.content}</p>
-            </div>
-          ))}
+          </div> */}
+          {messages.map((msg: Message, i: number) => {
+            if (msg.role == "system") return <></>;
+            return (
+              <div key={`msg-${msg.id}-${i}`}>
+                <h3 className="text-lg font-semibold mt-2">
+                  {msg.role == "assistant" ? "Coauthor" : "Jose"}
+                </h3>
+                <p style={{ whiteSpace: "preserve-breaks" }}>{msg.content}</p>
+              </div>
+            );
+          })}
           <div ref={messagesEndRef} />
         </div>
         {!isAutoScrollActive && (
@@ -131,9 +165,12 @@ const TRCChatVO = () => {
             placeholder="Message Coauthor..."
             value={input}
             onChange={handleInputChange}
+            onKeyDown={handleKeyPress} // Attach the key press handler here
           />
         </div>
-        <button className="trcButton">Send message</button>
+        <button ref={submitButtonRef} className="trcButton">
+          Send message
+        </button>
       </form>
     </div>
   );

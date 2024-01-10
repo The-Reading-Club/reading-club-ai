@@ -1,7 +1,15 @@
 "use client";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 
-import { EditorContent, JSONContent, useEditor } from "@tiptap/react";
+import {
+  BubbleMenu,
+  Editor,
+  EditorContent,
+  FloatingMenu,
+  // FloatingMenuProps, // excludes element
+  JSONContent,
+  useEditor,
+} from "@tiptap/react";
 import StarterKit from "@tiptap/starter-kit";
 import Document from "@tiptap/extension-document";
 import Heading from "@tiptap/extension-heading";
@@ -24,6 +32,19 @@ import "@/styles/prosemirror.css";
 import { getPrevText } from "@/lib/editor";
 import { useCompletion } from "ai/react";
 
+// https://github.com/ueberdosis/tiptap/blob/develop/packages/extension-highlight/src/highlight.ts
+// https://www.npmjs.com/package/@tiptap/extension-highlight
+// https://tiptap.dev/docs/editor/api/marks/highlight
+import Highlight from "@tiptap/extension-highlight";
+import TRCEditorBubbleMenu from "./TRCEditorBubbleMenu";
+import { CustomHighlight } from "./extensions/custom-highlitght";
+import { CustomSuggestion } from "./extensions/custom-suggestion";
+import { BubbleMenu as BubbleMenuExtension } from "@tiptap/extension-bubble-menu";
+// import FloatingMenu from "@tiptap/extension-floating-menu";
+
+import useMounted from "@/lib/hooks/useMounted";
+import { CustomBubbleMenu } from "./CustomBubbleMenu";
+
 interface TRCEditorV2Props {
   editorContent?: JSONContent | string;
   bgClass?: string;
@@ -31,12 +52,48 @@ interface TRCEditorV2Props {
   editorContainerClass?: string;
 }
 
+const MenuOne: React.FC<{ editor: any }> = ({ editor }) => {
+  // Only display this menu if some condition is met
+  if (!editor || true) {
+    return null;
+  }
+
+  // Menu content for menu one
+  return (
+    <div className="bubble-menu menu-one">
+      <button onClick={() => editor.chain().focus().toggleBold().run()}>
+        Bold
+      </button>
+      {/* Add more buttons/options as needed */}
+    </div>
+  );
+};
+
+const MenuTwo: React.FC<{ editor: any }> = ({ editor }) => {
+  // Only display this menu if some condition is met
+  if (!editor || true) {
+    return null;
+  }
+
+  // Menu content for menu two
+  return (
+    <div className="bubble-menu menu-two">
+      <button onClick={() => editor.chain().focus().toggleItalic().run()}>
+        Italic
+      </button>
+      {/* Add more buttons/options as needed */}
+    </div>
+  );
+};
+
 const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   editorContent,
   bgClass = "bg-[#FAF8DA]",
   fontClass = garamondFont.className,
   editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll`,
 }) => {
+  const mounted = useMounted();
+
   //#region ****** USE COMPLETION START ******
   const { complete, completion, isLoading, stop } = useCompletion({
     id: "trc-editor-v2",
@@ -84,8 +141,35 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
         },
       }),
       Link,
+      // Highlight.configure({
+      //   HTMLAttributes: {
+      //     class: "bg-primary",
+      //   },
+      // }),
+      // CustomHighlight.configure({
+      //   HTMLAttributes: {
+      //     class: "bg-primary",
+      //   },
+      // }),
+      CustomSuggestion.configure({
+        HTMLAttributes: {
+          class: "bg-primary",
+        },
+      }),
+      // BubbleMenuExtension.configure({
+      //   pluginKey: "bubbleMenuOne",
+      //   // This should target your menu's root element
+      //   element:
+      //     mounted == true
+      //       ? (document.querySelector(".custom-suggestion") as HTMLElement)
+      //       : null,
+      //   shouldShow: ({ editor }) => true,
+      // }),
+      // FloatingMenu.configure({
+      //   element: document.querySelector(".custom-suggestion") as HTMLElement,
+      // }),
     ],
-    content: editorContent ?? myOwnDamnEditorContent,
+    content: editorContent ?? caveStoryTestTipTapJSON,
     editorProps: {
       attributes: {
         //    class: `novel-prose-lg novel-prose-stone dark:novel-prose-invert prose-headings:novel-font-title novel-font-default focus:novel-outline-none novel-max-w-full`,
@@ -102,7 +186,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
       });
 
       if (lastTwo == "++" && !isLoading) {
-        alert("Autocomplete Shortcut Used");
+        // alert("Autocomplete Shortcut Used");
         e.editor.commands.deleteRange({
           from: selection.from - 2,
           to: selection.from,
@@ -125,14 +209,54 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     const diff = completion.slice(prev.current.length);
     prev.current = completion;
     editor?.commands.insertContent(diff);
+    // editor?.commands.setHighlight();
+    // editor?.commands.setCustomHighlight();
+    editor?.commands.setCustomSuggestion();
+    // updateSuggestionButtonsPosition();
   }, [isLoading, editor, completion]);
+
+  // Dummy function for handling accept/reject
+  // const handleSuggestionAction = () => {
+  //   console.log("Suggestion action handled");
+  // };
+
+  // const [suggestionButtonsPosition, setSuggestionButtonsPosition] = useState({
+  //   top: 0,
+  //   left: 0,
+  // });
+  // const updateSuggestionButtonsPosition = () => {
+  //   const suggestionElement = document.querySelector(".custom-suggestion");
+
+  //   if (suggestionElement) {
+  //     const rect = suggestionElement.getBoundingClientRect();
+  //     setSuggestionButtonsPosition({
+  //       top: rect.top,
+  //       left: rect.left,
+  //     });
+  //   }
+  // };
+
+  const menuOneRef = useRef<HTMLDivElement>(null);
+  const menuTwoRef = useRef<HTMLDivElement>(null);
 
   if (!editor) {
     return null;
   }
+
   return (
     <div className={editorContainerClass}>
       <EditorContent editor={editor} />
+      <TRCEditorBubbleMenu editor={editor} />
+      {/* {false && (
+        <BubbleMenu editor={editor}>
+          <h1>HELLO WORLD</h1>
+        </BubbleMenu>
+      )} */}
+      {/* <FloatingMenu className="test" editor={editor}></FloatingMenu> */}
+      <CustomBubbleMenu editor={editor}>
+        {" "}
+        <h1>HOPE THIS WORKS</h1>
+      </CustomBubbleMenu>
     </div>
   );
 };
@@ -739,9 +863,31 @@ const testcontent: JSONContent = {
     },
   ],
 };
-const myOwnDamnEditorContent: JSONContent = {
+
+export const caveStoryTestTipTapJSON: JSONContent = {
   type: "doc",
   content: [
+    // {
+    //   type: "paragraph",
+    //   content: [
+    //     {
+    //       type: "text",
+    //       text: "This is a sample text with ",
+    //       marks: [
+    //         {
+    //           type: "highlight",
+    //           attrs: {
+    //             color: "yellow",
+    //           },
+    //         },
+    //       ],
+    //     },
+    //     {
+    //       type: "text",
+    //       text: " highlighted portion.",
+    //     },
+    //   ],
+    // },
     {
       type: "heading",
       attrs: { level: 1 },

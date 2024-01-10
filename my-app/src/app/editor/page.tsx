@@ -8,13 +8,16 @@ import TRCEditorV2 from "@/components/TRCEditorV2";
 const page = () => {
   return (
     <div //className="h-[100%] overflow-auto"
-      style={{
-        // height: "100vh",
-        border: "2px solid red",
-        // overflow: "scroll",
-        // overflow: "scroll",
-        // height: 100,
-      }}
+      className="bg-secondary px-3"
+      style={
+        {
+          // height: "100vh",
+          // border: "2px solid red",
+          // overflow: "scroll",
+          // overflow: "scroll",
+          // height: 100,
+        }
+      }
     >
       <div
         // className="flex justify-around overflow-scroll"
@@ -23,7 +26,7 @@ const page = () => {
           flexDirection: "row",
           alignItems: "center",
           // justifyContent: "center",
-          border: "5px solid green",
+          // border: "5px solid green",
           // width: "1000px",
           // overflow: "scroll",
           // scrollPaddingLeft: 1000,
@@ -43,7 +46,7 @@ const page = () => {
             height: "100vh", // could be max height
             // minWidth: "500px",
             minWidth: "60%",
-            border: "5px solid black",
+            // border: "5px solid black",
           }}
         >
           <TRCEditorV2 />
