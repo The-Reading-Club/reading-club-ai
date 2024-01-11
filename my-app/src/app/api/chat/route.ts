@@ -3,6 +3,9 @@
 import { Configuration, OpenAIApi } from "openai-edge";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 
+import OpenAI from "openai";
+const openaiOfficialSDK = new OpenAI({ apiKey: process.env.OAI_KEY });
+
 export const runtime = "edge";
 
 const config = new Configuration({
@@ -27,6 +30,14 @@ export async function POST(request: Request) {
       { role: "system", content: "You are a children's book coauthor." },
       ...messages,
     ],
+  });
+
+  const test = await openaiOfficialSDK.chat.completions.create({
+    model: "gpt-4",
+    stream: true,
+    // https://medium.com/@vishalkalia.er/experimenting-with-gpt-4-turbos-json-mode-a-new-era-in-ai-data-structuring-58d38409f1c7
+    response_format: { type: "json_object" },
+    messages: [],
   });
 
   // create a stream of data from OpenAI (stream data to the frontend)

@@ -46,10 +46,16 @@ import { BubbleMenu as BubbleMenuExtension } from "@tiptap/extension-bubble-menu
 
 import useMounted from "@/lib/hooks/useMounted";
 import { CustomBubbleMenu } from "./CustomBubbleMenu";
-import { caveStoryTestTipTapJSON } from "./default-content";
+import {
+  caveStoryTestTipTapJSON,
+  caveStoryTestTipTapJSONV2,
+  contentWithSuggestions,
+} from "./default-content";
 import { useTRCEditorStore } from "@/stores/store";
 import { Mark } from "@tiptap/pm/model";
 import { BoldIcon, CheckIcon, X, XIcon } from "lucide-react";
+
+import { diffChars } from "diff";
 
 interface TRCEditorV2Props {
   editorContent?: JSONContent | string;
@@ -196,7 +202,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     // editor?.commands.setCustomSuggestion();
 
     // https://chat.openai.com/c/8e11d054-304c-4aa7-ada6-bf7691d629bd
-    if (editor?.isActive("customSuggestion") == false) {
+    if (false && editor?.isActive("customSuggestion") == false) {
       alert("Setting a new suggestion!");
       editor.commands.setCustomSuggestion({
         // color: "blue",
@@ -209,6 +215,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   const editorRef = useRef<Editor | null>(null);
   useEffect(() => {
     editorRef.current = editor;
+    updateExtensionsState();
   }, [editor]);
 
   type CustomSuggestionMarkAttrs = {
@@ -257,6 +264,28 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   //     });
   //   }
   // };
+
+  useEffect(() => {
+    if (editor) {
+      // const diffs = diffChars(
+      //   JSON.stringify(caveStoryTestTipTapJSON),
+      //   JSON.stringify(caveStoryTestTipTapJSONV2)
+      // );
+      // let formattedContent = [];
+      // diffs.forEach((part) => {
+      //   const span = part.added
+      //     ? {
+      //         type: "paragraph",
+      //       }`<span class="bg-green-200">${part.value}</span>`
+      //     : part.removed
+      //     ? `<span class="bg-red-200">${part.value}</span>`
+      //     : `<span>${part.value}</span>`;
+      //   formattedContent += span;
+      // });
+      editor.commands.setContent(contentWithSuggestions);
+      updateExtensionsState();
+    }
+  }, [editor]);
 
   if (!editor) {
     return null;
