@@ -18,7 +18,81 @@ interface TRCBubbleMenuItem {
 interface TRCBubbleMenuProps {
   bubbleMenuItems?: TRCBubbleMenuItem[];
   editor: Editor;
+  customTippyOptions?: any;
+  customBubbleMenuProps?: TiptapBubbleMenuProps;
+  containerClassName?: string;
+  buttonClassName?: string;
 }
+
+type TiptapBubbleMenuProps = Omit<BubbleMenuProps, "children">;
+
+const TRCEditorBubbleMenu: React.FC<TRCBubbleMenuProps> = (props) => {
+  const {
+    editor,
+    bubbleMenuItems = defaultBubbleMenuItems,
+    customTippyOptions,
+    customBubbleMenuProps,
+    containerClassName = "bg-white divide-x divide-stone-200 rounded border border-stone-200 shadow-xl",
+    buttonClassName = "p-2 text-stone-600 hover:bg-stone-100 active:bg-stone-200",
+  } = props;
+
+  const tiptapBubbleMenuProps: TiptapBubbleMenuProps = {
+    ...props, // I wonder why it doesn't work if I don't do it this way
+    shouldShow: ({ state, editor }) => {
+      return false;
+      const { selection } = state;
+      const { empty } = selection;
+
+      if (editor.isActive("image") || empty) return false;
+
+      return true;
+    },
+    tippyOptions: {
+      // what is this for?
+      moveTransition: "transform 0.15s ease-out",
+      onHidden: () => {
+        // console.log("hidden");
+      },
+      ...customTippyOptions,
+    },
+    ...customBubbleMenuProps,
+  };
+
+  return (
+    <div>
+      {/* <h1>HELLO WORLD TEST 1</h1> */}
+      {/*       className="novel-flex novel-w-fit novel-divide-x novel-divide-stone-200 novel-rounded novel-border novel-border-stone-200 novel-bg-white novel-shadow-xl"
+       */}
+      <TiptapBubbleMenu
+        {...tiptapBubbleMenuProps}
+        className={containerClassName}
+      >
+        {/* <h1>HELLO WORLD TEST 2</h1> */}
+        {bubbleMenuItems.map((item, index) => (
+          <button
+            key={"bubble-menu-item-" + index}
+            onClick={() => item.command(editor)}
+            className={buttonClassName}
+            type="button"
+          >
+            <item.icon
+              size={24}
+              className={cn(
+                "novel-h-4 novel-w-4",
+                // this is for when it's bolded already, for example
+                {
+                  "text-blue-500": item.isActive(editor),
+                }
+              )}
+            />
+          </button>
+        ))}
+      </TiptapBubbleMenu>
+    </div>
+  );
+};
+
+export default TRCEditorBubbleMenu;
 
 const defaultBubbleMenuItems: TRCBubbleMenuItem[] = [
   {
@@ -106,64 +180,3 @@ const defaultBubbleMenuItems: TRCBubbleMenuItem[] = [
   //     icon: BoldIcon,
   //   },
 ];
-
-type TiptapBubbleMenuProps = Omit<BubbleMenuProps, "children">;
-
-const TRCEditorBubbleMenu: React.FC<TRCBubbleMenuProps> = (props) => {
-  const { editor, bubbleMenuItems = defaultBubbleMenuItems } = props;
-
-  const tiptapBubbleMenuProps: TiptapBubbleMenuProps = {
-    ...props, // I wonder why it doesn't work if I don't do it this way
-    shouldShow: ({ state, editor }) => {
-      return false;
-      const { selection } = state;
-      const { empty } = selection;
-
-      if (editor.isActive("image") || empty) return false;
-
-      return true;
-    },
-    tippyOptions: {
-      // what is this for?
-      moveTransition: "transform 0.15s ease-out",
-      onHidden: () => {
-        // console.log("hidden");
-      },
-    },
-  };
-
-  return (
-    <div>
-      {/* <h1>HELLO WORLD TEST 1</h1> */}
-      {/*       className="novel-flex novel-w-fit novel-divide-x novel-divide-stone-200 novel-rounded novel-border novel-border-stone-200 novel-bg-white novel-shadow-xl"
-       */}
-      <TiptapBubbleMenu
-        {...tiptapBubbleMenuProps}
-        className="bg-white divide-x divide-stone-200 rounded border border-stone-200 shadow-xl"
-      >
-        {/* <h1>HELLO WORLD TEST 2</h1> */}
-        {bubbleMenuItems.map((item, index) => (
-          <button
-            key={"bubble-menu-item-" + index}
-            onClick={() => item.command(editor)}
-            className="p-2 text-stone-600 hover:bg-stone-100 active:bg-stone-200"
-            type="button"
-          >
-            <item.icon
-              size={24}
-              className={cn(
-                "novel-h-4 novel-w-4",
-                // this is for when it's bolded already, for example
-                {
-                  "text-blue-500": item.isActive(editor),
-                }
-              )}
-            />
-          </button>
-        ))}
-      </TiptapBubbleMenu>
-    </div>
-  );
-};
-
-export default TRCEditorBubbleMenu;

@@ -1,6 +1,8 @@
 // https://tiptap.dev/docs/editor/api/extensions/bubble-menu
 // I will need something like a bubble menu
 
+// https://github.com/ueberdosis/tiptap/blob/develop/packages/extension-highlight/src/highlight.ts
+
 import {
   Mark,
   markInputRule,
@@ -22,11 +24,17 @@ declare module "@tiptap/core" {
       /**
        * Set a custom Suggestion mark
        */
-      setCustomSuggestion: (attributes?: { color: string }) => ReturnType;
+      setCustomSuggestion: (attributes?: {
+        color?: string;
+        uuid: string;
+      }) => ReturnType;
       /**
        * Toggle a custom Suggestion mark
        */
-      toggleCustomSuggestion: (attributes?: { color: string }) => ReturnType;
+      toggleCustomSuggestion: (attributes?: {
+        color?: string;
+        uuid: string;
+      }) => ReturnType;
       /**
        * Unset a custom Suggestion mark
        */
@@ -45,9 +53,16 @@ export const CustomSuggestion = Mark.create<CustomSuggestionOptions>({
   },
 
   addAttributes() {
-    if (!this.options.multicolor) {
-      return {};
-    }
+    // extension option
+    // I don't see why constraining shit so much.
+    // It works out whether the user gives a color or not
+    // This thing really messes everything up.
+    // I ALWAYS WANT THE PARSING OF MY CONTENT
+
+    // https://chat.openai.com/c/8e11d054-304c-4aa7-ada6-bf7691d629bd
+    // if (!this.options.multicolor) {
+    //   return {};
+    // }
 
     const attributes: Record<string, any> = {
       color: {
@@ -61,17 +76,28 @@ export const CustomSuggestion = Mark.create<CustomSuggestionOptions>({
 
           return {
             "data-color": attributes.color,
-            style: `background-color: ${attributes.color} color: inherit`,
+            style: `background-color: ${attributes.color}; color: inherit`,
+          };
+        },
+      },
+      uuid: {
+        default: null,
+        parseHTML: (element: HTMLElement) => {
+          const uuid = element.getAttribute("data-suggestion-id");
+          console.log("Parsed uuid:", uuid); // Debug log
+          return uuid;
+        },
+        renderHTML: (attributes: Record<string, any>) => {
+          if (!attributes.uuid) {
+            return {};
+          }
+
+          return {
+            "data-suggestion-id": attributes.uuid,
           };
         },
       },
     };
-
-    if (this.options.multicolor) {
-      attributes["data-suggestion-id"] = {
-        default: null,
-      };
-    }
 
     return attributes;
   },
@@ -86,7 +112,8 @@ export const CustomSuggestion = Mark.create<CustomSuggestionOptions>({
 
   renderHTML({ HTMLAttributes }) {
     // Generate a unique iD for each highlight instance
-    const suggestionId = HTMLAttributes["data-suggestion-id"] || uuidv4();
+    const suggestionId =
+      HTMLAttributes["data-suggestion-id"] || "uuidv4() FROM RENDER HTML";
 
     // Merge the unique ID into the existing HTML attributes
     const mergedAttributes = mergeAttributes(

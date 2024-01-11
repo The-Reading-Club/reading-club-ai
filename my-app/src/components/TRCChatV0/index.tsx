@@ -3,7 +3,7 @@ import React, { useEffect, useRef, useState } from "react";
 import { Message, useChat } from "ai/react";
 
 import { useDebouncedCallback } from "use-debounce";
-import { caveStoryTestTipTapJSON } from "../TRCEditorV2";
+import { caveStoryTestTipTapJSON } from "../TRCEditorV2/default-content";
 
 const TRCChatVO = () => {
   const { input, handleInputChange, handleSubmit, isLoading, messages } =

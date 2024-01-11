@@ -77,6 +77,10 @@ export const CustomBubbleMenu = (props: BubbleMenuProps) => {
   return (
     <div
       ref={(dom) => {
+        setElement(dom);
+        // return;
+
+        /* TESTS START
         if (dom) {
           dom.style.border = "5px solid red";
           if (dom.parentElement != null) {
@@ -96,7 +100,7 @@ export const CustomBubbleMenu = (props: BubbleMenuProps) => {
             //   document.querySelector(".custom-suggestion") as HTMLDivElement
             // );
           }
-          dom.textContent = dom.textContent == "HELLO" ? "WORLD" : "HELLO";
+          //   dom.textContent = dom.textContent == "HELLO" ? "WORLD" : "HELLO";
 
           setElement(dom);
 
@@ -104,6 +108,8 @@ export const CustomBubbleMenu = (props: BubbleMenuProps) => {
           //     dom.parentElement.querySelector(".custom-suggestion") as HTMLElement
           //   );
         }
+        */ //TESTS START
+
         // setElement(
         //   document.querySelector(".custom-suggestion") as HTMLDivElement
         // );
