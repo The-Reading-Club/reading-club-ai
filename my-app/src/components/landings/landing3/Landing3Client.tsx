@@ -380,9 +380,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                     }}
                   >
                     {/* <ReadingClubEditor editorContent={storyData} /> */}
-                    <TRCEditorV2
-                    // editorContent={storyData}
-                    />
+                    <TRCEditorV2 editorContent={storyData} />
                   </div>
                 );
               })}
