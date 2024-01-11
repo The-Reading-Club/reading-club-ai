@@ -74,6 +74,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 
   // Suggestions state
   const { suggestionsIDs, setSuggestionsIDs } = useTRCEditorStore();
+  // const [suggestionsIDs, setSuggestionsIDs] = useState<string[]>([]);
 
   //#region ****** USE COMPLETION START ******
   const { complete, completion, isLoading, stop } = useCompletion({
@@ -194,7 +195,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   useEffect(() => {
     const diff = completion.slice(prev.current.length);
     prev.current = completion;
-    editor?.commands.insertContent(diff);
+
     // editor?.commands.setHighlight();
     // editor?.commands.setCustomHighlight();
 
@@ -203,14 +204,21 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     // editor?.commands.setCustomSuggestion();
 
     // https://chat.openai.com/c/8e11d054-304c-4aa7-ada6-bf7691d629bd
-    if (editor?.isActive("customSuggestion") == false && diff != "") {
-      alert("Setting a new suggestion! " + diff);
+    if (editor?.isActive("customSuggestion") == false && completion != "") {
+      // alert("Setting a new suggestion! " + completion);
       editor.commands.setCustomSuggestion({
         // color: "blue",
         uuid: uuidv4(),
       });
     }
+    // else {
+    //   alert(
+    //     "Missing the first time??? diff: " + diff + " completion: " + completion
+    //   );
+    // }
     // updateSuggestionButtonsPosition();
+
+    editor?.commands.insertContent(diff);
   }, [isLoading, editor, completion]);
 
   const editorRef = useRef<Editor | null>(null);
@@ -288,14 +296,21 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     }
   }, [editor]);
 
+  useEffect(() => {
+    console.log(suggestionsIDs);
+    // Additional logs if necessary
+  }, [suggestionsIDs]);
+
   if (!editor) {
     return null;
   }
 
   return (
     <div className={editorContainerClass}>
-      {/* <p>{JSON.stringify({ suggestionsIDs })}</p> */}
-      <EditorContent editor={editor} />
+      <p>{JSON.stringify({ suggestionsIDs })}</p>
+      <div>
+        <EditorContent editor={editor} />
+      </div>
       <TRCEditorBubbleMenu editor={editor} />
       {/* {false && (
         <BubbleMenu editor={editor}>
@@ -304,13 +319,20 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
       )} */}
       {/* <FloatingMenu className="test" editor={editor}></FloatingMenu> */}
       {suggestionsIDs.map((suggestionID, i) => {
+        // alert("Rendering " + suggestionID);
+        console.log("RENDERING " + suggestionsIDs);
+        console.log("THIS ONE" + suggestionID);
         return (
+          // <BubbleMenuPortal key={`portal-${suggestionID}`}>
           <TRCEditorBubbleMenu
-            key={`suggestion-bubble-menu-${i}`}
+            key={`suggestion-bubble-menu-TRC-${suggestionID}`}
             editor={editor}
             customTippyOptions={{
               getReferenceClientRect: (): DOMRect => {
-                const element = document.querySelector(".custom-suggestion");
+                const element = document.querySelector(
+                  // https://chat.openai.com/c/b9b1cdbf-2bf5-47f9-8439-9a418ccc774e
+                  `.custom-suggestion[data-suggestion-id="${suggestionID}"]`
+                );
                 if (element) {
                   // Assuming getBoundingClientRect is available on the element
                   return element.getBoundingClientRect();
@@ -320,16 +342,20 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
                 }
               },
             }}
-            customBubbleMenuProps={{ shouldShow: () => true }}
+            customBubbleMenuProps={{
+              shouldShow: () => true,
+              pluginKey: `pluginkey-bubble-menu-suggestion-${suggestionID}`,
+            }}
             bubbleMenuItems={[
               {
                 name: "accept",
                 command: () => {
-                  alert("accept");
+                  alert("accept " + suggestionID);
                   removeMarkWithId(editor, "customSuggestion", suggestionID);
-                  setSuggestionsIDs(
-                    suggestionsIDs.filter((id) => id != suggestionID)
-                  );
+                  // return;
+                  setSuggestionsIDs([
+                    ...suggestionsIDs.filter((id) => id != suggestionID),
+                  ]);
                 },
                 isActive: () => false,
                 icon: CheckIcon,
@@ -337,16 +363,18 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
               {
                 name: "reject",
                 command: () => {
-                  alert("reject");
+                  alert("reject " + suggestionID);
+                  // return;
                   removeMarkWithId(
                     editor,
                     "customSuggestion",
                     suggestionID,
                     true
                   );
-                  setSuggestionsIDs(
-                    suggestionsIDs.filter((id) => id != suggestionID)
-                  );
+                  // return;
+                  setSuggestionsIDs([
+                    ...suggestionsIDs.filter((id) => id != suggestionID),
+                  ]);
                 },
                 isActive: () => false,
                 icon: XIcon,
@@ -356,14 +384,17 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
             buttonClassName="p-2 text-white hover:bg-accent active:bg-accent2"
           >
             {/* <h1>TEST</h1>
-            <button className=""></button> */}
+      <button className=""></button> */}
           </TRCEditorBubbleMenu>
+
+          // </BubbleMenuPortal>
         );
       })}
       {/* <CustomBubbleMenu editor={editor}>
         <h1 className="bg-red-200">TEST</h1>
         <button className=""></button>
       </CustomBubbleMenu> */}
+      <div id="bubble-menu-root"></div>
     </div>
   );
 };
@@ -397,3 +428,68 @@ function removeMarkWithId(
   // https://chat.openai.com/c/8d391210-3ceb-4d28-a092-10d7b4bdb640 gold
   editor.view.dispatch(tr);
 }
+
+//  AMAZING CODE, I AM USING A DIFFERENT KIND OF BUBBLE MENU RIGHT NOW
+
+// <div key={`suggestion-bubble-menu-FRAGMENT-${suggestionID}`}>
+// <BubbleMenu
+//   key={`suggestion-bubble-menu-TIPTAP-${suggestionID}`}
+//   // https://chat.openai.com/c/b27ce5e7-dbc2-4d9c-9f0a-1260e2fee818
+//   // https://tiptap.dev/docs/editor/api/extensions/floating-menu
+//   // WITHOUT PLUGIN KEY, TIPPY DOESN'T WORK, REACT THINKS IT'S STILL THERE
+//   // WHEN IS NOT
+//   pluginKey={`pluginkey-bubble-menu-suggestion-${suggestionID}`}
+//   editor={editor}
+//   shouldShow={() => true}
+//   tippyOptions={{
+//     getReferenceClientRect: (): DOMRect => {
+//       const element = document.querySelector(
+//         // https://chat.openai.com/c/b9b1cdbf-2bf5-47f9-8439-9a418ccc774e
+//         `.custom-suggestion[data-suggestion-id="${suggestionID}"]`
+//       );
+//       if (element) {
+//         // Assuming getBoundingClientRect is available on the element
+//         return element.getBoundingClientRect();
+//       } else {
+//         // Fallback to a default DOMRect if the element is not found
+//         return new DOMRect();
+//       }
+//     },
+//   }}
+// >
+//   <h1>{suggestionID}</h1>
+//   <button
+//     key={`suggestion-bubble-menu-ACCEPT-${suggestionID}`}
+//     onClick={() => {
+//       alert("accept " + suggestionID);
+//       removeMarkWithId(editor, "customSuggestion", suggestionID);
+//       // return;
+//       // setSuggestionsIDs([
+//       //   ...suggestionsIDs.filter((id) => id != suggestionID),
+//       // ]);
+
+//       updateExtensionsState();
+//     }}
+//   >
+//     ACCEPT
+//   </button>
+//   <button
+//     key={`suggestion-bubble-menu-REJECT-${suggestionID}`}
+//     onClick={() => {
+//       alert("reject " + suggestionID);
+//       // return;
+//       removeMarkWithId(
+//         editor,
+//         "customSuggestion",
+//         suggestionID,
+//         true
+//       );
+//       // return;
+
+//       updateExtensionsState();
+//     }}
+//   >
+//     REJECT
+//   </button>
+// </BubbleMenu>
+// </div>
