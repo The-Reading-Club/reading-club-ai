@@ -307,7 +307,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 
   return (
     <div className={editorContainerClass}>
-      <p>{JSON.stringify({ suggestionsIDs })}</p>
+      {/* <p>{JSON.stringify({ suggestionsIDs })}</p> */}
       <div>
         <EditorContent editor={editor} />
       </div>
