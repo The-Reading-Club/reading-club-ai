@@ -69,3 +69,15 @@ body {
 button {
   border: "2px solid black";
 }
+
+.trcButton {
+  @apply mt-4 px-4 py-2 bg-[#FFF] text-darkFont rounded hover:bg-[#FFF] rounded-full border-2 border-[#FFC122];
+}
+
+/* test */
+.suggestion-buttons {
+  position: absolute;
+  display: flex;
+  gap: 8px;
+  /* Additional styling */
+}

@@ -3,6 +3,19 @@ import type { Config } from "tailwindcss";
 // import { DarkModeConfig } from "tailwindcss/types/config";
 
 const config: Config = {
+  theme: {
+    extend: {
+      colors: {
+        primary: "#FFC122",
+        secondary: "#FAF8DA",
+        secondary2: "#FCF29A",
+        accent: "#FCA436",
+        accent2: "#F5911F",
+        brownFont: "#7B3F00",
+        darkFont: "#3c4043",
+      },
+    },
+  },
   // theme: {
   //   extend: {
   //     fontFamily: {
@@ -30,6 +43,6 @@ const config: Config = {
   //   },
   // },
   // plugins: [require("tailwindcss-animate")],
-  plugins: [require("@tailwindcss/typography")],
+  plugins: [require("@tailwindcss/typography"), require("tailwindcss-animate")],
 };
 export default config;
