@@ -24,6 +24,8 @@
     "@tiptap/starter-kit": "^2.1.13",
     "@types/diff": "^5.0.9",
     "@types/uuid": "^9.0.7",
+    "@upstash/ratelimit": "^1.0.0",
+    "@vercel/kv": "^1.0.1",
     "ai": "^2.2.31",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",

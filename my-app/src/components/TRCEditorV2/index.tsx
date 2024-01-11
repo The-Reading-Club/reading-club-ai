@@ -79,6 +79,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   const { complete, completion, isLoading, stop } = useCompletion({
     id: "trc-editor-v2",
     api: "api/generate",
+    // body:Extra body object to be sent with the API request.
     onFinish: (prompt, completion) => {
       editor?.commands.setTextSelection({
         // basically you set the cursor back to where it was
@@ -93,7 +94,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
       // toast.error(err.message)
       alert(err.message);
       // there's gotta be a more formal status code for this
-      if (err.message == "You have reached your request liit for the day.") {
+      if (err.message == "Rate limit exceeded for the day") {
         //va.track("Rate Limit Reached")
         alert("Rate Limit Reached");
       }
@@ -202,7 +203,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     // editor?.commands.setCustomSuggestion();
 
     // https://chat.openai.com/c/8e11d054-304c-4aa7-ada6-bf7691d629bd
-    if (false && editor?.isActive("customSuggestion") == false) {
+    if (editor?.isActive("customSuggestion") == false) {
       alert("Setting a new suggestion!");
       editor.commands.setCustomSuggestion({
         // color: "blue",
@@ -282,7 +283,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
       //     : `<span>${part.value}</span>`;
       //   formattedContent += span;
       // });
-      editor.commands.setContent(contentWithSuggestions);
+      // editor.commands.setContent(contentWithSuggestions);
       updateExtensionsState();
     }
   }, [editor]);
@@ -302,9 +303,10 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
         </BubbleMenu>
       )} */}
       {/* <FloatingMenu className="test" editor={editor}></FloatingMenu> */}
-      {suggestionsIDs.map((suggestionID) => {
+      {suggestionsIDs.map((suggestionID, i) => {
         return (
           <TRCEditorBubbleMenu
+            key={`suggestion-bubble-menu-${i}`}
             editor={editor}
             customTippyOptions={{
               getReferenceClientRect: (): DOMRect => {

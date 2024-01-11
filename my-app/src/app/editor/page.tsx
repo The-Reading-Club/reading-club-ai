@@ -34,7 +34,7 @@ const page = () => {
         }}
       >
         {/* <div> */}
-        <TRCChatVO />
+        {false && <TRCChatVO />}
         {/* </div> */}
         <div
           className="flex" // THIS IS THE PROBLEM
