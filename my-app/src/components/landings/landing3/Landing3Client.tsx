@@ -353,7 +353,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                 flexDirection: "row",
                 alignItems: "center",
                 // justifyContent: "center",
-                border: "5px solid green",
+                // border: "5px solid green",
                 // width: "1000px",
                 overflow: "scroll",
                 // scrollPaddingLeft: 1000,
@@ -376,7 +376,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                       height: "850px",
                       // minWidth: "500px",
                       minWidth: "60%",
-                      border: "5px solid black",
+                      // border: "5px solid black",
                     }}
                   >
                     {/* <ReadingClubEditor editorContent={storyData} /> */}

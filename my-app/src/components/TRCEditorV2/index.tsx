@@ -203,8 +203,8 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     // editor?.commands.setCustomSuggestion();
 
     // https://chat.openai.com/c/8e11d054-304c-4aa7-ada6-bf7691d629bd
-    if (editor?.isActive("customSuggestion") == false) {
-      alert("Setting a new suggestion!");
+    if (editor?.isActive("customSuggestion") == false && diff != "") {
+      alert("Setting a new suggestion! " + diff);
       editor.commands.setCustomSuggestion({
         // color: "blue",
         uuid: uuidv4(),
@@ -236,7 +236,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
       );
       suggestionMarks = [...suggestionMarks, ...nodeSuggestionsMarks];
     });
-    alert(JSON.stringify(suggestionMarks));
+    // alert(JSON.stringify(suggestionMarks));
     setSuggestionsIDs(
       suggestionMarks.map((mark) => {
         const attrs = mark.attrs;
@@ -294,7 +294,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 
   return (
     <div className={editorContainerClass}>
-      <p>{JSON.stringify({ suggestionsIDs })}</p>
+      {/* <p>{JSON.stringify({ suggestionsIDs })}</p> */}
       <EditorContent editor={editor} />
       <TRCEditorBubbleMenu editor={editor} />
       {/* {false && (
