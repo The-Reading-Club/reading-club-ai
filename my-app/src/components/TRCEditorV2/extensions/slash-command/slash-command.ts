@@ -1,10 +1,6 @@
-import { Editor, Extension } from "@tiptap/react";
+import { Editor, Extension, ReactRenderer } from "@tiptap/react";
 import { Suggestion as Hint } from "@tiptap/suggestion";
-
-interface CommandProps {
-  editor: Editor;
-  range: Range;
-}
+import { getHintItems } from "./CommandList";
 
 const Command = Extension.create({
   name: "slash-command",
@@ -12,7 +8,15 @@ const Command = Extension.create({
     return {
       hint: {
         char: "/",
-        command: ({ editor, range, props }: CommandProps & { props: any }) => {
+        command: ({
+          editor,
+          range,
+          props,
+        }: {
+          editor: Editor;
+          range: Range;
+          props: any;
+        }) => {
           props.command({ editor, range });
         },
       },
@@ -27,3 +31,20 @@ const Command = Extension.create({
     ];
   },
 });
+
+
+const renderItems = () => {
+  let component: ReactRenderer | null = null
+  let popup: any | null = null
+}
+
+// I could have added this on the react editor component
+const SlashCommand = Command.configure({
+  hint: {
+    items: getHintItems,
+    render: renderitem
+  }
+})
+
+
+export default 

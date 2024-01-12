@@ -124,7 +124,6 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   const editor = useEditor({
     extensions: [
       // I need to clean this super huge component
-
       Collaboration.configure({
         document: ydoc,
         field: editorKey,
