@@ -49,7 +49,7 @@ const page = () => {
             // border: "5px solid black",
           }}
         >
-          <TRCEditorV2 />
+          <TRCEditorV2 editorKey="trc-editor-page" />
         </div>
         {/* <div
           style={{

@@ -19,6 +19,14 @@ import Link from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 import Image from "@tiptap/extension-image";
 
+// https://tiptap.dev/docs/editor/api/extensions/collaboration
+import Collaboration from "@tiptap/extension-collaboration";
+import * as Y from "yjs";
+// https://github.com/ueberdosis/tiptap/blob/main/demos/src/Experiments/MultipleEditors/Vue/index.vue
+const ydoc = new Y.Doc();
+
+import { PluginKey } from "prosemirror-state";
+
 import { v4 as uuidv4 } from "uuid"; // Assuming you are using uuid for generating unique IDs
 
 import { EB_Garamond } from "next/font/google";
@@ -62,6 +70,7 @@ interface TRCEditorV2Props {
   bgClass?: string;
   fontClass?: string;
   editorContainerClass?: string;
+  editorKey: string;
 }
 
 const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
@@ -69,6 +78,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   bgClass = "bg-[#FAF8DA]",
   fontClass = garamondFont.className,
   editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll`,
+  editorKey,
 }) => {
   const mounted = useMounted();
 
@@ -104,8 +114,17 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   //#endregion ****** USE COMPLETION END ******
 
   //#region ****** TIPTAP EDITOR START ******
+
+  // Unique plugin keys
+  const customSuggestionPluginKey = new PluginKey("customSuggestionPlugin");
+  const imagePluginKey = new PluginKey("imagePlugin");
+
   const editor = useEditor({
     extensions: [
+      Collaboration.configure({
+        document: ydoc,
+        field: editorKey,
+      }),
       StarterKit,
       // duplicates in starterkit
       // Document,
