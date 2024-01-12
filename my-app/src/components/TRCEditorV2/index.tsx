@@ -64,6 +64,7 @@ import { Mark } from "@tiptap/pm/model";
 import { BoldIcon, CheckIcon, X, XIcon } from "lucide-react";
 
 import { diffChars } from "diff";
+import { dev } from "@/config";
 
 interface TRCEditorV2Props {
   editorContent?: JSONContent | string;
@@ -369,7 +370,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
               {
                 name: "accept",
                 command: () => {
-                  alert("accept " + suggestionID);
+                  if (dev == true) alert("accept " + suggestionID);
                   removeMarkWithId(editor, "customSuggestion", suggestionID);
                   // return;
                   setSuggestionsIDs([
@@ -382,7 +383,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
               {
                 name: "reject",
                 command: () => {
-                  alert("reject " + suggestionID);
+                  if (dev == true) alert("reject " + suggestionID);
                   // return;
                   removeMarkWithId(
                     editor,
