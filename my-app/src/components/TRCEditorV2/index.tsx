@@ -443,7 +443,7 @@ function removeMarkWithId(
       if (mark.type.name === markType) {
         const attrs = mark.attrs;
         if (attrs["uuid"] == uuid) {
-          alert("FOUND MARK AND REMOVING IT " + uuid);
+          if (dev == true) alert("FOUND MARK AND REMOVING IT " + uuid);
           tr.removeMark(pos, pos + node.nodeSize, mark);
           // https://chat.openai.com/c/6b311811-c9c5-481a-bb4f-5a872447aa5f gold too
           if (deleteRange == true) tr.deleteRange(pos, pos + node.nodeSize);
