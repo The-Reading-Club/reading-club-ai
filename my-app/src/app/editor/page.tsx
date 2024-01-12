@@ -21,10 +21,9 @@ const page = () => {
       }
     >
       <div
+        className="flex lg:flex-row-reverse flex-col"
         // className="flex justify-around overflow-scroll"
         style={{
-          display: "flex",
-          flexDirection: "row",
           alignItems: "center",
           // justifyContent: "center",
           // border: "5px solid green",
@@ -39,7 +38,16 @@ const page = () => {
         {false && <TRCChatVO />}
         {/* </div> */}
         {/* <h1>TEST</h1> */}
-        <div className="basis-1/4"></div>
+        <div
+          className="basis-1/4 flex flex-col justify-center pt-8 lg:p-10 text-center"
+          style={{ height: "100vh" }}
+        >
+          <h1 className="lg:block hidden text-2xl font">Proof of Concept</h1>
+          <br className="lg:block hidden" />
+          <Button className="bg-accent2 rounded-full font-bold text-xl py-7 px-8">
+            Give Feedback
+          </Button>
+        </div>
         <div
           className="flex basis-1/2" // THIS IS THE PROBLEM
           // OTHERWISE SCROLL OVERFLOW DOESNT WORK
@@ -55,17 +63,10 @@ const page = () => {
         >
           <TRCEditorV2 editorKey="trc-editor-spage" />
         </div>
+        <div className="basis-1/4"></div>
+
         {/* <h1>TEST</h1> */}
-        <div
-          className="basis-1/4 flex flex-col justify-center p-10 text-center"
-          style={{ height: "100vh" }}
-        >
-          <h1 className="text-2xl font">Proof of Concept</h1>
-          <br />
-          <Button className="bg-accent2 rounded-full font-bold text-xl py-7 px-8">
-            Give Feedback
-          </Button>
-        </div>
+
         {/* <button className="bg-primary rounded-full">TEST</button> */}
 
         {/* <div
