@@ -4,6 +4,7 @@ import React from "react";
 import Tiptap from "@/components/tiptap-tests/Tiptap";
 import TRCChatVO from "@/components/TRCChatV0";
 import TRCEditorV2 from "@/components/TRCEditorV2";
+import { Button } from "@/components/ui/button";
 
 const page = () => {
   return (
@@ -37,8 +38,10 @@ const page = () => {
         {/* <div> */}
         {false && <TRCChatVO />}
         {/* </div> */}
+        {/* <h1>TEST</h1> */}
+        <div className="basis-1/4"></div>
         <div
-          className="flex" // THIS IS THE PROBLEM
+          className="flex basis-1/2" // THIS IS THE PROBLEM
           // OTHERWISE SCROLL OVERFLOW DOESNT WORK
           style={{
             flexDirection: "column",
@@ -46,12 +49,25 @@ const page = () => {
             alignItems: "center",
             height: "100vh", // could be max height
             // minWidth: "500px",
-            minWidth: "60%",
+            // minWidth: "60%",
             // border: "5px solid black",
           }}
         >
           <TRCEditorV2 editorKey="trc-editor-spage" />
         </div>
+        {/* <h1>TEST</h1> */}
+        <div
+          className="basis-1/4 flex flex-col justify-center p-10 text-center"
+          style={{ height: "100vh" }}
+        >
+          <h1 className="text-2xl font">Proof of Concept</h1>
+          <br />
+          <Button className="bg-accent2 rounded-full font-bold text-xl py-7 px-8">
+            Give Feedback
+          </Button>
+        </div>
+        {/* <button className="bg-primary rounded-full">TEST</button> */}
+
         {/* <div
           style={{
             display: "flex",
