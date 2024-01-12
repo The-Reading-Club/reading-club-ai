@@ -1,3 +1,20 @@
 .ProseMirror {
   @apply p-12 px-8 sm:px-12;
 }
+
+/* https://github.com/ueberdosis/tiptap/issues/2659 */
+/* also from novel's approach */
+.ProseMirror .is-editor-empty:first-child::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--trc-stone-400);
+  pointer-events: none;
+  height: 0;
+}
+.ProseMirror .is-empty::before {
+  content: attr(data-placeholder);
+  float: left;
+  color: var(--trc-stone-400);
+  pointer-events: none;
+  height: 0;
+}

@@ -12,6 +12,30 @@
   --background-start-rgb: 255, 193, 43;
   --background-end-rgb: 255, 193, 43;
   /* --font-title: "Roboto", sans-serif; */
+
+  /* from trc inspiration */
+  --trc-black: rgb(0 0 0);
+  --trc-white: rgb(255 255 255);
+  --trc-stone-50: rgb(250 250 249);
+  --trc-stone-100: rgb(245 245 244);
+  --trc-stone-200: rgb(231 229 228);
+  --trc-stone-300: rgb(214 211 209);
+  --trc-stone-400: rgb(168 162 158);
+  --trc-stone-500: rgb(120 113 108);
+  --trc-stone-600: rgb(87 83 78);
+  --trc-stone-700: rgb(68 64 60);
+  --trc-stone-800: rgb(41 37 36);
+  --trc-stone-900: rgb(28 25 23);
+
+  --trc-highlight-default: #ffffff;
+  --trc-highlight-purple: #f6f3f8;
+  --trc-highlight-red: #fdebeb;
+  --trc-highlight-yellow: #fbf4a2;
+  --trc-highlight-blue: #c1ecf9;
+  --trc-highlight-green: #acf79f;
+  --trc-highlight-orange: #faebdd;
+  --trc-highlight-pink: #faf1f5;
+  --trc-highlight-gray: #f1f1ef;
 }
 
 body {

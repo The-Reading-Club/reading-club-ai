@@ -18,6 +18,7 @@ import Text from "@tiptap/extension-text";
 import Link from "@tiptap/extension-link";
 import TextAlign from "@tiptap/extension-text-align";
 import Image from "@tiptap/extension-image";
+import Placeholder from "@tiptap/extension-placeholder";
 
 // https://tiptap.dev/docs/editor/api/extensions/collaboration
 import Collaboration from "@tiptap/extension-collaboration";
@@ -122,6 +123,8 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 
   const editor = useEditor({
     extensions: [
+      // I need to clean this super huge component
+
       Collaboration.configure({
         document: ydoc,
         field: editorKey,
@@ -175,6 +178,15 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
       // FloatingMenu.configure({
       //   element: document.querySelector(".custom-suggestion") as HTMLElement,
       // }),
+      Placeholder.configure({
+        placeholder: ({ node }) => {
+          // if (node.type.name === "heading") {
+          //   return `Heading ${node.attrs.level}`;
+          // }
+          return "Press '++' for autocomplete...";
+        },
+        includeChildren: true,
+      }),
     ],
     content: editorContent ?? caveStoryTestTipTapJSON,
     editorProps: {
