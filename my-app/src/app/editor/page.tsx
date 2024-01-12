@@ -5,6 +5,7 @@ import Tiptap from "@/components/tiptap-tests/Tiptap";
 import TRCChatVO from "@/components/TRCChatV0";
 import TRCEditorV2 from "@/components/TRCEditorV2";
 import { Button } from "@/components/ui/button";
+import Link from "next/link";
 
 const page = () => {
   return (
@@ -44,8 +45,15 @@ const page = () => {
         >
           <h1 className="lg:block hidden text-2xl font">Proof of Concept</h1>
           <br className="lg:block hidden" />
-          <Button className="bg-accent2 rounded-full font-bold text-xl py-7 px-8">
-            Give Feedback
+          <Button className="bg-accent2 rounded-full font-bold text-xl py-7 px-8 hover:bg-accent">
+            <Link
+              href="https://readingclub.canny.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white "
+            >
+              Give Feedback
+            </Link>
           </Button>
         </div>
         <div
