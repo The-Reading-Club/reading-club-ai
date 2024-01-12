@@ -78,7 +78,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   editorContent,
   bgClass = "bg-[#FAF8DA]",
   fontClass = garamondFont.className,
-  editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll`,
+  editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll w-full`,
   editorKey,
 }) => {
   const mounted = useMounted();
@@ -326,7 +326,14 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   }
 
   return (
-    <div className={editorContainerClass}>
+    <div
+      className={editorContainerClass}
+      style={
+        {
+          // border: "2px solid red",
+        }
+      }
+    >
       {/* <p>{JSON.stringify({ suggestionsIDs })}</p> */}
       <div>
         <EditorContent editor={editor} />

@@ -31,6 +31,7 @@ const page = () => {
           // overflow: "scroll",
           // scrollPaddingLeft: 1000,
           // marginLeft: "100%",
+          justifyContent: "center",
         }}
       >
         {/* <div> */}
@@ -49,7 +50,7 @@ const page = () => {
             // border: "5px solid black",
           }}
         >
-          <TRCEditorV2 editorKey="trc-editor-page" />
+          <TRCEditorV2 editorKey="trc-editor-spage" />
         </div>
         {/* <div
           style={{
