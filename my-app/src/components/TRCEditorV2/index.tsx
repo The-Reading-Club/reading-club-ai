@@ -67,6 +67,10 @@ import { BoldIcon, CheckIcon, X, XIcon } from "lucide-react";
 import { diffChars } from "diff";
 import { dev } from "@/config";
 
+import SlashCommand from "./extensions/slash-command";
+import UploadImagesPlugin from "./plugins/upload-images";
+import TiptapImage from "@tiptap/extension-image";
+
 interface TRCEditorV2Props {
   editorContent?: JSONContent | string;
   bgClass?: string;
@@ -118,25 +122,31 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   //#region ****** TIPTAP EDITOR START ******
 
   // Unique plugin keys
-  const customSuggestionPluginKey = new PluginKey("customSuggestionPlugin");
-  const imagePluginKey = new PluginKey("imagePlugin");
+  // const customSuggestionPluginKey = new PluginKey("customSuggestionPlugin");
+  // const imagePluginKey = new PluginKey("imagePlugin");
 
   const editor = useEditor({
     extensions: [
+      SlashCommand,
       // I need to clean this super huge component
-
       Collaboration.configure({
         document: ydoc,
         field: editorKey,
       }),
-      StarterKit,
+      StarterKit.configure({
+        // https://github.com/ueberdosis/tiptap/issues/2827
+        // https://github.com/nextcloud/text/issues/3805
+        // https://github.com/ueberdosis/tiptap/issues/2761
+        // The Collaboration extension comes with its own history handling
+        history: false,
+      }),
       // duplicates in starterkit
       // Document,
       // Heading,
       //Paragraph,
       // Text,
       TextAlign,
-      Image.extend({
+      TiptapImage.extend({
         addAttributes() {
           return {
             ...this.parent?.(),
@@ -147,6 +157,14 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
               default: null,
             },
           };
+        },
+        addProseMirrorPlugins() {
+          return [UploadImagesPlugin()];
+        },
+      }).configure({
+        allowBase64: true,
+        HTMLAttributes: {
+          class: "novel-rounded-lg novel-border novel-border-stone-200",
         },
       }),
       Link,

@@ -45,16 +45,16 @@ const page = () => {
         >
           <h1 className="lg:block hidden text-2xl font">Proof of Concept</h1>
           <br className="lg:block hidden" />
-          <Button className="bg-accent2 rounded-full font-bold text-xl py-7 px-8 hover:bg-accent">
-            <Link
-              href="https://readingclub.canny.io"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-white "
-            >
+          <Link
+            href="https://readingclub.canny.io"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-white "
+          >
+            <Button className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent">
               Give Feedback
-            </Link>
-          </Button>
+            </Button>
+          </Link>
         </div>
         <div
           className="flex basis-1/2" // THIS IS THE PROBLEM
