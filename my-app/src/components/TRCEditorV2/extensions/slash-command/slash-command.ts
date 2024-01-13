@@ -50,6 +50,16 @@ const renderItems = () => {
       // @ts-ignore
       popup = tippy("body", {
         getReferenceClientRect: props.clientRect,
+        // component.element.getBoundingClientRect(), //props.clientRect,
+        // (): DOMRect => {
+        //   return props.clientRect;
+
+        //   // if (component) {
+        //   //   return component.element.getBoundingClientRect();
+        //   // }
+
+        //   // return new DOMRect();
+        // },
         appendTo: () => document.body,
         content: component.element,
         showOnCreate: true,

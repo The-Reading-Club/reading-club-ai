@@ -10,7 +10,7 @@ import Link from "next/link";
 const page = () => {
   return (
     <div //className="h-[100%] overflow-auto"
-      className="bg-secondary px-3"
+      className="bg-secondary px-3 lg:pb-0 pb-8"
       style={
         {
           // height: "100vh",
@@ -22,7 +22,7 @@ const page = () => {
       }
     >
       <div
-        className="flex lg:flex-row-reverse flex-col"
+        className="flex lg:flex-row-reverse flex-col-reverse"
         // className="flex justify-around overflow-scroll"
         style={{
           alignItems: "center",
@@ -43,7 +43,9 @@ const page = () => {
           className="basis-1/4 flex flex-col justify-center pt-8 lg:p-10 text-center"
           style={{ height: "100vh" }}
         >
-          <h1 className="lg:block hidden text-2xl font">Proof of Concept</h1>
+          <h1 className="lg:block hidden text-2xl font text-darkFont ">
+            Proof of Concept
+          </h1>
           <br className="lg:block hidden" />
           <Link
             href="https://readingclub.canny.io"
@@ -71,7 +73,31 @@ const page = () => {
         >
           <TRCEditorV2 editorKey="trc-editor-spage" />
         </div>
-        <div className="basis-1/4"></div>
+        <div className="basis-1/4 text-center font-semibold lg:pt-0 pt-6">
+          <h1 className="text-2xl font text-darkFont">
+            {`Welcome to Reading Club AI!`}
+          </h1>
+          <br />
+          <p className="text-md text-darkFont">{`Start creating a story.`}</p>
+          <p className="text-md text-darkFont">
+            {`Press '++' for suggestions.`}
+          </p>
+          <br />
+          <p className="text-md text-darkFont">{`Note: This is a demo. There's no autosave, so make sure to copy & paste anything you like. Autocompletions are rate limited to a few dozens per day.`}</p>
+          {/* sign up as an early tester here */}
+          <br />
+          <p className="text-md text-darkFont">
+            Sign up as an early tester{" "}
+            <Link
+              href="https://forms.gle/eDiYjELhFcGiZ58T6"
+              target="_blank"
+              rel="noopener noreferrer"
+              // className="text-white "
+            >
+              here.
+            </Link>
+          </p>
+        </div>
 
         {/* <h1>TEST</h1> */}
 
