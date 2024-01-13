@@ -105,18 +105,27 @@ const CommandList = ({
       id="slash-command"
       ref={commandListContainer}
       // className="novel-z-50 novel-h-auto novel-max-h-[330px] novel-w-72 novel-overflow-y-auto novel-rounded-md novel-border novel-border-stone-200 novel-bg-white novel-px-1 novel-py-2 novel-shadow-md novel-transition-all"
-      className="z-50 h-auto max-h-[330px] w-72 overflow-y-auto rounded-md border border-stone-200 bg-white px-1 py-2 shadow-md transition-all"
+      className="z-50 h-auto max-h-[330px] w-80 overflow-y-auto rounded-md border border-white bg-accent2 px-1 py-2 shadow-md transition-all"
     >
       {items.map((item: CommandItemProps, index: number) => {
         return (
           <button
+            //             className={`novel-flex novel-w-full novel-items-center novel-space-x-2 novel-rounded-md novel-px-2 novel-py-1 novel-text-left novel-text-sm novel-text-stone-900 hover:novel-bg-stone-100 ${
+            className={`flex w-full items-center space-x-2 rounded-md px-2 py-1 text-left text-sm text-white hover:bg-accent ${
+              index === selectedIndex ? "bg-accent " : ""
+            }`}
             key={`slash-command-iten-${index}`}
             onClick={() => selectItem(index)}
           >
-            <div>{item.icon}</div>
+            <div
+              // className="novel-flex novel-h-10 novel-w-10 novel-items-center novel-justify-center novel-rounded-md novel-border novel-border-stone-200 novel-bg-white"
+              className="flex h-10 w-10 items-center justify-center rounded-md border border-white bg-accent2"
+            >
+              {item.icon}
+            </div>
             <div>
-              <p>{item.title}</p>
-              <p>{item.description}</p>
+              <p className="font-bold text-xl">{item.title}</p>
+              <p className="text-md">{item.description}</p>
             </div>
           </button>
         );
@@ -173,5 +182,65 @@ export const getHintItems = ({ query }: { query: string }) => {
         input.click();
       },
     },
+    // {
+    //   title: "Upload Image",
+    //   description: "Upload an image from your computer",
+    //   searchTerms: [
+    //     "upload",
+    //     "image",
+    //     "photo",
+    //     "media",
+    //     "picture",
+    //     // "illustration", // maybe
+    //   ],
+    //   icon: <ImageIcon size={18} />,
+    //   command: ({ editor, range }: CommandProps) => {
+    //     // what am I deleteing?
+    //     editor.chain().focus().deleteRange(range).run();
+    //     // image upload
+    //     // wondering if I could have a custom dialog?
+    //     const input = document.createElement("input");
+    //     input.type = "file";
+    //     input.accept = "image/*";
+    //     input.onchange = async () => {
+    //       if (input.files?.length) {
+    //         const file = input.files[0];
+    //         const pos = editor.view.state.selection.from;
+    //         startImageUpload(file, editor.view, pos);
+    //       }
+    //     };
+    //     input.click();
+    //   },
+    // },
+    // {
+    //   title: "Upload Image",
+    //   description: "Upload an image from your computer",
+    //   searchTerms: [
+    //     "upload",
+    //     "image",
+    //     "photo",
+    //     "media",
+    //     "picture",
+    //     // "illustration", // maybe
+    //   ],
+    //   icon: <ImageIcon size={18} />,
+    //   command: ({ editor, range }: CommandProps) => {
+    //     // what am I deleteing?
+    //     editor.chain().focus().deleteRange(range).run();
+    //     // image upload
+    //     // wondering if I could have a custom dialog?
+    //     const input = document.createElement("input");
+    //     input.type = "file";
+    //     input.accept = "image/*";
+    //     input.onchange = async () => {
+    //       if (input.files?.length) {
+    //         const file = input.files[0];
+    //         const pos = editor.view.state.selection.from;
+    //         startImageUpload(file, editor.view, pos);
+    //       }
+    //     };
+    //     input.click();
+    //   },
+    // },
   ];
 };

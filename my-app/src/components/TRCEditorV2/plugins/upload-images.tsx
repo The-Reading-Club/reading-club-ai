@@ -142,7 +142,8 @@ export const handleImageUpload = (file: File) => {
 
           // Successfully uploaded image
           if (res.status === 200) {
-            const { url } = await res.json();
+            // const { url } = await res.json();
+            const { url } = await JSON.parse(res.data);
 
             let image = new Image();
             image.src = url;
