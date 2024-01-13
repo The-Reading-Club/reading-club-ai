@@ -202,16 +202,16 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
               {`Children's Books with AI`}
             </h1>
             {/* https://tailwind-hover-effects.vercel.app */}
-            <Button className="mt-8 px-16 py-8 bg-[#FFF] text-[#FFC122] rounded hover:bg-[#FFF] rounded-full text-2xl font-bold border-4 border-[#FFC122]">
-              <Link
-                href="https://forms.gle/eDiYjELhFcGiZ58T6"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="text-[#3c4043]"
-              >
-                Join waitlist
-              </Link>
-            </Button>
+            <Link
+              href="https://www.readingclub.ai/editor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-[#3c4043]"
+            >
+              <Button className="mt-8 px-16 py-8 bg-[#FFF] text-darkFont rounded hover:bg-[#FFF] rounded-full text-2xl font-bold border-4 border-[#FFC122]">
+                Try Demo
+              </Button>
+            </Link>
             <p className="mt-5 lg:text-2xl text-xl text-bold p-5 lg:p-0 text-[#3c4043]">
               {/* Join our community and start your journey. */}
               Download our learn-to-read app on{" "}

@@ -83,7 +83,7 @@ const page = () => {
             {`Press '++' for suggestions.`}
           </p>
           <br />
-          <p className="text-md text-darkFont">{`Note: This is a demo. There's no autosave, so make sure to copy & paste anything you like. Autocompletions are rate limited to a few dozens per day.`}</p>
+          <p className="text-md text-darkFont">{`Note: This is a research demo. There's no autosave, so make sure to copy & paste anything you like. Autocompletions are rate limited to a few dozens per day.`}</p>
           {/* sign up as an early tester here */}
           <br />
           <p className="text-md text-darkFont">
