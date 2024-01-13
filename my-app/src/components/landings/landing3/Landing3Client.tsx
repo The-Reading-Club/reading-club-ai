@@ -197,7 +197,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
         >
           <div className="text-center text-[#FFC122] p-5">
             <h1 className="lg:text-6xl text-5xl  font-bold">
-              {`Write & Publish`}
+              {`Write & Share`}
               <br />
               {`Children's Books with AI`}
             </h1>
@@ -277,19 +277,21 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             }
           }
         >
-          <h2 className="text-4xl font-bold text-center text-[#FFC122] bg-[#FAF8DA]">
-            Powerful Features
-          </h2>
-          <div className="mt-8 max-w-4xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 text-center">
-            <Card className="bg-[#F5911F]">
+          {false && (
+            <h2 className="text-4xl font-bold text-center text-[#FFC122] bg-[#FAF8DA]">
+              Powerful Features
+            </h2>
+          )}
+          <div className="mt-8-cancel mt-0 max-w-4xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 text-center">
+            <Card className="bg-accent2">
               <CardHeader className="text-[#FFF]">
                 {/* <BotIcon className="w-6 h-6 mx-auto mb-2" /> */}
-                <h3 className="text-2xl font-semibold">AI Writing Assistant</h3>
+                <h3 className="text-2xl font-bold">AI-Powered Writing</h3>
               </CardHeader>
               <CardContent className="text-[#FFF]">
                 <p className="text-lg">
-                  Our AI assistant helps you generate creative and engaging
-                  stories for children.
+                  Our AI-powered interface helps you generate creative and
+                  engaging stories for children 10x faster.
                 </p>
               </CardContent>
             </Card>
@@ -310,27 +312,28 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             <Card className="bg-[#F5911F]">
               <CardHeader className="text-[#FFF]">
                 {/* <BookIcon className="w-6 h-6 mx-auto mb-2" /> */}
-                <h3 className="text-2xl font-semibold">Publishing Support</h3>
+                <h3 className="text-2xl font-bold">Share with Family</h3>
               </CardHeader>
               <CardContent className="text-[#FFF]">
                 <p className="text-lg">
-                  We guide you through the publishing process to make your book
-                  available worldwide.
+                  {`Create & share stories with your family. It's like Goodreads, but for children's books and your inner circle.`}
                 </p>
               </CardContent>
             </Card>
-            <Card className="bg-[#F5911F]">
-              <CardHeader className="text-[#FFF]">
-                {/* <MessageCircleIcon className="w-6 h-6 mx-auto mb-2" /> */}
-                <h3 className="text-2xl font-semibold">Community</h3>
-              </CardHeader>
-              <CardContent className="text-[#FFF]">
-                <p className="text-lg">
-                  Join a community of like-minded authors and share your
-                  journey.
-                </p>
-              </CardContent>
-            </Card>
+            {false && (
+              <Card className="bg-[#F5911F]">
+                <CardHeader className="text-[#FFF]">
+                  {/* <MessageCircleIcon className="w-6 h-6 mx-auto mb-2" /> */}
+                  <h3 className="text-2xl font-semibold">Community</h3>
+                </CardHeader>
+                <CardContent className="text-[#FFF]">
+                  <p className="text-lg">
+                    Join a community of like-minded authors and share your
+                    journey.
+                  </p>
+                </CardContent>
+              </Card>
+            )}
           </div>
         </section>
 
