@@ -5,6 +5,9 @@ import "./globals.css";
 import { Nunito } from "next/font/google";
 import Providers from "./providers";
 
+import GoogleAnalytics from "./GoogleAnalytics";
+import { dev } from "@/config";
+
 const inter = Inter({ subsets: ["latin"] });
 
 const font = Nunito({
@@ -29,6 +32,11 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      {dev == false && (
+        <GoogleAnalytics
+          GA_TRACKING_ID={process.env.GA_TRACKING_ID as string}
+        />
+      )}
       <body className={font.className}>
         <Providers>{children}</Providers>
       </body>
