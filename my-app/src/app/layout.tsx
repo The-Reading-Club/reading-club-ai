@@ -19,7 +19,7 @@ const font = Nunito({
 
 export const metadata: Metadata = {
   title: "Reading Club AI",
-  description: "Write & Publish Children's Books with AI",
+  description: "Write & Share Children's Books with AI",
 };
 
 export default function RootLayout({

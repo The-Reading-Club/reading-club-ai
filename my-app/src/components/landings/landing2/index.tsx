@@ -44,7 +44,7 @@ export default function Landing2() {
         <div className="grid gap-6 md:grid-cols-2 items-center">
           <div>
             <h2 className="text-4xl font-bold tracking-tighter text-[#F5911F]">
-              {`Write & Publish Children's Books with AI`}
+              {`Write & Share Children's Books with AI`}
             </h2>
             <p className="text-lg text-[#F5911F] py-5">
               {`Join Reading Club AI and let's write the future together!`}
