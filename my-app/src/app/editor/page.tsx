@@ -40,7 +40,7 @@ const page = () => {
         {/* </div> */}
         {/* <h1>TEST</h1> */}
         <div
-          className="basis-1/4 flex flex-col justify-center pt-8 lg:p-10 text-center"
+          className="basis-1/4 lg:flex hidden flex-col justify-center pt-8 lg:p-10 text-center"
           style={{ height: "100vh" }}
         >
           <h1 className="lg:block hidden text-2xl font text-darkFont ">
@@ -97,6 +97,12 @@ const page = () => {
               here.
             </Link>
           </p>
+          <br />
+          <div className="lg:hidden block">
+            <Button className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent ">
+              Give Feedback
+            </Button>
+          </div>
         </div>
 
         {/* <h1>TEST</h1> */}
