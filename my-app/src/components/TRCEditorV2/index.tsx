@@ -1,36 +1,64 @@
 "use client";
+
+// REACT BOILERPLATE
 import React, { useEffect, useRef, useState } from "react";
 
+// TIPTAP REACT CORE
 import {
   BubbleMenu,
   Editor,
   EditorContent,
-  FloatingMenu,
+  // FloatingMenu,
   // FloatingMenuProps, // excludes element
   JSONContent,
   useEditor,
 } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import Document from "@tiptap/extension-document";
-import Heading from "@tiptap/extension-heading";
-import Paragraph from "@tiptap/extension-paragraph";
-import Text from "@tiptap/extension-text";
-import Link from "@tiptap/extension-link";
-import TextAlign from "@tiptap/extension-text-align";
-import Image from "@tiptap/extension-image";
-import Placeholder from "@tiptap/extension-placeholder";
 
-// https://tiptap.dev/docs/editor/api/extensions/collaboration
-import Collaboration from "@tiptap/extension-collaboration";
-import * as Y from "yjs";
-// https://github.com/ueberdosis/tiptap/blob/main/demos/src/Experiments/MultipleEditors/Vue/index.vue
-const ydoc = new Y.Doc();
+import { Mark } from "@tiptap/pm/model";
 
-import { PluginKey } from "prosemirror-state";
+// PROSEMIRROR
 
+// import { PluginKey } from "prosemirror-state";
+import "@/styles/prosemirror.css";
+
+// THIRD PARTY UTILITY LIBRARIES
+
+import { useCompletion } from "ai/react";
 import { v4 as uuidv4 } from "uuid"; // Assuming you are using uuid for generating unique IDs
+import { BoldIcon, CheckIcon, X, XIcon } from "lucide-react";
+// import { diffChars } from "diff";
+
+// IN-HOUSE UTILITY LIBRARIES AND HOOKS
+
+import { getPrevText } from "@/lib/editor";
+import useMounted from "@/lib/hooks/useMounted";
+
+// IN-HOUSE COMPONENTS
+
+import TRCEditorBubbleMenu from "./components/TRCEditorBubbleMenu";
+// import { CustomBubbleMenu } from "./CustomBubbleMenu"; // Good but I don't need to manipulate too many inner workings
+
+// DEFAULT DATA
+import {
+  caveStoryTestTipTapJSON,
+  caveStoryTestTipTapJSONV2,
+  contentWithSuggestions,
+} from "./data/default-content";
+import { dev } from "@/config";
+
+// STATE MANAGEMENT (ZUSTAND)
+import { useTRCEditorStore } from "@/stores/store";
+
+// FONT (should probably move somewhere else)
 
 import { EB_Garamond } from "next/font/google";
+import {
+  defaultCustomExtensions,
+  defaultTiptapExtensions,
+  getConfiguredCollaborationExtension,
+} from "./extensions";
+import SlashCommand from "./extensions/slash-command";
+import { CustomSuggestion } from "./extensions/custom-suggestion";
 const garamondFont = EB_Garamond({
   subsets: ["latin"],
   // https://nextjs.org/docs/pages/api-reference/components/font
@@ -39,37 +67,7 @@ const garamondFont = EB_Garamond({
   display: "swap",
 });
 
-import "@/styles/prosemirror.css";
-import { getPrevText } from "@/lib/editor";
-import { useCompletion } from "ai/react";
-
-// https://github.com/ueberdosis/tiptap/blob/develop/packages/extension-highlight/src/highlight.ts
-// https://www.npmjs.com/package/@tiptap/extension-highlight
-// https://tiptap.dev/docs/editor/api/marks/highlight
-import Highlight from "@tiptap/extension-highlight";
-import TRCEditorBubbleMenu from "./TRCEditorBubbleMenu";
-import { CustomHighlight } from "./extensions/custom-highlitght";
-import { CustomSuggestion } from "./extensions/custom-suggestion";
-import { BubbleMenu as BubbleMenuExtension } from "@tiptap/extension-bubble-menu";
-// import FloatingMenu from "@tiptap/extension-floating-menu";
-
-import useMounted from "@/lib/hooks/useMounted";
-import { CustomBubbleMenu } from "./CustomBubbleMenu";
-import {
-  caveStoryTestTipTapJSON,
-  caveStoryTestTipTapJSONV2,
-  contentWithSuggestions,
-} from "./default-content";
-import { useTRCEditorStore } from "@/stores/store";
-import { Mark } from "@tiptap/pm/model";
-import { BoldIcon, CheckIcon, X, XIcon } from "lucide-react";
-
-import { diffChars } from "diff";
-import { dev } from "@/config";
-
-import SlashCommand from "./extensions/slash-command";
-import UploadImagesPlugin from "./plugins/upload-images";
-import TiptapImage from "@tiptap/extension-image";
+//  TRCEditorV2 COMPONENT
 
 interface TRCEditorV2Props {
   editorContent?: JSONContent | string;
@@ -127,84 +125,9 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 
   const editor = useEditor({
     extensions: [
-      SlashCommand,
-      // I need to clean this super huge component
-      Collaboration.configure({
-        document: ydoc,
-        field: editorKey,
-      }),
-      StarterKit.configure({
-        // https://github.com/ueberdosis/tiptap/issues/2827
-        // https://github.com/nextcloud/text/issues/3805
-        // https://github.com/ueberdosis/tiptap/issues/2761
-        // The Collaboration extension comes with its own history handling
-        history: false,
-      }),
-      // duplicates in starterkit
-      // Document,
-      // Heading,
-      //Paragraph,
-      // Text,
-      TextAlign,
-      TiptapImage.extend({
-        addAttributes() {
-          return {
-            ...this.parent?.(),
-            width: {
-              default: "100%",
-            },
-            height: {
-              default: null,
-            },
-          };
-        },
-        addProseMirrorPlugins() {
-          return [UploadImagesPlugin()];
-        },
-      }).configure({
-        allowBase64: true,
-        HTMLAttributes: {
-          class: "novel-rounded-lg novel-border novel-border-stone-200",
-        },
-      }),
-      Link,
-      // Highlight.configure({
-      //   HTMLAttributes: {
-      //     class: "bg-primary",
-      //   },
-      // }),
-      // CustomHighlight.configure({
-      //   HTMLAttributes: {
-      //     class: "bg-primary",
-      //   },
-      // }),
-      CustomSuggestion.configure({
-        // multicolor: true,
-        HTMLAttributes: {
-          class: "bg-primary",
-        },
-      }),
-      // BubbleMenuExtension.configure({
-      //   pluginKey: "bubbleMenuOne",
-      //   // This should target your menu's root element
-      //   element:
-      //     mounted == true
-      //       ? (document.querySelector(".custom-suggestion") as HTMLElement)
-      //       : null,
-      //   shouldShow: ({ editor }) => true,
-      // }),
-      // FloatingMenu.configure({
-      //   element: document.querySelector(".custom-suggestion") as HTMLElement,
-      // }),
-      Placeholder.configure({
-        placeholder: ({ node }) => {
-          // if (node.type.name === "heading") {
-          //   return `Heading ${node.attrs.level}`;
-          // }
-          return "Press '/' for commands, or '++' for autocomplete...";
-        },
-        includeChildren: true,
-      }),
+      ...defaultTiptapExtensions,
+      ...defaultCustomExtensions,
+      getConfiguredCollaborationExtension(editorKey),
     ],
     content: editorContent ?? caveStoryTestTipTapJSON,
     editorProps: {
@@ -457,6 +380,8 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 };
 
 export default TRCEditorV2;
+
+// COMPONENT FUNCTIONS
 
 function removeMarkWithId(
   editor: Editor,
