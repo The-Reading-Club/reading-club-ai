@@ -99,9 +99,16 @@ const page = () => {
           </p>
           <br />
           <div className="lg:hidden block">
-            <Button className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent ">
-              Give Feedback
-            </Button>
+            <Link
+              href="https://readingclub.canny.io"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-white "
+            >
+              <Button className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent">
+                Give Feedback
+              </Button>
+            </Link>
           </div>
         </div>
 
