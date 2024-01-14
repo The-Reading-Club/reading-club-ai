@@ -201,7 +201,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
           // if (node.type.name === "heading") {
           //   return `Heading ${node.attrs.level}`;
           // }
-          return "Press '++' for autocomplete...";
+          return "Press '/' for commands, or '++' for autocomplete...";
         },
         includeChildren: true,
       }),
