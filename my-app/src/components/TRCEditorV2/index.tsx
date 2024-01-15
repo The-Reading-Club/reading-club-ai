@@ -145,89 +145,15 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 
   //#endregion ****** TIPTAP EDITOR END ******
 
-  const prev = useRef("");
-  useEffect(() => {
-    const diff = completion.slice(prev.current.length);
-    prev.current = completion;
-
-    // editor?.commands.setHighlight();
-    // editor?.commands.setCustomHighlight();
-
-    // One argument against doing it like this is that I may be calling setCustomSuggestion many times for the same piece of content.
-    // editor?.commands.setCustomSuggestion({ uuid: "uuidv4()" });
-    // editor?.commands.setCustomSuggestion();
-
-    // https://chat.openai.com/c/8e11d054-304c-4aa7-ada6-bf7691d629bd
-    if (editor?.isActive("customSuggestion") == false && completion != "") {
-      // alert("Setting a new suggestion! " + completion);
-      editor.commands.setCustomSuggestion({
-        // color: "blue",
-        uuid: uuidv4(),
-      });
-    }
-    // else {
-    //   alert(
-    //     "Missing the first time??? diff: " + diff + " completion: " + completion
-    //   );
-    // }
-    // updateSuggestionButtonsPosition();
-
-    editor?.commands.insertContent(diff);
-  }, [isLoading, editor, completion]);
-
-  type CustomSuggestionMarkAttrs = {
-    "data-suggestion-id": string;
-    // Define other attributes here if needed
-  };
-
-  // Dummy function for handling accept/reject
-  // const handleSuggestionAction = () => {
-  //   console.log("Suggestion action handled");
-  // };
-
-  // const [suggestionButtonsPosition, setSuggestionButtonsPosition] = useState({
-  //   top: 0,
-  //   left: 0,
-  // });
-  // const updateSuggestionButtonsPosition = () => {
-  //   const suggestionElement = document.querySelector(".custom-suggestion");
-
-  //   if (suggestionElement) {
-  //     const rect = suggestionElement.getBoundingClientRect();
-  //     setSuggestionButtonsPosition({
-  //       top: rect.top,
-  //       left: rect.left,
-  //     });
+  // verify whether this is actually needed
+  // no, it doesnt seem so
+  // useEffect(() => {
+  //   if (editor) {
+  //     updateSuggestionsState();
   //   }
-  // };
+  // }, [editor]);
 
-  useEffect(() => {
-    if (editor) {
-      // const diffs = diffChars(
-      //   JSON.stringify(caveStoryTestTipTapJSON),
-      //   JSON.stringify(caveStoryTestTipTapJSONV2)
-      // );
-      // let formattedContent = [];
-      // diffs.forEach((part) => {
-      //   const span = part.added
-      //     ? {
-      //         type: "paragraph",
-      //       }`<span class="bg-green-200">${part.value}</span>`
-      //     : part.removed
-      //     ? `<span class="bg-red-200">${part.value}</span>`
-      //     : `<span>${part.value}</span>`;
-      //   formattedContent += span;
-      // });
-      // editor.commands.setContent(contentWithSuggestions);
-      updateSuggestionsState();
-    }
-  }, [editor]);
-
-  useEffect(() => {
-    console.log(suggestionsIDs);
-    // Additional logs if necessary
-  }, [suggestionsIDs]);
-
+  // REACT TSX
   if (!editor) {
     return null;
   }
@@ -396,6 +322,43 @@ function useTRCEditorV2Completion(
       }
     },
   });
+
+  const { completion, isLoading } = completionResult;
+
+  // move this to ai completion hook
+  const prev = useRef("");
+  useEffect(() => {
+    const diff = completion.slice(prev.current.length);
+    prev.current = completion;
+
+    // editor?.commands.setHighlight();
+    // editor?.commands.setCustomHighlight();
+
+    // One argument against doing it like this is that I may be calling setCustomSuggestion many times for the same piece of content.
+    // editor?.commands.setCustomSuggestion({ uuid: "uuidv4()" });
+    // editor?.commands.setCustomSuggestion();
+
+    // https://chat.openai.com/c/8e11d054-304c-4aa7-ada6-bf7691d629bd
+    if (
+      editorRef.current?.isActive("customSuggestion") == false &&
+      completion != ""
+    ) {
+      // alert("Setting a new suggestion! " + completion);
+      editorRef.current.commands.setCustomSuggestion({
+        // color: "blue",
+        uuid: uuidv4(),
+      });
+    }
+    // else {
+    //   alert(
+    //     "Missing the first time??? diff: " + diff + " completion: " + completion
+    //   );
+    // }
+    // updateSuggestionButtonsPosition();
+
+    editorRef.current?.commands.insertContent(diff);
+  }, [isLoading, editorRef.current, completion]);
+
   return completionResult;
   //#endregion ****** USE COMPLETION END ******
 }
