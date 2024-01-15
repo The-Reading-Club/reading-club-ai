@@ -248,6 +248,8 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
             image.onload = () => {
               resolve(url);
             };
+          } else if (res.status === 429) {
+            throw new Error("Rate limited.");
           }
           // Unkown error
           else {
