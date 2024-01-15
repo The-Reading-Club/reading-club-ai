@@ -174,3 +174,91 @@ function findPlaceholder(state: EditorState, id: {}) {
 
   return found.length ? found[0].from : null;
 }
+
+// ILLUSTRATION GENERATION
+
+interface IllustrationGenerationBody {
+  prevContextText: string;
+}
+export function startIllustrationGeneration(
+  body: IllustrationGenerationBody,
+  view: EditorView,
+  pos: number
+) {
+  // A fresh object to act as the ID for this generation
+  const id = {};
+
+  // Replace the selection with a placeholder
+  // We dont need this for illustration generation
+  const tr = view.state.tr;
+  if (!tr.selection.empty) tr.deleteSelection();
+
+  tr.setMeta(uploadKey, {
+    // no placeholder because we aren't updating anything
+    // unless I could have a default placeholder manually...
+    add: { id, pos, src: null /*reader.result*/ },
+  });
+  view.dispatch(tr);
+
+  handleIllustrationGeneration(body).then((src) => {
+    const { schema } = view.state;
+
+    let pos = findPlaceholder(view.state, id);
+
+    // If the content around the placeholder has been deleted
+    // drop the image
+    if (pos == null) return;
+
+    // Otherwise, insert it at the placeholder's position,
+    // and remove the placeholder
+
+    // When BLOB_READ_WRITE_TOKEN is not valid or unavailable, read
+    // the image locally
+    const imageSrc = src;
+
+    const node = schema.nodes.image.create({ src: imageSrc });
+    const transaction = view.state.tr
+      .replaceWith(pos, pos, node)
+      .setMeta(uploadKey, { remove: { id } });
+    view.dispatch(transaction);
+  });
+}
+
+function handleIllustrationGeneration(body: IllustrationGenerationBody) {
+  return new Promise((resolve) => {
+    toast.promise(
+      axios
+        .post("/api/illustration", {
+          method: "POST",
+          headers: {
+            "content-type": "application/json",
+          },
+          body: body, //{},
+        })
+        .then(async (res) => {
+          // Successfully generate illustration
+          if (res.status === 200) {
+            devAlert(
+              "Illustration generated successfully." + JSON.stringify(res.data)
+            );
+            const { url } = res.data;
+
+            let image = new Image();
+            image.src = url;
+            image.onload = () => {
+              resolve(url);
+            };
+          }
+          // Unkown error
+          else {
+            throw new Error("Error uploading image.");
+          }
+        }),
+      {
+        loading: "Generating illustration...",
+        success: "Illustration generated successfully.",
+        error: (e) => e.message,
+      }
+    );
+  });
+}

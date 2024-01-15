@@ -7,7 +7,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export function devAlert(message?: any) {
-  if (false && dev == true) alert(message);
+  if (true && dev == true) alert(message);
 }
 
 // dev console
