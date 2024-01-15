@@ -24,6 +24,7 @@ import "@/styles/prosemirror.css";
 // THIRD PARTY UTILITY LIBRARIES
 
 import { useCompletion } from "ai/react";
+import { RequestOptions } from "ai";
 import { v4 as uuidv4 } from "uuid"; // Assuming you are using uuid for generating unique IDs
 import { BoldIcon, CheckIcon, X, XIcon } from "lucide-react";
 // import { diffChars } from "diff";
@@ -84,83 +85,63 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll w-full`,
   editorKey,
 }) => {
+  // HYDRATION
   const mounted = useMounted();
 
-  // Suggestions state
+  // STATE MANAGEMENT
   const { suggestionsIDs, setSuggestionsIDs } = useTRCEditorStore();
   // const [suggestionsIDs, setSuggestionsIDs] = useState<string[]>([]);
 
-  //#region ****** USE COMPLETION START ******
-  const { complete, completion, isLoading, stop } = useCompletion({
-    id: "trc-editor-v2",
-    api: "api/generate",
-    // body:Extra body object to be sent with the API request.
-    onFinish: (prompt, completion) => {
-      editor?.commands.setTextSelection({
-        // basically you set the cursor back to where it was
-        from: editor.state.selection.from - completion.length,
-        to: editor.state.selection.from,
-      });
+  const updateSuggestionsState = () => {
+    let suggestionMarks: Mark[] = [];
+    // alert("test 1" + editor);
+    editorRef.current?.view.state.doc.content;
+    editorRef.current?.view.state.doc.descendants((node, pos) => {
+      // alert("test 2");
+      // alert(node.marks);
+      const nodeSuggestionsMarks = node.marks.filter(
+        (mark) => mark.type.name == "customSuggestion"
+      );
+      suggestionMarks = [...suggestionMarks, ...nodeSuggestionsMarks];
+    });
+    // alert(JSON.stringify(suggestionMarks));
+    setSuggestionsIDs(
+      suggestionMarks.map((mark) => {
+        const attrs = mark.attrs;
+        return attrs["uuid"];
+      })
+    );
+  };
 
-      // Right now all completions are for suggestions, but I wonder if I should do it differently later on
-      updateExtensionsState();
-    },
-    onError: (err) => {
-      // toast.error(err.message)
-      alert(err.message);
-      // there's gotta be a more formal status code for this
-      if (err.message == "Rate limit exceeded for the day") {
-        //va.track("Rate Limit Reached")
-        alert("Rate Limit Reached");
-      }
-    },
-  });
-  //#endregion ****** USE COMPLETION END ******
+  // REACT REFS
+  const editorRef = useRef<Editor | null>(null);
+
+  //#region ****** AI COMPLETION START ******
+
+  const { complete, completion, isLoading, stop } = useTRCEditorV2Completion(
+    editorRef,
+    updateSuggestionsState
+  );
+
+  //#endregion ****** AI COMPLETION END ******
 
   //#region ****** TIPTAP EDITOR START ******
 
-  // Unique plugin keys
-  // const customSuggestionPluginKey = new PluginKey("customSuggestionPlugin");
-  // const imagePluginKey = new PluginKey("imagePlugin");
+  const editorContent_ = editorContent ?? caveStoryTestTipTapJSON;
 
-  const editor = useEditor({
-    extensions: [
-      ...defaultTiptapExtensions,
-      ...defaultCustomExtensions,
-      getConfiguredCollaborationExtension(editorKey),
-    ],
-    content: editorContent ?? caveStoryTestTipTapJSON,
-    editorProps: {
-      attributes: {
-        //    class: `novel-prose-lg novel-prose-stone dark:novel-prose-invert prose-headings:novel-font-title novel-font-default focus:novel-outline-none novel-max-w-full`,
-        class: `prose-lg focus:outline-none max-w-full`,
-      },
-    },
-    onUpdate: (e) => {
-      // this is to know wherever the cursor is really
-      // the next function only uses the cursor position
-      const selection = e.editor.state.selection;
-      const lastTwo = getPrevText(e.editor, {
-        chars: 2, // should change the name of this prop to lastManyChars
-        // and lastManyOffset
-      });
+  const editor = useTRCEditorV2TiptapEditor(
+    editorContent_,
+    editorKey,
+    isLoading,
+    complete
+  );
 
-      if (lastTwo == "++" && !isLoading) {
-        // alert("Autocomplete Shortcut Used");
-        e.editor.commands.deleteRange({
-          from: selection.from - 2,
-          to: selection.from,
-        });
-        complete(getPrevText(e.editor, { chars: 5000 })); // I probably should aim for the whole story text
-        // va.track("Autocomplete Shortcut Used")
-        console.log("Autocomplete Shortcut Used");
-      } else {
-        // whatever you would do if last two are not ++
-        // I wonder if I could trigger spontaneous feedback by the AI
-        // with a voiceover, that would be cool
-      }
-    },
-  });
+  // Do I need this use effect
+  // Yes, it is very important
+  useEffect(() => {
+    editorRef.current = editor;
+    updateSuggestionsState();
+  }, [editor]);
 
   //#endregion ****** TIPTAP EDITOR END ******
 
@@ -194,36 +175,9 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     editor?.commands.insertContent(diff);
   }, [isLoading, editor, completion]);
 
-  const editorRef = useRef<Editor | null>(null);
-  useEffect(() => {
-    editorRef.current = editor;
-    updateExtensionsState();
-  }, [editor]);
-
   type CustomSuggestionMarkAttrs = {
     "data-suggestion-id": string;
     // Define other attributes here if needed
-  };
-
-  const updateExtensionsState = () => {
-    let suggestionMarks: Mark[] = [];
-    // alert("test 1" + editor);
-    editorRef.current?.view.state.doc.content;
-    editorRef.current?.view.state.doc.descendants((node, pos) => {
-      // alert("test 2");
-      // alert(node.marks);
-      const nodeSuggestionsMarks = node.marks.filter(
-        (mark) => mark.type.name == "customSuggestion"
-      );
-      suggestionMarks = [...suggestionMarks, ...nodeSuggestionsMarks];
-    });
-    // alert(JSON.stringify(suggestionMarks));
-    setSuggestionsIDs(
-      suggestionMarks.map((mark) => {
-        const attrs = mark.attrs;
-        return attrs["uuid"];
-      })
-    );
   };
 
   // Dummy function for handling accept/reject
@@ -265,7 +219,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
       //   formattedContent += span;
       // });
       // editor.commands.setContent(contentWithSuggestions);
-      updateExtensionsState();
+      updateSuggestionsState();
     }
   }, [editor]);
 
@@ -409,6 +363,92 @@ function removeMarkWithId(
 
   // https://chat.openai.com/c/8d391210-3ceb-4d28-a092-10d7b4bdb640 gold
   editor.view.dispatch(tr);
+}
+
+// COMPONENT HOOKS
+
+function useTRCEditorV2Completion(
+  editorRef: React.MutableRefObject<Editor | null>,
+  updateSuggestionsState: () => void
+) {
+  //#region ****** USE COMPLETION START ******
+  const completionResult = useCompletion({
+    id: "trc-editor-v2",
+    api: "api/generate",
+    // body:Extra body object to be sent with the API request.
+    onFinish: (prompt, completion) => {
+      editorRef.current?.commands.setTextSelection({
+        // basically you set the cursor back to where it was
+        from: editorRef.current.state.selection.from - completion.length,
+        to: editorRef.current.state.selection.from,
+      });
+
+      // Right now all completions are for suggestions, but I wonder if I should do it differently later on
+      updateSuggestionsState();
+    },
+    onError: (err) => {
+      // toast.error(err.message)
+      alert(err.message);
+      // there's gotta be a more formal status code for this
+      if (err.message == "Rate limit exceeded for the day") {
+        //va.track("Rate Limit Reached")
+        alert("Rate Limit Reached");
+      }
+    },
+  });
+  return completionResult;
+  //#endregion ****** USE COMPLETION END ******
+}
+
+function useTRCEditorV2TiptapEditor(
+  editorContent: JSONContent | string,
+  editorKey: string,
+  isLoading: boolean,
+  complete: (
+    prompt: string,
+    options?: RequestOptions | undefined
+  ) => Promise<string | null | undefined>
+) {
+  const editor = useEditor({
+    extensions: [
+      ...defaultTiptapExtensions,
+      ...defaultCustomExtensions,
+      getConfiguredCollaborationExtension(editorKey),
+    ],
+    content: editorContent,
+    editorProps: {
+      attributes: {
+        //    class: `novel-prose-lg novel-prose-stone dark:novel-prose-invert prose-headings:novel-font-title novel-font-default focus:novel-outline-none novel-max-w-full`,
+        class: `prose-lg focus:outline-none max-w-full`,
+      },
+    },
+    onUpdate: (e) => {
+      // this is to know wherever the cursor is really
+      // the next function only uses the cursor position
+      const selection = e.editor.state.selection;
+      const lastTwo = getPrevText(e.editor, {
+        chars: 2, // should change the name of this prop to lastManyChars
+        // and lastManyOffset
+      });
+
+      if (lastTwo == "++" && !isLoading) {
+        // alert("Autocomplete Shortcut Used");
+        e.editor.commands.deleteRange({
+          from: selection.from - 2,
+          to: selection.from,
+        });
+        complete(getPrevText(e.editor, { chars: 5000 })); // I probably should aim for the whole story text
+        // va.track("Autocomplete Shortcut Used")
+        console.log("Autocomplete Shortcut Used");
+      } else {
+        // whatever you would do if last two are not ++
+        // I wonder if I could trigger spontaneous feedback by the AI
+        // with a voiceover, that would be cool
+      }
+    },
+  });
+
+  return editor;
 }
 
 //  AMAZING CODE, I AM USING A DIFFERENT KIND OF BUBBLE MENU RIGHT NOW
