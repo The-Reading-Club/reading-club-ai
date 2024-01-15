@@ -71,7 +71,12 @@ const page = () => {
             // border: "5px solid black",
           }}
         >
-          <TRCEditorV2 editorKey="trc-editor-spage" />
+          <TRCEditorV2
+            editorKey="trc-editor-spage"
+            // should be the other way around
+            // enableLocalStorage
+            disableLocalStorage={false}
+          />
         </div>
         <div className="basis-1/4 text-center font-semibold lg:pt-0 pt-6">
           <h1 className="text-2xl font text-darkFont">
