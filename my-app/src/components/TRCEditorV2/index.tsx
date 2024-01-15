@@ -1,36 +1,65 @@
 "use client";
+
+// REACT BOILERPLATE
 import React, { useEffect, useRef, useState } from "react";
 
+// TIPTAP REACT CORE
 import {
   BubbleMenu,
   Editor,
   EditorContent,
-  FloatingMenu,
+  // FloatingMenu,
   // FloatingMenuProps, // excludes element
   JSONContent,
   useEditor,
 } from "@tiptap/react";
-import StarterKit from "@tiptap/starter-kit";
-import Document from "@tiptap/extension-document";
-import Heading from "@tiptap/extension-heading";
-import Paragraph from "@tiptap/extension-paragraph";
-import Text from "@tiptap/extension-text";
-import Link from "@tiptap/extension-link";
-import TextAlign from "@tiptap/extension-text-align";
-import Image from "@tiptap/extension-image";
-import Placeholder from "@tiptap/extension-placeholder";
 
-// https://tiptap.dev/docs/editor/api/extensions/collaboration
-import Collaboration from "@tiptap/extension-collaboration";
-import * as Y from "yjs";
-// https://github.com/ueberdosis/tiptap/blob/main/demos/src/Experiments/MultipleEditors/Vue/index.vue
-const ydoc = new Y.Doc();
+import { Mark } from "@tiptap/pm/model";
 
-import { PluginKey } from "prosemirror-state";
+// PROSEMIRROR
 
+// import { PluginKey } from "prosemirror-state";
+import "@/styles/prosemirror.css";
+
+// THIRD PARTY UTILITY LIBRARIES
+
+import { useCompletion } from "ai/react";
+import { RequestOptions } from "ai";
 import { v4 as uuidv4 } from "uuid"; // Assuming you are using uuid for generating unique IDs
+import { BoldIcon, CheckIcon, X, XIcon } from "lucide-react";
+// import { diffChars } from "diff";
+
+// IN-HOUSE UTILITY LIBRARIES AND HOOKS
+
+import { getPrevText } from "@/lib/editor";
+import useMounted from "@/lib/hooks/useMounted";
+
+// IN-HOUSE COMPONENTS
+
+import TRCEditorBubbleMenu from "./components/TRCEditorBubbleMenu";
+// import { CustomBubbleMenu } from "./CustomBubbleMenu"; // Good but I don't need to manipulate too many inner workings
+
+// DEFAULT DATA
+import {
+  caveStoryTestTipTapJSON,
+  caveStoryTestTipTapJSONV2,
+  contentWithSuggestions,
+} from "./data/default-content";
+import { dev } from "@/config";
+
+// STATE MANAGEMENT (ZUSTAND)
+import { useTRCEditorStore } from "@/stores/store";
+
+// FONT (should probably move somewhere else)
 
 import { EB_Garamond } from "next/font/google";
+import {
+  defaultCustomExtensions,
+  defaultTiptapExtensions,
+  getConfiguredCollaborationExtension,
+} from "./extensions";
+import SlashCommand from "./extensions/slash-command";
+import { CustomSuggestion } from "./extensions/custom-suggestion";
 const garamondFont = EB_Garamond({
   subsets: ["latin"],
   // https://nextjs.org/docs/pages/api-reference/components/font
@@ -39,37 +68,7 @@ const garamondFont = EB_Garamond({
   display: "swap",
 });
 
-import "@/styles/prosemirror.css";
-import { getPrevText } from "@/lib/editor";
-import { useCompletion } from "ai/react";
-
-// https://github.com/ueberdosis/tiptap/blob/develop/packages/extension-highlight/src/highlight.ts
-// https://www.npmjs.com/package/@tiptap/extension-highlight
-// https://tiptap.dev/docs/editor/api/marks/highlight
-import Highlight from "@tiptap/extension-highlight";
-import TRCEditorBubbleMenu from "./TRCEditorBubbleMenu";
-import { CustomHighlight } from "./extensions/custom-highlitght";
-import { CustomSuggestion } from "./extensions/custom-suggestion";
-import { BubbleMenu as BubbleMenuExtension } from "@tiptap/extension-bubble-menu";
-// import FloatingMenu from "@tiptap/extension-floating-menu";
-
-import useMounted from "@/lib/hooks/useMounted";
-import { CustomBubbleMenu } from "./CustomBubbleMenu";
-import {
-  caveStoryTestTipTapJSON,
-  caveStoryTestTipTapJSONV2,
-  contentWithSuggestions,
-} from "./default-content";
-import { useTRCEditorStore } from "@/stores/store";
-import { Mark } from "@tiptap/pm/model";
-import { BoldIcon, CheckIcon, X, XIcon } from "lucide-react";
-
-import { diffChars } from "diff";
-import { dev } from "@/config";
-
-import SlashCommand from "./extensions/slash-command";
-import UploadImagesPlugin from "./plugins/upload-images";
-import TiptapImage from "@tiptap/extension-image";
+//  TRCEditorV2 COMPONENT
 
 interface TRCEditorV2Props {
   editorContent?: JSONContent | string;
@@ -86,203 +85,14 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll w-full`,
   editorKey,
 }) => {
+  // HYDRATION
   const mounted = useMounted();
 
-  // Suggestions state
+  // STATE MANAGEMENT
   const { suggestionsIDs, setSuggestionsIDs } = useTRCEditorStore();
   // const [suggestionsIDs, setSuggestionsIDs] = useState<string[]>([]);
 
-  //#region ****** USE COMPLETION START ******
-  const { complete, completion, isLoading, stop } = useCompletion({
-    id: "trc-editor-v2",
-    api: "api/generate",
-    // body:Extra body object to be sent with the API request.
-    onFinish: (prompt, completion) => {
-      editor?.commands.setTextSelection({
-        // basically you set the cursor back to where it was
-        from: editor.state.selection.from - completion.length,
-        to: editor.state.selection.from,
-      });
-
-      // Right now all completions are for suggestions, but I wonder if I should do it differently later on
-      updateExtensionsState();
-    },
-    onError: (err) => {
-      // toast.error(err.message)
-      alert(err.message);
-      // there's gotta be a more formal status code for this
-      if (err.message == "Rate limit exceeded for the day") {
-        //va.track("Rate Limit Reached")
-        alert("Rate Limit Reached");
-      }
-    },
-  });
-  //#endregion ****** USE COMPLETION END ******
-
-  //#region ****** TIPTAP EDITOR START ******
-
-  // Unique plugin keys
-  // const customSuggestionPluginKey = new PluginKey("customSuggestionPlugin");
-  // const imagePluginKey = new PluginKey("imagePlugin");
-
-  const editor = useEditor({
-    extensions: [
-      SlashCommand,
-      // I need to clean this super huge component
-      Collaboration.configure({
-        document: ydoc,
-        field: editorKey,
-      }),
-      StarterKit.configure({
-        // https://github.com/ueberdosis/tiptap/issues/2827
-        // https://github.com/nextcloud/text/issues/3805
-        // https://github.com/ueberdosis/tiptap/issues/2761
-        // The Collaboration extension comes with its own history handling
-        history: false,
-      }),
-      // duplicates in starterkit
-      // Document,
-      // Heading,
-      //Paragraph,
-      // Text,
-      TextAlign,
-      TiptapImage.extend({
-        addAttributes() {
-          return {
-            ...this.parent?.(),
-            width: {
-              default: "100%",
-            },
-            height: {
-              default: null,
-            },
-          };
-        },
-        addProseMirrorPlugins() {
-          return [UploadImagesPlugin()];
-        },
-      }).configure({
-        allowBase64: true,
-        HTMLAttributes: {
-          class: "novel-rounded-lg novel-border novel-border-stone-200",
-        },
-      }),
-      Link,
-      // Highlight.configure({
-      //   HTMLAttributes: {
-      //     class: "bg-primary",
-      //   },
-      // }),
-      // CustomHighlight.configure({
-      //   HTMLAttributes: {
-      //     class: "bg-primary",
-      //   },
-      // }),
-      CustomSuggestion.configure({
-        // multicolor: true,
-        HTMLAttributes: {
-          class: "bg-primary",
-        },
-      }),
-      // BubbleMenuExtension.configure({
-      //   pluginKey: "bubbleMenuOne",
-      //   // This should target your menu's root element
-      //   element:
-      //     mounted == true
-      //       ? (document.querySelector(".custom-suggestion") as HTMLElement)
-      //       : null,
-      //   shouldShow: ({ editor }) => true,
-      // }),
-      // FloatingMenu.configure({
-      //   element: document.querySelector(".custom-suggestion") as HTMLElement,
-      // }),
-      Placeholder.configure({
-        placeholder: ({ node }) => {
-          // if (node.type.name === "heading") {
-          //   return `Heading ${node.attrs.level}`;
-          // }
-          return "Press '/' for commands, or '++' for autocomplete...";
-        },
-        includeChildren: true,
-      }),
-    ],
-    content: editorContent ?? caveStoryTestTipTapJSON,
-    editorProps: {
-      attributes: {
-        //    class: `novel-prose-lg novel-prose-stone dark:novel-prose-invert prose-headings:novel-font-title novel-font-default focus:novel-outline-none novel-max-w-full`,
-        class: `prose-lg focus:outline-none max-w-full`,
-      },
-    },
-    onUpdate: (e) => {
-      // this is to know wherever the cursor is really
-      // the next function only uses the cursor position
-      const selection = e.editor.state.selection;
-      const lastTwo = getPrevText(e.editor, {
-        chars: 2, // should change the name of this prop to lastManyChars
-        // and lastManyOffset
-      });
-
-      if (lastTwo == "++" && !isLoading) {
-        // alert("Autocomplete Shortcut Used");
-        e.editor.commands.deleteRange({
-          from: selection.from - 2,
-          to: selection.from,
-        });
-        complete(getPrevText(e.editor, { chars: 5000 })); // I probably should aim for the whole story text
-        // va.track("Autocomplete Shortcut Used")
-        console.log("Autocomplete Shortcut Used");
-      } else {
-        // whatever you would do if last two are not ++
-        // I wonder if I could trigger spontaneous feedback by the AI
-        // with a voiceover, that would be cool
-      }
-    },
-  });
-
-  //#endregion ****** TIPTAP EDITOR END ******
-
-  const prev = useRef("");
-  useEffect(() => {
-    const diff = completion.slice(prev.current.length);
-    prev.current = completion;
-
-    // editor?.commands.setHighlight();
-    // editor?.commands.setCustomHighlight();
-
-    // One argument against doing it like this is that I may be calling setCustomSuggestion many times for the same piece of content.
-    // editor?.commands.setCustomSuggestion({ uuid: "uuidv4()" });
-    // editor?.commands.setCustomSuggestion();
-
-    // https://chat.openai.com/c/8e11d054-304c-4aa7-ada6-bf7691d629bd
-    if (editor?.isActive("customSuggestion") == false && completion != "") {
-      // alert("Setting a new suggestion! " + completion);
-      editor.commands.setCustomSuggestion({
-        // color: "blue",
-        uuid: uuidv4(),
-      });
-    }
-    // else {
-    //   alert(
-    //     "Missing the first time??? diff: " + diff + " completion: " + completion
-    //   );
-    // }
-    // updateSuggestionButtonsPosition();
-
-    editor?.commands.insertContent(diff);
-  }, [isLoading, editor, completion]);
-
-  const editorRef = useRef<Editor | null>(null);
-  useEffect(() => {
-    editorRef.current = editor;
-    updateExtensionsState();
-  }, [editor]);
-
-  type CustomSuggestionMarkAttrs = {
-    "data-suggestion-id": string;
-    // Define other attributes here if needed
-  };
-
-  const updateExtensionsState = () => {
+  const updateSuggestionsState = () => {
     let suggestionMarks: Mark[] = [];
     // alert("test 1" + editor);
     editorRef.current?.view.state.doc.content;
@@ -303,54 +113,47 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     );
   };
 
-  // Dummy function for handling accept/reject
-  // const handleSuggestionAction = () => {
-  //   console.log("Suggestion action handled");
-  // };
+  // REACT REFS
+  const editorRef = useRef<Editor | null>(null);
 
-  // const [suggestionButtonsPosition, setSuggestionButtonsPosition] = useState({
-  //   top: 0,
-  //   left: 0,
-  // });
-  // const updateSuggestionButtonsPosition = () => {
-  //   const suggestionElement = document.querySelector(".custom-suggestion");
+  //#region ****** AI COMPLETION START ******
 
-  //   if (suggestionElement) {
-  //     const rect = suggestionElement.getBoundingClientRect();
-  //     setSuggestionButtonsPosition({
-  //       top: rect.top,
-  //       left: rect.left,
-  //     });
-  //   }
-  // };
+  const { complete, completion, isLoading, stop } = useTRCEditorV2Completion(
+    editorRef,
+    updateSuggestionsState
+  );
 
+  //#endregion ****** AI COMPLETION END ******
+
+  //#region ****** TIPTAP EDITOR START ******
+
+  const editorContent_ = editorContent ?? caveStoryTestTipTapJSON;
+
+  const editor = useTRCEditorV2TiptapEditor(
+    editorContent_,
+    editorKey,
+    isLoading,
+    complete
+  );
+
+  // Do I need this use effect
+  // Yes, it is very important
   useEffect(() => {
-    if (editor) {
-      // const diffs = diffChars(
-      //   JSON.stringify(caveStoryTestTipTapJSON),
-      //   JSON.stringify(caveStoryTestTipTapJSONV2)
-      // );
-      // let formattedContent = [];
-      // diffs.forEach((part) => {
-      //   const span = part.added
-      //     ? {
-      //         type: "paragraph",
-      //       }`<span class="bg-green-200">${part.value}</span>`
-      //     : part.removed
-      //     ? `<span class="bg-red-200">${part.value}</span>`
-      //     : `<span>${part.value}</span>`;
-      //   formattedContent += span;
-      // });
-      // editor.commands.setContent(contentWithSuggestions);
-      updateExtensionsState();
-    }
+    editorRef.current = editor;
+    updateSuggestionsState();
   }, [editor]);
 
-  useEffect(() => {
-    console.log(suggestionsIDs);
-    // Additional logs if necessary
-  }, [suggestionsIDs]);
+  //#endregion ****** TIPTAP EDITOR END ******
 
+  // verify whether this is actually needed
+  // no, it doesnt seem so
+  // useEffect(() => {
+  //   if (editor) {
+  //     updateSuggestionsState();
+  //   }
+  // }, [editor]);
+
+  // REACT TSX
   if (!editor) {
     return null;
   }
@@ -458,6 +261,8 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 
 export default TRCEditorV2;
 
+// COMPONENT FUNCTIONS
+
 function removeMarkWithId(
   editor: Editor,
   markType: string,
@@ -484,6 +289,129 @@ function removeMarkWithId(
 
   // https://chat.openai.com/c/8d391210-3ceb-4d28-a092-10d7b4bdb640 gold
   editor.view.dispatch(tr);
+}
+
+// COMPONENT HOOKS
+
+function useTRCEditorV2Completion(
+  editorRef: React.MutableRefObject<Editor | null>,
+  updateSuggestionsState: () => void
+) {
+  //#region ****** USE COMPLETION START ******
+  const completionResult = useCompletion({
+    id: "trc-editor-v2",
+    api: "api/generate",
+    // body:Extra body object to be sent with the API request.
+    onFinish: (prompt, completion) => {
+      editorRef.current?.commands.setTextSelection({
+        // basically you set the cursor back to where it was
+        from: editorRef.current.state.selection.from - completion.length,
+        to: editorRef.current.state.selection.from,
+      });
+
+      // Right now all completions are for suggestions, but I wonder if I should do it differently later on
+      updateSuggestionsState();
+    },
+    onError: (err) => {
+      // toast.error(err.message)
+      alert(err.message);
+      // there's gotta be a more formal status code for this
+      if (err.message == "Rate limit exceeded for the day") {
+        //va.track("Rate Limit Reached")
+        alert("Rate Limit Reached");
+      }
+    },
+  });
+
+  const { completion, isLoading } = completionResult;
+
+  // move this to ai completion hook
+  const prev = useRef("");
+  useEffect(() => {
+    const diff = completion.slice(prev.current.length);
+    prev.current = completion;
+
+    // editor?.commands.setHighlight();
+    // editor?.commands.setCustomHighlight();
+
+    // One argument against doing it like this is that I may be calling setCustomSuggestion many times for the same piece of content.
+    // editor?.commands.setCustomSuggestion({ uuid: "uuidv4()" });
+    // editor?.commands.setCustomSuggestion();
+
+    // https://chat.openai.com/c/8e11d054-304c-4aa7-ada6-bf7691d629bd
+    if (
+      editorRef.current?.isActive("customSuggestion") == false &&
+      completion != ""
+    ) {
+      // alert("Setting a new suggestion! " + completion);
+      editorRef.current.commands.setCustomSuggestion({
+        // color: "blue",
+        uuid: uuidv4(),
+      });
+    }
+    // else {
+    //   alert(
+    //     "Missing the first time??? diff: " + diff + " completion: " + completion
+    //   );
+    // }
+    // updateSuggestionButtonsPosition();
+
+    editorRef.current?.commands.insertContent(diff);
+  }, [isLoading, editorRef.current, completion]);
+
+  return completionResult;
+  //#endregion ****** USE COMPLETION END ******
+}
+
+function useTRCEditorV2TiptapEditor(
+  editorContent: JSONContent | string,
+  editorKey: string,
+  isLoading: boolean,
+  complete: (
+    prompt: string,
+    options?: RequestOptions | undefined
+  ) => Promise<string | null | undefined>
+) {
+  const editor = useEditor({
+    extensions: [
+      ...defaultTiptapExtensions,
+      ...defaultCustomExtensions,
+      getConfiguredCollaborationExtension(editorKey),
+    ],
+    content: editorContent,
+    editorProps: {
+      attributes: {
+        //    class: `novel-prose-lg novel-prose-stone dark:novel-prose-invert prose-headings:novel-font-title novel-font-default focus:novel-outline-none novel-max-w-full`,
+        class: `prose-lg focus:outline-none max-w-full`,
+      },
+    },
+    onUpdate: (e) => {
+      // this is to know wherever the cursor is really
+      // the next function only uses the cursor position
+      const selection = e.editor.state.selection;
+      const lastTwo = getPrevText(e.editor, {
+        chars: 2, // should change the name of this prop to lastManyChars
+        // and lastManyOffset
+      });
+
+      if (lastTwo == "++" && !isLoading) {
+        // alert("Autocomplete Shortcut Used");
+        e.editor.commands.deleteRange({
+          from: selection.from - 2,
+          to: selection.from,
+        });
+        complete(getPrevText(e.editor, { chars: 5000 })); // I probably should aim for the whole story text
+        // va.track("Autocomplete Shortcut Used")
+        console.log("Autocomplete Shortcut Used");
+      } else {
+        // whatever you would do if last two are not ++
+        // I wonder if I could trigger spontaneous feedback by the AI
+        // with a voiceover, that would be cool
+      }
+    },
+  });
+
+  return editor;
 }
 
 //  AMAZING CODE, I AM USING A DIFFERENT KIND OF BUBBLE MENU RIGHT NOW

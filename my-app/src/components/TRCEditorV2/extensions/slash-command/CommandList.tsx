@@ -8,7 +8,12 @@ import {
   useState,
 } from "react";
 import { Editor, Range } from "@tiptap/react";
-import { startImageUpload } from "../../plugins/upload-images";
+import {
+  startIllustrationGeneration,
+  startImageUpload,
+} from "../../plugins/upload-images";
+import { devAlert } from "@/lib/utils";
+import { Node } from "@tiptap/pm/model";
 
 interface CommandProps {
   editor: Editor;
@@ -153,6 +158,59 @@ export const updateScrollView = (container: HTMLElement, item: HTMLElement) => {
 export const getHintItems = ({ query }: { query: string }) => {
   return [
     {
+      title: "Generate Illustration",
+      description: "Generate an illustration from your text",
+      searchTerms: [
+        "generate",
+        "illustration",
+        "image",
+        "photo",
+        "media",
+        "picture",
+      ],
+      icon: <ImageIcon size={18} />,
+      command: ({ editor, range }: CommandProps) => {
+        // what am I deleteing?
+        editor.chain().focus().deleteRange(range).run();
+        const pos = editor.view.state.selection.from;
+
+        // I could pass the prev text as context for the illustration
+        // do that later
+        // const prevParagraphStart = editor.view.state.doc.nodeAt(pos - 1);
+        // const prevParagraphText = prevParagraphStart?.textContent;
+        // devAlert("prevParagraphText: " + prevParagraphText);
+        const fromPos = editor.state.selection.from;
+        const prevContextText = getTextContent(
+          editor.view.state.doc,
+          fromPos - 5000,
+          fromPos
+        );
+        // editor.view.state.doc.textBetween(
+        //   fromPos - 5000,
+        //   fromPos
+        // );
+        devAlert("prevContextText: " + prevContextText);
+
+        startIllustrationGeneration({ prevContextText }, editor.view, pos);
+
+        // // image upload
+        // // wondering if I could have a custom dialog?
+        // const input = document.createElement("input");
+        // input.type = "file";
+        // input.accept = "image/*";
+        // input.onchange = async () => {
+        //   if (input.files?.length) {
+        //     const file = input.files[0];
+        //     const pos = editor.view.state.selection.from;
+        //     startImageUpload(file, editor.view, pos);
+        //   }
+        // };
+        // input.click();
+
+        // Illustration generation
+      },
+    },
+    {
       title: "Upload Image",
       description: "Upload an image from your computer",
       searchTerms: [
@@ -242,5 +300,21 @@ export const getHintItems = ({ query }: { query: string }) => {
     //     input.click();
     //   },
     // },
+    ,
   ];
+};
+
+// Function to recursively get text content from nodes
+const getTextContent = (node: Node, from: number, to: number) => {
+  let textWithLineBreaks = "";
+
+  node.nodesBetween(from, to, (n, pos, parent, index) => {
+    if (n.isText) {
+      textWithLineBreaks += n.text;
+    } else if (["paragraph", "heading"].includes(n.type.name) && pos !== from) {
+      textWithLineBreaks += "\n\n";
+    }
+  });
+
+  return textWithLineBreaks;
 };
