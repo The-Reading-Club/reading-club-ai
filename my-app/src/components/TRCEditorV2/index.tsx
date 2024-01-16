@@ -78,7 +78,7 @@ interface TRCEditorV2Props {
   fontClass?: string;
   editorContainerClass?: string;
   editorKey: string;
-  disableLocalStorage?: boolean;
+  enableLocalStorage?: boolean;
 }
 
 const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
@@ -87,7 +87,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   fontClass = garamondFont.className,
   editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll w-full`,
   editorKey,
-  disableLocalStorage = true,
+  enableLocalStorage = false,
 }) => {
   // REACT REFS
   const editorRef = useRef<Editor | null>(null);
@@ -136,9 +136,8 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   useEffect(() => {
     if (!editorRef.current || hydrated) return;
 
-    const value = disableLocalStorage
-      ? editorContent
-      : editorContentPersistedState;
+    const value =
+      enableLocalStorage == true ? editorContentPersistedState : editorContent;
 
     if (value) {
       editorRef.current.commands.setContent(value);
@@ -149,16 +148,16 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     editorContent,
     editorContentPersistedState,
     hydrated,
-    disableLocalStorage,
+    enableLocalStorage,
   ]);
 
   const debouncedUpdates = useDebouncedCallback(
     async ({ editor }: { editor: Editor }) => {
       const editorJSON = editor.getJSON();
 
-      // if (!disableLocalStorage) {
-      setEditorContentPersistedState(editorJSON);
-      // }
+      if (enableLocalStorage == true) {
+        setEditorContentPersistedState(editorJSON);
+      }
     },
     750
   );
