@@ -71,7 +71,12 @@ const page = () => {
             // border: "5px solid black",
           }}
         >
-          <TRCEditorV2 editorKey="trc-editor-spage" />
+          <TRCEditorV2
+            editorKey="trc-editor-spage"
+            // should be the other way around
+            // enableLocalStorage
+            enableLocalStorage={true}
+          />
         </div>
         <div className="basis-1/4 text-center font-semibold lg:pt-0 pt-6">
           <h1 className="text-2xl font text-darkFont">
@@ -80,8 +85,9 @@ const page = () => {
           <br />
           <p className="text-md text-darkFont">{`Start creating a story.`}</p>
           <p className="text-md text-darkFont">
-            {`Press '++' for suggestions.`}
+            {`Press '++' for suggestions, or`}
           </p>
+          <p className="text-md text-darkFont">{`'/' for illustrations.`}</p>
           <br />
           <p className="text-md text-darkFont">{`Note: This is a research demo. There's no autosave, so make sure to copy & paste anything you like. Autocompletions are rate limited to a few dozens per day.`}</p>
           {/* sign up as an early tester here */}

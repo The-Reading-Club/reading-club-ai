@@ -60,6 +60,8 @@ import {
 } from "./extensions";
 import SlashCommand from "./extensions/slash-command";
 import { CustomSuggestion } from "./extensions/custom-suggestion";
+import { DebouncedState, useDebouncedCallback } from "use-debounce";
+import useLocalStorage from "@/lib/hooks/useLocalStorage";
 const garamondFont = EB_Garamond({
   subsets: ["latin"],
   // https://nextjs.org/docs/pages/api-reference/components/font
@@ -71,11 +73,12 @@ const garamondFont = EB_Garamond({
 //  TRCEditorV2 COMPONENT
 
 interface TRCEditorV2Props {
-  editorContent?: JSONContent | string;
+  editorContent?: JSONContent; //| string;
   bgClass?: string;
   fontClass?: string;
   editorContainerClass?: string;
   editorKey: string;
+  enableLocalStorage?: boolean;
 }
 
 const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
@@ -84,12 +87,21 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   fontClass = garamondFont.className,
   editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll w-full`,
   editorKey,
+  enableLocalStorage = false,
 }) => {
+  // REACT REFS
+  const editorRef = useRef<Editor | null>(null);
   // HYDRATION
   const mounted = useMounted();
+  const [hydrated, setHydrated] = useState(false);
 
   // STATE MANAGEMENT
-  const { suggestionsIDs, setSuggestionsIDs } = useTRCEditorStore();
+  const {
+    suggestionsIDs,
+    setSuggestionsIDs,
+    // editorContent: editorContentState,
+    // setEditorContent,
+  } = useTRCEditorStore();
   // const [suggestionsIDs, setSuggestionsIDs] = useState<string[]>([]);
 
   const updateSuggestionsState = () => {
@@ -113,8 +125,42 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     );
   };
 
-  // REACT REFS
-  const editorRef = useRef<Editor | null>(null);
+  const [editorContentPersistedState, setEditorContentPersistedState] =
+    useLocalStorage(
+      `TRC-EDITOR-CONTENT-TEST-${editorKey}`, //editorContent ??
+      caveStoryTestTipTapJSON
+    );
+
+  // Default: Hydrate the editor with the content from localStorage.
+  // If disableLocalStorage is true, hydrate the editor with the defaultValue.
+  useEffect(() => {
+    if (!editorRef.current || hydrated) return;
+
+    const value =
+      enableLocalStorage == true ? editorContentPersistedState : editorContent;
+
+    if (value) {
+      editorRef.current.commands.setContent(value);
+      setHydrated(true);
+    }
+  }, [
+    editorRef.current,
+    editorContent,
+    editorContentPersistedState,
+    hydrated,
+    enableLocalStorage,
+  ]);
+
+  const debouncedUpdates = useDebouncedCallback(
+    async ({ editor }: { editor: Editor }) => {
+      const editorJSON = editor.getJSON();
+
+      if (enableLocalStorage == true) {
+        setEditorContentPersistedState(editorJSON);
+      }
+    },
+    750
+  );
 
   //#region ****** AI COMPLETION START ******
 
@@ -127,13 +173,17 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 
   //#region ****** TIPTAP EDITOR START ******
 
-  const editorContent_ = editorContent ?? caveStoryTestTipTapJSON;
+  // const editorContent_ =
+  //   editorContentPersistedState == null
+  //     ? editorContent ?? caveStoryTestTipTapJSON
+  //     : editorContentPersistedState;
 
   const editor = useTRCEditorV2TiptapEditor(
-    editorContent_,
+    editorContentPersistedState,
     editorKey,
     isLoading,
-    complete
+    complete,
+    debouncedUpdates
   );
 
   // Do I need this use effect
@@ -370,7 +420,8 @@ function useTRCEditorV2TiptapEditor(
   complete: (
     prompt: string,
     options?: RequestOptions | undefined
-  ) => Promise<string | null | undefined>
+  ) => Promise<string | null | undefined>,
+  debouncedUpdates: DebouncedState<({ editor }: any) => Promise<void>>
 ) {
   const editor = useEditor({
     extensions: [
@@ -378,7 +429,7 @@ function useTRCEditorV2TiptapEditor(
       ...defaultCustomExtensions,
       getConfiguredCollaborationExtension(editorKey),
     ],
-    content: editorContent,
+    // content: editorContent,
     editorProps: {
       attributes: {
         //    class: `novel-prose-lg novel-prose-stone dark:novel-prose-invert prose-headings:novel-font-title novel-font-default focus:novel-outline-none novel-max-w-full`,
@@ -407,6 +458,8 @@ function useTRCEditorV2TiptapEditor(
         // whatever you would do if last two are not ++
         // I wonder if I could trigger spontaneous feedback by the AI
         // with a voiceover, that would be cool
+
+        debouncedUpdates(e);
       }
     },
   });
