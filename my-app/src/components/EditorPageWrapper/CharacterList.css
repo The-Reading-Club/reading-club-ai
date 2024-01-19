@@ -12,4 +12,7 @@
   padding: 16px;
   /* width: 200px; */
   box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+
+  cursor: pointer; /* Indicates the card is clickable */
+  transition: all 0.3s ease; /* Smooth transition for expanding */
 }
