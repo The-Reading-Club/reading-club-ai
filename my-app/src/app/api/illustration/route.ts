@@ -28,6 +28,8 @@ const config = {
 
 const openaiSDK = new OpenAI(config);
 
+export const runtime = "edge";
+
 // export async function GET(request: Request) {
 //   return NextResponse.json({ message: "Hello, world!" }, { status: 200 });
 // }
