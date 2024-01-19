@@ -6,6 +6,15 @@ type Suggestion = {
   id: string;
 };
 
+export type StoryData = {
+  characters: any[];
+  characterDefinitions: any[];
+};
+
+export type StoriesData = {
+  [key: string]: StoryData;
+};
+
 interface TRCEditorState {
   suggestionsIDs: string[];
   setSuggestionsIDs: (suggestionsIDs: string[]) => void;
@@ -16,8 +25,8 @@ interface TRCEditorState {
   // editorContent: JSONContent | null;
   // setEditorContent: (editorContent: JSONContent) => void;
 
-  storiesData: any;
-  setStoriesData: (storiesData: any) => void;
+  storiesData: StoriesData;
+  setStoriesData: (storiesData: StoriesData) => void;
 }
 
 export const useTRCEditorStore = create<TRCEditorState>()(
