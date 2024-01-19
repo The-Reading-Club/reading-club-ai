@@ -221,10 +221,11 @@ export const getHintItems = ({ query }: { query: string }) => {
             postContextText,
             editorKey,
             existingCharacters:
-              useTRCEditorStore.getState().storiesData[editorKey].characters,
+              useTRCEditorStore.getState().storiesData[editorKey]?.characters ??
+              [],
             characterDefinitions:
               useTRCEditorStore.getState().storiesData[editorKey]
-                .characterDefinitions,
+                ?.characterDefinitions ?? [],
           },
           editor.view,
           pos
