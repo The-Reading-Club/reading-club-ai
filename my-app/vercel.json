@@ -1,0 +1,7 @@
+{
+  "functions": {
+    "api/illustration/route.ts": {
+      "maxDuration": 300
+    }
+  }
+}
