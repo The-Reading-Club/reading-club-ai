@@ -62,6 +62,7 @@ import SlashCommand from "./extensions/slash-command";
 import { CustomSuggestion } from "./extensions/custom-suggestion";
 import { DebouncedState, useDebouncedCallback } from "use-debounce";
 import useLocalStorage from "@/lib/hooks/useLocalStorage";
+import { MetadataExtension } from "./extensions/metadata";
 const garamondFont = EB_Garamond({
   subsets: ["latin"],
   // https://nextjs.org/docs/pages/api-reference/components/font
@@ -428,6 +429,9 @@ function useTRCEditorV2TiptapEditor(
       ...defaultTiptapExtensions,
       ...defaultCustomExtensions,
       getConfiguredCollaborationExtension(editorKey),
+      MetadataExtension.configure({
+        key: editorKey,
+      }),
     ],
     // content: editorContent,
     editorProps: {

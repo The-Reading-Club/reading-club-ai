@@ -4,6 +4,7 @@ import { toast } from "sonner";
 import axios from "axios";
 import { dev } from "@/config";
 import { devAlert, devConsoleLog } from "@/lib/utils";
+import { useTRCEditorStore } from "@/stores/store";
 
 const uploadKey = new PluginKey("upload-image");
 
@@ -177,9 +178,15 @@ function findPlaceholder(state: EditorState, id: {}) {
 
 // ILLUSTRATION GENERATION
 
-interface IllustrationGenerationBody {
+export interface IllustrationGenerationBody {
   prevContextText: string;
+  prevParagraphText: string;
+  postContextText: string;
+  editorKey: string;
+  existingCharacters: any;
+  characterDefinitions: any;
 }
+
 export function startIllustrationGeneration(
   body: IllustrationGenerationBody,
   view: EditorView,
@@ -241,7 +248,21 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
             devAlert(
               "Illustration generated successfully." + JSON.stringify(res.data)
             );
-            const { url } = res.data;
+            const { imageData, newCharacters, characterDefinitions } =
+              res.data as GenerateIllustrationResponse;
+
+            const { url } = imageData;
+
+            // Save state to Zustand
+            devAlert("NOT SAVING TO ZUSTAND");
+            // not now for testing
+            if (dev == false)
+              useTRCEditorStore.getState().setStoriesData({
+                [body.editorKey]: {
+                  characters: newCharacters,
+                  characterDefinitions: characterDefinitions,
+                },
+              });
 
             let image = new Image();
             image.src = url;
