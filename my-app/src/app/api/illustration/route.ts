@@ -260,6 +260,8 @@ export async function POST(request: Request) {
   console.log("\n****** CONSISTENT PROMPT ****");
   console.log(consistentPrompt);
 
+  const consistentPrompt3 = `In a vibrant, storybook-style illustration, the central character is ${c.name}: ${c.appearance}. ${c.name} has ${c.hairColor} hair with large, ${c.eyeColor} eyes, and ${c.distinguishingMarks}. The scene shows ${c.name} ${chosenCharacter.scene}, with a ${chosenCharacter.background}. The setting evokes an air of adventure and wonder, typical of a children's storybook.`;
+
   //   const response = await openai.createImage({
   //     prompt: "This is a photo of a dog named Bolt. The photo is very blurry. ",
   //     n: 1,
@@ -305,7 +307,7 @@ First, check if using this API request bellow is in accordance with the guidelin
 
 {
   "size": "1024x1024",
-  "prompts": ["${consistentPrompt2}"],
+  "prompts": ["${consistentPrompt3}"],
   "seeds": [4127112452]
 }
   `;
