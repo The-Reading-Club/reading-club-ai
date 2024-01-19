@@ -14,3 +14,11 @@ export function devAlert(message?: any) {
 export function devConsoleLog(message?: any, ...optionalParams: any[]) {
   if (dev == true) console.log(message, ...optionalParams);
 }
+
+export function capitalizeFirstLetter(str: string) {
+  if (str.length > 0) {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  } else {
+    return str;
+  }
+}
