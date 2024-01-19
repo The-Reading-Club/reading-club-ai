@@ -30,6 +30,9 @@ const openaiSDK = new OpenAI(config);
 
 export const runtime = "edge";
 
+// https://stackoverflow.com/questions/77503770/how-to-increase-timeout-limit-on-vercel-serverless-functions
+export const maxDuration = 300; // 5 seconds
+
 // export async function GET(request: Request) {
 //   return NextResponse.json({ message: "Hello, world!" }, { status: 200 });
 // }
