@@ -67,7 +67,10 @@ const EditorPageWrapper: React.FC<EditorPageWrapperProps> = ({ editorKey }) => {
       </div> */}
           <div>
             {/* <p>{JSON.stringify(storyData.characters)}</p> */}
-            <CharacterList characters={storyData?.characters} />
+            <CharacterList
+              characters={storyData?.characters}
+              characterDefinitions={storyData?.characterDefinitions}
+            />
           </div>
           {false && (
             <div>
