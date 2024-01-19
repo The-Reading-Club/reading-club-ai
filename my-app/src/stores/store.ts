@@ -15,6 +15,9 @@ interface TRCEditorState {
 
   // editorContent: JSONContent | null;
   // setEditorContent: (editorContent: JSONContent) => void;
+
+  storiesData: any;
+  setStoriesData: (storiesData: any) => void;
 }
 
 export const useTRCEditorStore = create<TRCEditorState>()(
@@ -28,12 +31,16 @@ export const useTRCEditorStore = create<TRCEditorState>()(
 
       // editorContent: null,
       // setEditorContent: (editorContent) => set({ editorContent }),
+
+      storiesData: {},
+      setStoriesData: (storiesData) => set({ storiesData }),
     }),
     {
       name: "trc-editor-local-storage-test",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
         // editorContent: state.editorContent,
+        storiesData: state.storiesData,
       }),
     }
   )

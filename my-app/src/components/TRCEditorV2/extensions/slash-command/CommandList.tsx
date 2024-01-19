@@ -1,6 +1,7 @@
 import { ImageIcon } from "lucide-react";
 import {
   ReactNode,
+  use,
   useCallback,
   useEffect,
   useLayoutEffect,
@@ -14,6 +15,7 @@ import {
 } from "../../plugins/upload-images";
 import { devAlert } from "@/lib/utils";
 import { Node } from "@tiptap/pm/model";
+import { useTRCEditorStore } from "@/stores/store";
 
 interface CommandProps {
   editor: Editor;
@@ -185,13 +187,48 @@ export const getHintItems = ({ query }: { query: string }) => {
           fromPos - 5000,
           fromPos
         );
+
+        const prevParagraphText = getTextContent(
+          editor.view.state.doc,
+          fromPos - 250,
+          fromPos
+        );
+
+        // postContextText
+
+        const postContextText = getTextContent(
+          editor.view.state.doc,
+          fromPos,
+          fromPos + 5000
+        );
+
         // editor.view.state.doc.textBetween(
         //   fromPos - 5000,
         //   fromPos
         // );
         devAlert("prevContextText: " + prevContextText);
 
-        startIllustrationGeneration({ prevContextText }, editor.view, pos);
+        const editorKey = editor.extensionManager.extensions.find(
+          (extension) => extension.name === "metadata"
+        )?.options["key"];
+        devAlert(editorKey);
+
+        devAlert("editorKey: " + editorKey);
+        startIllustrationGeneration(
+          {
+            prevContextText,
+            prevParagraphText,
+            postContextText,
+            editorKey,
+            existingCharacters:
+              useTRCEditorStore.getState().storiesData[editorKey].characters,
+            characterDefinitions:
+              useTRCEditorStore.getState().storiesData[editorKey]
+                .characterDefinitions,
+          },
+          editor.view,
+          pos
+        );
 
         // // image upload
         // // wondering if I could have a custom dialog?
@@ -308,7 +345,10 @@ export const getHintItems = ({ query }: { query: string }) => {
 const getTextContent = (node: Node, from: number, to: number) => {
   let textWithLineBreaks = "";
 
-  node.nodesBetween(from, to, (n, pos, parent, index) => {
+  // Adjust 'to' if it's beyond the document length
+  const adjustedTo = Math.min(to, node.content.size);
+
+  node.nodesBetween(from, adjustedTo, (n, pos, parent, index) => {
     if (n.isText) {
       textWithLineBreaks += n.text;
     } else if (["paragraph", "heading"].includes(n.type.name) && pos !== from) {
