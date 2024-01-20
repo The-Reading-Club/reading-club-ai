@@ -259,6 +259,7 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
             if (dev == false)
               useTRCEditorStore.getState().setStoriesData({
                 [body.editorKey]: {
+                  ...useTRCEditorStore.getState().storiesData[body.editorKey],
                   characters: newCharacters,
                   characterDefinitions: characterDefinitions,
                 },

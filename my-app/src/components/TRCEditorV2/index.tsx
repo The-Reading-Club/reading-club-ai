@@ -102,6 +102,8 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     setSuggestionsIDs,
     // editorContent: editorContentState,
     // setEditorContent,
+    storiesData,
+    setStoriesData,
   } = useTRCEditorStore();
   // const [suggestionsIDs, setSuggestionsIDs] = useState<string[]>([]);
 
@@ -158,6 +160,14 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 
       if (enableLocalStorage == true) {
         setEditorContentPersistedState(editorJSON);
+
+        // we'll move to this only later
+        setStoriesData({
+          [editorKey]: {
+            ...storiesData[editorKey],
+            tiptapEditorContent: editorJSON,
+          },
+        });
       }
     },
     750
