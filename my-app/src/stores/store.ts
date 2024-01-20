@@ -9,6 +9,7 @@ type Suggestion = {
 export type StoryData = {
   characters: any[];
   characterDefinitions: any[];
+  tiptapEditorContent: JSONContent | null;
 };
 
 export type StoriesData = {

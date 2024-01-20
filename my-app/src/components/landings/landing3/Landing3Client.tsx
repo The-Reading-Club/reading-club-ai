@@ -204,7 +204,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             {/* https://tailwind-hover-effects.vercel.app */}
             <Link
               href="https://www.readingclub.ai/editor"
-              target="_blank"
+              // target="_blank"
               rel="noopener noreferrer"
               className="text-[#3c4043]"
             >
