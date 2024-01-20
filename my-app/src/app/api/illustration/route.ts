@@ -22,6 +22,13 @@ import {
 import { CharacterAttributes } from "@/data/character";
 import { IllustrationGenerationBody } from "@/components/TRCEditorV2/plugins/upload-images";
 
+import { put } from "@vercel/blob";
+
+import { nanoid } from "nanoid";
+
+// const idLength = 10; // You can choose the length
+// const uniqueID = nanoid(idLength);
+
 const config = {
   apiKey: process.env.OAI_KEY,
 };
@@ -348,6 +355,30 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
     size: "1024x1024",
   });
 
+  let imageBlobStored = false;
+  let storedImageUrl = "";
+
+  const dalleImageUrl = image.data[0].url!;
+
+  if (process.env.BLOB_READ_WRITE_TOKEN) {
+    // should probably check it's not undefined
+
+    const imageFetchResponse = await fetch(dalleImageUrl);
+    const imageBlob = await imageFetchResponse.blob();
+
+    // Store the image in Verbal Blob storage
+    const { url: storedImageUrl_ } = await put(
+      "beta/images/" + nanoid(10),
+      imageBlob,
+      {
+        access: "public",
+      }
+    );
+
+    imageBlobStored = true;
+    storedImageUrl = storedImageUrl_;
+  }
+
   // console.log("response", image.data);
   console.log("response", image);
 
@@ -356,6 +387,7 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
       imageData: image.data[0],
       newCharacters: newCharactersJSON,
       characterDefinitions,
+      storedImageUrl: imageBlobStored == true ? storedImageUrl : dalleImageUrl,
     } as GenerateIllustrationResponse,
     { status: 200 }
   );

@@ -248,8 +248,12 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
             devAlert(
               "Illustration generated successfully." + JSON.stringify(res.data)
             );
-            const { imageData, newCharacters, characterDefinitions } =
-              res.data as GenerateIllustrationResponse;
+            const {
+              imageData,
+              newCharacters,
+              characterDefinitions,
+              storedImageUrl,
+            } = res.data as GenerateIllustrationResponse;
 
             const { url } = imageData;
 
@@ -266,9 +270,9 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
               });
 
             let image = new Image();
-            image.src = url;
+            image.src = storedImageUrl;
             image.onload = () => {
-              resolve(url);
+              resolve(storedImageUrl);
             };
           } else if (res.status === 429) {
             throw new Error("Rate limited.");
