@@ -108,7 +108,9 @@ const CharacterList: React.FC<CharacterListProps> = ({
             ...character,
             isExpanded: character.name === expandedCard,
           }}
-          definition={characterDefinitions[index]}
+          definition={
+            characterDefinitions.find((c) => c.name === character.name)!
+          }
           onClick={() => handleCardClick(character.name)}
         />
       ))}
