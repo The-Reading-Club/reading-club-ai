@@ -13,26 +13,33 @@ export interface BasicCharacterAttributes {
   description: string;
 }
 
+function getAPIParameters(
+  existingCharacters: BasicCharacterAttributes[],
+  storyText: string
+) {
+  return;
+}
+
 export async function callOpenaiIdentifyCharacter(
   existingCharacters: BasicCharacterAttributes[],
   storyText: string
 ) {
-  const results = await openaiOfficialSDK.chat.completions.create(
-    {
-      model: "gpt-4-1106-preview",
-      // model: "gpt-3.5-turbo",
-      response_format: { type: "json_object" },
-      messages: [
-        {
-          role: "system",
-          content:
-            "You are identifying new characters on a children's book story. You are given an array of existing characters, and need to return an array of new characters, if any. Otherwise, return an empty array.",
-        },
-        {
-          role: "user",
-          content: `These are the existing characters: ${JSON.stringify({
-            existingCharacters: existingCharacters,
-          })}
+  const response = await openaiOfficialSDK.chat.completions.create({
+    model: "gpt-4-1106-preview",
+    // model: "gpt-3.5-turbo",
+    response_format: { type: "json_object" },
+    stream: true,
+    messages: [
+      {
+        role: "system",
+        content:
+          "You are identifying new characters on a children's book story. You are given an array of existing characters, and need to return an array of new characters, if any. Otherwise, return an empty array.",
+      },
+      {
+        role: "user",
+        content: `These are the existing characters: ${JSON.stringify({
+          existingCharacters: existingCharacters,
+        })}
     
     Please return an array of new characters in the following JSON format: (${JSON.stringify(
       { newCharactersJSON: [{ name: "", description: "" }] }
@@ -40,17 +47,16 @@ export async function callOpenaiIdentifyCharacter(
     
     Here's the story: ${storyText}
     `,
-        },
-      ],
-    }
+      },
+    ],
     //   {
     //     headers: {
     //       "Content-Type": "application/json",
     //     },
     //   }
-  );
+  });
 
-  return results;
+  return response;
 }
 
 export function parseNewCharactersJSON(

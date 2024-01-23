@@ -4,7 +4,7 @@ import { toast } from "sonner";
 import axios from "axios";
 import { dev } from "@/config";
 import { devAlert, devConsoleLog } from "@/lib/utils";
-import { useTRCEditorStore } from "@/stores/store";
+import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
 
 const uploadKey = new PluginKey("upload-image");
 
@@ -178,6 +178,11 @@ function findPlaceholder(state: EditorState, id: {}) {
 
 // ILLUSTRATION GENERATION
 
+export interface CharacterIdentificationBody {
+  existingCharacters: any;
+  storyText: string;
+}
+
 export interface IllustrationGenerationBody {
   prevContextText: string;
   prevParagraphText: string;
@@ -207,7 +212,30 @@ export function startIllustrationGeneration(
   });
   view.dispatch(tr);
 
+  // We are going to do some JavaScript magic here
+  useTRCAppStore.getState().setDefaultModalOpen(true);
+  useTRCAppStore.getState().setDefaultModalTitle("Learn about your characters");
+
+  handleCharacterIdentification({
+    existingCharacters: body.existingCharacters,
+    storyText: body.prevContextText + body.postContextText,
+  }).then((res) => {
+    console.log("handleCharacterIdentification RES", res);
+    devAlert("handleCharacterIdentification RES " + JSON.stringify(res));
+
+    // show content on modal
+    // useTRCAppStore.getState().setDefaultModalBody(
+    //   <div>
+    //     <p>{JSON.stringify(res, null, 2)}</p>
+    //   </div>
+    // );
+  });
+
+  return;
+
   handleIllustrationGeneration(body).then((src) => {
+    useTRCAppStore.getState().setDefaultModalOpen(false);
+
     const { schema } = view.state;
 
     let pos = findPlaceholder(view.state, id);
@@ -228,6 +256,100 @@ export function startIllustrationGeneration(
       .replaceWith(pos, pos, node)
       .setMeta(uploadKey, { remove: { id } });
     view.dispatch(transaction);
+  });
+}
+
+function handleCharacterIdentification(body: CharacterIdentificationBody) {
+  return new Promise((resolve) => {
+    toast.promise(
+      fetch("/api/character/identify", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ body }),
+        // https://apidog.com/articles/axios-stream/
+        // responseType: "stream",
+      })
+        .then((response) => {
+          if (!response.ok) {
+            throw new Error(`HTTP error! Status: ${response.status}`);
+          }
+          // https://chat.openai.com/c/cdd17c3d-d691-4294-a924-1689fe3b5883
+          const reader = response.body!.getReader();
+          const decoder = new TextDecoder("utf-8"); // Creates a TextDecoder instance
+          let content = "";
+
+          return reader
+            .read()
+            .then(function processText({ done, value }): Promise<string> {
+              if (done) {
+                return Promise.resolve(content);
+              }
+
+              // Decode the Uint8Array to a string and append it to content
+              content += decoder.decode(value, { stream: true });
+
+              const pChunks = parseJSONChunk(content).map((chunk) => {
+                return <p>{chunk.key + ": " + chunk.value}</p>;
+              });
+
+              useTRCAppStore
+                .getState()
+                .setDefaultModalBody(<div>{pChunks}</div>);
+
+              // Read the next chunk
+              return reader.read().then(processText);
+            });
+        })
+        .then(async (res) => {
+          resolve(res);
+          // // Let's do streaming instead
+          // // https://www.youtube.com/watch?v=wDtjBb4ZJwA
+          // const reader = res.body!.getReader();
+          // let resultMsg = "";
+          // while (true) {
+          //   const chunk = await reader.read();
+          //   const { done, value } = chunk;
+          //   if (done) {
+          //     break;
+          //   }
+          //   // do something with value
+          //   // console.log(value);
+          //   resultMsg += value;
+          //   useTRCAppStore
+          //     .getState()
+          //     .setDefaultModalBody(<div>{resultMsg}</div>);
+          // }
+          // ***********
+          // AXIOS STYLE
+          // // Successfully identified characters
+          // if (res.status === 200) {
+          //   devAlert(
+          //     "Characters identified successfully." + JSON.stringify(res.data)
+          //   );
+          //   // const { newCharacters, characterDefinitions } = res.data;
+          //   // Save state to Zustand
+          //   devAlert("NOT SAVING TO ZUSTAND");
+          //   // not now for testing
+          //   // if (dev == false)
+          //   //   useTRCEditorStore.getState().setStoriesData({
+          //   //     [body.editorKey]: {
+          //   //       ...useTRCEditorStore.getState().storiesData[body.editorKey],
+          //   //       characters: newCharacters,
+          //   //       characterDefinitions: characterDefinitions,
+          //   //     },
+          //   //   });
+          //   resolve(res.data);
+          // } else if (res.status === 429) {
+          //   throw new Error("Rate limited.");
+          // }
+          // // Unkown error
+          // else {
+          //   throw new Error("Error uploading image.");
+          // }
+        })
+    );
   });
 }
 
@@ -289,4 +411,17 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
       }
     );
   });
+}
+
+// https://chat.openai.com/c/74e8273c-4be2-4409-a8a9-fd9d202005e8
+function parseJSONChunk(chunk: string): Array<{ key: string; value: string }> {
+  const regex = /\"(\w+)\":\"([^\"]+)\"/g;
+  let match;
+  const results = [];
+
+  while ((match = regex.exec(chunk)) !== null) {
+    results.push({ key: match[1], value: match[2] });
+  }
+
+  return results;
 }

@@ -2,30 +2,129 @@ import { CHARACTER_ATTRIBUTES } from "@/data/character";
 
 export const runtime = "edge";
 
-import { OpenAIStream } from "ai";
+import { OpenAIStream, StreamingTextResponse } from "ai";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { BasicCharacterAttributes, callOpenaiIdentifyCharacter } from "./utils";
+import { NextApiResponse } from "next";
+import { APIPromise } from "openai/core.mjs";
+import { Writable, pipeline } from "stream";
 
 const openaiOfficialSDK = new OpenAI({ apiKey: process.env.OAI_KEY });
 
-export async function POST(request: Request) {
+export async function POST(request: Request, res: NextApiResponse) {
   const reqJSON = await request.json();
+  // console.log("reqJSON", reqJSON);
+  // console.log("reqJSON.body", reqJSON.body);
   const { existingCharacters, storyText } = reqJSON.body;
 
-  try {
-    const results = await callOpenaiIdentifyCharacter(
-      existingCharacters,
-      storyText
-    );
+  const oaiResponse = await callOpenaiIdentifyCharacter(
+        existingCharacters,
+        storyText
+      );
+  
+  const encoder = new TextEncoder()
 
-    const newCharactersJSON = JSON.parse(
-      results.choices[0].message.content as string
-    );
+  let completeMessage = ''
 
-    console.log(newCharactersJSON);
+  async function* makeIterator() {
+    // first send the OAI chunks
+    for await (const chunk of oaiResponse) {
+      const delta = chunk.choices[0].delta.content as string
+      // you can do any additional post processing / transformation step here, like
+      completeMessage += delta
 
-    return NextResponse.json(newCharactersJSON, { status: 200 });
+      // you can yield any string by `yield encoder.encode(str)`, including JSON:
+      yield encoder.encode(JSON.stringify({ assistant_response_chunk: delta }))
+    }
+
+     // optionally, some additional info can be sent here, like
+     yield encoder.encode(JSON.stringify({ thread_id: "thread._id" }))
+  }
+
+  return new Response(iteratorToStream(makeIterator()))
+
+  // async function* openaiIterator() {
+  //   const openaiStream = callOpenaiIdentifyCharacter(
+  //     existingCharacters,
+  //     storyText
+  //   );
+
+  //   for await (const chunk of openaiStream) {
+  //     yield chunk;
+  //     await sleep(200);
+  //   }
+  // }
+
+  // try {
+  //   const sourceStream = callOpenaiIdentifyCharacter(
+  //     existingCharacters,
+  //     storyText
+  //   );
+
+  //   const iterator = makeIterator();
+  //   const stream = iteratorToStream(iterator);
+
+  //   const destinationStream = new Writable({
+  //     write(chunk, encoding, callback) {
+  //       res.write(chunk);
+  //       callback();
+  //     },
+  //   });
+
+  //   pipeline(stream, destinationStream, (err) => {});
+
+  //   // const stream = iteratorToStream(iterator);
+
+  //   // res.writeHead(200, {
+  //   //   "Content-Type": "application/json",
+  //   //   "Transfer-Encoding": "chunked",
+  //   // });
+
+  //   stream.pipeTo(
+  //     new WritableStream({
+  //       write(chunk) {
+  //         res.write(chunk);
+  //       },
+  //       close() {
+  //         res.end();
+  //       },
+  //       abort() {
+  //         res.status(500).end("Stream error");
+  //       },
+  //     })
+  //   );
+
+    // https://www.reddit.com/r/nextjs/comments/13toeob/nextjs_response_with_a_stream/
+    // https://nextjs.org/docs/app/building-your-application/routing/route-handlers#streaming
+    // https://github.com/vercel/next.js/discussions/48427
+
+    // return new Response(stream);
+
+    // 200,
+    //   {
+    //     "Content-Type": "application/json",
+    //     "Transfer-Encoding": "chunked",
+    //   };
+
+    // for await (const part of await stream) {
+    //   NextResponse.sen;
+    // }
+
+    // console.log("results", response);
+    // // const stream = OpenAIStream(response);
+
+    // return new StreamingTextResponse(stream);
+
+    // I wonder what the status will be
+
+    // const newCharactersJSON = JSON.parse(
+    //   response.choices[0].message.content as string
+    // );
+
+    // console.log(newCharactersJSON);
+
+    // return NextResponse.json(newCharactersJSON, { status: 200 });
   } catch (e) {
     console.log(e);
 
@@ -167,3 +266,43 @@ When the bats heard this, they all cheered. They were eager to explore a world t
 From that day on, Aris chose Plato to be the chief scout of all bats. The bats continued to live in their cave, but now they left the cave, following Plato, almost every night, seeking adventure, learning about the wider world, and of course, living happily ever after.
 
 The End.`;
+
+// https://nextjs.org/docs/app/building-your-application/routing/route-handlers#streaming
+
+// https://developer.mozilla.org/docs/Web/API/ReadableStream#convert_async_iterator_to_stream
+function iteratorToStream(iterator: any) {
+  return new ReadableStream({
+    async pull(controller) {
+      const { value, done } = await iterator.next();
+
+      if (done) {
+        controller.close();
+      } else {
+        controller.enqueue(value);
+      }
+    },
+  });
+}
+
+function sleep(time: number) {
+  return new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
+}
+
+const encoder = new TextEncoder();
+
+// async function* makeIterator() {
+//   yield encoder.encode("<p>One</p>");
+//   await sleep(200);
+//   yield encoder.encode("<p>Two</p>");
+//   await sleep(200);
+//   yield encoder.encode("<p>Three</p>");
+// }
+
+// export async function GET() {
+//   const iterator = makeIterator();
+//   const stream = iteratorToStream(iterator);
+
+//   return new Response(stream);
+// }
