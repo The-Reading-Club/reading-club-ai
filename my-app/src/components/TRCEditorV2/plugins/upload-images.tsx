@@ -5,6 +5,7 @@ import axios from "axios";
 import { dev } from "@/config";
 import { devAlert, devConsoleLog } from "@/lib/utils";
 import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
+import { use } from "react";
 
 const uploadKey = new PluginKey("upload-image");
 
@@ -214,14 +215,28 @@ export function startIllustrationGeneration(
 
   // We are going to do some JavaScript magic here
   useTRCAppStore.getState().setDefaultModalOpen(true);
-  useTRCAppStore.getState().setDefaultModalTitle("Learn about your characters");
+  useTRCAppStore
+    .getState()
+    .setDefaultModalTitle("Learning about your characters");
 
   handleCharacterIdentification({
     existingCharacters: body.existingCharacters,
     storyText: body.prevContextText + body.postContextText,
-  }).then((res) => {
+  }).then((res: any) => {
     console.log("handleCharacterIdentification RES", res);
     devAlert("handleCharacterIdentification RES " + JSON.stringify(res));
+
+    const dataJSON = JSON.parse(res);
+
+    // Save state to Zustand
+    const newCharacters = dataJSON["newCharactersJSON"];
+    devAlert(newCharacters);
+    useTRCEditorStore.getState().setStoriesData({
+      [body.editorKey]: {
+        ...useTRCEditorStore.getState().storiesData[body.editorKey],
+        characters: [...body.existingCharacters, ...newCharacters],
+      },
+    });
 
     // show content on modal
     // useTRCAppStore.getState().setDefaultModalBody(
@@ -280,6 +295,11 @@ function handleCharacterIdentification(body: CharacterIdentificationBody) {
           const decoder = new TextDecoder("utf-8"); // Creates a TextDecoder instance
           let content = "";
 
+          // https://chat.openai.com/c/66ad6d5b-2b5f-43fd-a646-41b6c1d7def3
+          let lastUpdateTime = Date.now(); // Initialize the last update time
+
+          const { setDefaultModalBody } = useTRCAppStore.getState();
+
           return reader
             .read()
             .then(function processText({ done, value }): Promise<string> {
@@ -291,18 +311,32 @@ function handleCharacterIdentification(body: CharacterIdentificationBody) {
               content += decoder.decode(value, { stream: true });
 
               const pChunks = parseJSONChunk(content).map((chunk) => {
-                return <p>{chunk.key + ": " + chunk.value}</p>;
+                if (chunk.key === "name")
+                  return <h1 className="text-xl font-bold">{chunk.value}</h1>;
+                if (chunk.key === "description") return <p>{chunk.value}</p>;
+                else return <></>;
               });
 
-              useTRCAppStore
-                .getState()
-                .setDefaultModalBody(<div>{pChunks}</div>);
+              // Check if more than 1 second has passed since last update
+              if (Date.now() - lastUpdateTime > 100) {
+                // useTRCAppStore
+                //   .getState()
+                //   .setDefaultModalBody(
+                //     <div className="text-center">{pChunks}</div>
+                //   );
+                setDefaultModalBody(
+                  <div className="text-center">{pChunks}</div>
+                );
+                lastUpdateTime = Date.now(); // Update the last update time
+              }
 
               // Read the next chunk
               return reader.read().then(processText);
             });
         })
         .then(async (res) => {
+          // Could update the modal state one last time here
+
           resolve(res);
           // // Let's do streaming instead
           // // https://www.youtube.com/watch?v=wDtjBb4ZJwA

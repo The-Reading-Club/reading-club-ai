@@ -5,6 +5,7 @@ export const runtime = "edge";
 import { OpenAIStream } from "ai";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
+import { ChatCompletionMessageParam } from "openai/resources/index.mjs";
 
 const openaiOfficialSDK = new OpenAI({ apiKey: process.env.OAI_KEY });
 
@@ -20,43 +21,31 @@ function getAPIParameters(
   return;
 }
 
-export async function callOpenaiIdentifyCharacter(
+export async function callOpenaiIdentifyCharacterStream(
   existingCharacters: BasicCharacterAttributes[],
   storyText: string
 ) {
   const response = await openaiOfficialSDK.chat.completions.create({
     model: "gpt-4-1106-preview",
-    // model: "gpt-3.5-turbo",
     response_format: { type: "json_object" },
+    messages: getMessagesParameter(existingCharacters, storyText),
     stream: true,
-    messages: [
-      {
-        role: "system",
-        content:
-          "You are identifying new characters on a children's book story. You are given an array of existing characters, and need to return an array of new characters, if any. Otherwise, return an empty array.",
-      },
-      {
-        role: "user",
-        content: `These are the existing characters: ${JSON.stringify({
-          existingCharacters: existingCharacters,
-        })}
-    
-    Please return an array of new characters in the following JSON format: (${JSON.stringify(
-      { newCharactersJSON: [{ name: "", description: "" }] }
-    )}), if any. Otherwise, return an empty array.
-    
-    Here's the story: ${storyText}
-    `,
-      },
-    ],
-    //   {
-    //     headers: {
-    //       "Content-Type": "application/json",
-    //     },
-    //   }
   });
 
   return response;
+}
+
+export async function callOpenaiIdentifyCharacter(
+  existingCharacters: BasicCharacterAttributes[],
+  storyText: string
+) {
+  const result = await openaiOfficialSDK.chat.completions.create({
+    model: "gpt-4-1106-preview",
+    response_format: { type: "json_object" },
+    messages: getMessagesParameter(existingCharacters, storyText),
+  });
+
+  return result;
 }
 
 export function parseNewCharactersJSON(
@@ -67,4 +56,32 @@ export function parseNewCharactersJSON(
   );
 
   return newCharactersJSON;
+}
+
+function getMessagesParameter(
+  existingCharacters: BasicCharacterAttributes[],
+  storyText: string
+) {
+  const messages: ChatCompletionMessageParam[] = [
+    {
+      role: "system",
+      content:
+        "You are identifying new characters on a children's book story. You are given an array of existing characters, and need to return an array of new characters, if any. Otherwise, return an empty array.",
+    },
+    {
+      role: "user",
+      content: `These are the existing characters: ${JSON.stringify({
+        existingCharacters: existingCharacters,
+      })}
+  
+  Please return an array of new characters in the following JSON format: (${JSON.stringify(
+    { newCharactersJSON: [{ name: "", description: "" }] }
+  )}), if any. Otherwise, return an empty array.
+  
+  Here's the story: ${storyText}
+  `,
+    },
+  ];
+
+  return messages;
 }

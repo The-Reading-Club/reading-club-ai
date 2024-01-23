@@ -5,7 +5,11 @@ export const runtime = "edge";
 import { OpenAIStream, StreamingTextResponse } from "ai";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
-import { BasicCharacterAttributes, callOpenaiIdentifyCharacter } from "./utils";
+import {
+  BasicCharacterAttributes,
+  callOpenaiIdentifyCharacter,
+  callOpenaiIdentifyCharacterStream,
+} from "./utils";
 import { NextApiResponse } from "next";
 import { APIPromise } from "openai/core.mjs";
 import { Writable, pipeline } from "stream";
@@ -18,31 +22,35 @@ export async function POST(request: Request, res: NextApiResponse) {
   // console.log("reqJSON.body", reqJSON.body);
   const { existingCharacters, storyText } = reqJSON.body;
 
-  const oaiResponse = await callOpenaiIdentifyCharacter(
-        existingCharacters,
-        storyText
-      );
-  
-  const encoder = new TextEncoder()
+  const oaiResponse = await callOpenaiIdentifyCharacterStream(
+    existingCharacters,
+    storyText
+  );
 
-  let completeMessage = ''
+  const stream = OpenAIStream(oaiResponse);
 
-  async function* makeIterator() {
-    // first send the OAI chunks
-    for await (const chunk of oaiResponse) {
-      const delta = chunk.choices[0].delta.content as string
-      // you can do any additional post processing / transformation step here, like
-      completeMessage += delta
+  return new StreamingTextResponse(stream);
 
-      // you can yield any string by `yield encoder.encode(str)`, including JSON:
-      yield encoder.encode(JSON.stringify({ assistant_response_chunk: delta }))
-    }
+  // const encoder = new TextEncoder();
 
-     // optionally, some additional info can be sent here, like
-     yield encoder.encode(JSON.stringify({ thread_id: "thread._id" }))
-  }
+  // let completeMessage = "";
 
-  return new Response(iteratorToStream(makeIterator()))
+  // async function* makeIterator() {
+  //   // first send the OAI chunks
+  //   for await (const chunk of oaiResponse) {
+  //     const delta = chunk.choices[0].delta.content as string;
+  //     // you can do any additional post processing / transformation step here, like
+  //     completeMessage += delta;
+
+  //     // you can yield any string by `yield encoder.encode(str)`, including JSON:
+  //     yield encoder.encode(JSON.stringify({ assistant_response_chunk: delta }));
+  //   }
+
+  //   // optionally, some additional info can be sent here, like
+  //   yield encoder.encode(JSON.stringify({ thread_id: "thread._id" }));
+  // }
+
+  // return new Response(iteratorToStream(makeIterator()));
 
   // async function* openaiIterator() {
   //   const openaiStream = callOpenaiIdentifyCharacter(
@@ -95,41 +103,41 @@ export async function POST(request: Request, res: NextApiResponse) {
   //     })
   //   );
 
-    // https://www.reddit.com/r/nextjs/comments/13toeob/nextjs_response_with_a_stream/
-    // https://nextjs.org/docs/app/building-your-application/routing/route-handlers#streaming
-    // https://github.com/vercel/next.js/discussions/48427
+  // https://www.reddit.com/r/nextjs/comments/13toeob/nextjs_response_with_a_stream/
+  // https://nextjs.org/docs/app/building-your-application/routing/route-handlers#streaming
+  // https://github.com/vercel/next.js/discussions/48427
 
-    // return new Response(stream);
+  // return new Response(stream);
 
-    // 200,
-    //   {
-    //     "Content-Type": "application/json",
-    //     "Transfer-Encoding": "chunked",
-    //   };
+  // 200,
+  //   {
+  //     "Content-Type": "application/json",
+  //     "Transfer-Encoding": "chunked",
+  //   };
 
-    // for await (const part of await stream) {
-    //   NextResponse.sen;
-    // }
+  // for await (const part of await stream) {
+  //   NextResponse.sen;
+  // }
 
-    // console.log("results", response);
-    // // const stream = OpenAIStream(response);
+  // console.log("results", response);
+  // // const stream = OpenAIStream(response);
 
-    // return new StreamingTextResponse(stream);
+  // return new StreamingTextResponse(stream);
 
-    // I wonder what the status will be
+  // I wonder what the status will be
 
-    // const newCharactersJSON = JSON.parse(
-    //   response.choices[0].message.content as string
-    // );
+  // const newCharactersJSON = JSON.parse(
+  //   response.choices[0].message.content as string
+  // );
 
-    // console.log(newCharactersJSON);
+  // console.log(newCharactersJSON);
 
-    // return NextResponse.json(newCharactersJSON, { status: 200 });
-  } catch (e) {
-    console.log(e);
+  // return NextResponse.json(newCharactersJSON, { status: 200 });
+  // } catch (e) {
+  //   console.log(e);
 
-    return new NextResponse("Error", { status: 500 });
-  }
+  //   return new NextResponse("Error", { status: 500 });
+  // }
 }
 
 export async function GET(request: Request) {
