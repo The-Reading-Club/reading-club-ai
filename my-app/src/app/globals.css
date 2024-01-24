@@ -7,6 +7,13 @@
   padding: 0;
 }
 
+/* https://github.com/AntonioErdeljac/next-auth-v5-advanced-guide/blob/master/app/globals.css */
+html,
+body,
+:root {
+  height: 100%;
+}
+
 :root {
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 193, 43;
@@ -36,6 +43,13 @@
   --trc-highlight-orange: #faebdd;
   --trc-highlight-pink: #faf1f5;
   --trc-highlight-gray: #f1f1ef;
+
+  /* https://github.com/AntonioErdeljac/next-auth-v5-advanced-guide/blob/master/app/globals.css */
+  --muted: 210 40% 96.1%;
+  --muted-foreground: 215.4 16.3% 46.9%;
+
+  --destructive: 0 84.2% 60.2%;
+  --destructive-foreground: 210 40% 98%;
 }
 
 body {
