@@ -84,25 +84,26 @@ export async function POST(request: Request) {
     postContextText,
     existingCharacters,
     characterDefinitions,
+    chosenCharacter,
   } = reqJSON.body as IllustrationGenerationBody;
 
   // IDENTIFY NEW CHARACTERS
   // const existingCharacters: BasicCharacterAttributes[] = [];
   const storyText = prevContextText + postContextText;
 
-  console.log("\n\n\n ****** EXISTING CHARACTERS CHECK ****");
-  console.log(existingCharacters);
+  // console.log("\n\n\n ****** EXISTING CHARACTERS CHECK ****");
+  // console.log(existingCharacters);
 
-  const newCharactersJSON = parseNewCharactersJSON(
-    await callOpenaiIdentifyCharacter(existingCharacters, storyText)
-  )["newCharactersJSON"];
+  // const newCharactersJSON = parseNewCharactersJSON(
+  //   await callOpenaiIdentifyCharacter(existingCharacters, storyText)
+  // )["newCharactersJSON"];
 
-  console.log(newCharactersJSON);
+  // console.log(newCharactersJSON);
 
-  const updatedExistingCharacters = [
-    ...existingCharacters,
-    ...newCharactersJSON,
-  ];
+  // const updatedExistingCharacters = [
+  //   ...existingCharacters,
+  //   ...newCharactersJSON,
+  // ];
 
   // updatedExistingCharacters = [
   //   {
@@ -134,18 +135,18 @@ export async function POST(request: Request) {
   // const characterDefinitions = [];
 
   // CHARACTER DEFINITIONS CHECK
-  console.log("\n\n\n ****** CHARACTER DEFINITIONS CHECK ****");
-  console.log(characterDefinitions);
+  // console.log("\n\n\n ****** CHARACTER DEFINITIONS CHECK ****");
+  // console.log(characterDefinitions);
 
-  console.log("About to create new characters if needed");
-  for (const newCharacter of newCharactersJSON) {
-    console.log("CREATING NEW CHARACTER");
-    const newCharacterDefinition = parseCharacterChatCompletion(
-      await callOpenAIAPICreateCharacter(newCharacter)
-    );
-    characterDefinitions.push(newCharacterDefinition);
-  }
-  console.log("Done creating new characters if needed");
+  // console.log("About to create new characters if needed");
+  // for (const newCharacter of newCharactersJSON) {
+  //   console.log("CREATING NEW CHARACTER");
+  //   const newCharacterDefinition = parseCharacterChatCompletion(
+  //     await callOpenAIAPICreateCharacter(newCharacter)
+  //   );
+  //   characterDefinitions.push(newCharacterDefinition);
+  // }
+  // console.log("Done creating new characters if needed");
 
   // characterDefinitions = [
   //   {
@@ -210,13 +211,13 @@ export async function POST(request: Request) {
   // console.log(characterDefinitions);
 
   // CHOOSE CHARACTER
-  const chosenCharacter: ChosenCharacterFields = parseChosenCharactersJSON(
-    await callOpenaiChooseCharacter(
-      updatedExistingCharacters,
-      storyText,
-      prevParagraphText
-    )
-  )["chosenCharacter"][0];
+  // const chosenCharacter: ChosenCharacterFields = parseChosenCharactersJSON(
+  //   await callOpenaiChooseCharacter(
+  //     updatedExistingCharacters,
+  //     storyText,
+  //     prevParagraphText
+  //   )
+  // )["chosenCharacter"][0];
 
   // CHOSEN CHARACTER CHECK
   console.log("\n\n\n ****** CHOSEN CHARACTER CHECK ****");
@@ -227,8 +228,9 @@ export async function POST(request: Request) {
       character.name === chosenCharacter.name
   );
 
-  const chosenCharacterDescription = updatedExistingCharacters.find(
-    (character) => character.name === chosenCharacter.name
+  const chosenCharacterDescription = existingCharacters.find(
+    (character: BasicCharacterAttributes) =>
+      character.name === chosenCharacter.name
   )?.description;
 
   console.log("\n\n\n ****** CHOSEN CHARACTER ATTRIBUTES CHECK ****");
@@ -385,7 +387,8 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
   return NextResponse.json(
     {
       imageData: image.data[0],
-      newCharacters: newCharactersJSON,
+      // should get rid of this actually, I am already doing it way before in the client
+      newCharacters: existingCharacters,
       characterDefinitions,
       storedImageUrl: imageBlobStored == true ? storedImageUrl : dalleImageUrl,
     } as GenerateIllustrationResponse,

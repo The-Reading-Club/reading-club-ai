@@ -1,0 +1,1272 @@
+{
+  "state": {
+    "storiesData": {
+      "trc-editor-spage": {
+        "characters": [
+          {
+            "name": "Plato",
+            "description": "a young bat with a lot of energy, who is very curious about everything and discovers the world outside the cave"
+          },
+          {
+            "name": "Aris",
+            "description": "the oldest of the bats and the bat leader, who initially watches shadows on the cave wall to understand the world"
+          }
+        ],
+        "characterDefinitions": [
+          {
+            "name": "Plato",
+            "age": "6",
+            "gender": "Male",
+            "appearance": "Plato is a diminutive, midnight blue bat with cherubic features and large, expressive golden eyes. His wings are a lighter shade of blue with delicate patterns resembling the night sky. He is often seen wearing a small, leaf-shaped pendant.",
+            "personalityTraits": "Curious, energetic, enthusiastic, kind-hearted, adventurous",
+            "likes": "Exploring, fruit, stargazing, storytelling",
+            "dislikes": "Predators, pollution, being underestimated because of his size",
+            "fears": "Getting lost, the idea of being alone, predators",
+            "backstory": "Plato was born in a cozy, hidden cave where he lived with a tight-knit community of bats. From a young age, his insatiable curiosity about the world beyond their cavern home set him apart from his peers.",
+            "motivations": "A desire to learn and discover, to make new friends and protect his loved ones",
+            "relationships": "Plato has a nurturing family, a wise elder whom he idolizes, and a best friend who is more cautious but always gets pulled into Plato's adventures.",
+            "roleInStory": "Protagonist",
+            "specialAbilitiesOrSkills": "Echolocation, incredible agility in flight, acute sense of hearing",
+            "culturalBackground": "A nocturnal society that celebrates nightly events and lunar festivals",
+            "languageSpoken": "Chiroptera, a language of high-pitched sounds and varied frequencies understandable by bats",
+            "hobbies": "Collecting interesting pebbles, practicing acrobatic flight maneuvers, learning about different cultures",
+            "signatureItems": "Leaf-shaped pendant, a map of the area drawn by himself, a satchel filled with odds and ends collected on his adventures",
+            "height": "Tiny for his age",
+            "hairColor": "Midnight blue",
+            "eyeColor": "Gold",
+            "distinguishingMarks": "Star-like patterns on his wings",
+            "build": "Slim and light to facilitate swift flight",
+            "skinTone": "Light blue, nearly translucent wing membranes",
+            "fashionStyle": "Natural and functional, with a penchant for items that are easy to fly with",
+            "posture": "Alert and upright when on foot, a skilled and graceful flyer",
+            "voice": "High-pitched with a chirpy tone, infectious laugh",
+            "facialHair": "None",
+            "physicalCondition": "In peak physical form for a young bat, full of energy",
+            "sceneDescription": "Plato zips through the twilight sky, his curious gaze absorbing the wonders of the world below, occasionally diving to inspect something that sparks his interest or exchanging friendly chirps with the nocturnal creatures he encounters."
+          },
+          {
+            "name": "Aris",
+            "age": "77 bat-years",
+            "gender": "Male",
+            "appearance": "A gentle, yet striking elderly bat with a rich grey fur and sage-like, piercing blue eyes.",
+            "personalityTraits": "Wise, attentive, empathetic, cautious, and sometimes a tad too serious.",
+            "likes": "The tranquility of dusk, the symphony of the night's creatures, ripe figs.",
+            "dislikes": "Abrupt disruptions of peace, predators near the cave, the cold.",
+            "fears": "Losing the bat colony he leads, not being able to protect the young ones.",
+            "backstory": "Aris was born into a legendary line of bat leaders and assumed the role after his mother's departure. He learned about the world through the stories silhouetted against the cave walls and has since guided his colony with a combination of tradition and innovation.",
+            "motivations": "Keeping the bat colony safe, passing down his wisdom, ensuring the natural balance is maintained.",
+            "relationships": "Mentor to younger bats, advisor to other creatures of the night, a beloved figure amongst his bat colony.",
+            "roleInStory": "The wise elder that provides guidance to the main characters, offers historical insights and helps resolve conflict with his knowledge and experience.",
+            "specialAbilitiesOrSkills": "Exceptional echolocation abilities, acute sensory perception, and the rare ability to communicate across species.",
+            "culturalBackground": "Steeped in the ancient bat folklore and cave hieroglyphs of his ancestors.",
+            "languageSpoken": "Batspeak, a sophisticated combination of ultrasonic chirps, body language, and wing gestures.",
+            "hobbies": "Meditating on the cave's highest ledge, storytelling, star-gazing.",
+            "signatureItems": "An unusually long and tattered cape-like wing membrane, a small pebble worn smooth with age and handling.",
+            "height": "Slightly above average for his species",
+            "hairColor": "Rich grey with silver highlights",
+            "eyeColor": "Piercing blue",
+            "distinguishingMarks": "A crescent scar on his left wing",
+            "build": "Lean but showing signs of age",
+            "skinTone": "Furred",
+            "fashionStyle": "Natural and unadorned",
+            "posture": "Erect and dignified, despite his age",
+            "voice": "A deep, soothing rumble akin to the distant roll of thunder",
+            "facialHair": "None",
+            "physicalCondition": "Aged for a bat, but still capable and agile",
+            "sceneDescription": "Aris perched solemnly in the cave's alcove, the play of shadows on the wall reflecting in his deep blue eyes, his worn wings wrapped around him like a cloak of history and wisdom."
+          }
+        ],
+        "tiptapEditorContent": {
+          "type": "doc",
+          "content": [
+            {
+              "type": "heading",
+              "attrs": { "level": 1 },
+              "content": [
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "Small World?"
+                }
+              ]
+            },
+            {
+              "type": "heading",
+              "attrs": { "level": 2 },
+              "content": [{ "type": "text", "text": "By Alexis Diamond." }]
+            },
+            {
+              "type": "heading",
+              "attrs": { "level": 2 },
+              "content": [
+                {
+                  "type": "text",
+                  "text": "© 2023 The Reading Club, Inc. All Rights Reserved."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Once upon a time, deep in a dark cave, there lived a large family of bats. I don't know how many bats. It was somewhere between 50 and 100 bats. It was a very big bat family."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "This bat family never left their cave. They were content with their cozy home, nestled snugly within the cave walls. Day after day, they would sleep upside down, hanging from the ceiling, and chatter amongst themselves using their high-pitched bat language."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "This is a test" }]
+            },
+            { "type": "paragraph" },
+            { "type": "paragraph" },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-HCMy4oSJ0YgJthqiwEEQqHDc.png?st=2024-01-19T20%3A07%3A40Z&se=2024-01-19T22%3A07%3A40Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-19T19%3A37%3A01Z&ske=2024-01-20T19%3A37%3A01Z&sks=b&skv=2021-08-06&sig=ZjCeeqxXyX2bGHmj/r70JDScML6ZiZ5uSazDTCLZS5w%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-GEfMeC9PDkEQRsfpFaxkMErt.png?st=2024-01-19T18%3A05%3A52Z&se=2024-01-19T20%3A05%3A52Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-19T12%3A22%3A13Z&ske=2024-01-20T12%3A22%3A13Z&sks=b&skv=2021-08-06&sig=D8p7lq%2BLBkZJUFkpFHW6dHN/W%2Bac2zqYw7MkIPrXPfU%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-TgxVyDzAfuwA9uN61LWc9yfX.png?st=2024-01-19T18%3A05%3A15Z&se=2024-01-19T20%3A05%3A15Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-19T00%3A28%3A30Z&ske=2024-01-20T00%3A28%3A30Z&sks=b&skv=2021-08-06&sig=xMoadHCvrRDFMOZ7Zur/R2vgTCK6pdWGuONeXb9Xxp0%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-MnMwSblykN9hT2PWtl5WsOV0.png?st=2024-01-19T18%3A03%3A28Z&se=2024-01-19T20%3A03%3A28Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-19T06%3A20%3A06Z&ske=2024-01-20T06%3A20%3A06Z&sks=b&skv=2021-08-06&sig=jauWF8SUZ/WQG22KaicwwuDzqleUz8UwSZoEQAgVL3o%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            { "type": "paragraph" },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-4tomCG2WMU2QmpveAh1RSYyc.png?st=2024-01-19T00%3A39%3A39Z&se=2024-01-19T02%3A39%3A39Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A22%3A35Z&ske=2024-01-19T17%3A22%3A35Z&sks=b&skv=2021-08-06&sig=CJHB/1zzYEC5Hb%2B6v%2B8EfmJrv1aPIfEG2qhkIOV9seQ%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            { "type": "paragraph" },
+            { "type": "paragraph" },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-8ddgL2U4djSTZklCPmlOtyms.png?st=2024-01-18T22%3A54%3A23Z&se=2024-01-19T00%3A54%3A23Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A26%3A41Z&ske=2024-01-19T12%3A26%3A41Z&sks=b&skv=2021-08-06&sig=uRgIJ4C7RTkQfuJHj8NHfkEPAx1chCbQRzs6YbUxGz0%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-XaPjdH3Vnbmt10ZSWwvuewKs.png?st=2024-01-18T22%3A51%3A57Z&se=2024-01-19T00%3A51%3A57Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T23%3A02%3A29Z&ske=2024-01-19T23%3A02%3A29Z&sks=b&skv=2021-08-06&sig=p5dlLOagZSzsSxCs/1rQf6Qw5ZNIw/iZPVw1MpffNFc%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-TXfHO8nISK5jklZjGYpz9DzP.png?st=2024-01-18T22%3A50%3A02Z&se=2024-01-19T00%3A50%3A02Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T13%3A36%3A49Z&ske=2024-01-19T13%3A36%3A49Z&sks=b&skv=2021-08-06&sig=0f4835kn8jfQ/cuj8Nu4oKX9kFYNZsm79RZA7Yh9NJs%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-IASX3T83aUaJQzYkfgZepvwR.png?st=2024-01-18T22%3A48%3A23Z&se=2024-01-19T00%3A48%3A23Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A18%3A03Z&ske=2024-01-19T12%3A18%3A03Z&sks=b&skv=2021-08-06&sig=NWX3rO%2BmzV0BcE6Cj3bdjRS7J0UHYPDbUftilrvUHfE%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-lJaEBB87PxLv7eX5vtDeHBSE.png?st=2024-01-18T22%3A47%3A00Z&se=2024-01-19T00%3A47%3A00Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T10%3A55%3A13Z&ske=2024-01-19T10%3A55%3A13Z&sks=b&skv=2021-08-06&sig=RQycKa4JPLjvYiG/N4Ej5FoC5m62XCTkS2TGALjIgEM%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-jEIrVFb3hEfwQPlROgnxZojY.png?st=2024-01-18T22%3A40%3A10Z&se=2024-01-19T00%3A40%3A10Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A21%3A42Z&ske=2024-01-19T17%3A21%3A42Z&sks=b&skv=2021-08-06&sig=7kPydayCn9KB2CFZ88Cgzuv2TD8DqFTPZxLjVgsJT1E%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-zLyGwQTuVnxQLHT6nVuQM5tK.png?st=2024-01-18T22%3A38%3A31Z&se=2024-01-19T00%3A38%3A31Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A41%3A05Z&ske=2024-01-19T16%3A41%3A05Z&sks=b&skv=2021-08-06&sig=w9rdBBjgI18iyCbI7qfM8TzThBg/4vqBdVqthAdzTEM%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-NxPosucp2kI3aoqLvq4Kvv8Q.png?st=2024-01-18T22%3A33%3A29Z&se=2024-01-19T00%3A33%3A29Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A41%3A24Z&ske=2024-01-19T17%3A41%3A24Z&sks=b&skv=2021-08-06&sig=iIIFEgEes/crvdJBUlfGnrb/aqA66Oq4lNK/RFym9as%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-R5wN9IMuj9V3MlpIYibDZOsf.png?st=2024-01-18T22%3A31%3A48Z&se=2024-01-19T00%3A31%3A48Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A19%3A44Z&ske=2024-01-19T17%3A19%3A44Z&sks=b&skv=2021-08-06&sig=3G43vennEJZzE1WinUBtKUMSfTFDUuVyQlZK23PENeI%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-7a29tDJAhGSeKiW0d70x91lD.png?st=2024-01-18T22%3A29%3A16Z&se=2024-01-19T00%3A29%3A16Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A31%3A28Z&ske=2024-01-19T16%3A31%3A28Z&sks=b&skv=2021-08-06&sig=K3I3fKQ0hHb2bpw%2BeklDCWwXOcxMYo0fHGJVr01m91M%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-nncO274No3FiaLV3goqFXVlB.png?st=2024-01-18T22%3A27%3A11Z&se=2024-01-19T00%3A27%3A11Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A18%3A00Z&ske=2024-01-19T12%3A18%3A00Z&sks=b&skv=2021-08-06&sig=BlxMHuXBr8XFeO8o4FYySYLhCykPc1vckVpw/P5qVkU%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-WcUMwLK9CDFg1BM3vHqMkCUZ.png?st=2024-01-18T22%3A16%3A11Z&se=2024-01-19T00%3A16%3A11Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A22%3A31Z&ske=2024-01-19T12%3A22%3A31Z&sks=b&skv=2021-08-06&sig=G7oflaoRMXbagDCOAWf4jpsqMH3573CWrOhkm428CUc%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-h72jNDrL1NezouWvImNTrtYv.png?st=2024-01-18T22%3A08%3A54Z&se=2024-01-19T00%3A08%3A54Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A27%3A57Z&ske=2024-01-19T17%3A27%3A57Z&sks=b&skv=2021-08-06&sig=KIjboKX9lOcIPlfo/DvYteMWKKcq3EYbocRVJEuFh7o%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Why? Why did they never leave it?" }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "The strange truth is that all the bats had been born deep in the heart of the cave. Since none of them had ever left the cave, none even knew they were in a cave. The cave, for them, was the whole entire world."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "And life in the cave was not too bad."
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/1-cave-crowd.jpg",
+                "alt": "1-cave-crowd.jpg",
+                "title": "1-cave-crowd.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "There was a little stream in the cave, which gave the bats water to drink. The cave was also home to insects that the bats loved to eat."
+                }
+              ]
+            },
+            { "type": "paragraph" },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-8rM6qcsb441FLFf4mnQ1DrXM.png?st=2024-01-19T00%3A40%3A11Z&se=2024-01-19T02%3A40%3A11Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T02%3A10%3A41Z&ske=2024-01-19T02%3A10%3A41Z&sks=b&skv=2021-08-06&sig=Oor9bYprL/VwBC4kdbFVyU6jf/o1S21d8GXaHa9XNPk%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Among the many bats living in the cave, there was one small bat different from all the rest. This bat's name was Plato. He was a young bat, and he was always flying around the cave. In fact, Plato had so much energy that he was always zooming!"
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-FrJQZ7L6mMtwtPdiCwQQpUXz.png?st=2024-01-18T21%3A31%3A55Z&se=2024-01-18T23%3A31%3A55Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T10%3A04%3A31Z&ske=2024-01-19T10%3A04%3A31Z&sks=b&skv=2021-08-06&sig=p0PRauBhVYqEQ3cP9ALKkoEgpz/6lTdxNDJ9Jv70cIY%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-pirnkjLBAtkuvvTjke1v2CJB.png?st=2024-01-18T21%3A27%3A58Z&se=2024-01-18T23%3A27%3A58Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A12%3A10Z&ske=2024-01-19T16%3A12%3A10Z&sks=b&skv=2021-08-06&sig=n4Q1wS0ssumk%2Be4Ln1dKl1/hTjYlychp2nWY6UZqjuQ%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-W4ogN5fC31LzqEfIZCtz1gr4.png?st=2024-01-18T20%3A17%3A05Z&se=2024-01-18T22%3A17%3A05Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A18%3A32Z&ske=2024-01-19T16%3A18%3A32Z&sks=b&skv=2021-08-06&sig=nx88AALLyX2VHfTPK5VAzOPtg74UvTdXHuciPDsDsko%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-HkIUa8vNV5V47PLbqwNsLI7N.png?st=2024-01-18T20%3A14%3A52Z&se=2024-01-18T22%3A14%3A52Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A26%3A07Z&ske=2024-01-19T16%3A26%3A07Z&sks=b&skv=2021-08-06&sig=5cNVQKMS27S92PxPdW%2BYXdFBGOithFUKOD0VQ6thZqY%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-REVkOSLpO04c50dKZCXJn9Mc.png?st=2024-01-18T20%3A10%3A16Z&se=2024-01-18T22%3A10%3A16Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A32%3A43Z&ske=2024-01-19T16%3A32%3A43Z&sks=b&skv=2021-08-06&sig=9e/%2BQHCNYlX%2BFWaTGdTgYnjUwB1hPzHEsVyoQ2Sz9c0%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-jdz93usTQtwdZ3BjDrWeV4HM.png?st=2024-01-18T20%3A00%3A46Z&se=2024-01-18T22%3A00%3A46Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A20%3A16Z&ske=2024-01-19T12%3A20%3A16Z&sks=b&skv=2021-08-06&sig=iIcdyZRBPHslUtdr78zksXsTochUnnA3Q1HWuPnw5TY%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-hA4S73GR394Xonw09eVIp7R7.png?st=2024-01-18T19%3A55%3A47Z&se=2024-01-18T21%3A55%3A47Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A25%3A03Z&ske=2024-01-19T12%3A25%3A03Z&sks=b&skv=2021-08-06&sig=K%2BxZ9OgcruzZ8mE6Pxv3aZn47j9MXG1eC3So9Zx8Fx4%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-d5NeL29DneIMSjtuvwuikvqG.png?st=2024-01-18T19%3A40%3A13Z&se=2024-01-18T21%3A40%3A13Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A50%3A13Z&ske=2024-01-19T16%3A50%3A13Z&sks=b&skv=2021-08-06&sig=1ljFveaioLy274/KctS7g0NthH8suKrC5qtJm4UGb0k%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-JhUwASSFCy2xe9Rf4lzLiEJB.png?st=2024-01-18T19%3A37%3A18Z&se=2024-01-18T21%3A37%3A18Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T13%3A34%3A02Z&ske=2024-01-19T13%3A34%3A02Z&sks=b&skv=2021-08-06&sig=fB9U9jK2m962Wu1cI/N65k3vjwx1sjVLEyJHUbsHUkQ%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-PONy3io4UiA5X0uKVmUXqwwu.png?st=2024-01-18T19%3A35%3A42Z&se=2024-01-18T21%3A35%3A42Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A25%3A10Z&ske=2024-01-19T17%3A25%3A10Z&sks=b&skv=2021-08-06&sig=LdUbl0TzBaFGWfj4kLbjozkwzhfpYfLfKhzX9b49ikc%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-IzwOAy5qddQXEcv0u9M9wUC4.png?st=2024-01-18T19%3A33%3A26Z&se=2024-01-18T21%3A33%3A26Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A24%3A08Z&ske=2024-01-19T17%3A24%3A08Z&sks=b&skv=2021-08-06&sig=Q8mefmCqJklTmp7wiG48PV2b/FZT7iqOpDMpqICVzbU%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-UHv5Z7OFZSIGXmGFuxElncRs.png?st=2024-01-18T19%3A31%3A22Z&se=2024-01-18T21%3A31%3A22Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A37%3A40Z&ske=2024-01-19T17%3A37%3A40Z&sks=b&skv=2021-08-06&sig=AAXezzxL6YzimJKBOYViSESC3WXZ9RloSWAwWRyUWTg%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-DN2m5e9hp9ht63LQ9Q0qtaN5.png?st=2024-01-18T19%3A29%3A43Z&se=2024-01-18T21%3A29%3A43Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A27%3A54Z&ske=2024-01-19T17%3A27%3A54Z&sks=b&skv=2021-08-06&sig=C1T8iAYrkiN/UAV%2BZ9pC/s9gNRMm3f%2BzDmXLLvYsFh8%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-G4gxB5YymOc7LiCqMIuhqbG7.png?st=2024-01-18T19%3A27%3A28Z&se=2024-01-18T21%3A27%3A28Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A29%3A30Z&ske=2024-01-19T12%3A29%3A30Z&sks=b&skv=2021-08-06&sig=Y1mkF11hgI//XcBoElnXUQYcnX7m528jDKbPPq0am9U%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-46gWH2LuidzKtd5s7ssTp7f4.png?st=2024-01-18T19%3A23%3A45Z&se=2024-01-18T21%3A23%3A45Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T15%3A30%3A49Z&ske=2024-01-19T15%3A30%3A49Z&sks=b&skv=2021-08-06&sig=nUkrNEXsNcffal//yFRxLE8pE3n54WUFbriFHnYACKU%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-CaaFIUHTpu2kFiTxB6bY4lz9.png?st=2024-01-18T19%3A20%3A52Z&se=2024-01-18T21%3A20%3A52Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A20%3A53Z&ske=2024-01-19T12%3A20%3A53Z&sks=b&skv=2021-08-06&sig=cmjtxQvoRc1Q4m0%2BKKQAUtvGuVk2BEYKAPh7BClp7Jk%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-F0D5StKWwY3Zjt5HWMB9Amvv.png?st=2024-01-18T19%3A18%3A30Z&se=2024-01-18T21%3A18%3A30Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A32%3A00Z&ske=2024-01-19T17%3A32%3A00Z&sks=b&skv=2021-08-06&sig=rsfhawAD34l%2BoKfZR0kGCVri6th98oEw0nijOaANxZE%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-KfoBEa3HIopfp5MGWfQP81yu.png?st=2024-01-18T19%3A16%3A46Z&se=2024-01-18T21%3A16%3A46Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A42%3A01Z&ske=2024-01-19T16%3A42%3A01Z&sks=b&skv=2021-08-06&sig=vhhLPWhi1uchhXvHmLoDp1szO%2B/79RkZ4avBKqf2JwU%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-RMNFPz0tWmypP9MoiyHscSYz.png?st=2024-01-18T19%3A14%3A05Z&se=2024-01-18T21%3A14%3A05Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A07%3A30Z&ske=2024-01-19T17%3A07%3A30Z&sks=b&skv=2021-08-06&sig=w34pr2vJNSl7OnEjAR9P0Qe3oFCI7ZNlMQgMo966Ee4%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-jV5h4sP6gU6BNQ6WcNztkwFU.png?st=2024-01-18T19%3A11%3A29Z&se=2024-01-18T21%3A11%3A29Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A24%3A25Z&ske=2024-01-19T17%3A24%3A25Z&sks=b&skv=2021-08-06&sig=So4p5a83nD9rl1xqgbuyCCSQCXU1j0k%2BFyAyoUX%2B/TE%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-KpJFwTnSbmfKByGYDI6ZIKHi.png?st=2024-01-18T19%3A08%3A09Z&se=2024-01-18T21%3A08%3A09Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T05%3A35%3A13Z&ske=2024-01-19T05%3A35%3A13Z&sks=b&skv=2021-08-06&sig=bDPHmHB4uaZ9cOjWtY7ZP%2BdOoTcqCqZ4TKqpP2ELm7Q%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-RnsVhfoU3w21UtBSIpICLuGw.png?st=2024-01-18T19%3A05%3A21Z&se=2024-01-18T21%3A05%3A21Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A21%3A09Z&ske=2024-01-19T12%3A21%3A09Z&sks=b&skv=2021-08-06&sig=etQaE10xUGvbdizFabXBs3irEth4gdBcb%2BQgNbaP%2B9M%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-WRXyuzy1ZMLIxcpR7Wtc0EGX.png?st=2024-01-18T19%3A02%3A56Z&se=2024-01-18T21%3A02%3A56Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T15%3A39%3A29Z&ske=2024-01-19T15%3A39%3A29Z&sks=b&skv=2021-08-06&sig=mglSPR9xHmeZKRQKY05aww4sa0QOzD0UTGZPZPurVS8%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-avJGFl8aCFYBOh6Va2i8Qf5Y.png?st=2024-01-18T19%3A00%3A13Z&se=2024-01-18T21%3A00%3A13Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A18%3A29Z&ske=2024-01-19T12%3A18%3A29Z&sks=b&skv=2021-08-06&sig=GTphNZBQDETpPDxcO0GJfFVoOxxmaL3LIpwfqnuDqp8%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-Sg5Bd2BhNrFSnO0QNLJxoeh7.png?st=2024-01-18T18%3A56%3A16Z&se=2024-01-18T20%3A56%3A16Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-17T21%3A21%3A09Z&ske=2024-01-18T21%3A21%3A09Z&sks=b&skv=2021-08-06&sig=B5MaHopAyyL4OM1GPXNMzMnBRLDhP1YcTvKyT5TlTHc%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-S1Z3bP6t2gtI12ILfbi7bUdl.png?st=2024-01-18T18%3A54%3A18Z&se=2024-01-18T20%3A54%3A18Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A27%3A42Z&ske=2024-01-19T17%3A27%3A42Z&sks=b&skv=2021-08-06&sig=S63qCNO92nok3jhUv0aFN7nd5qNQhxdUgP1dPBeT9cM%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-tYPzvQfuj1KYo5gmtGHtHTxt.png?st=2024-01-18T18%3A49%3A29Z&se=2024-01-18T20%3A49%3A29Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A28%3A22Z&ske=2024-01-19T17%3A28%3A22Z&sks=b&skv=2021-08-06&sig=FcbTtLvNvhZNy1bN3qcwHeXPi4LaoTDiaLyYJHHKvl8%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-IatM7fUHX18w1fg46GKeZrVn.png?st=2024-01-18T18%3A46%3A52Z&se=2024-01-18T20%3A46%3A52Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A21%3A08Z&ske=2024-01-19T12%3A21%3A08Z&sks=b&skv=2021-08-06&sig=bw9NimYH0RO/XAH7UzmBCN%2BvOeAMReb8O1Y8Fd4Z/E8%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-2NHOoeyNd0SiZETc3PUYYBIo.png?st=2024-01-18T18%3A43%3A59Z&se=2024-01-18T20%3A43%3A59Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T19%3A38%3A07Z&ske=2024-01-19T19%3A38%3A07Z&sks=b&skv=2021-08-06&sig=hVIPi3hLVakhx1gA8%2BN8liY7NekJGSPwWCc3ZQ2NAeg%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            { "type": "paragraph" },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-eoXScl4yCzxu1icK5ThHfaR4.png?st=2024-01-18T18%3A41%3A19Z&se=2024-01-18T20%3A41%3A19Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A04%3A59Z&ske=2024-01-19T17%3A04%3A59Z&sks=b&skv=2021-08-06&sig=ZLaDlpnAVLIyaHfb3FaGapBdbHVwcrJrsPb9qHVPo30%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-HK6NLBcimDrL8PFj2vUcBbDj.png?st=2024-01-18T17%3A51%3A28Z&se=2024-01-18T19%3A51%3A28Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A28%3A09Z&ske=2024-01-19T17%3A28%3A09Z&sks=b&skv=2021-08-06&sig=GaK2/NB/Dsp0rQD5D0vnn6n3gghLn9vzxLyEWPIkekM%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/2-bat.jpg",
+                "alt": "2-bat.jpg",
+                "title": "2-bat.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Plato was curious about everything, including the cave where he lived with his family. He spent his days flying through the cave tunnels, exploring everything and everywhere."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "One day, Plato flew so far from his home that, for the first time, he found the cave entrance. There, at the mouth of the cave, he saw the light of the sun. He didn't know what sunlight was, but he knew he did not like it. Sunlight was too bright for his eyes."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "When Plato saw the cave entrance, he also saw, to his surprise, that he had been living in a cave."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [{ "type": "text", "text": "/" }]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/3-bat-2.jpg",
+                "alt": "3-bat-2.jpg",
+                "title": "3-bat-2.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "The next day, and every day after, Plato made the long trip from his home to the cave entrance. Each time, he grew braver and braver, and he came closer and closer and closer to stepping out of the cave and into the sunshine. Little by little, his eyes became more used to the sunlight."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "One day, as the sun was setting and the sky grew dark, Plato peeked his head out of the cave. And what he saw was so pretty that it took his breath away."
+                }
+              ]
+            },
+            { "type": "paragraph" },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-KJT8FmfkYSn8h9stm5kuOeyA.png?st=2024-01-19T00%3A38%3A54Z&se=2024-01-19T02%3A38%3A54Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A21%3A17Z&ske=2024-01-19T12%3A21%3A17Z&sks=b&skv=2021-08-06&sig=r/eLNqqTG56Jvk9NGyWWbE/Y8Suyyqk/gCO13RsfUpk%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-mpV2KSYb1BSGGtJLHCrRBOaR.png?st=2024-01-19T00%3A36%3A44Z&se=2024-01-19T02%3A36%3A44Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A52%3A39Z&ske=2024-01-19T16%3A52%3A39Z&sks=b&skv=2021-08-06&sig=6DEYUgRCRWQJDG1iYKocXE1d1o8yU%2B3Tde9YZGze2aU%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-GjJt3AC9lJ7uVAKWN6yPdOph.png?st=2024-01-19T00%3A36%3A04Z&se=2024-01-19T02%3A36%3A04Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T12%3A18%3A34Z&ske=2024-01-19T12%3A18%3A34Z&sks=b&skv=2021-08-06&sig=Il3Ak9vGKsRSaSe7NdUwqHqoPm5xyYn%2BkDFavpV%2BhUs%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-TWyZ5o9dAMTsYxOvXo3Kn50e.png?st=2024-01-19T00%3A34%3A09Z&se=2024-01-19T02%3A34%3A09Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T14%3A05%3A13Z&ske=2024-01-19T14%3A05%3A13Z&sks=b&skv=2021-08-06&sig=T/NjfDIhRFtftrUrb1t0qu/VJM5RywNOAQof4WXxPN4%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-zRgn3W8qZxGXeMpaujnWyn0n.png?st=2024-01-19T00%3A30%3A16Z&se=2024-01-19T02%3A30%3A16Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T07%3A34%3A57Z&ske=2024-01-19T07%3A34%3A57Z&sks=b&skv=2021-08-06&sig=Ab6Pn0C8s6J1V3XblOuU3RSFXiN4zegHZTl9FERcEys%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            { "type": "paragraph" },
+            { "type": "paragraph" },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-wwd4HapO8bOSahaV0zM7Pb24.png?st=2024-01-18T23%3A04%3A08Z&se=2024-01-19T01%3A04%3A08Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A08%3A14Z&ske=2024-01-19T16%3A08%3A14Z&sks=b&skv=2021-08-06&sig=49hfNBiucNep3tqOg38ePAgGC0%2BbLypleZOsaBzLgyU%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-GmJiZ1CdKdeDYhy8ypNVvQxQ.png?st=2024-01-18T23%3A02%3A48Z&se=2024-01-19T01%3A02%3A48Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T17%3A30%3A19Z&ske=2024-01-19T17%3A30%3A19Z&sks=b&skv=2021-08-06&sig=FqDTrrpkm4zuz4uJJMabUJcSJQ80J8R6RrvkbfBDw4M%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-nmdOXZGrkDHEhYL1jln4RJdo.png?st=2024-01-18T23%3A01%3A03Z&se=2024-01-19T01%3A01%3A03Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T16%3A20%3A07Z&ske=2024-01-19T16%3A20%3A07Z&sks=b&skv=2021-08-06&sig=mfyyTB0OfTFlh5nhSlkyx2Qu39R3GHXE9yADf/GNvP0%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-Xh5IJMRV7P5jtZtiVdHsebRg.png?st=2024-01-18T22%3A57%3A48Z&se=2024-01-19T00%3A57%3A48Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T11%3A07%3A06Z&ske=2024-01-19T11%3A07%3A06Z&sks=b&skv=2021-08-06&sig=BBEN2yodq6f2p%2Beo5qCbC9UlHBcMqYsD8b%2B%2B8gFPhtw%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://oaidalleapiprodscus.blob.core.windows.net/private/org-NbwsFkE7zUQNs3YDInL01eWn/user-6TobiMdSDnvA5YqQE2ebsRU1/img-nxSssubCaWAHYrpgkprkGrHO.png?st=2024-01-18T22%3A55%3A58Z&se=2024-01-19T00%3A55%3A58Z&sp=r&sv=2021-08-06&sr=b&rscd=inline&rsct=image/png&skoid=6aaadede-4fb3-4698-a8f6-684d7786b067&sktid=a48cca56-e6da-484e-a814-9c849652bcb3&skt=2024-01-18T07%3A01%3A08Z&ske=2024-01-19T07%3A01%3A08Z&sks=b&skv=2021-08-06&sig=SOrZ1hqIiRYzEU5AGOMNu9bl3E7QBjB88FY6KsZwKy0%3D",
+                "alt": null,
+                "title": null,
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/4-bat-3.jpg",
+                "alt": "4-bat-3.jpg",
+                "title": "4-bat-3.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Plato saw the sea, and he saw mountains, and trees. Plato saw birds flying. This was the first time that Plato had ever seen a bird."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Plato also saw the sun, low in sky, bathing everything in a golden light that made the sea sparkle. Even as it was setting, the sun was brighter than anything Plato had ever imagined."
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/5-river.jpg",
+                "alt": "5-river.jpg",
+                "title": "5-river.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Plato was so excited! He zoomed back into the cave to share his news. He couldn't wait to tell the other bats about the world outside their cave."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Plato arrived home to find his family hunting tiny insects, lightning bugs, which glowed yellow and cast shadows on the cave walls."
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/6-cave-2.jpg",
+                "alt": "6-cave-2.jpg",
+                "title": "6-cave-2.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Then Plato saw Aris, the oldest of the bats. Aris was the bat leader. Aris was so old that when she walked, she leaned on a small stick that the bats had found floating in the stream where they drank their water."
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/7-bat-cave.jpg",
+                "alt": "7-bat-cave.jpg",
+                "title": "7-bat-cave.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Aris wasn't watching the bats, and she wasn't watching the lightning bugs. Aris was watching the cave wall, where light from the lightening bugs cast dark shadows."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Aris focused her old eyes on the wall as the dark bat shadows swirled and swooped, as the other bats flew wildly up, down, and all around the cave."
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/8-bat-flying.jpg",
+                "alt": "8-bat-flying.jpg",
+                "title": "8-bat-flying.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "\"Why are you watching the wall?\" Plato asked Aris"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "\"I'm watching the world,” Aris answered, “so I can understand it.\""
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "“Well, I have big news for you!” Plato said."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "“If you want to understand the world, then you should stop watching shadows on the wall,” Plato said. “You should leave the shadows behind.”"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                { "type": "text", "text": "Plato took a deep breath." }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "“In fact,” Plato said, “if you want to understand the world, you should leave this cave behind!”"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "“Cave? What are you talking about?” Aris said."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "The other bats came nearer to listen."
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/9-cave-crowd-2.jpg",
+                "alt": "9-cave-crowd-2.jpg",
+                "title": "9-cave-crowd-2.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "“There is no world but our home here,” Aris said. “Everyone knows that.”"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Aris looked at the other bats gathered around "
+                },
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "her"
+                },
+                {
+                  "type": "text",
+                  "text": ". “Am I right?” Aris asked the crowd."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "“Yes, that's right!” the bats shouted. “Our home here is all there is!”"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Plato tried to tell the other bats about the outside world, but they just laughed. They told Plato that he was making things up."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "“You're too young to understand the real world,” they said to him."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Plato knew what he had seen was real. He also knew that if he was going to change the other bats' minds, then he needed to show them proof of the world outside the cave."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "When all the other bats went to bed, Plato flew out to the mouth of the cave."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "He flew further into the world than he ever had before. At first, Plato was afraid. But as he flew higher, he saw stars twinkling in the sky. He saw the moon glowing yellow, above the trees. Everything looked so lovely!"
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/10-bat-flying-night.jpg",
+                "alt": "10-bat-flying-night.jpg",
+                "title": "10-bat-flying-night.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "And then he saw it, and Plato knew it was just exactly the proof he needed."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "It was a rose, blooming from the top of a tree stump."
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/11-tree.jpg",
+                "alt": "11-tree.jpg",
+                "title": "11-tree.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "It took Plato hours to fly home with the rose. He was very tired when he landed in front of Aris, carrying his prize."
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/12-bat-flower.jpg",
+                "alt": "12-bat-flower.jpg",
+                "title": "12-bat-flower.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Aris was just waking up to start her day. When she saw the rose, she was stunned."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "Aris knew what the rose meant. She knew that Plato had told the truth about the world outside the cave. She knew then that they all really were living in a cave."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "She knew that their cave, which had been their whole world, was actually just a tiny part of a much larger universe."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "“Tonight,” Aris announced to all bats, “Plato will lead us, as we explore this new world together!”"
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "When the bats heard this, they all cheered. They were eager to explore a world they had never dreamed of, full of wonders like the rose Plato had brought them."
+                }
+              ]
+            },
+            {
+              "type": "paragraph",
+              "content": [
+                {
+                  "type": "text",
+                  "text": "From that day on, Aris chose Plato to be the chief scout of all bats. The bats continued to live in their cave, but now they left the cave, following Plato, almost every night, seeking adventure, learning about the wider world, and of course, living happily ever after."
+                }
+              ]
+            },
+            {
+              "type": "image",
+              "attrs": {
+                "src": "https://storage.googleapis.com/reading-club-covers/images/13-bats-moon.jpg",
+                "alt": "13-bats-moon.jpg",
+                "title": "13-bats-moon.jpg",
+                "width": "100%",
+                "height": null
+              }
+            },
+            {
+              "type": "heading",
+              "attrs": { "level": 1 },
+              "content": [
+                {
+                  "type": "text",
+                  "marks": [{ "type": "bold" }],
+                  "text": "The End."
+                }
+              ]
+            }
+          ]
+        }
+      }
+    }
+  },
+  "version": 0
+}

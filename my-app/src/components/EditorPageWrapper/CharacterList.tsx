@@ -32,7 +32,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
       <p className="text-sm">
         {capitalizeFirstLetter(character.description) + "."}
       </p>
-      {character.isExpanded && (
+      {definition && character.isExpanded && (
         <div className="text-left p-6 pt-3 pb-0 flex-col">
           {
             // Object.keys(definition)
@@ -109,7 +109,7 @@ const CharacterList: React.FC<CharacterListProps> = ({
             isExpanded: character.name === expandedCard,
           }}
           definition={
-            characterDefinitions.find((c) => c.name === character.name)!
+            characterDefinitions?.find((c) => c.name === character.name)!
           }
           onClick={() => handleCardClick(character.name)}
         />

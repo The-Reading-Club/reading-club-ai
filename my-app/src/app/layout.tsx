@@ -7,6 +7,8 @@ import Providers from "./providers";
 
 import GoogleAnalytics from "./GoogleAnalytics";
 import { dev } from "@/config";
+import TestModal from "@/components/modals/TestModal";
+import DefaultAppModal from "@/components/modals/DefaultAppModal";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -39,6 +41,8 @@ export default function RootLayout({
       )}
       <body className={font.className}>
         <Providers>{children}</Providers>
+        {/* <TestModal /> */}
+        <DefaultAppModal />
       </body>
     </html>
   );

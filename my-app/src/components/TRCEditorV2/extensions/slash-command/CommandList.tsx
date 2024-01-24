@@ -226,6 +226,8 @@ export const getHintItems = ({ query }: { query: string }) => {
             characterDefinitions:
               useTRCEditorStore.getState().storiesData[editorKey]
                 ?.characterDefinitions ?? [],
+            // this is messy
+            chosenCharacter: undefined,
           },
           editor.view,
           pos

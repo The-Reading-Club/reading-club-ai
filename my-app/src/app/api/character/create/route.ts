@@ -2,11 +2,14 @@ import { CHARACTER_ATTRIBUTES } from "@/data/character";
 
 export const runtime = "edge";
 
-import { OpenAIStream } from "ai";
+import { OpenAIStream, StreamingTextResponse } from "ai";
 import { NextResponse } from "next/server";
 import OpenAI from "openai";
 import { BasicCharacterAttributes } from "../identify/utils";
-import { callOpenAIAPICreateCharacter } from "./utils";
+import {
+  callOpenAIAPICreateCharacter,
+  callOpenAIAPICreateCharacterStream,
+} from "./utils";
 
 const openaiOfficialSDK = new OpenAI({ apiKey: process.env.OAI_KEY });
 
@@ -15,13 +18,16 @@ export async function POST(request: Request) {
   const { basicCharacterContext } = reqJSON.body;
 
   try {
-    const results = await callOpenAIAPICreateCharacter(basicCharacterContext);
-
-    const characterJSON = JSON.parse(
-      results.choices[0].message.content as string
+    console.log("basicCharacterContext", basicCharacterContext);
+    const response = await callOpenAIAPICreateCharacterStream(
+      basicCharacterContext
     );
 
-    return NextResponse.json(characterJSON, { status: 200 });
+    console.log("response", response);
+
+    const stream = OpenAIStream(response);
+
+    return new StreamingTextResponse(stream);
   } catch (e) {
     console.log(e);
 

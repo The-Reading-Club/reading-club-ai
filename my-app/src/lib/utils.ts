@@ -22,3 +22,40 @@ export function capitalizeFirstLetter(str: string) {
     return str;
   }
 }
+
+// cool function
+export async function fetchAndReadStream(
+  url: string,
+  fetchOptions: RequestInit,
+  callback: (content: string) => void
+) {
+  try {
+    const response = await fetch(url, fetchOptions);
+
+    if (!response.ok) {
+      throw new Error(response.statusText);
+    }
+
+    const reader = response.body!.getReader();
+    const decoder = new TextDecoder("utf-8"); // Creates a TextDecoder instance
+    let content = "";
+
+    while (true) {
+      const { done, value } = await reader.read();
+
+      if (done) {
+        break;
+      }
+
+      if (value) {
+        content += decoder.decode(value, { stream: true });
+
+        callback(content);
+      }
+    }
+
+    return content;
+  } catch (e) {
+    console.log(e);
+  }
+}
