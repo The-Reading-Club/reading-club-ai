@@ -3,7 +3,7 @@ import { Decoration, DecorationSet, EditorView } from "@tiptap/pm/view";
 import { toast } from "sonner";
 import axios from "axios";
 import { dev } from "@/config";
-import { devAlert, devConsoleLog } from "@/lib/utils";
+import { devAlert, devConsoleLog, fetchAndReadStream } from "@/lib/utils";
 import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
 import { use } from "react";
 
@@ -184,6 +184,16 @@ export interface CharacterIdentificationBody {
   storyText: string;
 }
 
+export interface CharacterCreationBody {
+  basicCharacterContext: any;
+}
+
+export interface CharacterChoiceBody {
+  existingCharacters: any;
+  storyText: any;
+  sceneText: any;
+}
+
 export interface IllustrationGenerationBody {
   prevContextText: string;
   prevParagraphText: string;
@@ -222,7 +232,7 @@ export function startIllustrationGeneration(
   handleCharacterIdentification({
     existingCharacters: body.existingCharacters,
     storyText: body.prevContextText + body.postContextText,
-  }).then((res: any) => {
+  }).then(async (res: any) => {
     console.log("handleCharacterIdentification RES", res);
     devAlert("handleCharacterIdentification RES " + JSON.stringify(res));
 
@@ -238,6 +248,95 @@ export function startIllustrationGeneration(
       },
     });
 
+    //  CHARACTER CREATION
+    useTRCAppStore.getState().setDefaultModalTitle("Creating your characters");
+
+    // const characterDataResponses = [];
+
+    for (const newCharacter of newCharacters) {
+      const data = await handleCharacterCreation({
+        basicCharacterContext: {
+          name: newCharacter.name,
+          description: newCharacter.description,
+        },
+      });
+
+      // characterDataResponses.push(data);
+      devAlert("handleCharacterCreation RES " + JSON.stringify(data));
+      // Save state to Zustand
+
+      if (data) {
+        const characterDataJSON = JSON.parse(data);
+        useTRCEditorStore.getState().setStoriesData({
+          [body.editorKey]: {
+            ...useTRCEditorStore.getState().storiesData[body.editorKey],
+            characterDefinitions: [
+              // Line is wrong, we need to add the latest data
+              // ...body.characterDefinitions,
+              // https://chat.openai.com/c/3d8b64a4-60c2-48f4-a1cb-1407eaadd450
+              ...(useTRCEditorStore.getState().storiesData[body.editorKey]
+                .characterDefinitions ?? []),
+              characterDataJSON,
+            ],
+          },
+        });
+      } else {
+        devAlert("handleCharacterCreation ERROR, data is undefined");
+      }
+    }
+
+    // CHARACTER CHOICE
+
+    useTRCAppStore
+      .getState()
+      .setDefaultModalTitle(
+        "Choosing your characters for the scene illustration"
+      );
+
+    const characterChoice = await handleCharacterChoice({
+      existingCharacters:
+        useTRCEditorStore.getState().storiesData[body.editorKey].characters,
+      storyText: body.prevContextText + body.postContextText,
+      sceneText: body.prevParagraphText,
+    });
+
+    /**name: Plato
+
+scene: Plato emerging from the cave, eyes adjusting to sunlight
+
+background: Cave mouth with a glimpse of the outside world
+
+{"chosenCharacter":[{"name":"Plato","scene":"Plato emerging from the cave, eyes adjusting to sunlight","background":"Cave mouth with a glimpse of the outside world"}]} */
+
+    // ILLUSTRATION GENERATION
+
+    useTRCAppStore.getState().setDefaultModalTitle("Generating illustration");
+
+    handleIllustrationGeneration(body).then((src) => {
+      useTRCAppStore.getState().setDefaultModalOpen(false);
+
+      const { schema } = view.state;
+
+      let pos = findPlaceholder(view.state, id);
+
+      // If the content around the placeholder has been deleted
+      // drop the image
+      if (pos == null) return;
+
+      // Otherwise, insert it at the placeholder's position,
+      // and remove the placeholder
+
+      // When BLOB_READ_WRITE_TOKEN is not valid or unavailable, read
+      // the image locally
+      const imageSrc = src;
+
+      const node = schema.nodes.image.create({ src: imageSrc });
+      const transaction = view.state.tr
+        .replaceWith(pos, pos, node)
+        .setMeta(uploadKey, { remove: { id } });
+      view.dispatch(transaction);
+    });
+
     // show content on modal
     // useTRCAppStore.getState().setDefaultModalBody(
     //   <div>
@@ -247,31 +346,6 @@ export function startIllustrationGeneration(
   });
 
   return;
-
-  handleIllustrationGeneration(body).then((src) => {
-    useTRCAppStore.getState().setDefaultModalOpen(false);
-
-    const { schema } = view.state;
-
-    let pos = findPlaceholder(view.state, id);
-
-    // If the content around the placeholder has been deleted
-    // drop the image
-    if (pos == null) return;
-
-    // Otherwise, insert it at the placeholder's position,
-    // and remove the placeholder
-
-    // When BLOB_READ_WRITE_TOKEN is not valid or unavailable, read
-    // the image locally
-    const imageSrc = src;
-
-    const node = schema.nodes.image.create({ src: imageSrc });
-    const transaction = view.state.tr
-      .replaceWith(pos, pos, node)
-      .setMeta(uploadKey, { remove: { id } });
-    view.dispatch(transaction);
-  });
 }
 
 function handleCharacterIdentification(body: CharacterIdentificationBody) {
@@ -387,6 +461,92 @@ function handleCharacterIdentification(body: CharacterIdentificationBody) {
   });
 }
 
+async function handleCharacterCreation(body: CharacterCreationBody) {
+  try {
+    // https://chat.openai.com/c/95cf540e-0be1-4c45-b8e9-1aca836990d2
+    const response = await fetch("/api/character/create", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ body }),
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const reader = response.body!.getReader();
+    const decoder = new TextDecoder("utf-8"); // Creates a TextDecoder instance
+    let content = "";
+
+    console.log("About to start reading stream");
+    let i = 0;
+    while (true) {
+      console.log("Reading stream " + i++);
+      const { done, value } = await reader.read();
+      if (done) {
+        break;
+      }
+
+      // Decode the Uint8Array to a string and append it to content
+      content += decoder.decode(value, { stream: true });
+
+      const pChunks = parseJSONChunk(content).map((chunk) => {
+        console.log("CHUNK: " + JSON.stringify(chunk));
+        return (
+          <p>
+            <span className="font-bold">{chunk.key}</span>
+            {`: ${chunk.value}`}
+          </p>
+        );
+      });
+
+      console.log("About to update modal body: " + pChunks);
+      console.log("CONTENT: " + content);
+      useTRCAppStore
+        .getState()
+        .setDefaultModalBody(
+          <div className="text-center">{pChunks[pChunks.length - 1]}</div>
+        );
+    }
+
+    // const data = await response.json();
+    console.log(content);
+    return content;
+  } catch (error) {
+    console.error("Fetch error:", error);
+  }
+}
+
+async function handleCharacterChoice(body: CharacterChoiceBody) {
+  // Good code
+  const resultContent = fetchAndReadStream(
+    "/api/character/choose",
+    {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ body }),
+    },
+    (contentChunk) => {
+      const pChunks = parseJSONChunk(contentChunk).map((chunk) => {
+        return <p>{`${chunk.key}: ${chunk.value}`}</p>;
+      });
+
+      useTRCAppStore.getState().setDefaultModalBody(
+        <>
+          <div className="text-center">{pChunks}</div>
+          <div className="text-center">{contentChunk}</div>
+        </>
+      );
+    }
+  );
+
+  return resultContent;
+}
+
 function handleIllustrationGeneration(body: IllustrationGenerationBody) {
   return new Promise((resolve) => {
     toast.promise(
@@ -452,7 +612,18 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
 
 // https://chat.openai.com/c/74e8273c-4be2-4409-a8a9-fd9d202005e8
 function parseJSONChunk(chunk: string): Array<{ key: string; value: string }> {
-  const regex = /\"(\w+)\":\"([^\"]+)\"/g;
+  // Verify type of chunk parameter
+  if (typeof chunk !== "string") {
+    devAlert("Invalid type for chunk parameter.");
+    throw new Error("Invalid type for chunk parameter.");
+  }
+
+  // DEBUT PARAMETERS AS MUCH AS POSSIBLE, VERIFY TYPES, EVERYTHING
+  console.log("parseJSONChunk CHUNK: " + chunk);
+  console.log("parseJSONChunk CHUNK TYPE: " + typeof chunk);
+  console.log("parseJSONChunk CHUNK LENGTH: " + chunk.length);
+
+  const regex = /\"(\w+)\"\s*:\s*\"([^\"]+)\"/g;
   let match;
   const results = [];
 
@@ -460,5 +631,8 @@ function parseJSONChunk(chunk: string): Array<{ key: string; value: string }> {
     results.push({ key: match[1], value: match[2] });
   }
 
+  // log results
+  // devAlert("RESULTS: " + JSON.stringify(results));
+  console.log("RESULTS: " + JSON.stringify(results));
   return results;
 }

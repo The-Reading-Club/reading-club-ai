@@ -82,7 +82,6 @@ const Modal: React.FC<ModalProps> = ({
                     flex
                     justify-center
                     items-center
-
                     "
       >
         <div
@@ -90,12 +89,13 @@ const Modal: React.FC<ModalProps> = ({
           onClick={(e) => e.stopPropagation()}
           className="
                     relative 
-                    bg-green-500/50
+                    bg-green-500/50-cancel
 
                     w-full
                     md:w-4/6
                     lg:2-3/6
                     xl:w-2/5
+
 
                     h-full
                     lg:h-auto
@@ -110,6 +110,11 @@ const Modal: React.FC<ModalProps> = ({
             <div
               className="
                         bg-white
+
+                        rounded-3xl
+
+                        
+                        lg:max-h-[600px] max-h-screen
                         "
             >
               {/* Header */}
@@ -141,7 +146,11 @@ const Modal: React.FC<ModalProps> = ({
                 <div className="text-lg font-semibold">{title || "Title"}</div>
               </div>
               {/* Body */}
-              {body && <div className="relative p-6 flex-auto">{body}</div>}
+              {body && (
+                <div className="relative p-6 overflow-scroll flex-auto lg:max-h-[300px] max-h-screen">
+                  {body}
+                </div>
+              )}
               {/* Footer */}
               <div className="flex flex-col gap-3 p-6 border-red-800-cancel border-[10px]-cancel">
                 {body && (

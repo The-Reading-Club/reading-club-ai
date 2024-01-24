@@ -16,7 +16,41 @@ const TestModal = () => {
       secondaryActionLabel="Cancel"
       secondaryAction={() => {}}
       title="Test Modal"
-      body={<div>Test Modal Body</div>}
+      body={
+        <>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+          <div>Test Modal Body</div>
+        </>
+      }
     />
   );
 };

@@ -18,9 +18,12 @@ export async function POST(request: Request) {
   const { basicCharacterContext } = reqJSON.body;
 
   try {
+    console.log("basicCharacterContext", basicCharacterContext);
     const response = await callOpenAIAPICreateCharacterStream(
       basicCharacterContext
     );
+
+    console.log("response", response);
 
     const stream = OpenAIStream(response);
 
