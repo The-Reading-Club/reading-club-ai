@@ -3,7 +3,12 @@ import { Decoration, DecorationSet, EditorView } from "@tiptap/pm/view";
 import { toast } from "sonner";
 import axios from "axios";
 import { dev } from "@/config";
-import { devAlert, devConsoleLog, fetchAndReadStream } from "@/lib/utils";
+import {
+  capitalizeFirstLetter,
+  devAlert,
+  devConsoleLog,
+  fetchAndReadStream,
+} from "@/lib/utils";
 import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
 import { use } from "react";
 
@@ -201,6 +206,7 @@ export interface IllustrationGenerationBody {
   editorKey: string;
   existingCharacters: any;
   characterDefinitions: any;
+  chosenCharacter: any;
 }
 
 export function startIllustrationGeneration(
@@ -228,6 +234,10 @@ export function startIllustrationGeneration(
   useTRCAppStore
     .getState()
     .setDefaultModalTitle("Learning about your characters");
+
+  useTRCAppStore.getState().setDefaultModalActionLabel("");
+  useTRCAppStore.getState().setDefaultModalSecondaryActionLabel("Skip");
+  useTRCAppStore.getState().setDefaultModalDisabled(true);
 
   handleCharacterIdentification({
     existingCharacters: body.existingCharacters,
@@ -293,12 +303,16 @@ export function startIllustrationGeneration(
         "Choosing your characters for the scene illustration"
       );
 
-    const characterChoice = await handleCharacterChoice({
+    const characterChoiceResponse = await handleCharacterChoice({
       existingCharacters:
         useTRCEditorStore.getState().storiesData[body.editorKey].characters,
       storyText: body.prevContextText + body.postContextText,
       sceneText: body.prevParagraphText,
     });
+
+    const characterChoice = JSON.parse(characterChoiceResponse!)[
+      "chosenCharacter"
+    ][0];
 
     /**name: Plato
 
@@ -312,7 +326,19 @@ background: Cave mouth with a glimpse of the outside world
 
     useTRCAppStore.getState().setDefaultModalTitle("Generating illustration");
 
-    handleIllustrationGeneration(body).then((src) => {
+    handleIllustrationGeneration({
+      prevContextText: body.prevContextText,
+      prevParagraphText: body.prevParagraphText,
+      postContextText: body.postContextText,
+      editorKey: body.editorKey,
+      existingCharacters:
+        useTRCEditorStore.getState().storiesData[body.editorKey].characters,
+      characterDefinitions:
+        useTRCEditorStore.getState().storiesData[body.editorKey]
+          .characterDefinitions,
+      // will probably be updating the body of this call a lot of times while iterating
+      chosenCharacter: characterChoice,
+    }).then((src) => {
       useTRCAppStore.getState().setDefaultModalOpen(false);
 
       const { schema } = view.state;
@@ -496,7 +522,9 @@ async function handleCharacterCreation(body: CharacterCreationBody) {
         console.log("CHUNK: " + JSON.stringify(chunk));
         return (
           <p>
-            <span className="font-bold">{chunk.key}</span>
+            <span className="font-bold">
+              {capitalizeFirstLetter(chunk.key)}
+            </span>
             {`: ${chunk.value}`}
           </p>
         );
@@ -504,11 +532,14 @@ async function handleCharacterCreation(body: CharacterCreationBody) {
 
       console.log("About to update modal body: " + pChunks);
       console.log("CONTENT: " + content);
-      useTRCAppStore
-        .getState()
-        .setDefaultModalBody(
-          <div className="text-center">{pChunks[pChunks.length - 1]}</div>
-        );
+      useTRCAppStore.getState().setDefaultModalBody(
+        <div className="text-center">
+          <h1 className="text-xl font-bold">
+            {body.basicCharacterContext["name"]}
+          </h1>
+          <>{pChunks[pChunks.length - 1]}</>
+        </div>
+      );
     }
 
     // const data = await response.json();
@@ -532,13 +563,17 @@ async function handleCharacterChoice(body: CharacterChoiceBody) {
     },
     (contentChunk) => {
       const pChunks = parseJSONChunk(contentChunk).map((chunk) => {
-        return <p>{`${chunk.key}: ${chunk.value}`}</p>;
+        if (chunk.key === "name")
+          return <h1 className="text-xl font-bold">{chunk.value}</h1>;
+        if (chunk.key === "scene") return <p>{chunk.value}</p>;
+        if (chunk.key === "background") return <p>{chunk.value}</p>;
+        else return <></>;
       });
 
       useTRCAppStore.getState().setDefaultModalBody(
         <>
           <div className="text-center">{pChunks}</div>
-          <div className="text-center">{contentChunk}</div>
+          {/* <div className="text-center">{contentChunk}</div> */}
         </>
       );
     }
