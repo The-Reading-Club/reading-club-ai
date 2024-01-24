@@ -410,8 +410,8 @@ function handleCharacterIdentification(body: CharacterIdentificationBody) {
               // Decode the Uint8Array to a string and append it to content
               content += decoder.decode(value, { stream: true });
 
-              const pChunks = parseJSONChunk(content).map((chunk) => {
-                const keyProp = `key-pChunk-${chunk.key}-char-identification`;
+              const pChunks = parseJSONChunk(content).map((chunk, j) => {
+                const keyProp = `key-pChunk-${chunk.key}-char-identification-${j}`;
                 if (chunk.key === "name")
                   return (
                     <h1 key={keyProp} className="text-xl font-bold">
@@ -524,9 +524,9 @@ async function handleCharacterCreation(body: CharacterCreationBody) {
       // Decode the Uint8Array to a string and append it to content
       content += decoder.decode(value, { stream: true });
 
-      const pChunks = parseJSONChunk(content).map((chunk) => {
+      const pChunks = parseJSONChunk(content).map((chunk, j) => {
         console.log("CHUNK: " + JSON.stringify(chunk));
-        const keyProp = `key-pChunk-${chunk.key}-char-creation`;
+        const keyProp = `key-pChunk-${chunk.key}-char-creation-${j}`;
 
         return (
           <p key={keyProp}>
