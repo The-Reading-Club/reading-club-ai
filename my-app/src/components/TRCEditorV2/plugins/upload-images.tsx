@@ -619,7 +619,10 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
             // Save state to Zustand
             devAlert("NOT SAVING TO ZUSTAND");
             // not now for testing
-            if (dev == false)
+            if (false && dev == false)
+              // I am not updating this stuff here anymore
+              // If done it's going to duplicate content in production
+              // I may need to use dicts, not lists, or filter out duplicates at least
               useTRCEditorStore.getState().setStoriesData({
                 [body.editorKey]: {
                   ...useTRCEditorStore.getState().storiesData[body.editorKey],
