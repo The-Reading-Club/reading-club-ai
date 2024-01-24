@@ -411,10 +411,16 @@ function handleCharacterIdentification(body: CharacterIdentificationBody) {
               content += decoder.decode(value, { stream: true });
 
               const pChunks = parseJSONChunk(content).map((chunk) => {
+                const keyProp = `key-pChunk-${chunk.key}-char-identification`;
                 if (chunk.key === "name")
-                  return <h1 className="text-xl font-bold">{chunk.value}</h1>;
-                if (chunk.key === "description") return <p>{chunk.value}</p>;
-                else return <></>;
+                  return (
+                    <h1 key={keyProp} className="text-xl font-bold">
+                      {chunk.value}
+                    </h1>
+                  );
+                if (chunk.key === "description")
+                  return <p key={keyProp}>{chunk.value}</p>;
+                else return null;
               });
 
               // Check if more than 1 second has passed since last update
@@ -520,8 +526,10 @@ async function handleCharacterCreation(body: CharacterCreationBody) {
 
       const pChunks = parseJSONChunk(content).map((chunk) => {
         console.log("CHUNK: " + JSON.stringify(chunk));
+        const keyProp = `key-pChunk-${chunk.key}-char-creation`;
+
         return (
-          <p>
+          <p key={keyProp}>
             <span className="font-bold">
               {capitalizeFirstLetter(chunk.key)}
             </span>
