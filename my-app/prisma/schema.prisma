@@ -18,7 +18,30 @@ model account {
   account_type    account_account_type @default(standard)
   premium         Boolean              @default(dbgenerated("b'0'")) @db.Bit(1)
   hashed_password String?              @db.VarChar(250)
+
+  providers       provider[]
 }
+
+model provider {
+  id                Int                 @id @default(autoincrement())
+  accountId         Int
+  type              String
+  provider          String
+  providerAccountId String
+  refresh_token     String?             @db.Text
+  access_token      String?             @db.Text
+  expires_at        Int?
+  token_type        String?
+  scope             String?
+  id_token          String?             @db.Text
+  session_state     String?
+
+  account account @relation(fields: [accountId], references: [account], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId]) 
+}
+
+
 
 // model account_mtm_classroom {
 //   account   Int
