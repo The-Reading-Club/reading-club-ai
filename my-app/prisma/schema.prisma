@@ -26,8 +26,8 @@ model provider {
   id                Int                 @id @default(autoincrement())
   accountId         Int
   type              String
-  provider          String
-  providerAccountId String
+  provider_name          String
+  provider_account_id String
   refresh_token     String?             @db.Text
   access_token      String?             @db.Text
   expires_at        Int?
