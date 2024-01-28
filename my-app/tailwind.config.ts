@@ -13,6 +13,15 @@ const config: Config = {
         accent2: "#F5911F",
         brownFont: "#7B3F00",
         darkFont: "#3c4043",
+        // https://github.com/AntonioErdeljac/next-auth-v5-advanced-guide/blob/master/tailwind.config.ts
+        destructive: {
+          DEFAULT: "hsl(var(--destructive))",
+          foreground: "hsl(var(--destructive-foreground))",
+        },
+        muted: {
+          DEFAULT: "hsl(var(--muted))",
+          foreground: "hsl(var(--muted-foreground))",
+        },
       },
     },
   },
