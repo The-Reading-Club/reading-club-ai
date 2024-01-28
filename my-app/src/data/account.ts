@@ -20,7 +20,7 @@ export const getUserById = async (id: number) => {
   try {
     const account = await db.user.findUnique({
       where: {
-        account: id,
+        id: id,
       },
     });
 

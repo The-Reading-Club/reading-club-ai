@@ -29,6 +29,8 @@ export const {
     async signIn({ user }) {
       console.log("SIGN IN CALLBACK");
 
+      // user.id = Number(user.id);
+
       return true; // testing for now
 
       // I should probably extend the type because I know email is there

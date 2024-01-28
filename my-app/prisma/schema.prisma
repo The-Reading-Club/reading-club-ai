@@ -8,12 +8,18 @@ datasource db {
   relationMode = "prisma"
 }
 
+// https://github.com/AntonioErdeljac/next-auth-v5-advanced-guide/blob/master/prisma/schema.prisma
+
 model User {
-  id              Int                  @id @default(autoincrement()) @map("account")
+  intID           Int                  @id @default(autoincrement()) @map("account")
+  id              String               @unique(map: "id") @db.VarChar(50) @map("oauth_id")
+  name            String?
   email           String               @unique(map: "email") @db.VarChar(50)
-  password        String?               @db.VarChar(255)
-  register_date   DateTime             @default(now()) @db.Timestamp(0)
   verified        Boolean?             @default(dbgenerated("b'0'")) @db.Bit(1)
+  emailVerified   DateTime?            @map("date_verified")
+  image           String?
+  password        String?              @db.VarChar(255)
+  register_date   DateTime             @default(now()) @db.Timestamp(0)
   token           String?              @db.Text
   account_type    account_account_type @default(standard)
   premium         Boolean              @default(dbgenerated("b'0'")) @db.Bit(1)
@@ -26,7 +32,7 @@ model User {
 
 model Account {
   id                Int     @id @default(autoincrement())
-  userId            Int @map("account") // I hate this confusing mappings
+  userId            String @map("oauth_id") // I hate this confusing mappings
   type              String  @db.VarChar(250)
   provider          String  @db.VarChar(250) @map("provider_name")
   providerAccountId String  @db.VarChar(250) @map("provider_oauth_id")
