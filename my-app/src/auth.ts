@@ -25,13 +25,26 @@ export const {
   signIn,
   signOut,
 } = NextAuth({
+  pages: {
+    signIn: "/auth/login",
+    error: "/auth/error",
+  },
+
+  events: {
+    async linkAccount({ user }) {
+      await db.user.update({
+        where: {
+          id: user.id,
+        },
+        data: { emailVerified: new Date() },
+      });
+    },
+  },
   callbacks: {
     async signIn({ user }) {
-      console.log("SIGN IN CALLBACK");
-
-      // user.id = Number(user.id);
-
       return true; // testing for now
+      // console.log("SIGN IN CALLBACK");
+      // user.id = Number(user.id);
 
       // I should probably extend the type because I know email is there
       // if (!user.email) return false;

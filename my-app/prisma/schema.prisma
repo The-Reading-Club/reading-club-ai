@@ -12,7 +12,7 @@ datasource db {
 
 model User {
   intID           Int                  @id @default(autoincrement()) @map("account")
-  id              String               @unique(map: "id") @db.VarChar(50) @map("oauth_id")
+  id              String               @unique(map: "id") @db.VarChar(50) @map("oauth_id") @default(cuid())
   name            String?
   email           String               @unique(map: "email") @db.VarChar(50)
   verified        Boolean?             @default(dbgenerated("b'0'")) @db.Bit(1)

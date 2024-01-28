@@ -23,6 +23,7 @@ const TRCButton2: React.FC<TRCButton2Props> = ({
       onClick={onClick}
       disabled={disabled}
       className={`
+        text-darkFont
         relative
         disabled:opacity-70
         disabled:cursor-not-allowed
