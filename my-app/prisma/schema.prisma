@@ -8,10 +8,10 @@ datasource db {
   relationMode = "prisma"
 }
 
-model account {
-  account         Int                  @id @default(autoincrement())
+model User {
+  id              Int                  @id @default(autoincrement()) @map("account")
   email           String               @unique(map: "email") @db.VarChar(50)
-  password        String               @db.VarChar(255)
+  password        String?               @db.VarChar(255)
   register_date   DateTime             @default(now()) @db.Timestamp(0)
   verified        Boolean?             @default(dbgenerated("b'0'")) @db.Bit(1)
   token           String?              @db.Text
@@ -19,28 +19,32 @@ model account {
   premium         Boolean              @default(dbgenerated("b'0'")) @db.Bit(1)
   hashed_password String?              @db.VarChar(250)
 
-  providers       provider[]
+  accounts Account[]
+  // https://github.com/nextauthjs/next-auth/issues/4567#issuecomment-1132393882
+  @@map("account") // this sucks!!!
 }
 
-model provider {
-  id                Int                 @id @default(autoincrement())
-  accountId         Int
-  type              String
-  provider_name          String
-  provider_account_id String
-  refresh_token     String?             @db.Text
-  access_token      String?             @db.Text
+model Account {
+  id                Int     @id @default(autoincrement())
+  userId            Int @map("account") // I hate this confusing mappings
+  type              String  @db.VarChar(250)
+  provider          String  @db.VarChar(250) @map("provider_name")
+  providerAccountId String  @db.VarChar(250) @map("provider_oauth_id")
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
   expires_at        Int?
-  token_type        String?
-  scope             String?
-  id_token          String?             @db.Text
-  session_state     String?
+  token_type        String? @db.VarChar(250)
+  scope             String? @db.VarChar(250)
+  id_token          String? @db.Text
+  session_state     String? @db.VarChar(250)
 
-  account account @relation(fields: [accountId], references: [account], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
-  @@unique([provider, providerAccountId]) 
+  @@unique([provider, providerAccountId])
+
+  @@index([userId], map: "User") // this is for foreign keys
+  @@map("provider") // this sucks!!!
 }
-
 
 
 // model account_mtm_classroom {
@@ -131,6 +135,7 @@ model provider {
 
 //   @@index([account], map: "account")
 // }
+
 
 // model reading_metric {
 //   reading_metric        Int       @id @default(autoincrement())

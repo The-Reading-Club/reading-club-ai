@@ -4,7 +4,7 @@ import Credentials from "next-auth/providers/credentials";
 import type { NextAuthConfig } from "next-auth";
 
 import { LoginSchema } from "@/schemas";
-import { getAccountByEmail } from "./data/account";
+import { getUserByEmail } from "./data/account";
 
 import bcryptjs from "bcryptjs";
 
@@ -24,7 +24,7 @@ export default {
         if (validatedFields.success) {
           const { email, password } = validatedFields.data;
 
-          const account = await getAccountByEmail(email);
+          const account = await getUserByEmail(email);
 
           // could have just google account linked, so check for password
           if (!account || !account.password) return null;

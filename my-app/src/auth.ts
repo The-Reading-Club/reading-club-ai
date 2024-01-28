@@ -5,7 +5,7 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { db } from "@/lib/db";
 import authConfig from "@/auth.config";
 
-import { getAccountByEmail } from "@/data/account";
+import { getUserByEmail } from "@/data/account";
 import { account_account_type as DBAccountType } from "@prisma/client";
 
 type ExtendedUser = DefaultSession["user"] & {
@@ -27,6 +27,8 @@ export const {
 } = NextAuth({
   callbacks: {
     async signIn({ user }) {
+      console.log("SIGN IN CALLBACK");
+
       return true; // testing for now
 
       // I should probably extend the type because I know email is there
@@ -85,7 +87,7 @@ export const {
     async jwt({ token }) {
       if (!token.email) return token;
 
-      const existingAccount = await getAccountByEmail(token.email);
+      const existingAccount = await getUserByEmail(token.email);
 
       if (!existingAccount) return token;
 

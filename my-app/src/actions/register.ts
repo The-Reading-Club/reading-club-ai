@@ -6,7 +6,7 @@ import { RegisterSchema } from "../schemas";
 
 import bcryptjs from "bcryptjs";
 import { db } from "@/lib/db";
-import { getAccountByEmail } from "@/data/account";
+import { getUserByEmail } from "@/data/account";
 
 // What kind of black magic is this one?
 export const register = async (values: z.infer<typeof RegisterSchema>) => {
@@ -19,13 +19,13 @@ export const register = async (values: z.infer<typeof RegisterSchema>) => {
   const { email, password, name } = validatedFields.data;
   const hashedPassword = await bcryptjs.hash(password, 10);
 
-  const existingAccount = await getAccountByEmail(email);
+  const existingAccount = await getUserByEmail(email);
 
   if (existingAccount) {
     return { error: "Email already in use!" };
   }
 
-  await db.account.create({
+  await db.user.create({
     data: {
       email: email,
       password: hashedPassword,
