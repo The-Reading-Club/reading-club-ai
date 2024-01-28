@@ -66,6 +66,13 @@ export const {
         session.user.accountType = token_.accountType as DBAccountType;
       }
 
+      // console.log("WHAT DO WE HAVE ALREADY?", session.user);
+      // // Feels like dangerous code
+      // if (session.user.email) {
+      //   const fetchedUserInfo = await getUserByEmail(session.user.email);
+      //   if (fetchedUserInfo) session.user.id = fetchedUserInfo.id;
+      // }
+
       console.log({ sessionParams });
 
       return sessionParams.session;

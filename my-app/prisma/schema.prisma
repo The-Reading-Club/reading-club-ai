@@ -52,6 +52,15 @@ model Account {
   @@map("provider") // this sucks!!!
 }
 
+model UserApiLimit {
+  id        String      @id @default(cuid())
+  userId    String   @unique @map("account_oauth_id")
+  count     Int      @default(0)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("account_api_limit")
+}
 
 // model account_mtm_classroom {
 //   account   Int

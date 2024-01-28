@@ -6,7 +6,11 @@ import { kv } from "@vercel/kv";
 import { Ratelimit } from "@upstash/ratelimit";
 import { NextResponse } from "next/server";
 
-export const runtime = "edge";
+// import { increaseApiLimit, checkApiLimit } from "@/lib/api-limit";
+import { auth } from "@/auth";
+
+// https://github.com/prisma/prisma/issues/20560
+// export const runtime = "edge";
 
 const config = new Configuration({
   apiKey: process.env.OAI_KEY,
@@ -17,7 +21,7 @@ const openai = new OpenAIApi(config);
 export async function POST(request: Request) {
   // FIRST THING IN ROUTE IS TO SET RATE LIMIT
   if (
-    process.env.NODE_ENV != "development" &&
+    // process.env.NODE_ENV != "development" &&
     process.env.KV_REST_API_URL &&
     process.env.KV_REST_API_TOKEN
   ) {
@@ -25,15 +29,24 @@ export async function POST(request: Request) {
 
     const ratelimit = new Ratelimit({
       redis: kv,
-      limiter: Ratelimit.slidingWindow(50, "1 d"),
+      limiter: Ratelimit.fixedWindow(5, "365 d"),
     });
 
+    // Works for now, but at some point I could have the user
+    // send the email as part of the req body to make this even faster
+    // But honestly, it's not that slow
+    const session = await auth();
+    const rateLimitKey = session?.user.email || ip;
+
+    console.log("RATE LIMIT KEY: ", rateLimitKey);
+
     const { success, limit, reset, remaining } = await ratelimit.limit(
-      `trc_ratelimit_${ip}`
+      // `trc_ratelimit_${ip}`
+      `trc_ratelimit_${rateLimitKey}`
     );
 
     if (!success) {
-      return new NextResponse("Rate limit exceeded for the day", {
+      return new NextResponse("Free trial has expired", {
         status: 429,
         headers: {
           "X-RateLimit-Limit": limit.toString(),
