@@ -33,7 +33,7 @@ const CardWrapper: React.FC<CardWrapperProps> = ({
       <CardHeader>
         <Header label={headerLabel} />
       </CardHeader>
-      <CardContent>{children}</CardContent>
+      {/* <CardContent>{children}</CardContent> */}
       {showSocial && (
         <CardFooter>
           {/* <div className="w-full flex flex-col gap-y-2">
