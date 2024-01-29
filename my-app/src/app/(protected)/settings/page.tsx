@@ -12,8 +12,8 @@ const SettingsPage = async () => {
   const isPro = await checkSubscription();
 
   return (
-    <div>
-      {JSON.stringify(session)}
+    <div className="bg-secondary h-full p-16 flex flex-col gap-6 justify-start items-center">
+      {/* {JSON.stringify(session)}
       <form
         action={async () => {
           "use server"; // dark magic lol
@@ -22,8 +22,27 @@ const SettingsPage = async () => {
         }}
       >
         <button type="submit">Sign out</button>
-      </form>
-      <SubscriptionButton isPlus={isPro} />
+      </form> */}
+      <h1 className="text-6xl font-bold text-primary">Settings</h1>
+      {/* Say that you are currently subscribed if so */}
+      <p className="text-xl text-darkFont">
+        {isPro
+          ? "You are currently on a Plus plan."
+          : "You are currently on a free plan."}
+      </p>
+      <div
+        // className="min-w-[250px]"
+        style={
+          {
+            // border: "2px solid red",
+            // display: "flex",
+            // justifyContent: "stretch",
+            // alignItems: "stretch",
+          }
+        }
+      >
+        <SubscriptionButton isPlus={isPro} />
+      </div>
     </div>
   );
 };
