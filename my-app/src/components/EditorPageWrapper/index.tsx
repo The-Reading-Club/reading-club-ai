@@ -15,8 +15,12 @@ import MyDocument from "../MyDocument";
 
 interface EditorPageWrapperProps {
   editorKey: string;
+  isPlus: boolean;
 }
-const EditorPageWrapper: React.FC<EditorPageWrapperProps> = ({ editorKey }) => {
+const EditorPageWrapper: React.FC<EditorPageWrapperProps> = ({
+  editorKey,
+  isPlus,
+}) => {
   //   const { storiesData } = useTRCEditorStore();
   //   const [storyData, setStoryData] = React.useState<StoryData>(
   //     storiesData[editorKey]
@@ -94,7 +98,7 @@ const EditorPageWrapper: React.FC<EditorPageWrapperProps> = ({ editorKey }) => {
             enableLocalStorage={true}
           />
         </div>
-        <RightPanel storyData={storyData} />
+        <RightPanel storyData={storyData} isPlus={isPlus} />
       </div>
     </div>
   );

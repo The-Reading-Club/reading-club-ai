@@ -8,6 +8,7 @@ import { NextResponse } from "next/server";
 
 // import { increaseApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { auth } from "@/auth";
+import { checkSubscription } from "@/lib/subscription";
 
 // https://github.com/prisma/prisma/issues/20560
 // export const runtime = "edge";
@@ -19,8 +20,12 @@ const config = new Configuration({
 const openai = new OpenAIApi(config);
 
 export async function POST(request: Request) {
+  // We probably want to rate limit plus users a bit but for now it's fine
+  const isPro = await checkSubscription();
+
   // FIRST THING IN ROUTE IS TO SET RATE LIMIT
   if (
+    isPro == false &&
     // process.env.NODE_ENV != "development" &&
     process.env.KV_REST_API_URL &&
     process.env.KV_REST_API_TOKEN
@@ -29,7 +34,7 @@ export async function POST(request: Request) {
 
     const ratelimit = new Ratelimit({
       redis: kv,
-      limiter: Ratelimit.fixedWindow(5, "365 d"),
+      limiter: Ratelimit.fixedWindow(5, "1d"),
     });
 
     // Works for now, but at some point I could have the user

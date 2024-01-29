@@ -63,6 +63,8 @@ import { CustomSuggestion } from "./extensions/custom-suggestion";
 import { DebouncedState, useDebouncedCallback } from "use-debounce";
 import useLocalStorage from "@/lib/hooks/useLocalStorage";
 import { MetadataExtension } from "./extensions/metadata";
+import { useProModal } from "@/lib/hooks/useProModal";
+import { devAlert } from "@/lib/utils";
 const garamondFont = EB_Garamond({
   subsets: ["latin"],
   // https://nextjs.org/docs/pages/api-reference/components/font
@@ -377,9 +379,14 @@ function useTRCEditorV2Completion(
       // toast.error(err.message)
       alert(err.message);
       // there's gotta be a more formal status code for this
-      if (err.message == "Rate limit exceeded for the day") {
+      // if (err.message == "Rate limit exceeded for the day")
+      // TODO: SERIOUSLY SWITCH TO STATUS CODES!!!
+      devAlert("AI COMPLETION ERROR: " + JSON.stringify(err));
+      if (err.message == "Free trial has expired") {
         //va.track("Rate Limit Reached")
         alert("Rate Limit Reached");
+
+        useProModal.getState().onOpen();
       }
     },
   });

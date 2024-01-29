@@ -8,17 +8,29 @@ import StoryPDF from "../StoryPDF";
 import { StoryData, useTRCEditorStore } from "@/stores/store";
 import useMounted from "@/lib/hooks/useMounted";
 import { PDFDownloadLink } from "@react-pdf/renderer";
+import { useProModal } from "@/lib/hooks/useProModal";
+import { Zap } from "lucide-react";
+import { checkSubscription } from "@/lib/subscription";
 
 interface RightPanelProps {
   storyData: StoryData;
+  isPlus: boolean;
 }
 
-const RightPanel: React.FC<RightPanelProps> = ({ storyData }) => {
+const RightPanel: React.FC<RightPanelProps> = ({ storyData, isPlus }) => {
   //   const downloadPDF = () => {
   //     ReactPDF.render(<MyDocument />, `${__dirname}/downloads/example.pdf`);
   //   };
 
   const mounted = useMounted();
+
+  const proModal = useProModal();
+
+  // const isPro = await checkSubscription();
+
+  const proOnClick = () => {
+    proModal.onOpen();
+  };
 
   const [documentGenerated, setDocumentGenerated] = React.useState(false);
   return (
@@ -32,8 +44,8 @@ const RightPanel: React.FC<RightPanelProps> = ({ storyData }) => {
         {`Press '++' for suggestions, or`}
       </p>
       <p className="text-md text-darkFont">{`'/' for illustrations.`}</p>
-      <br />
-      <p className="text-md text-darkFont">{`Note: This is a research demo. There's no autosave, so make sure to copy & paste anything you like. Autocompletions are rate limited to a few dozens per day.`}</p>
+      {/* <br /> */}
+      {/* <p className="text-md text-darkFont">{`Note: This is a research demo. There's no autosave, so make sure to copy & paste anything you like. Autocompletions are rate limited to a few dozens per day.`}</p> */}
       {/* sign up as an early tester here */}
       <br />
       <p className="text-md text-darkFont">
@@ -125,6 +137,27 @@ const RightPanel: React.FC<RightPanelProps> = ({ storyData }) => {
           }
         </PDFDownloadLink>
       )} */}
+      <div className="mt-10">
+        {isPlus == false ? (
+          <Button
+            onClick={proOnClick}
+            className="bg-white rounded-full font-bold text-xl py-7 px-14 hover:bg-primary lg:min-w-[90%] min-w-[90%]"
+            variant="premium"
+          >
+            Upgrade <Zap className="w-4 h-4 ml-2 fill-white" />
+          </Button>
+        ) : (
+          // Tell user they are currently subscribed, and offer link to go to settings
+          <Link href="/settings">
+            <Button
+              className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent lg:min-w-[90%] min-w-[90%]"
+              variant="premium"
+            >
+              Manage Subscription
+            </Button>
+          </Link>
+        )}
+      </div>
     </div>
   );
 };

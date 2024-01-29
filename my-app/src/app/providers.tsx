@@ -1,5 +1,6 @@
 "use client";
 
+import ProModalProvider from "@/components/ProModal/ProModalProvider";
 import { ReactNode } from "react";
 import { Toaster } from "sonner";
 
@@ -14,6 +15,7 @@ export default function Providers({ children }: { children: ReactNode }) {
   return (
     <>
       <ToasterProvider />
+      <ProModalProvider />
       {children}
     </>
   );

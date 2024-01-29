@@ -40,9 +40,9 @@ export default function RootLayout({
         />
       )}
       <body className={font.className}>
-        <Providers>{children}</Providers>
         {/* <TestModal /> */}
         <DefaultAppModal />
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

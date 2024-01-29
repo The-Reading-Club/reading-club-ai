@@ -11,6 +11,7 @@ import {
 } from "@/lib/utils";
 import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
 import { use } from "react";
+import { useProModal } from "@/lib/hooks/useProModal";
 
 const uploadKey = new PluginKey("upload-image");
 
@@ -640,6 +641,7 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
               resolve(storedImageUrl);
             };
           } else if (res.status === 429) {
+            useProModal.getState().onOpen();
             throw new Error("Rate limited.");
           }
           // Unkown error
