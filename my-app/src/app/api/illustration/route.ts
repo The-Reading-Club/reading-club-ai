@@ -25,6 +25,8 @@ import { IllustrationGenerationBody } from "@/components/TRCEditorV2/plugins/upl
 import { put } from "@vercel/blob";
 
 import { nanoid } from "nanoid";
+import { checkSubscription } from "@/lib/subscription";
+import { auth } from "@/auth";
 
 // const idLength = 10; // You can choose the length
 // const uniqueID = nanoid(idLength);
@@ -47,9 +49,12 @@ export const dynamic = "force-dynamic";
 
 // platform.openai.com/docs/api-reference/images/create
 export async function POST(request: Request) {
+  // Should put this check into a single function in all relevant routes!
+  const isPro = await checkSubscription();
   // FIRST THING IN ROUTE IS TO SET RATE LIMIT
   if (
-    process.env.NODE_ENV != "development" &&
+    isPro == false &&
+    // process.env.NODE_ENV != "development" &&
     process.env.KV_REST_API_URL &&
     process.env.KV_REST_API_TOKEN
   ) {
@@ -60,19 +65,25 @@ export async function POST(request: Request) {
       limiter: Ratelimit.slidingWindow(5, "1 d"),
     });
 
+    const session = await auth();
+    const rateLimitKey = session?.user.email || ip;
+
     const { success, limit, reset, remaining } = await ratelimit.limit(
-      `trc_ratelimit_${ip}-illustration`
+      `trc_ratelimit_${rateLimitKey}-illustration`
     );
 
     if (!success) {
-      return new NextResponse("Rate limit exceeded for the day", {
-        status: 429,
-        headers: {
-          "X-RateLimit-Limit": limit.toString(),
-          "X-RateLimit-Remaining": remaining.toString(),
-          "X-RateLimit-Reset": reset.toString(),
-        },
-      });
+      return NextResponse.json(
+        { msg: "Rate limit exceeded for the day" },
+        {
+          status: 429,
+          headers: {
+            "X-RateLimit-Limit": limit.toString(),
+            "X-RateLimit-Remaining": remaining.toString(),
+            "X-RateLimit-Reset": reset.toString(),
+          },
+        }
+      );
     }
   }
 
@@ -376,6 +387,9 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
         access: "public",
       }
     );
+
+    // Store the revised prompt too, why not
+    // todo
 
     imageBlobStored = true;
     storedImageUrl = storedImageUrl_;
