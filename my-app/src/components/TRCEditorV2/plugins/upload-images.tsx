@@ -602,7 +602,7 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
           },
           body: body, //{},
         })
-        .then(async (res) => {
+        .then((res) => {
           // Successfully generate illustration
           if (res.status === 200) {
             devAlert(
@@ -640,12 +640,21 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
             image.onload = () => {
               resolve(storedImageUrl);
             };
-          } else if (res.status === 429) {
-            useProModal.getState().onOpen();
-            throw new Error("Rate limited.");
           }
           // Unkown error
           else {
+            devAlert("Unkown illustration error (then).");
+            throw new Error("Error uploading image.");
+          }
+        })
+        .catch((error) => {
+          if (error.response && error.response.status === 429) {
+            devAlert("Illustration rate limited.");
+            useProModal.getState().onOpen();
+            throw new Error("Rate limited.");
+          } else {
+            // handle other errors
+            devAlert("(catch) Error: " + error.message);
             throw new Error("Error uploading image.");
           }
         }),
@@ -653,6 +662,7 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
         loading: "Generating illustration...",
         success: "Illustration generated successfully.",
         error: (e) => e.message,
+        // error: "test",
       }
     );
   });

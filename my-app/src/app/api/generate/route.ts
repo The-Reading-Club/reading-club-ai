@@ -47,6 +47,7 @@ export async function POST(request: Request) {
 
     const { success, limit, reset, remaining } = await ratelimit.limit(
       // `trc_ratelimit_${ip}`
+      // add "generation" after key later
       `trc_ratelimit_${rateLimitKey}`
     );
 
