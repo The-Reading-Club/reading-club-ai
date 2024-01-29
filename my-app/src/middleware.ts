@@ -44,6 +44,7 @@ export default auth((req) => {
     return Response.redirect(new URL("/auth/login", nextUrl));
   }
 
+  console.log("MIDDLEWARE, ALLOW ROUTE: ", req.nextUrl.pathname);
   return null;
 });
 

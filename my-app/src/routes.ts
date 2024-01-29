@@ -6,7 +6,7 @@
  * @param
  * @returns
  */
-export const publicRoutes = ["/"];
+export const publicRoutes = ["/", "/api/stripe/webhook"];
 
 /**
  * @description An array of routes that are used for authentication
@@ -28,3 +28,8 @@ export const apiAuthPrefix = "/api/auth";
  */
 // export const DEFAULT_LOGIN_REDIRECT_URL = "/settings";
 export const DEFAULT_LOGIN_REDIRECT_URL = "/editor";
+
+// Beware of auth walls with stripe webhooks
+// I don't know why I didn't have this issue with the generate route...
+// Maybe because of the origin
+// https://stackoverflow.com/questions/53213735/stripe-webhooks-return-302-on-laravel-application-using-spatie-webhook
