@@ -15,6 +15,11 @@ body,
 }
 
 :root {
+  /* https://ui.shadcn.com/docs/theming */
+  /* Not clear how to theme with shadcn */
+  /* --primary: 222.2 47.4% 11.2%; */
+  /* --primary-foreground: 210 40% 98%; */
+
   --foreground-rgb: 0, 0, 0;
   --background-start-rgb: 255, 193, 43;
   --background-end-rgb: 255, 193, 43;
