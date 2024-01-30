@@ -48,7 +48,7 @@ const RightPanel: React.FC<RightPanelProps> = ({ storyData, isPlus }) => {
       {/* <p className="text-md text-darkFont">{`Note: This is a research demo. There's no autosave, so make sure to copy & paste anything you like. Autocompletions are rate limited to a few dozens per day.`}</p> */}
       {/* sign up as an early tester here */}
       <br />
-      <p className="text-md text-darkFont">
+      {/* <p className="text-md text-darkFont">
         Sign up as an early tester{" "}
         <Link
           href="https://forms.gle/eDiYjELhFcGiZ58T6"
@@ -59,7 +59,7 @@ const RightPanel: React.FC<RightPanelProps> = ({ storyData, isPlus }) => {
           here.
         </Link>
       </p>
-      <br />
+      <br /> */}
       <div
         //   style={{ border: "2px solid red" }}
         className=""
