@@ -3,19 +3,19 @@ export type CharacterAttributes = {
   gender: string;
   age: string; // e.g., "10 years old", "young", "elderly"
   appearance: string; // e.g., "Tall with curly red hair and bright green eyes. Always wears a blue hat."
-  personalityTraits: string; // e.g., "Kind, curious, and a bit shy."
-  likes: string; // e.g., "Loves chocolate ice cream, reading, and sunny days."
-  dislikes: string; // e.g., "Dislikes loud noises and being rushed."
-  fears: string; // e.g., "Afraid of spiders and getting lost."
-  backstory: string; // e.g., "Grew up in a small village by the sea..."
-  motivations: string; // e.g., "Wants to find a legendary treasure to save their village."
-  relationships: string; // e.g., "Son of Maria, best friends with Alex, rivals with Jamie."
-  roleInStory: string; // e.g., "The unlikely hero of the tale."
-  specialAbilitiesOrSkills: string; // e.g., "Great at solving puzzles and making friends with animals."
-  culturalBackground: string; // e.g., "Part of a nomadic tribe with rich storytelling traditions."
-  languageSpoken: string; // e.g., "Speaks English and the ancient language of their tribe."
-  hobbies: string; // e.g., "Enjoys fishing, painting, and playing the flute."
-  signatureItems: string; // e.g., "Always carries a magical compass and a family photo."
+  // personalityTraits: string; // e.g., "Kind, curious, and a bit shy."
+  // likes: string; // e.g., "Loves chocolate ice cream, reading, and sunny days."
+  // dislikes: string; // e.g., "Dislikes loud noises and being rushed."
+  // fears: string; // e.g., "Afraid of spiders and getting lost."
+  // backstory: string; // e.g., "Grew up in a small village by the sea..."
+  // motivations: string; // e.g., "Wants to find a legendary treasure to save their village."
+  // relationships: string; // e.g., "Son of Maria, best friends with Alex, rivals with Jamie."
+  // roleInStory: string; // e.g., "The unlikely hero of the tale."
+  // specialAbilitiesOrSkills: string; // e.g., "Great at solving puzzles and making friends with animals."
+  // culturalBackground: string; // e.g., "Part of a nomadic tribe with rich storytelling traditions."
+  // languageSpoken: string; // e.g., "Speaks English and the ancient language of their tribe."
+  // hobbies: string; // e.g., "Enjoys fishing, painting, and playing the flute."
+  // signatureItems: string; // e.g., "Always carries a magical compass and a family photo."
 
   height: string;
   hairColor: string;
@@ -23,9 +23,9 @@ export type CharacterAttributes = {
   distinguishingMarks: string;
   build: string;
   skinTone: string;
-  fashionStyle: string;
-  posture: string;
-  voice: string;
+  // fashionStyle: string;
+  // posture: string;
+  // voice: string;
   facialHair: string;
   physicalCondition: string;
   sceneDescription: string;
@@ -36,19 +36,19 @@ export const CHARACTER_ATTRIBUTES: CharacterAttributes = {
   age: "", // e.g., "10 years old", "young", "elderly"
   gender: "",
   appearance: "", // e.g., "Tall with curly red hair and bright green eyes. Always wears a blue hat."
-  personalityTraits: "", // e.g., "Kind, curious, and a bit shy."
-  likes: "", // e.g., "Loves chocolate ice cream, reading, and sunny days."
-  dislikes: "", // e.g., "Dislikes loud noises and being rushed."
-  fears: "", // e.g., "Afraid of spiders and getting lost."
-  backstory: "", // e.g., "Grew up in a small village by the sea..."
-  motivations: "", // e.g., "Wants to find a legendary treasure to save their village."
-  relationships: "", // e.g., "Son of Maria, best friends with Alex, rivals with Jamie."
-  roleInStory: "", // e.g., "The unlikely hero of the tale."
-  specialAbilitiesOrSkills: "", // e.g., "Great at solving puzzles and making friends with animals."
-  culturalBackground: "", // e.g., "Part of a nomadic tribe with rich storytelling traditions."
-  languageSpoken: "", // e.g., "Speaks English and the ancient language of their tribe."
-  hobbies: "", // e.g., "Enjoys fishing, painting, and playing the flute."
-  signatureItems: "", // e.g., "Always carries a magical compass and a family photo."
+  // personalityTraits: "", // e.g., "Kind, curious, and a bit shy."
+  // likes: "", // e.g., "Loves chocolate ice cream, reading, and sunny days."
+  // dislikes: "", // e.g., "Dislikes loud noises and being rushed."
+  // fears: "", // e.g., "Afraid of spiders and getting lost."
+  // backstory: "", // e.g., "Grew up in a small village by the sea..."
+  // motivations: "", // e.g., "Wants to find a legendary treasure to save their village."
+  // relationships: "", // e.g., "Son of Maria, best friends with Alex, rivals with Jamie."
+  // roleInStory: "", // e.g., "The unlikely hero of the tale."
+  // specialAbilitiesOrSkills: "", // e.g., "Great at solving puzzles and making friends with animals."
+  // culturalBackground: "", // e.g., "Part of a nomadic tribe with rich storytelling traditions."
+  // languageSpoken: "", // e.g., "Speaks English and the ancient language of their tribe."
+  // hobbies: "", // e.g., "Enjoys fishing, painting, and playing the flute."
+  // signatureItems: "", // e.g., "Always carries a magical compass and a family photo."
 
   //   exterior
   height: "",
@@ -57,9 +57,9 @@ export const CHARACTER_ATTRIBUTES: CharacterAttributes = {
   distinguishingMarks: "",
   build: "",
   skinTone: "",
-  fashionStyle: "",
-  posture: "",
-  voice: "",
+  // fashionStyle: "",
+  // posture: "",
+  // voice: "",
   facialHair: "",
   physicalCondition: "",
   sceneDescription: "",
