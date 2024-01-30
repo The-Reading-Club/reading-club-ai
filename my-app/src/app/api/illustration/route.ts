@@ -47,6 +47,14 @@ export const dynamic = "force-dynamic";
 //   return NextResponse.json({ message: "Hello, world!" }, { status: 200 });
 // }
 
+interface ImageMetadata {
+  originalPrompt: string;
+  creationDate: string;
+  revisedPrompt: string;
+  additionalInfo?: any;
+  storedImageUrl: string;
+}
+
 // platform.openai.com/docs/api-reference/images/create
 export async function POST(request: Request) {
   // Should put this check into a single function in all relevant routes!
@@ -379,17 +387,55 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
     const imageFetchResponse = await fetch(dalleImageUrl);
     const imageBlob = await imageFetchResponse.blob();
 
+    const now = new Date();
+    const todaysDate = now.toISOString().split("T")[0]; // Format: YYYY-MM-DD
+
+    // Calculate seconds since midnight
+    const secondsSinceMidnight =
+      now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+
+    // Generating a unique ID for the image and its metadata
+    const uniqueId = `${secondsSinceMidnight}-${nanoid(10)}`;
+    // Define the paths
+    const imagePath = `beta/images/${todaysDate}/${uniqueId}.png`;
+    const metadataPath = `beta/images/${todaysDate}/${uniqueId}.json`;
+
     // Store the image in Verbal Blob storage
     const { url: storedImageUrl_ } = await put(
-      "beta/images/" + nanoid(10),
+      // it works without the file extension, but i guess it's better to have it
+      imagePath,
       imageBlob,
       {
         access: "public",
       }
     );
 
-    // Store the revised prompt too, why not
-    // todo
+    // RESERACH ON ACCESSIBILITY, BLINDNESS, AND IMAGE METADATA
+    // https://iptc.org/news/iptc-announces-new-properties-in-photo-metadata-to-make-images-more-accessible/
+    // https://chat.openai.com/c/d9115157-851e-46d4-a327-1121b1e2763d
+
+    // Define your metadata
+    const metadata: ImageMetadata = {
+      originalPrompt: consistentPrompt3,
+      creationDate: new Date().toISOString(),
+      revisedPrompt: image.data[0].revised_prompt ?? "undefined",
+      storedImageUrl: storedImageUrl_,
+      additionalInfo: {
+        // templatePrompt,
+        metaprompt,
+        // testPrompt,
+      },
+    };
+
+    // Convert metadata object to JSON string
+    const metadataJson = JSON.stringify(metadata);
+
+    // Store the metadata in a JSON file
+    /*await*/ put(
+      metadataPath,
+      new Blob([metadataJson], { type: "application/json" }),
+      { access: "public" }
+    );
 
     imageBlobStored = true;
     storedImageUrl = storedImageUrl_;
