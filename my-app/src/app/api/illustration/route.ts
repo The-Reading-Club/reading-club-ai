@@ -53,6 +53,7 @@ interface ImageMetadata {
   revisedPrompt: string;
   additionalInfo?: any;
   storedImageUrl: string;
+  body: any;
 }
 
 // platform.openai.com/docs/api-reference/images/create
@@ -420,6 +421,7 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
       creationDate: new Date().toISOString(),
       revisedPrompt: image.data[0].revised_prompt ?? "undefined",
       storedImageUrl: storedImageUrl_,
+      body: reqJSON.body,
       additionalInfo: {
         // templatePrompt,
         metaprompt,
