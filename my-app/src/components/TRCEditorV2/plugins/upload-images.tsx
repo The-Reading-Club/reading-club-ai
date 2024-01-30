@@ -238,7 +238,7 @@ export function startIllustrationGeneration(
 
   useTRCAppStore.getState().setDefaultModalActionLabel("");
   useTRCAppStore.getState().setDefaultModalSecondaryActionLabel("Skip");
-  useTRCAppStore.getState().setDefaultModalDisabled(true);
+  // useTRCAppStore.getState().setDefaultModalDisabled(true);
 
   handleCharacterIdentification({
     existingCharacters: body.existingCharacters,

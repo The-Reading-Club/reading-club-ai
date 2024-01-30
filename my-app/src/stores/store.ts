@@ -106,7 +106,9 @@ export const useTRCAppStore = create<TRCAppState>((set) => ({
   defaultModalOnClose: () => {
     set({ defaultModalOpen: false });
   },
-  setDefaultModalOnClose: (defaultModalOnClose) => set({ defaultModalOnClose }),
+  // setDefaultModalOnClose: (defaultModalOnClose) => set({ defaultModalOnClose }),
+  setDefaultModalOnClose: (defaultModalOnClose) =>
+    set({ defaultModalOpen: false }),
   defaultModalOnSubmit: () => {},
   setDefaultModalOnSubmit: (defaultModalOnSubmit) =>
     set({ defaultModalOnSubmit }),
