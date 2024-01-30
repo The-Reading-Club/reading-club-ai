@@ -1,5 +1,7 @@
 "use client";
 import Button from "@/components/TRCButton1";
+import { dev } from "@/config";
+import { devAlert } from "@/lib/utils";
 import React, { useCallback, useEffect, useState } from "react";
 import { IoMdClose } from "react-icons/io";
 
@@ -35,7 +37,12 @@ const Modal: React.FC<ModalProps> = ({
   }, [isOpen]);
 
   const handleClose = useCallback(() => {
-    if (disabled) return;
+    // devAlert("Closing");
+    if (disabled) {
+      // devAlert("Disabled " + disabled);
+      return;
+    }
+    devAlert("Closing for real");
 
     setShowModal(false);
 
@@ -64,7 +71,8 @@ const Modal: React.FC<ModalProps> = ({
     // }, 300);
   }, [disabled, secondaryAction]);
 
-  if (!isOpen) return null;
+  // if (!isOpen) return null;
+  if (!showModal) return null;
 
   return (
     <>
