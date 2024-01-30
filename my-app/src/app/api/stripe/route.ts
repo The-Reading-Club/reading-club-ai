@@ -67,6 +67,7 @@ export async function GET() {
         },
       ],
       metadata: { userId },
+      allow_promotion_codes: true,
     });
 
     return new NextResponse(JSON.stringify({ url: stripeSession.url }));
