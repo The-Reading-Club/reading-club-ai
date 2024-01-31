@@ -1,11 +1,14 @@
 import React, { useState } from "react";
 import "./CharacterList.css"; // Assume you have some CSS for styling
-import { capitalizeFirstLetter } from "@/lib/utils";
+import { capitalizeFirstLetter, devAlert } from "@/lib/utils";
 import useMounted from "@/lib/hooks/useMounted";
 import { CharacterAttributes } from "@/data/character";
+import { useTRCEditorStore } from "@/stores/store";
+import { BasicCharacterAttributes } from "@/app/api/character/identify/utils";
+import { IoMdClose } from "react-icons/io";
 
 // Define the types for your character properties
-type Character = {
+type CharacterCardProperties = {
   name: string;
   description: string;
   isExpanded: boolean;
@@ -13,9 +16,10 @@ type Character = {
 
 // Define the props for the CharacterCard component
 type CharacterCardProps = {
-  character: Character;
+  character: CharacterCardProperties;
   definition: CharacterAttributes;
   onClick: () => void; // Function to handle the click event
+  onDelete: () => void; // New prop for delete handler
 };
 
 // CharacterCard Component
@@ -23,11 +27,32 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
   character,
   definition,
   onClick,
+  onDelete,
 }) => {
   //   if (!character) return <></>;
 
+  // Prevent click event from bubbling up
+  const handleDeleteClick = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    onDelete();
+  };
+
   return (
     <div className="character-card text-darkFont bg-white" onClick={onClick}>
+      <button
+        className="
+                    top-2
+                    right-2
+                    absolute
+                    p-0
+                    m-0
+                    hover:opacity-70
+                    translation"
+        // style={{ border: "1px solid brown" }}
+        onClick={handleDeleteClick}
+      >
+        <IoMdClose size={18} />
+      </button>
       <h3 className="font-bold text-xl">{character.name}</h3>
       <p className="text-sm">
         {capitalizeFirstLetter(character.description) + "."}
@@ -78,14 +103,16 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
 
 // Define the props for the CharacterList component
 type CharacterListProps = {
-  characters: Character[];
+  characters: BasicCharacterAttributes[];
   characterDefinitions: CharacterAttributes[];
+  setCharacterList: (characters: BasicCharacterAttributes[]) => void;
 };
 
 // CharacterList Component
 const CharacterList: React.FC<CharacterListProps> = ({
   characters,
   characterDefinitions,
+  setCharacterList,
 }) => {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
 
@@ -93,6 +120,18 @@ const CharacterList: React.FC<CharacterListProps> = ({
 
   const handleCardClick = (characterName: string) => {
     setExpandedCard(expandedCard === characterName ? null : characterName);
+  };
+
+  const handleDeleteCharacter = (characterName: string) => {
+    const newCharacters = characters.filter(
+      (character) => character.name !== characterName
+    );
+
+    devAlert("CHARACTERS" + JSON.stringify(characters));
+    devAlert("NEW CHARACTERS" + JSON.stringify(newCharacters));
+    // return;
+
+    setCharacterList(newCharacters);
   };
 
   if (mounted == false) return <></>;
@@ -112,6 +151,7 @@ const CharacterList: React.FC<CharacterListProps> = ({
             characterDefinitions?.find((c) => c.name === character.name)!
           }
           onClick={() => handleCardClick(character.name)}
+          onDelete={() => handleDeleteCharacter(character.name)} // Pass the delete handler
         />
       ))}
     </div>

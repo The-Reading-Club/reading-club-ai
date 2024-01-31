@@ -3,6 +3,7 @@ import React from "react";
 import { auth, signOut } from "@/auth";
 import SubscriptionButton from "@/components/settings/SubscriptionButton";
 import { checkSubscription } from "@/lib/subscription";
+import { Button } from "@/components/ui/button";
 
 const SettingsPage = async () => {
   const session = await auth();
@@ -43,6 +44,27 @@ const SettingsPage = async () => {
       >
         <SubscriptionButton isPlus={isPro} />
       </div>
+      {/* LOG OUT BUTTON */}
+      <form
+        action={async () => {
+          "use server"; // dark magic lol
+
+          await signOut();
+        }}
+      >
+        <Button
+          type="submit"
+          // onClick={async () => {
+          //   "use server"; // dark magic lol
+          //   await signOut();
+          // }}
+          // className="bg-primary text-white rounded-md py-2 px-4"
+          // className=""
+          variant={"outline"}
+        >
+          Sign out
+        </Button>{" "}
+      </form>
     </div>
   );
 };
