@@ -8,6 +8,7 @@ import {
   devAlert,
   devConsoleLog,
   fetchAndReadStream,
+  wrapWithToast,
 } from "@/lib/utils";
 import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
 import { use } from "react";
@@ -307,16 +308,12 @@ export function startIllustrationGeneration(
         "Choosing your characters for the scene illustration"
       );
 
-    const characterChoiceResponse = await handleCharacterChoice({
+    const characterChoice = await handleCharacterChoice({
       existingCharacters:
         useTRCEditorStore.getState().storiesData[body.editorKey].characters,
       storyText: body.prevContextText + body.postContextText,
       sceneText: body.prevParagraphText,
     });
-
-    const characterChoice = JSON.parse(characterChoiceResponse!)[
-      "chosenCharacter"
-    ][0];
 
     /**name: Plato
 
@@ -504,113 +501,144 @@ function handleCharacterIdentification(body: CharacterIdentificationBody) {
 }
 
 async function handleCharacterCreation(body: CharacterCreationBody) {
-  const createCharacterPromise = new Promise<string>(
-    async (resolve, reject) => {
-      try {
-        // https://chat.openai.com/c/95cf540e-0be1-4c45-b8e9-1aca836990d2
-
-        const response = await fetch("/api/character/create", {
-          method: "POST",
-          headers: {
-            "Content-Type": "application/json",
-          },
-          body: JSON.stringify({ body }),
-        });
-
-        if (!response.ok) {
-          throw new Error(`HTTP error! Status: ${response.status}`);
-        }
-
-        const reader = response.body!.getReader();
-        const decoder = new TextDecoder("utf-8"); // Creates a TextDecoder instance
-        let content = "";
-
-        console.log("About to start reading stream");
-        let i = 0;
-        while (true) {
-          console.log("Reading stream " + i++);
-          const { done, value } = await reader.read();
-          if (done) {
-            break;
-          }
-
-          // Decode the Uint8Array to a string and append it to content
-          content += decoder.decode(value, { stream: true });
-
-          const pChunks = parseJSONChunk(content).map((chunk, j) => {
-            console.log("CHUNK: " + JSON.stringify(chunk));
-            const keyProp = `key-pChunk-${chunk.key}-char-creation-${j}`;
-
-            return (
-              <p key={keyProp}>
-                <span className="font-bold">
-                  {capitalizeFirstLetter(chunk.key)}
-                </span>
-                {`: ${chunk.value}`}
-              </p>
-            );
-          });
-
-          console.log("About to update modal body: " + pChunks);
-          console.log("CONTENT: " + content);
-          useTRCAppStore.getState().setDefaultModalBody(
-            <div className="text-center">
-              <h1 className="text-xl font-bold">
-                {body.basicCharacterContext["name"]}
-              </h1>
-              <>{pChunks[pChunks.length - 1]}</>
-            </div>
-          );
-        }
-
-        // const data = await response.json();
-        console.log(content);
-        // return content;
-        resolve(content);
-      } catch (error) {
-        console.error("Fetch error:", error);
-        reject(error);
-      }
+  // Show a loading toast
+  const loadingToast = toast.loading(
+    `Creating character... "${body.basicCharacterContext["name"]}"`,
+    {
+      duration: Infinity,
     }
   );
 
-  return toast.promise(createCharacterPromise, {
-    loading: "Creating character...",
-    success: "Character created successfully!",
-    error: (e) => `Error: ${e.message}`,
-  });
-}
+  try {
+    // https://chat.openai.com/c/95cf540e-0be1-4c45-b8e9-1aca836990d2
 
-async function handleCharacterChoice(body: CharacterChoiceBody) {
-  // Good code
-  const resultContent = fetchAndReadStream(
-    "/api/character/choose",
-    {
+    const response = await fetch("/api/character/create", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
       },
       body: JSON.stringify({ body }),
-    },
-    (contentChunk) => {
-      const pChunks = parseJSONChunk(contentChunk).map((chunk) => {
-        if (chunk.key === "name")
-          return <h1 className="text-xl font-bold">{chunk.value}</h1>;
-        if (chunk.key === "scene") return <p>{chunk.value}</p>;
-        if (chunk.key === "background") return <p>{chunk.value}</p>;
-        else return <></>;
+    });
+
+    if (!response.ok) {
+      throw new Error(`HTTP error! Status: ${response.status}`);
+    }
+
+    const reader = response.body!.getReader();
+    const decoder = new TextDecoder("utf-8"); // Creates a TextDecoder instance
+    let content = "";
+
+    console.log("About to start reading stream");
+    let i = 0;
+    while (true) {
+      console.log("Reading stream " + i++);
+      const { done, value } = await reader.read();
+      if (done) {
+        break;
+      }
+
+      // Decode the Uint8Array to a string and append it to content
+      content += decoder.decode(value, { stream: true });
+
+      const pChunks = parseJSONChunk(content).map((chunk, j) => {
+        console.log("CHUNK: " + JSON.stringify(chunk));
+        const keyProp = `key-pChunk-${chunk.key}-char-creation-${j}`;
+
+        return (
+          <p key={keyProp}>
+            <span className="font-bold">
+              {capitalizeFirstLetter(chunk.key)}
+            </span>
+            {`: ${chunk.value}`}
+          </p>
+        );
       });
 
+      console.log("About to update modal body: " + pChunks);
+      console.log("CONTENT: " + content);
       useTRCAppStore.getState().setDefaultModalBody(
-        <>
-          <div className="text-center">{pChunks}</div>
-          {/* <div className="text-center">{contentChunk}</div> */}
-        </>
+        <div className="text-center">
+          <h1 className="text-xl font-bold">
+            {body.basicCharacterContext["name"]}
+          </h1>
+          <>{pChunks[pChunks.length - 1]}</>
+        </div>
       );
     }
-  );
 
-  return resultContent;
+    // const data = await response.json();
+    console.log(content);
+
+    // Update the toast to show success message
+    devAlert("Character created successfully!" + content);
+    toast.success("Character created successfully!", {
+      id: loadingToast,
+      duration: 5000,
+    });
+
+    return content;
+  } catch (error: any) {
+    console.error("Fetch error:", error);
+    // Update the toast to show error message
+    toast.error(`Error: ${error.message}`, {
+      id: loadingToast,
+      duration: 5000,
+    });
+  }
+}
+
+async function handleCharacterChoice(body: CharacterChoiceBody) {
+  const loadingToast = toast.loading("Choosing character for illustration...", {
+    duration: Infinity,
+  });
+
+  try {
+    // Good code
+    const characterChoiceResponse = await fetchAndReadStream(
+      "/api/character/choose",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify({ body }),
+      },
+      (contentChunk) => {
+        const pChunks = parseJSONChunk(contentChunk).map((chunk) => {
+          if (chunk.key === "name")
+            return <h1 className="text-xl font-bold">{chunk.value}</h1>;
+          if (chunk.key === "scene") return <p>{chunk.value}</p>;
+          if (chunk.key === "background") return <p>{chunk.value}</p>;
+          else return <></>;
+        });
+
+        useTRCAppStore.getState().setDefaultModalBody(
+          <>
+            <div className="text-center">{pChunks}</div>
+            {/* <div className="text-center">{contentChunk}</div> */}
+          </>
+        );
+      }
+    );
+
+    const characterChoice = JSON.parse(characterChoiceResponse!)[
+      "chosenCharacter"
+    ][0];
+
+    devAlert("Character choice: " + JSON.stringify(characterChoice));
+    toast.success(`Character chosen successfully! (${characterChoice})`, {
+      id: loadingToast,
+      duration: 5000,
+    });
+
+    return characterChoice;
+  } catch (error: any) {
+    console.error("Fetch error:", error);
+    toast.error(`Error: ${error.message}`, {
+      id: loadingToast,
+      duration: 5000,
+    });
+  }
 }
 
 function handleIllustrationGeneration(body: IllustrationGenerationBody) {
@@ -681,7 +709,7 @@ function handleIllustrationGeneration(body: IllustrationGenerationBody) {
           }
         }),
       {
-        loading: "Generating illustration...",
+        loading: `Generating illustration... (${body.chosenCharacter.name})`,
         success: "Illustration generated successfully.",
         error: (e) => e.message,
         // error: "test",

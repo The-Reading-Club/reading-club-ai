@@ -1,6 +1,9 @@
 import { dev } from "@/config";
 import { type ClassValue, clsx } from "clsx";
+import { ExternalToast } from "sonner";
 import { twMerge } from "tailwind-merge";
+
+import { toast } from "sonner";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -57,9 +60,40 @@ export async function fetchAndReadStream(
     return content;
   } catch (e) {
     console.log(e);
+    throw e;
   }
 }
 
 export function absoluteUrl(path: string) {
   return `${process.env.NEXT_PUBLIC_APP_URL}${path}`;
+}
+
+type ToastData = {
+  loading: string;
+  success: string;
+  errorCallback: (msg: string) => string;
+};
+
+// This is actually ugly code, won't use it
+export async function wrapWithToast(callback: Function, data: ToastData) {
+  const loadingToast = toast.loading(data.loading, {
+    duration: Infinity,
+  });
+
+  try {
+    const result = await callback();
+
+    toast.success(data.success, {
+      id: loadingToast,
+      duration: 5000,
+    });
+
+    return result;
+  } catch (e: any) {
+    console.log(e);
+    toast.error(data.errorCallback(e.message), {
+      id: loadingToast,
+      duration: 5000,
+    });
+  }
 }
