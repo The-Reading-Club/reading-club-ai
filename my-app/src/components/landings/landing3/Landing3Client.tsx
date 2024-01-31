@@ -24,6 +24,8 @@ import Logo from "@/components/Logo";
 // import ReadingClubEditor from "@/app/editor/ReadingClubEditor";
 import { useEffect, useRef, useState } from "react";
 import TRCEditorV2 from "@/components/TRCEditorV2";
+import LoomEmbed from "@/components/LoomEmbed";
+import { ArrowRightIcon } from "lucide-react";
 
 interface SocialLinkProps {
   href: string;
@@ -180,9 +182,11 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
           )}
         </nav>
       </header>
-      <main className="flex-1">
+      <main className="flex-1 ">
         <section
-          className="w-full lg:h-[500px] bg-center bg-cover flex items-center justify-center lg:bg-contain lg:pb-0 pb-20"
+          className="w-full lg:h-[500px] bg-center bg-cover flex items-center justify-center lg:bg-contain lg:pb-0 pb-20
+          flex-col lg:flex-row
+          "
           // style={{
           //   backgroundImage: "url(/BG-Archiv3.jpg)",
           // }}
@@ -209,37 +213,49 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
               className="text-[#3c4043]"
             >
               <Button className="mt-8 px-16 py-8 bg-[#FFF] text-darkFont rounded hover:bg-[#FFF] rounded-full text-2xl font-bold border-4 border-[#FFC122]">
-                Try Demo
+                Create a story
+                {/* <ArrowRightIcon className="absolute right-6" /> */}
               </Button>
             </Link>
-            <p className="mt-5 lg:text-2xl text-xl text-bold p-5 lg:p-0 text-[#3c4043]">
-              {/* Join our community and start your journey. */}
-              Download our learn-to-read app on{" "}
-              <Link
-                href={
-                  "https://play.google.com/store/apps/details?id=com.TheReadingClub.TheReadingClub&hl=en_US&gl=US"
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                className="hover:text-underline"
-              >
-                Google Play
-              </Link>{" "}
-              &{" "}
-              <Link
-                href={
-                  "https://apps.apple.com/us/app/reading-club-childrens-books/id1528070520"
-                }
-                target="_blank"
-                rel="noopener noreferrer"
-                // className="text-[#FFC122]"
-              >
-                App Store
-              </Link>
-            </p>
-            <p className="lg:text-2xl text-xl text-bold text-[#3c4043] lg:mb-0 mb-0">
-              {`30,000+ downloads and counting!`}
-            </p>
+            {true && (
+              <>
+                <p className="mt-5 lg:text-2xl text-xl text-bold p-5 lg:p-0 text-[#3c4043]">
+                  {/* Join our community and start your journey. */}
+                  Download our app on{" "}
+                  <Link
+                    href={
+                      "https://play.google.com/store/apps/details?id=com.TheReadingClub.TheReadingClub&hl=en_US&gl=US"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="hover:text-underline"
+                  >
+                    Google Play
+                  </Link>{" "}
+                  &{" "}
+                  <Link
+                    href={
+                      "https://apps.apple.com/us/app/reading-club-childrens-books/id1528070520"
+                    }
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    // className="text-[#FFC122]"
+                  >
+                    App Store
+                  </Link>
+                </p>
+                <p className="lg:text-2xl text-xl text-bold text-[#3c4043] lg:mb-0 mb-0">
+                  {`30,000+ downloads and counting!`}
+                </p>
+              </>
+            )}
+          </div>
+          <div className="mx-8">
+            <LoomEmbed
+              videoId={`2dc7a0864d804cb8a78c0b3a5ea593fc`}
+              width="800px"
+              height="450px"
+            />
           </div>
         </section>
         {false && (
