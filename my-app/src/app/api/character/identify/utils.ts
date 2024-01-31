@@ -9,10 +9,10 @@ import { ChatCompletionMessageParam } from "openai/resources/index.mjs";
 
 const openaiOfficialSDK = new OpenAI({ apiKey: process.env.OAI_KEY });
 
-export interface BasicCharacterAttributes {
+export type BasicCharacterAttributes = {
   name: string;
   description: string;
-}
+};
 
 function getAPIParameters(
   existingCharacters: BasicCharacterAttributes[],

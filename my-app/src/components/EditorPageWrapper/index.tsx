@@ -77,7 +77,7 @@ const EditorPageWrapper: React.FC<EditorPageWrapperProps> = ({
           justifyContent: "center",
         }}
       >
-        <LeftPanel storyData={storyData} />
+        <LeftPanel storyData={storyData} setStoryData={setStoryData} />
         <div
           className="flex basis-1/2" // THIS IS THE PROBLEM
           // OTHERWISE SCROLL OVERFLOW DOESNT WORK

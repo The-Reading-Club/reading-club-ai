@@ -1,3 +1,5 @@
+import { BasicCharacterAttributes } from "@/app/api/character/identify/utils";
+import { CharacterAttributes } from "@/data/character";
 import { JSONContent } from "@tiptap/react";
 import React from "react";
 import { create } from "zustand";
@@ -8,8 +10,8 @@ type Suggestion = {
 };
 
 export type StoryData = {
-  characters: any[];
-  characterDefinitions: any[];
+  characters: BasicCharacterAttributes[];
+  characterDefinitions: CharacterAttributes[];
   tiptapEditorContent: JSONContent | null;
 };
 
