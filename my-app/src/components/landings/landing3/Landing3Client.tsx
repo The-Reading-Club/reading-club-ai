@@ -26,6 +26,7 @@ import { useEffect, useRef, useState } from "react";
 import TRCEditorV2 from "@/components/TRCEditorV2";
 import LoomEmbed from "@/components/LoomEmbed";
 import { ArrowRightIcon } from "lucide-react";
+import YouTubeVideo from "@/components/YouTubeVideo";
 
 interface SocialLinkProps {
   href: string;
@@ -196,7 +197,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             // backgroundSize: "contain", // Ensures the background image covers the entire section
             // backgroundRepeat: "no-repeat", // Prevents repeating the background image
             // backgroundPosition: "center", // Centers the background image
-            // border: "2px solid red",
+            // border: "2px solid purple",
           }}
         >
           <div className="text-center text-[#FFC122] p-5">
@@ -250,12 +251,21 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
               </>
             )}
           </div>
-          <div className="mx-8">
-            <LoomEmbed
+          <div
+            className="lg:w-auto md:w-[70%] w-[90%]"
+            style={
+              {
+                // border: " 2px solid green",
+                // width: "90%",
+              }
+            }
+          >
+            {/* <LoomEmbed
               videoId={`2dc7a0864d804cb8a78c0b3a5ea593fc`}
               width="800px"
               height="450px"
-            />
+            /> */}
+            <YouTubeVideo videoId="kU_exK_0oxI" />
           </div>
         </section>
         {false && (
