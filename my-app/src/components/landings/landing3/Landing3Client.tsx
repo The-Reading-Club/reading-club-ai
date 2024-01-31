@@ -185,8 +185,8 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
       </header>
       <main className="flex-1 ">
         <section
-          className="w-full lg:h-[500px] bg-center bg-cover flex items-center justify-center lg:bg-contain lg:pb-0 pb-20
-          flex-col lg:flex-row
+          className="w-full lg:h-[525px] bg-center bg-cover flex items-center justify-center lg:bg-contain lg:pb-0 pb-20
+          flex-col lg:flex-row lg:justify-around
           "
           // style={{
           //   backgroundImage: "url(/BG-Archiv3.jpg)",
@@ -200,12 +200,20 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             // border: "2px solid purple",
           }}
         >
-          <div className="text-center text-[#FFC122] p-5">
+          <div
+            className="basis-1/2 text-right text-[#FFC122] p-5"
+            // style={{ border: "2px solid orange" }}
+          >
             <h1 className="lg:text-6xl text-5xl  font-bold">
-              {`Write & Share`}
+              {/* https://chat.openai.com/c/24650459-ac0d-46af-aef3-c81eabf0fb9b */}
+              {`Transforming bedtime stories into interactive adventures.`}
+              {/* {`Write & Share`}
               <br />
-              {`Children's Books with AI`}
+              {`Children's Books with AI`} */}
             </h1>
+            <p className="mt-5 lg:text-2xl text-xl text-bold text-[#3c4043]">
+              {`Bringing children’s imaginations to life with the help of AI.`}
+            </p>
             {/* https://tailwind-hover-effects.vercel.app */}
             <Link
               href="https://www.readingclub.ai/editor"
@@ -218,7 +226,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                 {/* <ArrowRightIcon className="absolute right-6" /> */}
               </Button>
             </Link>
-            {true && (
+            {false && (
               <>
                 <p className="mt-5 lg:text-2xl text-xl text-bold p-5 lg:p-0 text-[#3c4043]">
                   {/* Join our community and start your journey. */}
@@ -252,7 +260,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             )}
           </div>
           <div
-            className="lg:w-auto md:w-[70%] w-[90%]"
+            className="basis-1/2 lg:w-auto md:w-[70%] w-[90%] flex justify-center"
             style={
               {
                 // border: " 2px solid green",
