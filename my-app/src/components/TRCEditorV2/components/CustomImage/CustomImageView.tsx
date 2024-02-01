@@ -86,8 +86,11 @@ const CustomImageView: React.FC<CustomImageViewProps> = (
   // getPos: () => number
   { node }
 ) => {
-  const { setRevisedPrompt, onOpen: onIllustrationModalOpen } =
-    useIllustrationModal();
+  const {
+    setRevisedPrompt,
+    onOpen: onIllustrationModalOpen,
+    setImageSrc,
+  } = useIllustrationModal();
   return (
     <NodeViewWrapper>
       <CustomImage
@@ -101,6 +104,7 @@ const CustomImageView: React.FC<CustomImageViewProps> = (
         onClick={() => {
           // devAlert(node.attrs.alt);
           setRevisedPrompt(node.attrs.alt);
+          setImageSrc(node.attrs.src);
           onIllustrationModalOpen();
         }}
       />

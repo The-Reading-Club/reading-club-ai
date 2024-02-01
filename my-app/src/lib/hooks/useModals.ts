@@ -18,6 +18,8 @@ interface useIllustrationModalStore {
   onClose: () => void;
   revisedPrompt: string;
   setRevisedPrompt: (revisedPrompt: string) => void;
+  imageSrc: string;
+  setImageSrc: (imageSrc: string) => void;
 }
 
 export const useIllustrationModal = create<useIllustrationModalStore>(
@@ -27,5 +29,7 @@ export const useIllustrationModal = create<useIllustrationModalStore>(
     onClose: () => set({ isOpen: false }),
     revisedPrompt: "This is the revised prompt.",
     setRevisedPrompt: (revisedPrompt: string) => set({ revisedPrompt }),
+    imageSrc: "",
+    setImageSrc: (imageSrc: string) => set({ imageSrc }),
   })
 );
