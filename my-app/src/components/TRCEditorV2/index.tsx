@@ -106,6 +106,8 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     // setEditorContent,
     storiesData,
     setStoriesData,
+
+    setEditorInstance,
   } = useTRCEditorStore();
   // const [suggestionsIDs, setSuggestionsIDs] = useState<string[]>([]);
 
@@ -198,6 +200,15 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     complete,
     debouncedUpdates
   );
+
+  // https://chat.openai.com/c/df2cbdbd-8f35-4dfc-b8ed-09b32261ca58
+  useEffect(() => {
+    if (editor) {
+      setEditorInstance(editor);
+    }
+    // Cleanup editor on component unmount
+    return () => editor?.destroy();
+  }, [editor, setEditorInstance]);
 
   // Do I need this use effect
   // Yes, it is very important

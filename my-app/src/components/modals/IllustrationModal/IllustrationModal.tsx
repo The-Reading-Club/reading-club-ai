@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -12,9 +12,77 @@ import {
 
 import { useIllustrationModal } from "@/lib/hooks/useModals";
 import EditableText from "@/components/input/EditableText/EditableText";
+import { useTRCEditorStore } from "@/stores/store";
+import { startIllustrationGeneration } from "@/components/TRCEditorV2/plugins/upload-images";
+import { devAlert } from "@/lib/utils";
+import { CommandGenerateIllustration } from "@/components/TRCEditorV2/extensions/slash-command/CommandList";
 
 const IllustrationModal = () => {
   const illustrationModal = useIllustrationModal();
+
+  const [promptText, setPromptText] = useState(illustrationModal.revisedPrompt);
+
+  const { editorInstance } = useTRCEditorStore();
+
+  // Use effect to update the prompt text when the modal is opened
+  useEffect(() => {
+    setPromptText(illustrationModal.revisedPrompt);
+  }, [illustrationModal.isOpen]);
+
+  const handleSubmitTextData = () => {
+    const pos = editorInstance?.view.state.selection.from;
+
+    const editorKey = editorInstance?.extensionManager.extensions.find(
+      (extension) => extension.name === "metadata"
+    )?.options["key"];
+
+    if (
+      editorInstance === undefined ||
+      pos === undefined ||
+      editorKey === undefined ||
+      editorInstance?.view === undefined
+    ) {
+      devAlert("Error: editorInstance, pos, or editorKey is undefined");
+      return;
+    }
+
+    CommandGenerateIllustration(editorInstance);
+
+    // startIllustrationGeneration(
+    //   {
+    //     prevContextText: "This is a test",
+    //     prevParagraphText: "This is a test",
+    //     postContextText: "This is a test",
+    //     editorKey,
+    //     existingCharacters:
+    //       useTRCEditorStore.getState().storiesData[editorKey]?.characters ?? [],
+    //     characterDefinitions:
+    //       useTRCEditorStore.getState().storiesData[editorKey]
+    //         ?.characterDefinitions ?? [],
+    //     // this is messy
+    //     chosenCharacter: undefined,
+    //   },
+    //   editorInstance?.view,
+    //   pos
+    // );
+
+    // Just update zustand
+    // illustrationModal.setRevisedPrompt(promptText);
+    // Actually you need to somehow edit the alternative text in the image src...
+    // How the fuck do I do that?
+    // You don't. You just trigger a new image generation.
+    // editorInstance?.state.selection.ranges[0].
+    // const rangeTest = editorInstance?.state.selection.ranges[0];
+    // editorInstance?.chain().focus().deleteRange(rangeTest as Range);
+    // https://chat.openai.com/c/df2cbdbd-8f35-4dfc-b8ed-09b32261ca58
+    // const selection = document.getSelection();
+    // if (selection && selection.rangeCount > 0) {
+    //   const range = selection.getRangeAt(0);
+    //   const rect = range.getBoundingClientRect();
+    //   // Now rect.top and rect.left give you the coordinates where you can position your UI element
+    //   //   editorInstance?.chain().focus().deleteRange(range);
+    // }
+  };
 
   return (
     <Dialog
@@ -53,9 +121,9 @@ const IllustrationModal = () => {
               {/* {illustrationModal.revisedPrompt} */}
               {
                 <EditableText
-                  textState={illustrationModal.revisedPrompt}
-                  setTextState={() => {}}
-                  submitTextData={() => {}}
+                  textState={promptText}
+                  setTextState={setPromptText}
+                  submitTextData={handleSubmitTextData}
                   //   editableElement={"textarea"}
                 />
               }
