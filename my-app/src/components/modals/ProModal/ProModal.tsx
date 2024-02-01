@@ -8,13 +8,13 @@ import {
   DialogHeader,
   DialogTitle,
 } from "@/components/ui/dialog";
-import { useProModal } from "@/lib/hooks/useProModal";
-import { Badge } from "../ui/badge";
-import { Card } from "../ui/card";
+import { useProModal } from "@/lib/hooks/useModals";
+import { Badge } from "../../ui/badge";
+import { Card } from "../../ui/card";
 import { BookPlusIcon, Check, PersonStandingIcon, Zap } from "lucide-react";
 import { cn, devAlert } from "@/lib/utils";
-import { Button } from "../ui/button";
-import SubscriptionButton from "../settings/SubscriptionButton";
+import { Button } from "../../ui/button";
+import SubscriptionButton from "../../settings/SubscriptionButton";
 import axios from "axios";
 
 const ProModal = () => {

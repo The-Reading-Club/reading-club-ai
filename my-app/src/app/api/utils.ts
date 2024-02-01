@@ -1,0 +1,69 @@
+// RATE LIMITING
+import { kv } from "@vercel/kv";
+import { Ratelimit /*Duration*/ } from "@upstash/ratelimit";
+//Module '"@upstash/ratelimit"' declares 'Duration' locally, but it is not exported.ts(2459)
+// index.d.ts(119, 6): 'Duration' is declared here.
+type Unit = "ms" | "s" | "m" | "h" | "d";
+type Duration = `${number} ${Unit}` | `${number}${Unit}`;
+
+import { checkSubscription } from "@/lib/subscription";
+import { auth } from "@/auth";
+import { NextResponse } from "next/server";
+
+type Options = {
+  slidingWindowTokens: number;
+  slidingWindowDuration: Duration;
+  //   rateLimitKey: string | null;
+  feature: string;
+};
+
+export async function validatePaidSubscription(
+  request: Request,
+  options: Options = {
+    slidingWindowTokens: 5,
+    slidingWindowDuration: "1 d",
+    // rateLimitKey: null,
+    feature: "default",
+  }
+) {
+  // Should put this check into a single function in all relevant routes!
+  const isPro = await checkSubscription();
+  // FIRST THING IN ROUTE IS TO SET RATE LIMIT
+  if (
+    isPro == false &&
+    // process.env.NODE_ENV != "development" &&
+    process.env.KV_REST_API_URL &&
+    process.env.KV_REST_API_TOKEN
+  ) {
+    const ip = request.headers.get("x-forwarded-for");
+
+    const ratelimit = new Ratelimit({
+      redis: kv,
+      limiter: Ratelimit.slidingWindow(
+        options.slidingWindowTokens,
+        options.slidingWindowDuration
+      ),
+    });
+
+    const session = await auth();
+    const rateLimitKey = session?.user.email || ip;
+
+    const { success, limit, reset, remaining } = await ratelimit.limit(
+      `trc_ratelimit_${rateLimitKey}-${options.feature}`
+    );
+
+    if (!success) {
+      return NextResponse.json(
+        { msg: "Rate limit exceeded for the day" },
+        {
+          status: 429,
+          headers: {
+            "X-RateLimit-Limit": limit.toString(),
+            "X-RateLimit-Remaining": remaining.toString(),
+            "X-RateLimit-Reset": reset.toString(),
+          },
+        }
+      );
+    }
+  }
+}

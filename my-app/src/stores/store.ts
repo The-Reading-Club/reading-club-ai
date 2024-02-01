@@ -1,6 +1,6 @@
 import { BasicCharacterAttributes } from "@/app/api/character/identify/utils";
 import { CharacterAttributes } from "@/data/character";
-import { JSONContent } from "@tiptap/react";
+import { Editor, JSONContent } from "@tiptap/react";
 import React from "react";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
@@ -31,6 +31,9 @@ interface TRCEditorState {
 
   storiesData: StoriesData;
   setStoriesData: (storiesData: StoriesData) => void;
+
+  editorInstance: Editor | null;
+  setEditorInstance: (editor: Editor) => void;
 }
 
 export const useTRCEditorStore = create<TRCEditorState>()(
@@ -47,6 +50,10 @@ export const useTRCEditorStore = create<TRCEditorState>()(
 
       storiesData: {},
       setStoriesData: (storiesData) => set({ storiesData }),
+
+      // editor instance
+      editorInstance: null,
+      setEditorInstance: (editor) => set({ editorInstance: editor }),
     }),
     {
       name: "trc-editor-local-storage-test",

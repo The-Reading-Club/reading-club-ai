@@ -3,4 +3,5 @@ interface GenerateIllustrationResponse {
   newCharacters: any;
   characterDefinitions: any;
   storedImageUrl: string;
+  revisedPrompt: string;
 }

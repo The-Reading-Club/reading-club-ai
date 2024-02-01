@@ -12,7 +12,7 @@ import { Editor, Range } from "@tiptap/react";
 import {
   startIllustrationGeneration,
   startImageUpload,
-} from "../../plugins/upload-images";
+} from "../../plugins/upload-generate-images";
 import { devAlert } from "@/lib/utils";
 import { Node } from "@tiptap/pm/model";
 import { useTRCEditorStore } from "@/stores/store";
@@ -173,81 +173,10 @@ export const getHintItems = ({ query }: { query: string }) => {
       icon: <ImageIcon size={18} />,
       command: ({ editor, range }: CommandProps) => {
         // what am I deleteing?
+        // This delete the range where the slash command is open, so that the bubble menu disappears after choosing a command
         editor.chain().focus().deleteRange(range).run();
-        const pos = editor.view.state.selection.from;
 
-        // I could pass the prev text as context for the illustration
-        // do that later
-        // const prevParagraphStart = editor.view.state.doc.nodeAt(pos - 1);
-        // const prevParagraphText = prevParagraphStart?.textContent;
-        // devAlert("prevParagraphText: " + prevParagraphText);
-        const fromPos = editor.state.selection.from;
-        const prevContextText = getTextContent(
-          editor.view.state.doc,
-          fromPos - 5000,
-          fromPos
-        );
-
-        const prevParagraphText = getTextContent(
-          editor.view.state.doc,
-          fromPos - 250,
-          fromPos
-        );
-
-        // postContextText
-
-        const postContextText = getTextContent(
-          editor.view.state.doc,
-          fromPos,
-          fromPos + 5000
-        );
-
-        // editor.view.state.doc.textBetween(
-        //   fromPos - 5000,
-        //   fromPos
-        // );
-        devAlert("prevContextText: " + prevContextText);
-
-        const editorKey = editor.extensionManager.extensions.find(
-          (extension) => extension.name === "metadata"
-        )?.options["key"];
-        devAlert(editorKey);
-
-        devAlert("editorKey: " + editorKey);
-        startIllustrationGeneration(
-          {
-            prevContextText,
-            prevParagraphText,
-            postContextText,
-            editorKey,
-            existingCharacters:
-              useTRCEditorStore.getState().storiesData[editorKey]?.characters ??
-              [],
-            characterDefinitions:
-              useTRCEditorStore.getState().storiesData[editorKey]
-                ?.characterDefinitions ?? [],
-            // this is messy
-            chosenCharacter: undefined,
-          },
-          editor.view,
-          pos
-        );
-
-        // // image upload
-        // // wondering if I could have a custom dialog?
-        // const input = document.createElement("input");
-        // input.type = "file";
-        // input.accept = "image/*";
-        // input.onchange = async () => {
-        //   if (input.files?.length) {
-        //     const file = input.files[0];
-        //     const pos = editor.view.state.selection.from;
-        //     startImageUpload(file, editor.view, pos);
-        //   }
-        // };
-        // input.click();
-
-        // Illustration generation
+        CommandGenerateIllustration(editor);
       },
     },
     {
@@ -361,3 +290,79 @@ const getTextContent = (node: Node, from: number, to: number) => {
 
   return textWithLineBreaks;
 };
+
+export function CommandGenerateIllustration(editor: Editor) {
+  const pos = editor.view.state.selection.from;
+
+  // I could pass the prev text as context for the illustration
+  // do that later
+  // const prevParagraphStart = editor.view.state.doc.nodeAt(pos - 1);
+  // const prevParagraphText = prevParagraphStart?.textContent;
+  // devAlert("prevParagraphText: " + prevParagraphText);
+  const fromPos = editor.state.selection.from;
+  const prevContextText = getTextContent(
+    editor.view.state.doc,
+    fromPos - 5000,
+    fromPos
+  );
+
+  const prevParagraphText = getTextContent(
+    editor.view.state.doc,
+    fromPos - 250,
+    fromPos
+  );
+
+  // postContextText
+
+  const postContextText = getTextContent(
+    editor.view.state.doc,
+    fromPos,
+    fromPos + 5000
+  );
+
+  // editor.view.state.doc.textBetween(
+  //   fromPos - 5000,
+  //   fromPos
+  // );
+  devAlert("prevContextText: " + prevContextText);
+
+  const editorKey = editor.extensionManager.extensions.find(
+    (extension) => extension.name === "metadata"
+  )?.options["key"];
+  devAlert(editorKey);
+
+  devAlert("editorKey: " + editorKey);
+  startIllustrationGeneration(
+    {
+      prevContextText,
+      prevParagraphText,
+      postContextText,
+      editorKey,
+      existingCharacters:
+        useTRCEditorStore.getState().storiesData[editorKey]?.characters ?? [],
+      characterDefinitions:
+        useTRCEditorStore.getState().storiesData[editorKey]
+          ?.characterDefinitions ?? [],
+      // this is messy
+      chosenCharacter: undefined,
+    },
+    editor.view,
+    pos
+  );
+
+  // // image upload
+  // // wondering if I could have a custom dialog?
+  // const input = document.createElement("input");
+  // input.type = "file";
+  // input.accept = "image/*";
+  // input.onchange = async () => {
+  //   if (input.files?.length) {
+  //     const file = input.files[0];
+  //     const pos = editor.view.state.selection.from;
+  //     startImageUpload(file, editor.view, pos);
+  //   }
+  // };
+  // input.click();
+
+  // Illustration generation
+}
