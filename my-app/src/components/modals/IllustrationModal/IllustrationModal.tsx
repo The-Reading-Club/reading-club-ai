@@ -49,6 +49,9 @@ const IllustrationModal = () => {
       return;
     }
 
+    // TODO: COMPARE WHETHER PROMPTS ARE DIFFERENT FROM ORIGINAL BEFORE CALLING DALLE
+    // NO NEED TO CALL DALLE IF PROMPT IS THE SAME
+
     startIllustrationPromptGeneration(editorInstance.view, pos, {
       prompt: promptText,
     });
