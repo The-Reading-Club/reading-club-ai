@@ -453,6 +453,7 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
       newCharacters: existingCharacters,
       characterDefinitions,
       storedImageUrl: imageBlobStored == true ? storedImageUrl : dalleImageUrl,
+      revisedPrompt: image.data[0].revised_prompt,
     } as GenerateIllustrationResponse,
     { status: 200 }
   );

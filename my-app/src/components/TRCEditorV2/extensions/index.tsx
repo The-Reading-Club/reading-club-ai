@@ -24,7 +24,7 @@ import TiptapImage from "@tiptap/extension-image";
 // https://tiptap.dev/docs/editor/api/extensions/collaboration
 import Collaboration from "@tiptap/extension-collaboration";
 import * as Y from "yjs";
-import { Extensions } from "@tiptap/react";
+import { Extensions, ReactNodeViewRenderer } from "@tiptap/react";
 // https://github.com/ueberdosis/tiptap/blob/main/demos/src/Experiments/MultipleEditors/Vue/index.vue
 const ydoc = new Y.Doc();
 
@@ -34,6 +34,11 @@ import SlashCommand from "./slash-command";
 // import { CustomHighlight } from "./extensions/custom-highlitght"; // Just a replication test
 import { CustomSuggestion } from "./custom-suggestion";
 import UploadImagesPlugin from "../plugins/upload-images";
+import { CustomImageView } from "../components/CustomImage";
+
+// https://chat.openai.com/c/ae328802-25f1-4edd-a1d0-7b2bd824403b
+import { Node as ProseMirrorNode } from "prosemirror-model";
+import { EditorView } from "@tiptap/pm/view";
 
 export const defaultTiptapExtensions: Extensions = [
   StarterKit.configure({
@@ -64,6 +69,12 @@ export const defaultTiptapExtensions: Extensions = [
     },
     addProseMirrorPlugins() {
       return [UploadImagesPlugin()];
+    },
+    // https://chat.openai.com/c/ae328802-25f1-4edd-a1d0-7b2bd824403b
+    addNodeView() {
+      return ReactNodeViewRenderer(CustomImageView);
+      // return (node: ProseMirrorNode, view: EditorView, getPos: () => number) =>
+      // CustomImageView(node, view, getPos);
     },
   }).configure({
     allowBase64: true,

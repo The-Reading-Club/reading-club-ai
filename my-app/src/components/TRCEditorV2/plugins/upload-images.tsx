@@ -13,6 +13,7 @@ import {
 import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
 import { use } from "react";
 import { useProModal } from "@/lib/hooks/useProModal";
+import { unknown } from "zod";
 
 const uploadKey = new PluginKey("upload-image");
 
@@ -339,7 +340,7 @@ background: Cave mouth with a glimpse of the outside world
           .characterDefinitions,
       // will probably be updating the body of this call a lot of times while iterating
       chosenCharacter: characterChoice,
-    }).then((src) => {
+    }).then(({ storedImageUrl: src, revisedPrompt }) => {
       useTRCAppStore.getState().setDefaultModalOpen(false);
 
       const { schema } = view.state;
@@ -357,7 +358,10 @@ background: Cave mouth with a glimpse of the outside world
       // the image locally
       const imageSrc = src;
 
-      const node = schema.nodes.image.create({ src: imageSrc });
+      const node = schema.nodes.image.create({
+        src: imageSrc,
+        alt: revisedPrompt,
+      });
       const transaction = view.state.tr
         .replaceWith(pos, pos, node)
         .setMeta(uploadKey, { remove: { id } });
@@ -642,80 +646,88 @@ async function handleCharacterChoice(body: CharacterChoiceBody) {
 }
 
 function handleIllustrationGeneration(body: IllustrationGenerationBody) {
-  return new Promise((resolve) => {
-    toast.promise(
-      axios
-        .post("/api/illustration", {
-          method: "POST",
-          headers: {
-            "content-type": "application/json",
-          },
-          body: body, //{},
-        })
-        .then((res) => {
-          // Successfully generate illustration
-          if (res.status === 200) {
-            devAlert(
-              "Illustration generated successfully." + JSON.stringify(res.data)
-            );
-            const {
-              imageData,
-              newCharacters,
-              characterDefinitions,
-              storedImageUrl,
-            } = res.data as GenerateIllustrationResponse;
+  return new Promise<{ storedImageUrl: string; revisedPrompt: string }>(
+    (resolve) => {
+      toast.promise(
+        axios
+          .post("/api/illustration", {
+            method: "POST",
+            headers: {
+              "content-type": "application/json",
+            },
+            body: body, //{},
+          })
+          .then((res) => {
+            // Successfully generate illustration
+            if (res.status === 200) {
+              devAlert(
+                "Illustration generated successfully." +
+                  JSON.stringify(res.data)
+              );
+              const {
+                imageData,
+                newCharacters,
+                characterDefinitions,
+                storedImageUrl,
+                revisedPrompt,
+              } = res.data as GenerateIllustrationResponse;
 
-            const { url } = imageData;
+              const { url } = imageData;
 
-            // Save state to Zustand
-            devAlert("NOT SAVING TO ZUSTAND");
-            // not now for testing
-            if (false && dev == false)
-              // I am not updating this stuff here anymore
-              // If done it's going to duplicate content in production
-              // I may need to use dicts, not lists, or filter out duplicates at least
-              useTRCEditorStore.getState().setStoriesData({
-                [body.editorKey]: {
-                  ...useTRCEditorStore.getState().storiesData[body.editorKey],
-                  characters: [...body.existingCharacters, ...newCharacters],
-                  characterDefinitions: [
-                    body.characterDefinitions,
-                    ...characterDefinitions,
-                  ],
-                },
-              });
+              // Save state to Zustand
+              devAlert("NOT SAVING TO ZUSTAND");
+              // not now for testing
+              if (false && dev == false)
+                // I am not updating this stuff here anymore
+                // If done it's going to duplicate content in production
+                // I may need to use dicts, not lists, or filter out duplicates at least
+                useTRCEditorStore.getState().setStoriesData({
+                  [body.editorKey]: {
+                    ...useTRCEditorStore.getState().storiesData[body.editorKey],
+                    characters: [...body.existingCharacters, ...newCharacters],
+                    characterDefinitions: [
+                      body.characterDefinitions,
+                      ...characterDefinitions,
+                    ],
+                  },
+                });
 
-            let image = new Image();
-            image.src = storedImageUrl;
-            image.onload = () => {
-              resolve(storedImageUrl);
-            };
-          }
-          // Unkown error
-          else {
-            devAlert("Unkown illustration error (then).");
-            throw new Error("Error uploading image.");
-          }
-        })
-        .catch((error) => {
-          if (error.response && error.response.status === 429) {
-            devAlert("Illustration rate limited.");
-            useProModal.getState().onOpen();
-            throw new Error("Rate limited.");
-          } else {
-            // handle other errors
-            devAlert("(catch) Error: " + error.message);
-            throw new Error("Error uploading image.");
-          }
-        }),
-      {
-        loading: `Generating illustration... (${body.chosenCharacter.name})`,
-        success: "Illustration generated successfully.",
-        error: (e) => e.message,
-        // error: "test",
-      }
-    );
-  });
+              // It doesn't seem like I need this stuff
+              // let image = new Image();
+              // image.src = storedImageUrl;
+
+              // image.alt = "Illustration alternative text";
+
+              // image.onload = () => {
+              resolve({ storedImageUrl, revisedPrompt });
+              // };
+            }
+            // Unkown error
+            else {
+              devAlert("Unkown illustration error (then).");
+              throw new Error("Error uploading image.");
+            }
+          })
+          .catch((error) => {
+            if (error.response && error.response.status === 429) {
+              devAlert("Illustration rate limited.");
+              useProModal.getState().onOpen();
+              throw new Error("Rate limited.");
+            } else {
+              // handle other errors
+              devAlert("(catch) Error: " + error.message);
+              throw new Error("Error uploading image.");
+            }
+          }),
+        {
+          loading: `Generating illustration... (${body.chosenCharacter.name})`,
+          success: "Illustration generated successfully.",
+          error: (e) => e.message,
+          // error: "test",
+        }
+      );
+    }
+  );
 }
 
 // https://chat.openai.com/c/74e8273c-4be2-4409-a8a9-fd9d202005e8
