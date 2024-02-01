@@ -12,7 +12,7 @@ import {
 } from "@/lib/utils";
 import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
 import { use } from "react";
-import { useProModal } from "@/lib/hooks/useProModal";
+import { useProModal } from "@/lib/hooks/useModals";
 import { unknown } from "zod";
 
 const uploadKey = new PluginKey("upload-image");

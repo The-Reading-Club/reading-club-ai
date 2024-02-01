@@ -63,7 +63,7 @@ import { CustomSuggestion } from "./extensions/custom-suggestion";
 import { DebouncedState, useDebouncedCallback } from "use-debounce";
 import useLocalStorage from "@/lib/hooks/useLocalStorage";
 import { MetadataExtension } from "./extensions/metadata";
-import { useProModal } from "@/lib/hooks/useProModal";
+import { useProModal } from "@/lib/hooks/useModals";
 import { devAlert } from "@/lib/utils";
 const garamondFont = EB_Garamond({
   subsets: ["latin"],

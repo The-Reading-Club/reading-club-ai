@@ -5,6 +5,7 @@ import CustomImage from ".";
 import { devAlert } from "@/lib/utils";
 import { EditorView } from "@tiptap/pm/view";
 import { NodeViewRenderer } from "@tiptap/core";
+import { useIllustrationModal } from "@/lib/hooks/useModals";
 
 // // Correctly defining a function that matches the NodeViewRenderer signature
 // const CustomImageView: NodeViewRenderer = (
@@ -85,6 +86,8 @@ const CustomImageView: React.FC<CustomImageViewProps> = (
   // getPos: () => number
   { node }
 ) => {
+  const { setRevisedPrompt, onOpen: onIllustrationModalOpen } =
+    useIllustrationModal();
   return (
     <NodeViewWrapper>
       <CustomImage
@@ -95,7 +98,11 @@ const CustomImageView: React.FC<CustomImageViewProps> = (
         alt={node.attrs.alt}
         // alt={"alt text test"}
         //   onClick={() => console.log("Image clicked!")}
-        onClick={() => devAlert(node.attrs.alt)}
+        onClick={() => {
+          // devAlert(node.attrs.alt);
+          setRevisedPrompt(node.attrs.alt);
+          onIllustrationModalOpen();
+        }}
       />
     </NodeViewWrapper>
   );

@@ -8,7 +8,7 @@ import StoryPDF from "../StoryPDF";
 import { StoryData, useTRCEditorStore } from "@/stores/store";
 import useMounted from "@/lib/hooks/useMounted";
 import { PDFDownloadLink } from "@react-pdf/renderer";
-import { useProModal } from "@/lib/hooks/useProModal";
+import { useProModal } from "@/lib/hooks/useModals";
 import { Zap } from "lucide-react";
 import { checkSubscription } from "@/lib/subscription";
 
