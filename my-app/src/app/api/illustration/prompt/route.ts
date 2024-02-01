@@ -11,10 +11,12 @@ export async function POST(request: Request) {
 
   const reqJSON = await request.json();
 
-  const { prompt } = reqJSON;
+  const { prompt } = reqJSON.body;
 
   const { image, storedImageUrl, imageBlobStored, dalleImageUrl } =
     await callDalleAPI(prompt, reqJSON);
+
+  console.log({ image, storedImageUrl, imageBlobStored, dalleImageUrl });
 
   return NextResponse.json(
     {

@@ -13,7 +13,10 @@ import {
 import { useIllustrationModal } from "@/lib/hooks/useModals";
 import EditableText from "@/components/input/EditableText/EditableText";
 import { useTRCEditorStore } from "@/stores/store";
-import { startIllustrationGeneration } from "@/components/TRCEditorV2/plugins/upload-generate-images";
+import {
+  startIllustrationGeneration,
+  startIllustrationPromptGeneration,
+} from "@/components/TRCEditorV2/plugins/upload-generate-images";
 import { devAlert } from "@/lib/utils";
 import { CommandGenerateIllustration } from "@/components/TRCEditorV2/extensions/slash-command/CommandList";
 
@@ -46,7 +49,11 @@ const IllustrationModal = () => {
       return;
     }
 
-    CommandGenerateIllustration(editorInstance);
+    startIllustrationPromptGeneration(editorInstance.view, pos, {
+      prompt: promptText,
+    });
+
+    // CommandGenerateIllustration(editorInstance);
 
     // startIllustrationGeneration(
     //   {

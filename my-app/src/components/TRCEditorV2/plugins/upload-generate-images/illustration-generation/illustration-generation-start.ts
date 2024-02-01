@@ -17,6 +17,7 @@ import { unknown } from "zod";
 import {
   IllustrationGenerationBody,
   handleIllustrationGeneration,
+  handleIllustrationPrompt,
 } from "./illustration-generation-handle";
 
 import { findPlaceholder, uploadKey } from "..";
@@ -40,7 +41,12 @@ export function startIllustrationGeneration(
   tr.setMeta(uploadKey, {
     // no placeholder because we aren't updating anything
     // unless I could have a default placeholder manually...
-    add: { id, pos, src: null /*reader.result*/ },
+    add: {
+      id,
+      pos,
+      src: IMAGE_PLACEHOLDER_SRC,
+      // null /*reader.result*/
+    },
   });
   view.dispatch(tr);
 
@@ -189,4 +195,58 @@ export function startIllustrationGeneration(
   });
 
   return;
+}
+
+export interface IllustrationPromptGenerationBody {
+  prompt: string;
+}
+
+const IMAGE_PLACEHOLDER_SRC =
+  "https://0opmmv83e2pndbdg.public.blob.vercel-storage.com/reading-club-ai-logo.jpg";
+
+export function startIllustrationPromptGeneration(
+  view: EditorView,
+  pos: number,
+  body: IllustrationPromptGenerationBody
+) {
+  const id = {};
+
+  const tr = view.state.tr;
+
+  tr.setMeta(uploadKey, {
+    add: {
+      id,
+      pos,
+      src: IMAGE_PLACEHOLDER_SRC,
+    },
+  });
+
+  view.dispatch(tr);
+
+  handleIllustrationPrompt(body).then(({ storedImageUrl, revisedPrompt }) => {
+    const { schema } = view.state;
+
+    let pos = findPlaceholder(view.state, id);
+
+    // If the content around the placeholder has been deleted
+    // drop the image
+    if (pos == null) return;
+
+    // Otherwise, insert it at the placeholder's position,
+    // and remove the placeholder
+
+    // When BLOB_READ_WRITE_TOKEN is not valid or unavailable, read
+    // the image locally
+
+    const node = schema.nodes.image.create({
+      src: storedImageUrl,
+      alt: revisedPrompt,
+    });
+
+    const transaction = view.state.tr
+      .replaceWith(pos, pos, node)
+      .setMeta(uploadKey, { remove: { id } });
+
+    view.dispatch(transaction);
+  });
 }

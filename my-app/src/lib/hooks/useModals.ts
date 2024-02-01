@@ -24,7 +24,7 @@ interface useIllustrationModalStore {
 
 export const useIllustrationModal = create<useIllustrationModalStore>(
   (set) => ({
-    isOpen: true,
+    isOpen: false,
     onOpen: () => set({ isOpen: true }),
     onClose: () => set({ isOpen: false }),
     revisedPrompt: "This is the revised prompt.",
