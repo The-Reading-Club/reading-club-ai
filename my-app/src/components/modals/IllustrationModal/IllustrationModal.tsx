@@ -11,6 +11,7 @@ import {
 } from "@/components/ui/dialog";
 
 import { useIllustrationModal } from "@/lib/hooks/useModals";
+import EditableText from "@/components/input/EditableText/EditableText";
 
 const IllustrationModal = () => {
   const illustrationModal = useIllustrationModal();
@@ -49,7 +50,15 @@ const IllustrationModal = () => {
             </div>
             {/* https://youtu.be/KvZoBV_1yYE */}
             <div className="basis-[70%] pl-4 pt-0 text-justify text-base">
-              {illustrationModal.revisedPrompt}
+              {/* {illustrationModal.revisedPrompt} */}
+              {
+                <EditableText
+                  textState={illustrationModal.revisedPrompt}
+                  setTextState={() => {}}
+                  submitTextData={() => {}}
+                  //   editableElement={"textarea"}
+                />
+              }
             </div>
           </div>
         </DialogDescription>
