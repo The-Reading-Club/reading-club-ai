@@ -20,7 +20,7 @@ import {
   parseChosenCharactersJSON,
 } from "../character/choose/utils";
 import { CharacterAttributes } from "@/data/character";
-import { IllustrationGenerationBody } from "@/components/TRCEditorV2/plugins/upload-images";
+import { IllustrationGenerationBody } from "@/components/TRCEditorV2/plugins/upload-generate-images";
 
 import { put } from "@vercel/blob";
 

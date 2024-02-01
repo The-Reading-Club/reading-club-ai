@@ -12,7 +12,7 @@ import { Editor, Range } from "@tiptap/react";
 import {
   startIllustrationGeneration,
   startImageUpload,
-} from "../../plugins/upload-images";
+} from "../../plugins/upload-generate-images";
 import { devAlert } from "@/lib/utils";
 import { Node } from "@tiptap/pm/model";
 import { useTRCEditorStore } from "@/stores/store";

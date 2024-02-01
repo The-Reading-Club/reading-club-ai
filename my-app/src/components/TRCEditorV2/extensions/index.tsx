@@ -33,7 +33,7 @@ const ydoc = new Y.Doc();
 import SlashCommand from "./slash-command";
 // import { CustomHighlight } from "./extensions/custom-highlitght"; // Just a replication test
 import { CustomSuggestion } from "./custom-suggestion";
-import UploadImagesPlugin from "../plugins/upload-images";
+import UploadImagesPlugin from "../plugins/upload-generate-images/upload-generate-images";
 import { CustomImageView } from "../components/CustomImage";
 
 // https://chat.openai.com/c/ae328802-25f1-4edd-a1d0-7b2bd824403b
