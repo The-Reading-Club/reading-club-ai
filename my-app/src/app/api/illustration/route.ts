@@ -27,6 +27,8 @@ import { put } from "@vercel/blob";
 import { nanoid } from "nanoid";
 import { checkSubscription } from "@/lib/subscription";
 import { auth } from "@/auth";
+import { validatePaidSubscription } from "../utils";
+import { callDalleAPI } from "./utils";
 
 // const idLength = 10; // You can choose the length
 // const uniqueID = nanoid(idLength);
@@ -47,54 +49,51 @@ export const dynamic = "force-dynamic";
 //   return NextResponse.json({ message: "Hello, world!" }, { status: 200 });
 // }
 
-interface ImageMetadata {
-  originalPrompt: string;
-  creationDate: string;
-  revisedPrompt: string;
-  additionalInfo?: any;
-  storedImageUrl: string;
-  body: any;
-}
-
 // platform.openai.com/docs/api-reference/images/create
 export async function POST(request: Request) {
-  // Should put this check into a single function in all relevant routes!
-  const isPro = await checkSubscription();
-  // FIRST THING IN ROUTE IS TO SET RATE LIMIT
-  if (
-    isPro == false &&
-    // process.env.NODE_ENV != "development" &&
-    process.env.KV_REST_API_URL &&
-    process.env.KV_REST_API_TOKEN
-  ) {
-    const ip = request.headers.get("x-forwarded-for");
+  // // Should put this check into a single function in all relevant routes!
+  // const isPro = await checkSubscription();
+  // // FIRST THING IN ROUTE IS TO SET RATE LIMIT
+  // if (
+  //   isPro == false &&
+  //   // process.env.NODE_ENV != "development" &&
+  //   process.env.KV_REST_API_URL &&
+  //   process.env.KV_REST_API_TOKEN
+  // ) {
+  //   const ip = request.headers.get("x-forwarded-for");
 
-    const ratelimit = new Ratelimit({
-      redis: kv,
-      limiter: Ratelimit.slidingWindow(5, "1 d"),
-    });
+  //   const ratelimit = new Ratelimit({
+  //     redis: kv,
+  //     limiter: Ratelimit.slidingWindow(5, "1 d"),
+  //   });
 
-    const session = await auth();
-    const rateLimitKey = session?.user.email || ip;
+  //   const session = await auth();
+  //   const rateLimitKey = session?.user.email || ip;
 
-    const { success, limit, reset, remaining } = await ratelimit.limit(
-      `trc_ratelimit_${rateLimitKey}-illustration`
-    );
+  //   const { success, limit, reset, remaining } = await ratelimit.limit(
+  //     `trc_ratelimit_${rateLimitKey}-illustration`
+  //   );
 
-    if (!success) {
-      return NextResponse.json(
-        { msg: "Rate limit exceeded for the day" },
-        {
-          status: 429,
-          headers: {
-            "X-RateLimit-Limit": limit.toString(),
-            "X-RateLimit-Remaining": remaining.toString(),
-            "X-RateLimit-Reset": reset.toString(),
-          },
-        }
-      );
-    }
-  }
+  //   if (!success) {
+  //     return NextResponse.json(
+  //       { msg: "Rate limit exceeded for the day" },
+  //       {
+  //         status: 429,
+  //         headers: {
+  //           "X-RateLimit-Limit": limit.toString(),
+  //           "X-RateLimit-Remaining": remaining.toString(),
+  //           "X-RateLimit-Reset": reset.toString(),
+  //         },
+  //       }
+  //     );
+  //   }
+  // }
+
+  await validatePaidSubscription(request, {
+    slidingWindowTokens: 5,
+    slidingWindowDuration: "1 d",
+    feature: "illustration",
+  });
 
   const reqJSON = await request.json();
   console.log(reqJSON);
@@ -330,17 +329,6 @@ ${postContextText}
   prompt = prompt.replace(/\n{3,}/g, "\n\n");
   // console.log(prompt);
 
-  // https://community.openai.com/t/dall-e-chatgpt-a-trick-to-recreating-specific-images-using-seeds/445565/31
-  let metaprompt = `
-First, check if using this API request bellow is in accordance with the guidelines. If it is, create 1 image using the request without any modifications:
-
-{
-  "size": "1024x1024",
-  "prompts": ["${consistentPrompt3}"],
-  "seeds": [4127112452]
-}
-  `;
-
   // metaprompt = metaprompt.replaceAll("\n", "").replaceAll('"', "'");
   // console.log(metaprompt);
 
@@ -370,78 +358,8 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
 
   // console.log(templatePrompt);
 
-  const image = await openaiSDK.images.generate({
-    model: "dall-e-3",
-    prompt: metaprompt, //consistentPrompt2,
-    n: 1,
-    size: "1024x1024",
-  });
-
-  let imageBlobStored = false;
-  let storedImageUrl = "";
-
-  const dalleImageUrl = image.data[0].url!;
-
-  if (process.env.BLOB_READ_WRITE_TOKEN) {
-    // should probably check it's not undefined
-
-    const imageFetchResponse = await fetch(dalleImageUrl);
-    const imageBlob = await imageFetchResponse.blob();
-
-    const now = new Date();
-    const todaysDate = now.toISOString().split("T")[0]; // Format: YYYY-MM-DD
-
-    // Calculate seconds since midnight
-    const secondsSinceMidnight =
-      now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
-
-    // Generating a unique ID for the image and its metadata
-    const uniqueId = `${secondsSinceMidnight}-${nanoid(10)}`;
-    // Define the paths
-    const imagePath = `beta/images/${todaysDate}/${uniqueId}.png`;
-    const metadataPath = `beta/images/${todaysDate}/${uniqueId}.json`;
-
-    // Store the image in Verbal Blob storage
-    const { url: storedImageUrl_ } = await put(
-      // it works without the file extension, but i guess it's better to have it
-      imagePath,
-      imageBlob,
-      {
-        access: "public",
-      }
-    );
-
-    // RESERACH ON ACCESSIBILITY, BLINDNESS, AND IMAGE METADATA
-    // https://iptc.org/news/iptc-announces-new-properties-in-photo-metadata-to-make-images-more-accessible/
-    // https://chat.openai.com/c/d9115157-851e-46d4-a327-1121b1e2763d
-
-    // Define your metadata
-    const metadata: ImageMetadata = {
-      originalPrompt: consistentPrompt3,
-      creationDate: new Date().toISOString(),
-      revisedPrompt: image.data[0].revised_prompt ?? "undefined",
-      storedImageUrl: storedImageUrl_,
-      body: reqJSON.body,
-      additionalInfo: {
-        // templatePrompt,
-        metaprompt,
-        // testPrompt,
-      },
-    };
-
-    // Convert metadata object to JSON string
-    const metadataJson = JSON.stringify(metadata);
-
-    // Store the metadata in a JSON file
-    /*await*/ put(
-      metadataPath,
-      new Blob([metadataJson], { type: "application/json" }),
-      { access: "public" }
-    );
-
-    imageBlobStored = true;
-    storedImageUrl = storedImageUrl_;
-  }
+  const { image, storedImageUrl, imageBlobStored, dalleImageUrl } =
+    await callDalleAPI(consistentPrompt3, reqJSON);
 
   // console.log("response", image.data);
   console.log("response", image);

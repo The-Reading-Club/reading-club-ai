@@ -13,7 +13,7 @@ import {
 import { useIllustrationModal } from "@/lib/hooks/useModals";
 import EditableText from "@/components/input/EditableText/EditableText";
 import { useTRCEditorStore } from "@/stores/store";
-import { startIllustrationGeneration } from "@/components/TRCEditorV2/plugins/upload-generate-images/upload-generate-images";
+import { startIllustrationGeneration } from "@/components/TRCEditorV2/plugins/upload-generate-images";
 import { devAlert } from "@/lib/utils";
 import { CommandGenerateIllustration } from "@/components/TRCEditorV2/extensions/slash-command/CommandList";
 
