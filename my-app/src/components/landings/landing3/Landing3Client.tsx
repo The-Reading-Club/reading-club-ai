@@ -82,7 +82,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
 
   return (
     <div
-      className="flex flex-col min-h-screen bg-[#FAF8DA]"
+      className="flex flex-col min-h-screen"
       style={
         {
           // backgroundImage: "url(/BG-Archiv3.jpg)",
@@ -90,6 +90,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
           // backgroundSize: "cover", // Ensures the background image covers the entire section
           // backgroundRepeat: "no-repeat", // Prevents repeating the background image
           // backgroundPosition: "center", // Centers the background image
+          // backgroundImage: "url(/BG-9.jpg)",
         }
       }
     >
@@ -217,10 +218,14 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
           }
         >
           <div
-            className="absolute top-0 left-0 w-full h-full bg-center bg-cover opacity-50 z-0"
-            style={{
-              backgroundImage: "url(/BG-Stories-Bookshelf-2.jpg)",
-            }}
+            className="absolute top-0 left-0 w-full h-full bg-center bg-cover z-0"
+            // opacity-50
+            style={
+              {
+                // backgroundImage: "url(/BG-Stories-Bookshelf-2.jpg)",
+                // backgroundImage: "url(/BG-9.jpg)",
+              }
+            }
           ></div>
           <div
             className="text-center 
