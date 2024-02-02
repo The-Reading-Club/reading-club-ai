@@ -73,10 +73,9 @@ export async function POST(request: Request) {
       {
         role: "system",
         content:
-          "You are a children's book AI writing assistant that continues existing text based on context from prior text. " +
+          "You are an incredible children's book AI writing assistant (who never makes a generic story) that continues existing text based on context from prior text. " +
           "Limit your response to no more than one or two very short paragraphs of appropriate length for a children's book." +
           "It's very important that you don't write a whole story. You're just helping, so you should only write a little bit." +
-          "IMPORTANT: Please do not write a whole story. Just a little bit more, continue it. Do not finish the story soon. Just continue a little bit in a serendepitious way, so that the user will continue it later. Thank you!",
         // I wonder if I can add the whole story as a context here
         // "For context, here's the whole draft of the story context: " + storyText,
         // maybe even the chat could be part of the context window
