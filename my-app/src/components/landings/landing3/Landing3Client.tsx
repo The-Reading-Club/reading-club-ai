@@ -250,41 +250,63 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             </p>
             {/* https://tailwind-hover-effects.vercel.app */}
             <div
-              className="flex lg:flex-row flex-col justify-center"
+              className="flex flex-row justify-center "
               // style={{ border: "2px solid purple" }}
             >
-              <div>
+              <div className="lg:basis-auto basis-[33.33%]">
+                <Image
+                  src={beeMom}
+                  alt="profile"
+                  objectFit="cover"
+                  className="block lg:hidden p-5"
+                />
+                {/* DESKTOP */}
                 <Image
                   src={beeMom}
                   alt="bees"
                   height={200}
                   width={200}
                   className="p-10 pt-5 lg:block hidden"
-                  // style={{ border: "2px solid red" }}
                 />
               </div>
               <Link
                 href="https://www.readingclub.ai/editor"
                 // target="_blank"
                 rel="noopener noreferrer"
-                className="text-[#3c4043]"
+                className="lg:basis-auto basis-[33.33%] text-[#3c4043]"
               >
-                <Button className="mt-8 px-16 py-8 bg-[#FFF] text-darkFont rounded hover:bg-[#FFF] rounded-full text-2xl font-bold border-4 border-[#FFC122]">
+                <Button
+                  className="
+                mt-8 
+                
+                lg:px-16 lg:py-8 py-6
+                bg-[#FFF] text-darkFont rounded hover:bg-[#FFF] rounded-full 
+                lg:text-2xl text-lg 
+                font-bold border-4 border-[#FFC122]"
+                >
                   Write a book
                   {/* <ArrowRightIcon className="absolute right-6" /> */}
                 </Button>
               </Link>
               <div
-                className="flex flex-col justify-end"
+                className="lg:basis-auto basis-[33.33%] flex flex-col justify-end"
                 // style={{ border: "2px solid black" }}
               >
+                {/* Life saver https://stackoverflow.com/questions/74795804/next-js-responsive-image-with-custom-size */}
+                {/* MOBILE */}
+                <Image
+                  src={beeBoy}
+                  alt="profile"
+                  objectFit="cover"
+                  className="block lg:hidden p-7"
+                />
+                {/* DESKTOP */}
                 <Image
                   src={beeBoy}
                   alt="bees"
                   height={200}
                   width={200}
-                  className="p-14 pt-5 lg:block hidden"
-                  // style={{ border: "2px solid red" }}
+                  className="p-14 pt-5 hidden lg:block"
                 />
               </div>
             </div>
