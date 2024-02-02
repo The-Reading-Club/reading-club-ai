@@ -105,7 +105,10 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
           }
         }
       >
-        <div className="items-center hidden lg:flex">
+        {/* <div>TEST</div> */}
+        {/* <Logo width={10} height={10} /> */}
+
+        <div className="items-center ">
           <Logo />
         </div>
         {false && (
@@ -538,7 +541,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
         )}
       </main>
       <footer className="py-12 px-6 bg-[#FFC122] text-[#FFF]">
-        <div className="max-w-4xl mx-auto flex flex-wrap justify-between items-start">
+        <div className="max-w-4xl mx-auto flex flex-wrap lg:justify-between justify-between gap-x-5 gap-y-5 lg:p-0 px-10 items-start">
           <div>
             {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
             <span className="text-lg font-bold">Contact us</span>
