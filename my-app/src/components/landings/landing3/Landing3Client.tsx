@@ -247,7 +247,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             </p>
             {/* https://tailwind-hover-effects.vercel.app */}
             <div
-              className="flex flex-row justify-center"
+              className="flex lg:flex-row flex-col justify-center"
               // style={{ border: "2px solid purple" }}
             >
               <div>
@@ -256,7 +256,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                   alt="bees"
                   height={200}
                   width={200}
-                  className="p-10 pt-5"
+                  className="p-10 pt-5 lg:block hidden"
                   // style={{ border: "2px solid red" }}
                 />
               </div>
@@ -280,7 +280,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                   alt="bees"
                   height={200}
                   width={200}
-                  className="p-14 pt-5"
+                  className="p-14 pt-5 lg:block hidden"
                   // style={{ border: "2px solid red" }}
                 />
               </div>
