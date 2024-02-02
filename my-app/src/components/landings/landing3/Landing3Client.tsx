@@ -262,7 +262,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                 className="text-[#3c4043]"
               >
                 <Button className="mt-8 px-16 py-8 bg-[#FFF] text-darkFont rounded hover:bg-[#FFF] rounded-full text-2xl font-bold border-4 border-[#FFC122]">
-                  Create a story
+                  Write a book
                   {/* <ArrowRightIcon className="absolute right-6" /> */}
                 </Button>
               </Link>
