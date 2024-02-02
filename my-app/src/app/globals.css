@@ -124,3 +124,11 @@ button {
   gap: 8px;
   /* Additional styling */
 }
+
+/* https://chat.openai.com/c/e537593d-607e-4914-a20c-3f14d3996087 */
+.reset-a-styles {
+  color: inherit; /* Makes the link color inherit from parent elements */
+  text-decoration: none; /* Removes underline from links */
+  background-color: transparent; /* Removes any background color */
+  /* Add any other resets you need, e.g., padding, margin, border, etc. */
+}
