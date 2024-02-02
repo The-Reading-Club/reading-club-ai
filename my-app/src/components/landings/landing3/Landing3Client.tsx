@@ -28,6 +28,12 @@ import LoomEmbed from "@/components/LoomEmbed";
 import { ArrowRightIcon } from "lucide-react";
 import YouTubeVideo from "@/components/YouTubeVideo";
 import UnstyledExternalLink from "@/components/UnstyledExternalLink";
+import Image from "next/image";
+
+import beesImg from "/public/characters/Bees2.png";
+// import beeBoy from "/public/characters/Bee-Boy.png";
+import beeBoy from "/public/characters/Bee02.png";
+import beeMom from "/public/characters/Bee-Mom.png";
 
 interface SocialLinkProps {
   href: string;
@@ -187,8 +193,10 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
       </header>
       <main className="flex-1">
         <section
-          className="w-full lg:h-[90vh] bg-center bg-cover flex items-center justify-center lg:bg-contain lg:pb-0 pb-20
-          flex-col lg:flex-row-reverse lg:justify-around
+          className="w-full bg-center bg-cover 
+          flex items-center justify-center lg:bg-contain lg:pb-0 pb-20
+          flex-col 
+          lg:flex-col lg:justify-start
           relative
           "
           // style={{
@@ -202,6 +210,11 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
           //   // backgroundPosition: "center", // Centers the background image
           //   // border: "2px solid purple",
           // }}
+          style={
+            {
+              // border: "4px solid black",
+            }
+          }
         >
           <div
             className="absolute top-0 left-0 w-full h-full bg-center bg-cover opacity-50 z-0"
@@ -210,31 +223,63 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             }}
           ></div>
           <div
-            className="basis-1/2 text-center lg:text-left text-[#FFC122] p-5 z-10"
+            className="text-center 
+            lg:w-[90%]
+            lg:text-center text-[#FFC122] 
+            lg:pt-20
+            p-5 z-10 pb-0"
             // style={{ border: "2px solid orange" }}
           >
             <h1 className="lg:text-6xl text-5xl  font-bold">
               {/* https://chat.openai.com/c/24650459-ac0d-46af-aef3-c81eabf0fb9b */}
-              {`Transforming bedtime stories into interactive adventures.`}
+              {`Transforming bedtime stories into interactive adventures`}
               {/* {`Write & Share`}
               <br />
               {`Children's Books with AI`} */}
             </h1>
             <p className="mt-5 lg:text-2xl text-xl text-bold text-[#3c4043]">
-              {`Bringing children’s imaginations to life with the help of AI.`}
+              {`Bringing children’s imaginations to life with the help of AI`}
             </p>
             {/* https://tailwind-hover-effects.vercel.app */}
-            <Link
-              href="https://www.readingclub.ai/editor"
-              // target="_blank"
-              rel="noopener noreferrer"
-              className="text-[#3c4043]"
+            <div
+              className="flex flex-row justify-center"
+              // style={{ border: "2px solid purple" }}
             >
-              <Button className="mt-8 px-16 py-8 bg-[#FFF] text-darkFont rounded hover:bg-[#FFF] rounded-full text-2xl font-bold border-4 border-[#FFC122]">
-                Create a story
-                {/* <ArrowRightIcon className="absolute right-6" /> */}
-              </Button>
-            </Link>
+              <div>
+                <Image
+                  src={beeMom}
+                  alt="bees"
+                  height={200}
+                  width={200}
+                  className="p-10 pt-5"
+                  // style={{ border: "2px solid red" }}
+                />
+              </div>
+              <Link
+                href="https://www.readingclub.ai/editor"
+                // target="_blank"
+                rel="noopener noreferrer"
+                className="text-[#3c4043]"
+              >
+                <Button className="mt-8 px-16 py-8 bg-[#FFF] text-darkFont rounded hover:bg-[#FFF] rounded-full text-2xl font-bold border-4 border-[#FFC122]">
+                  Create a story
+                  {/* <ArrowRightIcon className="absolute right-6" /> */}
+                </Button>
+              </Link>
+              <div
+                className="flex flex-col justify-end"
+                // style={{ border: "2px solid black" }}
+              >
+                <Image
+                  src={beeBoy}
+                  alt="bees"
+                  height={200}
+                  width={200}
+                  className="p-14 pt-5"
+                  // style={{ border: "2px solid red" }}
+                />
+              </div>
+            </div>
             {false && (
               <>
                 <p className="mt-5 lg:text-2xl text-xl text-bold p-5 lg:p-0 text-[#3c4043]">
@@ -269,7 +314,8 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             )}
           </div>
           <div
-            className="basis-1/2 lg:w-auto md:w-[70%] w-[90%] flex justify-center z-10"
+            className="lg:w-auto md:w-[70%] w-[90%] flex justify-center z-10
+            "
             style={
               {
                 // border: " 2px solid green",
