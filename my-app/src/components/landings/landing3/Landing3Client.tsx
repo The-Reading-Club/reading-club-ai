@@ -27,6 +27,7 @@ import TRCEditorV2 from "@/components/TRCEditorV2";
 import LoomEmbed from "@/components/LoomEmbed";
 import { ArrowRightIcon } from "lucide-react";
 import YouTubeVideo from "@/components/YouTubeVideo";
+import UnstyledExternalLink from "@/components/UnstyledExternalLink";
 
 interface SocialLinkProps {
   href: string;
@@ -123,7 +124,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
         "
         >
           <SocialLink
-            href="https://www.youtube.com/@ReadingClubAI  "
+            href="https://www.youtube.com/@ReadingClubAI"
             icon={<FaYoutube />}
           />
           <SocialLink
@@ -186,7 +187,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
       </header>
       <main className="flex-1">
         <section
-          className="w-full lg:h-[525px] bg-center bg-cover flex items-center justify-center lg:bg-contain lg:pb-0 pb-20
+          className="w-full lg:h-[90vh] bg-center bg-cover flex items-center justify-center lg:bg-contain lg:pb-0 pb-20
           flex-col lg:flex-row-reverse lg:justify-around
           relative
           "
@@ -485,20 +486,38 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
           </section>
         )}
       </main>
-      <footer className="py-6 px-6 bg-[#FFC122] text-[#FFF]">
+      <footer className="py-12 px-6 bg-[#FFC122] text-[#FFF]">
         <div className="max-w-4xl mx-auto flex flex-wrap justify-between items-start">
           <div>
             {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
             <span className="text-lg font-bold">Contact us</span>
             {/* <p className="text-sm opacity-80">Ottawa, ON, Canada</p> */}
-            <p className="mt-1 text-sm opacity-80">jose@readingclub.ai</p>
+            <UnstyledExternalLink href="mailto:jose@readingclub.ai">
+              <p className="mt-1 text-sm opacity-70 font-bold">
+                jose@readingclub.ai
+              </p>
+            </UnstyledExternalLink>
           </div>
           <div>
             {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
             <span className="text-lg font-bold">Social</span>
             {/* <p className="text-sm opacity-80">Ottawa, ON, Canada</p> */}
-            <p className="mt-1 text-sm opacity-80">YouTube</p>
-            <p className="mt-1 text-sm opacity-80">Twitter</p>
+            <UnstyledExternalLink href="https://www.youtube.com/@ReadingClubAI">
+              <p className="mt-1 text-sm opacity-70 font-bold">YouTube</p>
+            </UnstyledExternalLink>
+            <UnstyledExternalLink href="https://www.twitter.com/ReadingClubAI">
+              <p className="mt-1 text-sm opacity-70 font-bold">Twitter</p>
+            </UnstyledExternalLink>
+          </div>
+          <div>
+            {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
+            <span className="text-lg font-bold">Help and support</span>
+            {/* <p className="text-sm opacity-80">Ottawa, ON, Canada</p> */}
+            <UnstyledExternalLink href="https://readingclub.canny.io">
+              <p className="mt-1 text-sm opacity-70 font-bold">
+                Give us feedback
+              </p>
+            </UnstyledExternalLink>
           </div>
           {/* <div className="mt-4 md:mt-0 text-[#FAF8DA] font-bold text-center">
             <span className="text-lg font-bold opacity-100">
