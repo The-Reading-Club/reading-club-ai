@@ -37,7 +37,7 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => {
   return (
     <a
       // className="mt-0 px-8 py-1 bg-[#FFF] text-[#000] rounded hover:bg-[#FCF29A] rounded-full inline-flex items-center justify-center"
-      className="mt-0 px-2 py-2 bg-[#FFC122] text-[#FFF] rounded-full hover:bg-[#FCF29A] rounded-full inline-flex items-center justify-center"
+      className="mt-0 px-2 py-2 bg-white text-primary rounded-full hover:bg-[#FCF29A] rounded-full inline-flex items-center justify-center"
       href={href}
       target="_blank"
       rel="noopener noreferrer"
@@ -87,7 +87,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
       }
     >
       <header
-        className="px-6 lg:py-1 py-4 flex items-center justify-center"
+        className="px-6 lg:py-1 py-4 flex items-center justify-center bg-primary"
         style={
           {
             // backgroundImage: "url(/BG-Honeycomb.jpg)",
@@ -119,13 +119,18 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
 
         mr-0
         lg:mr-9
+
         "
         >
+          <SocialLink
+            href="https://www.youtube.com/@ReadingClubAI  "
+            icon={<FaYoutube />}
+          />
           <SocialLink
             href="https://www.twitter.com/ReadingClubAI"
             icon={<FaTwitter />}
           />
-          <SocialLink
+          {/* <SocialLink
             href="https://www.linkedin.com/company/ReadingClubAI"
             icon={<FaLinkedinIn />}
           />
@@ -142,13 +147,9 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             icon={<FaFacebookF />}
           />
           <SocialLink
-            href="https://www.youtube.com/@ReadingClubAI  "
-            icon={<FaYoutube />}
-          />
-          <SocialLink
             href="https://www.tiktok.com/@ReadingClubAI"
             icon={<FaTiktok />}
-          />
+          /> */}
           {false && (
             <>
               <Link
@@ -183,25 +184,32 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
           )}
         </nav>
       </header>
-      <main className="flex-1 ">
+      <main className="flex-1">
         <section
           className="w-full lg:h-[525px] bg-center bg-cover flex items-center justify-center lg:bg-contain lg:pb-0 pb-20
-          flex-col lg:flex-row lg:justify-around
+          flex-col lg:flex-row-reverse lg:justify-around
+          relative
           "
           // style={{
           //   backgroundImage: "url(/BG-Archiv3.jpg)",
           // }}
-          style={{
-            backgroundImage: "url(/BG-Registro.jpg)",
-            // backgroundRepeat: "repeat",
-            // backgroundSize: "contain", // Ensures the background image covers the entire section
-            // backgroundRepeat: "no-repeat", // Prevents repeating the background image
-            // backgroundPosition: "center", // Centers the background image
-            // border: "2px solid purple",
-          }}
+          // style={{
+          //   backgroundImage: "url(/BG-Stories-Bookshelf-2.jpg)",
+          //   // backgroundRepeat: "repeat",
+          //   // backgroundSize: "contain", // Ensures the background image covers the entire section
+          //   // backgroundRepeat: "no-repeat", // Prevents repeating the background image
+          //   // backgroundPosition: "center", // Centers the background image
+          //   // border: "2px solid purple",
+          // }}
         >
           <div
-            className="basis-1/2 text-right text-[#FFC122] p-5"
+            className="absolute top-0 left-0 w-full h-full bg-center bg-cover opacity-50 z-0"
+            style={{
+              backgroundImage: "url(/BG-Stories-Bookshelf-2.jpg)",
+            }}
+          ></div>
+          <div
+            className="basis-1/2 text-center lg:text-left text-[#FFC122] p-5 z-10"
             // style={{ border: "2px solid orange" }}
           >
             <h1 className="lg:text-6xl text-5xl  font-bold">
@@ -260,7 +268,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             )}
           </div>
           <div
-            className="basis-1/2 lg:w-auto md:w-[70%] w-[90%] flex justify-center"
+            className="basis-1/2 lg:w-auto md:w-[70%] w-[90%] flex justify-center z-10"
             style={
               {
                 // border: " 2px solid green",
@@ -297,39 +305,40 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
             </p>
           </section>
         )}
-        <section
-          className="py-12 lg:px-0 px-10"
-          style={
-            {
-              // backgroundImage: "url(/BG-Registro.jpg)",
-              // backgroundImage: "url(/BG-Archiv3.jpg)",
-              // backgroundImage: "url(/BG-Honeycomb.jpg)",
-              // // https://chat.openai.com/c/91c904c0-186c-46b5-817a-2312a35ca980
-              // backgroundSize: "cover", // Ensures the background image covers the entire section
-              // backgroundRepeat: "no-repeat", // Prevents repeating the background image
-              // backgroundPosition: "center", // Centers the background image
+        {false && (
+          <section
+            className="py-12 lg:px-0 px-10"
+            style={
+              {
+                // backgroundImage: "url(/BG-Registro.jpg)",
+                // backgroundImage: "url(/BG-Archiv3.jpg)",
+                // backgroundImage: "url(/BG-Honeycomb.jpg)",
+                // // https://chat.openai.com/c/91c904c0-186c-46b5-817a-2312a35ca980
+                // backgroundSize: "cover", // Ensures the background image covers the entire section
+                // backgroundRepeat: "no-repeat", // Prevents repeating the background image
+                // backgroundPosition: "center", // Centers the background image
+              }
             }
-          }
-        >
-          {false && (
-            <h2 className="text-4xl font-bold text-center text-[#FFC122] bg-[#FAF8DA]">
-              Powerful Features
-            </h2>
-          )}
-          <div className="mt-8-cancel mt-0 max-w-4xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 text-center">
-            <Card className="bg-accent2">
-              <CardHeader className="text-[#FFF]">
-                {/* <BotIcon className="w-6 h-6 mx-auto mb-2" /> */}
-                <h3 className="text-2xl font-bold">AI-Powered Writing</h3>
-              </CardHeader>
-              <CardContent className="text-[#FFF]">
-                <p className="text-lg">
-                  Our AI-powered interface helps you generate creative and
-                  engaging stories for children 10x faster.
-                </p>
-              </CardContent>
-            </Card>
-            {/* <Card className="bg-[#FFF]">
+          >
+            {false && (
+              <h2 className="text-4xl font-bold text-center text-[#FFC122] bg-[#FAF8DA]">
+                Powerful Features
+              </h2>
+            )}
+            <div className="mt-8-cancel mt-0 max-w-4xl mx-auto grid gap-6 grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 text-center">
+              <Card className="bg-accent2">
+                <CardHeader className="text-[#FFF]">
+                  {/* <BotIcon className="w-6 h-6 mx-auto mb-2" /> */}
+                  <h3 className="text-2xl font-bold">AI-Powered Writing</h3>
+                </CardHeader>
+                <CardContent className="text-[#FFF]">
+                  <p className="text-lg">
+                    Our AI-powered interface helps you generate creative and
+                    engaging stories for children 10x faster.
+                  </p>
+                </CardContent>
+              </Card>
+              {/* <Card className="bg-[#FFF]">
               <CardHeader className="text-[#000]">
                 <PencilIcon className="w-6 h-6 mx-auto mb-2" />
                 <h3 className="text-2xl font-semibold">
@@ -343,35 +352,36 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                 </p>
               </CardContent>
             </Card> */}
-            <Card className="bg-[#F5911F]">
-              <CardHeader className="text-[#FFF]">
-                {/* <BookIcon className="w-6 h-6 mx-auto mb-2" /> */}
-                <h3 className="text-2xl font-bold">Share with Family</h3>
-              </CardHeader>
-              <CardContent className="text-[#FFF]">
-                <p className="text-lg">
-                  {`Create & share stories with your family. It's like Goodreads, but for children's books and your inner circle.`}
-                </p>
-              </CardContent>
-            </Card>
-            {false && (
               <Card className="bg-[#F5911F]">
                 <CardHeader className="text-[#FFF]">
-                  {/* <MessageCircleIcon className="w-6 h-6 mx-auto mb-2" /> */}
-                  <h3 className="text-2xl font-semibold">Community</h3>
+                  {/* <BookIcon className="w-6 h-6 mx-auto mb-2" /> */}
+                  <h3 className="text-2xl font-bold">Share with Family</h3>
                 </CardHeader>
                 <CardContent className="text-[#FFF]">
                   <p className="text-lg">
-                    Join a community of like-minded authors and share your
-                    journey.
+                    {`Create & share stories with your family. It's like Goodreads, but for children's books and your inner circle.`}
                   </p>
                 </CardContent>
               </Card>
-            )}
-          </div>
-        </section>
+              {false && (
+                <Card className="bg-[#F5911F]">
+                  <CardHeader className="text-[#FFF]">
+                    {/* <MessageCircleIcon className="w-6 h-6 mx-auto mb-2" /> */}
+                    <h3 className="text-2xl font-semibold">Community</h3>
+                  </CardHeader>
+                  <CardContent className="text-[#FFF]">
+                    <p className="text-lg">
+                      Join a community of like-minded authors and share your
+                      journey.
+                    </p>
+                  </CardContent>
+                </Card>
+              )}
+            </div>
+          </section>
+        )}
 
-        {true && (
+        {false && (
           <section
             className="bg-cover lg:pt-12"
             style={{
@@ -476,17 +486,27 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
         )}
       </main>
       <footer className="py-6 px-6 bg-[#FFC122] text-[#FFF]">
-        <div className="max-w-4xl mx-auto flex flex-wrap justify-between items-center">
+        <div className="max-w-4xl mx-auto flex flex-wrap justify-between items-start">
           <div>
             {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
-            <span className="ml-2 text-lg font-bold">
+            <span className="text-lg font-bold">Contact us</span>
+            {/* <p className="text-sm opacity-80">Ottawa, ON, Canada</p> */}
+            <p className="mt-1 text-sm opacity-80">jose@readingclub.ai</p>
+          </div>
+          <div>
+            {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
+            <span className="text-lg font-bold">Social</span>
+            {/* <p className="text-sm opacity-80">Ottawa, ON, Canada</p> */}
+            <p className="mt-1 text-sm opacity-80">YouTube</p>
+            <p className="mt-1 text-sm opacity-80">Twitter</p>
+          </div>
+          {/* <div className="mt-4 md:mt-0 text-[#FAF8DA] font-bold text-center">
+            <span className="text-lg font-bold opacity-100">
               The Reading Club, Inc.
             </span>
-          </div>
-          <div className="mt-4 md:mt-0 text-[#FAF8DA]">
-            <p className="text-sm">Ottawa, ON, Canada</p>
-            <p className="mt-1 text-sm">contact@thereadingclubapp.com</p>
-          </div>
+            <p className="text-sm opacity-80">Ottawa, ON, Canada</p>
+            <p className="mt-1 text-sm opacity-80">jose@readingclub.ai</p>
+          </div> */}
         </div>
       </footer>
     </div>

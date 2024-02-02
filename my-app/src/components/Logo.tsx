@@ -13,7 +13,7 @@ const Logo = () => {
       className="hidden md:block cursor-pointer"
       height="300"
       width="300"
-      src="/Logo-Reading-Club-AI-Yellow-Horizontal.png"
+      src="/Logo-Reading-Club-AI-White-Horizontal.png"
     ></Image>
   );
 };
