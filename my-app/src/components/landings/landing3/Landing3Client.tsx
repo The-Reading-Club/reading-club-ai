@@ -122,7 +122,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
         flex gap-4
         flex-wrap
         justify-center
-        mb-10
+        mb-0
         lg:mb-0
 
         mr-0
