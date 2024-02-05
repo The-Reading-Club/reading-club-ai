@@ -17,7 +17,7 @@ import { unknown } from "zod";
 import {
   IllustrationGenerationBody,
   handleIllustrationGeneration,
-  handleIllustrationPrompt,
+  handleIllustrationPrompt as handleIllustrationPrompt,
 } from "./illustration-generation-handle";
 
 import { findPlaceholder, uploadKey } from "..";
@@ -223,7 +223,12 @@ export function startIllustrationPromptGeneration(
 
   view.dispatch(tr);
 
-  handleIllustrationPrompt(body).then(({ storedImageUrl, revisedPrompt }) => {
+  // handle arrays from now on, I guess.
+  // Actually, keep this like this, use another function. I like what we had achieve here,
+  // but we'll do things differently for now
+  handleIllustrationPrompt(body).then((imagesUrlsAndPromps) => {
+    const { storedImageUrl, revisedPrompt } = imagesUrlsAndPromps[0];
+
     const { schema } = view.state;
 
     let pos = findPlaceholder(view.state, id);

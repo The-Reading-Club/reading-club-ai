@@ -1,5 +1,7 @@
+import { Image } from "openai/resources/images.mjs";
+
 export interface GenerateIllustrationPromptResponse {
-  imageData: string;
-  storedImageUrl: string;
-  revisedPrompt: string;
+  imageData: Image[];
+  storedImageUrls: string[];
+  revisedPrompts: string[];
 }

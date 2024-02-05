@@ -117,7 +117,7 @@ export function handleIllustrationGeneration(body: IllustrationGenerationBody) {
 export function handleIllustrationPrompt(
   body: IllustrationPromptGenerationBody
 ) {
-  return new Promise<IllustrationGenerationPromiseType>((resolve) => {
+  return new Promise<IllustrationGenerationPromiseType[]>((resolve) => {
     toast.promise(
       axios
         .post("/api/illustration/prompt", {
@@ -132,11 +132,20 @@ export function handleIllustrationPrompt(
           if (res.status === 200) {
             devAlert("Illustration generated successfully based on prompt.");
 
-            const { imageData, storedImageUrl, revisedPrompt } =
-              res.data as GenerateIllustrationPromptResponse;
+            const {
+              imageData,
+              storedImageUrls,
+              revisedPrompts,
+            }: GenerateIllustrationPromptResponse = res.data;
 
             // const { url } = imageData;
-            resolve({ storedImageUrl, revisedPrompt });
+
+            resolve(
+              imageData.map((data, index) => ({
+                storedImageUrl: storedImageUrls[index],
+                revisedPrompt: data.revised_prompt ?? body.prompt,
+              }))
+            );
           }
           // Unkown error
           else {

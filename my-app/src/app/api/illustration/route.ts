@@ -358,8 +358,12 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
 
   // console.log(templatePrompt);
 
-  const { image, storedImageUrl, imageBlobStored, dalleImageUrl } =
-    await callDalleAPI(consistentPrompt3, reqJSON);
+  const {
+    image,
+    storedImageUrls,
+    // imageBlobStored,
+    dalleImageUrls,
+  } = await callDalleAPI(consistentPrompt3, reqJSON);
 
   // console.log("response", image.data);
   console.log("response", image);
@@ -370,7 +374,9 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
       // should get rid of this actually, I am already doing it way before in the client
       newCharacters: existingCharacters,
       characterDefinitions,
-      storedImageUrl: imageBlobStored == true ? storedImageUrl : dalleImageUrl,
+      // storedImageUrl: imageBlobStored == true ? storedImageUrl : dalleImageUrl,
+      storedImageUrl: storedImageUrls[0],
+      // will this sometimes be undefined?
       revisedPrompt: image.data[0].revised_prompt,
     } as GenerateIllustrationResponse,
     { status: 200 }

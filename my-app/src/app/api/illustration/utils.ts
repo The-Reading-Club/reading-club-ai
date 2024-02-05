@@ -66,76 +66,93 @@ First, check if using this API request bellow is in accordance with the guidelin
     size: "1024x1024",
   });
 
-  let imageBlobStored = false;
-  let storedImageUrl = "";
+  // let imageBlobStored = false;
+  let storedImageUrls = [];
 
-  const dalleImageUrl = image.data[0].url!;
+  // Only for the first image for now, I guess,
+  // but eventually I want to do this for all images
+  // in this array!
+  // NOPE, actually I should do it for all of them right away
+  const dalleImageUrls = image.data.map((d) => d.url);
 
-  if (process.env.BLOB_READ_WRITE_TOKEN) {
-    // should probably check it's not undefined
+  console.log("dalleImageUrls", dalleImageUrls);
 
-    const imageFetchResponse = await fetch(dalleImageUrl);
-    const imageBlob = await imageFetchResponse.blob();
+  // https://chat.openai.com/c/3af81337-118b-4854-b0ae-3c86e723d7fe
+  // for (const dalleImageUrl of dalleImageUrls) {
+  for (let i = 0; i < image.data.length; i++) {
+    const dalleImageUrl = dalleImageUrls[i];
+    console.log("dalleImageUrl", dalleImageUrl);
 
-    const now = new Date();
-    const todaysDate = now.toISOString().split("T")[0]; // Format: YYYY-MM-DD
+    // I don't know when this could happen...
+    if (dalleImageUrl === undefined) continue;
 
-    // Calculate seconds since midnight
-    const secondsSinceMidnight =
-      now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
+    if (process.env.BLOB_READ_WRITE_TOKEN) {
+      // should probably check it's not undefined
 
-    // Generating a unique ID for the image and its metadata
-    const uniqueId = `${secondsSinceMidnight}-${nanoid(10)}`;
-    // Define the paths
-    const imagePath = `beta/images/${todaysDate}/${uniqueId}.png`;
-    const metadataPath = `beta/images/${todaysDate}/${uniqueId}.json`;
+      const imageFetchResponse = await fetch(dalleImageUrl);
+      const imageBlob = await imageFetchResponse.blob();
 
-    // Store the image in Verbal Blob storage
-    const { url: storedImageUrl_ } = await put(
-      // it works without the file extension, but i guess it's better to have it
-      imagePath,
-      imageBlob,
-      {
-        access: "public",
-      }
-    );
+      const now = new Date();
+      const todaysDate = now.toISOString().split("T")[0]; // Format: YYYY-MM-DD
 
-    // RESERACH ON ACCESSIBILITY, BLINDNESS, AND IMAGE METADATA
-    // https://iptc.org/news/iptc-announces-new-properties-in-photo-metadata-to-make-images-more-accessible/
-    // https://chat.openai.com/c/d9115157-851e-46d4-a327-1121b1e2763d
+      // Calculate seconds since midnight
+      const secondsSinceMidnight =
+        now.getHours() * 3600 + now.getMinutes() * 60 + now.getSeconds();
 
-    // Define your metadata
-    const metadata: ImageMetadata = {
-      originalPrompt: originalPrompt,
-      creationDate: new Date().toISOString(),
-      revisedPrompt: image.data[0].revised_prompt ?? "undefined",
-      storedImageUrl: storedImageUrl_,
-      body: reqJSON.body,
-      additionalInfo: {
-        // templatePrompt,
-        metaprompt,
-        // testPrompt,
-      },
-    };
+      // Generating a unique ID for the image and its metadata
+      const uniqueId = `${secondsSinceMidnight}-${nanoid(10)}`;
+      // Define the paths
+      const imagePath = `beta/images/${todaysDate}/${uniqueId}.png`;
+      const metadataPath = `beta/images/${todaysDate}/${uniqueId}.json`;
 
-    // Convert metadata object to JSON string
-    const metadataJson = JSON.stringify(metadata);
+      // Store the image in Verbal Blob storage
+      const { url: storedImageUrl_ } = await put(
+        // it works without the file extension, but i guess it's better to have it
+        imagePath,
+        imageBlob,
+        {
+          access: "public",
+        }
+      );
 
-    // Store the metadata in a JSON file
-    /*await*/ put(
-      metadataPath,
-      new Blob([metadataJson], { type: "application/json" }),
-      { access: "public" }
-    );
+      // RESERACH ON ACCESSIBILITY, BLINDNESS, AND IMAGE METADATA
+      // https://iptc.org/news/iptc-announces-new-properties-in-photo-metadata-to-make-images-more-accessible/
+      // https://chat.openai.com/c/d9115157-851e-46d4-a327-1121b1e2763d
 
-    imageBlobStored = true;
-    storedImageUrl = storedImageUrl_;
+      // Define your metadata
+      const metadata: ImageMetadata = {
+        originalPrompt: originalPrompt,
+        creationDate: new Date().toISOString(),
+        revisedPrompt: image.data[i].revised_prompt ?? "undefined",
+        storedImageUrl: storedImageUrl_,
+        body: reqJSON.body,
+        additionalInfo: {
+          // templatePrompt,
+          metaprompt,
+          // testPrompt,
+        },
+      };
+
+      // Convert metadata object to JSON string
+      const metadataJson = JSON.stringify(metadata);
+
+      // Store the metadata in a JSON file
+      /*await*/ put(
+        metadataPath,
+        new Blob([metadataJson], { type: "application/json" }),
+        { access: "public" }
+      );
+
+      // imageBlobStored = true;
+      // storedImageUrl = storedImageUrl_;
+      storedImageUrls.push(storedImageUrl_);
+    }
   }
 
   return {
     image,
-    storedImageUrl,
-    imageBlobStored,
-    dalleImageUrl,
+    storedImageUrls,
+    // imageBlobStored,
+    dalleImageUrls,
   };
 }
