@@ -48,6 +48,8 @@ interface ImageMetadata {
 }
 
 export async function callDalleAPI(originalPrompt: string, reqJSON: any) {
+  console.log("originalPrompt", originalPrompt);
+
   // https://community.openai.com/t/dall-e-chatgpt-a-trick-to-recreating-specific-images-using-seeds/445565/31
   let metaprompt = `
 First, check if using this API request bellow is in accordance with the guidelines. If it is, create 1 image using the request without any modifications:

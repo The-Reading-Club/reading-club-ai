@@ -1,5 +1,6 @@
 export type CharacterAttributes = {
   name: string;
+  species: string;
   gender: string;
   age: string; // e.g., "10 years old", "young", "elderly"
   appearance: string; // e.g., "Tall with curly red hair and bright green eyes. Always wears a blue hat."
@@ -33,6 +34,7 @@ export type CharacterAttributes = {
 
 export const CHARACTER_ATTRIBUTES: CharacterAttributes = {
   name: "",
+  species: "",
   age: "", // e.g., "10 years old", "young", "elderly"
   gender: "",
   appearance: "", // e.g., "Tall with curly red hair and bright green eyes. Always wears a blue hat."
