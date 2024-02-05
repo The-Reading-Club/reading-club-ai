@@ -4,13 +4,15 @@ import { ExternalToast } from "sonner";
 import { twMerge } from "tailwind-merge";
 
 import { toast } from "sonner";
+import { allowDevAlerts } from "../../config";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
 
 export function devAlert(message?: any) {
-  if (true && dev == true) alert(message);
+  //@ts-ignore
+  if (allowDevAlerts == true && dev == true) alert(message);
 }
 
 // dev console
@@ -97,3 +99,19 @@ export async function wrapWithToast(callback: Function, data: ToastData) {
     });
   }
 }
+
+// https://chat.openai.com/c/1dadbf23-e1e2-4fbf-b040-654f8a89c14b
+export async function generateSHA256Hash(input: string): Promise<string> {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(input);
+  const hashBuffer = await crypto.subtle.digest("SHA-256", data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer)); // convert buffer to byte array
+  const hashHex = hashArray
+    .map((b) => b.toString(16).padStart(2, "0"))
+    .join(""); // convert bytes to hex string
+  return hashHex;
+}
+
+// // Example usage:
+// const input = "example input";
+// generateSHA256Hash(input).then(hash => console.log(hash));

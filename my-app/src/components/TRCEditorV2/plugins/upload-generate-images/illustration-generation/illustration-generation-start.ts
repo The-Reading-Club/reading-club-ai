@@ -17,13 +17,14 @@ import { unknown } from "zod";
 import {
   IllustrationGenerationBody,
   handleIllustrationGeneration,
-  handleIllustrationPrompt,
+  handleIllustrationPrompt as handleIllustrationPrompt,
 } from "./illustration-generation-handle";
 
 import { findPlaceholder, uploadKey } from "..";
 import { handleCharacterCreation } from "./character-creation-handle";
 import { handleCharacterChoice } from "./character-choice-handle";
 import { handleCharacterIdentification } from "./character-identification-handle";
+import { Editor } from "@tiptap/react";
 
 export function startIllustrationGeneration(
   body: IllustrationGenerationBody,
@@ -223,7 +224,12 @@ export function startIllustrationPromptGeneration(
 
   view.dispatch(tr);
 
-  handleIllustrationPrompt(body).then(({ storedImageUrl, revisedPrompt }) => {
+  // handle arrays from now on, I guess.
+  // Actually, keep this like this, use another function. I like what we had achieve here,
+  // but we'll do things differently for now
+  handleIllustrationPrompt(body).then((imagesUrlsAndPromps) => {
+    const { storedImageUrl, revisedPrompt } = imagesUrlsAndPromps[0];
+
     const { schema } = view.state;
 
     let pos = findPlaceholder(view.state, id);
@@ -249,4 +255,28 @@ export function startIllustrationPromptGeneration(
 
     view.dispatch(transaction);
   });
+}
+
+// https://chat.openai.com
+export function insertImageSrcIntoTiptapEditor(
+  src: string,
+  alt: string,
+  editorInstance: Editor
+) {
+  const { view } = editorInstance;
+  const { schema } = view.state;
+  const { selection } = view.state;
+  const position = selection.$head
+    ? selection.$head.pos
+    : selection.$anchor.pos;
+
+  const node = schema.nodes.image.create({
+    src,
+    alt,
+  });
+
+  // const transaction = view.state.tr.replaceSelectionWith(node);
+  const transaction = view.state.tr.insert(position, node);
+
+  view.dispatch(transaction);
 }

@@ -64,6 +64,7 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
             // .filter((k) =>
             [
               "appearance",
+              "species",
               "gender",
               "eyeColor",
               "hairColor",
