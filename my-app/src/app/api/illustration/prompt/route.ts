@@ -23,7 +23,8 @@ export async function POST(request: Request) {
     storedImageUrls,
     // imageBlobStored,
     dalleImageUrls,
-  } = await callDalleAPI(prompt, reqJSON);
+  } = await callDalleAPI(prompt, reqJSON, 1);
+  // Cannot do 10 yet :( https://help.openai.com/en/articles/8555480-dall-e-3-api
 
   console.log({
     image,

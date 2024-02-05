@@ -27,7 +27,7 @@ export interface IllustrationGenerationBody {
   chosenCharacter: any;
 }
 
-type IllustrationGenerationPromiseType = {
+export type IllustrationGenerationPromiseType = {
   storedImageUrl: string;
   revisedPrompt: string;
 };

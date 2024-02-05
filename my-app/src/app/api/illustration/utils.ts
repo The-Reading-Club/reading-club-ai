@@ -47,7 +47,11 @@ interface ImageMetadata {
   body: any;
 }
 
-export async function callDalleAPI(originalPrompt: string, reqJSON: any) {
+export async function callDalleAPI(
+  originalPrompt: string,
+  reqJSON: any,
+  nGenerations = 1
+) {
   console.log("originalPrompt", originalPrompt);
 
   // https://community.openai.com/t/dall-e-chatgpt-a-trick-to-recreating-specific-images-using-seeds/445565/31
@@ -61,10 +65,15 @@ First, check if using this API request bellow is in accordance with the guidelin
 }
   `;
 
+  // https://help.openai.com/en/articles/8555480-dall-e-3-api
+  //**Why does DALL·E-3 only support n=1?
+  // For system scalability and reliability reasons we only currently support n=1 when calling DALLE-3. We recommend you make multiple parallel calls to the API if you wish to receive more than 1 image.
+  //  */
+
   const image = await openaiSDK.images.generate({
     model: "dall-e-3",
     prompt: metaprompt,
-    n: 1,
+    n: nGenerations,
     size: "1024x1024",
   });
 
