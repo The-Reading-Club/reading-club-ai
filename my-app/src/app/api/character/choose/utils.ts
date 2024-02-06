@@ -89,7 +89,11 @@ function getMessagesParameter(
       })}
 
 Please return an array with the chosen character for the scene illustration in the following JSON format: (${JSON.stringify(
-        { chosenCharacter: [{ name: "", scene: "", background: "" }] }
+        {
+          chosenCharacter: [
+            { name: "", scene: "", background: "", cameraShotType: "" },
+          ],
+        }
       )}), if any. Otherwise, return an empty array.
 
 Here's the scene text: ${sceneText}
