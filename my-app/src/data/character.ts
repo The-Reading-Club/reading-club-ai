@@ -20,10 +20,14 @@ export type CharacterAttributes = {
 
   height: string;
   hairColor: string;
+  hairLength: string;
+  hairType: string;
   eyeColor: string;
   distinguishingMarks: string;
+  outfit: string;
   build: string;
   skinTone: string;
+  placeOfOrigin: string;
   // fashionStyle: string;
   // posture: string;
   // voice: string;
@@ -55,9 +59,13 @@ export const CHARACTER_ATTRIBUTES: CharacterAttributes = {
   //   exterior
   height: "",
   hairColor: "",
+  hairLength: "",
+  hairType: "",
   eyeColor: "",
   distinguishingMarks: "",
+  outfit: "",
   build: "",
+  placeOfOrigin: "",
   skinTone: "",
   // fashionStyle: "",
   // posture: "",

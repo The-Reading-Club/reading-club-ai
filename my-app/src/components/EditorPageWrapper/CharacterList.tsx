@@ -63,16 +63,20 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
             // Object.keys(definition)
             // .filter((k) =>
             [
-              "appearance",
-              "species",
               "gender",
-              "eyeColor",
+              "age",
+              // "appearance",
+              "species",
+              "placeOfOrigin",
+              "hairLength",
+              "hairType",
               "hairColor",
-              "distinguishingMarks",
-              "height",
-              "skinTone",
-              "build",
-              "physicalCondition",
+              "eyeColor",
+              // "distinguishingMarks",
+              // "height",
+              // "skinTone",
+              // "build",
+              // "physicalCondition",
             ]
               //   .includes(k)
               // )

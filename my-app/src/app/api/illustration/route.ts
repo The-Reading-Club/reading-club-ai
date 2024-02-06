@@ -260,7 +260,7 @@ export async function POST(request: Request) {
 
   // Create a highly detailed image of a ${gender} character named ${name}. ${name} has the following characteristics: age ${age}, from ${country}, with ${hair} hair, and ${eyes} eyes. ${name} has an ${figure} figure, with a height of around ${height}. ${name}'s facial features include ${features}. ${name}'s skin tone is ${skin}, and ${name} has a ${beautyMark}. ${name}'s wearing ${clothes}. ${name} is in ${location}. ${name} is in a ${setting}, ${pose}.
 
-  const c = chosenCharacterAttributes!;
+  const c: CharacterAttributes = chosenCharacterAttributes!;
 
   //   const consistentPrompt = `
   // Create a highly detailed children's book illustration of a ${c.gender} character named ${c.name}: ${c.appearance}. ${c.name} has the following characteristics: age ${c.age}, from ${c.country}, with ${c.hair} hair, and ${c.eyes} eyes. ${c.name} has an ${c.figure} figure, with a height of around ${c.height}. ${c.name}'s facial features include ${c.features}. ${c.name}'s skin tone is ${c.skin}, and ${c.name} has a ${c.beautyMark}. ${c.name}'s wearing ${c.clothes}. ${c.name} is in ${c.location}. ${c.name} is in a ${c.setting}, ${c.pose}.
@@ -289,6 +289,75 @@ export async function POST(request: Request) {
   console.log(consistentPrompt);
 
   const consistentPrompt3 = `In a vibrant, storybook-style illustration, the central character is ${c.name}, a ${c.species}: ${c.appearance}. ${c.name} has ${c.hairColor} hair with large, ${c.eyeColor} eyes, and ${c.distinguishingMarks}. The scene shows ${c.name} ${chosenCharacter.scene}, with a ${chosenCharacter.background}. The setting evokes an air of adventure and wonder, typical of a children's storybook.`;
+
+  /*
+    Let's proceed with an example to create a character sheet. I'll outline the steps I'd typically follow based on the given task:
+
+Gender of the Character: Let's choose "female" for our example.
+Name of the Character: We'll name her "Evelyn."
+Character Details: Evelyn is a 25-year-old adventurer from a mystical land. She has long, wavy red hair and green eyes. Her outfit consists of a leather tunic, leggings, and boots, equipped with a bow and quiver.
+Style or Theme for the Image: For this example, let's go with "2D flat illustration."
+With these details, we would then proceed to generate the first image in the series based on these specifications, ensuring a pastel blue background and maintaining a consistent look across all variations.
+
+However, since we're illustrating the process with an example, let's specify a variation type for Evelyn's character sheet. How about we choose "expression" for the variations? This means we'll create different images showing Evelyn with various expressions like happy, thoughtful, determined, and surprised.
+
+Let's imagine we've generated the first image based on the initial prompt. Now, I would typically ask for the first specific expression or variation you'd like to see for the next image.
+
+Remember, this is just a walkthrough of how the process would unfold based on the task guidelines. If you were actually requesting this service, we would follow through with generating images based on your specific needs and variations.
+
+GPT
+Consistent Character GPT👉🏼 Fast & High Quality⚡️
+For the given example with Evelyn, here's how the detailed prompt for the first image generation could be structured:
+
+"Highly detailed Image in the style of 2D flat illustration of a female character named Evelyn. Evelyn is a 25-year-old adventurer from a mystical land, with long, wavy red hair and green eyes. Her outfit consists of a leather tunic, leggings, and boots, equipped with a bow and quiver. Evelyn has a slight smile. Create a front view medium shot image of Evelyn with a pastel blue background."
+
+This prompt would then be used to generate the first image in the series, ensuring that Evelyn's character is introduced with a specific set of visual traits that align with the user's specifications. For subsequent images, variations would be introduced based on the user's choice, such as different expressions, actions, or poses, while using the same seed for consistency in Evelyn's appearance across all images.
+    */
+  const consistentPrompt4 = `Highly detailed image in the style of vibrant, storybook-style illustration of a ${c.gender} character named ${c.name}. ${c.name} is a ${c.age}-year-old ${c.species} from ${c.placeOfOrigin}, with ${c.hairLength}, ${c.hairType}, ${c.hairColor} hair, large ${c.eyeColor} eyes, and ${c.distinguishingMarks}. Create a front view medium shot image of ${chosenCharacter.scene}, with a ${chosenCharacter.background}. The setting evokes an air of adventure and wonder, typical of a children's storybook.`;
+
+  const consistentPrompt5 = `Highly detailed image in the style of 2D flat illustration of a ${c.gender.toLocaleLowerCase()} character named ${
+    c.name
+  }. ${c.name} is a ${c.age}-year-old ${c.species} from ${
+    c.placeOfOrigin
+  }, with ${c.hairLength}, ${c.hairType}, ${c.hairColor} hair, and large ${
+    c.eyeColor
+  } eyes. ${c.name}'s outfit consists of ${
+    c.distinguishingMarks
+  }. Create a front view medium shot image of ${
+    chosenCharacter.scene
+  }, with a ${chosenCharacter.background}.`;
+
+  const consistentPrompt6 = `Highly detailed image in the style of 2D flat illustration of a ${c.gender.toLocaleLowerCase()} character named ${
+    c.name
+  }. ${c.name} is a ${c.age}-year-old ${c.species} from ${
+    c.placeOfOrigin
+  }, with ${c.hairLength}, ${c.hairType}, ${c.hairColor} hair, and large ${
+    c.eyeColor
+  } eyes. ${c.name}'s outfit consists of ${
+    c.outfit
+  }. Create a front view medium shot image of ${
+    chosenCharacter.scene
+  }, with a ${chosenCharacter.background}.`;
+
+  const consistentPrompt7 = `Highly detailed image in the style of 2D flat illustration of a ${c.gender.toLocaleLowerCase()} character named ${
+    c.name
+  }. ${c.name} is a ${c.age}-year-old ${c.species} from ${
+    c.placeOfOrigin
+  }, with ${c.hairLength}, ${c.hairType}, ${c.hairColor} hair, and large ${
+    c.eyeColor
+  } eyes. ${c.name}'s outfit consists of ${c.outfit}. Create an image of ${
+    chosenCharacter.scene
+  }, with a ${chosenCharacter.background}.`;
+
+  const consistentPrompt8 = `Highly detailed image in the style of 2D flat illustration of a ${c.gender.toLocaleLowerCase()} character named ${
+    c.name
+  }. ${c.name} is a ${c.age}-year-old ${c.species} from ${
+    c.placeOfOrigin
+  }, with ${c.hairLength}, ${c.hairType}, ${c.hairColor} hair, and large ${
+    c.eyeColor
+  } eyes. ${c.name}'s outfit consists of ${c.outfit}. Create a ${
+    chosenCharacter.cameraShotType
+  } image of ${chosenCharacter.scene}, with a ${chosenCharacter.background}.`;
 
   //   const response = await openai.createImage({
   //     prompt: "This is a photo of a dog named Bolt. The photo is very blurry. ",
@@ -363,7 +432,7 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
     storedImageUrls,
     // imageBlobStored,
     dalleImageUrls,
-  } = await callDalleAPI(consistentPrompt3, reqJSON);
+  } = await callDalleAPI(consistentPrompt8, reqJSON);
 
   // console.log("response", image.data);
   console.log("response", image);

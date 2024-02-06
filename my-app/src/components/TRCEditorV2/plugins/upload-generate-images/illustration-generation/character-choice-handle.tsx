@@ -48,6 +48,7 @@ export async function handleCharacterChoice(body: CharacterChoiceBody) {
             return <h1 className="text-xl font-bold">{chunk.value}</h1>;
           if (chunk.key === "scene") return <p>{chunk.value}</p>;
           if (chunk.key === "background") return <p>{chunk.value}</p>;
+          if (chunk.key === "cameraShotType") return <p>{chunk.value}</p>;
           else return <></>;
         });
 
