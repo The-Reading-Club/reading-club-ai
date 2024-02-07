@@ -52,7 +52,7 @@ const EditorPageWrapper: React.FC<EditorPageWrapperProps> = ({
 
   return (
     <div //className="h-[100%] overflow-auto"
-      className="bg-secondary px-3 lg:pb-0 pb-8"
+      className="px-3 lg:pb-0 pb-8"
       style={
         {
           // height: "100vh",
