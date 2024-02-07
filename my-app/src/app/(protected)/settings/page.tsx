@@ -45,26 +45,28 @@ const SettingsPage = async () => {
         <SubscriptionButton isPlus={isPro} />
       </div>
       {/* LOG OUT BUTTON */}
-      <form
-        action={async () => {
-          "use server"; // dark magic lol
+      {false && (
+        <form
+          action={async () => {
+            "use server"; // dark magic lol
 
-          await signOut();
-        }}
-      >
-        <Button
-          type="submit"
-          // onClick={async () => {
-          //   "use server"; // dark magic lol
-          //   await signOut();
-          // }}
-          // className="bg-primary text-white rounded-md py-2 px-4"
-          // className=""
-          variant={"outline"}
+            await signOut();
+          }}
         >
-          Sign out
-        </Button>{" "}
-      </form>
+          <Button
+            type="submit"
+            // onClick={async () => {
+            //   "use server"; // dark magic lol
+            //   await signOut();
+            // }}
+            // className="bg-primary text-white rounded-md py-2 px-4"
+            // className=""
+            variant={"outline"}
+          >
+            Sign out
+          </Button>
+        </form>
+      )}
     </div>
   );
 };
