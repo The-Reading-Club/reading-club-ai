@@ -67,6 +67,9 @@ body {
     rgb(var(--background-start-rgb));
 
   background-image: url("/BG-9.jpg");
+  /* Maybe I'd like repeat with a proper img, but it works fine I feel */
+  /* background-size: cover; */
+  /* background-repeat: repeat; */
 }
 
 /* Style links */
