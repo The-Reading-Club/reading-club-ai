@@ -8,17 +8,17 @@ interface LogoProps {
   height?: number;
 }
 
-const Logo: React.FC<LogoProps> = ({ width = 300, height = 300 }) => {
+const Logo: React.FC<LogoProps> = ({ width = 250, height = 250 }) => {
   const router = useRouter();
 
   return (
     <Image
       onClick={() => router.push("/")}
       alt="Logo"
-      className="block cursor-pointer"
+      className="block cursor-pointer p-2"
       height={width}
       width={height}
-      src="/reading-club-ai-white-logo-new.png"
+      src="/reading-club-ai-logo-horizontal-white-v2.png"
     ></Image>
   );
 };
