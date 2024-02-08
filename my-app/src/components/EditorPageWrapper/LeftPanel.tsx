@@ -4,6 +4,7 @@ import { StoryData } from "@/stores/store";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BasicCharacterAttributes } from "@/app/api/character/identify/utils";
+import { CharacterAttributes } from "@/data/character";
 
 interface EditorPageWrapperProps {
   storyData: StoryData;
@@ -22,6 +23,12 @@ const LeftPanel: React.FC<EditorPageWrapperProps> = ({
     setStoryData({ ...storyData, characters, characterDefinitions });
   };
 
+  const setCharacterDefinitions = (
+    characterDefinitions: CharacterAttributes[]
+  ) => {
+    setStoryData({ ...storyData, characterDefinitions });
+  };
+
   return (
     <div
       className="basis-1/4 lg:flex hidden flex-col justify-center pt-8 lg:p-10 text-center"
@@ -36,6 +43,7 @@ const LeftPanel: React.FC<EditorPageWrapperProps> = ({
           characters={storyData?.characters}
           characterDefinitions={storyData?.characterDefinitions}
           setCharacterList={setCharacterList}
+          setCharacterDefinitions={setCharacterDefinitions}
         />
       </div>
       {false && (

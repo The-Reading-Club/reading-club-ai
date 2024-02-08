@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 
 import { Textarea } from "@/components/ui/textarea";
+import { on } from "events";
+import { devAlert } from "@/lib/utils";
 
 interface EditableTextProps {
   textState: string;
@@ -8,6 +10,8 @@ interface EditableTextProps {
   submitTextData: Function;
   editableElement?: string | React.FunctionComponent<any>;
   nonEditableElement?: string | React.FunctionComponent<any>;
+  onEditClickCallback?: () => void;
+  placeholder?: string;
 }
 
 const EditableText: React.FC<EditableTextProps> = ({
@@ -16,6 +20,8 @@ const EditableText: React.FC<EditableTextProps> = ({
   submitTextData,
   editableElement = Textarea, //"input",
   nonEditableElement = "div",
+  onEditClickCallback,
+  placeholder = "",
 }) => {
   const [isEditable, setIsEditable] = useState(false);
 
@@ -42,23 +48,36 @@ const EditableText: React.FC<EditableTextProps> = ({
 
               setTextState((e.target as HTMLInputElement).value);
             },
+            onClick: (e: Event) => {
+              // devAlert("EditableText onClick");
+              e.stopPropagation();
+            },
             onKeyDown: handleKeyDown,
             autoFocus: true,
-            onBlur: setEditableFalseAndSubmit,
+            onBlur: (e: Event) => {
+              setEditableFalseAndSubmit();
+              // e.stopPropagation();
+            },
             // style: {
             //   width: `${textState.toString().length}ch`,
             // },
             rows: 8,
           })
         : React.createElement(
-            "div",
+            nonEditableElement,
             {
-              onClick: () => setIsEditable(true),
+              onClick: (e: Event) => {
+                setIsEditable(true);
+                // e.preventDefault();
+                e.stopPropagation();
+
+                onEditClickCallback && onEditClickCallback();
+              },
               // onKeyDown: handleKeyDown,
               // tabIndex: 0,
               // value: textState,
             },
-            textState // children
+            textState == "" ? placeholder : textState // children
           )}
     </div>
   );
