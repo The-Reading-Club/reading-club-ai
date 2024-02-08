@@ -1,11 +1,19 @@
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import "./CharacterList.css"; // Assume you have some CSS for styling
-import { capitalizeFirstLetter, devAlert } from "@/lib/utils";
+import {
+  capitalizeFirstLetter,
+  countStringSpaces,
+  devAlert,
+} from "@/lib/utils";
 import useMounted from "@/lib/hooks/useMounted";
 import { CharacterAttributes } from "@/data/character";
 import { useTRCEditorStore } from "@/stores/store";
 import { BasicCharacterAttributes } from "@/app/api/character/identify/utils";
 import { IoMdClose } from "react-icons/io";
+import EditableText from "../input/EditableText/EditableText";
+import { Input } from "../ui/input";
+import { set } from "zod";
+import { useDebouncedCallback } from "use-debounce";
 
 // Define the types for your character properties
 type CharacterCardProperties = {
@@ -20,6 +28,8 @@ type CharacterCardProps = {
   definition: CharacterAttributes;
   onClick: () => void; // Function to handle the click event
   onDelete: () => void; // New prop for delete handler
+  setIsEditingCharacter: (isEditing: boolean) => void;
+  onCharacterChange: (character: CharacterAttributes) => void;
 };
 
 // CharacterCard Component
@@ -28,13 +38,26 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
   definition,
   onClick,
   onDelete,
+  setIsEditingCharacter,
+  onCharacterChange,
 }) => {
+  const [characterDefinitionState, setCharacterDefinitionState] =
+    useState<CharacterAttributes>(definition);
+
   //   if (!character) return <></>;
 
   // Prevent click event from bubbling up
   const handleDeleteClick = (e: React.MouseEvent) => {
     e.stopPropagation();
     onDelete();
+  };
+
+  // const handleSubmitTextData = useDebouncedCallback(() => {
+  //   // setIsEditingCharacter(false);
+  // }, 1000);
+  const handleSubmitTextData = () => {
+    setIsEditingCharacter(false);
+    onCharacterChange(characterDefinitionState);
   };
 
   return (
@@ -67,22 +90,25 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
               "age",
               // "appearance",
               "species",
-              "placeOfOrigin",
+              "eyeColor",
               "hairLength",
               "hairType",
               "hairColor",
-              "eyeColor",
+              "skinTone",
+              // "facialHair",
+              "outfit",
+              "placeOfOrigin",
               // "distinguishingMarks",
               // "height",
-              // "skinTone",
               // "build",
               // "physicalCondition",
             ]
               //   .includes(k)
               // )
               .map((key, index) => {
-                const value = definition[key as keyof CharacterAttributes];
-                if (value) {
+                const value =
+                  characterDefinitionState[key as keyof CharacterAttributes];
+                if (value !== undefined) {
                   return (
                     <div
                       className="mb-2"
@@ -92,7 +118,39 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                         <span className="font-bold">
                           {capitalizeFirstLetter(key)}
                         </span>
-                        {(": " + value + ".").replaceAll("..", ".")}
+                        {/* {(": " + value + ".").replaceAll("..", ".")} */}
+                        {`: `}
+                        {
+                          <div
+                            // className="p-1"
+                            style={{ display: "inline-block" }}
+                            // onClick={(e) => {
+                            //   // e.stopPropagation();
+                            //   devAlert("Editing character field");
+                            // }}
+                          >
+                            <EditableText
+                              textState={value}
+                              setTextState={(newValue) => {
+                                setCharacterDefinitionState({
+                                  ...characterDefinitionState,
+                                  [key as keyof CharacterAttributes]: newValue,
+                                });
+                              }}
+                              submitTextData={handleSubmitTextData}
+                              // editableElement={Input}
+                              // nonEditableElement={React.Fragment}
+                              onEditClickCallback={() => {
+                                setIsEditingCharacter(true);
+                              }}
+                              // https://chat.openai.com/c/d826fdad-e3eb-4f16-a87e-24da69d972a9
+                              {...(countStringSpaces(value) < 2 && {
+                                editableElement: Input,
+                              })}
+                              placeholder="N/A"
+                            />
+                          </div>
+                        }
                       </p>
                     </div>
                   );
@@ -111,6 +169,7 @@ type CharacterListProps = {
   characters: BasicCharacterAttributes[];
   characterDefinitions: CharacterAttributes[];
   setCharacterList: (characters: BasicCharacterAttributes[]) => void;
+  setCharacterDefinitions: (definitions: CharacterAttributes[]) => void;
 };
 
 // CharacterList Component
@@ -118,12 +177,32 @@ const CharacterList: React.FC<CharacterListProps> = ({
   characters,
   characterDefinitions,
   setCharacterList,
+  setCharacterDefinitions,
 }) => {
   const [expandedCard, setExpandedCard] = useState<string | null>(null);
+  const [isEditingCharacter, setIsEditingCharacter] = useState<boolean>(false);
 
   const mounted = useMounted();
 
+  const handleCharacterChange = (characterDef: CharacterAttributes) => {
+    const newDefs = characterDefinitions.map((c) => {
+      if (c.name === characterDef.name) {
+        return characterDef;
+      }
+      return c;
+    });
+    // Save character to zustand state
+    // setCharacterList(newCharacters);
+    setCharacterDefinitions(newDefs);
+  };
+
   const handleCardClick = (characterName: string) => {
+    if (isEditingCharacter == true) {
+      setIsEditingCharacter(false);
+      return;
+      // worst case, it just closes it, and doesnt open another editable box
+    }
+
     setExpandedCard(expandedCard === characterName ? null : characterName);
   };
 
@@ -145,6 +224,7 @@ const CharacterList: React.FC<CharacterListProps> = ({
 
   return (
     <div className="character-list">
+      <h1>{`isEditingCharacter: ${isEditingCharacter}`}</h1>
       {characters.map((character, index) => (
         <CharacterCard
           key={`character-list-card-${index}-${character.name}`}
@@ -157,6 +237,8 @@ const CharacterList: React.FC<CharacterListProps> = ({
           }
           onClick={() => handleCardClick(character.name)}
           onDelete={() => handleDeleteCharacter(character.name)} // Pass the delete handler
+          setIsEditingCharacter={setIsEditingCharacter}
+          onCharacterChange={handleCharacterChange}
         />
       ))}
     </div>

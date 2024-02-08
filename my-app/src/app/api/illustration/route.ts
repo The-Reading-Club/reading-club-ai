@@ -279,14 +279,14 @@ export async function POST(request: Request) {
   //     "."
   //   );
 
-  const consistentPrompt = `Create a children's book illustration of ${c.name} (${c.gender}): ${c.appearance}. ${c.name} looks ${c.age} of age. ${c.name} has ${c.eyeColor} eyes. ${c.name} is ${c.height} in height, has a ${c.build} build, and ${c.skinTone} skin. Notable features include ${c.distinguishingMarks}. The character's facial hair is described as ${c.facialHair} and ${c.name} is in ${c.physicalCondition} physical condition. In the background, ${chosenCharacter.background}. In this scene, ${c.name} is ${chosenCharacter.scene}.
-  `;
+  // const consistentPrompt = `Create a children's book illustration of ${c.name} (${c.gender}): ${c.appearance}. ${c.name} looks ${c.age} of age. ${c.name} has ${c.eyeColor} eyes. ${c.name} is ${c.height} in height, has a ${c.build} build, and ${c.skinTone} skin. Notable features include ${c.distinguishingMarks}. The character's facial hair is described as ${c.facialHair} and ${c.name} is in ${c.physicalCondition} physical condition. In the background, ${chosenCharacter.background}. In this scene, ${c.name} is ${chosenCharacter.scene}.
+  // `;
 
   console.log("Undefined?", c);
 
   const consistentPrompt2 = `Imagine colorful drawing. In the center, ${c.name}, ${chosenCharacterDescription}: ${c.appearance}. In this scene, ${chosenCharacter.scene}. The background is ${chosenCharacter.background}. The entire scene should evoke a sense of adventure suitable for a children's storybook.`;
   console.log("\n****** CONSISTENT PROMPT ****");
-  console.log(consistentPrompt);
+  // console.log(consistentPrompt);
 
   const consistentPrompt3 = `In a vibrant, storybook-style illustration, the central character is ${c.name}, a ${c.species}: ${c.appearance}. ${c.name} has ${c.hairColor} hair with large, ${c.eyeColor} eyes, and ${c.distinguishingMarks}. The scene shows ${c.name} ${chosenCharacter.scene}, with a ${chosenCharacter.background}. The setting evokes an air of adventure and wonder, typical of a children's storybook.`;
 
@@ -358,6 +358,18 @@ This prompt would then be used to generate the first image in the series, ensuri
   } eyes. ${c.name}'s outfit consists of ${c.outfit}. Create a ${
     chosenCharacter.cameraShotType
   } image of ${chosenCharacter.scene}, with a ${chosenCharacter.background}.`;
+
+  const consistentPrompt9 = `Highly detailed image in the style of 2D flat illustration of a ${c.gender.toLocaleLowerCase()} character named ${
+    c.name
+  }. ${c.name} is a ${c.age}-year-old ${c.species} from ${
+    c.placeOfOrigin
+  }, with ${c.hairLength}, ${c.hairType}, ${c.hairColor} hair, large ${
+    c.eyeColor
+  } eyes, and ${c.skinTone} skin color. ${c.name}'s outfit consists of ${
+    c.outfit
+  }. Create a ${chosenCharacter.cameraShotType} image of ${
+    chosenCharacter.scene
+  }, with a ${chosenCharacter.background}.`;
 
   //   const response = await openai.createImage({
   //     prompt: "This is a photo of a dog named Bolt. The photo is very blurry. ",
@@ -432,7 +444,7 @@ Create a highly detailed image of a ${gender} character named ${name}. ${name} h
     storedImageUrls,
     // imageBlobStored,
     dalleImageUrls,
-  } = await callDalleAPI(consistentPrompt8, reqJSON);
+  } = await callDalleAPI(consistentPrompt9, reqJSON);
 
   // console.log("response", image.data);
   console.log("response", image);

@@ -115,3 +115,10 @@ export async function generateSHA256Hash(input: string): Promise<string> {
 // // Example usage:
 // const input = "example input";
 // generateSHA256Hash(input).then(hash => console.log(hash));
+
+export function countStringSpaces(str: string): number {
+  // Use a regular expression to match spaces in the string
+  const matches = str.match(/ /g);
+  // If matches is null (i.e., no spaces found), return 0; otherwise, return the length of the matches array
+  return matches ? matches.length : 0;
+}

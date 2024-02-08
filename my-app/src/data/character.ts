@@ -32,8 +32,8 @@ export type CharacterAttributes = {
   // posture: string;
   // voice: string;
   facialHair: string;
-  physicalCondition: string;
-  sceneDescription: string;
+  // physicalCondition: string;
+  // sceneDescription: string;
 };
 
 export const CHARACTER_ATTRIBUTES: CharacterAttributes = {
@@ -67,12 +67,12 @@ export const CHARACTER_ATTRIBUTES: CharacterAttributes = {
   build: "",
   placeOfOrigin: "",
   skinTone: "",
+  facialHair: "",
   // fashionStyle: "",
   // posture: "",
   // voice: "",
-  facialHair: "",
-  physicalCondition: "",
-  sceneDescription: "",
+  // physicalCondition: "",
+  // sceneDescription: "",
 };
 // Sample Data
 //
