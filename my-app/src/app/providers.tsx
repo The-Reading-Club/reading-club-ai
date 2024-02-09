@@ -1,6 +1,5 @@
 "use client";
 
-import ConvexProvider from "@/components/convex-customizations/convex-provider";
 import IllustrationModalProvider from "@/components/modals/IllustrationModal/IllustrationModalProvider";
 import ProModalProvider from "@/components/modals/ProModal/ProModalProvider";
 import { ReactNode } from "react";
@@ -19,7 +18,7 @@ export default function Providers({ children }: { children: ReactNode }) {
       <ToasterProvider />
       <ProModalProvider />
       <IllustrationModalProvider />
-      <ConvexProvider>{children}</ConvexProvider>
+      {children}
     </>
   );
 }
