@@ -55,6 +55,44 @@ export const {
 
       // return true;
     },
+
+    async jwt({ token, account }) {
+      // In this case, account is the provider account
+      // https://github.com/webdevcody/next-auth-convex/blob/main/src/pages/api/auth/%5B...nextauth%5D.ts
+      if (account?.id_token) {
+        token.id_token = account.id_token;
+      }
+
+      if (account?.refresh_token) {
+        token.refresh_token = account.refresh_token;
+      }
+
+      // Include account type in token
+      if (!token.email) return token;
+
+      const existingUser = await getUserByEmail(token.email);
+
+      if (!existingUser) return token;
+
+      token.accountType = existingUser.account_type;
+
+      return token;
+
+      // token.customField = "customValue";
+      // console.log({ token });
+      // return token;
+    },
+    // jwt: ({ token, account }) => {
+    //   if (account?.id_token) {
+    //     token.id_token = account.id_token;
+    //   }
+
+    //   if (account?.refresh_token) {
+    //     token.refresh_token = account.refresh_token;
+    //   }
+
+    //   return token;
+    // },
     async session(sessionParams) {
       let token_;
       if ("token" in sessionParams) token_ = sessionParams.token;
@@ -105,21 +143,6 @@ export const {
       //   console.log("Token not available, user object is present instead.");
       // }
       // return sessionParams.session;
-    },
-    async jwt({ token }) {
-      if (!token.email) return token;
-
-      const existingAccount = await getUserByEmail(token.email);
-
-      if (!existingAccount) return token;
-
-      token.accountType = existingAccount.account_type;
-
-      return token;
-
-      // token.customField = "customValue";
-      // console.log({ token });
-      // return token;
     },
   },
   adapter: PrismaAdapter(db),
