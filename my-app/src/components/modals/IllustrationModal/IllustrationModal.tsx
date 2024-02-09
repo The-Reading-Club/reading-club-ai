@@ -111,7 +111,7 @@ const IllustrationModal = () => {
     // });
 
     // Assuming promptText is the text you want to use for all illustrations
-    const nGenerations = 7; // Number of illustrations you want to generate
+    const nGenerations = 4; // Number of illustrations you want to generate
 
     // Create an array of promises by calling handleIllustrationPrompt multiple times in parallel
     const promises = Array.from({ length: nGenerations }, () =>
