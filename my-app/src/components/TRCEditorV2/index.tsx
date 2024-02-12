@@ -82,6 +82,7 @@ interface TRCEditorV2Props {
   editorContainerClass?: string;
   editorKey: string;
   enableLocalStorage?: boolean;
+  onEditorChange?: (content: JSONContent) => void;
 }
 
 const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
@@ -91,6 +92,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   editorContainerClass = `${bgClass} ${fontClass} text-[#7B3F00] max-w-screen-sm overflow-scroll w-full`,
   editorKey,
   enableLocalStorage = false,
+  onEditorChange,
 }) => {
   // REACT REFS
   const editorRef = useRef<Editor | null>(null);
@@ -172,6 +174,10 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
             tiptapEditorContent: editorJSON,
           },
         });
+      }
+
+      if (onEditorChange) {
+        onEditorChange(editorJSON);
       }
     },
     750

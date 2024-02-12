@@ -1,1 +1,1 @@
-export const allowDevAlerts = false;
+export const allowDevAlerts = true;

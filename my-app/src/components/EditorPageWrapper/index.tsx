@@ -16,10 +16,18 @@ import MyDocument from "../MyDocument";
 interface EditorPageWrapperProps {
   editorKey: string;
   isPlus: boolean;
+
+  // new props
+  // onChange?: (content: string) => void;
+  // initialContent: string;
 }
 const EditorPageWrapper: React.FC<EditorPageWrapperProps> = ({
   editorKey,
   isPlus,
+
+  // new props
+  // onChange,
+  // initialContent,
 }) => {
   //   const { storiesData } = useTRCEditorStore();
   //   const [storyData, setStoryData] = React.useState<StoryData>(

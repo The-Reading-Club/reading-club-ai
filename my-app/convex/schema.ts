@@ -5,6 +5,8 @@ import { v } from "convex/values";
 export default defineSchema({
   documents: defineTable({
     title: v.string(),
+    // make author required later
+    author: v.optional(v.string()),
     userId: v.string(),
     isArchived: v.boolean(),
     content: v.optional(v.string()),
