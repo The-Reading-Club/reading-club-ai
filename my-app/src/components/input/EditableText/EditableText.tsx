@@ -12,6 +12,7 @@ interface EditableTextProps {
   nonEditableElement?: string | React.FunctionComponent<any>;
   onEditClickCallback?: () => void;
   placeholder?: string;
+  nonEditableElementClassName?: string;
 }
 
 const EditableText: React.FC<EditableTextProps> = ({
@@ -22,6 +23,7 @@ const EditableText: React.FC<EditableTextProps> = ({
   nonEditableElement = "div",
   onEditClickCallback,
   placeholder = "",
+  nonEditableElementClassName = "",
 }) => {
   const [isEditable, setIsEditable] = useState(false);
 
@@ -76,6 +78,7 @@ const EditableText: React.FC<EditableTextProps> = ({
               // onKeyDown: handleKeyDown,
               // tabIndex: 0,
               // value: textState,
+              className: nonEditableElementClassName,
             },
             textState == "" ? placeholder : textState // children
           )}

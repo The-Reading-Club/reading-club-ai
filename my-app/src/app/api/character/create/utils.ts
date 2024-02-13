@@ -55,10 +55,8 @@ function getMessagesParameter(basicCharacterContext: BasicCharacterAttributes) {
     },
     {
       role: "user",
-      content: `Based on this initial idea: ${JSON.stringify(
-        basicCharacterContext
-      )}
-Create a new character with the following unique attributes (keep the name the same):
+      content: `Based on this idea: ${JSON.stringify(basicCharacterContext)}
+Extend the character with the following unique attributes (use the same "name" attribute as the initial idea):,
 - Name
 - Age
 - Appearance

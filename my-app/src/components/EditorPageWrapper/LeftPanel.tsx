@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import CharacterList from "./CharacterList";
 import { StoryData } from "@/stores/store";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 import { BasicCharacterAttributes } from "@/app/api/character/identify/utils";
 import { CharacterAttributes } from "@/data/character";
+import { devAlert } from "@/lib/utils";
+import { useMutation } from "convex/react";
+import { api } from "../../../convex/_generated/api";
+import { Id } from "../../../convex/_generated/dataModel";
 
-interface EditorPageWrapperProps {
+interface CharactersPanelProps {
   storyData: StoryData;
   setStoryData: (data: StoryData) => void;
+  documentId?: Id<"documents">;
 }
-const LeftPanel: React.FC<EditorPageWrapperProps> = ({
+const CharactersPanel: React.FC<CharactersPanelProps> = ({
   storyData,
   setStoryData,
+  documentId,
 }) => {
   const setCharacterList = (characters: BasicCharacterAttributes[]) => {
     const characterNames = characters.map((character) => character.name);
@@ -38,6 +44,8 @@ const LeftPanel: React.FC<EditorPageWrapperProps> = ({
   <p>{JSON.stringify(useTRCEditorStore.getState().storiesData)}</p>
 </div> */}
       <div>
+        {/* <h1 className="text-2xl font text-darkFont ">Characters</h1> */}
+        {/* <p>{JSON.stringify(storyData)}</p> */}
         {/* <p>{JSON.stringify(storyData.characters)}</p> */}
         <CharacterList
           characters={storyData?.characters}
@@ -68,4 +76,4 @@ const LeftPanel: React.FC<EditorPageWrapperProps> = ({
   );
 };
 
-export default LeftPanel;
+export default CharactersPanel;

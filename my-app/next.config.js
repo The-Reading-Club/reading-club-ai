@@ -20,6 +20,12 @@ const nextConfig = {
         port: "",
         pathname: "/**",
       },
+      {
+        protocol: "https",
+        hostname: "www.readingclub.ai",
+        port: "",
+        pathname: "/**",
+      },
     ],
   },
 };

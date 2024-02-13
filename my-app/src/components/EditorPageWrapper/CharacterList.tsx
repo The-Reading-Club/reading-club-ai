@@ -224,7 +224,7 @@ const CharacterList: React.FC<CharacterListProps> = ({
 
   return (
     <div className="character-list">
-      <h1>{`isEditingCharacter: ${isEditingCharacter}`}</h1>
+      {/* <h1>{`isEditingCharacter: ${isEditingCharacter}`}</h1> */}
       {characters.map((character, index) => (
         <CharacterCard
           key={`character-list-card-${index}-${character.name}`}
