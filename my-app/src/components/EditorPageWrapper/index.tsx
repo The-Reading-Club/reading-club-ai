@@ -7,7 +7,7 @@ import TRCEditorV2 from "@/components/TRCEditorV2";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
 import { StoryData, useTRCEditorStore } from "@/stores/store";
-import LeftPanel from "./LeftPanel";
+import CharactersPanel from "./LeftPanel";
 import RightPanel from "./RightPanel";
 
 import { PDFViewer } from "@react-pdf/renderer";
@@ -85,7 +85,7 @@ const EditorPageWrapper: React.FC<EditorPageWrapperProps> = ({
           justifyContent: "center",
         }}
       >
-        <LeftPanel storyData={storyData} setStoryData={setStoryData} />
+        <CharactersPanel storyData={storyData} setStoryData={setStoryData} />
         <div
           className="flex basis-1/2" // THIS IS THE PROBLEM
           // OTHERWISE SCROLL OVERFLOW DOESNT WORK

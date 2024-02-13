@@ -241,11 +241,10 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   return (
     <div
       className={editorContainerClass}
-      style={
-        {
-          // border: "2px solid red",
-        }
-      }
+      style={{
+        // border: "2px solid red",
+        minHeight: "100vh",
+      }}
     >
       {/* <p>{JSON.stringify({ suggestionsIDs })}</p> */}
       <div>

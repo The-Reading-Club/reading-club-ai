@@ -4,6 +4,7 @@ import { Editor, JSONContent } from "@tiptap/react";
 import React from "react";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
+import { api } from "../../convex/_generated/api";
 
 type Suggestion = {
   id: string;
@@ -32,9 +33,25 @@ interface TRCEditorState {
   storiesData: StoriesData;
   setStoriesData: (storiesData: StoriesData) => void;
 
+  remoteStoriesData: StoriesData;
+  setRemoteStoriesData: (remoteStoriesData: StoriesData) => void;
+
   editorInstance: Editor | null;
   setEditorInstance: (editor: Editor) => void;
 }
+
+// https://chat.openai.com/c/346671d1-2d61-44b1-b75c-950291387899
+// const customDatabaseStorage = {
+//   getItem: async (key: string) => {
+//     // const value = localStorage.getItem(key);
+
+//     const value = await api.documents..getEditorData(key);
+//     return value;
+//   },
+//   setItem: (key: string, value: string) => {
+//     localStorage.setItem(key, value);
+//   },
+// };
 
 export const useTRCEditorStore = create<TRCEditorState>()(
   persist(
@@ -51,6 +68,9 @@ export const useTRCEditorStore = create<TRCEditorState>()(
       storiesData: {},
       setStoriesData: (storiesData) => set({ storiesData }),
 
+      remoteStoriesData: {},
+      setRemoteStoriesData: (remoteStoriesData) => set({ remoteStoriesData }),
+
       // editor instance
       editorInstance: null,
       setEditorInstance: (editor) => set({ editorInstance: editor }),
@@ -59,8 +79,7 @@ export const useTRCEditorStore = create<TRCEditorState>()(
       name: "trc-editor-local-storage-test",
       storage: createJSONStorage(() => localStorage),
       partialize: (state) => ({
-        // editorContent: state.editorContent,
-        storiesData: state.storiesData,
+        // storiesData: state.storiesData,
       }),
     }
   )

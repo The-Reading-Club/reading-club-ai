@@ -112,6 +112,7 @@ export const update = mutation({
     content: v.optional(v.string()),
     coverImage: v.optional(v.string()),
     isShared: v.optional(v.boolean()),
+    storyData: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
     const { id, ...rest } = args;

@@ -12,5 +12,6 @@ export default defineSchema({
     content: v.optional(v.string()),
     coverImage: v.optional(v.string()),
     isShared: v.boolean(),
+    storyData: v.optional(v.string()),
   }).index("by_user", ["userId"]),
 });
