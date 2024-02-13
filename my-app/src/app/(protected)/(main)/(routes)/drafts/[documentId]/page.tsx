@@ -21,6 +21,8 @@ import {
   useQueryClient,
 } from "@tanstack/react-query";
 import { devAlert } from "@/lib/utils";
+import EditableText from "@/components/input/EditableText/EditableText";
+import { Input } from "@/components/ui/input";
 
 interface DocumentIdPageProps {
   params: {
@@ -36,6 +38,8 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
   const document = useConvexQuery(api.documents.getById, {
     documentId: params.documentId,
   });
+
+  const [storyTitle, setStoryTitle] = useState<string>("");
 
   const [storyData_, setStoryData] = useTRCEditorStore((state) => [
     state.storiesData[params.documentId],
@@ -139,6 +143,8 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
       try {
         const jsonContent = JSON.parse(document.content);
         setInitialContent(jsonContent);
+
+        setStoryTitle(document.title);
       } catch (error) {
         console.error("Error parsing JSON content", error);
         setInitialContent({});
@@ -203,9 +209,34 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
           justifyContent: "center",
         }}
       >
-        <div>
-          <h1>{`Title: ${document.title}`}</h1>
-          <h1>{`Author: ${document.title}`}</h1>
+        <div
+          className="basis-1/4 lg:flex hidden flex-col justify-center text-center pt-8 lg:p-10"
+          // style={{ border: "5px solid red" }}
+        >
+          {/* <h1>{`Title: ${document.title}`}</h1> */}
+          <EditableText
+            textState={storyTitle}
+            setTextState={(newValue) => {
+              setStoryTitle(newValue);
+
+              // Probably no need of doing it in real time
+              // update({
+              //   id: params.documentId,
+              //   title: newValue,
+              // });
+            }}
+            submitTextData={() => {
+              update({
+                id: params.documentId,
+                title: storyTitle,
+              });
+            }}
+            placeholder="Click to edit title"
+            nonEditableElementClassName="text-4xl font-bold"
+            editableElement={Input}
+          />
+          <br />
+          <h1 className="text-2xl font text-darkFont">{`By ${document.author}`}</h1>
         </div>
         <div
           className="flex basis-1/2" // THIS IS THE PROBLEM

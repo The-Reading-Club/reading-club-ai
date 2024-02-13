@@ -77,18 +77,16 @@ const DraftsPage = () => {
         </div>
         {documents?.map((d, i) => {
           return (
-            <div>
-              <DraftItem
-                key={i + "draft-item-" + d._id}
-                title={d.title}
-                author={d.author ?? ""}
-                coverUrl={d.coverImage ?? ""}
-                onClick={() => {
-                  // devAlert("Clicked on a book");
-                  onRedirect(d._id);
-                }}
-              />
-            </div>
+            <DraftItem
+              key={i + "draft-item-" + d._id}
+              title={d.title}
+              author={d.author ?? ""}
+              coverUrl={d.coverImage ?? ""}
+              onClick={() => {
+                // devAlert("Clicked on a book");
+                onRedirect(d._id);
+              }}
+            />
           );
         })}
 
