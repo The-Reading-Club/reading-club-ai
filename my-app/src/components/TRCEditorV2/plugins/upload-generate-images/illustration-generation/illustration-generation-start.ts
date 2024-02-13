@@ -102,6 +102,21 @@ export function startIllustrationGeneration(
 
       if (data) {
         const characterDataJSON = JSON.parse(data);
+
+        // Verify whether names are the same
+        if (characterDataJSON["name"] !== newCharacter.name) {
+          devAlert(
+            "handleCharacterCreation ERROR, names are different " +
+              characterDataJSON["name"] +
+              " " +
+              newCharacter.name
+          );
+          // continue;
+          // Just force the name to be the same
+          characterDataJSON["extendedName"] = characterDataJSON["name"];
+          characterDataJSON["name"] = newCharacter.name;
+        }
+
         useTRCEditorStore.getState().setStoriesData({
           [body.editorKey]: {
             ...useTRCEditorStore.getState().storiesData[body.editorKey],
