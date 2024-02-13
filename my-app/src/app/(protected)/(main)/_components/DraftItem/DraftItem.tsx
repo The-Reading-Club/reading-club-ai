@@ -10,6 +10,12 @@ interface DraftItemProps {
   onClick: () => void;
 }
 
+// const DEFAULT_COVER_URL = "https://www.readingclub.ai/_next/image?url=https%3A%2F%2F0opmmv83e2pndbdg.public.blob.vercel-storage.com%2Fbeta%2Fimages%2F2024-02-06%2F52748-HV7IOqdDaK-Y7ivpxbBS8B4zZFovicu3BtfiBSZhc.png&w=2048&q=75";
+// const DEFAULT_COVER_URL =
+//   "https://0opmmv83e2pndbdg.public.blob.vercel-storage.com/reading-club-ai-logo.jpg";
+const DEFAULT_COVER_URL =
+  "https://0opmmv83e2pndbdg.public.blob.vercel-storage.com/reading-club-Ai-vertical-white.png";
+
 const DraftItem: React.FC<DraftItemProps> = ({
   title,
   author,
@@ -27,7 +33,7 @@ const DraftItem: React.FC<DraftItemProps> = ({
           src={
             coverUrl !== undefined && coverUrl !== null && coverUrl !== ""
               ? coverUrl
-              : "https://www.readingclub.ai/_next/image?url=https%3A%2F%2F0opmmv83e2pndbdg.public.blob.vercel-storage.com%2Fbeta%2Fimages%2F2024-02-06%2F52748-HV7IOqdDaK-Y7ivpxbBS8B4zZFovicu3BtfiBSZhc.png&w=2048&q=75"
+              : DEFAULT_COVER_URL
           }
           width={200}
           height={200}
