@@ -1,17 +1,20 @@
 .character-list {
   display: flex;
+  /* flex col makes it hard to set up the scrolling properly */
+  /* flex-direction: column; */
   flex-wrap: wrap;
   gap: 16px;
   justify-content: center;
-
   /* handle vertical overflow! */
   max-height: 100vh;
   overflow-y: auto;
   padding-top: 5%;
   padding-bottom: 5%;
+  /* border: 2px solid red; */
 }
 
 .character-card {
+  flex-basis: 100%;
   /* background-color: white; */
   /* border: 1px solid #ccc; */
   /* border: 1px solid red; */
