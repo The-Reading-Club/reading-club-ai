@@ -46,36 +46,41 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
     (data: StoryData) => state.setStoriesData({ [params.documentId]: data }),
   ]);
 
-  const storyDataQuery = useTanstackQuery({
-    queryKey: ["storyData", params.documentId],
-    queryFn: () => {
-      devAlert("Fetching story data for " + params.documentId);
-      const storyData = document?.storyData;
-      if (storyData === null || storyData === undefined) {
-        return {};
-      }
-      // PARSE IT
-      try {
-        const parsed = JSON.parse(storyData);
-        devAlert(
-          "Fetched story data for " + params.documentId + " " + storyData
-        );
-        devAlert("Parsed story data for " + params.documentId + " " + parsed);
-        // evaluate type
-        devAlert("Type of parsed " + typeof parsed);
-        if (typeof parsed !== "object") {
-          devAlert("Parsed is not an object");
-          return {};
-        }
-        return parsed;
-      } catch (error) {
-        console.error("Error parsing story data", error);
-        devAlert("Error parsing story data " + error);
-        return {};
-      }
-    },
-    enabled: document !== undefined && document !== null,
-  });
+  const [storyDataInitialized, setStoryDataInitialized] = useState(false);
+
+  // const storyDataQuery = useTanstackQuery({
+  //   queryKey: ["storyData", params.documentId],
+  //   queryFn: () => {
+  //     devAlert("Fetching story data for " + params.documentId);
+  //     const storyData = document?.storyData;
+  //     if (storyData === null || storyData === undefined) {
+  //       return {};
+  //     }
+  //     // PARSE IT
+  //     try {
+  //       const parsed = JSON.parse(storyData);
+  //       devAlert(
+  //         "Fetched story data for " + params.documentId + " " + storyData
+  //       );
+  //       devAlert("Parsed story data for " + params.documentId + " " + parsed);
+  //       // evaluate type
+  //       devAlert("Type of parsed " + typeof parsed);
+  //       if (typeof parsed !== "object") {
+  //         devAlert("Parsed is not an object");
+  //         return {};
+  //       }
+
+  //       // Set the state based on convex data
+  //       setStoryData(parsed);
+  //       return parsed;
+  //     } catch (error) {
+  //       console.error("Error parsing story data", error);
+  //       devAlert("Error parsing story data " + error);
+  //       return {};
+  //     }
+  //   },
+  //   enabled: document !== undefined && document !== null,
+  // });
 
   const update = useConvexMutation(api.documents.update);
 
@@ -91,7 +96,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
   // move to page
   const updateStoryDocument = useConvexMutation(api.documents.update);
 
-  const queryClient = useQueryClient();
+  // const queryClient = useQueryClient();
 
   // const updateStoryDocumentMutation = useTanstackMutation(
   //   (data) => {
@@ -108,6 +113,9 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
   // );
 
   useEffect(() => {
+    if (!storyDataInitialized) return;
+
+    // alert("Syncing character data with external database " + params.documentId);
     devAlert(
       "Syncing character data with external database " + params.documentId
     );
@@ -127,9 +135,14 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
     });
 
     // https://www.codemzy.com/blog/react-query-force-refetch
-    queryClient.invalidateQueries({
-      queryKey: ["storyData", params.documentId],
-    });
+    // queryClient.invalidateQueries({
+    //   queryKey: ["storyData", params.documentId],
+    //   refetchType: "all",
+    // });
+    // https://chat.openai.com/c/1d74fe51-a71a-4054-98cc-58d88ad0eac3
+    // storyDataQuery.refetch();
+
+    // This is meant only for the creation of new characters
   }, [storyData_]);
 
   // Try parseing the content before rendering editor and set it on a state
@@ -145,12 +158,20 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
         setInitialContent(jsonContent);
 
         setStoryTitle(document.title);
+
+        if (document.storyData) {
+          const parsed = JSON.parse(document.storyData);
+          if (parsed && typeof parsed === "object") {
+            setStoryData(parsed);
+          }
+        }
       } catch (error) {
         console.error("Error parsing JSON content", error);
         setInitialContent({});
       }
+
+      setStoryDataInitialized(true);
     }
-    // }
   }, [document?._id]);
 
   // need to figure a way to do this once
@@ -168,23 +189,23 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
     return <div>Content is null</div>;
   }
 
-  if (storyDataQuery.isLoading) {
-    return <div>Loading...</div>;
-  }
+  // if (storyDataQuery.isLoading) {
+  //   return <div>Loading...</div>;
+  // }
 
-  if (storyDataQuery.isError) {
-    return <div>Error</div>;
-  }
+  // if (storyDataQuery.isError) {
+  //   return <div>Error</div>;
+  // }
 
-  if (storyDataQuery.data === undefined) {
-    return <div>Undefined</div>;
-  }
+  // if (storyDataQuery.data === undefined) {
+  //   return <div>Undefined</div>;
+  // }
 
-  if (storyDataQuery.data === null) {
-    return <div>Not found</div>;
-  }
+  // if (storyDataQuery.data === null) {
+  //   return <div>Not found</div>;
+  // }
 
-  const storyData = storyDataQuery.data;
+  // const storyData = storyDataQuery.data;
 
   return (
     <>
@@ -261,7 +282,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
         </div>
         {/* <div>Characters go hee</div> */}
         <CharactersPanel
-          storyData={storyData}
+          storyData={storyData_}
           setStoryData={setStoryData}
           documentId={params.documentId}
         />
