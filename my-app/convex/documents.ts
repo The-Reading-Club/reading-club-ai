@@ -117,6 +117,24 @@ export const update = mutation({
   handler: async (ctx, args) => {
     const { id, ...rest } = args;
 
+    const { content } = rest;
+
+    // only do it if there's no cover image already set
+    if (content && !rest.coverImage) {
+      console.log("Finding cover image");
+      const tiptapDoc = JSON.parse(content);
+
+      if (tiptapDoc["type"] == "doc") {
+        // find the first image
+        const firstImage = tiptapDoc.content.find(
+          (node: any) => node.type == "image"
+        );
+        // set as cover image
+        rest.coverImage = firstImage.attrs.src;
+        console.log("Cover image found", rest.coverImage);
+      }
+    }
+
     const document = await ctx.db.patch(args.id, { ...rest });
 
     return document;
