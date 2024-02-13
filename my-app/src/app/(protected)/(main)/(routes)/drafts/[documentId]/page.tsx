@@ -2,7 +2,10 @@
 import EditorPageWrapper from "@/components/EditorPageWrapper";
 import { checkSubscription } from "@/lib/subscription";
 import { Id } from "@/../convex/_generated/dataModel";
-import { useMutation, useQuery as useConvexQuery } from "convex/react";
+import {
+  useMutation as useConvexMutation,
+  useQuery as useConvexQuery,
+} from "convex/react";
 import { api } from "@/../convex/_generated/api";
 import TRCEditorV2 from "@/components/TRCEditorV2";
 import { JSONContent } from "@tiptap/react";
@@ -12,7 +15,11 @@ import RightPanel from "@/components/EditorPageWrapper/RightPanel";
 import { StoryData, useTRCEditorStore } from "@/stores/store";
 import CharactersPanel from "@/components/EditorPageWrapper/LeftPanel";
 
-import { useQuery as useTanstackQuery } from "@tanstack/react-query";
+import {
+  useQuery as useTanstackQuery,
+  useMutation as useTanstackMutation,
+  useQueryClient,
+} from "@tanstack/react-query";
 import { devAlert } from "@/lib/utils";
 
 interface DocumentIdPageProps {
@@ -66,7 +73,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
     enabled: document !== undefined && document !== null,
   });
 
-  const update = useMutation(api.documents.update);
+  const update = useConvexMutation(api.documents.update);
 
   const onChange = (jsonContent: JSONContent) => {
     const content = JSON.stringify(jsonContent);
@@ -78,7 +85,24 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
   };
 
   // move to page
-  const updateStoryDocument = useMutation(api.documents.update);
+  const updateStoryDocument = useConvexMutation(api.documents.update);
+
+  const queryClient = useQueryClient();
+
+  // const updateStoryDocumentMutation = useTanstackMutation(
+  //   (data) => {
+  //     return updateStoryDocument(data);
+  //   },
+  //   {
+  //     onSuccess: (data: any) => {
+  //       devAlert("Success updating story data " + JSON.stringify(data));
+  //     },
+  //     onError: (error: any) => {
+  //       devAlert("Error updating story data " + JSON.stringify(error));
+  //     },
+  //   }
+  // );
+
   useEffect(() => {
     devAlert(
       "Syncing character data with external database " + params.documentId
@@ -96,6 +120,11 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
     updateStoryDocument({
       id: params.documentId,
       storyData: JSON.stringify(storyData_),
+    });
+
+    // https://www.codemzy.com/blog/react-query-force-refetch
+    queryClient.invalidateQueries({
+      queryKey: ["storyData", params.documentId],
     });
   }, [storyData_]);
 

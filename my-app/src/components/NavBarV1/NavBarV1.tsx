@@ -9,14 +9,16 @@ const NavBarV1 = () => {
     <nav className="bg-primary text-white">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-lg font-bold text-white flex space-x-12">
-          <Link href="/" className="text-white">
+          <Link href="/drafts" className="text-white">
             {/* <Logo width={150} height={150} padding={0} /> */}
-            Home
+            Stories
           </Link>
-          <Link href="/editor" className="text-white">
-            {/* <Logo width={150} height={150} padding={0} /> */}
-            Editor
-          </Link>
+          {false && (
+            <Link href="/editor" className="text-white">
+              {/* <Logo width={150} height={150} padding={0} /> */}
+              Editor
+            </Link>
+          )}
         </div>
         <div className="flex space-x-12 reset-a-styles font-semibold p-4">
           <Link href="/settings" className="text-white">

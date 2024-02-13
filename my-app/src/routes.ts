@@ -31,7 +31,8 @@ export const apiAuthPrefix = "/api/auth";
  * @type {string}
  */
 // export const DEFAULT_LOGIN_REDIRECT_URL = "/settings";
-export const DEFAULT_LOGIN_REDIRECT_URL = "/editor";
+// export const DEFAULT_LOGIN_REDIRECT_URL = "/editor";
+export const DEFAULT_LOGIN_REDIRECT_URL = "/drafts";
 
 // Beware of auth walls with stripe webhooks
 // I don't know why I didn't have this issue with the generate route...
