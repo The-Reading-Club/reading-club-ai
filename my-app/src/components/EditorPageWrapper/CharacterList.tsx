@@ -106,8 +106,14 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
               //   .includes(k)
               // )
               .map((key, index) => {
+                // validate characterDefinitionState
+                if (characterDefinitionState === undefined) {
+                  return <></>;
+                }
+
                 const value =
                   characterDefinitionState[key as keyof CharacterAttributes];
+
                 if (value !== undefined) {
                   return (
                     <div
