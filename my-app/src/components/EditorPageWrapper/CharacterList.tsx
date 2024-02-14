@@ -225,22 +225,33 @@ const CharacterList: React.FC<CharacterListProps> = ({
   return (
     <div className="character-list">
       {/* <h1>{`isEditingCharacter: ${isEditingCharacter}`}</h1> */}
-      {characters.map((character, index) => (
-        <CharacterCard
-          key={`character-list-card-${index}-${character.name}`}
-          character={{
-            ...character,
-            isExpanded: character.name === expandedCard,
-          }}
-          definition={
-            characterDefinitions?.find((c) => c.name === character.name)!
-          }
-          onClick={() => handleCardClick(character.name)}
-          onDelete={() => handleDeleteCharacter(character.name)} // Pass the delete handler
-          setIsEditingCharacter={setIsEditingCharacter}
-          onCharacterChange={handleCharacterChange}
-        />
-      ))}
+      {characters.map((character, index) => {
+        const characterDefinition = characterDefinitions?.find(
+          (c) => c.name === character.name
+        );
+
+        if (!characterDefinition)
+          return (
+            <p
+              key={`character-list-card-loading-${index}-${character.name}`}
+            >{`Creating... (${character.name}) `}</p>
+          );
+
+        return (
+          <CharacterCard
+            key={`character-list-card-${index}-${character.name}`}
+            character={{
+              ...character,
+              isExpanded: character.name === expandedCard,
+            }}
+            definition={characterDefinition}
+            onClick={() => handleCardClick(character.name)}
+            onDelete={() => handleDeleteCharacter(character.name)} // Pass the delete handler
+            setIsEditingCharacter={setIsEditingCharacter}
+            onCharacterChange={handleCharacterChange}
+          />
+        );
+      })}
     </div>
   );
 };
