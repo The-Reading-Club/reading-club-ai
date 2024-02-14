@@ -25,7 +25,9 @@ const ProModal = () => {
   const upgradeOnClick = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("api/stripe");
+      const response = await axios.get(
+        `${process.env.NEXT_PUBLIC_APP_URL}/api/stripe`
+      );
 
       window.location.href = response.data.url;
     } catch (error) {

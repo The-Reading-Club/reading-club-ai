@@ -1,5 +1,5 @@
 import Link from "next/link";
-import React from "react";
+import React, { useEffect } from "react";
 import Logo from "../Logo";
 import { Button } from "../ui/button";
 import { signOut } from "@/auth";
