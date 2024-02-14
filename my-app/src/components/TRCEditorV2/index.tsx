@@ -379,7 +379,8 @@ function useTRCEditorV2Completion(
   //#region ****** USE COMPLETION START ******
   const completionResult = useCompletion({
     id: "trc-editor-v2",
-    api: "api/generate",
+    // api: "api/generate",
+    api: `${process.env.NEXT_PUBLIC_APP_URL}/api/generate`,
     // body:Extra body object to be sent with the API request.
     onFinish: (prompt, completion) => {
       editorRef.current?.commands.setTextSelection({
