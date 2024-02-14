@@ -14,8 +14,13 @@ import { set } from "zod";
 import RightPanel, {
   DownloadPDFPanel,
   InstructionsPanel,
+  PlusSubscriptionPanel,
 } from "@/components/EditorPageWrapper/RightPanel";
-import { StoryData, useTRCEditorStore } from "@/stores/store";
+import {
+  StoryData,
+  useTRCAppConfigStore,
+  useTRCEditorStore,
+} from "@/stores/store";
 import CharactersPanel from "@/components/EditorPageWrapper/LeftPanel";
 
 import {
@@ -284,6 +289,10 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
               }
             />
           )}
+          <br />
+          <PlusSubscriptionPanel
+            isPlus={useTRCAppConfigStore.getState().isPlus}
+          />
         </div>
         <div
           className="flex basis-1/2" // THIS IS THE PROBLEM

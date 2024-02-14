@@ -3,6 +3,8 @@ import React from "react";
 
 import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
+import { checkSubscription } from "@/lib/subscription";
+import ClientConfigurator from "./_components/ClientConfigurator";
 
 // FYI: The protected folder really doesn't mean that routes outside of it are not protected.
 // It's just a way to organize the layout components.
@@ -10,11 +12,15 @@ import { auth } from "@/auth";
 
 const ProtectedLayout = async ({ children }: React.PropsWithChildren) => {
   const session = await auth();
+
+  const isPlus = await checkSubscription();
+
   return (
     <div
       className=""
       // style={{ border: "5px solid red" }}
     >
+      <ClientConfigurator isPlus={isPlus} />
       <NavBarV1 />
       {/* <h1>ProtectedLayout</h1> */}
 

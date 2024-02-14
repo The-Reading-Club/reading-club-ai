@@ -215,3 +215,36 @@ export const DownloadPDFPanel = ({ storyData }: { storyData: StoryData }) => {
     </>
   );
 };
+
+export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
+  const proModal = useProModal();
+
+  // const isPro = await checkSubscription();
+
+  const proOnClick = () => {
+    proModal.onOpen();
+  };
+  return (
+    <>
+      {isPlus == false ? (
+        <Button
+          onClick={proOnClick}
+          className="bg-white rounded-full font-bold text-xl py-7 px-14 hover:bg-primary lg:min-w-[90%] min-w-[90%]"
+          variant="premium"
+        >
+          Upgrade <Zap className="w-4 h-4 ml-2 fill-white" />
+        </Button>
+      ) : (
+        // Tell user they are currently subscribed, and offer link to go to settings
+        <Link href="/settings">
+          <Button
+            className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent lg:min-w-[90%] min-w-[90%]"
+            variant="premium"
+          >
+            Manage Subscription
+          </Button>
+        </Link>
+      )}
+    </>
+  );
+};

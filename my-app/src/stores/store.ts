@@ -159,3 +159,13 @@ export const useTRCAppStore = create<TRCAppState>((set) => ({
   setDefaultModalSecondaryActionLabel: (defaultModalSecondaryActionLabel) =>
     set({ defaultModalSecondaryActionLabel }),
 }));
+
+interface TRCAppConfig {
+  isPlus: boolean;
+  setIsPlus: (isPlus: boolean) => void;
+}
+
+export const useTRCAppConfigStore = create<TRCAppConfig>((set) => ({
+  isPlus: false,
+  setIsPlus: (isPlus) => set({ isPlus }),
+}));
