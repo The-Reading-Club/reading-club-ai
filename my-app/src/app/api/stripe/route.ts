@@ -66,6 +66,11 @@ export async function GET() {
           quantity: 1,
         },
       ],
+      // https://chat.openai.com/c/338c4130-6c07-4193-9c46-7009d07d2292
+      // https://github.com/stripe/stripe-cli/issues/1115
+      subscription_data: {
+        trial_period_days: 14,
+      },
       metadata: { userId },
       allow_promotion_codes: true,
     });
