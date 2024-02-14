@@ -25,6 +25,14 @@ const SettingsPage = async () => {
         <button type="submit">Sign out</button>
       </form> */}
       <h1 className="text-6xl font-bold text-primary">Settings</h1>
+
+      {/* Name */}
+      <p className="text-2xl text-darkFont">{session?.user.name ?? ""}</p>
+      {/* Email */}
+      <p className="text-xl text-darkFont">
+        {session?.user.email ?? "Your email"}
+      </p>
+
       {/* Say that you are currently subscribed if so */}
       <p className="text-xl text-darkFont">
         {isPro

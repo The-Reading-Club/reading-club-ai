@@ -33,17 +33,20 @@ const RightPanel: React.FC<RightPanelProps> = ({ storyData, isPlus }) => {
   };
 
   const [documentGenerated, setDocumentGenerated] = React.useState(false);
+
   return (
     <div className="basis-1/4 text-center font-semibold lg:pt-0 pt-6">
-      <h1 className="text-2xl font text-darkFont">
-        {`Welcome to Reading Club AI!`}
-      </h1>
-      <br />
-      <p className="text-md text-darkFont">{`Start creating a story.`}</p>
-      <p className="text-md text-darkFont">
-        {`Press '++' for suggestions, or`}
-      </p>
-      <p className="text-md text-darkFont">{`'/' for illustrations.`}</p>
+      <>
+        <h1 className="text-2xl font text-darkFont">
+          {`Welcome to Reading Club AI!`}
+        </h1>
+        <br />
+        <p className="text-md text-darkFont">{`Start creating a story.`}</p>
+        <p className="text-md text-darkFont">
+          {`Press '++' for suggestions, or`}
+        </p>
+        <p className="text-md text-darkFont">{`'/' for illustrations.`}</p>
+      </>
       {/* <br /> */}
       {/* <p className="text-md text-darkFont">{`Note: This is a research demo. There's no autosave, so make sure to copy & paste anything you like. Autocompletions are rate limited to a few dozens per day.`}</p> */}
       {/* sign up as an early tester here */}
@@ -163,3 +166,52 @@ const RightPanel: React.FC<RightPanelProps> = ({ storyData, isPlus }) => {
 };
 
 export default RightPanel;
+
+export const InstructionsPanel = () => {
+  return (
+    <>
+      {/* <h1 className="text-2xl font text-darkFont">
+        {`Welcome to Reading Club AI!`}
+      </h1> */}
+      <br />
+      <p className="text-md text-darkFont">{`Start creating a story.`}</p>
+      <p className="text-md text-darkFont">
+        {`Press '++' for suggestions, or`}
+      </p>
+      <p className="text-md text-darkFont">{`'/' for illustrations.`}</p>
+    </>
+  );
+};
+
+export const DownloadPDFPanel = ({ storyData }: { storyData: StoryData }) => {
+  const [documentGenerated, setDocumentGenerated] = React.useState(false);
+
+  return (
+    <>
+      {documentGenerated == false ? (
+        <Button
+          className="bg-white text-darkFont border-2 border-primary rounded-full font-bold text-xl py-7 px-14 hover:bg-primary lg:min-w-[90%] min-w-[90%]"
+          // A process should be started to change the UI with a debounced
+          // callback to trigger the PDF generation
+          onClick={() => setDocumentGenerated(true)}
+        >
+          Generate PDF
+        </Button>
+      ) : (
+        // It's very important to remember not rendering this thing too much
+        // cause otherwise it degrades performance
+        // Probably better to create the component in a useEffect function
+        // or something like that
+        <DownloadStoryPDFLink document={<StoryPDF storyData={storyData} />}>
+          <Button
+            className="bg-accent2 text-white border-2 border-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent lg:min-w-[90%] min-w-[90%]"
+            //   should probably change to false when the story is updated
+            //   onClick={() => setDocumentGenerated(false)}
+          >
+            Download Story
+          </Button>
+        </DownloadStoryPDFLink>
+      )}
+    </>
+  );
+};

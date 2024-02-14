@@ -11,7 +11,10 @@ import TRCEditorV2 from "@/components/TRCEditorV2";
 import { JSONContent } from "@tiptap/react";
 import { useEffect, useState } from "react";
 import { set } from "zod";
-import RightPanel from "@/components/EditorPageWrapper/RightPanel";
+import RightPanel, {
+  DownloadPDFPanel,
+  InstructionsPanel,
+} from "@/components/EditorPageWrapper/RightPanel";
 import { StoryData, useTRCEditorStore } from "@/stores/store";
 import CharactersPanel from "@/components/EditorPageWrapper/LeftPanel";
 
@@ -91,6 +94,14 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
       id: params.documentId,
       content,
     });
+
+    // given how I set things up, I may need to keep a local copy too
+    // but this shit would trigger a sync with the database
+    // Would that be fine?
+    // It's just so redundant...
+    // It will work, BUT IDEAL WOULD BE FOR PDF COMPONENT TO READ CONTENT FROM THE DATABASE ON ITS OWN.
+    // We will cheat a little
+    // setStoryData({ ...storyData_, tiptapEditorContent: jsonContent });
   };
 
   // move to page
@@ -258,6 +269,21 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
           />
           <br />
           <h1 className="text-2xl font text-darkFont">{`By ${document.author}`}</h1>
+          <br />
+          <InstructionsPanel />
+          <br />
+          {document && document.content && (
+            <DownloadPDFPanel
+              storyData={
+                {
+                  // This is how I would cheat 100%
+                  // characters: storyData_.characters,
+                  // characterDefinitions: storyData_.characterDefinitions,
+                  tiptapEditorContent: JSON.parse(document.content),
+                } as StoryData
+              }
+            />
+          )}
         </div>
         <div
           className="flex basis-1/2" // THIS IS THE PROBLEM
