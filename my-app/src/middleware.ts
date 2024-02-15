@@ -6,6 +6,7 @@ import {
   DEFAULT_LOGIN_REDIRECT_URL,
   apiAuthPrefix,
   authRoutes,
+  previewPrefix,
   publicRoutes,
 } from "@/routes";
 
@@ -21,8 +22,16 @@ export default auth((req) => {
   const isLoggedIn = !!req.auth;
 
   const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
+
+  const isPreviewRoute = nextUrl.pathname.startsWith(previewPrefix);
+
   const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
+
+  if (isPreviewRoute) {
+    // do nothing (don't block preview routes)
+    return null;
+  }
 
   if (isApiAuthRoute) {
     // do nothing (don't block API auth routes)
