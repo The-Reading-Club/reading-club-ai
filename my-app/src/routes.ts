@@ -26,6 +26,8 @@ export const authRoutes = [
  */
 export const apiAuthPrefix = "/api/auth";
 
+export const previewPrefix = "/preview";
+
 /**
  * @description The default redirect path after logging in
  * @type {string}

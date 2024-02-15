@@ -5,7 +5,7 @@ import { Button } from "../ui/button";
 import { signOut } from "@/auth";
 // import Share from "../Share/Share";
 
-const NavBarV1 = () => {
+const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
   return (
     <nav className="bg-primary text-white px-5">
       <div className="container mx-auto flex justify-between items-center">
@@ -25,25 +25,27 @@ const NavBarV1 = () => {
           <Link href="/settings" className="text-white">
             Settings
           </Link>
-          <form
-            action={async () => {
-              "use server"; // dark magic lol
+          {showSignout == true && (
+            <form
+              action={async () => {
+                "use server"; // dark magic lol
 
-              await signOut();
-            }}
-          >
-            <button
-              type="submit"
-              // onClick={async () => {
-              //   "use server"; // dark magic lol
-              //   await signOut();
-              // }}
-              // className="bg-primary text-white rounded-md py-2 px-4"
-              // className=""
+                await signOut();
+              }}
             >
-              Sign out
-            </button>
-          </form>
+              <button
+                type="submit"
+                // onClick={async () => {
+                //   "use server"; // dark magic lol
+                //   await signOut();
+                // }}
+                // className="bg-primary text-white rounded-md py-2 px-4"
+                // className=""
+              >
+                Sign out
+              </button>
+            </form>
+          )}
 
           {/* <Share /> */}
         </div>

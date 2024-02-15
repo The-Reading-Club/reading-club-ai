@@ -21,7 +21,12 @@ const ProtectedLayout = async ({ children }: React.PropsWithChildren) => {
       // style={{ border: "5px solid red" }}
     >
       <ClientConfigurator isPlus={isPlus} />
-      <NavBarV1 />
+      {/* I think navbar shit shouldn't be on the client */}
+      <NavBarV1
+        showSignout={
+          session?.user.email !== undefined && session?.user.email !== undefined
+        }
+      />
       {/* <h1>ProtectedLayout</h1> */}
 
       <SessionProvider session={session}>{children} </SessionProvider>
