@@ -14,11 +14,13 @@ interface CharactersPanelProps {
   storyData: StoryData;
   setStoryData: (data: StoryData) => void;
   documentId?: Id<"documents">;
+  className?: string;
 }
 const CharactersPanel: React.FC<CharactersPanelProps> = ({
   storyData,
   setStoryData,
   documentId,
+  className = "basis-1/4 lg:flex hidden flex-col justify-center pt-8 lg:p-10 text-center h-[100vh]",
 }) => {
   const setCharacterList = (characters: BasicCharacterAttributes[]) => {
     const characterNames = characters.map((character) => character.name);
@@ -37,8 +39,8 @@ const CharactersPanel: React.FC<CharactersPanelProps> = ({
 
   return (
     <div
-      className="basis-1/4 lg:flex hidden flex-col justify-center pt-8 lg:p-10 text-center"
-      style={{ height: "100vh" }}
+      className={className}
+      // style={{ height: "100vh" }}
     >
       {/* <div>
   <p>{JSON.stringify(useTRCEditorStore.getState().storiesData)}</p>
