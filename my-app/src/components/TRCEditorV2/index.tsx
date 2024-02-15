@@ -83,6 +83,7 @@ interface TRCEditorV2Props {
   editorKey: string;
   enableLocalStorage?: boolean;
   onEditorChange?: (content: JSONContent) => void;
+  editable?: boolean;
 }
 
 const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
@@ -93,6 +94,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   editorKey,
   enableLocalStorage = false,
   onEditorChange,
+  editable = true,
 }) => {
   // REACT REFS
   const editorRef = useRef<Editor | null>(null);
@@ -204,7 +206,8 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     editorKey,
     isLoading,
     complete,
-    debouncedUpdates
+    debouncedUpdates,
+    editable
   );
 
   // https://chat.openai.com/c/df2cbdbd-8f35-4dfc-b8ed-09b32261ca58
@@ -456,7 +459,8 @@ function useTRCEditorV2TiptapEditor(
     prompt: string,
     options?: RequestOptions | undefined
   ) => Promise<string | null | undefined>,
-  debouncedUpdates: DebouncedState<({ editor }: any) => Promise<void>>
+  debouncedUpdates: DebouncedState<({ editor }: any) => Promise<void>>,
+  editable: boolean
 ) {
   const editor = useEditor({
     extensions: [
@@ -467,6 +471,7 @@ function useTRCEditorV2TiptapEditor(
         key: editorKey,
       }),
     ],
+    editable: editable,
     // content: editorContent,
     editorProps: {
       attributes: {

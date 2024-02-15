@@ -1,7 +1,7 @@
 "use client";
 import EditorPageWrapper from "@/components/EditorPageWrapper";
 import { checkSubscription } from "@/lib/subscription";
-import { Id } from "@/../convex/_generated/dataModel";
+import { Doc, Id } from "@/../convex/_generated/dataModel";
 import {
   useMutation as useConvexMutation,
   useQuery as useConvexQuery,
@@ -31,6 +31,8 @@ import {
 import { devAlert } from "@/lib/utils";
 import EditableText from "@/components/input/EditableText/EditableText";
 import { Input } from "@/components/ui/input";
+import Share from "@/components/Share/Share";
+import { useTiptapEditorContentFromConvex } from "./utils";
 
 interface DocumentIdPageProps {
   params: {
@@ -39,22 +41,62 @@ interface DocumentIdPageProps {
 }
 
 const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
-  const [initialContent, setInitialContent] = useState<JSONContent | null>(
-    null
-  );
-
   const document = useConvexQuery(api.documents.getById, {
     documentId: params.documentId,
   });
 
-  const [storyTitle, setStoryTitle] = useState<string>("");
+  //#region useTiptapEditorContentFromConvex
+  // const [initialContent, setInitialContent] = useState<JSONContent | null>(
+  //   null
+  // );
 
-  const [storyData_, setStoryData] = useTRCEditorStore((state) => [
-    state.storiesData[params.documentId],
-    (data: StoryData) => state.setStoriesData({ [params.documentId]: data }),
-  ]);
+  // const [storyTitle, setStoryTitle] = useState<string>("");
 
-  const [storyDataInitialized, setStoryDataInitialized] = useState(false);
+  // const [storyData_, setStoryData] = useTRCEditorStore((state) => [
+  //   state.storiesData[params.documentId],
+  //   (data: StoryData) => state.setStoriesData({ [params.documentId]: data }),
+  // ]);
+
+  // const [storyDataInitialized, setStoryDataInitialized] = useState(false);
+
+  // // Try parseing the content before rendering editor and set it on a state
+  // useEffect(() => {
+  //   // if (document?.content) {
+  //   if (document) {
+  //     if (document.content === null || document.content === undefined) {
+  //       setInitialContent({});
+  //       return;
+  //     }
+  //     try {
+  //       const jsonContent = JSON.parse(document.content);
+  //       setInitialContent(jsonContent);
+
+  //       setStoryTitle(document.title);
+
+  //       if (document.storyData) {
+  //         const parsed = JSON.parse(document.storyData);
+  //         if (parsed && typeof parsed === "object") {
+  //           setStoryData(parsed);
+  //         }
+  //       }
+  //     } catch (error) {
+  //       console.error("Error parsing JSON content", error);
+  //       setInitialContent({});
+  //     }
+
+  //     setStoryDataInitialized(true);
+  //   }
+  // }, [document?._id]);
+  //#endregion
+
+  const {
+    initialContent,
+    storyTitle,
+    setStoryTitle,
+    storyData_,
+    setStoryData,
+    storyDataInitialized,
+  } = useTiptapEditorContentFromConvex(params.documentId, document);
 
   // const storyDataQuery = useTanstackQuery({
   //   queryKey: ["storyData", params.documentId],
@@ -160,35 +202,6 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
 
     // This is meant only for the creation of new characters
   }, [storyData_]);
-
-  // Try parseing the content before rendering editor and set it on a state
-  useEffect(() => {
-    // if (document?.content) {
-    if (document) {
-      if (document.content === null || document.content === undefined) {
-        setInitialContent({});
-        return;
-      }
-      try {
-        const jsonContent = JSON.parse(document.content);
-        setInitialContent(jsonContent);
-
-        setStoryTitle(document.title);
-
-        if (document.storyData) {
-          const parsed = JSON.parse(document.storyData);
-          if (parsed && typeof parsed === "object") {
-            setStoryData(parsed);
-          }
-        }
-      } catch (error) {
-        console.error("Error parsing JSON content", error);
-        setInitialContent({});
-      }
-
-      setStoryDataInitialized(true);
-    }
-  }, [document?._id]);
 
   // need to figure a way to do this once
   // const isPlus = await checkSubscription();
@@ -316,11 +329,20 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
           />
         </div>
         {/* <div>Characters go hee</div> */}
-        <CharactersPanel
-          storyData={storyData_}
-          setStoryData={setStoryData}
-          documentId={params.documentId}
-        />
+        <div className="basis-1/4 h-[100vh] flex flex-col justify-start items-center pt-8 ">
+          <Share />
+          <div
+            className="lg:flex hidden flex-col justify-center lg:p-10 text-center h-[100vh] "
+            // style={{ border: "2px solid red" }}
+          >
+            <CharactersPanel
+              storyData={storyData_}
+              setStoryData={setStoryData}
+              documentId={params.documentId}
+              className=""
+            />
+          </div>
+        </div>
         {/* <RightPanel storyData={storyData} isPlus={true} /> */}
       </div>
     </>

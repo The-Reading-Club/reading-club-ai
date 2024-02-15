@@ -3,10 +3,11 @@ import React, { useEffect } from "react";
 import Logo from "../Logo";
 import { Button } from "../ui/button";
 import { signOut } from "@/auth";
+// import Share from "../Share/Share";
 
 const NavBarV1 = () => {
   return (
-    <nav className="bg-primary text-white">
+    <nav className="bg-primary text-white px-5">
       <div className="container mx-auto flex justify-between items-center">
         <div className="text-lg font-bold text-white flex space-x-12">
           <Link href="/drafts" className="text-white">
@@ -43,6 +44,8 @@ const NavBarV1 = () => {
               Sign out
             </button>
           </form>
+
+          {/* <Share /> */}
         </div>
       </div>
     </nav>
