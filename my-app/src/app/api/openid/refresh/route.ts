@@ -7,6 +7,7 @@ import {
 // que curiosa esta mierda
 // https://authjs.dev/guides/basics/refresh-token-rotation
 import { type TokenSet } from "@auth/core/types";
+import { signOut } from "next-auth/react";
 import { NextResponse } from "next/server";
 
 export async function GET(req: Request) {
@@ -56,6 +57,8 @@ export async function GET(req: Request) {
 
   if (!refreshToken) {
     // return new NextResponse("no refresh token", { status: 400 });
+
+    await signOut();
     return NextResponse.json(null);
   }
 
