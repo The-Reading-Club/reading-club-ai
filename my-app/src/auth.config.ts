@@ -4,7 +4,7 @@ import Credentials from "next-auth/providers/credentials";
 import type { NextAuthConfig } from "next-auth";
 
 import { LoginSchema } from "@/schemas";
-import { getUserByEmail } from "./data/account";
+import { getUserByEmail } from "./data/user";
 
 import bcryptjs from "bcryptjs";
 
@@ -15,6 +15,13 @@ export default {
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
       // https://github.com/nextauthjs/next-auth/discussions/2808
       allowDangerousEmailAccountLinking: true,
+      authorization: {
+        params: {
+          prompt: "consent",
+          access_type: "offline",
+          response_type: "code",
+        },
+      },
     }),
     Credentials({
       async authorize(credentials) {

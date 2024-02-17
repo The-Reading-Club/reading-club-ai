@@ -8,7 +8,8 @@ export const getUserByEmail = async (email: string) => {
       },
     });
 
-    console.log("Account found by email", account);
+    // console.log("Account found by email", account);
+    console.log("Account found by email");
     return account;
   } catch (error) {
     console.log(error);

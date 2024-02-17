@@ -5,17 +5,25 @@ import { PrismaAdapter } from "@next-auth/prisma-adapter";
 import { db } from "@/lib/db";
 import authConfig from "@/auth.config";
 
-import { getUserByEmail } from "@/data/account";
+import { getUserByEmail } from "@/data/user";
 import { account_account_type as DBAccountType } from "@prisma/client";
+import { getProviderAccountByUserId } from "./data/provider-account";
+import { devAlert } from "./lib/utils";
 
 type ExtendedUser = DefaultSession["user"] & {
   accountType: string;
+  // refresh_token: string;
 };
 
 declare module "next-auth" {
   interface Session {
     // for me an account is a user... but for this thing...
     user: ExtendedUser;
+    token: {
+      // accountType: string;
+      // refresh_token: string; // security bad practice
+      id_token: string;
+    };
   }
 }
 
@@ -42,8 +50,8 @@ export const {
   },
   callbacks: {
     async signIn({ user }) {
+      console.log("SIGN IN CALLBACK");
       return true; // testing for now
-      // console.log("SIGN IN CALLBACK");
       // user.id = Number(user.id);
 
       // I should probably extend the type because I know email is there
@@ -94,7 +102,7 @@ export const {
     //   return token;
     // },
     async session(sessionParams) {
-      let token_;
+      let token_: any;
       if ("token" in sessionParams) token_ = sessionParams.token;
       if (!token_) return sessionParams.session;
 
@@ -111,7 +119,71 @@ export const {
       //   if (fetchedUserInfo) session.user.id = fetchedUserInfo.id;
       // }
 
+      // if (session.user) {
+      //   // session.user.name = token_.name;
+      //   // session.user.email = token_.email;
+      //   // session.user.isOauth = token_.is;
+      // }
+
       console.log({ sessionParams });
+      // I don't see why not doing this
+      // https://github.com/nextauthjs/next-auth/discussions/9120
+      // https://github.com/nextauthjs/next-auth/issues/9122
+      // Just do ts ignore
+      // @ts-ignore
+      // session.token = token_; // I don't want to exponse the refresh token
+      session.token = { id_token: token_.id_token };
+      // DO I REALLY NEED IT? Yes, I do.
+
+      //  // If there's no refresh token, sign out
+      if (token_ && !token_.refresh_token) {
+        await signOut();
+      }
+
+      // Asynchronously, update db with token if it's not there
+      const fixMissingRefreshToken = async () => {
+        const userEmail = session.user.email;
+        if (!userEmail) return;
+
+        const existingUser = await getUserByEmail(userEmail);
+
+        if (!existingUser) return;
+
+        console.log("fixing missing refresh token");
+        if (token_) {
+          console.log("getting provider account by user id");
+          const existingAccountProvider = await getProviderAccountByUserId(
+            existingUser.id
+          );
+
+          // console.log("existingAccountProvider", existingAccountProvider);
+
+          if (
+            existingAccountProvider &&
+            !existingAccountProvider.refresh_token
+          ) {
+            await db.account.update({
+              where: {
+                id: existingAccountProvider.id,
+              },
+              data: {
+                refresh_token: token_.refresh_token,
+              },
+            });
+          }
+        } else {
+          console.log("no token", token_);
+        }
+      };
+      console.log("about to fix missing refresh token");
+      // console.log("token", token_);
+
+      try {
+        fixMissingRefreshToken();
+      } catch (error) {
+        console.error("error fixing missing refresh token", error);
+        devAlert("error fixing missing refresh token" + error);
+      }
 
       return sessionParams.session;
 
