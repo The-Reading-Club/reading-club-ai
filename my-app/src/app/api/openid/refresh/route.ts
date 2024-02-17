@@ -27,6 +27,10 @@ export async function GET(req: Request) {
     // return new NextResponse("no user", { status: 400 });
 
     console.log("NO ID TOKEN", session);
+
+    console.log("INITIATE SIGN OUT TOKEN ROUTE 1");
+    await signOut();
+
     return NextResponse.json(null);
   }
 
@@ -58,7 +62,7 @@ export async function GET(req: Request) {
   if (!refreshToken) {
     // return new NextResponse("no refresh token", { status: 400 });
 
-    console.log("INITIATE SIGN OUT REFRESH ROUTE");
+    console.log("INITIATE SIGN OUT REFRESH ROUTE 2");
     await signOut();
     return NextResponse.json(null);
   }
@@ -99,6 +103,9 @@ export async function GET(req: Request) {
     const tokens = (await response.json()) as TokenSet;
 
     if (!response.ok) {
+      console.log("INITIATE SIGN OUT REFRESH ROUTE 3");
+      await signOut();
+
       return new NextResponse("error refreshing id token", { status: 500 });
     }
 
@@ -118,6 +125,9 @@ export async function GET(req: Request) {
 
     return NextResponse.json(tokens.id_token);
   } else {
+    console.log("INITIATE SIGN OUT REFRESH ROUTE 4");
+    await signOut();
+
     // return new NextResponse("no token", { status: 400 });
     return NextResponse.json(null);
   }
