@@ -84,6 +84,8 @@ interface TRCEditorV2Props {
   enableLocalStorage?: boolean;
   onEditorChange?: (content: JSONContent) => void;
   editable?: boolean;
+  title?: string;
+  author?: string;
 }
 
 const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
@@ -95,6 +97,8 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
   enableLocalStorage = false,
   onEditorChange,
   editable = true,
+  title,
+  author,
 }) => {
   // REACT REFS
   const editorRef = useRef<Editor | null>(null);
@@ -149,6 +153,43 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
 
     const value =
       enableLocalStorage == true ? editorContentPersistedState : editorContent;
+
+    if (title && value) {
+      // editorRef.current.commands.setTitle(title);
+      const titleTiptapJSON = {
+        type: "heading",
+        attrs: {
+          level: 1,
+        },
+        content: [
+          {
+            type: "text",
+            marks: [
+              {
+                type: "bold",
+              },
+            ],
+            text: title,
+          },
+        ],
+      };
+
+      const authorTiptapJSON = {
+        type: "paragraph",
+        content: [
+          {
+            type: "text",
+            text: `By ${author ?? "Anonymous"}`,
+          },
+        ],
+      };
+
+      value["content"] = [
+        titleTiptapJSON,
+        authorTiptapJSON,
+        ...(value["content"] ? value["content"] : []),
+      ];
+    }
 
     if (value) {
       editorRef.current.commands.setContent(value);

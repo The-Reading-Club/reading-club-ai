@@ -34,6 +34,16 @@ const PreviewPage: React.FC<DocumentIdPageProps> = ({ params }) => {
     );
   }
 
+  // should separate undefined from null states
+
+  if (!document) {
+    return (
+      <div>
+        <h1>Loading...</h1>
+      </div>
+    );
+  }
+
   return (
     <div
       className="flex lg:flex-row flex-col"
@@ -53,6 +63,8 @@ const PreviewPage: React.FC<DocumentIdPageProps> = ({ params }) => {
         editorKey={params.documentId}
         editable={false}
         editorContent={initialContent}
+        title={document.title}
+        author={document.author}
       />
     </div>
   );
