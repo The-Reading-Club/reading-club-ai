@@ -17,6 +17,7 @@ export async function GET() {
     // return token;
     return NextResponse.json(token.id_token);
   } else {
+    console.log("INITIATE SIGN OUT TOKEN ROUTE");
     await signOut();
     return NextResponse.json(null);
     // return NextResponse.json({ error: "No token" });

@@ -58,6 +58,7 @@ export async function GET(req: Request) {
   if (!refreshToken) {
     // return new NextResponse("no refresh token", { status: 400 });
 
+    console.log("INITIATE SIGN OUT REFRESH ROUTE");
     await signOut();
     return NextResponse.json(null);
   }
