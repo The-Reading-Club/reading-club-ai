@@ -150,7 +150,9 @@ export const {
 
       //  // If there's no refresh token, sign out
       if (token_ && !token_.refresh_token) {
-        // throw new Error("No refresh token");
+        // Throw error and force sign out client side
+        // requires good handling of errors on the client
+        throw new Error("No refresh token");
         // return {};
         // I wond do it here
         // session.
