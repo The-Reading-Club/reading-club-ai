@@ -24,6 +24,7 @@ declare module "next-auth" {
       // refresh_token: string; // security bad practice
       id_token: string;
     };
+    // error: string | undefined | null;
   }
 }
 
@@ -49,8 +50,19 @@ export const {
     },
   },
   callbacks: {
-    async signIn({ user }) {
+    async signIn(signInParams) {
       console.log("SIGN IN CALLBACK");
+
+      if (signInParams.account && !signInParams.account.refresh_token) {
+        return false;
+        // I wond do it here
+        // session.
+        // await signOut();
+        // https://chat.openai.com/c/f8ac70fc-9398-4f33-b2f4-7d9af02b5d4d
+        // return null;
+        // session.error = "Session invalid";
+      }
+
       return true; // testing for now
       // user.id = Number(user.id);
 
@@ -102,11 +114,12 @@ export const {
     //   return token;
     // },
     async session(sessionParams) {
+      const { session } = sessionParams;
+      // session.error;
+
       let token_: any;
       if ("token" in sessionParams) token_ = sessionParams.token;
       if (!token_) return sessionParams.session;
-
-      const { session } = sessionParams;
 
       if (token_.accountType && session.user) {
         session.user.accountType = token_.accountType as DBAccountType;
@@ -137,10 +150,12 @@ export const {
 
       //  // If there's no refresh token, sign out
       if (token_ && !token_.refresh_token) {
+        // I wond do it here
         // session.
         // await signOut();
         // https://chat.openai.com/c/f8ac70fc-9398-4f33-b2f4-7d9af02b5d4d
-        return null;
+        // return null;
+        // session.error = "Session invalid";
       }
 
       // Asynchronously, update db with token if it's not there
