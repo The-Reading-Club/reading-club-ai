@@ -1,5 +1,6 @@
 import { auth } from "@/auth";
 import { Session } from "next-auth";
+import { signOut } from "next-auth/react";
 import { NextResponse } from "next/server";
 
 export async function GET() {
@@ -16,6 +17,7 @@ export async function GET() {
     // return token;
     return NextResponse.json(token.id_token);
   } else {
+    await signOut();
     return NextResponse.json(null);
     // return NextResponse.json({ error: "No token" });
   }
