@@ -150,7 +150,7 @@ export const {
 
       //  // If there's no refresh token, sign out
       if (token_ && !token_.refresh_token) {
-        throw new Error("No refresh token");
+        // throw new Error("No refresh token");
         // return {};
         // I wond do it here
         // session.
