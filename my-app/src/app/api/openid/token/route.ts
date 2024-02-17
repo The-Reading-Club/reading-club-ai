@@ -15,6 +15,9 @@ export async function GET() {
 
   if (token) {
     // return token;
+    console.log("INITIATE SIGN OUT TOKEN ROUTE POR JODER");
+    await signOut();
+
     return NextResponse.json(token.id_token);
   } else {
     console.log("INITIATE SIGN OUT TOKEN ROUTE");
