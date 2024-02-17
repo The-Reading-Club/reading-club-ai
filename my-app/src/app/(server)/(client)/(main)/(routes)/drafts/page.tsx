@@ -1,6 +1,6 @@
 "use client";
 
-import { useSession } from "next-auth/react";
+import { signOut, useSession } from "next-auth/react";
 
 import { useMutation, useQuery } from "convex/react";
 import { api } from "../../../../../../../convex/_generated/api";
@@ -10,16 +10,38 @@ import Image from "next/image";
 import { PlusCircleIcon } from "lucide-react";
 import DraftItem from "../../_components/DraftItem/DraftItem";
 import { useRouter } from "next/navigation";
+import { useEffect } from "react";
 
 const DraftsPage = () => {
   // https://github.com/nextauthjs/next-auth/issues/7760
   const session = useSession();
+  const { status } = session;
 
   const create = useMutation(api.documents.create);
 
   const documents = useQuery(api.documents.get, {
     userId: session.data?.user?.email ?? undefined,
   });
+
+  // Example error handling function
+  // const handleSessionError = (error: any) => {
+  //   console.error(error);
+  //   // Check if the error is related to an invalid session, then sign out
+  //   // This condition should be tailored based on the actual error structure and message
+  //   if (
+  //     error.message.includes("Server Error") ||
+  //     error.message.includes("Invalid session")
+  //   ) {
+  //     signOut();
+  //   }
+  // };
+
+  // useEffect to handle session issues
+  useEffect(() => {
+    if (status === "unauthenticated") {
+      signOut(); // This will redirect to login by default
+    }
+  }, [status]);
 
   const onCreate = () => {
     devAlert(JSON.stringify(session));
