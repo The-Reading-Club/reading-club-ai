@@ -53,15 +53,15 @@ export const {
     async signIn(signInParams) {
       console.log("SIGN IN CALLBACK");
 
-      if (signInParams.account && !signInParams.account.refresh_token) {
-        return false;
-        // I wond do it here
-        // session.
-        // await signOut();
-        // https://chat.openai.com/c/f8ac70fc-9398-4f33-b2f4-7d9af02b5d4d
-        // return null;
-        // session.error = "Session invalid";
-      }
+      // if (signInParams.account && !signInParams.account.refresh_token) {
+      //   return false;
+      //   // I wond do it here
+      //   // session.
+      //   // await signOut();
+      //   // https://chat.openai.com/c/f8ac70fc-9398-4f33-b2f4-7d9af02b5d4d
+      //   // return null;
+      //   // session.error = "Session invalid";
+      // }
 
       return true; // testing for now
       // user.id = Number(user.id);
@@ -150,6 +150,8 @@ export const {
 
       //  // If there's no refresh token, sign out
       if (token_ && !token_.refresh_token) {
+        throw new Error("No refresh token");
+        // return {};
         // I wond do it here
         // session.
         // await signOut();
