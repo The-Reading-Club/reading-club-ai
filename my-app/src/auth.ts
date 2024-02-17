@@ -137,7 +137,10 @@ export const {
 
       //  // If there's no refresh token, sign out
       if (token_ && !token_.refresh_token) {
-        await signOut();
+        // session.
+        // await signOut();
+        // https://chat.openai.com/c/f8ac70fc-9398-4f33-b2f4-7d9af02b5d4d
+        return null;
       }
 
       // Asynchronously, update db with token if it's not there
