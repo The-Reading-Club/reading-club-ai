@@ -6,7 +6,7 @@ import { RegisterSchema } from "../schemas";
 
 import bcryptjs from "bcryptjs";
 import { db } from "@/lib/db";
-import { getUserByEmail } from "@/data/account";
+import { getUserByEmail } from "@/data/user";
 
 // What kind of black magic is this one?
 export const register = async (values: z.infer<typeof RegisterSchema>) => {

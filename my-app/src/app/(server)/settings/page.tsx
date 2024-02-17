@@ -14,6 +14,9 @@ const SettingsPage = async () => {
 
   return (
     <div className="bg-secondary h-full p-16 flex flex-col gap-6 justify-start items-center">
+      <p style={{ wordWrap: "break-word", maxWidth: "75%" }}>
+        {JSON.stringify(session, null, 2)}
+      </p>
       {/* {JSON.stringify(session)}
       <form
         action={async () => {

@@ -66,13 +66,15 @@ export const create = mutation({
     userId: v.string(),
   },
   handler: async (ctx, args) => {
-    // const identity = await ctx.auth.getUserIdentity();
+    const identity = await ctx.auth.getUserIdentity();
 
-    // if (!identity) {
-    //   throw new Error("Not authenticated");
-    // }
+    console.log("CONVEX identity", identity);
 
-    // const userId = identity.subject;
+    if (!identity) {
+      throw new Error("Not authenticated");
+    }
+
+    const userOauthId = identity.subject;
 
     // const session = await auth;
 
@@ -88,6 +90,7 @@ export const create = mutation({
       author: args.author,
       userId: args.userId,
       // userId: userId,
+      userOauthId: userOauthId,
       isArchived: false,
       isShared: false,
     });
@@ -100,7 +103,29 @@ export const create = mutation({
 export const getById = query({
   args: { documentId: v.id("documents") },
   handler: async (ctx, args) => {
+    // https://github.com/AntonioErdeljac/notion-clone-tutorial/blob/598542b5b3a63a11d7873683642028f03b170f60/convex/documents.ts#L244
+    const identity = await ctx.auth.getUserIdentity();
+
     const document = await ctx.db.get(args.documentId);
+
+    if (!document) {
+      throw new Error("Document not found");
+    }
+
+    if (document.isShared && !document.isArchived) {
+      return document;
+    }
+
+    if (!identity) {
+      throw new Error("Not authenticated");
+    }
+
+    const userId = identity.email; // old compatibility because we used to think of the email as the userId in convex
+
+    if (document.userId !== userId) {
+      throw new Error("Not authorized");
+    }
+
     return document;
   },
 });
@@ -115,7 +140,29 @@ export const update = mutation({
     storyData: v.optional(v.string()),
   },
   handler: async (ctx, args) => {
+    // https://github.com/AntonioErdeljac/notion-clone-tutorial/blob/master/convex/documents.ts
+    const identity = await ctx.auth.getUserIdentity();
+
+    if (!identity) {
+      throw new Error("Not authenticated");
+    }
+
+    const userOauthId = identity.subject;
+    const userId = identity.email;
+
     const { id, ...rest } = args;
+
+    const existingDocument = await ctx.db.get(args.id);
+
+    if (!existingDocument) {
+      throw new Error("Document not found");
+    }
+
+    if (existingDocument.userId !== userId) {
+      throw new Error("Not authorized");
+    }
+
+    // #region image cover
 
     const { content } = rest;
 
@@ -140,7 +187,15 @@ export const update = mutation({
       console.error("Error finding cover image", error);
     }
 
-    const document = await ctx.db.patch(args.id, { ...rest });
+    // #endregion
+
+    const document = await ctx.db.patch(args.id, {
+      ...rest,
+      // old documents didn't have this field at creation,
+      // we we're adding it here
+      // probably should check first if it's missing in the exisitng doc, but for now it's fine to overwrite it
+      userOauthId,
+    });
 
     return document;
   },
