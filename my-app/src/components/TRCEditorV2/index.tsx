@@ -175,7 +175,10 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
       };
 
       const authorTiptapJSON = {
-        type: "paragraph",
+        type: "heading",
+        attrs: {
+          level: 2,
+        },
         content: [
           {
             type: "text",
