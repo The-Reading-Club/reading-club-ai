@@ -19,6 +19,9 @@ const DraftsPage = () => {
 
   const create = useMutation(api.documents.create);
 
+  // https://docs.convex.dev/functions/error-handling/
+  // I should have handled errors with react error boundaries
+  // well, later...
   const documents = useQuery(api.documents.get, {
     userId: session.data?.user?.email ?? undefined,
   });
@@ -83,8 +86,8 @@ const DraftsPage = () => {
     <>
       {/* <div>Books Page</div> */}
       {/* <p>{JSON.stringify(session)}</p> */}
-      <div className="flex flex-row gap-5 p-5 flex-wrap">
-        <div
+      <div className="flex flex-row gap-5 p-5 flex-wrap justify-center">
+        {/* <div
           className="bg-accent2 rounded-xl hover:bg-accent"
           style={{ height: "auto", width: 240 }}
           onClick={onCreate}
@@ -96,7 +99,18 @@ const DraftsPage = () => {
             </div>
             <div></div>
           </div>
-        </div>
+        </div> */}
+        <DraftItem
+          key={"draft-item-add-book-default"}
+          title={""}
+          // author={"By...you?"}
+          author={""}
+          coverUrl={""}
+          onClick={onCreate}
+          colorClassName="bg-accent2"
+          titleBgColorClassname=""
+          showCoverImage={false}
+        />
         {documents?.map((d, i) => {
           return (
             <DraftItem
@@ -108,6 +122,7 @@ const DraftsPage = () => {
                 // devAlert("Clicked on a book");
                 onRedirect(d._id);
               }}
+              hoverColorClassName="bg-accent"
             />
           );
         })}
