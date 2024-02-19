@@ -15,6 +15,7 @@ import RightPanel, {
   DownloadPDFPanel,
   InstructionsPanel,
   PlusSubscriptionPanel,
+  RequestAFeaturePanel,
 } from "@/components/EditorPageWrapper/RightPanel";
 import {
   StoryData,
@@ -207,7 +208,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
   // const isPlus = await checkSubscription();
 
   if (document === undefined) {
-    return <div>Undefined</div>;
+    return <div>Loading...</div>;
   }
 
   if (document === null) {
@@ -289,6 +290,8 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
           <h1 className="text-2xl font text-darkFont">{`By ${document.author}`}</h1>
           <br />
           <InstructionsPanel />
+          <br />
+          <RequestAFeaturePanel />
           <br />
           {document && document.content && (
             <DownloadPDFPanel
