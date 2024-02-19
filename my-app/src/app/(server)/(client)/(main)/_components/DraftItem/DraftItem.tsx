@@ -1,6 +1,7 @@
 import Image from "next/image";
 import React from "react";
 import { Id } from "../../../../../../../convex/_generated/dataModel";
+import { PlusCircleIcon } from "lucide-react";
 
 interface DraftItemProps {
   //   id?: Id;
@@ -8,6 +9,10 @@ interface DraftItemProps {
   author: string;
   coverUrl: string;
   onClick: () => void;
+  colorClassName?: string;
+  hoverColorClassName?: string;
+  titleBgColorClassname?: string;
+  showCoverImage?: boolean;
 }
 
 // const DEFAULT_COVER_URL = "https://www.readingclub.ai/_next/image?url=https%3A%2F%2F0opmmv83e2pndbdg.public.blob.vercel-storage.com%2Fbeta%2Fimages%2F2024-02-06%2F52748-HV7IOqdDaK-Y7ivpxbBS8B4zZFovicu3BtfiBSZhc.png&w=2048&q=75";
@@ -21,31 +26,62 @@ const DraftItem: React.FC<DraftItemProps> = ({
   author,
   coverUrl,
   onClick,
+  colorClassName = "bg-primary",
+  hoverColorClassName = "bg-accent",
+  titleBgColorClassname = "bg-white",
+  showCoverImage = true,
 }) => {
   return (
     <div
-      className="bg-primary p-5 rounded-xl relative"
+      className={`${colorClassName} p-5 rounded-xl relative basis-[250px] cursor-pointer hover:${hoverColorClassName} transition-all duration-300 ease-in-out flex flex-col`}
+      // ${
+      //   showCoverImage ? "justify-around" : ""
+      // }
+      // hover:bg-accent2 transition-all duration-300 ease-in-out"
       // style={{ width: 225, height: 400 }}
+      style={{
+        flexGrow: 0,
+        flexShrink: 0,
+        minHeight: 350,
+      }}
       onClick={onClick}
     >
       <div className="flex flex-row justify-center pb-2">
-        <Image
-          src={
-            coverUrl !== undefined && coverUrl !== null && coverUrl !== ""
-              ? coverUrl
-              : DEFAULT_COVER_URL
-          }
-          width={200}
-          height={200}
-          // fill
-          // objectFit="cover"
-          // alt="Book cover image"
-          alt={coverUrl}
-          className="rounded-xl"
-          // style={{ border: "2px solid red" }}
-        />
+        {showCoverImage == true ? (
+          <Image
+            src={
+              coverUrl !== undefined && coverUrl !== null && coverUrl !== ""
+                ? coverUrl
+                : DEFAULT_COVER_URL
+            }
+            width={200}
+            height={200}
+            // fill
+            // objectFit="cover"
+            // alt="Book cover image"
+            alt={coverUrl}
+            className="rounded-xl"
+            // style={{ border: "2px solid red" }}
+          />
+        ) : (
+          <div
+            className="rounded-xl w-full"
+            style={{ height: "auto" }}
+            // onClick={onCreate}
+          >
+            <div className="pb-2 text-center text-white flex flex-col justify-center items-center">
+              <div className="font-bold border-2 border-white rounded-lg  h-[210px] w-full flex flex-col justify-center items-center gap-5">
+                Write a new book
+                <PlusCircleIcon size={50} />
+              </div>
+              <div></div>
+            </div>
+          </div>
+        )}
       </div>
-      <div className="bg-white p-5 rounded-xl text-center flex flex-col gap-3">
+      <div
+        className={`${titleBgColorClassname} p-5 rounded-xl text-center flex flex-col justify-center gap-3 basis-full-cancel`}
+      >
         {/* <div>{d.coverImage}</div> */}
 
         <div className="font-bold">{title}</div>
