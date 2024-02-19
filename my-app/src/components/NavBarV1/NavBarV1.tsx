@@ -9,7 +9,8 @@ const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
   return (
     <nav className="bg-primary text-white px-5">
       <div className="container mx-auto flex justify-between items-center">
-        <div className="text-lg font-bold text-white flex space-x-12">
+        {/* used to be xl */}
+        <div className="text-2xl font-bold  flex space-x-12">
           <Link href="/drafts" className="text-white">
             {/* <Logo width={150} height={150} padding={0} /> */}
             Stories

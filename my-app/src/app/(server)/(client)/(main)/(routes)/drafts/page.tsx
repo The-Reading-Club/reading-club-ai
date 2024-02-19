@@ -61,11 +61,18 @@ const DraftsPage = () => {
       // author: "New Author"
       author: session.data?.user.name ?? "New Author",
       userId: userId,
-    }).catch((error) => {
-      console.error(error);
-      devAlert(JSON.stringify(error));
-      throw error;
-    });
+    })
+      .then((documentID) => {
+        devAlert("Created a new book");
+        devAlert(JSON.stringify(documentID));
+        // onRedirect(d._id)
+        onRedirect(documentID);
+      })
+      .catch((error) => {
+        console.error(error);
+        devAlert(JSON.stringify(error));
+        throw error;
+      });
 
     toast.promise(promise, {
       loading: "Creating a new book...",
