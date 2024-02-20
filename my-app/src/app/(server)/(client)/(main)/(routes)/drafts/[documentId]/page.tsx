@@ -47,7 +47,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
     documentId: params.documentId,
   });
 
-  const { rateLimits } = useTRCAppConfigStore();
+  const { rateLimits, isPlus } = useTRCAppConfigStore();
 
   //#region useTiptapEditorContentFromConvex
   // const [initialContent, setInitialContent] = useState<JSONContent | null>(
@@ -264,7 +264,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
         }}
       >
         <div
-          className="basis-1/4 lg:flex hidden flex-col justify-center text-center pt-8 lg:p-10"
+          className="basis-1/4 lg:flex hidden flex-col justify-center text-center pt-8 lg:p-10 gap-3"
           // style={{ border: "5px solid red" }}
         >
           {/* <h1>{`Title: ${document.title}`}</h1> */}
@@ -289,13 +289,13 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
             nonEditableElementClassName="text-4xl font-bold"
             editableElement={Input}
           />
-          <br />
+          {/* <br /> */}
           <h1 className="text-2xl font text-darkFont">{`By ${document.author}`}</h1>
-          <br />
+          {/* <br /> */}
           <InstructionsPanel />
-          <br />
-          <RequestAFeaturePanel />
-          <br />
+          {/* <br /> */}
+          {/* <RequestAFeaturePanel /> */}
+          {/* <br /> */}
           {document && document.content && (
             <DownloadPDFPanel
               storyData={
@@ -308,14 +308,16 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
               }
             />
           )}
-          <br />
-          <div>
-            {/* <p>{`Rate limits: ${JSON.stringify(rateLimits)}`}</p> */}
-            <FreeCounter rateLimits={rateLimits} />
-          </div>
-          <PlusSubscriptionPanel
-            isPlus={useTRCAppConfigStore.getState().isPlus}
-          />
+          {isPlus == false && (
+            <>
+              {/* <br /> */}
+              <div>
+                {/* <p>{`Rate limits: ${JSON.stringify(rateLimits)}`}</p> */}
+                <FreeCounter rateLimits={rateLimits} isPlus={isPlus} />
+              </div>
+              <PlusSubscriptionPanel isPlus={isPlus} />
+            </>
+          )}
         </div>
         <div
           className="flex basis-1/2" // THIS IS THE PROBLEM
@@ -339,8 +341,9 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
           />
         </div>
         {/* <div>Characters go hee</div> */}
-        <div className="basis-1/4 h-[100vh] flex flex-col justify-start items-center pt-8 ">
+        <div className="basis-1/4 h-[100vh] flex flex-col justify-start items-center pt-8 gap-2">
           <Share />
+          <RequestAFeaturePanel />
           <div
             className="lg:flex hidden flex-col justify-center lg:p-10 text-center h-[100vh] "
             // style={{ border: "2px solid red" }}

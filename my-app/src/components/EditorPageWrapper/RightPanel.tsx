@@ -190,10 +190,12 @@ export const DownloadPDFPanel = ({ storyData }: { storyData: StoryData }) => {
     <>
       {documentGenerated == false ? (
         <Button
-          className="bg-white text-darkFont border-2 border-primary rounded-full font-bold text-xl py-7 px-14 hover:bg-primary lg:w-full min-w-[90%]"
+          // className="bg-white text-darkFont border-2 border-primary rounded-full font-bold text-xl py-7 px-14 hover:bg-primary lg:w-full min-w-[90%]"
           // A process should be started to change the UI with a debounced
           // callback to trigger the PDF generation
           onClick={() => setDocumentGenerated(true)}
+          variant={"outline"}
+          size={"lg"}
         >
           Generate PDF
         </Button>
@@ -204,9 +206,12 @@ export const DownloadPDFPanel = ({ storyData }: { storyData: StoryData }) => {
         // or something like that
         <DownloadStoryPDFLink document={<StoryPDF storyData={storyData} />}>
           <Button
-            className="bg-accent2 text-white border-2 border-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent lg:w-full min-w-[90%]"
+            // className="bg-accent2 text-white border-2 border-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent lg:w-full min-w-[90%]"
             //   should probably change to false when the story is updated
             //   onClick={() => setDocumentGenerated(false)}
+            variant={"accent"}
+            size={"lg"}
+            className="w-full"
           >
             Download Story
           </Button>
@@ -251,22 +256,28 @@ export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
 
 export const RequestAFeaturePanel = () => {
   return (
-    <div
-    //   style={{ border: "2px solid red" }}
+    // <div
+    // //   style={{ border: "2px solid red" }}
+    // >
+    <Link
+      href="https://readingclub.canny.io"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="text-white "
     >
-      <Link
-        href="https://readingclub.canny.io"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-white "
+      <Button
+        //   className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent"
+
+        // className="bg-white text-darkFont border-2 border-primary rounded-full font-bold text-xl py-7 px-14 hover:bg-primary lg:w-full min-w-[90%]"
+
+        variant={"outline"}
+        size={"lg"}
+        // In this case this is necessary because it's wrapped in a link, and I want any effect on the width of that link to take effect on the width of the button too
+        className="w-full"
       >
-        <Button
-          //   className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent"
-          className="bg-white text-darkFont border-2 border-primary rounded-full font-bold text-xl py-7 px-14 hover:bg-primary lg:w-full min-w-[90%]"
-        >
-          Request Feature
-        </Button>
-      </Link>
-    </div>
+        Request a feature
+      </Button>
+    </Link>
+    // </div>
   );
 };

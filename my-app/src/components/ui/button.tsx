@@ -12,7 +12,7 @@ const buttonVariants = cva(
         default:
           "bg-white text-darkFont font-semibold hover:bg-gray-100 dark:bg-gray-950 dark:text-gray-50 dark:hover:bg-gray-800",
         accent:
-          "bg-accent2 text-white font-semibold hover:bg-accent dark:bg-gray-950 dark:text-gray-50 dark:hover:bg-gray-800",
+          "bg-accent2 text-white font-semibold hover:bg-accent dark:bg-gray-950 dark:text-gray-50 dark:hover:bg-gray-800 border-2 border-accent2 dark:border-accent2 hover:border-accent ",
         // bg-gray-900/90 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90
         destructive:
           "bg-red-500 text-gray-50 hover:bg-red-500/90 dark:bg-red-900 dark:text-gray-50 dark:hover:bg-red-900/90",
