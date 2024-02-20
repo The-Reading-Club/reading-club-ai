@@ -31,9 +31,11 @@ const SubscriptionButton: React.FC<SubscriptionButtonProps> = ({
     <Button
       disabled={loading}
       onClick={onClick}
-      className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent min-w-[325px]"
+      // className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent min-w-[325px]"
+      variant={isPlus == true ? "accent" : "premium"}
+      size={"lg"}
     >
-      {isPlus == true ? "Manage Subscription" : "Get Plus"}
+      {isPlus == true ? "Manage Subscription" : "Upgrade to Plus"}
     </Button>
   );
 };
