@@ -234,17 +234,20 @@ export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
       {isPlus == false ? (
         <Button
           onClick={proOnClick}
-          className="bg-white rounded-full font-bold text-xl py-7 px-14 hover:bg-primary lg:min-w-[90%] min-w-[90%]"
+          // className="bg-white rounded-full font-bold text-xl py-7 px-14 hover:bg-primary lg:min-w-[90%] min-w-[90%]"
           variant="premium"
+          size={"lg"}
         >
-          Upgrade <Zap className="w-4 h-4 ml-2 fill-white" />
+          Upgrade to Plus
+          <Zap className="w-4 h-4 ml-2 fill-white" />
         </Button>
       ) : (
         // Tell user they are currently subscribed, and offer link to go to settings
         <Link href="/settings">
           <Button
-            className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent lg:min-w-[90%] min-w-[90%]"
+            // className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent lg:min-w-[90%] min-w-[90%]"
             variant="premium"
+            size={"lg"}
           >
             Manage Subscription
           </Button>

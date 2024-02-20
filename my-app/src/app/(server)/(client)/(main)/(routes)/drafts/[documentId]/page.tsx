@@ -320,7 +320,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
           )}
         </div>
         <div
-          className="flex basis-1/2" // THIS IS THE PROBLEM
+          className="flex basis-1/2 shrink-0" // THIS IS THE PROBLEM
           // OTHERWISE SCROLL OVERFLOW DOESNT WORK
           style={{
             flexDirection: "column",
