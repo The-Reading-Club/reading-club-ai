@@ -2,6 +2,7 @@
 import { Button } from "@/components/ui/button";
 import { devAlert } from "@/lib/utils";
 import axios from "axios";
+import { Zap } from "lucide-react";
 import React, { useState } from "react";
 
 interface SubscriptionButtonProps {
@@ -36,6 +37,7 @@ const SubscriptionButton: React.FC<SubscriptionButtonProps> = ({
       size={"lg"}
     >
       {isPlus == true ? "Manage Subscription" : "Upgrade to Plus"}
+      {isPlus == true ? null : <Zap className="w-4 h-4 ml-2 fill-white" />}
     </Button>
   );
 };
