@@ -102,6 +102,7 @@ const CustomImageView: React.FC<CustomImageViewProps> = (
         // alt={"alt text test"}
         //   onClick={() => console.log("Image clicked!")}
         onClick={() => {
+          devAlert(JSON.stringify(node.attrs));
           // devAlert(node.attrs.alt);
           setRevisedPrompt(node.attrs.alt);
           setImageSrc(node.attrs.src);
