@@ -48,9 +48,20 @@ export async function validatePaidSubscription(
     const session = await auth();
     const rateLimitKey = session?.user.email || ip;
 
-    const { success, limit, reset, remaining } = await ratelimit.limit(
-      `trc_ratelimit_${rateLimitKey}-${options.feature}`
-    );
+    const rateLimitFormattedKey = `trc_ratelimit_${rateLimitKey}-${options.feature}`;
+
+    const rateLimitResult = await ratelimit.limit(rateLimitFormattedKey);
+
+    const { success, limit, reset, remaining } = rateLimitResult;
+
+    kv.set(`${rateLimitFormattedKey}-remaining`, remaining);
+
+    console.log("RATE LIMIT KEY: ", rateLimitKey);
+    console.log("RATE LIMIT FEATURE: ", options.feature);
+    console.log("RATE LIMIT SUCCESS: ", success);
+    console.log("RATE LIMIT LIMIT: ", limit);
+    console.log("RATE LIMIT RESET: ", reset);
+    console.log("RATE LIMIT REMAINING: ", remaining);
 
     if (!success) {
       return NextResponse.json(
@@ -65,5 +76,8 @@ export async function validatePaidSubscription(
         }
       );
     }
+  } else {
+    console.log("No rate limit, User is a pro user");
+    return null;
   }
 }

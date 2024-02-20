@@ -5,6 +5,7 @@ import { SessionProvider } from "next-auth/react";
 import { auth } from "@/auth";
 import { checkSubscription } from "@/lib/subscription";
 import ClientConfigurator from "./_components/ClientConfigurator";
+import { getRateLimitCount } from "@/lib/rate-limit";
 
 // FYI: The protected folder really doesn't mean that routes outside of it are not protected.
 // It's just a way to organize the layout components.
@@ -15,13 +16,30 @@ const ProtectedLayout = async ({ children }: React.PropsWithChildren) => {
 
   const isPlus = await checkSubscription();
 
+  const rateLimitIllustration = await getRateLimitCount({
+    feature: "illustration",
+  });
+
+  const rateLimitGeneration = await getRateLimitCount({
+    feature: "generation",
+  });
+
   return (
     <div
       className=""
       // style={{ border: "5px solid red" }}
     >
-      <ClientConfigurator isPlus={isPlus} />
+      <ClientConfigurator
+        isPlus={isPlus}
+        rateLimits={{
+          illustration: Number(rateLimitIllustration),
+          illustrationPrompt: Number(rateLimitIllustration),
+          generation: Number(rateLimitGeneration),
+        }}
+      />
       {/* I think navbar shit shouldn't be on the client */}
+      {/* <p>{`RATE LIMIT TEST ILLUSTRATION ${rateLimitIllustration}`}</p>
+      <p>{`RATE LIMIT TEST GENERATION ${rateLimitGeneration}`}</p> */}
       <NavBarV1
         showSignout={
           session?.user.email !== undefined && session?.user.email !== undefined

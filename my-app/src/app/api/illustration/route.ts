@@ -89,11 +89,15 @@ export async function POST(request: Request) {
   //   }
   // }
 
-  await validatePaidSubscription(request, {
-    slidingWindowTokens: 5,
+  const validationRespone = await validatePaidSubscription(request, {
+    slidingWindowTokens: 10,
     slidingWindowDuration: "1 d",
     feature: "illustration",
   });
+
+  if (validationRespone != null) {
+    return validationRespone;
+  }
 
   const reqJSON = await request.json();
   console.log(reqJSON);

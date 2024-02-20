@@ -9,6 +9,8 @@ const config: Config = {
         primary: "#FFC122",
         secondary: "#FAF8DA",
         secondary2: "#FCF29A",
+        // secondary3: "#F5E9C0",
+        secondary3: "#faf4c3",
         accent: "#FCA436",
         accent2: "#F5911F",
         brownFont: "#7B3F00",

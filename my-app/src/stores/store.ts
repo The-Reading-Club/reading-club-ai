@@ -160,12 +160,41 @@ export const useTRCAppStore = create<TRCAppState>((set) => ({
     set({ defaultModalSecondaryActionLabel }),
 }));
 
+export interface TRCRateLimits {
+  illustration: number;
+  illustrationPrompt: number;
+  generation: number;
+}
+
 interface TRCAppConfig {
   isPlus: boolean;
   setIsPlus: (isPlus: boolean) => void;
+
+  rateLimits: TRCRateLimits;
+  setRateLimits: (rateLimits: TRCRateLimits) => void;
+  apiSuccessCallsCount: number;
+  // setApiSuccessCallsCount: (apiSuccessCallsCount: number) => void;
+  addUpApiSuccessCallsCount: () => void;
 }
 
 export const useTRCAppConfigStore = create<TRCAppConfig>((set) => ({
   isPlus: false,
   setIsPlus: (isPlus) => set({ isPlus }),
+
+  rateLimits: {
+    illustration: -1,
+    illustrationPrompt: -1,
+    generation: -1,
+  },
+
+  setRateLimits: (rateLimits) => set({ rateLimits }),
+
+  apiSuccessCallsCount: 0,
+  // setApiSuccessCallsCount: (apiSuccessCallsCount) =>
+  // set({ apiSuccessCallsCount }),
+  addUpApiSuccessCallsCount: () => {
+    set((state) => ({
+      apiSuccessCallsCount: state.apiSuccessCallsCount + 1,
+    }));
+  },
 }));
