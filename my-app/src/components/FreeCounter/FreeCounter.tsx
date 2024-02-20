@@ -7,13 +7,14 @@ import { useRouter } from "next/navigation";
 
 interface FreeCounterProps {
   rateLimits: TRCRateLimits;
+  isPlus: boolean;
 }
 
 const MAX_FREE_COUNT_ILLUSTRATION = 10; //10;
 const MAX_FREE_COUNT_ILLUSTRATION_PROMPT = 40;
 const MAX_FREE_COUNT_GENERATION = 10;
 
-const FreeCounter: React.FC<FreeCounterProps> = ({ rateLimits }) => {
+const FreeCounter: React.FC<FreeCounterProps> = ({ rateLimits, isPlus }) => {
   const {
     illustration: remainingIllustrations,
     illustrationPrompt: remainingIllustrationPrompts,
@@ -37,6 +38,10 @@ const FreeCounter: React.FC<FreeCounterProps> = ({ rateLimits }) => {
   useEffect(() => {
     router.refresh();
   }, [useTRCAppConfigStore.getState().apiSuccessCallsCount]);
+
+  if (isPlus == true) {
+    return null;
+  }
 
   return (
     <div className="px-0 mb-3">
