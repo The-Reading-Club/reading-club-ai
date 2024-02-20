@@ -40,7 +40,7 @@ const ProModal = () => {
 
   return (
     <Dialog open={proModal.isOpen} onOpenChange={proModal.onClose}>
-      <DialogContent>
+      <DialogContent className="max-w-6xl">
         <DialogHeader>
           <DialogTitle className="flex justify-center items-center flex-col gap-y-4 pb-2">
             <div className="flex items-center gap-x-2 font-bold py-1 text-darkFont">
@@ -54,24 +54,76 @@ const ProModal = () => {
             </div>
           </DialogTitle>
           <DialogDescription className="text-center pt-2 space-y-2 text-zinc-900 font-medium">
-            {features.map((feature) => (
-              <Card
-                key={`feature-promodal-${feature.label}`}
-                className="p-3 border-black/5 flex items-center justify-between"
-              >
-                <div className="flex items-center gap-x-4">
-                  <div className={cn("p-2 w-fit rounded-md", feature.bgColor)}>
-                    <feature.icon className={cn("w-6 h-6", feature.color)} />
-                  </div>
-                  <div>
-                    <p className="text-sm font-semibold text-darkFont">
-                      {feature.label}
-                    </p>
-                  </div>
+            {/* Big banner saying "Enable creative writing at any literacy level" */}
+            <div className="lg:text-4xl text-2xl font-semibold text-darkFont">
+              {/* Enable Creative Writing at any Literacy Level */}
+              {`Be a prolific children's books writer`}
+            </div>
+            {/* Description paragraph */}
+            <div className="w-full py-6">
+              <p className="text-lg">
+                {/* Unlock the full potential of Reading Club AI with unlimited
+              stories, characters, chapters, word count, exports, revisions, and
+              everything else. */}
+                No matter your age, craft stories for (and with!) young readers
+                in any language, assisted by AI.
+              </p>
+              <br />
+              {/* <p>
+              Users retain ownership of their stories, which can be published on
+              Amazon, and shared with others.
+            </p> */}
+              {/* <p className="text-lg">
+                The tools{" "}
+                <span className="font-semibold">
+                  fosters creativity, helps overcome writer's block, and makes
+                  writing enjoyable
+                </span>{" "}
+                for beginners and experts.
+              </p> */}
+              <p className="text-lg">
+                Beginner or expert,{" "}
+                <span className="font-semibold">
+                  {`foster your creativity, overcome writer's block, and enjoy writing creatively`}
+                </span>
+                .
+              </p>
+            </div>
+            {/* SHOW % 20 / Month pricing */}
+            <div className="flex justify-around gap-6">
+              <div className="text-3xl font-bold text-darkFont py-6">
+                US$20 / Month
+              </div>
+              {true && (
+                <div className="basis-[50%]">
+                  {features.map((feature) => (
+                    <Card
+                      key={`feature-promodal-${feature.label}`}
+                      className="p-3 border-black/5 flex items-center justify-between"
+                    >
+                      <div className="flex items-center gap-x-4">
+                        <div
+                          className={cn(
+                            "p-2 w-fit rounded-md",
+                            feature.bgColor
+                          )}
+                        >
+                          <feature.icon
+                            className={cn("w-6 h-6", feature.color)}
+                          />
+                        </div>
+                        <div>
+                          <p className="text-sm font-semibold text-darkFont">
+                            {feature.label}
+                          </p>
+                        </div>
+                      </div>
+                      <Check className="text-accent2 w-5 h-5" />
+                    </Card>
+                  ))}
                 </div>
-                <Check className="text-accent2 w-5 h-5" />
-              </Card>
-            ))}
+              )}
+            </div>
           </DialogDescription>
         </DialogHeader>
         <DialogFooter>
@@ -83,7 +135,8 @@ const ProModal = () => {
             variant="premium"
             className="rounded-full font-bold w-full"
           >
-            Upgrade <Zap className="w-4 h-4 ml-2 fill-white" />
+            Upgrade to Plus
+            <Zap className="w-4 h-4 ml-2 fill-white" />
           </Button>
           {/* <SubscriptionButton isPlus={false} /> */}
         </DialogFooter>
@@ -126,7 +179,7 @@ const features = [
   // Unlimited stories
   {
     // label: "Unlimited stories",
-    label: "Unlimited generations",
+    label: "Enjoy writing unlimited creative children's stories",
     // icon: "📚",
     icon: BookPlusIcon,
     color: "text-accent2",
@@ -135,7 +188,7 @@ const features = [
   // Unlimited characters
   {
     // label: "Unlimited characters",
-    label: "Unlimited illustrations",
+    label: "Motivate kids with unlimited personalized illustrations",
     // icon: "👥",
     icon: PersonStandingIcon,
     color: "text-accent2",
