@@ -34,6 +34,7 @@ import EditableText from "@/components/input/EditableText/EditableText";
 import { Input } from "@/components/ui/input";
 import Share from "@/components/Share/Share";
 import { useTiptapEditorContentFromConvex } from "./utils";
+import FreeCounter from "@/components/FreeCounter/FreeCounter";
 
 interface DocumentIdPageProps {
   params: {
@@ -45,6 +46,8 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
   const document = useConvexQuery(api.documents.getById, {
     documentId: params.documentId,
   });
+
+  const { rateLimits } = useTRCAppConfigStore();
 
   //#region useTiptapEditorContentFromConvex
   // const [initialContent, setInitialContent] = useState<JSONContent | null>(
@@ -306,6 +309,10 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
             />
           )}
           <br />
+          <div>
+            {/* <p>{`Rate limits: ${JSON.stringify(rateLimits)}`}</p> */}
+            <FreeCounter rateLimits={rateLimits} />
+          </div>
           <PlusSubscriptionPanel
             isPlus={useTRCAppConfigStore.getState().isPlus}
           />

@@ -10,7 +10,11 @@ import {
   fetchAndReadStream,
   wrapWithToast,
 } from "@/lib/utils";
-import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
+import {
+  useTRCAppConfigStore,
+  useTRCAppStore,
+  useTRCEditorStore,
+} from "@/stores/store";
 import { use } from "react";
 import { useProModal } from "@/lib/hooks/useModals";
 import { unknown } from "zod";
@@ -86,6 +90,8 @@ export function handleIllustrationGeneration(body: IllustrationGenerationBody) {
             // image.onload = () => {
             resolve({ storedImageUrl, revisedPrompt });
             // };
+
+            useTRCAppConfigStore.getState().addUpApiSuccessCallsCount();
           }
           // Unkown error
           else {

@@ -9,6 +9,7 @@ import { NextResponse } from "next/server";
 // import { increaseApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { auth } from "@/auth";
 import { checkSubscription } from "@/lib/subscription";
+import { validatePaidSubscription } from "../utils";
 
 // https://github.com/prisma/prisma/issues/20560
 // export const runtime = "edge";
@@ -24,43 +25,53 @@ export async function POST(request: Request) {
   const isPro = await checkSubscription();
 
   // FIRST THING IN ROUTE IS TO SET RATE LIMIT
-  if (
-    isPro == false &&
-    // process.env.NODE_ENV != "development" &&
-    process.env.KV_REST_API_URL &&
-    process.env.KV_REST_API_TOKEN
-  ) {
-    const ip = request.headers.get("x-forwarded-for");
+  // if (
+  //   isPro == false &&
+  //   // process.env.NODE_ENV != "development" &&
+  //   process.env.KV_REST_API_URL &&
+  //   process.env.KV_REST_API_TOKEN
+  // ) {
+  //   const ip = request.headers.get("x-forwarded-for");
 
-    const ratelimit = new Ratelimit({
-      redis: kv,
-      limiter: Ratelimit.fixedWindow(5, "1d"),
-    });
+  //   const ratelimit = new Ratelimit({
+  //     redis: kv,
+  //     limiter: Ratelimit.fixedWindow(5, "1d"),
+  //   });
 
-    // Works for now, but at some point I could have the user
-    // send the email as part of the req body to make this even faster
-    // But honestly, it's not that slow
-    const session = await auth();
-    const rateLimitKey = session?.user.email || ip;
+  //   // Works for now, but at some point I could have the user
+  //   // send the email as part of the req body to make this even faster
+  //   // But honestly, it's not that slow
+  //   const session = await auth();
+  //   const rateLimitKey = session?.user.email || ip;
 
-    console.log("RATE LIMIT KEY: ", rateLimitKey);
+  //   console.log("RATE LIMIT KEY: ", rateLimitKey);
 
-    const { success, limit, reset, remaining } = await ratelimit.limit(
-      // `trc_ratelimit_${ip}`
-      // add "generation" after key later
-      `trc_ratelimit_${rateLimitKey}`
-    );
+  //   const { success, limit, reset, remaining } = await ratelimit.limit(
+  //     // `trc_ratelimit_${ip}`
+  //     // add "generation" after key later
+  //     `trc_ratelimit_${rateLimitKey}`
+  //   );
 
-    if (!success) {
-      return new NextResponse("Free trial has expired", {
-        status: 429,
-        headers: {
-          "X-RateLimit-Limit": limit.toString(),
-          "X-RateLimit-Remaining": remaining.toString(),
-          "X-RateLimit-Reset": reset.toString(),
-        },
-      });
-    }
+  //   if (!success) {
+  //     return new NextResponse("Free trial has expired", {
+  //       status: 429,
+  //       headers: {
+  //         "X-RateLimit-Limit": limit.toString(),
+  //         "X-RateLimit-Remaining": remaining.toString(),
+  //         "X-RateLimit-Reset": reset.toString(),
+  //       },
+  //     });
+  //   }
+  // }
+
+  const validationResponse = await validatePaidSubscription(request, {
+    slidingWindowTokens: 10,
+    slidingWindowDuration: "1 d",
+    feature: "generation",
+  });
+
+  if (validationResponse != null) {
+    return validationResponse;
   }
 
   let { prompt } = await request.json();

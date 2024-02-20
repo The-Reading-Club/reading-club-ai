@@ -48,7 +48,7 @@ import {
 import { dev } from "@/config";
 
 // STATE MANAGEMENT (ZUSTAND)
-import { useTRCEditorStore } from "@/stores/store";
+import { useTRCAppConfigStore, useTRCEditorStore } from "@/stores/store";
 
 // FONT (should probably move somewhere else)
 
@@ -438,6 +438,8 @@ function useTRCEditorV2Completion(
 
       // Right now all completions are for suggestions, but I wonder if I should do it differently later on
       updateSuggestionsState();
+
+      useTRCAppConfigStore.getState().addUpApiSuccessCallsCount();
     },
     onError: (err) => {
       // toast.error(err.message)

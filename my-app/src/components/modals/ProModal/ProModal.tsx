@@ -125,7 +125,8 @@ export default ProModal;
 const features = [
   // Unlimited stories
   {
-    label: "Unlimited stories",
+    // label: "Unlimited stories",
+    label: "Unlimited generations",
     // icon: "📚",
     icon: BookPlusIcon,
     color: "text-accent2",
@@ -133,7 +134,8 @@ const features = [
   },
   // Unlimited characters
   {
-    label: "Unlimited characters",
+    // label: "Unlimited characters",
+    label: "Unlimited illustrations",
     // icon: "👥",
     icon: PersonStandingIcon,
     color: "text-accent2",

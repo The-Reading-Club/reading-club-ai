@@ -173,7 +173,7 @@ export const InstructionsPanel = () => {
       {/* <h1 className="text-2xl font text-darkFont">
         {`Welcome to Reading Club AI!`}
       </h1> */}
-      <br />
+      {/* <br /> */}
       <p className="text-md text-darkFont">{`Start creating a story.`}</p>
       <p className="text-md text-darkFont">
         {`Press '++' for suggestions, or`}
