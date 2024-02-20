@@ -1,5 +1,6 @@
 import { PencilIcon } from "lucide-react";
 import Image from "next/image";
+import { usePathname, useRouter } from "next/navigation";
 import React from "react";
 // https://chat.openai.com/c/ae328802-25f1-4edd-a1d0-7b2bd824403b
 
@@ -10,6 +11,14 @@ interface CustomImageProps {
 }
 
 const CustomImage: React.FC<CustomImageProps> = ({ src, alt, onClick }) => {
+  // I can cheat here, but the correct approach would be to inform the editor of whether it is editable or not, and then through node.attrs have that information and not render the button if it is not editable
+
+  const router = useRouter();
+  const path = usePathname();
+
+  // Check if word "preview" is on the path
+  const isPreview = path.includes("preview");
+
   return (
     <>
       {/* <img
@@ -48,13 +57,14 @@ const CustomImage: React.FC<CustomImageProps> = ({ src, alt, onClick }) => {
           //   objectFit: "cover",
           // }}
         />
-
-        <button
-          className="absolute right-0 top-0 bg-slate-100 p-5 rounded-full m-1"
-          onClick={onClick}
-        >
-          <PencilIcon className="text-darkFont" size={50} />
-        </button>
+        {isPreview == false && (
+          <button
+            className="absolute right-0 top-0 bg-slate-100 p-5 rounded-full m-1"
+            onClick={onClick}
+          >
+            <PencilIcon className="text-darkFont" size={50} />
+          </button>
+        )}
       </div>
     </>
   );
