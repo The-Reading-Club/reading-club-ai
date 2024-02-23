@@ -9,6 +9,7 @@ import GoogleAnalytics from "./GoogleAnalytics";
 import { dev } from "@/config";
 import TestModal from "@/components/modals/TestModal";
 import DefaultAppModal from "@/components/modals/DefaultAppModal";
+import { auth } from "@/auth";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -27,11 +28,21 @@ export const metadata: Metadata = {
   description: "Write & Share Children's Books with AI",
 };
 
-export default function RootLayout({
+export default async function RootLayout({
   children,
+  feed,
 }: {
   children: React.ReactNode;
+  feed: React.ReactNode;
 }) {
+  const session = await auth();
+
+  let userIsLoggedIn = false;
+
+  if (session && session.user && session.user.email) {
+    userIsLoggedIn = true;
+  }
+
   return (
     <html lang="en">
       {dev == false && (
@@ -42,7 +53,7 @@ export default function RootLayout({
       <body className={font.className}>
         {/* <TestModal /> */}
         <DefaultAppModal />
-        <Providers>{children}</Providers>
+        <Providers>{userIsLoggedIn == false ? children : feed}</Providers>
       </body>
     </html>
   );
