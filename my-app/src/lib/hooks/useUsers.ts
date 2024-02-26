@@ -17,7 +17,7 @@ export const useUsers = () => {
   };
 };
 
-export const userUser = (userId: string) => {
+export const useUser = (userId: string) => {
   const { data, error, isLoading, mutate } = useSWR(
     userId ? `/api/users/${userId}` : null,
     fetcher
