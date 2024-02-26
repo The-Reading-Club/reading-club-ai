@@ -31,9 +31,11 @@ export const metadata: Metadata = {
 export default async function RootLayout({
   children,
   feed,
-}: {
+}: // common,
+{
   children: React.ReactNode;
   feed: React.ReactNode;
+  // common: React.ReactNode;
 }) {
   const session = await auth();
 
@@ -53,7 +55,11 @@ export default async function RootLayout({
       <body className={font.className}>
         {/* <TestModal /> */}
         <DefaultAppModal />
-        <Providers>{userIsLoggedIn == false ? children : feed}</Providers>
+        <Providers>
+          {children}
+          {/* {common} */}
+          {/* {userIsLoggedIn == false ? children : feed} */}
+        </Providers>
       </body>
     </html>
   );

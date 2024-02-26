@@ -1,0 +1,32 @@
+import useSWR from "swr";
+import fetcher from "../fetcher";
+
+export const useUsers = () => {
+  const { data, error, isLoading, mutate } = useSWR("/api/users", fetcher);
+
+  console.log("data", data);
+  console.log("error", error);
+  console.log("isLoading", isLoading);
+  console.log("mutate", mutate);
+
+  return {
+    data,
+    error,
+    isLoading,
+    mutate,
+  };
+};
+
+export const userUser = (userId: string) => {
+  const { data, error, isLoading, mutate } = useSWR(
+    userId ? `/api/users/${userId}` : null,
+    fetcher
+  );
+
+  return {
+    data,
+    error,
+    isLoading,
+    mutate,
+  };
+};
