@@ -6,7 +6,12 @@
  * @param
  * @returns
  */
-export const publicRoutes = ["/", "/api/stripe/webhook"];
+export const publicRoutes = [
+  "/",
+  "/api/stripe/webhook",
+  "/privacy-policy",
+  "/contact",
+];
 
 /**
  * @description An array of routes that are used for authentication
