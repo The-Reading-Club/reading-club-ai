@@ -7,17 +7,19 @@ import { promises as fs } from "fs";
 import { readFileSync } from "fs";
 
 const Landing3Server = async () => {
-  const trcStoriesTestFileNames = [
-    "monkeyupdownJunior1",
-    "peacockandcraneJunior1",
-    "goodelephantJunior1",
-    "fairestcontestJunior1",
-    "sunrisesuperpowerJunior1",
-    "berrycountJunior1",
-    "bearchangedJunior1",
-    "eggrollJunior1",
-    "wheresmycheeseJunior1",
-  ];
+  // const trcStoriesTestFileNames = [
+  //   "monkeyupdownJunior1",
+  //   "peacockandcraneJunior1",
+  //   "goodelephantJunior1",
+  //   "fairestcontestJunior1",
+  //   "sunrisesuperpowerJunior1",
+  //   "berrycountJunior1",
+  //   "bearchangedJunior1",
+  //   "eggrollJunior1",
+  //   "wheresmycheeseJunior1",
+  // ];
+
+  const trcStoriesTestFileNames: string[] = [];
 
   const storiesTiptapFormat: any[] = [];
 
