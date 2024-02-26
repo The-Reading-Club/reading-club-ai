@@ -9,6 +9,7 @@ import {
   previewPrefix,
   publicRoutes,
 } from "@/routes";
+import { NextRequest, NextResponse } from "next/server";
 
 const { auth } = NextAuth(authConfig);
 
@@ -69,3 +70,17 @@ export const config = {
   // all routes except specific next static files and images
   matcher: ["/((?!.+\\.[\\w]+$|_next).*)", "/", "/(api|trpc)(.*)"],
 };
+
+// https://stackoverflow.com/questions/75362636/how-can-i-get-the-url-pathname-on-a-server-component-next-js-13/75363135#75363135
+// https://stackoverflow.com/questions/74584091/how-to-get-the-current-pathname-in-the-app-directory-of-next-js
+export function middleware(request: NextRequest) {
+  const requestHeaders = new Headers(request.headers);
+
+  requestHeaders.set("x-pathname", request.nextUrl.pathname);
+
+  return NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+}
