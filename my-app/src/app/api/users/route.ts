@@ -3,6 +3,8 @@ import { NextResponse } from "next/server";
 
 export async function GET() {
   try {
+    // interestingly it doesnt complain anymore about null oauth ids
+
     const users = await db.user.findMany({
       orderBy: {
         register_date: "desc",

@@ -16,14 +16,16 @@ const UserHero: React.FC<UserHeroProps> = ({ userId }) => {
   return (
     <div>
       <div className="bg-neutral-700 h-44 relative">
-        {fetchedUser?.coverImage && (
+        {
+          // fetchedUser?.coverImage &&
           <Image
-            src={fetchedUser.coverImage}
+            // src={fetchedUser.coverImage}
+            src={`/BG-Honeycomb.jpg`}
             fill
             alt="Cover Image"
             style={{ objectFit: "cover" }}
           />
-        )}
+        }
         <div className="absolute -bottom-16 left-4">
           <Avatar userId={userId} isLarge hasBorder />
         </div>

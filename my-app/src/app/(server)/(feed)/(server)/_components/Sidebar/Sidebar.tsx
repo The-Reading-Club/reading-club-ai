@@ -26,11 +26,11 @@ const Sidebar = () => {
       //   return BsHouseFill;
       // },
     },
-    {
-      label: "Notifications",
-      href: "/notifications",
-      icon: BsBellFill,
-    },
+    // {
+    //   label: "Notifications",
+    //   href: "/notifications",
+    //   icon: BsBellFill,
+    // },
     {
       label: "Profile",
       href: `/users/${currentUser?.id}`,

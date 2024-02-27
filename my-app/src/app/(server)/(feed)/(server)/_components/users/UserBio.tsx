@@ -41,7 +41,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
     );
 
   return (
-    <div className="border-b-[1px] border-neutral-800 pb-4">
+    <div className="border-b-[1px] border-primary pb-4">
       <div className="flex justify-end p-2">
         {
           // currentUser?.id === userId ?
@@ -85,9 +85,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
         {/* Following */}
         <div className="flex flex-row items-center mt-4 gap-6">
           <div className="flex flex-row items-center gap-1">
-            <p className="font-semibold">
-              {fetchedUser?.followingIds?.length || 0}
-            </p>
+            <p className="font-semibold">{fetchedUser?.followingCount || 0}</p>
             <p className="text-neutral-500">Following</p>
           </div>
           <div className="flex flex-row items-center gap-1">
