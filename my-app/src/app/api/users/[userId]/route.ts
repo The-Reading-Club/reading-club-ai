@@ -32,7 +32,8 @@ export async function GET(
         id: true,
         name: true,
         image: true,
-        // register_date: true,
+        email: true,
+        register_date: true,
       },
     });
 

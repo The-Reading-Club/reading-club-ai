@@ -8,7 +8,7 @@ import authConfig from "@/auth.config";
 import { getUserByEmail } from "@/data/user";
 import { account_account_type as DBAccountType } from "@prisma/client";
 import { getProviderAccountByUserId } from "./data/provider-account";
-import { devAlert } from "./lib/utils";
+import { decodeJWT, devAlert } from "./lib/utils";
 
 type ExtendedUser = DefaultSession["user"] & {
   accountType: string;
@@ -123,6 +123,16 @@ export const {
 
       if (token_.accountType && session.user) {
         session.user.accountType = token_.accountType as DBAccountType;
+
+        const decodedToken = decodeJWT(token_.id_token);
+        console.log({ decodedToken });
+        // if (decodedToken) {
+        //   session.user.email = decodedToken.email;
+        //   session.user.name = decodedToken.name;
+        //   session.user.image = decodedToken.picture;
+        // }
+
+        session.user.id = decodedToken.sub;
       }
 
       // console.log("WHAT DO WE HAVE ALREADY?", session.user);
@@ -139,6 +149,7 @@ export const {
       // }
 
       console.log({ sessionParams });
+      console.log(session.user);
       // I don't see why not doing this
       // https://github.com/nextauthjs/next-auth/discussions/9120
       // https://github.com/nextauthjs/next-auth/issues/9122

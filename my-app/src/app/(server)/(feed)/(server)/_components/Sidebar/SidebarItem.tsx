@@ -1,11 +1,15 @@
+"use client";
 import { IconNode, LucideIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 import React from "react";
 import { IconType as ReactIcon } from "react-icons";
 
 interface SidebarItemProps {
   href: string;
   label: string;
-  icon: LucideIcon | ReactIcon;
+  // icon: LucideIcon | ReactIcon;
+  // icon: LucideIcon | ReactIcon;
+  icon: any;
 }
 
 const SidebarItem: React.FC<SidebarItemProps> = ({
@@ -13,8 +17,14 @@ const SidebarItem: React.FC<SidebarItemProps> = ({
   label,
   icon: Icon,
 }) => {
+  const router = useRouter();
+
+  const handleClick = () => {
+    router.push(href);
+  };
+
   return (
-    <div className="flex flex-row items-center">
+    <div onClick={handleClick} className="flex flex-row items-center">
       <div className="relative rounded-full h-14 2-14 flex items-center justify-center p-4 hover:bg-primary hover:bg-opacity-10 cursor-pointer lg:hidden">
         <Icon size={28} className="text-primary" />
       </div>

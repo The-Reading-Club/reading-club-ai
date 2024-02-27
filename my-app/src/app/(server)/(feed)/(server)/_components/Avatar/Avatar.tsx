@@ -1,5 +1,6 @@
 "use client";
 import { useUser } from "@/lib/hooks/useUsers";
+import { devAlert } from "@/lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { MouseEventHandler, useCallback } from "react";
@@ -16,7 +17,7 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
 
   const onClick = useCallback(
     ((event) => {
-      alert(JSON.stringify(fetchedUser, null, 2));
+      devAlert(JSON.stringify(fetchedUser, null, 2));
       event.stopPropagation();
 
       const url = `/users/${fetchedUser.id}`;
@@ -41,7 +42,7 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
   return (
     <div
       className={`
-      ${hasBorder ? "border-4 border-primary" : ""}
+      ${hasBorder ? "border-4 border-secondary" : ""}
         ${isLarge ? "h-32" : "h-12"}
         ${isLarge ? "w-32" : "w-12"}
         rounded-full
