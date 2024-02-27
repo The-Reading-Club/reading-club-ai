@@ -27,8 +27,8 @@ model User {
 
   accounts Account[]
 
-  followers      UserFollowing[] @relation("UserFollowers")
   following      UserFollowing[] @relation("UserFollowing")
+  followers      UserFollowing[] @relation("UserFollowers")
 
 
   // https://github.com/nextauthjs/next-auth/issues/4567#issuecomment-1132393882
@@ -266,8 +266,21 @@ model UserFollowing {
   userId                    String @db.VarChar(255) @map("account_oauth_id")
   followingId               String @db.VarChar(255) @map("following_account_oauth_id")
 
-  user                     User @relation("UserFollowers", fields: [userDatabaseId], references: [intID])
-  followingUser            User @relation("UserFollowing", fields: [followingUserDatabaseId], references: [intID])
+  // user                     User @relation("UserFollowers", fields: [userDatabaseId], references: [intID])
+
+  // followingUserDatabaseId -> intID doesnt work because
+  // intID  is probably referencing the current target user
+  // followingUser            User @relation("UserFollowing", fields: [followingUserDatabaseId], references: [intID])
+
+  // This is the most counterintuitive shit,
+  // but the table is current user -> follow targets
+  // which means that the relations have to be opposite here:
+
+  // we get followingUser(s) by relating userDatabaseId (current user)
+  followingUser            User @relation("UserFollowing", fields: [userDatabaseId], references: [intID])
+
+  // we get followerUser(s) by relating followingUserDatabaseId (the field we have to check to see if anyone has followed the current user)
+  followerUser             User @relation("UserFollowers", fields: [followingUserDatabaseId], references: [intID])
 
   @@index([userDatabaseId], map: "account")
   @@index([userId], map: "account_oauth_id")

@@ -17,6 +17,9 @@ const useFollow = (userId: string) => {
 
     const list: String[] = currentUser?.following || [];
 
+    // alert(list);
+    // if (list.length > 0) alert(list);
+
     return list.includes(userId);
   }, [
     userId,

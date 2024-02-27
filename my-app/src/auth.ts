@@ -51,7 +51,7 @@ export const {
   },
   callbacks: {
     async signIn(signInParams) {
-      console.log("SIGN IN CALLBACK");
+      console.log("auth.ts SIGN IN CALLBACK");
 
       // if (signInParams.account && !signInParams.account.refresh_token) {
       //   return false;
@@ -125,7 +125,9 @@ export const {
         session.user.accountType = token_.accountType as DBAccountType;
 
         const decodedToken = decodeJWT(token_.id_token);
-        console.log({ decodedToken });
+        // console.log("auth.ts ");
+        // console.log({ decodedToken });
+
         // if (decodedToken) {
         //   session.user.email = decodedToken.email;
         //   session.user.name = decodedToken.name;
@@ -148,8 +150,9 @@ export const {
       //   // session.user.isOauth = token_.is;
       // }
 
-      console.log({ sessionParams });
-      console.log(session.user);
+      // console.log({ sessionParams });
+      // console.log(session.user);
+
       // I don't see why not doing this
       // https://github.com/nextauthjs/next-auth/discussions/9120
       // https://github.com/nextauthjs/next-auth/issues/9122
