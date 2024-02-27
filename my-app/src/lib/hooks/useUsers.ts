@@ -30,3 +30,14 @@ export const useUser = (userId: string) => {
     mutate,
   };
 };
+
+export const useCurrentUser = () => {
+  const { data, error, isLoading, mutate } = useSWR("/api/current", fetcher);
+
+  return {
+    data,
+    error,
+    isLoading,
+    mutate,
+  };
+};
