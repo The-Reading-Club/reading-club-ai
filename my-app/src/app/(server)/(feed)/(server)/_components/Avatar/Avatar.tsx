@@ -9,9 +9,17 @@ interface AvatarProps {
   userId: string;
   isLarge?: boolean;
   hasBorder?: boolean;
+  defaultW?: string;
+  defaultH?: string;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
+const Avatar: React.FC<AvatarProps> = ({
+  userId,
+  isLarge,
+  hasBorder,
+  defaultH = "h-12",
+  defaultW = "w-12",
+}) => {
   const router = useRouter();
   const { data: fetchedUser, isLoading } = useUser(userId);
 
@@ -43,8 +51,8 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
     <div
       className={`
       ${hasBorder ? "border-4 border-secondary" : ""}
-        ${isLarge ? "h-32" : "h-12"}
-        ${isLarge ? "w-32" : "w-12"}
+        ${isLarge ? "h-32" : defaultH}
+        ${isLarge ? "w-32" : defaultW}
         rounded-full
         hover:opacity-90
         transition

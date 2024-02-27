@@ -61,6 +61,8 @@ export async function GET(
 
     const existingUserObj = {
       ...existingUser,
+      following: existingUser?.following.map((user) => user.followingId),
+      followers: existingUser?.followers.map((user) => user.userId),
       followersCount: existingUser?.followers.length,
       followingCount: existingUser?.following.length,
     };
