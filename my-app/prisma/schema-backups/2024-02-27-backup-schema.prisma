@@ -1,0 +1,252 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider     = "mysql"
+  url          = env("DATABASE_URL")
+  relationMode = "prisma"
+}
+
+// https://github.com/AntonioErdeljac/next-auth-v5-advanced-guide/blob/master/prisma/schema.prisma
+
+model User {
+  intID           Int                  @id @default(autoincrement()) @map("account")
+  id              String               @unique(map: "id") @db.VarChar(50) @map("oauth_id") @default(cuid())
+  name            String?
+  email           String               @unique(map: "email") @db.VarChar(50)
+  verified        Boolean?             @default(dbgenerated("b'0'")) @db.Bit(1)
+  emailVerified   DateTime?            @map("date_verified")
+  image           String?
+  password        String?              @db.VarChar(255)
+  register_date   DateTime             @default(now()) @db.Timestamp(0)
+  token           String?              @db.Text
+  account_type    account_account_type @default(standard)
+  premium         Boolean              @default(dbgenerated("b'0'")) @db.Bit(1)
+  hashed_password String?              @db.VarChar(250)
+
+  accounts Account[]
+  // https://github.com/nextauthjs/next-auth/issues/4567#issuecomment-1132393882
+  @@map("account") // this sucks!!!
+}
+
+model Account {
+  id                Int     @id @default(autoincrement())
+  userId            String @map("oauth_id") // I hate this confusing mappings
+  type              String  @db.VarChar(250)
+  provider          String  @db.VarChar(250) @map("provider_name")
+  providerAccountId String  @db.VarChar(250) @map("provider_oauth_id")
+  refresh_token     String? @db.Text
+  access_token      String? @db.Text
+  expires_at        Int?
+  token_type        String? @db.VarChar(250)
+  scope             String? @db.VarChar(250)
+  id_token          String? @db.Text
+  session_state     String? @db.VarChar(250)
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([provider, providerAccountId])
+
+  @@index([userId], map: "User") // this is for foreign keys
+  @@map("provider") // this sucks!!!
+}
+
+model UserApiLimit {
+  id        String      @id @default(cuid())
+  userId    String   @unique @map("account_oauth_id")
+  count     Int      @default(0)
+  createdAt DateTime @default(now()) @map("created_at")
+  updatedAt DateTime @updatedAt @map("updated_at")
+
+  @@map("account_api_limit")
+}
+
+model UserSubscription {
+  id        String      @id @default(cuid())
+  userId    String   @unique @map("account_oauth_id")
+  stripeCustomerId       String?   @unique @map(name: "stripe_customer_id")
+  stripeSubscriptionId   String?   @unique @map(name: "stripe_subscription_id")
+  stripePriceId          String?   @map(name: "stripe_price_id")
+  stripeCurrentPeriodEnd DateTime? @map(name: "stripe_current_period_end")
+
+  @@map("stripe_subscription")
+}
+
+
+
+// model account_mtm_classroom {
+//   account   Int
+//   classroom Int
+
+//   @@id([account, classroom])
+//   @@index([classroom], map: "classroom")
+// }
+
+// model account_mtm_user {
+//   account Int
+//   user    Int
+
+//   @@id([account, user])
+//   @@index([user], map: "user")
+// }
+
+// model account_session {
+//   account_session       Int                    @id @default(autoincrement())
+//   account               Int
+//   insert_time           DateTime               @default(now()) @db.Timestamp(0)
+//   account_session_start DateTime               @db.DateTime(0)
+//   account_session_end   DateTime?              @db.DateTime(0)
+//   status                account_session_status @default(started)
+
+//   @@index([account], map: "account")
+// }
+
+// model classroom {
+//   classroom Int @id
+// }
+
+// model device {
+//   device               Int      @id @default(autoincrement())
+//   unique_identifier    String   @unique(map: "unique_identifier") @db.VarChar(100)
+//   register_date        DateTime @default(now()) @db.Timestamp(0)
+//   system_language      String   @db.VarChar(50)
+//   application_platform String   @db.VarChar(50)
+//   last_session         DateTime @default(now()) @db.Timestamp(0)
+// }
+
+// model feedback {
+//   feedback      Int      @id @default(autoincrement())
+//   device_id     String   @db.VarChar(100)
+//   content       String   @db.Text
+//   register_date DateTime @default(now()) @db.Timestamp(0)
+// }
+
+// model notification {
+//   notification  Int      @id @default(autoincrement())
+//   time_utc      DateTime @db.Time(0)
+//   tag           String   @db.VarChar(100)
+//   mon           Boolean? @default(false)
+//   tue           Boolean? @default(false)
+//   wed           Boolean? @default(false)
+//   thu           Boolean? @default(false)
+//   fri           Boolean? @default(false)
+//   sat           Boolean? @default(false)
+//   sun           Boolean? @default(false)
+//   user          Int      @unique(map: "user")
+//   account       Int?
+//   dayOffset     Int?     @default(0) @db.TinyInt
+//   register_date DateTime @default(now()) @db.Timestamp(0)
+//   last_updated  DateTime @default(now()) @db.Timestamp(0)
+
+//   @@index([account], map: "account")
+// }
+
+// model organization {
+//   organization Int     @id
+//   name         String? @db.VarChar(50)
+// }
+
+// model organization_mtm_account {
+//   organization Int
+//   account      Int
+
+//   @@id([organization, account])
+//   @@index([account], map: "account")
+// }
+
+// model password_reset {
+//   password_reset Int      @id @default(autoincrement())
+//   account        Int
+//   insert_time    DateTime @default(now()) @db.Timestamp(0)
+//   token          String   @db.VarChar(6)
+
+//   @@index([account], map: "account")
+// }
+
+
+// model reading_metric {
+//   reading_metric        Int       @id @default(autoincrement())
+//   user_session          Int
+//   insert_time           DateTime  @default(now()) @db.Timestamp(0)
+//   local_start_time      DateTime  @db.DateTime(0)
+//   local_end_time        DateTime? @db.DateTime(0)
+//   total_reading_seconds Int?
+//   characters_read       Int?
+//   words_read            Int?
+//   description           String?   @db.Text
+
+//   @@index([user_session], map: "user_session")
+// }
+
+// model story {
+//   story         Int      @id @default(autoincrement())
+//   file_id       String   @unique(map: "file_id") @db.VarChar(50)
+//   storage       String   @db.VarChar(255)
+//   register_date DateTime @default(now()) @db.Timestamp(0)
+//   last_updated  DateTime @default(now()) @db.Timestamp(0)
+//   author        String   @db.VarChar(50)
+//   title         String   @db.VarChar(50)
+//   locked        Boolean? @default(dbgenerated("b'0'")) @db.Bit(1)
+//   category      Int?     @default(0)
+//   cover         String?  @default("https://storage.googleapis.com/reading-club-covers/birmingham-museums-trust-sJr8LDyEf7k-unsplash.jpg") @db.VarChar(200)
+// }
+
+// model user {
+//   user          Int      @id @default(autoincrement())
+//   account       Int?
+//   first_name    String   @db.VarChar(100)
+//   age           Int
+//   register_date DateTime @default(now()) @db.Timestamp(0)
+//   avatar_id     String?  @default("NONE") @db.VarChar(25)
+//   deleted       Int?     @default(0) @db.TinyInt
+//   device        Int?
+
+//   @@index([account], map: "account")
+//   @@index([device], map: "device")
+// }
+
+// model user_mtm_classroom {
+//   user      Int
+//   classroom Int
+
+//   @@id([user, classroom])
+//   @@index([classroom], map: "classroom")
+// }
+
+// /// The underlying table does not contain a valid unique identifier and can therefore currently not be handled by Prisma Client.
+// model user_pin {
+//   user     Int
+//   user_pin String? @unique(map: "user_pin") @db.Char(11)
+
+//   @@index([user], map: "user")
+//   @@ignore
+// }
+
+// model user_session {
+//   user_session       Int                 @id @default(autoincrement())
+//   user               Int
+//   insert_time        DateTime            @default(now()) @db.Timestamp(0)
+//   local_start_time   DateTime            @db.DateTime(0)
+//   user_session_start DateTime            @db.DateTime(0)
+//   user_session_end   DateTime?           @db.DateTime(0)
+//   status             user_session_status @default(started)
+
+//   @@index([user], map: "user")
+// }
+
+enum account_account_type {
+  standard
+  teacher
+  admin
+}
+
+// enum account_session_status {
+//   started
+//   finished
+// }
+
+// enum user_session_status {
+//   started
+//   finished
+// }
