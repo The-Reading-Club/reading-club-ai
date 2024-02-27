@@ -26,7 +26,7 @@ const ProtectedLayout = async ({ children }: React.PropsWithChildren) => {
 
   return (
     <div
-      className=""
+      className="h-screen"
       // style={{ border: "5px solid red" }}
     >
       <ClientConfigurator

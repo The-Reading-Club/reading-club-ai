@@ -1,0 +1,74 @@
+"use client";
+import React from "react";
+import FeedHeader from "../../../_components/FeedHeader";
+import { useUser } from "@/lib/hooks/useUsers";
+
+import { ClipLoader } from "react-spinners";
+import UserHero from "../../../_components/users/UserHero";
+import UserBio from "../../../_components/users/UserBio";
+import { useQuery } from "convex/react";
+import { api } from "../../../../../../../../convex/_generated/api";
+import DraftItem from "@/app/(server)/(client)/(main)/_components/DraftItem/DraftItem";
+import { useRouter } from "next/navigation";
+
+interface UserViewPageParams {
+  params: {
+    userId: string;
+  };
+}
+
+const UserViewPage = ({ params }: UserViewPageParams) => {
+  const { userId } = params;
+
+  const { data: fetchedUser, isLoading } = useUser(userId);
+
+  const documents = useQuery(api.documents.getShared, {
+    userOauthId: userId,
+  });
+
+  const router = useRouter();
+
+  const onRedirect = (documentId: string) => {
+    router.push(`/preview/${documentId}`);
+  };
+
+  if (isLoading == true || !fetchedUser) {
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <ClipLoader color="#FFC122" size={80} />
+      </div>
+    );
+  }
+
+  return (
+    <>
+      <FeedHeader showBackArrow label={fetchedUser?.name} />
+      <UserHero userId={userId as string} />
+      <UserBio userId={userId as string} />
+
+      <div className="flex flex-row gap-5 p-5 flex-wrap justify-center">
+        {documents?.map((document) => (
+          // <div key={document._id + "docprofile"}>{document.title}</div>
+
+          <DraftItem
+            key={document._id + "docprofile"}
+            title={document.title}
+            author={document.author ?? ""}
+            coverUrl={document.coverImage ?? ""}
+            onClick={() => {
+              // devAlert("Clicked on a book");
+              onRedirect(document._id);
+            }}
+            showCoverImage={true}
+            // colorClassName="bg-accent2"
+            // titleBgColorClassname=""
+            hoverColorClassName="bg-accent"
+          />
+        ))}
+      </div>
+      {/* <p>This is the document variable {JSON.stringify(documents, null, 2)}</p> */}
+    </>
+  );
+};
+
+export default UserViewPage;

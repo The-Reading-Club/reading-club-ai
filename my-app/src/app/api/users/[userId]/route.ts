@@ -32,7 +32,19 @@ export async function GET(
         id: true,
         name: true,
         image: true,
-        // register_date: true,
+        email: true,
+        register_date: true,
+        //
+        following: {
+          select: {
+            followingId: true,
+          },
+        },
+        followers: {
+          select: {
+            userId: true,
+          },
+        },
       },
     });
 
@@ -46,10 +58,18 @@ export async function GET(
     // });
 
     // return NextResponse.json({ ...existingUser, followersCount });
-    return NextResponse.json({
+
+    const existingUserObj = {
       ...existingUser,
-      followersCount: 0,
-    });
+      following: existingUser?.following.map((user) => user.followingId),
+      followers: existingUser?.followers.map((user) => user.userId),
+      followersCount: existingUser?.followers.length,
+      followingCount: existingUser?.following.length,
+    };
+
+    console.log("existingUserObj", existingUserObj);
+
+    return NextResponse.json(existingUserObj);
   } catch (error) {
     console.error(error);
     return new NextResponse("Not found", { status: 404 });

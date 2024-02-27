@@ -1,5 +1,6 @@
 "use client";
 import { useUser } from "@/lib/hooks/useUsers";
+import { devAlert } from "@/lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { MouseEventHandler, useCallback } from "react";
@@ -8,15 +9,23 @@ interface AvatarProps {
   userId: string;
   isLarge?: boolean;
   hasBorder?: boolean;
+  defaultW?: string;
+  defaultH?: string;
 }
 
-const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
+const Avatar: React.FC<AvatarProps> = ({
+  userId,
+  isLarge,
+  hasBorder,
+  defaultH = "h-12",
+  defaultW = "w-12",
+}) => {
   const router = useRouter();
   const { data: fetchedUser, isLoading } = useUser(userId);
 
   const onClick = useCallback(
     ((event) => {
-      alert(JSON.stringify(fetchedUser, null, 2));
+      devAlert(JSON.stringify(fetchedUser, null, 2));
       event.stopPropagation();
 
       const url = `/users/${fetchedUser.id}`;
@@ -41,9 +50,9 @@ const Avatar: React.FC<AvatarProps> = ({ userId, isLarge, hasBorder }) => {
   return (
     <div
       className={`
-      ${hasBorder ? "border-4 border-primary" : ""}
-        ${isLarge ? "h-32" : "h-12"}
-        ${isLarge ? "w-32" : "w-12"}
+      ${hasBorder ? "border-4 border-secondary" : ""}
+        ${isLarge ? "h-32" : defaultH}
+        ${isLarge ? "w-32" : defaultW}
         rounded-full
         hover:opacity-90
         transition

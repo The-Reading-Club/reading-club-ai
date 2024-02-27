@@ -10,6 +10,7 @@ import { dev } from "@/config";
 import TestModal from "@/components/modals/TestModal";
 import DefaultAppModal from "@/components/modals/DefaultAppModal";
 import { auth } from "@/auth";
+import { headers } from "next/headers";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,11 +31,13 @@ export const metadata: Metadata = {
 
 export default async function RootLayout({
   children,
-  feed,
-}: // common,
+  landing,
+}: // feed,
+// common,
 {
   children: React.ReactNode;
-  feed: React.ReactNode;
+  landing: React.ReactNode;
+  // feed: React.ReactNode;
   // common: React.ReactNode;
 }) {
   const session = await auth();
@@ -45,6 +48,15 @@ export default async function RootLayout({
     userIsLoggedIn = true;
   }
 
+  let pathname: string | null = null;
+
+  const headerList = headers();
+  if (headerList && headerList.get("x-pathname")) {
+    pathname = headerList.get("x-pathname") as string;
+  }
+
+  const isLandingPage = pathname === "/";
+
   return (
     <html lang="en">
       {dev == false && (
@@ -52,11 +64,17 @@ export default async function RootLayout({
           GA_TRACKING_ID={process.env.GA_TRACKING_ID as string}
         />
       )}
-      <body className={font.className}>
+      <body className={`${font.className}`}>
         {/* <TestModal /> */}
         <DefaultAppModal />
         <Providers>
-          {children}
+          {/* <p>pathname {pathname}</p> */}
+          {/* {children} */}
+          {/* {children} */}
+          {/* {landing} */}
+          {isLandingPage == true && userIsLoggedIn == false
+            ? landing
+            : children}
           {/* {common} */}
           {/* {userIsLoggedIn == false ? children : feed} */}
         </Providers>

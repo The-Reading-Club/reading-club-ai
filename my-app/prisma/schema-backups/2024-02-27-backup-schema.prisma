@@ -26,11 +26,6 @@ model User {
   hashed_password String?              @db.VarChar(250)
 
   accounts Account[]
-
-  following      UserFollowing[] @relation("UserFollowing")
-  followers      UserFollowing[] @relation("UserFollowers")
-
-
   // https://github.com/nextauthjs/next-auth/issues/4567#issuecomment-1132393882
   @@map("account") // this sucks!!!
 }
@@ -257,36 +252,15 @@ enum account_account_type {
 // }
 
 
-// Some adaptation of variable names from here
-// https://github.com/AntonioErdeljac/twitter-clone/blob/master/prisma/schema.prisma
-model UserFollowing {
-  intID                     Int @id @default(autoincrement()) @map("follow")
-  userDatabaseId            Int @map("account")
-  followingUserDatabaseId   Int @map("following_account")
-  userId                    String @db.VarChar(255) @map("account_oauth_id")
-  followingId               String @db.VarChar(255) @map("following_account_oauth_id")
+model user_following {
+  user_following             Int     @id @default(autoincrement())
+  account                    Int?
+  following_account          Int?
+  account_oauth_id           String? @db.VarChar(255)
+  following_account_oauth_id String? @db.VarChar(255)
 
-  // user                     User @relation("UserFollowers", fields: [userDatabaseId], references: [intID])
-
-  // followingUserDatabaseId -> intID doesnt work because
-  // intID  is probably referencing the current target user
-  // followingUser            User @relation("UserFollowing", fields: [followingUserDatabaseId], references: [intID])
-
-  // This is the most counterintuitive shit,
-  // but the table is current user -> follow targets
-  // which means that the relations have to be opposite here:
-
-  // we get followingUser(s) by relating userDatabaseId (current user)
-  followingUser            User @relation("UserFollowing", fields: [userDatabaseId], references: [intID])
-
-  // we get followerUser(s) by relating followingUserDatabaseId (the field we have to check to see if anyone has followed the current user)
-  followerUser             User @relation("UserFollowers", fields: [followingUserDatabaseId], references: [intID])
-
-  @@index([userDatabaseId], map: "account")
-  @@index([userId], map: "account_oauth_id")
-  @@index([followingUserDatabaseId], map: "following_account")
-  @@index([followingId], map: "following_account_oauth_id")
-
-  
-  @@map("follow")
+  @@index([account], map: "account")
+  @@index([account_oauth_id], map: "account_oauth_id")
+  @@index([following_account], map: "following_account")
+  @@index([following_account_oauth_id], map: "following_account_oauth_id")
 }

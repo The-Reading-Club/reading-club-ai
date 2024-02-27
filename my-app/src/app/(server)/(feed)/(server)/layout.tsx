@@ -1,6 +1,7 @@
 import React from "react";
 import Sidebar from "./_components/Sidebar";
 import Followbar from "./_components/Followbar";
+import { MyConvexProvider } from "@/components/providers/convex-provider/convex-provider";
 
 interface FeedLayoutProps {
   children: React.ReactNode;

@@ -59,6 +59,46 @@ export const get = query({
   },
 });
 
+export const getShared = query({
+  args: {
+    userOauthId: v.string(),
+  },
+  handler: async (ctx, args) => {
+    // could check hostname to see if it's the server or the client and show non-shared during development
+
+    const documents = await ctx.db
+      .query("documents")
+      .filter((q) => q.eq(q.field("userOauthId"), args.userOauthId))
+      .filter((q) => q.eq(q.field("isShared"), true))
+      .order("desc")
+      .take(100);
+
+    return documents;
+  },
+});
+
+export const getFollowed = query({
+  args: {
+    userOauthIds: v.array(v.string()),
+  },
+  handler: async (ctx, args) => {
+    const documents = await ctx.db
+      .query("documents")
+      .filter((q) => q.eq(q.field("isShared"), true))
+      .order("desc")
+      .take(1000);
+
+    return documents.filter((d) => {
+      if (!d.userOauthId) {
+        return false;
+      }
+      const isFollowed = args.userOauthIds.includes(d.userOauthId);
+
+      return isFollowed;
+    });
+  },
+});
+
 export const create = mutation({
   args: {
     title: v.string(),
