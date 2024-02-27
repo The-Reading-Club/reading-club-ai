@@ -250,3 +250,17 @@ enum account_account_type {
 //   started
 //   finished
 // }
+
+
+model user_following {
+  user_following             Int     @id @default(autoincrement())
+  account                    Int?
+  following_account          Int?
+  account_oauth_id           String? @db.VarChar(255)
+  following_account_oauth_id String? @db.VarChar(255)
+
+  @@index([account], map: "account")
+  @@index([account_oauth_id], map: "account_oauth_id")
+  @@index([following_account], map: "following_account")
+  @@index([following_account_oauth_id], map: "following_account_oauth_id")
+}
