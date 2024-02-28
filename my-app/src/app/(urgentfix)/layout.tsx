@@ -1,11 +1,17 @@
+import { auth } from "@/auth";
+// import { useSession } from "next-auth/react";
 import { headers } from "next/headers";
-import React from "react";
+import React, { use } from "react";
 
-interface LayoutProps {
+// interface LayoutProps {
+//   children: React.ReactNode;
+// }
+
+export default async function UrgentFixLayout({
+  children,
+}: {
   children: React.ReactNode;
-}
-
-const layout = ({ children }: LayoutProps) => {
+}) {
   let pathname: string | null = null;
 
   const headerList = headers();
@@ -15,10 +21,18 @@ const layout = ({ children }: LayoutProps) => {
 
   const isLandingPage = pathname === "/";
 
-  if (isLandingPage === true) {
+  // const session = useSession();
+  const session = await auth();
+
+  let userIsLoggedIn = false;
+
+  if (session && session.user && session.user.email) {
+    userIsLoggedIn = true;
+  }
+
+  if (isLandingPage === true && userIsLoggedIn === false) {
     return null;
   }
-  return children;
-};
-
-export default layout;
+  // https://github.com/vercel/next.js/issues/49280
+  return <>{children}</>;
+}

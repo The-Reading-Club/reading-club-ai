@@ -1,7 +1,7 @@
 import React from "react";
 
-const DefaultPageLandingSlot = () => {
+const DefaultPage = () => {
   return null;
 };
 
-export default DefaultPageLandingSlot;
+export default DefaultPage;
