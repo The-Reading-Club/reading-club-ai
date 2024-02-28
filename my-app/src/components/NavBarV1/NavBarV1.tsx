@@ -2,7 +2,8 @@ import Link from "next/link";
 import React, { useEffect } from "react";
 import Logo from "../Logo";
 import { Button } from "../ui/button";
-import { signOut } from "@/auth";
+import DotsMenu from "./DotsMenu";
+import SignOutForm from "./SignOutForm";
 // import Share from "../Share/Share";
 
 const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
@@ -26,32 +27,14 @@ const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
             </Link>
           )}
         </div>
-        <div className="flex space-x-12 reset-a-styles font-semibold p-4">
-          <Link href="/settings" className="text-white">
+        <div className="flex space-x-12 reset-a-styles font-semibold p-4 items-center">
+          <Link href="/settings" className="text-white hidden lg:block">
             Settings
           </Link>
-          {showSignout == true && (
-            <form
-              action={async () => {
-                "use server"; // dark magic lol
-
-                await signOut();
-              }}
-            >
-              <button
-                type="submit"
-                // onClick={async () => {
-                //   "use server"; // dark magic lol
-                //   await signOut();
-                // }}
-                // className="bg-primary text-white rounded-md py-2 px-4"
-                // className=""
-              >
-                Sign out
-              </button>
-            </form>
-          )}
-
+          <div className="hidden lg:block">
+            {showSignout == true && <SignOutForm />}
+          </div>
+          <DotsMenu />
           {/* <Share /> */}
         </div>
       </div>

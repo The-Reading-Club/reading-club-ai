@@ -19,6 +19,8 @@ export default auth((req) => {
   //   const isLoggedIn = !!req.auth;
   //   console.log("IS LOGGEDIN: ", isLoggedIn);
 
+  console.log("MIDDLEWARE, ROUTE: ", req.nextUrl.pathname);
+
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
 
@@ -55,7 +57,13 @@ export default auth((req) => {
   }
 
   console.log("MIDDLEWARE, ALLOW ROUTE: ", req.nextUrl.pathname);
-  return null;
+  // return null;
+
+  // It's working for now but please learn how to properly run many middlewares
+  // This will make it so that you are not running the request headers middle ware on every route
+  // per se
+  // learn what NextResponse.next does
+  return requestHeadersMiddleware(req);
 });
 
 // Optionally, don't invoke Middleware on some paths
@@ -73,7 +81,9 @@ export const config = {
 
 // https://stackoverflow.com/questions/75362636/how-can-i-get-the-url-pathname-on-a-server-component-next-js-13/75363135#75363135
 // https://stackoverflow.com/questions/74584091/how-to-get-the-current-pathname-in-the-app-directory-of-next-js
-export function middleware(request: NextRequest) {
+
+// https://medium.com/@aididalam/approach-to-multiple-middleware-and-auth-guard-in-next-js-app-routing-bbb641401477
+function requestHeadersMiddleware(request: NextRequest) {
   const requestHeaders = new Headers(request.headers);
 
   requestHeaders.set("x-pathname", request.nextUrl.pathname);
