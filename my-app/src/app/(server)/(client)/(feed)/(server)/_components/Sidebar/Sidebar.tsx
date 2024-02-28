@@ -10,7 +10,7 @@ import { auth } from "@/auth";
 import { useSession } from "next-auth/react";
 import DraftItem from "@/app/(server)/(client)/(main)/_components/DraftItem/DraftItem";
 import { useMutation } from "convex/react";
-import { api } from "../../../../../../../convex/_generated/api";
+import { api } from "../../../../../../../../convex/_generated/api";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 

@@ -1,4 +1,3 @@
-import { MyConvexProvider } from "@/components/providers/convex-provider/convex-provider";
 import React from "react";
 import FeedLayout from "./_client-components/FeedLayout";
 
@@ -7,11 +6,7 @@ interface FeedClientLayoutProps {
 }
 
 const FeedClientLayout: React.FC<FeedClientLayoutProps> = ({ children }) => {
-  return (
-    <MyConvexProvider>
-      <FeedLayout> {children}</FeedLayout>
-    </MyConvexProvider>
-  );
+  return <FeedLayout> {children}</FeedLayout>;
 };
 
 export default FeedClientLayout;
