@@ -1,10 +1,10 @@
 "use client";
 import TRCEditorV2 from "@/components/TRCEditorV2";
 import React from "react";
-import { Id } from "../../../../../../../../convex/_generated/dataModel";
+import { Id } from "../../../../../../../../../convex/_generated/dataModel";
 import { useQuery } from "convex/react";
-import { api } from "../../../../../../../../convex/_generated/api";
-import { useTiptapEditorContentFromConvex } from "@/app/(server)/(client)/(main)/(routes)/drafts/[documentId]/utils";
+import { api } from "../../../../../../../../../convex/_generated/api";
+import { useTiptapEditorContentFromConvex } from "@/app/(urgentfix)/(server)/(client)/(main)/(routes)/drafts/[documentId]/utils";
 
 interface DocumentIdPageProps {
   params: {

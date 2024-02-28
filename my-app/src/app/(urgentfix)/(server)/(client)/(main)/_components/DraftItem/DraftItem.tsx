@@ -1,6 +1,6 @@
 import Image from "next/image";
 import React from "react";
-import { Id } from "../../../../../../../convex/_generated/dataModel";
+import { Id } from "../../../../../../../../convex/_generated/dataModel";
 import { PlusCircleIcon } from "lucide-react";
 
 interface DraftItemProps {

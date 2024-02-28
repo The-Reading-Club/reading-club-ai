@@ -18,11 +18,13 @@ export default auth((req) => {
 
   requestHeaders.set("x-pathname", req.nextUrl.pathname);
 
-  let response = NextResponse.next({
-    request: {
-      headers: requestHeaders,
-    },
-  });
+  // let response = NextResponse.next({
+  //   request: {
+  //     headers: requestHeaders,
+  //   },
+  // });
+
+  // let response = new NextResponse();
 
   // NextResponse.next({
   //   request: {
@@ -49,34 +51,46 @@ export default auth((req) => {
 
   if (isPreviewRoute) {
     // do nothing (don't block preview routes)
-    // return null;
-    return response;
+    return null;
+    // return response;
+    // return NextResponse.next({
+    //   request: {
+    //     headers: requestHeaders,
+    //   },
+    // });
   }
 
   if (isApiAuthRoute) {
     // do nothing (don't block API auth routes)
-    // return null;
-    return response;
+    return null;
+    // return NextResponse.next({
+    //   request: {
+    //     headers: requestHeaders,
+    //   },
+    // });
   }
 
   if (isAuthRoute) {
     if (isLoggedIn) {
       // already logged in so it doesn't make sense to keep them in auth routes
-      response = NextResponse.redirect(
+      return NextResponse.redirect(
         new URL(DEFAULT_LOGIN_REDIRECT_URL, nextUrl)
       );
-      return response;
     }
 
     // do nothing (let them go to auth routes)
-    // return null;
-    return response;
+    return null;
+    // return response;
+    // return NextResponse.next({
+    //   request: {
+    //     headers: requestHeaders,
+    //   },
+    // });
   }
 
   if (!isLoggedIn && !isPublicRoute) {
     // not logged in and not public route so redirect to login
-    response = NextResponse.redirect(new URL("/auth/login", nextUrl));
-    return response;
+    return NextResponse.redirect(new URL("/auth/login", nextUrl));
   }
 
   console.log("MIDDLEWARE, ALLOW ROUTE: ", req.nextUrl.pathname);
@@ -87,7 +101,14 @@ export default auth((req) => {
   // per se
   // learn what NextResponse.next does
   // return requestHeadersMiddleware(req);
-  return response;
+
+  if (req.nextUrl.pathname === "/")
+    return NextResponse.next({
+      request: {
+        headers: requestHeaders,
+      },
+    });
+  else return null;
 });
 
 // Optionally, don't invoke Middleware on some paths
