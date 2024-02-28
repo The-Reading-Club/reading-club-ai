@@ -26,13 +26,13 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
     router.push(`/preview/${documentId}`);
   };
 
-  const createdAt = useMemo(() => {
-    if (!fetchedUser?.register_date) {
-      return null;
-    }
+  // const createdAt = useMemo(() => {
+  //   if (!fetchedUser?.register_date) {
+  //     return null;
+  //   }
 
-    return format(new Date(fetchedUser.register_date), "MMMM dd, yyyy");
-  }, [fetchedUser?.register_date]);
+  //   return format(new Date(fetchedUser.register_date), "MMMM dd, yyyy");
+  // }, [fetchedUser?.register_date]);
 
   return (
     <div>
@@ -75,7 +75,12 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
                   <p>
                     <span className="font-bold">{document?.author}</span>{" "}
                     created a story on{" "}
-                    <span className="text-neutral-500">{createdAt}</span>
+                    <span className="text-neutral-500">
+                      {format(
+                        new Date(document?._creationTime),
+                        "MMMM dd, yyyy"
+                      )}
+                    </span>
                   </p>
                 </div>
                 {/* <p>created a story</p> */}
