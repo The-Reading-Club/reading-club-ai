@@ -3,7 +3,7 @@ import { useUser } from "@/lib/hooks/useUsers";
 import React, { useMemo } from "react";
 
 import { useQuery } from "convex/react";
-import { api } from "../../../../../../../convex/_generated/api";
+import { api } from "../../../../../../../../convex/_generated/api";
 import DraftItem from "@/app/(server)/(client)/(main)/_components/DraftItem/DraftItem";
 import { useRouter } from "next/navigation";
 import Avatar from "../Avatar";

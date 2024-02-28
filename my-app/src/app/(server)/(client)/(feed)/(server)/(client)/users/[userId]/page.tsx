@@ -7,7 +7,7 @@ import { ClipLoader } from "react-spinners";
 import UserHero from "../../../_components/users/UserHero";
 import UserBio from "../../../_components/users/UserBio";
 import { useQuery } from "convex/react";
-import { api } from "../../../../../../../../convex/_generated/api";
+import { api } from "../../../../../../../../../convex/_generated/api";
 import DraftItem from "@/app/(server)/(client)/(main)/_components/DraftItem/DraftItem";
 import { useRouter } from "next/navigation";
 
