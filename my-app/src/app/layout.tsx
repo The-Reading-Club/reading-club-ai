@@ -57,6 +57,8 @@ export default async function RootLayout({
 
   const isLandingPage = pathname === "/";
 
+  console.log("THIS IS THE STUPID PATHNAME", pathname);
+
   return (
     <html lang="en">
       {dev == false && (
@@ -72,9 +74,11 @@ export default async function RootLayout({
           {/* {children} */}
           {/* {children} */}
           {/* {landing} */}
-          {isLandingPage == true && userIsLoggedIn == false
+          {/* {userIsLoggedIn == false && isLandingPage == true
             ? landing
-            : children}
+            : children} */}
+          {landing}
+          {children}
           {/* {common} */}
           {/* {userIsLoggedIn == false ? children : feed} */}
         </Providers>

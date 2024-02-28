@@ -265,6 +265,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
               </div>
               <Link
                 href="https://www.readingclub.ai/drafts"
+                // href="http://localhost:3000/drafts"
                 // target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#3c4043]"
