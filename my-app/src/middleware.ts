@@ -18,11 +18,17 @@ export default auth((req) => {
 
   requestHeaders.set("x-pathname", req.nextUrl.pathname);
 
-  NextResponse.next({
+  let response = NextResponse.next({
     request: {
       headers: requestHeaders,
     },
   });
+
+  // NextResponse.next({
+  //   request: {
+  //     headers: requestHeaders,
+  //   },
+  // });
 
   // req.auth
   //   console.log("ROUTE: ", req.nextUrl.pathname);
@@ -43,27 +49,34 @@ export default auth((req) => {
 
   if (isPreviewRoute) {
     // do nothing (don't block preview routes)
-    return null;
+    // return null;
+    return response;
   }
 
   if (isApiAuthRoute) {
     // do nothing (don't block API auth routes)
-    return null;
+    // return null;
+    return response;
   }
 
   if (isAuthRoute) {
     if (isLoggedIn) {
       // already logged in so it doesn't make sense to keep them in auth routes
-      return Response.redirect(new URL(DEFAULT_LOGIN_REDIRECT_URL, nextUrl));
+      response = NextResponse.redirect(
+        new URL(DEFAULT_LOGIN_REDIRECT_URL, nextUrl)
+      );
+      return response;
     }
 
     // do nothing (let them go to auth routes)
-    return null;
+    // return null;
+    return response;
   }
 
   if (!isLoggedIn && !isPublicRoute) {
     // not logged in and not public route so redirect to login
-    return Response.redirect(new URL("/auth/login", nextUrl));
+    response = NextResponse.redirect(new URL("/auth/login", nextUrl));
+    return response;
   }
 
   console.log("MIDDLEWARE, ALLOW ROUTE: ", req.nextUrl.pathname);
@@ -74,7 +87,7 @@ export default auth((req) => {
   // per se
   // learn what NextResponse.next does
   // return requestHeadersMiddleware(req);
-  return null;
+  return response;
 });
 
 // Optionally, don't invoke Middleware on some paths
