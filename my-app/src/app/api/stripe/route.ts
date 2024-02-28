@@ -55,8 +55,8 @@ export async function GET() {
           price_data: {
             currency: "USD",
             product_data: {
-              name: "Reading Club AI Plus",
-              description: "Monthly subscription to Reading Club AI Plus",
+              name: "readingclub.ai Plus",
+              description: "Monthly subscription to readingclub.ai Plus",
             },
             unit_amount: 2000,
             recurring: {
