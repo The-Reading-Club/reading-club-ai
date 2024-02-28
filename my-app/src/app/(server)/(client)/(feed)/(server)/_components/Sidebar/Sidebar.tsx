@@ -13,6 +13,7 @@ import { useMutation } from "convex/react";
 import { api } from "../../../../../../../../convex/_generated/api";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
+import SidebarWriteButton from "./SidebarWriteButton";
 
 const Sidebar = () => {
   // const session = await auth();
@@ -94,9 +95,10 @@ const Sidebar = () => {
               icon={item.icon}
             />
           ))}
+          <SidebarWriteButton onClick={onCreate} />
         </div>
       </div>
-      <div className="mt-5 pl-10 scale-90">
+      <div className="mt-5 pl-10 scale-90 hidden lg:block">
         <DraftItem
           key={"draft-item-add-book-default-newsfeed"}
           title={"A Great Story"}
