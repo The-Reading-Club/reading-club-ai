@@ -73,7 +73,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
           <p className="text-2xl font-semibold">{fetchedUser?.name}</p>
         </div>
         {/* Username or email */}
-        <div className="text-md text-neutral-500">{fetchedUser?.email}</div>
+        {/* <div className="text-md text-neutral-500">{fetchedUser?.email}</div> */}
         {/* Bio */}
         <div className="flex flex-col mt-4">
           <p className="">{fetchedUser?.bio}</p>
