@@ -48,16 +48,16 @@ export default async function RootLayout({
     userIsLoggedIn = true;
   }
 
-  let pathname: string | null = null;
+  // let pathname: string | null = null;
 
-  const headerList = headers();
-  if (headerList && headerList.get("x-pathname")) {
-    pathname = headerList.get("x-pathname") as string;
-  }
+  // const headerList = headers();
+  // if (headerList && headerList.get("x-pathname")) {
+  //   pathname = headerList.get("x-pathname") as string;
+  // }
 
-  const isLandingPage = pathname === "/";
+  // const isLandingPage = pathname === "/";
 
-  console.log("THIS IS THE STUPID PATHNAME", pathname);
+  // console.log("THIS IS THE STUPID PATHNAME", pathname);
 
   return (
     <html lang="en">
@@ -77,7 +77,12 @@ export default async function RootLayout({
           {/* {userIsLoggedIn == false && isLandingPage == true
             ? landing
             : children} */}
-          {landing}
+          {/* SOFT NAVIGATION AND PARALLEL ROUTES */}
+          {/* https://nextjs.org/docs/app/building-your-application/routing/parallel-routes#active-state-and-navigation */}
+          {/* https://github.com/vercel/next.js/issues/48719 */}
+          {/* https://github.com/vercel/next.js/issues/48719#issuecomment-1794680696 */}
+          {/* https://github.com/vercel/next.js/issues/51714#issuecomment-1697615626 */}
+          {userIsLoggedIn == false && landing}
           {children}
           {/* {common} */}
           {/* {userIsLoggedIn == false ? children : feed} */}

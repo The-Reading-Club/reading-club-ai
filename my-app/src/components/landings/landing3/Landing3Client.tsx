@@ -34,6 +34,8 @@ import beesImg from "/public/characters/Bees2.png";
 // import beeBoy from "/public/characters/Bee-Boy.png";
 import beeBoy from "/public/characters/Bee02.png";
 import beeMom from "/public/characters/Bee-Mom.png";
+import { usePathname, useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 interface SocialLinkProps {
   href: string;
@@ -79,6 +81,22 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
       scrollContainerRef.current.scrollLeft = centerPosition;
     }
   }, []);
+
+  // STUPID WORKAROUND
+
+  const router = useRouter();
+  const pathname = usePathname();
+
+  // const session = useSession();
+
+  // const userIsLoggedIn = session.data?.user ? true : false;
+
+  if (pathname !== "/") return null;
+
+  // if (userIsLoggedIn) {
+  //   // router.push("/feed");
+  //   return null;
+  // }
 
   return (
     <div
@@ -264,8 +282,8 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
                 />
               </div>
               <Link
-                href="https://www.readingclub.ai/drafts"
-                // href="http://localhost:3000/drafts"
+                // href="https://www.readingclub.ai/drafts"
+                href="http://localhost:3000/drafts"
                 // target="_blank"
                 rel="noopener noreferrer"
                 className="text-[#3c4043]"
