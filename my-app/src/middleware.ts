@@ -14,6 +14,16 @@ import { NextRequest, NextResponse } from "next/server";
 const { auth } = NextAuth(authConfig);
 
 export default auth((req) => {
+  const requestHeaders = new Headers(req.headers);
+
+  requestHeaders.set("x-pathname", req.nextUrl.pathname);
+
+  NextResponse.next({
+    request: {
+      headers: requestHeaders,
+    },
+  });
+
   // req.auth
   //   console.log("ROUTE: ", req.nextUrl.pathname);
   //   const isLoggedIn = !!req.auth;
@@ -63,7 +73,8 @@ export default auth((req) => {
   // This will make it so that you are not running the request headers middle ware on every route
   // per se
   // learn what NextResponse.next does
-  return requestHeadersMiddleware(req);
+  // return requestHeadersMiddleware(req);
+  return null;
 });
 
 // Optionally, don't invoke Middleware on some paths
