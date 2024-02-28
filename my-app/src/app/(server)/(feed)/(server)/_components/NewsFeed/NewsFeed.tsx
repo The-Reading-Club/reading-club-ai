@@ -36,7 +36,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
 
   return (
     <div>
-      <div className="flex flex-row gap-5 p-5 flex-wrap justify-center">
+      <div className="flex flex-row gap-10 p-5 flex-wrap justify-center">
         {documents?.map((document) => {
           // <div key={document._id + "docprofile"}>{document.title}</div>
           if (!document.userOauthId) return null;
@@ -55,11 +55,11 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
 
           return (
             <div
-              className="flex flex-row gap-5"
+              className="flex flex-row gap-5 lg:gap-0 flex-wrap  justify-center lg:justify-between"
               key={`${document._id}-newsfeed-postwrapper`}
             >
               {/* The author created a story or something like that */}
-              <div className="basis-[50%] flex flex-col gap-5">
+              <div className="basis-[100%] lg:basis-[50%] flex flex-col gap-5">
                 {/* <img
                   src={fetchedUser?.image}
                   alt="avatar"
