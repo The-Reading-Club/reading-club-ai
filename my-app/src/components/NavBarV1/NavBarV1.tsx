@@ -14,7 +14,7 @@ const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
         <div className="text-2xl font-bold  flex space-x-12">
           <Link href="/" className="text-white">
             {/* <Logo width={150} height={150} padding={0} /> */}
-            readingclub.ai
+            Home
           </Link>
           <Link href="/drafts" className="text-white">
             {/* <Logo width={150} height={150} padding={0} /> */}
