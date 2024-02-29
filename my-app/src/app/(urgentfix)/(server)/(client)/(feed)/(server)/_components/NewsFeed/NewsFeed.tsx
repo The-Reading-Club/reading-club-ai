@@ -89,7 +89,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
 
                 {paragraphContent && document.content && (
                   <p className="italic">
-                    {paragraphContent?.substring(0, 200) + "..."}
+                    {paragraphContent?.substring(0, 300) + "..."}
                   </p>
                 )}
               </div>

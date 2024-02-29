@@ -61,7 +61,7 @@ const Sidebar = () => {
 
   const items = [
     {
-      label: "Home",
+      label: "News Feed",
       href: "/",
       icon: BsHouseFill,
       // icon: async () => {
