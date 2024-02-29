@@ -69,12 +69,14 @@ const Followbar = () => {
             const firstName = capitalizeFirstLetter(lorem.generateWords(1));
             const lastName = capitalizeFirstLetter(lorem.generateWords(1));
 
-            const isMarketingLayout =
-              fetchedUser?.currentUser?.email == "jose@laissez-passer.com";
+            // const isMarketingLayout =
+            //   fetchedUser?.currentUser?.email == "jose@laissez-passer.com";
+            const isMarketingLayout = false;
 
             if (
-              isMarketingLayout == true &&
-              i > unsplashModelsImgs.length - 1
+              // isMarketingLayout == true &&
+              i >
+              unsplashModelsImgs.length - 1
             ) {
               // i = 0;
               return null;
