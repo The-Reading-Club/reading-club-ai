@@ -25,8 +25,8 @@ const font = Nunito({
 });
 
 export const metadata: Metadata = {
-  title: "Reading Club AI",
-  description: "Write & Share Children's Books with AI",
+  title: "readingclub.ai",
+  description: "Enable Creative Writing at Any Literacy Level",
 };
 
 export default async function RootLayout({
