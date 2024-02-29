@@ -69,8 +69,8 @@ const Followbar = () => {
             const firstName = capitalizeFirstLetter(lorem.generateWords(1));
             const lastName = capitalizeFirstLetter(lorem.generateWords(1));
 
-            // const isMarketingLayout =
-            fetchedUser?.currentUser?.email == "jose@laissez-passer.com-test";
+            const isMarketingLayout =
+              fetchedUser?.currentUser?.email == "jose@laissez-passer.com-test";
             // const isMarketingLayout = false;
 
             if (
