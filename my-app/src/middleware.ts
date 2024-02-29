@@ -49,6 +49,18 @@ export default auth((req) => {
   const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
   const isAuthRoute = authRoutes.includes(nextUrl.pathname);
 
+  const isEditorRoute = nextUrl.pathname.startsWith("/editor");
+
+  if (isEditorRoute) {
+    if (!isLoggedIn) {
+      // not logged in and not public route so redirect to login
+      return NextResponse.redirect(new URL("/auth/login", nextUrl));
+    }
+
+    // redirect to drafts route
+    return NextResponse.redirect(new URL("/drafts", nextUrl));
+  }
+
   if (isPreviewRoute) {
     // do nothing (don't block preview routes)
     return null;
