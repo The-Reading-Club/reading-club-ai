@@ -2,7 +2,10 @@ import useSWR from "swr";
 import fetcher from "../fetcher";
 
 export const useUsers = () => {
-  const { data, error, isLoading, mutate } = useSWR("/api/users", fetcher);
+  const { data, error, isLoading, mutate } = useSWR("/api/users", fetcher, {
+    // revalidateOnReconnect: true,
+    revalidateOnMount: true,
+  });
 
   console.log("data", data);
   console.log("error", error);
