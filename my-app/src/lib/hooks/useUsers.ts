@@ -26,6 +26,11 @@ export const useUsers = () => {
     {
       queryKey: ["users"],
       queryFn: () => fetcher("/api/users"),
+      staleTime: 0, // Consider data stale immediately
+      // cacheTime: 5 * 60 * 1000, // Cache time of 5 minutes
+      // https://tanstack.com/query/v5/docs/framework/react/guides/migrating-to-v5#rename-cachetime-to-gctime
+      gcTime: 0, // Garbage collection time of 5 minutes
+      refetchOnWindowFocus: "always", // Refetch on window focus
     }
     // "users",
     // () => fetcher("/api/users")
