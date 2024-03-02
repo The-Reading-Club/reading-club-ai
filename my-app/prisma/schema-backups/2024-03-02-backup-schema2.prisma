@@ -49,11 +49,12 @@ model Account {
   id_token          String? @db.Text
   session_state     String? @db.VarChar(250)
 
-  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+  user User @relation(fields: [userId], references: [id], onUpdate: Cascade)
 
   @@unique([provider, providerAccountId])
 
-  @@index([userId], map: "User") // this is for foreign keys
+  // @@index([userId], map: "User") // this is for foreign keys
+  @@index([userId], map: "provider_ibfk_1")
   @@map("provider") // this sucks!!!
 }
 

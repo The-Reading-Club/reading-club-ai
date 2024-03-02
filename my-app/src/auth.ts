@@ -40,12 +40,105 @@ export const {
   },
 
   events: {
-    async linkAccount({ user }) {
+    async linkAccount({ user, account }) {
+      // it's a oldCodebaseUser if the user.id is as long as
+
+      // Log this three conditions for debugging
+      console.log("linkAccount", {
+        user,
+        account,
+        oldCodebaseUser:
+          user.id === undefined || user.id === null || user.id.length > 15,
+        "user.id === undefined": user.id === undefined,
+        "user.id === null": user.id === null,
+        "user.id && user.id.length > 15": user.id && user.id.length > 15,
+      });
+
+      const oldCodebaseUser =
+        user.id === undefined || user.id === null || user.id.length > 15;
+
+      // Account already existed with old codebase, need to adjust a couple of things
+      // https://chat.openai.com/c/94709f44-ad64-4193-9845-ff76647f1869
+      if (oldCodebaseUser == true) {
+        const oldUserId = user.id;
+
+        if (!account.id_token)
+          throw new Error("No account id token in linkAccount");
+
+        const decodedToken = decodeJWT(account.id_token);
+
+        const newUserId = decodedToken.sub;
+        const accountName = decodedToken.name;
+        const accountImage = decodedToken.picture;
+
+        console.log("linkAccount", {
+          oldUserId,
+          newUserId,
+          accountName,
+          accountImage,
+        });
+        // await db.$transaction([
+        //   db.user.update({
+        //     where: { email: user.email! },
+        //     data: {
+        //       // emailVerified: new Date(),
+        //       id: newUserId,
+        //       // name: "TRANSACTION WORKED!",
+        //     },
+        //   }),
+        //   db.account.updateMany({
+        //     where: { userId: oldUserId },
+        //     data: { userId: newUserId },
+        //   }),
+        // ]);
+        // await db.user.update({
+        //   where: {
+        //     email: user.email!,
+        //   },
+        //   data: {
+        //     // emailVerified: new Date(),
+        //     id: "WHYISNTTHISWORKING",
+        //     // name: "this is another test NEW",
+        //   },
+        // });
+        // await db.$transaction(async (tx) => {
+        //   await tx.user.update({
+        //     where: { id: oldUserId },
+        //     data: {
+        //       /* your update data here */
+        //       id: newUserId,
+        //     },
+        //   });
+        // });
+        // await db.$transaction(async (tx) => {
+        //   // Step 1: Update related Account records
+        //   await tx.account.updateMany({
+        //     where: { userId: oldUserId },
+        //     data: { userId: newUserId },
+        //   });
+
+        //   // Step 2: Update the User record
+        //   await tx.user.update({
+        //     where: { id: oldUserId },
+        //     data: { id: newUserId },
+        //   });
+        // });
+
+        await db.$executeRaw`
+                UPDATE account SET 
+                  oauth_id = ${newUserId},
+                  name = ${accountName},
+                  image = ${accountImage}
+                WHERE oauth_id = ${oldUserId} LIMIT 1`;
+      }
+
       await db.user.update({
         where: {
           id: user.id,
         },
-        data: { emailVerified: new Date() },
+        data: {
+          emailVerified: new Date(),
+        },
       });
     },
   },
