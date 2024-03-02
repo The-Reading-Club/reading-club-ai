@@ -1,6 +1,8 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
+export const dynamic = "force-dynamic";
+
 export async function GET() {
   try {
     // interestingly it doesnt complain anymore about null oauth ids
