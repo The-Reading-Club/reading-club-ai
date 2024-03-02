@@ -1,7 +1,13 @@
 import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
-export const dynamic = "force-dynamic";
+// https://nextjs.org/docs/app/building-your-application/caching
+// https://vercel.com/docs/infrastructure/data-cache
+// https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
+// export const dynamic = "force-dynamic";
+
+// 1 minute
+export const revalidate = 60;
 
 export async function GET() {
   try {
