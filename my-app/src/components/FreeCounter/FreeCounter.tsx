@@ -10,9 +10,9 @@ interface FreeCounterProps {
   isPlus: boolean;
 }
 
-const MAX_FREE_COUNT_ILLUSTRATION = 100; //10;
-const MAX_FREE_COUNT_ILLUSTRATION_PROMPT = 400;
-const MAX_FREE_COUNT_GENERATION = 100;
+const MAX_FREE_COUNT_ILLUSTRATION = 10; //10;
+const MAX_FREE_COUNT_ILLUSTRATION_PROMPT = 40;
+const MAX_FREE_COUNT_GENERATION = 10;
 
 const FreeCounter: React.FC<FreeCounterProps> = ({ rateLimits, isPlus }) => {
   const {
