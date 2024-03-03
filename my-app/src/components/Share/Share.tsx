@@ -18,9 +18,22 @@ import { Checkbox } from "../ui/checkbox";
 
 interface ShareProps {
   initialData: Doc<"documents">;
+  children: React.ReactNode;
 }
 
-const ShareComponent: React.FC<ShareProps> = ({ initialData }) => {
+// children: childrenAsPopupTrigger = (
+//   <Button variant={"accent"} size={"lg"}>
+//     Share with family
+//     {/* {initialData.isShared && (
+// <Globe className="text-sky-500 w-4 h-4 ml-2" />
+// )} */}
+//   </Button>
+// ),
+
+const ShareComponent: React.FC<ShareProps> = ({
+  initialData,
+  children: childrenAsPopupTrigger,
+}) => {
   const origin = useOrigin();
   const update = useMutation(api.documents.update);
 
@@ -88,12 +101,10 @@ const ShareComponent: React.FC<ShareProps> = ({ initialData }) => {
   return (
     <Popover>
       <PopoverTrigger asChild>
-        <Button variant={"accent"} size={"lg"}>
+        {/* <Button variant={"accent"} size={"lg"}>
           Share with family
-          {/* {initialData.isShared && (
-            <Globe className="text-sky-500 w-4 h-4 ml-2" />
-          )} */}
-        </Button>
+        </Button> */}
+        {childrenAsPopupTrigger}
       </PopoverTrigger>
       <PopoverContent className="w-72" align="end" alignOffset={8} forceMount>
         {initialData.isShared ? (
@@ -210,11 +221,20 @@ const ShareComponent: React.FC<ShareProps> = ({ initialData }) => {
   );
 };
 
-const ShareWrapper = () => {
-  const params = useParams();
+interface ShareWrapperProps {
+  documentId: Id<"documents">; // I want this component to be reusable outside drafts view
+  children: React.ReactNode;
+}
+
+const ShareWrapper: React.FC<ShareWrapperProps> = ({
+  documentId,
+  children,
+}) => {
+  // const params = useParams();
 
   const document = useQuery(api.documents.getById, {
-    documentId: params.documentId as Id<"documents">,
+    // documentId: params.documentId as Id<"documents">,
+    documentId: documentId,
   });
 
   if (document === undefined) {
@@ -223,7 +243,7 @@ const ShareWrapper = () => {
 
   if (document === null) return null;
 
-  return <ShareComponent initialData={document} />;
+  return <ShareComponent initialData={document}>{children}</ShareComponent>;
 };
 
 export default ShareWrapper;
