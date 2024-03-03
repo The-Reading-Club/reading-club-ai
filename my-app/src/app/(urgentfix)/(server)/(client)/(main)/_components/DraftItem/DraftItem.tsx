@@ -15,6 +15,7 @@ interface DraftItemProps {
   showCoverImage?: boolean;
   authorColorClassname?: string;
   titleColorClassname?: string;
+  showUnpublishedWatermark?: boolean;
 }
 
 // const DEFAULT_COVER_URL = "https://www.readingclub.ai/_next/image?url=https%3A%2F%2F0opmmv83e2pndbdg.public.blob.vercel-storage.com%2Fbeta%2Fimages%2F2024-02-06%2F52748-HV7IOqdDaK-Y7ivpxbBS8B4zZFovicu3BtfiBSZhc.png&w=2048&q=75";
@@ -34,10 +35,11 @@ const DraftItem: React.FC<DraftItemProps> = ({
   showCoverImage = true,
   authorColorClassname = "",
   titleColorClassname = "",
+  showUnpublishedWatermark: showPublishedWatermark = false,
 }) => {
   return (
     <div
-      className={`${colorClassName} p-5 rounded-xl relative basis-[250px] cursor-pointer hover:${hoverColorClassName} transition-all duration-300 ease-in-out flex flex-col`}
+      className={`${colorClassName} p-5 rounded-xl relative basis-[250px] cursor-pointer hover:${hoverColorClassName} transition-all duration-300 ease-in-out flex flex-col relative`}
       // ${
       //   showCoverImage ? "justify-around" : ""
       // }
@@ -91,6 +93,12 @@ const DraftItem: React.FC<DraftItemProps> = ({
         <div className={`font-bold ${titleColorClassname}`}>{title}</div>
         <div className={`${authorColorClassname}`}>{author}</div>
       </div>
+      {/* https://chat.openai.com/c/d21525f3-ff2c-44b0-a984-5ab08df6ff6a */}
+      {showPublishedWatermark && (
+        <div className="absolute -rotate-45 left-[50%] top-[50%] transform -translate-x-[50%] -translate-y-[50%] text-4xl font-bold text-neutral-500/75">
+          <p>UNPUBLISHED</p>
+        </div>
+      )}
     </div>
   );
 };

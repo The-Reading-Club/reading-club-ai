@@ -10,6 +10,7 @@ import { useQuery } from "convex/react";
 import { api } from "../../../../../../../../../../convex/_generated/api";
 import DraftItem from "@/app/(urgentfix)/(server)/(client)/(main)/_components/DraftItem/DraftItem";
 import { useRouter } from "next/navigation";
+import { useSession } from "next-auth/react";
 
 interface UserViewPageParams {
   params: {
@@ -22,7 +23,13 @@ const UserViewPage = ({ params }: UserViewPageParams) => {
 
   const { data: fetchedUser, isLoading } = useUser(userId);
 
-  const documents = useQuery(api.documents.getShared, {
+  const session = useSession();
+  const user = session.data?.user;
+
+  const apiDocumentsFunction =
+    user?.id == userId ? api.documents.getShared : api.documents.getPublished;
+
+  const documents = useQuery(apiDocumentsFunction, {
     userOauthId: userId,
   });
 
@@ -63,6 +70,10 @@ const UserViewPage = ({ params }: UserViewPageParams) => {
             // colorClassName="bg-accent2"
             // titleBgColorClassname=""
             hoverColorClassName="bg-accent"
+            colorClassName={`bg-primary ${
+              !document.isPublished && "opacity-50"
+            }`}
+            showUnpublishedWatermark={!document.isPublished}
           />
         ))}
       </div>

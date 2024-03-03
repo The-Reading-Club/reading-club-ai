@@ -6,6 +6,8 @@ interface FeedClientLayoutProps {
 }
 
 const FeedClientLayout: React.FC<FeedClientLayoutProps> = ({ children }) => {
+  // If it's not logged in return null
+
   return <FeedLayout> {children}</FeedLayout>;
 };
 

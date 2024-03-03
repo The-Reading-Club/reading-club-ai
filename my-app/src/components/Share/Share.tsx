@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Doc, Id } from "@/../convex/_generated/dataModel";
 
 import {
@@ -14,6 +14,7 @@ import { toast } from "sonner";
 import { Button } from "../ui/button";
 import { useParams } from "next/navigation";
 import { Check, Copy, Globe } from "lucide-react";
+import { Checkbox } from "../ui/checkbox";
 
 interface ShareProps {
   initialData: Doc<"documents">;
@@ -26,29 +27,46 @@ const ShareComponent: React.FC<ShareProps> = ({ initialData }) => {
   const [copied, setCopied] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
 
+  // interesting situation here... but it works better by calling
+  // onSharing and onUnshare directly from the button
+  // const [published, setPublished] = useState<boolean>(
+  //   initialData.isPublished ?? false
+  // );
+
+  // useEffect(() => {
+  //   if (initialData.isPublished != published) {
+  //     onSharing();
+  //   }
+  // }, [published]);
+
   const url = `${origin}/preview/${initialData._id}`;
 
-  const onSharing = () => {
+  // If you are publishing, you are also sharing
+  // If you are sharing, you are not necessarily publishing
+  const onSharing = (published: boolean) => {
     setIsSubmitting(true);
 
     const promise = update({
       id: initialData._id,
       isShared: true,
+      isPublished: published,
     }).finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
       loading: "Sharing...",
-      success: "Shared!",
+      success: `Shared ${published ? "and published" : "(unpublished)"}!`,
       error: "Error sharing story.",
     });
   };
 
+  // If you are unsharing, you are not publishing
   const onUnshare = () => {
     setIsSubmitting(true);
 
     const promise = update({
       id: initialData._id,
       isShared: false,
+      isPublished: false,
     }).finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
@@ -92,6 +110,7 @@ const ShareComponent: React.FC<ShareProps> = ({ initialData }) => {
                 value={url}
                 disabled
               />
+
               <Button
                 onClick={onCopy}
                 disabled={copied}
@@ -114,6 +133,22 @@ const ShareComponent: React.FC<ShareProps> = ({ initialData }) => {
                 Open in new tab
               </a>
             </Button> */}
+            <div className="flex items-center space-x-2  mb-4">
+              <Checkbox
+                checked={initialData.isPublished}
+                // checked={initialData.isPublished}
+                onCheckedChange={(publishCheck: boolean) =>
+                  // setPublished(publishCheck)
+                  onSharing(publishCheck)
+                }
+              />
+              <label
+                htmlFor="terms2"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Publish on readingclub.ai
+              </label>
+            </div>
             <Button
               onClick={onUnshare}
               //   className="w-full"
@@ -144,9 +179,24 @@ const ShareComponent: React.FC<ShareProps> = ({ initialData }) => {
             <span className="text-xs text-muted-foreground mb-4">
               Share your books with friends and family.
             </span>
+            <div className="flex items-center space-x-2  mb-4">
+              <Checkbox
+                checked={initialData.isPublished}
+                // checked={initialData.isPublished}
+                onCheckedChange={(publishCheck: boolean) =>
+                  onSharing(publishCheck)
+                }
+              />
+              <label
+                htmlFor="terms2"
+                className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
+              >
+                Publish on readingclub.ai
+              </label>
+            </div>
             <Button
               disabled={isSubmitting}
-              onClick={onSharing}
+              onClick={() => onSharing(initialData.isPublished == true)}
               className="w-full text-xs"
               size="sm"
               variant={"accent"}

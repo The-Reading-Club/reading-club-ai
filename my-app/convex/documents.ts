@@ -64,12 +64,40 @@ export const getShared = query({
     userOauthId: v.string(),
   },
   handler: async (ctx, args) => {
+    // Now get shared will be an authenticated api request
+
+    const identity = await ctx.auth.getUserIdentity();
+
+    if (!identity) {
+      throw new Error("Not authenticated");
+    }
+
+    if (identity.subject !== args.userOauthId) {
+      throw new Error("Not authorized");
+    }
+
     // could check hostname to see if it's the server or the client and show non-shared during development
 
     const documents = await ctx.db
       .query("documents")
       .filter((q) => q.eq(q.field("userOauthId"), args.userOauthId))
       .filter((q) => q.eq(q.field("isShared"), true))
+      .order("desc")
+      .take(100);
+
+    return documents;
+  },
+});
+
+export const getPublished = query({
+  args: {
+    userOauthId: v.string(),
+  },
+  handler: async (ctx, args) => {
+    const documents = await ctx.db
+      .query("documents")
+      .filter((q) => q.eq(q.field("userOauthId"), args.userOauthId))
+      .filter((q) => q.eq(q.field("isPublished"), true))
       .order("desc")
       .take(100);
 
@@ -178,6 +206,7 @@ export const update = mutation({
     coverImage: v.optional(v.string()),
     isShared: v.optional(v.boolean()),
     storyData: v.optional(v.string()),
+    isPublished: v.optional(v.boolean()),
   },
   handler: async (ctx, args) => {
     // https://github.com/AntonioErdeljac/notion-clone-tutorial/blob/master/convex/documents.ts
