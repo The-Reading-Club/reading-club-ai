@@ -39,6 +39,7 @@ import { CustomImageView } from "../components/CustomImage";
 // https://chat.openai.com/c/ae328802-25f1-4edd-a1d0-7b2bd824403b
 import { Node as ProseMirrorNode } from "prosemirror-model";
 import { EditorView } from "@tiptap/pm/view";
+import DragAndDrop from "./drag-and-drop";
 
 export const defaultTiptapExtensions: Extensions = [
   StarterKit.configure({
@@ -117,6 +118,7 @@ export const defaultTiptapExtensions: Extensions = [
 ];
 
 export const defaultCustomExtensions: Extensions = [
+  DragAndDrop,
   SlashCommand,
   CustomSuggestion.configure({
     // multicolor: true,

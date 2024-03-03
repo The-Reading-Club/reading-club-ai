@@ -65,6 +65,7 @@ import useLocalStorage from "@/lib/hooks/useLocalStorage";
 import { MetadataExtension } from "./extensions/metadata";
 import { useProModal } from "@/lib/hooks/useModals";
 import { devAlert } from "@/lib/utils";
+import { ImageResizer } from "./extensions/image-resizer";
 const garamondFont = EB_Garamond({
   subsets: ["latin"],
   // https://nextjs.org/docs/pages/api-reference/components/font
@@ -295,6 +296,7 @@ const TRCEditorV2: React.FC<TRCEditorV2Props> = ({
     >
       {/* <p>{JSON.stringify({ suggestionsIDs })}</p> */}
       <div>
+        {/* {editor?.isActive("image") && <ImageResizer editor={editor} />} */}
         <EditorContent editor={editor} />
       </div>
       <TRCEditorBubbleMenu editor={editor} />
