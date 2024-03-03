@@ -35,6 +35,7 @@ import { Input } from "@/components/ui/input";
 import Share from "@/components/Share/Share";
 import { useTiptapEditorContentFromConvex } from "./utils";
 import FreeCounter from "@/components/FreeCounter/FreeCounter";
+import { Button } from "@/components/ui/button";
 
 interface DocumentIdPageProps {
   params: {
@@ -342,7 +343,11 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
         </div>
         {/* <div>Characters go hee</div> */}
         <div className="basis-1/4 h-[100vh] flex flex-col justify-start items-center pt-8 gap-2">
-          <Share />
+          <Share documentId={params.documentId}>
+            <Button variant={"accent"} size={"lg"}>
+              Share with family
+            </Button>
+          </Share>
           <RequestAFeaturePanel />
           <div
             className="lg:flex hidden flex-col justify-center lg:p-10 text-center h-[100vh] "

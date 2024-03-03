@@ -8,7 +8,7 @@ interface DraftItemProps {
   title: string;
   author: string;
   coverUrl: string;
-  onClick: () => void;
+  onClick?: () => void;
   colorClassName?: string;
   hoverColorClassName?: string;
   titleBgColorClassname?: string;
@@ -37,6 +37,7 @@ const DraftItem: React.FC<DraftItemProps> = ({
   titleColorClassname = "",
   showUnpublishedWatermark: showPublishedWatermark = false,
 }) => {
+  // return <div>THIS IS ANOTHER TEST</div>;
   return (
     <div
       className={`${colorClassName} p-5 rounded-xl relative basis-[250px] cursor-pointer hover:${hoverColorClassName} transition-all duration-300 ease-in-out flex flex-col relative`}
