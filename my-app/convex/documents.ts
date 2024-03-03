@@ -112,7 +112,7 @@ export const getFollowed = query({
   handler: async (ctx, args) => {
     const documents = await ctx.db
       .query("documents")
-      .filter((q) => q.eq(q.field("isShared"), true))
+      .filter((q) => q.eq(q.field("isPublished"), true))
       .order("desc")
       .take(1000);
 

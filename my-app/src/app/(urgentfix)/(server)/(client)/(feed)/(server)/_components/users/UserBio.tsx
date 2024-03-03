@@ -43,29 +43,27 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
   return (
     <div className="border-b-[1px] border-primary pb-4">
       <div className="flex justify-end p-2">
-        {
-          // currentUser?.id === userId ?
-          currentUser?.email === fetchedUser?.email ? (
-            <Button
-              //   variant={"accent"}
-              //   className="border border-primary text-primary"
-              //   className="bg-secondary text-primary border-primary"
-              variant={"ghost"}
-              className="text-primary border border-primary"
-              //   className="text-accent2 border border-accent2"
-            >
-              Edit profile
-            </Button>
-          ) : (
-            <Button
-              onClick={toggleFollow}
-              variant={isFollowing ? "ghost" : "accent"}
-              // className={isFollowing ? "text-primary" : "text-neutral-500"}
-            >
-              {isFollowing ? "Unfollow" : "Follow"}
-            </Button>
-          )
-        }
+        {currentUser?.id === userId ? (
+          // currentUser?.email === fetchedUser?.email ?
+          <Button
+            //   variant={"accent"}
+            //   className="border border-primary text-primary"
+            //   className="bg-secondary text-primary border-primary"
+            variant={"ghost"}
+            className="text-primary border border-primary"
+            //   className="text-accent2 border border-accent2"
+          >
+            Edit profile
+          </Button>
+        ) : (
+          <Button
+            onClick={toggleFollow}
+            variant={isFollowing ? "ghost" : "accent"}
+            // className={isFollowing ? "text-primary" : "text-neutral-500"}
+          >
+            {isFollowing ? "Unfollow" : "Follow"}
+          </Button>
+        )}
       </div>
       <div className="mt-8 px-4">
         {/* Name */}
