@@ -43,6 +43,7 @@ export async function GET(req: Request) {
   //   const idToken = "YOUR.ID.TOKEN.HERE";
   const decoded = decodeJWT(id_token);
   console.log("DECODED ID TOKEN", decoded);
+  // Here you could refresh countless shit in the database if you need to
 
   const userOauthId = decoded.sub;
 

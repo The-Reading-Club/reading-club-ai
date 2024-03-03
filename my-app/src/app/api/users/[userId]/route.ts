@@ -32,7 +32,7 @@ export async function GET(
         id: true,
         name: true,
         image: true,
-        email: true,
+        // email: true,
         register_date: true,
         //
         following: {
@@ -67,7 +67,7 @@ export async function GET(
       followingCount: existingUser?.following.length,
     };
 
-    console.log("existingUserObj", existingUserObj);
+    console.log("existingUserObj", existingUserObj.name);
 
     return NextResponse.json(existingUserObj);
   } catch (error) {

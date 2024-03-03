@@ -6,6 +6,8 @@ import { NextResponse } from "next/server";
 // https://nextjs.org/docs/app/api-reference/file-conventions/route-segment-config
 // export const dynamic = "force-dynamic";
 
+// https://chat.openai.com/c/a65f7b7b-c4b0-4012-b8d0-3867ec56d4e1
+
 // 1 minute
 export const revalidate = 60;
 
