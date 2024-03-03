@@ -1,6 +1,6 @@
 "use client";
 import { useCurrentUser, useUsers } from "@/lib/hooks/useUsers";
-import { capitalizeFirstLetter, devAlert } from "@/lib/utils";
+import { capitalizeFirstLetter, devAlert, getRandomIndexes } from "@/lib/utils";
 import Image from "next/image";
 import React from "react";
 import Avatar from "../Avatar";
@@ -32,77 +32,113 @@ const Followbar = () => {
     return <div>No users</div>;
   }
 
+  const usersIndexes = getRandomIndexes(users.length, 10);
+
   return (
     <div className="px-6 py-4 hidden lg:block">
       <div className="bg-secondary3 rounded-xl p-4">
         <h2 className="text-xl font-semibold">Who to follow</h2>
         <div className="flex flex-col gap-6 mt-4">
           {/* TODO USER LIST */}
-          {users.map((user: Record<string, any>, i: number) => {
-            if (false)
-              return (
-                <div key={user.id} className="flex flex-row gap-4">
-                  <Avatar userId={user.id} />
-                  <div className="flex flex-col">
-                    <p className="font-semibold text-sm">{user.name}</p>
-                  </div>
-                </div>
-              );
+          {users
+            .filter((u: Record<string, any>, i: number) => {
+              const alexisID = "107403167432202867640";
+              const joseID = "111666551165404184521";
 
-            if (false)
-              return (
-                <div key={user.id} className="flex gap-4 items-center">
+              const featured =
+                [alexisID, joseID].includes(u.id) || usersIndexes.includes(i);
+
+              if ([alexisID, joseID].includes(u.id) == false)
+                if (
+                  u.name.includes("Jose") ||
+                  u.name.includes("José") ||
+                  u.name.includes("Alvarez") ||
+                  u.name.includes("Alexis") ||
+                  u.name.includes("Diamond")
+                )
+                  return false;
+
+              return featured;
+            })
+            .sort((a: Record<string, any>, b: Record<string, any>) => {
+              // https://chat.openai.com/c/7bea4d27-0578-451c-9e8b-94990e5f6a95
+              // "107403167432202867640" should be first
+              if (a.id === "107403167432202867640") return -1;
+              if (b.id === "107403167432202867640") return 1;
+
+              // "111666551165404184521" should be second
+              if (a.id === "111666551165404184521") return -1;
+              if (b.id === "111666551165404184521") return 1;
+
+              // For all others, their order doesn't matter
+              return 0;
+            })
+            .map((user: Record<string, any>, i: number) => {
+              if (false)
+                return (
+                  <div key={user.id} className="flex flex-row gap-4">
+                    <Avatar userId={user.id} />
+                    <div className="flex flex-col">
+                      <p className="font-semibold text-sm">{user.name}</p>
+                    </div>
+                  </div>
+                );
+
+              if (false)
+                return (
+                  <div key={user.id} className="flex gap-4 items-center">
+                    <Image
+                      src={user.image}
+                      alt={user.name}
+                      className="w-12 h-12 rounded-full"
+                      width={48}
+                      height={48}
+                    />
+                    <div>
+                      <h3 className="font-semibold">{user.name}</h3>
+                      {/* <p className="text-accent2">{user.email}</p> */}
+                    </div>
+                  </div>
+                );
+
+              const firstName = capitalizeFirstLetter(lorem.generateWords(1));
+              const lastName = capitalizeFirstLetter(lorem.generateWords(1));
+
+              const isMarketingLayout =
+                fetchedUser?.currentUser?.email ==
+                "jose@laissez-passer.com-test";
+              // const isMarketingLayout = false;
+
+              if (
+                isMarketingLayout == true &&
+                i > unsplashModelsImgs.length - 1
+              ) {
+                // i = 0;
+                return null;
+              }
+
+              const marketingComponent = (
+                <>
                   <Image
-                    src={user.image}
+                    // src={user.image}
+                    src={unsplashModelsImgs[i]}
                     alt={user.name}
                     className="w-12 h-12 rounded-full"
                     width={48}
                     height={48}
                   />
+                  {/* <Avatar userId={user.id} /> */}
                   <div>
-                    <h3 className="font-semibold">{user.name}</h3>
+                    {/* <h3 className="font-semibold">{user.name}</h3> */}
+                    <h3 className="font-semibold">{`${firstName} ${lastName}`}</h3>
                     {/* <p className="text-accent2">{user.email}</p> */}
                   </div>
-                </div>
+                </>
               );
 
-            const firstName = capitalizeFirstLetter(lorem.generateWords(1));
-            const lastName = capitalizeFirstLetter(lorem.generateWords(1));
-
-            const isMarketingLayout =
-              fetchedUser?.currentUser?.email == "jose@laissez-passer.com-test";
-            // const isMarketingLayout = false;
-
-            if (
-              isMarketingLayout == true &&
-              i > unsplashModelsImgs.length - 1
-            ) {
-              // i = 0;
-              return null;
-            }
-
-            const marketingComponent = (
-              <>
-                <Image
-                  // src={user.image}
-                  src={unsplashModelsImgs[i]}
-                  alt={user.name}
-                  className="w-12 h-12 rounded-full"
-                  width={48}
-                  height={48}
-                />
-                {/* <Avatar userId={user.id} /> */}
-                <div>
-                  {/* <h3 className="font-semibold">{user.name}</h3> */}
-                  <h3 className="font-semibold">{`${firstName} ${lastName}`}</h3>
-                  {/* <p className="text-accent2">{user.email}</p> */}
-                </div>
-              </>
-            );
-
-            const productionComponent = (
-              <>
-                {/* <Image
+              const productionComponent = (
+                <>
+                  {/* <Image
                   // src={user.image}
                   src={unsplashModelsImgs[i]}
                   alt={user.name}
@@ -110,24 +146,24 @@ const Followbar = () => {
                   width={48}
                   height={48}
                 /> */}
-                <Avatar userId={user.id} />
-                <div>
-                  <h3 className="font-semibold">{user.name}</h3>
-                  {/* <h3 className="font-semibold">{`${firstName} ${lastName}`}</h3> */}
-                  {/* <p className="text-accent2">{user.email}</p> */}
-                </div>
-              </>
-            );
+                  <Avatar userId={user.id} />
+                  <div>
+                    <h3 className="font-semibold">{user.name}</h3>
+                    {/* <h3 className="font-semibold">{`${firstName} ${lastName}`}</h3> */}
+                    {/* <p className="text-accent2">{user.email}</p> */}
+                  </div>
+                </>
+              );
 
-            return (
-              <div key={user.id} className="flex gap-4 items-center">
-                {/* <p>{JSON.stringify(fetchedUser)}</p> */}
-                {isMarketingLayout == true
-                  ? marketingComponent
-                  : productionComponent}
-              </div>
-            );
-          })}
+              return (
+                <div key={user.id} className="flex gap-4 items-center">
+                  {/* <p>{JSON.stringify(fetchedUser)}</p> */}
+                  {isMarketingLayout == true
+                    ? marketingComponent
+                    : productionComponent}
+                </div>
+              );
+            })}
         </div>
       </div>
     </div>

@@ -137,3 +137,23 @@ export function decodeJWT(token: string) {
 
   return JSON.parse(jsonPayload);
 }
+
+// https://chat.openai.com/c/d2607a19-1aae-48fe-9c24-a74be168d543
+export function getRandomIndexes(arrLength: number, count: number): number[] {
+  // Create an array of indexes
+  let indexes = Array.from({ length: arrLength }, (v, k) => k);
+
+  // Shuffle the array of indexes (Fisher-Yates shuffle)
+  for (let i = indexes.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1));
+    [indexes[i], indexes[j]] = [indexes[j], indexes[i]]; // Swap elements
+  }
+
+  // Select the first 'count' indexes
+  return indexes.slice(0, count);
+}
+
+// // // Example usage
+// const arrLength = 20; // Assuming the array has more than 10 elements
+// const randomIndexes = getRandomIndexes(arrLength, 10);
+// console.log(randomIndexes);
