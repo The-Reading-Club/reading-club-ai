@@ -34,6 +34,7 @@ const ShareComponent: React.FC<ShareProps> = ({ initialData }) => {
     const promise = update({
       id: initialData._id,
       isShared: true,
+      isPublished: true,
     }).finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {

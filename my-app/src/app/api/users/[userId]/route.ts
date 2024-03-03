@@ -7,7 +7,7 @@ import { NextRequest, NextResponse } from "next/server";
 // This is the example I was looking for to get the userId from the params
 // https://github.com/gopinav/Next.js-14-Tutorials/blob/main/route-handlers-demo/src/app/comments/%5Bid%5D/route.ts
 
-export const revalidate = 60;
+// export const revalidate = 60;
 
 export async function GET(
   req: // https://www.youtube.com/watch?v=fuxSl-K0oI0
