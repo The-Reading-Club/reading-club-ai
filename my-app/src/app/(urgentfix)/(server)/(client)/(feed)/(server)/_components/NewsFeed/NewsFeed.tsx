@@ -12,6 +12,7 @@ import Avatar from "../Avatar";
 import { format } from "date-fns";
 import fetcher from "@/lib/fetcher";
 import { Doc } from "../../../../../../../../../convex/_generated/dataModel";
+import { ClipLoader } from "react-spinners";
 
 interface NewsFeedProps {
   userId: string;
@@ -49,7 +50,12 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
   // }, [fetchedUser?.register_date]);
 
   if (isLoading || isLoadingDocuments) {
-    return <div>Loading...</div>;
+    // return <div>Loading test...</div>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <ClipLoader color="#FFC122" size={80} />
+      </div>
+    );
   }
 
   const documents = documentsData?.followingDocs;

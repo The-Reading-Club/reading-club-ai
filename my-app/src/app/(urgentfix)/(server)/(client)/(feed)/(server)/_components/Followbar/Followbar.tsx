@@ -5,6 +5,7 @@ import Image from "next/image";
 import React from "react";
 import Avatar from "../Avatar";
 import { LoremIpsum } from "lorem-ipsum";
+import { ClipLoader } from "react-spinners";
 
 const Followbar = () => {
   const { data: users, isLoading } = useUsers();
@@ -23,7 +24,12 @@ const Followbar = () => {
   });
 
   if (isLoading == true || isLoading2 == true) {
-    return <div>Loading...</div>;
+    // return <div>Loading test...</div>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <ClipLoader color="#FFC122" size={40} />
+      </div>
+    );
   }
 
   // devAlert(users);

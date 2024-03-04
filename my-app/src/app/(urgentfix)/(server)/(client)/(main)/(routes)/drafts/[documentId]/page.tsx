@@ -36,6 +36,7 @@ import Share from "@/components/Share/Share";
 import { useTiptapEditorContentFromConvex } from "./utils";
 import FreeCounter from "@/components/FreeCounter/FreeCounter";
 import { Button } from "@/components/ui/button";
+import { ClipLoader } from "react-spinners";
 
 interface DocumentIdPageProps {
   params: {
@@ -212,7 +213,12 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
   // const isPlus = await checkSubscription();
 
   if (document === undefined) {
-    return <div>Loading...</div>;
+    // return <div>Loading...</div>;
+    return (
+      <div className="flex justify-center items-center h-screen">
+        <ClipLoader color="#FFC122" size={80} />
+      </div>
+    );
   }
 
   if (document === null) {
