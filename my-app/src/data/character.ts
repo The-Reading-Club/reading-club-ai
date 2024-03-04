@@ -3,7 +3,7 @@ export type CharacterAttributes = {
   species: string;
   gender: string;
   age: string; // e.g., "10 years old", "young", "elderly"
-  appearance: string; // e.g., "Tall with curly red hair and bright green eyes. Always wears a blue hat."
+  // appearance: string; // e.g., "Tall with curly red hair and bright green eyes. Always wears a blue hat."
   // personalityTraits: string; // e.g., "Kind, curious, and a bit shy."
   // likes: string; // e.g., "Loves chocolate ice cream, reading, and sunny days."
   // dislikes: string; // e.g., "Dislikes loud noises and being rushed."
@@ -18,12 +18,12 @@ export type CharacterAttributes = {
   // hobbies: string; // e.g., "Enjoys fishing, painting, and playing the flute."
   // signatureItems: string; // e.g., "Always carries a magical compass and a family photo."
 
-  height: string;
+  // height: string;
   hairColor: string;
   hairLength: string;
   hairType: string;
   eyeColor: string;
-  distinguishingMarks: string;
+  // distinguishingMarks: string;
   outfit: string;
   build: string;
   skinTone: string;
@@ -41,7 +41,7 @@ export const CHARACTER_ATTRIBUTES: CharacterAttributes = {
   species: "",
   age: "", // e.g., "10 years old", "young", "elderly"
   gender: "",
-  appearance: "", // e.g., "Tall with curly red hair and bright green eyes. Always wears a blue hat."
+  // appearance: "", // e.g., "Tall with curly red hair and bright green eyes. Always wears a blue hat."
   // personalityTraits: "", // e.g., "Kind, curious, and a bit shy."
   // likes: "", // e.g., "Loves chocolate ice cream, reading, and sunny days."
   // dislikes: "", // e.g., "Dislikes loud noises and being rushed."
@@ -57,12 +57,12 @@ export const CHARACTER_ATTRIBUTES: CharacterAttributes = {
   // signatureItems: "", // e.g., "Always carries a magical compass and a family photo."
 
   //   exterior
-  height: "",
+  // height: "",
   hairColor: "",
   hairLength: "",
   hairType: "",
   eyeColor: "",
-  distinguishingMarks: "",
+  // distinguishingMarks: "",
   outfit: "",
   build: "",
   placeOfOrigin: "",

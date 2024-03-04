@@ -23,6 +23,15 @@
 /* HELLO */
 
 .ProseMirror:not(.dragging) .ProseMirror-selectednode {
+  outline: none !important;
+  /* outline: var(--trc-highlight-blue) solid 10px; */
+  border-radius: 0.2rem;
+  background-color: var(--trc-highlight-blue);
+  transition: background-color 0.2s;
+  box-shadow: none;
+}
+
+.ProseMirror:not(.dragging) .ProseMirror-selectednode img {
   /* outline: none !important; */
   outline: var(--trc-highlight-blue) solid 10px;
   border-radius: 0.2rem;

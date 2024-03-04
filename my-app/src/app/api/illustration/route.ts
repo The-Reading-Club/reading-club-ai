@@ -288,11 +288,11 @@ export async function POST(request: Request) {
 
   console.log("Undefined?", c);
 
-  const consistentPrompt2 = `Imagine colorful drawing. In the center, ${c.name}, ${chosenCharacterDescription}: ${c.appearance}. In this scene, ${chosenCharacter.scene}. The background is ${chosenCharacter.background}. The entire scene should evoke a sense of adventure suitable for a children's storybook.`;
-  console.log("\n****** CONSISTENT PROMPT ****");
+  // const consistentPrompt2 = `Imagine colorful drawing. In the center, ${c.name}, ${chosenCharacterDescription}: ${c.appearance}. In this scene, ${chosenCharacter.scene}. The background is ${chosenCharacter.background}. The entire scene should evoke a sense of adventure suitable for a children's storybook.`;
+  // console.log("\n****** CONSISTENT PROMPT ****");
   // console.log(consistentPrompt);
 
-  const consistentPrompt3 = `In a vibrant, storybook-style illustration, the central character is ${c.name}, a ${c.species}: ${c.appearance}. ${c.name} has ${c.hairColor} hair with large, ${c.eyeColor} eyes, and ${c.distinguishingMarks}. The scene shows ${c.name} ${chosenCharacter.scene}, with a ${chosenCharacter.background}. The setting evokes an air of adventure and wonder, typical of a children's storybook.`;
+  // const consistentPrompt3 = `In a vibrant, storybook-style illustration, the central character is ${c.name}, a ${c.species}: ${c.appearance}. ${c.name} has ${c.hairColor} hair with large, ${c.eyeColor} eyes, and ${c.distinguishingMarks}. The scene shows ${c.name} ${chosenCharacter.scene}, with a ${chosenCharacter.background}. The setting evokes an air of adventure and wonder, typical of a children's storybook.`;
 
   /*
     Let's proceed with an example to create a character sheet. I'll outline the steps I'd typically follow based on the given task:
@@ -317,19 +317,20 @@ For the given example with Evelyn, here's how the detailed prompt for the first 
 
 This prompt would then be used to generate the first image in the series, ensuring that Evelyn's character is introduced with a specific set of visual traits that align with the user's specifications. For subsequent images, variations would be introduced based on the user's choice, such as different expressions, actions, or poses, while using the same seed for consistency in Evelyn's appearance across all images.
     */
-  const consistentPrompt4 = `Highly detailed image in the style of vibrant, storybook-style illustration of a ${c.gender} character named ${c.name}. ${c.name} is a ${c.age}-year-old ${c.species} from ${c.placeOfOrigin}, with ${c.hairLength}, ${c.hairType}, ${c.hairColor} hair, large ${c.eyeColor} eyes, and ${c.distinguishingMarks}. Create a front view medium shot image of ${chosenCharacter.scene}, with a ${chosenCharacter.background}. The setting evokes an air of adventure and wonder, typical of a children's storybook.`;
 
-  const consistentPrompt5 = `Highly detailed image in the style of 2D flat illustration of a ${c.gender.toLocaleLowerCase()} character named ${
-    c.name
-  }. ${c.name} is a ${c.age}-year-old ${c.species} from ${
-    c.placeOfOrigin
-  }, with ${c.hairLength}, ${c.hairType}, ${c.hairColor} hair, and large ${
-    c.eyeColor
-  } eyes. ${c.name}'s outfit consists of ${
-    c.distinguishingMarks
-  }. Create a front view medium shot image of ${
-    chosenCharacter.scene
-  }, with a ${chosenCharacter.background}.`;
+  // const consistentPrompt4 = `Highly detailed image in the style of vibrant, storybook-style illustration of a ${c.gender} character named ${c.name}. ${c.name} is a ${c.age}-year-old ${c.species} from ${c.placeOfOrigin}, with ${c.hairLength}, ${c.hairType}, ${c.hairColor} hair, large ${c.eyeColor} eyes, and ${c.distinguishingMarks}. Create a front view medium shot image of ${chosenCharacter.scene}, with a ${chosenCharacter.background}. The setting evokes an air of adventure and wonder, typical of a children's storybook.`;
+
+  // const consistentPrompt5 = `Highly detailed image in the style of 2D flat illustration of a ${c.gender.toLocaleLowerCase()} character named ${
+  //   c.name
+  // }. ${c.name} is a ${c.age}-year-old ${c.species} from ${
+  //   c.placeOfOrigin
+  // }, with ${c.hairLength}, ${c.hairType}, ${c.hairColor} hair, and large ${
+  //   c.eyeColor
+  // } eyes. ${c.name}'s outfit consists of ${
+  //   c.distinguishingMarks
+  // }. Create a front view medium shot image of ${
+  //   chosenCharacter.scene
+  // }, with a ${chosenCharacter.background}.`;
 
   const consistentPrompt6 = `Highly detailed image in the style of 2D flat illustration of a ${c.gender.toLocaleLowerCase()} character named ${
     c.name
