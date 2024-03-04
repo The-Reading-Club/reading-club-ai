@@ -4,6 +4,7 @@ import Logo from "../Logo";
 import { Button } from "../ui/button";
 import DotsMenu from "./DotsMenu";
 import SignOutForm from "./SignOutForm";
+import UnstyledExternalLink from "../UnstyledExternalLink";
 // import Share from "../Share/Share";
 
 const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
@@ -28,6 +29,12 @@ const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
           )}
         </div>
         <div className="flex space-x-12 reset-a-styles font-semibold p-4 items-center">
+          {/* <Link href="/settings" className="text-white hidden lg:block">
+            Feedback
+          </Link> */}
+          <UnstyledExternalLink href="https://readingclub.canny.io">
+            <p className="text-white">Feedback</p>
+          </UnstyledExternalLink>
           <Link href="/settings" className="text-white hidden lg:block">
             Settings
           </Link>
