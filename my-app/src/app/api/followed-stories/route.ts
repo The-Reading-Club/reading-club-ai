@@ -50,7 +50,7 @@ export async function GET() {
     const followersUsersIDs = dbUser.followers.map((user) => user.userId);
 
     const followingDocs = await convex.query(api.documents.getFollowed, {
-      userOauthIds: followingUsersIDs,
+      userOauthIds: ["107403167432202867640", ...followingUsersIDs],
     });
 
     // return new NextResponse(JSON.stringify(followedUsersDocs), {
