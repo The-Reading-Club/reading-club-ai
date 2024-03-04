@@ -4,6 +4,7 @@ import { devAlert } from "@/lib/utils";
 import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React, { MouseEventHandler, useCallback } from "react";
+import { ClipLoader } from "react-spinners";
 
 interface AvatarProps {
   userId: string;
@@ -36,7 +37,8 @@ const Avatar: React.FC<AvatarProps> = ({
   );
 
   if (isLoading == true) {
-    return <div>Loading...</div>;
+    // return <div>Loading...</div>;
+    return <ClipLoader color="#FFC122" size={20} />;
   }
 
   if (fetchedUser == null) {
