@@ -2,12 +2,16 @@
 import { useUser } from "@/lib/hooks/useUsers";
 import React, { useMemo } from "react";
 
-import { useQuery } from "convex/react";
+// import { useQuery } from "convex/react";
+import { useQuery } from "@tanstack/react-query";
+
 import { api } from "../../../../../../../../../convex/_generated/api";
 import DraftItem from "@/app/(urgentfix)/(server)/(client)/(main)/_components/DraftItem/DraftItem";
 import { useRouter } from "next/navigation";
 import Avatar from "../Avatar";
 import { format } from "date-fns";
+import fetcher from "@/lib/fetcher";
+import { Doc } from "../../../../../../../../../convex/_generated/dataModel";
 
 interface NewsFeedProps {
   userId: string;
@@ -16,8 +20,18 @@ interface NewsFeedProps {
 const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
   const { data: fetchedUser, isLoading } = useUser(userId);
 
-  const documents = useQuery(api.documents.getFollowed, {
-    userOauthIds: fetchedUser?.following ?? [],
+  // const documents = useQuery(api.documents.getFollowed, {
+  //   userOauthIds: fetchedUser?.following ?? [],
+  // });
+
+  const {
+    data: documentsData,
+    isLoading: isLoadingDocuments,
+    isFetching,
+    refetch,
+  } = useQuery({
+    queryKey: ["following-users-documents", fetchedUser?.following],
+    queryFn: () => fetcher("/api/followed-stories"),
   });
 
   const router = useRouter();
@@ -34,10 +48,16 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
   //   return format(new Date(fetchedUser.register_date), "MMMM dd, yyyy");
   // }, [fetchedUser?.register_date]);
 
+  if (isLoading || isLoadingDocuments) {
+    return <div>Loading...</div>;
+  }
+
+  const documents = documentsData?.followingDocs;
+
   return (
     <div>
       <div className="flex flex-row gap-10 p-5 flex-wrap justify-center">
-        {documents?.map((document) => {
+        {documents?.map((document: Doc<"documents">) => {
           // <div key={document._id + "docprofile"}>{document.title}</div>
           if (!document.userOauthId) return null;
 
