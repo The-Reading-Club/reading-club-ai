@@ -10,7 +10,7 @@ import { Id } from "../../../../convex/_generated/dataModel";
 
 const convex = new ConvexHttpClient(process.env.NEXT_PUBLIC_CONVEX_URL!);
 
-export const revalidate = 30;
+export const revalidate = 60;
 
 // https://docs.convex.dev/client/react/nextjs/
 export async function GET() {
