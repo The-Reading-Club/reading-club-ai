@@ -44,7 +44,7 @@ const ProModal = () => {
         <DialogHeader>
           <DialogTitle className="flex justify-center items-center flex-col gap-y-4 pb-2">
             <div className="flex items-center gap-x-2 font-bold py-1 text-darkFont">
-              Upgrade to Reading Club AI
+              Upgrade to readingclub.ai
               <Badge
                 className="bg-accent uppercase text-sm py-1 font-bold"
                 variant={"premium"}
@@ -57,7 +57,7 @@ const ProModal = () => {
             {/* Big banner saying "Enable creative writing at any literacy level" */}
             <div className="lg:text-4xl text-2xl font-semibold text-darkFont">
               {/* Enable Creative Writing at any Literacy Level */}
-              {`Be a prolific children's books writer`}
+              {`Be a prolific storybook writer`}
             </div>
             {/* Description paragraph */}
             <div className="w-full py-6">
@@ -66,7 +66,7 @@ const ProModal = () => {
               stories, characters, chapters, word count, exports, revisions, and
               everything else. */}
                 No matter your age, craft stories for (and with!) young readers
-                in any language, assisted by AI.
+                in 50+ languages, assisted by AI.
               </p>
               <br />
               {/* <p>
@@ -179,7 +179,7 @@ const features = [
   // Unlimited stories
   {
     // label: "Unlimited stories",
-    label: "Enjoy writing unlimited creative children's stories",
+    label: "Enjoy writing unlimited professional-quality storybooks",
     // icon: "📚",
     icon: BookPlusIcon,
     color: "text-accent2",
@@ -188,7 +188,7 @@ const features = [
   // Unlimited characters
   {
     // label: "Unlimited characters",
-    label: "Motivate kids with unlimited personalized illustrations",
+    label: "Motivate young readers with unlimited personalized illustrations",
     // icon: "👥",
     icon: PersonStandingIcon,
     color: "text-accent2",
