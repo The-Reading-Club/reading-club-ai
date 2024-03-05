@@ -14,6 +14,7 @@ import { api } from "../../../../../../../../../convex/_generated/api";
 import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import SidebarWriteButton from "./SidebarWriteButton";
+import { RequestAFeaturePanel } from "@/components/EditorPageWrapper/RightPanel";
 
 const Sidebar = () => {
   // const session = await auth();
@@ -111,6 +112,9 @@ const Sidebar = () => {
           titleColorClassname="text-white opacity-80"
           authorColorClassname="text-white opacity-80"
         />
+      </div>
+      <div className="mt-5 pl-10 pr-1 hidden lg:block">
+        <RequestAFeaturePanel />
       </div>
     </div>
   );
