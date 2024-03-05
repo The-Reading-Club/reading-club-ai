@@ -87,7 +87,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
                   );
                   return textNode?.text as string;
                 })
-                .join(" ");
+                .join("\n\n");
             }
           }
 
@@ -153,7 +153,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
                 {/* <p>{document.content}</p> */}
 
                 {paragraphContent && document.content && (
-                  <p className="italic">
+                  <p className="italic" style={{ whiteSpace: "break-spaces" }}>
                     {paragraphContent?.substring(0, 300) + "..."}
                   </p>
                 )}
