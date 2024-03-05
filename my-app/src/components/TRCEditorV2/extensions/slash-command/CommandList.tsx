@@ -179,36 +179,38 @@ export const getHintItems = ({ query }: { query: string }) => {
         CommandGenerateIllustration(editor);
       },
     },
-    {
-      title: "Upload Image",
-      description: "Upload an image from your computer",
-      searchTerms: [
-        "upload",
-        "image",
-        "photo",
-        "media",
-        "picture",
-        // "illustration", // maybe
-      ],
-      icon: <ImageIcon size={18} />,
-      command: ({ editor, range }: CommandProps) => {
-        // what am I deleteing?
-        editor.chain().focus().deleteRange(range).run();
-        // image upload
-        // wondering if I could have a custom dialog?
-        const input = document.createElement("input");
-        input.type = "file";
-        input.accept = "image/*";
-        input.onchange = async () => {
-          if (input.files?.length) {
-            const file = input.files[0];
-            const pos = editor.view.state.selection.from;
-            startImageUpload(file, editor.view, pos);
-          }
-        };
-        input.click();
-      },
-    },
+    // I'll comment this out for now
+    // {
+    //   title: "Upload Image",
+    //   description: "Upload an image from your computer",
+    //   searchTerms: [
+    //     "upload",
+    //     "image",
+    //     "photo",
+    //     "media",
+    //     "picture",
+    //     // "illustration", // maybe
+    //   ],
+    //   icon: <ImageIcon size={18} />,
+    //   command: ({ editor, range }: CommandProps) => {
+    //     // what am I deleteing?
+    //     editor.chain().focus().deleteRange(range).run();
+    //     // image upload
+    //     // wondering if I could have a custom dialog?
+    //     const input = document.createElement("input");
+    //     input.type = "file";
+    //     input.accept = "image/*";
+    //     input.onchange = async () => {
+    //       if (input.files?.length) {
+    //         const file = input.files[0];
+    //         const pos = editor.view.state.selection.from;
+    //         startImageUpload(file, editor.view, pos);
+    //       }
+    //     };
+    //     input.click();
+    //   },
+    // },
+    // end comment out
     // {
     //   title: "Upload Image",
     //   description: "Upload an image from your computer",
