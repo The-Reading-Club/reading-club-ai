@@ -70,14 +70,53 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
           let paragraphContent;
 
           if (document.content) {
-            paragraphContent = JSON.parse(document.content)
-              ?.content?.find((node: any) => node.type == "paragraph")
-              ?.content?.find((node: any) => node.type == "text")
-              ?.text as string;
+            // paragraphContent = JSON.parse(document.content)
+            //   ?.content?.find((node: any) => node.type == "paragraph")
+            //   ?.content?.find((node: any) => node.type == "text")
+            //   ?.text as string;
+
+            const paragraphs = JSON.parse(document.content)?.content?.filter(
+              (node: any) => node.type == "paragraph"
+            );
+
+            if (paragraphs) {
+              paragraphContent = paragraphs
+                .map((paragraph: any) => {
+                  const textNode = paragraph.content?.find(
+                    (innerNode: any) => innerNode.type == "text"
+                  );
+                  return textNode?.text as string;
+                })
+                .join(" ");
+            }
           }
+
           // JSON.parse(document.content)
           //   ?.content?.find((node: any) => node.type == "paragraph")
           //   ?.content?.find((node: any) => node.type == "text")?.text as string;
+
+          // https://chat.openai.com/c/d95aacd5-42dd-4a73-9db9-c678603225b4
+          // let combinedParagraphContent = "";
+
+          // if (document.content) {
+          //   const documentContent = JSON.parse(document.content)?.content;
+          //   let paragraphsFound = 0;
+
+          //   for (const node of documentContent) {
+          //     if (node.type == "paragraph" && paragraphsFound < 2) {
+          //       // Ensure we only look for the first two paragraphs
+          //       const textNode = node.content?.find(
+          //         (innerNode: any) => innerNode.type == "text"
+          //       );
+          //       if (textNode?.text) {
+          //         combinedParagraphContent +=
+          //           (combinedParagraphContent ? " " : "") + textNode.text;
+          //         paragraphsFound++;
+          //       }
+          //     }
+          //     if (paragraphsFound >= 2) break; // Exit the loop after finding text from the first two paragraphs
+          //   }
+          // }
 
           return (
             <div
