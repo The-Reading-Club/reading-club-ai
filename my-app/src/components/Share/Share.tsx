@@ -157,7 +157,7 @@ const ShareComponent: React.FC<ShareProps> = ({
                 htmlFor="terms2"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                Publish on readingclub.ai
+                Post on readingclub.ai
               </label>
             </div>
             <Button
