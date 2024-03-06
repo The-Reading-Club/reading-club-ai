@@ -6,6 +6,7 @@ import React from "react";
 import Avatar from "../Avatar";
 import { LoremIpsum } from "lorem-ipsum";
 import { ClipLoader } from "react-spinners";
+import Link from "next/link";
 
 const Followbar = () => {
   const { data: users, isLoading } = useUsers();
@@ -38,11 +39,11 @@ const Followbar = () => {
     return <div>No users</div>;
   }
 
-  const usersIndexes = getRandomIndexes(users.length, 10);
+  const usersIndexes = getRandomIndexes(users.length, 1);
 
   return (
     <div className="px-6 py-4 hidden lg:block">
-      <div className="bg-secondary3 rounded-xl p-4">
+      <div className="bg-secondary3 rounded-t-xl p-4">
         <h2 className="text-xl font-semibold">Who to follow</h2>
         <div className="flex flex-col gap-6 mt-4">
           {/* TODO USER LIST */}
@@ -172,6 +173,14 @@ const Followbar = () => {
             })}
         </div>
       </div>
+      {/* <div className="bg-secondary3 px-6 py-4 rounded-b-xl hover:bg-red-500"> */}
+      <Link
+        href={"/connect"}
+        className="block bg-secondary3 px-6 py-4 rounded-b-xl hover:bg-secondary2"
+      >
+        See more
+      </Link>
+      {/* </div> */}
     </div>
   );
 };
