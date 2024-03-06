@@ -190,8 +190,8 @@ const Followbar = () => {
           <a href="mailto:jose@readingclub.ai">jose@readingclub.ai</a> with your
           ideas.{" "}
           <span className="italic">
-            We'll be happy to share a 50% off promo code on our subscription if
-            you do!
+            {`We'll be happy to share a 50% off promo code on our subscription if
+            you do!`}
           </span>
         </p>
       </div>
