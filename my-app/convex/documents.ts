@@ -161,6 +161,7 @@ export const create = mutation({
       userOauthId: userOauthId,
       isArchived: false,
       isShared: false,
+      isPublished: false,
     });
 
     return document;
