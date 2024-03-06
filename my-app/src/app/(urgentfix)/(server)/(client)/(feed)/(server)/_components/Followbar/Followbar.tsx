@@ -213,3 +213,23 @@ const unsplashModelsImgs = [
   "https://0opmmv83e2pndbdg.public.blob.vercel-storage.com/unsplash-models/Screenshot%202024-02-29%20at%2010.13.59%20AM-8ZsShImhxkfmSAGBLrLXl5QaMRNtnp.png",
   "https://0opmmv83e2pndbdg.public.blob.vercel-storage.com/unsplash-models/Screenshot%202024-02-29%20at%2010.15.48%20AM-76CpCbeEUa5zL2KdCyNCIjZQ3Wmcrk.png",
 ];
+
+export const ContactPromo = () => {
+  return (
+    <div className="text-darkFont py-10">
+      <h1 className="font-bold">
+        Which upcoming feature are you most excited about for readingclub.ai?
+      </h1>
+      <br />
+      <p>
+        You can always email the CTO at{" "}
+        <a href="mailto:jose@readingclub.ai">jose@readingclub.ai</a> with your
+        ideas.{" "}
+        <span className="italic">
+          {`We'll be happy to share a 50% off promo code on our subscription if
+            you do!`}
+        </span>
+      </p>
+    </div>
+  );
+};

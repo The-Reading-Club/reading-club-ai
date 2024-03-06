@@ -37,6 +37,7 @@ import { useTiptapEditorContentFromConvex } from "./utils";
 import FreeCounter from "@/components/FreeCounter/FreeCounter";
 import { Button } from "@/components/ui/button";
 import { ClipLoader } from "react-spinners";
+import { ContactPromo } from "../../../../(feed)/(server)/_components/Followbar/Followbar";
 
 interface DocumentIdPageProps {
   params: {
@@ -365,6 +366,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
               documentId={params.documentId}
               className=""
             />
+            <ContactPromo />
           </div>
         </div>
         {/* <RightPanel storyData={storyData} isPlus={true} /> */}
