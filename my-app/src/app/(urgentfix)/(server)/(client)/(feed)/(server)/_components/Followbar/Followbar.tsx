@@ -124,6 +124,13 @@ const Followbar = () => {
                 return null;
               }
 
+              let coFounderTitle = null;
+              if (user.name === "Alexis Diamond") {
+                coFounderTitle = "Co-founder, CEO";
+              } else if (user.name === "José Alvarez") {
+                coFounderTitle = "Co-founder, CTO";
+              }
+
               const marketingComponent = (
                 <>
                   <Image
@@ -158,6 +165,9 @@ const Followbar = () => {
                     <h3 className="font-semibold">{user.name}</h3>
                     {/* <h3 className="font-semibold">{`${firstName} ${lastName}`}</h3> */}
                     {/* <p className="text-accent2">{user.email}</p> */}
+                    {coFounderTitle != null && (
+                      <p className="text-darkFont">{coFounderTitle}</p>
+                    )}
                   </div>
                 </>
               );
