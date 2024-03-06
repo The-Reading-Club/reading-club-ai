@@ -366,7 +366,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
               documentId={params.documentId}
               className=""
             />
-            <ContactPromo />
+            {/* <ContactPromo /> */}
           </div>
         </div>
         {/* <RightPanel storyData={storyData} isPlus={true} /> */}
