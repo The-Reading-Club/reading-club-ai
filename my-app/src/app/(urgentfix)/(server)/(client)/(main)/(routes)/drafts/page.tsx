@@ -57,7 +57,7 @@ const DraftsPage = () => {
     }
 
     const promise = create({
-      title: "Untitled",
+      title: "",
       // author: "New Author"
       author: session.data?.user.name ?? "New Author",
       userId: userId,
