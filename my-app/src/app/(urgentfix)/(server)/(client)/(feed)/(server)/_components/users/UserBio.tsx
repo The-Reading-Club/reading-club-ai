@@ -67,7 +67,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
           ) : (
             <Button
               onClick={toggleFollow}
-              variant={isFollowing ? "ghost" : "accent"}
+              variant={isFollowing ? "ghost2" : "accent"}
               // className={isFollowing ? "text-primary" : "text-neutral-500"}
             >
               {isFollowing ? "Unfollow" : "Follow"}
