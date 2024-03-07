@@ -21,7 +21,10 @@ const ConnectPage = () => {
 
   return (
     <>
-      <FeedHeader showBackArrow label={`Connect (${users.length} members)`} />
+      <FeedHeader
+        showBackArrow
+        label={`Connect w/ ${users.length} members — Edit bio to be at the top!`}
+      />
       <div className="overflow-y-auto h-full">
         {users
           .sort((a: Record<string, any>, b: Record<string, any>) =>
