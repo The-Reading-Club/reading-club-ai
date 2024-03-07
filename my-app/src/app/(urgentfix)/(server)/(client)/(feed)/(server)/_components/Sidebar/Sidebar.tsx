@@ -37,7 +37,7 @@ const Sidebar = () => {
     }
 
     const promise = create({
-      title: "Untitled",
+      title: "",
       author: currentUser?.name ?? "New Author",
       // Wondering how I can move away from emails here...
       // Just stop... authentication will have oAuthId on
