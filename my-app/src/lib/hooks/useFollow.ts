@@ -6,6 +6,7 @@ import { toast } from "sonner";
 const useFollow = (userId: string) => {
   const {
     data: currentUser,
+    isLoading,
     // mutate: mutateCurrentUser
     refetch: mutateCurrentUser,
   } = useCurrentUser();
@@ -24,10 +25,13 @@ const useFollow = (userId: string) => {
     // alert(list);
     // if (list.length > 0) alert(list);
 
+    // if (currentUser != undefined) alert(JSON.stringify(currentUser));
+    console.log("currentUser isFollowing obj", currentUser);
+
     return list.includes(userId);
   }, [
     userId,
-    // currentUser,
+    // isLoading, currentUser,
     currentUser?.following,
   ]);
 

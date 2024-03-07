@@ -1,11 +1,18 @@
 import axios from "axios";
 
 const fetcher = (url: string) =>
-  axios.get(url).then((res) => {
-    console.log("res", res);
+  axios
+    .get(url)
+    .then((res) => {
+      console.log("res", res);
 
-    return res.data;
-  });
+      return res.data;
+    })
+    .catch((error) => {
+      console.error("Axios error:", error);
+      // Optionally, throw the error to be handled by React Query's error handling
+      throw error;
+    });
 
 // const fetcher = async (url: string) => {
 //   try {
