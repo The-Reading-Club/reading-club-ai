@@ -103,7 +103,8 @@ export const useCurrentUser = () => {
   );
 
   return {
-    data: data?.currentUser,
+    // data: data?.currentUser,
+    data,
     error,
     isLoading: isLoading || isFetching, // Consider both loading and fetching states as loading if needed
     refetch, // Exposing refetch for manual data refresh

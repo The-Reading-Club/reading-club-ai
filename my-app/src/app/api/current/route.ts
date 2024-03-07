@@ -69,11 +69,17 @@ export async function GET() {
       return new NextResponse("no user", { status: 400 });
     }
 
-    return NextResponse.json({
-      currentUser,
+    const returnUserObj = {
+      ...dbUser,
       following: dbUser.following.map((user) => user.followingId),
       followers: dbUser.followers.map((user) => user.userId),
-    });
+      // followersCount: dbUser?.followers.length,
+      // followingCount: dbUser?.following.length,
+    };
+
+    console.log("returnUserObj", returnUserObj);
+
+    return NextResponse.json(returnUserObj);
   } catch (error) {
     console.log(error);
     return new NextResponse("Error", { status: 400 });
