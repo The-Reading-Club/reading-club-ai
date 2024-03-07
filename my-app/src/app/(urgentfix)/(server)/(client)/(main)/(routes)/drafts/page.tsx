@@ -109,7 +109,7 @@ const DraftsPage = () => {
         </div> */}
         <DraftItem
           key={"draft-item-add-book-default"}
-          title={""}
+          title={" "}
           // author={"By...you?"}
           author={""}
           coverUrl={""}
