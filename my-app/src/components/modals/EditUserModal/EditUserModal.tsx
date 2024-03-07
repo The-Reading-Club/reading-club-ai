@@ -32,7 +32,7 @@ const EditUserModal = () => {
 
   const [isLoading, setIsLoading] = useState(false);
 
-  const [bio, setBio] = useState("puta mierda");
+  const [bio, setBio] = useState("");
 
   useEffect(() => {
     if (currentUser) {
