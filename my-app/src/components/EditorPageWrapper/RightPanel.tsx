@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import Link from "next/link";
 import { Button } from "@/components/ui/button";
 // import ReactPDF from "@react-pdf/renderer";
@@ -185,6 +185,10 @@ export const InstructionsPanel = () => {
 
 export const DownloadPDFPanel = ({ storyData }: { storyData: StoryData }) => {
   const [documentGenerated, setDocumentGenerated] = React.useState(false);
+
+  useEffect(() => {
+    if (documentGenerated == true) setDocumentGenerated(false);
+  }, [storyData]);
 
   return (
     <>
