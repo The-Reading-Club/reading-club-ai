@@ -24,7 +24,6 @@ model User {
   account_type    account_account_type @default(standard)
   premium         Boolean              @default(dbgenerated("b'0'")) @db.Bit(1)
   hashed_password String?              @db.VarChar(250)
-  bio             String?              @db.VarChar(255)
 
   accounts Account[]
 

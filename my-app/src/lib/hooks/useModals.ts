@@ -33,3 +33,15 @@ export const useIllustrationModal = create<useIllustrationModalStore>(
     setImageSrc: (imageSrc: string) => set({ imageSrc }),
   })
 );
+
+interface useUserEditModalStore {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
+
+export const useUserEditModal = create<useUserEditModalStore>((set) => ({
+  isOpen: false,
+  onOpen: () => set({ isOpen: true }),
+  onClose: () => set({ isOpen: false }),
+}));

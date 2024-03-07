@@ -47,7 +47,7 @@ const ProtectedLayout = async ({ children }: React.PropsWithChildren) => {
       />
       {/* <h1>ProtectedLayout</h1> */}
 
-      <SessionProvider session={session}>{children} </SessionProvider>
+      <SessionProvider session={session}>{children}</SessionProvider>
     </div>
   );
 };

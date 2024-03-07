@@ -13,6 +13,7 @@ import { decodeJWT, devAlert } from "./lib/utils";
 type ExtendedUser = DefaultSession["user"] & {
   accountType: string;
   // refresh_token: string;
+  bio: string;
 };
 
 declare module "next-auth" {
@@ -188,6 +189,7 @@ export const {
       if (!existingUser) return token;
 
       token.accountType = existingUser.account_type;
+      token.bio = existingUser.bio;
 
       return token;
 
@@ -215,7 +217,9 @@ export const {
       if (!token_) return sessionParams.session;
 
       if (token_.accountType && session.user) {
+        console.log({ token_ });
         session.user.accountType = token_.accountType as DBAccountType;
+        session.user.bio = token_.bio;
 
         const decodedToken = decodeJWT(token_.id_token);
         // console.log("auth.ts ");

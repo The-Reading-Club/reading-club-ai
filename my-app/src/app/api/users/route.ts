@@ -24,6 +24,7 @@ export async function GET() {
         name: true,
         // email: true,
         image: true,
+        bio: true,
         // register_date: true,
       },
       where: {

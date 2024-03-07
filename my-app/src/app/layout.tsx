@@ -11,6 +11,7 @@ import TestModal from "@/components/modals/TestModal";
 import DefaultAppModal from "@/components/modals/DefaultAppModal";
 import { auth } from "@/auth";
 import { headers } from "next/headers";
+import { SessionProvider } from "next-auth/react";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -69,6 +70,7 @@ export default async function RootLayout({
       <body className={`${font.className}`}>
         {/* <TestModal /> */}
         <DefaultAppModal />
+        {/* <SessionProvider session={session}> */}
         <Providers>
           {/* <p>pathname {pathname}</p> */}
           {/* {children} */}
@@ -87,6 +89,7 @@ export default async function RootLayout({
           {/* {common} */}
           {/* {userIsLoggedIn == false ? children : feed} */}
         </Providers>
+        {/* </SessionProvider> */}
       </body>
     </html>
   );

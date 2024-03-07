@@ -72,7 +72,7 @@ export const useUser = (userId: string) => {
   };
 };
 
-export const useCurrentUser = () => {
+export const _useCurrentUser = () => {
   const { data, error, isLoading, mutate } = useSWR("/api/current", fetcher);
 
   return {
@@ -80,5 +80,32 @@ export const useCurrentUser = () => {
     error,
     isLoading,
     mutate,
+  };
+};
+
+export const useCurrentUser = () => {
+  const { data, error, isLoading, isFetching, refetch } = useQuery(
+    {
+      queryKey: ["current-user-reactquery"],
+      queryFn: () => fetcher("/api/current"),
+      staleTime: 0, // Consider data stale immediately
+      // cacheTime: 5 * 60 * 1000, // Cache time of 5 minutes
+      // https://tanstack.com/query/v5/docs/framework/react/guides/migrating-to-v5#rename-cachetime-to-gctime
+      gcTime: 0, // Garbage collection time of 5 minutes
+      refetchOnWindowFocus: "always", // Refetch on window focus
+    }
+    // "current",
+    // () => fetcher("/api/current")
+    // // {
+    // //   // React Query automatically refetches on mount and reconnect.
+    // //   // If you need to adjust this behavior, explore options like `staleTime` and `cacheTime`.
+    // // }
+  );
+
+  return {
+    data: data?.currentUser,
+    error,
+    isLoading: isLoading || isFetching, // Consider both loading and fetching states as loading if needed
+    refetch, // Exposing refetch for manual data refresh
   };
 };

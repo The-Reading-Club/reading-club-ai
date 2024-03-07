@@ -4,7 +4,11 @@ import axios from "axios";
 import { toast } from "sonner";
 
 const useFollow = (userId: string) => {
-  const { data: currentUser, mutate: mutateCurrentUser } = useCurrentUser();
+  const {
+    data: currentUser,
+    // mutate: mutateCurrentUser
+    refetch: mutateCurrentUser,
+  } = useCurrentUser();
 
   const {
     // data: userToFollow,
