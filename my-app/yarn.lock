@@ -1950,6 +1950,11 @@ clsx@2.0.0, clsx@^2.0.0:
   resolved "https://registry.yarnpkg.com/clsx/-/clsx-2.0.0.tgz#12658f3fd98fafe62075595a5c30e43d18f3d00b"
   integrity sha512-rQ1+kcj+ttHG0MKVGBUXwayCCF1oh39BF5COIpRzuCEv8Mwjv0XucrI2ExNTOn9IlLifGClWQcU9BrZORvtw6Q==
 
+collapse-white-space@^2.0.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/collapse-white-space/-/collapse-white-space-2.1.0.tgz#640257174f9f42c740b40f3b55ee752924feefca"
+  integrity sha512-loKTxY1zCOuG4j9f6EPnuyyYkf58RnhhWTvRoZEokgB+WbdXehfjFviyOVYkqzEWz1Q5kRiZdBYS5SwxbQYwzw==
+
 color-convert@^2.0.1:
   version "2.0.1"
   resolved "https://registry.yarnpkg.com/color-convert/-/color-convert-2.0.1.tgz#72d3a68d598c9bdb3af2ad1e84f21d896abd4de3"
@@ -2737,6 +2742,13 @@ framework-utils@^1.1.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/framework-utils/-/framework-utils-1.1.0.tgz#a3b528bce838dfd623148847dc92371b09d0da2d"
   integrity sha512-KAfqli5PwpFJ8o3psRNs8svpMGyCSAe8nmGcjQ0zZBWN2H6dZDnq+ABp3N3hdUmFeMrLtjOCTXD4yplUJIWceg==
+
+franc@^6.2.0:
+  version "6.2.0"
+  resolved "https://registry.yarnpkg.com/franc/-/franc-6.2.0.tgz#2ced94b49b1df10bdebb8ab2cdfb57aa5551daa5"
+  integrity sha512-rcAewP7PSHvjq7Kgd7dhj82zE071kX5B4W1M4ewYMf/P+i6YsDQmj62Xz3VQm9zyUzUXwhIde/wHLGCMrM+yGg==
+  dependencies:
+    trigram-utils "^2.0.0"
 
 fs-minipass@^2.0.0:
   version "2.1.0"
@@ -3702,6 +3714,11 @@ mz@^2.7.0:
     any-promise "^1.0.0"
     object-assign "^4.0.1"
     thenify-all "^1.0.0"
+
+n-gram@^2.0.0:
+  version "2.0.2"
+  resolved "https://registry.yarnpkg.com/n-gram/-/n-gram-2.0.2.tgz#e544a7dffefc49c22d898b2f491e787941b3a2ba"
+  integrity sha512-S24aGsn+HLBxUGVAUFOwGpKs7LBcG4RudKU//eWzt/mQ97/NMKQxDWHyHx63UNWk/OOdihgmzoETn1tf5nQDzQ==
 
 nanoid@3.3.6:
   version "3.3.6"
@@ -4959,6 +4976,14 @@ tr46@~0.0.3:
   version "0.0.3"
   resolved "https://registry.yarnpkg.com/tr46/-/tr46-0.0.3.tgz#8184fd347dac9cdc185992f3a6622e14b9d9ab6a"
   integrity sha512-N3WMsuqV66lT30CrXNbEjx4GEwlow3v6rr4mCcv6prnfwhS01rkgyFdjPNBYd9br7LpXV1+Emh01fHnq2Gdgrw==
+
+trigram-utils@^2.0.0:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/trigram-utils/-/trigram-utils-2.0.1.tgz#d22c08350f2cc7ae02ce6d497732db3ef43c8722"
+  integrity sha512-nfWIXHEaB+HdyslAfMxSqWKDdmqY9I32jS7GnqpdWQnLH89r6A5sdk3fDVYqGAZ0CrT8ovAFSAo6HRiWcWNIGQ==
+  dependencies:
+    collapse-white-space "^2.0.0"
+    n-gram "^2.0.0"
 
 ts-api-utils@^1.0.1:
   version "1.0.3"

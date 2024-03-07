@@ -53,6 +53,7 @@
     "convex": "^1.9.0",
     "date-fns": "^3.3.1",
     "diff": "^5.1.0",
+    "franc": "^6.2.0",
     "lorem-ipsum": "^2.0.8",
     "lucide-react": "^0.308.0",
     "nanoid": "^5.0.4",
