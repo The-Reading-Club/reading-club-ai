@@ -1,5 +1,6 @@
 "use client";
 
+import EditUserModalProvider from "@/components/modals/EditUserModal/EditUserModalProvider";
 import IllustrationModalProvider from "@/components/modals/IllustrationModal/IllustrationModalProvider";
 import ProModalProvider from "@/components/modals/ProModal/ProModalProvider";
 import { ReactQueryProvider } from "@/components/providers/ReactQueryProviders";
@@ -19,6 +20,7 @@ export default function Providers({ children }: { children: ReactNode }) {
       <ToasterProvider />
       <ProModalProvider />
       <IllustrationModalProvider />
+      {/* <EditUserModalProvider /> */}
       <ReactQueryProvider>{children}</ReactQueryProvider>
     </>
   );

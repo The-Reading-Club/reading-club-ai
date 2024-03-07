@@ -3,6 +3,9 @@ import { db } from "@/lib/db";
 import { NextResponse } from "next/server";
 
 // https://github.com/AntonioErdeljac/twitter-clone/blob/master/pages/api/current.ts
+
+export const revalidate = 60;
+
 export async function GET() {
   try {
     const session = await auth();
@@ -20,6 +23,7 @@ export async function GET() {
       select: {
         intID: true,
         name: true,
+        bio: true,
         following: {
           select: {
             followingId: true,

@@ -35,6 +35,7 @@ export async function GET(
         name: true,
         image: true,
         // email: true,
+        bio: true,
         register_date: true,
         //
         following: {

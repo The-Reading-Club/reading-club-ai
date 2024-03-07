@@ -23,35 +23,40 @@ const ConnectPage = () => {
     <>
       <FeedHeader showBackArrow label={`Connect (${users.length} members)`} />
       <div className="overflow-y-auto h-full">
-        {users.map((user: Record<string, any>, i: number) => {
-          // return <div key={u.id}>{u.name}</div>;
+        {users
+          .sort((a: Record<string, any>, b: Record<string, any>) =>
+            a.bio ? -1 : 1
+          )
+          .map((user: Record<string, any>, i: number) => {
+            // return <div key={u.id}>{u.name}</div>;
 
-          return (
-            <div
-              key={`connect-page-${user.id}`}
-              className="flex gap-4 items-center px-4 py-4 bg-secondary justify-between hover:bg-secondary3"
-            >
-              {/* <Avatar userId={user.id} /> */}
-              <div className="flex gap-4 items-center">
-                <Image
-                  src={user.image}
-                  alt={user.name}
-                  className="w-12 h-12 rounded-full"
-                  width={48}
-                  height={48}
-                />
-                <div>
-                  <h3 className="font-semibold">{user.name}</h3>
+            return (
+              <div
+                key={`connect-page-${user.id}`}
+                className="flex gap-4 items-center px-4 py-4 bg-secondary justify-between hover:bg-secondary3"
+              >
+                {/* <Avatar userId={user.id} /> */}
+                <div className="flex gap-4 items-center">
+                  <Image
+                    src={user.image}
+                    alt={user.name}
+                    className="w-12 h-12 rounded-full"
+                    width={48}
+                    height={48}
+                  />
+                  <div>
+                    <h3 className="font-semibold">{user.name}</h3>
+                    <p className="text-sm">{user.bio}</p>
+                  </div>
                 </div>
+                <Link href={`/users/${user.id}`}>
+                  <Button size={"sm"} variant={"accent"}>
+                    See profile
+                  </Button>
+                </Link>
               </div>
-              <Link href={`/users/${user.id}`}>
-                <Button size={"sm"} variant={"accent"}>
-                  See profile
-                </Button>
-              </Link>
-            </div>
-          );
-        })}
+            );
+          })}
       </div>
     </>
   );
