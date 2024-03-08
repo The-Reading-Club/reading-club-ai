@@ -154,7 +154,7 @@ const defaultBubbleMenuItems: TRCBubbleMenuItem[] = [
           {
             // textsToTranslate: ["Hello world"],
             textsToTranslate: [selectedText],
-            targetLocale: "es",
+            targetLocale: "en",
           }
         );
 

@@ -20,6 +20,7 @@ export async function POST(request: NextRequest) {
   const response = await axios.post(
     `${process.env.TRANSLATION_SERVICE}/translatev2`,
     {
+      // change var names later
       textsToTranslate,
       targetLocale,
     }
