@@ -272,7 +272,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
         }}
       >
         <div
-          className="basis-1/4 lg:flex hidden flex-col justify-center text-center pt-8 lg:p-10 gap-3"
+          className="basis-1/4 lg:flex flex hidden-no flex-col justify-center text-center pt-8 lg:p-10 gap-3 lg:pb-0 pb-8"
           // style={{ border: "5px solid red" }}
         >
           {/* <h1>{`Title: ${document.title}`}</h1> */}
@@ -328,7 +328,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
           )}
         </div>
         <div
-          className="flex basis-1/2 shrink-0" // THIS IS THE PROBLEM
+          className="flex basis-1/2 shrink-0 lg:w-autonotneeded w-full" // THIS IS THE PROBLEM
           // OTHERWISE SCROLL OVERFLOW DOESNT WORK
           style={{
             flexDirection: "column",
@@ -349,7 +349,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
           />
         </div>
         {/* <div>Characters go hee</div> */}
-        <div className="basis-1/4 h-[100vh] flex flex-col justify-start items-center pt-8 gap-2">
+        <div className="basis-1/4 h-[100vh] flex flex-col justify-start items-center pt-8 gap-2 lg:pb-0 pb-8">
           <Share documentId={params.documentId}>
             <Button variant={"accent"} size={"lg"}>
               Share with family
@@ -357,7 +357,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
           </Share>
           <RequestAFeaturePanel />
           <div
-            className="lg:flex hidden flex-col justify-center lg:p-10 text-center h-[100vh] "
+            className="lg:flex hidden-no flex-col justify-center lg:p-10 px-10 text-center lg:h-[100vh]"
             // style={{ border: "2px solid red" }}
           >
             <CharactersPanel
