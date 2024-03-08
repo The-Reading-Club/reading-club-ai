@@ -62,6 +62,8 @@ export async function GET() {
             recurring: {
               interval: "month",
             },
+            // https://docs.stripe.com/tax/products-prices-tax-codes-tax-behavior#tax-behavior
+            tax_behavior: "exclusive",
           },
           quantity: 1,
         },
@@ -70,6 +72,11 @@ export async function GET() {
       // https://github.com/stripe/stripe-cli/issues/1115
       subscription_data: {
         trial_period_days: 3,
+      },
+      // https://dashboard.stripe.com/settings/tax
+      // https://docs.stripe.com/billing/taxes/collect-taxes
+      automatic_tax: {
+        enabled: true,
       },
       metadata: { userId },
       allow_promotion_codes: true,
