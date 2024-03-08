@@ -28,7 +28,7 @@ const ConnectPage = () => {
         />
       </div>
       <div className="lg:hidden block">
-        <FeedHeader showBackArrow label={`Connect (${users.length} members)`} />
+        <FeedHeader showBackArrow label={`Connect (${users.length} users)`} />
       </div>
       <div className="overflow-y-auto h-full">
         {users
