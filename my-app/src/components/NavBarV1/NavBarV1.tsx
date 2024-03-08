@@ -32,9 +32,11 @@ const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
           {/* <Link href="/settings" className="text-white hidden lg:block">
             Feedback
           </Link> */}
-          <UnstyledExternalLink href="https://readingclub.canny.io">
-            <p className="text-white">Feedback</p>
-          </UnstyledExternalLink>
+          <div className="hidden lg:block">
+            <UnstyledExternalLink href="https://readingclub.canny.io">
+              <p className="text-white">Feedback</p>
+            </UnstyledExternalLink>
+          </div>
           <Link href="/settings" className="text-white hidden lg:block">
             Settings
           </Link>
