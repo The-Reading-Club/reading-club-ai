@@ -100,14 +100,13 @@ function overrideFontStyle(sampleText: string) {
     //   fontFamily: "Ukraine Roboto",
     //   langCode: langCode,
     // });
-    Object.assign(overrideStyle, {
-      fontFamily: "Simplified Chinese",
-    });
+    // Object.assign(overrideStyle, {
+    //   fontFamily: "Simplified Chinese",
+    // });
   }
 
+  console.log("LANG CODE FRANC", langCode);
   return overrideStyle;
-
-  // console.log("LANG CODE FRANC", langCode);
 
   // return { ...overrideStyle, langCode };
 }
@@ -128,98 +127,103 @@ const StoryPDF: React.FC<StoryPDFProps> = ({ storyData }) => {
     <Document>
       <Page style={styles.body}>
         {tiptapEditorContent["content"]?.map((node, i) => {
-          const key = `story-pdf-${node.type}-${i}`;
-          if (
-            node.type === "heading" &&
-            node.attrs?.level === 1 &&
-            node.content != undefined
-          ) {
-            return (
-              <Text
-                key={key}
-                style={{
-                  ...styles.title,
-                  fontFamily: "Roboto TEST",
-                }}
-              >
-                {node.content[0].text}
-              </Text>
-            );
-          } else if (
-            node.type === "heading" &&
-            node.attrs?.level === 2 &&
-            node.content != undefined
-          ) {
-            return (
-              <Text key={key} style={styles.subtitle}>
-                {node.content[0].text}
-              </Text>
-            );
-          } else if (node.type === "paragraph" && node.content != undefined) {
-            const fontStyleOverride = overrideFontStyle(
-              node.content[0].text ?? ""
-            );
-            // const fontStyleOverride = { fontFamily: "Simplified Chinese" };
-
-            return (
-              // <React.Fragment key={key + "fragment"}>
-              <Text
-                key={key}
-                style={{
-                  ...styles.text,
-                  ...fontStyleOverride,
-                }}
-              >
-                {node.content[0].text}
-              </Text>
-              // <Text
-              //   // key={key}
-              //   style={{
-              //     ...styles.text,
-              //   }}
-              // >
-              //   {JSON.stringify(fontStyleOverride)}
-              // </Text>
-              // </React.Fragment>
-            );
-          } else if (node.type === "image" && node.attrs?.src != undefined) {
-            return (
-              <>
-                {/* <Text style={styles.text}>{node.attrs.src}</Text> */}
-                {/* https://stackoverflow.com/questions/72189057/react-pdf-images-not-rendering */}
-                <Image
+          try {
+            const key = `story-pdf-${node.type}-${i}`;
+            if (
+              node.type === "heading" &&
+              node.attrs?.level === 1 &&
+              node.content != undefined
+            ) {
+              return (
+                <Text
                   key={key}
-                  style={styles.image}
-                  // src={`https://reading-club-api.herokuapp.com${node.attrs.src}`}
-                  src={`${node.attrs.src}`}
-                  //   src="https://storage.googleapis.com/reading-club-covers/images/1-cave-crowd.jpg"
-                  //   https://stackoverflow.com/questions/62853738/why-is-google-cloud-storage-always-answering-with-cors-error-no-access-control
-                  //   src={{
-                  //     uri: "https://storage.googleapis.com/reading-club-covers/images/1-cave-crowd.jpg?not-from-cache-please",
-                  //     method: "GET",
-                  //     //   contentType: 'application/octet-stream', //seems to be required
-                  //     //   processData: false, //seems to be required
-                  //     headers: {
-                  //       "Content-Type": "application/octet-stream", // Optional, based on your requirements
-                  //       "Cache-Control": "no-cache",
-                  //     },
-                  //     body: "",
-                  //   }}
-                  //   src={() =>
-                  //     fetchImageAsBase64(
-                  //       "https://storage.googleapis.com/reading-club-covers/images/1-cave-crowd.jpg"
-                  //     )
-                  //   }
-                  //   src="https://cdn.pixabay.com/photo/2023/10/23/08/17/asian-giant-hornet-8335577_1280.jpg"
-                  //   src="https://public.blob.vercel-storage.com/pJrjXbdONOnAeZAZ/banner-2wQk82qTwyVgvlhTW21GIkWgqPGD2C.png"
-                  //   src="https://storage.googleapis.com/reading-club-covers/images/1-cave-crowd.jpg"
-                />
-              </>
-              // <Image style={styles.image} src="/images/quijote1.jpg" />
-            );
-          }
+                  style={{
+                    ...styles.title,
+                    // fontFamily: "Roboto TEST",
+                  }}
+                >
+                  {node.content[0].text}
+                </Text>
+              );
+            } else if (
+              node.type === "heading" &&
+              node.attrs?.level === 2 &&
+              node.content != undefined
+            ) {
+              return (
+                <Text key={key} style={styles.subtitle}>
+                  {node.content[0].text}
+                </Text>
+              );
+            } else if (node.type === "paragraph" && node.content != undefined) {
+              const fontStyleOverride = overrideFontStyle(
+                node.content[0].text ?? ""
+              );
+              // const fontStyleOverride = { fontFamily: "Simplified Chinese" };
 
-          return <></>;
+              return (
+                // <React.Fragment key={key + "fragment"}>
+                <Text
+                  key={key}
+                  style={{
+                    ...styles.text,
+                    ...fontStyleOverride,
+                  }}
+                >
+                  {node.content[0].text}
+                </Text>
+                // <Text
+                //   // key={key}
+                //   style={{
+                //     ...styles.text,
+                //   }}
+                // >
+                //   {JSON.stringify(fontStyleOverride)}
+                // </Text>
+                // </React.Fragment>
+              );
+            } else if (node.type === "image" && node.attrs?.src != undefined) {
+              return (
+                <>
+                  {/* <Text style={styles.text}>{node.attrs.src}</Text> */}
+                  {/* https://stackoverflow.com/questions/72189057/react-pdf-images-not-rendering */}
+                  <Image
+                    key={key}
+                    style={styles.image}
+                    // src={`https://reading-club-api.herokuapp.com${node.attrs.src}`}
+                    src={`${node.attrs.src}`}
+                    //   src="https://storage.googleapis.com/reading-club-covers/images/1-cave-crowd.jpg"
+                    //   https://stackoverflow.com/questions/62853738/why-is-google-cloud-storage-always-answering-with-cors-error-no-access-control
+                    //   src={{
+                    //     uri: "https://storage.googleapis.com/reading-club-covers/images/1-cave-crowd.jpg?not-from-cache-please",
+                    //     method: "GET",
+                    //     //   contentType: 'application/octet-stream', //seems to be required
+                    //     //   processData: false, //seems to be required
+                    //     headers: {
+                    //       "Content-Type": "application/octet-stream", // Optional, based on your requirements
+                    //       "Cache-Control": "no-cache",
+                    //     },
+                    //     body: "",
+                    //   }}
+                    //   src={() =>
+                    //     fetchImageAsBase64(
+                    //       "https://storage.googleapis.com/reading-club-covers/images/1-cave-crowd.jpg"
+                    //     )
+                    //   }
+                    //   src="https://cdn.pixabay.com/photo/2023/10/23/08/17/asian-giant-hornet-8335577_1280.jpg"
+                    //   src="https://public.blob.vercel-storage.com/pJrjXbdONOnAeZAZ/banner-2wQk82qTwyVgvlhTW21GIkWgqPGD2C.png"
+                    //   src="https://storage.googleapis.com/reading-club-covers/images/1-cave-crowd.jpg"
+                  />
+                </>
+                // <Image style={styles.image} src="/images/quijote1.jpg" />
+              );
+            }
+
+            return <></>;
+          } catch (e) {
+            console.error("Error in PDF generation", e);
+            return null;
+          }
         })}
 
         {/* <Text style={styles.header}>
