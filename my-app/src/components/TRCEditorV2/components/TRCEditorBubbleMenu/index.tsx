@@ -181,7 +181,9 @@ const defaultBubbleMenuItems: TRCBubbleMenuItem[] = [
             content: [
               {
                 type: "text",
-                text: data.translatedParagraphs[0].replaceAll("&quot;", '"'),
+                text: data.translatedParagraphs[0]
+                  .replaceAll("&quot;", '"')
+                  .replaceAll("&#39;", "'"),
               },
             ],
             // content: [{ type: "text", text: selectedText }],
