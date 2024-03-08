@@ -14,6 +14,7 @@ type ExtendedUser = DefaultSession["user"] & {
   accountType: string;
   // refresh_token: string;
   bio: string;
+  locale: string;
 };
 
 declare module "next-auth" {
@@ -232,6 +233,7 @@ export const {
         // }
 
         session.user.id = decodedToken.sub;
+        session.user.locale = decodedToken.locale;
       }
 
       // console.log("WHAT DO WE HAVE ALREADY?", session.user);

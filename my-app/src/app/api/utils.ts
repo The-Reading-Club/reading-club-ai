@@ -65,7 +65,7 @@ export async function validatePaidSubscription(
 
     if (!success) {
       return NextResponse.json(
-        { msg: "Rate limit exceeded for the day" },
+        { msg: "Rate limit exceeded for the day", status: 429 },
         {
           status: 429,
           headers: {
