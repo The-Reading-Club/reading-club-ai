@@ -21,10 +21,15 @@ const ConnectPage = () => {
 
   return (
     <>
-      <FeedHeader
-        showBackArrow
-        label={`Connect w/ ${users.length} members — Edit bio to be at the top!`}
-      />
+      <div className="lg:block hidden">
+        <FeedHeader
+          showBackArrow
+          label={`Connect w/ ${users.length} members — Edit bio to be at the top!`}
+        />
+      </div>
+      <div className="lg:hidden block">
+        <FeedHeader showBackArrow label={`Connect (${users.length} members)`} />
+      </div>
       <div className="overflow-y-auto h-full">
         {users
           .sort((a: Record<string, any>, b: Record<string, any>) =>
@@ -54,7 +59,7 @@ const ConnectPage = () => {
                 </div>
                 <Link href={`/users/${user.id}`}>
                   <Button size={"sm"} variant={"accent"}>
-                    See profile
+                    Follow
                   </Button>
                 </Link>
               </div>
