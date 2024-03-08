@@ -67,7 +67,7 @@ const ShareComponent: React.FC<ShareProps> = ({
 
     toast.promise(promise, {
       loading: "Sharing...",
-      success: `Shared ${published ? "and published" : "(unpublished)"}!`,
+      success: `Shared${published ? " and posted" : ""}!`,
       error: "Error sharing story.",
     });
   };
@@ -106,7 +106,12 @@ const ShareComponent: React.FC<ShareProps> = ({
         </Button> */}
         {childrenAsPopupTrigger}
       </PopoverTrigger>
-      <PopoverContent className="w-72" align="end" alignOffset={8} forceMount>
+      <PopoverContent
+        className="w-72"
+        align="center"
+        alignOffset={8}
+        forceMount
+      >
         {initialData.isShared ? (
           <div className="space-y-4">
             <div className="flex items-center gap-x-2">
@@ -157,7 +162,7 @@ const ShareComponent: React.FC<ShareProps> = ({
                 htmlFor="terms2"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                Post on readingclub.ai
+                Post on readingclub.ai profile
               </label>
             </div>
             <Button
@@ -190,7 +195,7 @@ const ShareComponent: React.FC<ShareProps> = ({
             <span className="text-xs text-muted-foreground mb-4">
               Share your books with friends and family.
             </span>
-            <div className="flex items-center space-x-2  mb-4">
+            {/* <div className="flex items-center space-x-2  mb-4">
               <Checkbox
                 checked={initialData.isPublished}
                 // checked={initialData.isPublished}
@@ -202,9 +207,9 @@ const ShareComponent: React.FC<ShareProps> = ({
                 htmlFor="terms2"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                Publish on readingclub.ai
+                Post on readingclub.ai profile
               </label>
-            </div>
+            </div> */}
             <Button
               disabled={isSubmitting}
               onClick={() => onSharing(initialData.isPublished == true)}
