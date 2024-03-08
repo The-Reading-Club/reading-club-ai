@@ -111,7 +111,7 @@ export const defaultTiptapExtensions: Extensions = [
       // if (node.type.name === "heading") {
       //   return `Heading ${node.attrs.level}`;
       // }
-      return "Press '/' for commands, or '++' for autocomplete...";
+      return "Press '++' for autocomplete, or '/' for illustration commands...";
     },
     includeChildren: true,
   }),
