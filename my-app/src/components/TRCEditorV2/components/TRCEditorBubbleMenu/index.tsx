@@ -206,7 +206,10 @@ const defaultBubbleMenuItems: TRCBubbleMenuItem[] = [
           .run();
 
         // Tell the user
-        toast.error("Error translating text" + JSON.stringify(error));
+        toast.error(
+          "Error translating text"
+          // + JSON.stringify(error)
+        );
 
         editor.setEditable(true);
 
