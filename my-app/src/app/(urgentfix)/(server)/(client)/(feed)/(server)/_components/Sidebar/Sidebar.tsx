@@ -3,8 +3,8 @@ import { BellIcon, HomeIcon, UserIcon } from "lucide-react";
 import React from "react";
 import SidebarItem from "./SidebarItem";
 
-import { BsBellFill, BsHouseFill } from "react-icons/bs";
-import { FaUser } from "react-icons/fa";
+import { BsBellFill, BsHouseFill, BsPeopleFill } from "react-icons/bs";
+import { FaPeopleArrows, FaUser } from "react-icons/fa";
 // import { useSession } from "next-auth/react";
 import { auth } from "@/auth";
 import { useSession } from "next-auth/react";
@@ -76,6 +76,11 @@ const Sidebar = () => {
     //   href: "/notifications",
     //   icon: BsBellFill,
     // },
+    {
+      label: "Community",
+      href: `/connect`,
+      icon: BsPeopleFill,
+    },
     {
       label: "Profile",
       href: `/users/${currentUser?.id}`,
