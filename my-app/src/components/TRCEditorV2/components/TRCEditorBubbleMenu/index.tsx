@@ -150,7 +150,7 @@ const defaultBubbleMenuItems: TRCBubbleMenuItem[] = [
 
       try {
         const response = await axios.post(
-          "http://localhost:3000/api/translate",
+          `${process.env.NEXT_PUBLIC_APP_URL}/api/translate`,
           {
             // textsToTranslate: ["Hello world"],
             textsToTranslate: [selectedText],
