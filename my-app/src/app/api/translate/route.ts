@@ -17,23 +17,26 @@ export async function POST(request: NextRequest) {
 
   const { textsToTranslate, targetLocale } = await request.json();
 
-  const response = await axios.post("http://127.0.0.1:8080/translatev2", {
-    textsToTranslate,
-    targetLocale,
-  });
+  const response = await axios.post(
+    `${process.env.TRANSLATION_SERVICE}/translatev2`,
+    {
+      textsToTranslate,
+      targetLocale,
+    }
+  );
 
   const translatedObj = response.data;
 
   return NextResponse.json(translatedObj);
 }
 
-export async function GET() {
-  const response = await axios.post("http://127.0.0.1:8080/translatev2", {
-    textsToTranslate: ["Hello", "World"],
-    targetLocale: "es",
-  });
+// export async function GET() {
+//   const response = await axios.post("http://127.0.0.1:8080/translatev2", {
+//     textsToTranslate: ["Hello", "World"],
+//     targetLocale: "es",
+//   });
 
-  const translatedObj = response.data;
+//   const translatedObj = response.data;
 
-  return NextResponse.json(translatedObj);
-}
+//   return NextResponse.json(translatedObj);
+// }
