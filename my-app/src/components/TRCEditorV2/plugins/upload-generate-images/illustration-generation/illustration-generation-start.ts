@@ -58,7 +58,7 @@ export function startIllustrationGeneration(
     .setDefaultModalTitle("Learning about your characters");
 
   useTRCAppStore.getState().setDefaultModalActionLabel("");
-  useTRCAppStore.getState().setDefaultModalSecondaryActionLabel("Skip");
+  useTRCAppStore.getState().setDefaultModalSecondaryActionLabel("");
   useTRCAppStore.getState().setDefaultModalSecondaryAction(() => {
     useTRCAppStore.getState().setDefaultModalOpen(false);
   });
