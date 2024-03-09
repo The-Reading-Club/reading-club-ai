@@ -106,7 +106,12 @@ const EditorPageWrapper: React.FC<EditorPageWrapperProps> = ({
             enableLocalStorage={true}
           />
         </div>
-        <RightPanel storyData={storyData} isPlus={isPlus} />
+        <RightPanel
+          storyData={storyData}
+          isPlus={isPlus}
+          title={""}
+          author=""
+        />
       </div>
     </div>
   );
