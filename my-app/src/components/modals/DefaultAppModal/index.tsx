@@ -8,6 +8,7 @@ const DefaultAppModal = () => {
   return (
     <Modal
       isOpen={s.defaultModalOpen}
+      // isOpen={true}
       onClose={s.defaultModalOnClose}
       // Actions
       onSubmit={s.defaultModalOnSubmit}
