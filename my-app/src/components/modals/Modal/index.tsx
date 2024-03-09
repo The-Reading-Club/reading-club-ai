@@ -123,6 +123,9 @@ const Modal: React.FC<ModalProps> = ({
 
                         
                         lg:max-h-[600px] max-h-screen
+
+                        lg:m-0
+                        m-10
                         "
             >
               {/* Header */}
@@ -151,7 +154,9 @@ const Modal: React.FC<ModalProps> = ({
                 >
                   <IoMdClose size={18} />
                 </button>
-                <div className="text-lg font-semibold">{title || "Title"}</div>
+                <div className="text-lg font-semibold px-10 text-center">
+                  {title || "Title"}
+                </div>
               </div>
               {/* Body */}
               {body && (

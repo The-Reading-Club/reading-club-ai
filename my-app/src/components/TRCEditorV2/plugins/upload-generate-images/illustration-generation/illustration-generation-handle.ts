@@ -103,10 +103,12 @@ export function handleIllustrationGeneration(body: IllustrationGenerationBody) {
           if (error.response && error.response.status === 429) {
             devAlert("Illustration rate limited.");
             useProModal.getState().onOpen();
+            useTRCAppStore.getState().setDefaultModalOpen(false);
             throw new Error("Rate limited.");
           } else {
             // handle other errors
             devAlert("(catch) Error: " + error.message);
+            useTRCAppStore.getState().setDefaultModalOpen(false);
             throw new Error("Error uploading image.");
           }
         }),
