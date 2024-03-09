@@ -81,7 +81,7 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
 
             if (paragraphs) {
               paragraphContent = paragraphs
-                .slice(0, 2)
+                .slice(0, 3)
                 .map((paragraph: any) => {
                   const textNode = paragraph.content?.find(
                     (innerNode: any) => innerNode.type == "text"
