@@ -51,6 +51,10 @@ Font.register({
   family: "Hindi Noto Regular",
   src: "https://storage.googleapis.com/reading-club-covers/fonts/NotoSansDevanagari-Regular.ttf",
 });
+Font.register({
+  family: "Noto Sans Japanese",
+  src: "https://storage.googleapis.com/reading-club-covers/fonts/NotoSansJP-Regular.ttf",
+});
 
 interface StoryPDFProps {
   storyData: StoryData;
@@ -97,7 +101,13 @@ function overrideFontStyle(sampleText: string) {
     Object.assign(overrideStyle, {
       fontFamily: "Thai Noto Regular",
     });
+  } else if (langCode === "jpn") {
+    Object.assign(overrideStyle, {
+      fontFamily: "Noto Sans Japanese",
+    });
   } else {
+    // I could default to the local of the user's language
+    // TODO. REALLY DO THAT
     // Object.assign(overrideStyle, {
     //   fontFamily: "Ukraine Roboto",
     //   langCode: langCode,
@@ -125,11 +135,20 @@ const StoryPDF: React.FC<StoryPDFProps> = ({ storyData, title, author }) => {
       </Document>
     );
 
+  // const fontStyleOverride = overrideFontStyle(node.content[0].text ?? "");
+
   return (
     <Document>
       <Page style={styles.body}>
-        <Text style={styles.title}>{title}</Text>
-        <Text style={styles.author}>{`By ${author}.`}</Text>
+        <Text style={{ ...styles.title, ...overrideFontStyle(title) }}>
+          {title}
+        </Text>
+        <Text
+          style={{
+            ...styles.author,
+            // ...overrideFontStyle(author)
+          }}
+        >{`By ${author}.`}</Text>
         {tiptapEditorContent["content"]?.map((node, i) => {
           try {
             const key = `story-pdf-${node.type}-${i}`;
