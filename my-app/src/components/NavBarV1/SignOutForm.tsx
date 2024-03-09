@@ -1,9 +1,14 @@
 import React from "react";
 import { signOut } from "@/auth";
 
-const SignOutForm = () => {
+interface SignOutFormProps {
+  className?: string;
+}
+
+const SignOutForm: React.FC<SignOutFormProps> = ({ className }) => {
   return (
     <form
+      className={className}
       action={async () => {
         "use server"; // dark magic lol
 
