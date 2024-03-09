@@ -36,20 +36,32 @@ const DotsMenu: React.FC<DotsMenuProps> = ({ showSignout = true }) => {
         className="border-0"
       >
         {/* <DropdownMenuItem>Item 1</DropdownMenuItem> */}
-        <DropdownMenuItem>
-          <a href="https://readingclub.canny.io" className="text-black">
+        <DropdownMenuItem className="">
+          <a
+            href="https://readingclub.canny.io"
+            className="text-black absolute top-0 left-0 right-0 bottom-0 py-1.5 pl-2 pr-2"
+          >
+            Feedback
+          </a>
+          <a href="https://readingclub.canny.io" className="invisible">
             Feedback
           </a>
         </DropdownMenuItem>
         <DropdownMenuItem>
-          <Link href="/settings" className="text-black">
+          <Link
+            href="/settings"
+            className="text-black absolute top-0 left-0 right-0 bottom-0 py-1.5 pl-2 pr-2"
+          >
+            Settings
+          </Link>
+          <Link href="/settings" className="invisible">
             Settings
           </Link>
         </DropdownMenuItem>
         {showSignout == true && (
           <>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>{<SignOutForm />}</DropdownMenuItem>
+            <DropdownMenuItem>{<SignOutForm className="" />}</DropdownMenuItem>
           </>
         )}
       </DropdownMenuContent>
