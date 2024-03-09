@@ -54,6 +54,8 @@ Font.register({
 
 interface StoryPDFProps {
   storyData: StoryData;
+  title: string;
+  author: string;
 }
 
 function overrideFontStyle(sampleText: string) {
@@ -111,7 +113,7 @@ function overrideFontStyle(sampleText: string) {
   // return { ...overrideStyle, langCode };
 }
 
-const StoryPDF: React.FC<StoryPDFProps> = ({ storyData }) => {
+const StoryPDF: React.FC<StoryPDFProps> = ({ storyData, title, author }) => {
   const tiptapEditorContent = storyData?.tiptapEditorContent;
 
   if (!tiptapEditorContent)
@@ -126,6 +128,8 @@ const StoryPDF: React.FC<StoryPDFProps> = ({ storyData }) => {
   return (
     <Document>
       <Page style={styles.body}>
+        <Text style={styles.title}>{title}</Text>
+        <Text style={styles.author}>{`By ${author}.`}</Text>
         {tiptapEditorContent["content"]?.map((node, i) => {
           try {
             const key = `story-pdf-${node.type}-${i}`;
@@ -236,10 +240,10 @@ const StoryPDF: React.FC<StoryPDFProps> = ({ storyData }) => {
 
 export default StoryPDF;
 
-// Font.register({
-//   family: "Oswald",
-//   src: "https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf",
-// });
+Font.register({
+  family: "Oswald",
+  src: "https://fonts.gstatic.com/s/oswald/v13/Y_TKV6o8WovbUd3m_X9aAA.ttf",
+});
 
 // Font.register({
 //   family: "Noto Sans Simplified Chinese",
@@ -255,12 +259,18 @@ const styles = StyleSheet.create({
   title: {
     fontSize: 24,
     textAlign: "center",
-    fontFamily: "Oswald",
+    // textAlign: "left",
+    // fontFamily: "Oswald",
+    fontFamily: "Times-Roman",
+    // add margin bottom
+    marginBottom: 20,
   },
   author: {
     fontSize: 12,
     textAlign: "center",
+    // textAlign: "left",
     marginBottom: 40,
+    fontFamily: "Times-Roman",
   },
   subtitle: {
     fontSize: 18,
