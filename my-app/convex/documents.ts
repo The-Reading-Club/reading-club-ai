@@ -116,6 +116,9 @@ export const getFollowed = query({
       .order("desc")
       .take(1000);
 
+    // let's just return all published documents whatever
+    return documents;
+
     return documents.filter((d) => {
       if (!d.userOauthId) {
         return false;

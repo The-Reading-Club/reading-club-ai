@@ -14,7 +14,7 @@ const FeedPage = () => {
 
   return (
     <div>
-      <FeedHeader label="News Feed" />
+      <FeedHeader label="Featured" />
       <NewsFeed userId={userId} />
     </div>
   );
