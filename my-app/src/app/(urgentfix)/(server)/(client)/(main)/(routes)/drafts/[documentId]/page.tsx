@@ -314,6 +314,8 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
                   tiptapEditorContent: JSON.parse(document.content),
                 } as StoryData
               }
+              title={storyTitle}
+              author={document.author ?? ""}
             />
           )}
           {isPlus == false && (

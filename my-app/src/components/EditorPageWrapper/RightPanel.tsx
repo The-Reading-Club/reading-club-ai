@@ -15,9 +15,16 @@ import { checkSubscription } from "@/lib/subscription";
 interface RightPanelProps {
   storyData: StoryData;
   isPlus: boolean;
+  title: string;
+  author: string;
 }
 
-const RightPanel: React.FC<RightPanelProps> = ({ storyData, isPlus }) => {
+const RightPanel: React.FC<RightPanelProps> = ({
+  storyData,
+  isPlus,
+  title,
+  author,
+}) => {
   //   const downloadPDF = () => {
   //     ReactPDF.render(<MyDocument />, `${__dirname}/downloads/example.pdf`);
   //   };
@@ -99,7 +106,11 @@ const RightPanel: React.FC<RightPanelProps> = ({ storyData, isPlus }) => {
           // cause otherwise it degrades performance
           // Probably better to create the component in a useEffect function
           // or something like that
-          <DownloadStoryPDFLink document={<StoryPDF storyData={storyData} />}>
+          <DownloadStoryPDFLink
+            document={
+              <StoryPDF storyData={storyData} title={title} author={author} />
+            }
+          >
             <Button
               className="bg-accent2 text-white border-2 border-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent lg:min-w-[90%] min-w-[90%]"
               //   should probably change to false when the story is updated
@@ -183,7 +194,15 @@ export const InstructionsPanel = () => {
   );
 };
 
-export const DownloadPDFPanel = ({ storyData }: { storyData: StoryData }) => {
+export const DownloadPDFPanel = ({
+  storyData,
+  title,
+  author,
+}: {
+  storyData: StoryData;
+  title: string;
+  author: string;
+}) => {
   const [documentGenerated, setDocumentGenerated] = React.useState(false);
 
   useEffect(() => {
@@ -208,7 +227,11 @@ export const DownloadPDFPanel = ({ storyData }: { storyData: StoryData }) => {
         // cause otherwise it degrades performance
         // Probably better to create the component in a useEffect function
         // or something like that
-        <DownloadStoryPDFLink document={<StoryPDF storyData={storyData} />}>
+        <DownloadStoryPDFLink
+          document={
+            <StoryPDF storyData={storyData} title={title} author={author} />
+          }
+        >
           <Button
             // className="bg-accent2 text-white border-2 border-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent lg:w-full min-w-[90%]"
             //   should probably change to false when the story is updated
