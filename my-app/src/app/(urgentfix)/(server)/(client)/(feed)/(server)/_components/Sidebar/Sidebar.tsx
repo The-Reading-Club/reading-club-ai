@@ -62,7 +62,7 @@ const Sidebar = () => {
 
   const items = [
     {
-      label: "Featured",
+      label: "Discover",
       href: "/",
       icon: BsHouseFill,
       // icon: async () => {
