@@ -25,6 +25,7 @@ import Autoplay from "embla-carousel-autoplay";
 
 import gifInstructions1 from "@/../public/gifs/readingclubai-autocomplete-storybooks-2x-speed.gif";
 import gifInstructions2 from "@/../public/gifs/readingclubai-illustrations-storybooks.gif";
+import gifInstructions3 from "@/../public/gifs/readingclubai-prompts-storybooks.gif";
 
 import Image from "next/image";
 import { cn } from "@/lib/utils";
@@ -73,7 +74,7 @@ const renderers = {
 const instructionsTexts = [
   { label: "Type ```++``` to autocomplete", gif: gifInstructions1 },
   { label: "Use `/` to illustrate", gif: gifInstructions2 },
-  //   { label: "Edit prompts to change images", gif: gifInstructions2 },
+  { label: "Edit prompts to change images", gif: gifInstructions3 },
   //   "Wait for the image to generate",
   //   "Click the Save button to save the image to your gallery",
   //   "Click the Copy button to copy the image to your clipboard",
@@ -90,7 +91,7 @@ const InstructionsModal = () => {
   //   https://www.embla-carousel.com/get-started/react/
   const [emblaRef, emblaApi] = useEmblaCarousel({ loop: true }, [
     Autoplay({
-      delay: 7000,
+      delay: 8000,
     }),
   ]);
 
