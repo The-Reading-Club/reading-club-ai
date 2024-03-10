@@ -38,6 +38,7 @@ import FreeCounter from "@/components/FreeCounter/FreeCounter";
 import { Button } from "@/components/ui/button";
 import { ClipLoader } from "react-spinners";
 import { ContactPromo } from "../../../../(feed)/(server)/_components/Followbar/Followbar";
+import InstructionsModalProvider from "@/components/modals/InstructionsModal/InstructionsModalProvider";
 
 interface DocumentIdPageProps {
   params: {
@@ -250,6 +251,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
 
   return (
     <>
+      <InstructionsModalProvider />
       {/* <EditorPageWrapper
         editorKey={params.documentId}
         isPlus={true}

@@ -45,3 +45,18 @@ export const useUserEditModal = create<useUserEditModalStore>((set) => ({
   onOpen: () => set({ isOpen: true }),
   onClose: () => set({ isOpen: false }),
 }));
+
+// Instructions Modal
+interface useInstructionsModalStore {
+  isOpen: boolean;
+  onOpen: () => void;
+  onClose: () => void;
+}
+
+export const useInstructionsModal = create<useInstructionsModalStore>(
+  (set) => ({
+    isOpen: true,
+    onOpen: () => set({ isOpen: true }),
+    onClose: () => set({ isOpen: false }),
+  })
+);
