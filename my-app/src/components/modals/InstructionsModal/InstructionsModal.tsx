@@ -21,7 +21,7 @@ import {
 } from "@/components/ui/carousel";
 import Autoplay from "embla-carousel-autoplay";
 
-import gifTest from "@/../public/gifs/gif-test-2.gif";
+// import gifTest from "@/../public/gifs/gif-test-2.gif";
 
 import gifInstructions1 from "@/../public/gifs/readingclubai-autocomplete-storybooks-2x-speed.gif";
 import gifInstructions2 from "@/../public/gifs/readingclubai-illustrations-storybooks.gif";
@@ -272,7 +272,7 @@ const InstructionsModal = () => {
                         {/* <span className="text-4xl font-semibold">
                           {index + 1}
                         </span> */}
-                        <Image src={gifTest} alt="gif" />
+                        {/* <Image src={gifTest} alt="gif" /> */}
                       </div>
                     </CardContent>
                   </Card>
@@ -342,7 +342,7 @@ const InstructionsModal = () => {
                         {/* <span className="text-4xl font-semibold">
                           {index + 1}
                         </span> */}
-                        <Image src={gifTest} alt="gif" />
+                        {/* <Image src={gifTest} alt="gif" /> */}
                       </div>
                       {/* <div> */}
                       {/* <span>Press ++ for autocomplete</span> */}
@@ -365,7 +365,7 @@ const InstructionsModal = () => {
                         {/* <span className="text-4xl font-semibold">
                           {index + 1}
                         </span> */}
-                        <Image src={gifTest} alt="gif" />
+                        {/* <Image src={gifTest} alt="gif" /> */}
                       </div>
                       {/* <div> */}
                       {/* <span>Press ++ for autocomplete</span> */}
@@ -388,7 +388,7 @@ const InstructionsModal = () => {
                         {/* <span className="text-4xl font-semibold">
                           {index + 1}
                         </span> */}
-                        <Image src={gifTest} alt="gif" />
+                        {/* <Image src={gifTest} alt="gif" /> */}
                       </div>
                       {/* <div> */}
                       {/* <span>Press ++ for autocomplete</span> */}
@@ -411,7 +411,7 @@ const InstructionsModal = () => {
                         {/* <span className="text-4xl font-semibold">
                           {index + 1}
                         </span> */}
-                        <Image src={gifTest} alt="gif" />
+                        {/* <Image src={gifTest} alt="gif" /> */}
                       </div>
                       {/* <div> */}
                       {/* <span>Press ++ for autocomplete</span> */}
@@ -436,7 +436,7 @@ const InstructionsModal = () => {
                             {/* <span className="text-4xl font-semibold">
                           {index + 1}
                         </span> */}
-                            <Image src={gifTest} alt="gif" />
+                            {/* <Image src={gifTest} alt="gif" /> */}
                           </div>
                           {/* <div> */}
                           {/* <span>Press ++ for autocomplete</span> */}
