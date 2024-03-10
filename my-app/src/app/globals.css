@@ -139,3 +139,23 @@ button {
   background-color: transparent; /* Removes any background color */
   /* Add any other resets you need, e.g., padding, margin, border, etc. */
 }
+
+/* .embla__slide {
+  background-color: purple;
+} */
+
+.embla {
+  overflow: hidden;
+  /* border: 2px solid red; */
+  width: 100%;
+}
+.embla__container {
+  display: flex;
+}
+.embla__slide {
+  flex: 0 0 100%;
+  /* width: 50%; */
+  /* width: auto; */
+  /* min-width: 0; */
+  /* max-width: 100%; */
+}
