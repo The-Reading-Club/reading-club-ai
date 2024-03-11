@@ -364,7 +364,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
           </div>
           <div>
             {/* Gifs */}
-            <div className="flex flex-wrap justify-center p-10 gap-10">
+            <div className="flex flex-wrap justify-center p-10 gap-24">
               <FeatureGifShowcase />
               <FeatureGifShowcase
                 label="Use `/` to illustrate"
@@ -726,7 +726,7 @@ const FeatureGifShowcase: React.FC<FeatureGifShowcaseProps> = ({
 }) => {
   return (
     <div
-      className={`flex justify-center gap-24 ${
+      className={`flex flex-wrap justify-center gap-24 ${
         flexReverse ? "flex-row-reverse" : "flex-row"
       }`}
     >
