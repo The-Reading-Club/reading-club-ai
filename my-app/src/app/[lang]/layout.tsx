@@ -13,6 +13,8 @@ import { auth } from "@/auth";
 import { headers } from "next/headers";
 import { SessionProvider } from "next-auth/react";
 
+import { Locale, i18n } from "@/i18n.config";
+
 const inter = Inter({ subsets: ["latin"] });
 
 const font = Nunito({
@@ -30,9 +32,14 @@ export const metadata: Metadata = {
   description: "Enable Creative Writing at Any Literacy Level",
 };
 
+export async function generateStaticParams() {
+  return i18n.locales.map((locale) => ({ lang: locale }));
+}
+
 export default async function RootLayout({
   children,
   landing,
+  params,
 }: // feed,
 // common,
 {
@@ -40,6 +47,7 @@ export default async function RootLayout({
   landing: React.ReactNode;
   // feed: React.ReactNode;
   // common: React.ReactNode;
+  params: { lang: Locale };
 }) {
   const session = await auth();
 
@@ -60,14 +68,28 @@ export default async function RootLayout({
 
   // console.log("THIS IS THE STUPID PATHNAME", pathname);
 
+  // if (!params) return <p>Esta mierda no sirve</p>;
+  // else return <p>Esta mierda si sirve</p>;
+
   return (
-    <html lang="en">
+    <html
+      lang="en"
+      // because this is async this can be undefined
+      // https://github.com/HamedBahram/next-i18n/blob/main/app/%5Blang%5D/layout.tsx
+      // https://github.com/vercel/next.js/discussions/58995
+      // https://www.reddit.com/r/nextjs/comments/14niltx/dynamic_route_params_is_undefined_in_prod_env/
+      // https://dev.to/deepcodes/fixing-nextjs-router-query-param-returning-undefined-on-initial-render-5f80
+      // https://stackoverflow.com/questions/76594955/getting-undefined-params-in-my-compoment-with-generatestaticparams-nextjs-13-ho
+      // lang={params ? params?.lang : "en"}
+    >
       {dev == false && (
         <GoogleAnalytics
           GA_TRACKING_ID={process.env.GA_TRACKING_ID as string}
         />
       )}
       <body className={`${font.className}`}>
+        {/* <Header lang=params.lang /> */}
+
         {/* <TestModal /> */}
         <DefaultAppModal />
         {/* <SessionProvider session={session}> */}

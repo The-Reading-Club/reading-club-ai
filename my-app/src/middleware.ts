@@ -19,8 +19,8 @@ const { auth: middlewareFunction } = NextAuth(authConfig);
 import { match as matchLocale } from "@formatjs/intl-localematcher";
 import Negotiator from "negotiator";
 
-let defaultLocale = "en-US";
-let locales = ["en-US", "es"];
+let defaultLocale = "en";
+let locales = ["en", "es"];
 
 function getLocale(request: NextRequest) {
   const negotiatorHeaders: Record<string, string> = {};
@@ -34,22 +34,6 @@ function getLocale(request: NextRequest) {
 }
 
 export default middlewareFunction((req) => {
-  // Start with locale business
-  const { pathname } = req.nextUrl;
-
-  const pathnameHasLocale = locales.some((locale) =>
-    pathname.startsWith(`/${locale}`)
-  );
-
-  // I am not sure this is going to work as well as I want...
-  if (!pathnameHasLocale) {
-    const locale = getLocale(req);
-    req.nextUrl.pathname = `/${locale}${pathname}`;
-    // e.g. incoming request is /products
-    // The new URL is now /en-US/products
-    return NextResponse.redirect(req.nextUrl);
-  }
-
   // Finish local business
 
   const requestHeaders = new Headers(req.headers);
@@ -79,14 +63,43 @@ export default middlewareFunction((req) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
 
-  const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
+  // Use the new function to extract the locale and base path
+  const { basePath } = extractLocaleAndBasePath(req.nextUrl.pathname);
 
-  const isPreviewRoute = nextUrl.pathname.startsWith(previewPrefix);
+  const isApiAuthRoute = basePath.startsWith(apiAuthPrefix);
 
-  const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
-  const isAuthRoute = authRoutes.includes(nextUrl.pathname);
+  const isPreviewRoute = basePath.startsWith(previewPrefix);
 
-  const isEditorRoute = nextUrl.pathname.startsWith("/editor");
+  const isPublicRoute = publicRoutes.includes(basePath);
+  const isAuthRoute = authRoutes.includes(basePath);
+
+  const isEditorRoute = basePath.startsWith("/editor");
+
+  const isApiRoute = basePath.startsWith("/api");
+
+  // Start with locale business
+  const { pathname } = req.nextUrl;
+
+  const pathnameHasLocale = locales.some((locale) =>
+    pathname.startsWith(`/${locale}`)
+  );
+
+  // I am not sure this is going to work as well as I want...
+  if (
+    !pathnameHasLocale &&
+    // && !isPublicRoute && !isAuthRoute
+    isApiRoute == false
+  ) {
+    const locale = getLocale(req);
+    req.nextUrl.pathname = `/${locale}${pathname}`;
+    console.log(
+      `Changing path name from ${pathname} to ${req.nextUrl.pathname}`
+    );
+
+    // e.g. incoming request is /products
+    // The new URL is now /en-US/products
+    return NextResponse.redirect(req.nextUrl);
+  }
 
   if (isEditorRoute) {
     if (!isLoggedIn) {
@@ -151,7 +164,9 @@ export default middlewareFunction((req) => {
   // learn what NextResponse.next does
   // return requestHeadersMiddleware(req);
 
-  if (req.nextUrl.pathname === "/")
+  // if (req.nextUrl.pathname === "/")
+  console.log("THIS IS THE BASE PATH", basePath);
+  if (basePath === "/")
     // WHAT IF IT'S LOCALIZED!!!
     return NextResponse.next({
       request: {
@@ -188,4 +203,19 @@ function requestHeadersMiddleware(request: NextRequest) {
       headers: requestHeaders,
     },
   });
+}
+
+// https://chat.openai.com/
+// Extracts the locale from the path if present and returns the locale and the base path
+function extractLocaleAndBasePath(pathname: string) {
+  const segments = pathname.split("/");
+  if (segments.length > 1 && locales.includes(segments[1])) {
+    // If the first segment is a locale, remove it from the path
+    return {
+      locale: segments[1],
+      basePath: "/" + segments.slice(2).join("/"),
+    };
+  }
+  // No locale found, return the original path as basePath
+  return { locale: null, basePath: pathname };
 }

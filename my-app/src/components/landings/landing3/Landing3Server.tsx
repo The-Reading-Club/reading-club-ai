@@ -5,8 +5,13 @@ import { fromTRCtoTiptapFormat, testData } from "@/data/json/tests";
 
 import { promises as fs } from "fs";
 import { readFileSync } from "fs";
+import { Dictionary } from "@/app/[lang]/dictionaries";
 
-const Landing3Server = async () => {
+interface Landing3ServerProps {
+  page: Dictionary;
+}
+
+const Landing3Server: React.FC<Landing3ServerProps> = async ({ page }) => {
   // const trcStoriesTestFileNames = [
   //   "monkeyupdownJunior1",
   //   "peacockandcraneJunior1",

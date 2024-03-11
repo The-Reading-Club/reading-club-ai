@@ -33,6 +33,8 @@ export const apiAuthPrefix = "/api/auth";
 
 export const previewPrefix = "/preview";
 
+export const apiPrefix = "/api";
+
 /**
  * @description The default redirect path after logging in
  * @type {string}
