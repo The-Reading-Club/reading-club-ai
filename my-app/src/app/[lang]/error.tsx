@@ -5,6 +5,7 @@
 import { Button } from "@/components/ui/button";
 import { useEffect } from "react";
 import CustomErrorPage from "./(urgentfix)/(server)/(client)/(main)/(routes)/drafts/[documentId]/CustomErrorPage";
+// import CustomErrorPage from "./[lang]/(urgentfix)/(server)/(client)/(main)/(routes)/drafts/[documentId]/CustomErrorPage";
 
 // import CustomErrorPage from "./CustomErrorPage";
 
