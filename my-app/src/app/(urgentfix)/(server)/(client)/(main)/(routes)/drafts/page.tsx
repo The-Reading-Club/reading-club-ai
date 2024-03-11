@@ -3,7 +3,7 @@
 import { signOut, useSession } from "next-auth/react";
 
 import { useMutation, useQuery } from "convex/react";
-import { api } from "../../../../../../../../../convex/_generated/api";
+import { api } from "../../../../../../../../convex/_generated/api";
 import { toast } from "sonner";
 import { devAlert } from "@/lib/utils";
 import Image from "next/image";

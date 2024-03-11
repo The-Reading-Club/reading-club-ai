@@ -5,13 +5,13 @@ import React, { useMemo } from "react";
 // import { useQuery } from "convex/react";
 import { useQuery } from "@tanstack/react-query";
 
-import { api } from "../../../../../../../../../../convex/_generated/api";
-import DraftItem from "@/app/[lang]/(urgentfix)/(server)/(client)/(main)/_components/DraftItem/DraftItem";
+import { api } from "../../../../../../../../../convex/_generated/api";
+import DraftItem from "@/app/(urgentfix)/(server)/(client)/(main)/_components/DraftItem/DraftItem";
 import { useRouter } from "next/navigation";
 import Avatar from "../Avatar";
 import { format } from "date-fns";
 import fetcher from "@/lib/fetcher";
-import { Doc } from "../../../../../../../../../../convex/_generated/dataModel";
+import { Doc } from "../../../../../../../../../convex/_generated/dataModel";
 import { ClipLoader } from "react-spinners";
 
 interface NewsFeedProps {
