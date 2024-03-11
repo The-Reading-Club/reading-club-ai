@@ -28,7 +28,7 @@ import LoomEmbed from "@/components/LoomEmbed";
 import { ArrowRightIcon } from "lucide-react";
 import YouTubeVideo from "@/components/YouTubeVideo";
 import UnstyledExternalLink from "@/components/UnstyledExternalLink";
-import Image from "next/image";
+import Image, { StaticImageData } from "next/image";
 
 import beesImg from "/public/characters/Bees2.png";
 // import beeBoy from "/public/characters/Bee-Boy.png";
@@ -36,6 +36,11 @@ import beeBoy from "/public/characters/Bee02.png";
 import beeMom from "/public/characters/Bee-Mom.png";
 import { usePathname, useRouter } from "next/navigation";
 import { useSession } from "next-auth/react";
+
+import gifInstructions1 from "@/../public/gifs/readingclubai-autocomplete-storybooks-2x-speed.gif";
+import gifInstructions2 from "@/../public/gifs/readingclubai-illustrations-storybooks.gif";
+import gifInstructions3 from "@/../public/gifs/readingclubai-prompts-storybooks.gif";
+import gifInstructions4 from "@/../public/gifs/readingclubai-characters-storybooks.gif";
 
 interface SocialLinkProps {
   href: string;
@@ -356,6 +361,26 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
               height="450px"
             /> */}
             <YouTubeVideo videoId="kU_exK_0oxI" />
+          </div>
+          <div>
+            {/* Gifs */}
+            <div className="flex flex-wrap justify-center p-10 gap-10">
+              <FeatureGifShowcase />
+              <FeatureGifShowcase
+                label="Use `/` to illustrate"
+                gif={gifInstructions2}
+                flexReverse
+              />
+              <FeatureGifShowcase
+                label="Edit prompts to change images"
+                gif={gifInstructions3}
+              />
+              <FeatureGifShowcase
+                label="Define consistent characters"
+                gif={gifInstructions4}
+                flexReverse
+              />
+            </div>
           </div>
         </section>
         {false && (
@@ -687,3 +712,41 @@ export default Landing3Client;
 //     </svg>
 //   );
 // }
+
+interface FeatureGifShowcaseProps {
+  label?: string;
+  gif?: StaticImageData;
+  flexReverse?: boolean;
+}
+
+const FeatureGifShowcase: React.FC<FeatureGifShowcaseProps> = ({
+  label = "Type `++` for suggestions",
+  gif = gifInstructions1,
+  flexReverse = false,
+}) => {
+  return (
+    <div
+      className={`flex justify-center gap-24 ${
+        flexReverse ? "flex-row-reverse" : "flex-row"
+      }`}
+    >
+      <div
+        className={`flex justify-stretch items-center`}
+        // style={{ border: "2px solid blue" }}
+      >
+        <h2 className="text-center text-4xl font-semibold text-darkFont">
+          {label}
+        </h2>
+      </div>
+      <Image
+        className="basis-1/4 rounded-xl"
+        src={gif}
+        alt={label}
+        // height={200}
+        // width={200}
+        // className="p-10 pt-5 lg:block hidden"
+        // style={{ border: "2px solid red" }}
+      />
+    </div>
+  );
+};
