@@ -11,11 +11,48 @@ import {
 } from "@/routes";
 import { NextRequest, NextResponse } from "next/server";
 
-const { auth } = NextAuth(authConfig);
+const { auth: middlewareFunction } = NextAuth(authConfig);
 
-export default auth((req) => {
+// https://www.youtube.com/watch?v=hA0Wp3KQYGU
+// https://iamsannyrai.medium.com/i18n-in-next-js-without-sub-path-or-domain-routing-2443c1a349c6
+// https://jcquintas.gitbook.io/ni18n
+import { match as matchLocale } from "@formatjs/intl-localematcher";
+import Negotiator from "negotiator";
+
+let defaultLocale = "en-US";
+let locales = ["en-US", "es"];
+
+function getLocale(request: NextRequest) {
+  const negotiatorHeaders: Record<string, string> = {};
+  request.headers.forEach((value, key) => (negotiatorHeaders[key] = value));
+
+  const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
+
+  const locale = matchLocale(languages, locales, defaultLocale);
+
+  return locale;
+}
+
+export default middlewareFunction((req) => {
+  // Start with locale business
+  const { pathname } = req.nextUrl;
+
+  const pathnameHasLocale = locales.some((locale) =>
+    pathname.startsWith(`/${locale}`)
+  );
+
+  // I am not sure this is going to work as well as I want...
+  if (!pathnameHasLocale) {
+    const locale = getLocale(req);
+    req.nextUrl.pathname = `/${locale}${pathname}`;
+    // e.g. incoming request is /products
+    // The new URL is now /en-US/products
+    return NextResponse.redirect(req.nextUrl);
+  }
+
+  // Finish local business
+
   const requestHeaders = new Headers(req.headers);
-
   requestHeaders.set("x-pathname", req.nextUrl.pathname);
 
   // let response = NextResponse.next({
@@ -115,6 +152,7 @@ export default auth((req) => {
   // return requestHeadersMiddleware(req);
 
   if (req.nextUrl.pathname === "/")
+    // WHAT IF IT'S LOCALIZED!!!
     return NextResponse.next({
       request: {
         headers: requestHeaders,
