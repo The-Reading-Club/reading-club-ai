@@ -612,6 +612,10 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
             {/* {dictionary.page.landing.copyRight} */}
             {"Español"}
           </Link>
+          <Link href="/uk" className="opacity-80 text-white">
+            {/* {dictionary.page.landing.copyRight} */}
+            {"Українська"}
+          </Link>
         </div>
         <div
           className="max-w-4xl mx-auto flex flex-wrap lg:justify-between justify-between gap-x-5 gap-y-5 lg:p-0 px-10 items-start"
