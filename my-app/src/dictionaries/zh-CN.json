@@ -1,0 +1,17 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "将睡前故事转变为互动冒险",
+      "mainBannerDescription": "借助AI让儿童的想象力成为现实",
+      "writeABook": "写一本书",
+      "typePlusForSuggestions": "输入 `++` 获取建议",
+      "useSlashToIllustrate": "使用 `/` 进行插图",
+      "editPrompts": "编辑提示以更改图像",
+      "defineConsistentCharacters": "定义一致的角色",
+      "contact": "联系我们",
+      "social": "社交媒体",
+      "help": "帮助与支持",
+      "feedback": "给我们反馈"
+    }
+  }
+}
