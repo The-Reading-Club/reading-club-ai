@@ -64,7 +64,7 @@ export async function POST(request: Request) {
 
   //   const ratelimit = new Ratelimit({
   //     redis: kv,
-  //     limiter: Ratelimit.slidingWindow(5, "1 d"),
+  //     limiter: Ratelimit.slidingWindow(5, "7 d"),
   //   });
 
   //   const session = await auth();
@@ -91,7 +91,7 @@ export async function POST(request: Request) {
 
   const validationRespone = await validatePaidSubscription(request, {
     slidingWindowTokens: 10,
-    slidingWindowDuration: "1 d",
+    slidingWindowDuration: "7 d",
     feature: "illustration",
   });
 
