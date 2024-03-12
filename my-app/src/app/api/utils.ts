@@ -9,6 +9,7 @@ type Duration = `${number} ${Unit}` | `${number}${Unit}`;
 import { checkSubscription } from "@/lib/subscription";
 import { auth } from "@/auth";
 import { NextResponse } from "next/server";
+import { dev } from "@/config";
 
 type Options = {
   slidingWindowTokens: number;
@@ -17,11 +18,13 @@ type Options = {
   feature: string;
 };
 
+export const SLIDING_WINDOW_CONSTANT = dev ? "2 m" : "7 d";
+
 export async function validatePaidSubscription(
   request: Request,
   options: Options = {
     slidingWindowTokens: 5,
-    slidingWindowDuration: "7 d",
+    slidingWindowDuration: SLIDING_WINDOW_CONSTANT,
     // rateLimitKey: null,
     feature: "default",
   }
@@ -55,6 +58,7 @@ export async function validatePaidSubscription(
     const { success, limit, reset, remaining } = rateLimitResult;
 
     kv.set(`${rateLimitFormattedKey}-remaining`, remaining);
+    kv.set(`${rateLimitFormattedKey}-reset`, reset);
 
     console.log("RATE LIMIT KEY: ", rateLimitKey);
     console.log("RATE LIMIT FEATURE: ", options.feature);

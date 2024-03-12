@@ -1,7 +1,8 @@
 import { NextResponse } from "next/server";
-import { validatePaidSubscription } from "../../utils";
+import { SLIDING_WINDOW_CONSTANT, validatePaidSubscription } from "../../utils";
 import { callDalleAPI } from "../utils";
 import { GenerateIllustrationPromptResponse } from "./utils";
+import { MAX_FREE_COUNT_ILLUSTRATION } from "@/components/FreeCounter";
 
 // https://stackoverflow.com/questions/77503770/how-to-increase-timeout-limit-on-vercel-serverless-functions
 export const maxDuration = 300; // 5 seconds
@@ -9,8 +10,8 @@ export const dynamic = "force-dynamic";
 
 export async function POST(request: Request) {
   await validatePaidSubscription(request, {
-    slidingWindowTokens: 5,
-    slidingWindowDuration: "7 d",
+    slidingWindowTokens: MAX_FREE_COUNT_ILLUSTRATION,
+    slidingWindowDuration: SLIDING_WINDOW_CONSTANT,
     feature: "illustration",
   });
 

@@ -36,3 +36,30 @@ export const getRateLimitCount = async (options: Options) => {
 
   return count;
 };
+
+export const getRateLimitReset = async (options: Options) => {
+  const session = await auth();
+
+  const user = session?.user;
+
+  if (!user || !user.email) {
+    console.log(user);
+    console.log("rate-limit.ts No user found in session");
+    return -10;
+  }
+
+  // It probably should be the user id but...
+  // const rateLimitKey = `trc_ratelimit_${user.id}-${options.feature}`;
+  const rateLimitFormattedKey = `trc_ratelimit_${user.email}-${options.feature}`;
+
+  const count = await kv.get<string>(`${rateLimitFormattedKey}-reset`);
+
+  if (count === null || count === undefined) {
+    console.log("rate-limit.ts No count found in kv store");
+    console.log({ rateLimitKey: rateLimitFormattedKey });
+    console.log({ count });
+    return -1;
+  }
+
+  return count;
+};

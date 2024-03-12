@@ -9,7 +9,7 @@ import { NextResponse } from "next/server";
 // import { increaseApiLimit, checkApiLimit } from "@/lib/api-limit";
 import { auth } from "@/auth";
 import { checkSubscription } from "@/lib/subscription";
-import { validatePaidSubscription } from "../utils";
+import { SLIDING_WINDOW_CONSTANT, validatePaidSubscription } from "../utils";
 
 // https://github.com/prisma/prisma/issues/20560
 // export const runtime = "edge";
@@ -66,7 +66,7 @@ export async function POST(request: Request) {
 
   const validationResponse = await validatePaidSubscription(request, {
     slidingWindowTokens: 10,
-    slidingWindowDuration: "7 d",
+    slidingWindowDuration: SLIDING_WINDOW_CONSTANT,
     feature: "generation",
   });
 

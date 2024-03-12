@@ -157,3 +157,52 @@ export function getRandomIndexes(arrLength: number, count: number): number[] {
 // const arrLength = 20; // Assuming the array has more than 10 elements
 // const randomIndexes = getRandomIndexes(arrLength, 10);
 // console.log(randomIndexes);
+
+export function getTimeUntilReset(resetTimestamp: number): string {
+  const currentTime: Date = new Date();
+  const resetTime: Date = new Date(resetTimestamp);
+
+  // If it's negative
+  if (resetTime.getTime() < currentTime.getTime()) {
+    // return "Reset has already occurred";
+    return "";
+  }
+
+  // Calculate the difference in milliseconds
+  const difference: number = resetTime.getTime() - currentTime.getTime();
+
+  // Convert milliseconds to different time measures
+  const seconds: number = Math.floor(difference / 1000);
+  const minutes: number = Math.floor(difference / (1000 * 60));
+  const hours: number = Math.floor(minutes / 60);
+  const days: number = Math.floor(hours / 24);
+
+  // Determine the most appropriate unit of time to display
+  if (days > 0) {
+    // return `Resets in ${days} day${days > 1 ? "s" : ""}, ${hours % 24} hour${
+    //   hours % 24 > 1 ? "s" : ""
+    return `Resets in ${days} day${days > 1 ? "s" : ""}, ${hours % 24} h, ${
+      minutes % 60
+    } m, ${seconds % 60} s`;
+  } else if (hours > 0) {
+    // return `Resets in ${hours} hour${hours > 1 ? "s" : ""}`;
+    return `Resets in ${hours} hour${hours > 1 ? "s" : ""}, ${
+      minutes % 60
+    } m, ${seconds % 60} s`;
+  } else if (minutes > 0) {
+    // return `Resets in ${minutes} minute${minutes > 1 ? "s" : ""}`;
+    return `Resets in ${minutes} minute${minutes > 1 ? "s" : ""} and ${
+      seconds % 60
+    } seconds`;
+  } else {
+    // return "Resets in less than a minute";
+    return `Resets in ${seconds} seconds`;
+  }
+}
+
+export function pastTime(resetTimestamp: number): boolean {
+  const currentTime: Date = new Date();
+  const resetTime: Date = new Date(resetTimestamp);
+
+  return resetTime.getTime() < currentTime.getTime();
+}
