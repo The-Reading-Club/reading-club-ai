@@ -601,7 +601,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
       </main>
       <footer className="py-12 px-6 bg-[#FFC122] text-[#FFF]">
         <div
-          className="max-w-4xl mx-auto mb-8 text-center flex flex-row gap-10 lg:p-0 px-10"
+          className="max-w-4xl mx-auto mb-8 text-center flex flex-row gap-10 lg:p-0 px-10 flex-wrap"
           // style={{ border: "2px solid blue" }}
         >
           <Link href="/" className="opacity-80 text-white">
