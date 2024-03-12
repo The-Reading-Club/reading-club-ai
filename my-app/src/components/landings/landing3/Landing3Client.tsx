@@ -600,10 +600,28 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
         )}
       </main>
       <footer className="py-12 px-6 bg-[#FFC122] text-[#FFF]">
-        <div className="max-w-4xl mx-auto flex flex-wrap lg:justify-between justify-between gap-x-5 gap-y-5 lg:p-0 px-10 items-start">
+        <div
+          className="max-w-4xl mx-auto mb-8 text-center flex flex-row gap-10"
+          // style={{ border: "2px solid blue" }}
+        >
+          <Link href="/en" className="opacity-80 text-white">
+            {/* {dictionary.page.landing.copyRight} */}
+            {"English"}
+          </Link>
+          <Link href="/es" className="opacity-80 text-white">
+            {/* {dictionary.page.landing.copyRight} */}
+            {"Español"}
+          </Link>
+        </div>
+        <div
+          className="max-w-4xl mx-auto flex flex-wrap lg:justify-between justify-between gap-x-5 gap-y-5 lg:p-0 px-10 items-start"
+          // style={{ border: "2px solid red" }}
+        >
           <div>
             {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
-            <span className="text-lg font-bold">Contact us</span>
+            <span className="text-lg font-bold">
+              {dictionary.page.landing.contact}
+            </span>
             {/* <p className="text-sm opacity-80">Ottawa, ON, Canada</p> */}
             <UnstyledExternalLink href="mailto:jose@readingclub.ai">
               <p className="mt-1 text-sm opacity-70 font-bold">
@@ -613,7 +631,9 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
           </div>
           <div>
             {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
-            <span className="text-lg font-bold">Social</span>
+            <span className="text-lg font-bold">
+              {dictionary.page.landing.social}
+            </span>
             {/* <p className="text-sm opacity-80">Ottawa, ON, Canada</p> */}
             <UnstyledExternalLink href="https://www.youtube.com/@ReadingClubAI">
               <p className="mt-1 text-sm opacity-70 font-bold">YouTube</p>
@@ -624,11 +644,13 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
           </div>
           <div>
             {/* <BookIcon className="w-6 h-6 text-[#FFC122]" /> */}
-            <span className="text-lg font-bold">Help and support</span>
+            <span className="text-lg font-bold">
+              {dictionary.page.landing.help}
+            </span>
             {/* <p className="text-sm opacity-80">Ottawa, ON, Canada</p> */}
             <UnstyledExternalLink href="https://readingclub.canny.io">
               <p className="mt-1 text-sm opacity-70 font-bold">
-                Give us feedback
+                {dictionary.page.landing.feedback}
               </p>
             </UnstyledExternalLink>
           </div>
@@ -765,3 +787,26 @@ const FeatureGifShowcase: React.FC<FeatureGifShowcaseProps> = ({
     </div>
   );
 };
+
+// <div className="mt-8 text-center flex flex-row gap-10">
+// <Link href="/en" className="text-sm opacity-80">
+//   {/* {dictionary.page.landing.copyRight} */}
+//   {"English"}
+// </Link>
+// <Link href="/es" className="text-sm opacity-80">
+//   {/* {dictionary.page.landing.copyRight} */}
+//   {"Español"}
+// </Link>
+// <Link href="/en" className="text-sm opacity-80 text-white">
+//   {/* {dictionary.page.landing.copyRight} */}
+//   {"English"}
+// </Link>
+// <Link href="/es" className="text-sm opacity-80 text-white">
+//   {/* {dictionary.page.landing.copyRight} */}
+//   {"Español"}
+// </Link>
+// <p className="text-sm opacity-80">
+//   {/* {dictionary.page.landing.copyRight} */}
+//   {"Español"}
+// </p>
+// </div>

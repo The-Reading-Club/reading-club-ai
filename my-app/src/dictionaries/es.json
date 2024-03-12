@@ -7,7 +7,11 @@
       "typePlusForSuggestions": "Escribe `++` para sugerencias",
       "useSlashToIllustrate": "Usa `/` para ilustrar",
       "editPrompts": "Edita prompts para cambiar imágenes",
-      "defineConsistentCharacters": "Define personajes consistentes"
+      "defineConsistentCharacters": "Define personajes consistentes",
+      "contact": "Contáctanos",
+      "social": "Redes sociales",
+      "help": "Ayuda y soporte",
+      "feedback": "Enviar comentarios"
     }
   }
 }
