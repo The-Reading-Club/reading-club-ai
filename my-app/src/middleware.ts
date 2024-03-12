@@ -1,5 +1,5 @@
 // import { auth } from "./auth";
-import NextAuth from "next-auth";
+import NextAuth, { Session } from "next-auth";
 import authConfig from "@/auth.config";
 
 import {
@@ -10,11 +10,21 @@ import {
   publicRoutes,
 } from "@/routes";
 import { NextRequest, NextResponse } from "next/server";
-import { extractLocaleAndBasePath } from "./lib/internationalization/utils";
+import {
+  extractLocaleAndBasePath,
+  getLocaleFromHeadersList,
+} from "./lib/internationalization/utils";
+import { i18n } from "./i18n.config";
 
 const { auth } = NextAuth(authConfig);
 
-export default auth((req) => {
+interface MyNextAuthRequest extends NextRequest {
+  auth: Session | null;
+}
+
+// import interface { NextAuthRequest } from "next-auth";
+// import { NextAuthResult } from "next-auth";
+export default auth((req: MyNextAuthRequest) => {
   const requestHeaders = new Headers(req.headers);
 
   requestHeaders.set("x-pathname", req.nextUrl.pathname);
@@ -117,13 +127,37 @@ export default auth((req) => {
   // learn what NextResponse.next does
   // return requestHeadersMiddleware(req);
 
-  if (basePath === "/")
+  if (basePath === "/") {
+    const locale = getLocaleFromHeadersList(requestHeaders);
+
+    const pathname = req.nextUrl.pathname;
+    const pathnameIsMissingLocale = i18n.locales.every(
+      (locale) =>
+        !pathname.startsWith(`/${locale}/`) && pathname !== `/${locale}`
+    );
+
+    // Redirect if there is no locale in the pathname
+    if (locale && locale !== "en") {
+      if (pathnameIsMissingLocale) {
+        // This could be a disaster in the authenticated homepage
+        // yup, it was a disaster...
+        // We can know if it's logged in!
+        const isAuthenticated = req.auth != null && req.auth.user != null;
+
+        if (isAuthenticated == false) {
+          return NextResponse.redirect(new URL("/" + locale, nextUrl), {
+            headers: requestHeaders,
+          });
+        }
+      }
+    }
+
     return NextResponse.next({
       request: {
         headers: requestHeaders,
       },
     });
-  else return null;
+  } else return null;
 });
 
 // Optionally, don't invoke Middleware on some paths
