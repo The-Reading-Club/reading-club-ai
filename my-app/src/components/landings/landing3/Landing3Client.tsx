@@ -604,7 +604,7 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
           className="max-w-4xl mx-auto mb-8 text-center flex flex-row gap-10"
           // style={{ border: "2px solid blue" }}
         >
-          <Link href="/en" className="opacity-80 text-white">
+          <Link href="/" className="opacity-80 text-white">
             {/* {dictionary.page.landing.copyRight} */}
             {"English"}
           </Link>
