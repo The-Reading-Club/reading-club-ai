@@ -1,4 +1,5 @@
 import { auth } from "@/auth";
+import { extractLocaleAndBasePath } from "@/lib/internationalization/utils";
 // import { useSession } from "next-auth/react";
 import { headers } from "next/headers";
 import React, { use } from "react";
@@ -17,6 +18,10 @@ export default async function UrgentFixLayout({
   const headerList = headers();
   if (headerList && headerList.get("x-pathname")) {
     pathname = headerList.get("x-pathname") as string;
+
+    // Shameless fix
+    const { basePath } = extractLocaleAndBasePath(pathname);
+    pathname = basePath;
   }
 
   const isLandingPage = pathname === "/";

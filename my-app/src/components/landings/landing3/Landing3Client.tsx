@@ -41,6 +41,8 @@ import gifInstructions1 from "@/../public/gifs/readingclubai-autocomplete-storyb
 import gifInstructions2 from "@/../public/gifs/readingclubai-illustrations-storybooks.gif";
 import gifInstructions3 from "@/../public/gifs/readingclubai-prompts-storybooks.gif";
 import gifInstructions4 from "@/../public/gifs/readingclubai-characters-storybooks.gif";
+import { TRCDictionary } from "@/lib/internationalization/dictionary";
+import { extractLocaleAndBasePath } from "@/lib/internationalization/utils";
 
 interface SocialLinkProps {
   href: string;
@@ -63,9 +65,13 @@ const SocialLink: React.FC<SocialLinkProps> = ({ href, icon }) => {
 
 interface Landing3ClientProps {
   data: any;
+  dictionary: TRCDictionary;
 }
 
-const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
+const Landing3Client: React.FC<Landing3ClientProps> = ({
+  data,
+  dictionary,
+}) => {
   // return <p>{JSON.stringify(data, null, 2)}</p>;
 
   // const [testTipTapContentState, setTipTapContentState] = useState(
@@ -96,7 +102,11 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
 
   // const userIsLoggedIn = session.data?.user ? true : false;
 
-  if (pathname !== "/") return null;
+  // what the fuck jose what the fuck
+
+  const { basePath } = extractLocaleAndBasePath(pathname);
+  // if (pathname !== "/") return null;
+  if (basePath !== "/") return null;
 
   // if (userIsLoggedIn) {
   //   // router.push("/feed");
@@ -263,13 +273,15 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({ data }) => {
           >
             <h1 className="lg:text-6xl text-5xl  font-bold">
               {/* https://chat.openai.com/c/24650459-ac0d-46af-aef3-c81eabf0fb9b */}
-              {`Transforming bedtime stories into interactive adventures`}
+              {/* {`Transforming bedtime stories into interactive adventures`} */}
+              {dictionary.page.landing.mainBannerTitle}
               {/* {`Write & Share`}
               <br />
               {`Children's Books with AI`} */}
             </h1>
             <p className="mt-5 lg:text-2xl text-xl text-bold text-[#3c4043]">
-              {`Bringing children’s imaginations to life with the help of AI`}
+              {/* {`Bringing children’s imaginations to life with the help of AI`} */}
+              {dictionary.page.landing.mainBannerDescription}
             </p>
             {/* https://tailwind-hover-effects.vercel.app */}
             <div

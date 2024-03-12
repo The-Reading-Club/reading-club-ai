@@ -8,7 +8,9 @@ import { Button } from "@/components/ui/button";
 import { CardHeader, CardContent, Card } from "@/components/ui/card";
 import Landing2 from "@/components/landings/landing2";
 import Landing3 from "@/components/landings/landing3";
+import { getDictionary } from "@/lib/internationalization/dictionary";
 
-export default function Home() {
-  return <Landing3 />;
+export default async function Home() {
+  const dictionary = await getDictionary("en");
+  return <Landing3 dictionary={dictionary} />;
 }

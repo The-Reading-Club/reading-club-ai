@@ -10,6 +10,7 @@ import {
   publicRoutes,
 } from "@/routes";
 import { NextRequest, NextResponse } from "next/server";
+import { extractLocaleAndBasePath } from "./lib/internationalization/utils";
 
 const { auth } = NextAuth(authConfig);
 
@@ -42,14 +43,16 @@ export default auth((req) => {
   const { nextUrl } = req;
   const isLoggedIn = !!req.auth;
 
-  const isApiAuthRoute = nextUrl.pathname.startsWith(apiAuthPrefix);
+  const { basePath } = extractLocaleAndBasePath(nextUrl.pathname);
 
-  const isPreviewRoute = nextUrl.pathname.startsWith(previewPrefix);
+  const isApiAuthRoute = basePath.startsWith(apiAuthPrefix);
 
-  const isPublicRoute = publicRoutes.includes(nextUrl.pathname);
-  const isAuthRoute = authRoutes.includes(nextUrl.pathname);
+  const isPreviewRoute = basePath.startsWith(previewPrefix);
 
-  const isEditorRoute = nextUrl.pathname.startsWith("/editor");
+  const isPublicRoute = publicRoutes.includes(basePath);
+  const isAuthRoute = authRoutes.includes(basePath);
+
+  const isEditorRoute = basePath.startsWith("/editor");
 
   if (isEditorRoute) {
     if (!isLoggedIn) {
@@ -114,7 +117,7 @@ export default auth((req) => {
   // learn what NextResponse.next does
   // return requestHeadersMiddleware(req);
 
-  if (req.nextUrl.pathname === "/")
+  if (basePath === "/")
     return NextResponse.next({
       request: {
         headers: requestHeaders,

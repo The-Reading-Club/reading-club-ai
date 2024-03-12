@@ -72,7 +72,7 @@ export default async function RootLayout({
         />
       )}
       <body className={`${font.className}`}>
-        <h1>{locale}</h1>
+        {/* <h1>{locale}</h1> */}
         {/* <TestModal /> */}
         <DefaultAppModal />
         {/* <SessionProvider session={session}> */}
@@ -89,6 +89,7 @@ export default async function RootLayout({
           {/* https://github.com/vercel/next.js/issues/48719 */}
           {/* https://github.com/vercel/next.js/issues/48719#issuecomment-1794680696 */}
           {/* https://github.com/vercel/next.js/issues/51714#issuecomment-1697615626 */}
+          {/* {landing} */}
           {userIsLoggedIn == false && landing}
           {children}
           {/* {common} */}
