@@ -1,0 +1,13 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "Transformando los cuentos antes de dormir en aventuras interactivas",
+      "mainBannerDescription": "Dando vida a la imaginación de los niños con la ayuda de la IA",
+      "writeABook": "Escribe un libro",
+      "typePlusForSuggestions": "Escribe `++` para sugerencias",
+      "useSlashToIllustrate": "Usa `/` para ilustrar",
+      "editPrompts": "Edita prompts para cambiar imágenes",
+      "defineConsistentCharacters": "Define personajes consistentes"
+    }
+  }
+}

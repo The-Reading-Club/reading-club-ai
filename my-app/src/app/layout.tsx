@@ -12,6 +12,7 @@ import DefaultAppModal from "@/components/modals/DefaultAppModal";
 import { auth } from "@/auth";
 import { headers } from "next/headers";
 import { SessionProvider } from "next-auth/react";
+import { getLocaleFromHeadersList } from "@/lib/internationalization/utils";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -60,6 +61,9 @@ export default async function RootLayout({
 
   // console.log("THIS IS THE STUPID PATHNAME", pathname);
 
+  const headerList = headers();
+  const locale = getLocaleFromHeadersList(headerList);
+
   return (
     <html lang="en">
       {dev == false && (
@@ -68,6 +72,7 @@ export default async function RootLayout({
         />
       )}
       <body className={`${font.className}`}>
+        {/* <h1>{locale}</h1> */}
         {/* <TestModal /> */}
         <DefaultAppModal />
         {/* <SessionProvider session={session}> */}
@@ -84,6 +89,7 @@ export default async function RootLayout({
           {/* https://github.com/vercel/next.js/issues/48719 */}
           {/* https://github.com/vercel/next.js/issues/48719#issuecomment-1794680696 */}
           {/* https://github.com/vercel/next.js/issues/51714#issuecomment-1697615626 */}
+          {/* {landing} */}
           {userIsLoggedIn == false && landing}
           {children}
           {/* {common} */}
