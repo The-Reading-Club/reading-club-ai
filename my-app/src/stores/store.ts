@@ -162,8 +162,11 @@ export const useTRCAppStore = create<TRCAppState>((set) => ({
 
 export interface TRCRateLimits {
   illustration: number;
+  illustrationReset: number;
   illustrationPrompt: number;
+  illustrationPromptReset: number;
   generation: number;
+  generationReset: number;
 }
 
 interface TRCAppConfig {
@@ -183,8 +186,11 @@ export const useTRCAppConfigStore = create<TRCAppConfig>((set) => ({
 
   rateLimits: {
     illustration: -1,
+    illustrationReset: -1,
     illustrationPrompt: -1,
+    illustrationPromptReset: -1,
     generation: -1,
+    generationReset: -1,
   },
 
   setRateLimits: (rateLimits) => set({ rateLimits }),

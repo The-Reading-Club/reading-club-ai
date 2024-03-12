@@ -27,7 +27,7 @@ import { put } from "@vercel/blob";
 import { nanoid } from "nanoid";
 import { checkSubscription } from "@/lib/subscription";
 import { auth } from "@/auth";
-import { validatePaidSubscription } from "../utils";
+import { SLIDING_WINDOW_CONSTANT, validatePaidSubscription } from "../utils";
 import { callDalleAPI } from "./utils";
 
 // const idLength = 10; // You can choose the length
@@ -64,7 +64,7 @@ export async function POST(request: Request) {
 
   //   const ratelimit = new Ratelimit({
   //     redis: kv,
-  //     limiter: Ratelimit.slidingWindow(5, "7 d"),
+  //     limiter: Ratelimit.slidingWindow(5, SLIDING_WINDOW_CONSTANT),
   //   });
 
   //   const session = await auth();
@@ -91,7 +91,7 @@ export async function POST(request: Request) {
 
   const validationRespone = await validatePaidSubscription(request, {
     slidingWindowTokens: 10,
-    slidingWindowDuration: "7 d",
+    slidingWindowDuration: SLIDING_WINDOW_CONSTANT,
     feature: "illustration",
   });
 

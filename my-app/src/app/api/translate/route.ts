@@ -1,13 +1,13 @@
 import axios from "axios";
 import { NextRequest, NextResponse } from "next/server";
-import { validatePaidSubscription } from "../utils";
+import { SLIDING_WINDOW_CONSTANT, validatePaidSubscription } from "../utils";
 
 export async function POST(request: NextRequest) {
   // Make a request to another microservice to request a translation and return it
 
   const validationResponse = await validatePaidSubscription(request, {
     slidingWindowTokens: 10,
-    slidingWindowDuration: "7 d",
+    slidingWindowDuration: SLIDING_WINDOW_CONSTANT,
     feature: "generation",
   });
 
