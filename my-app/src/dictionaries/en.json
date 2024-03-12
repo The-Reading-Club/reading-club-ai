@@ -2,7 +2,12 @@
   "page": {
     "landing": {
       "mainBannerTitle": "Transforming bedtime stories into interactive adventures",
-      "mainBannerDescription": "Bringing children’s imaginations to life with the help of AI"
+      "mainBannerDescription": "Bringing children’s imaginations to life with the help of AI",
+      "writeABook": "Write a book",
+      "typePlusForSuggestions": "Type `++` for suggestions",
+      "useSlashToIllustrate": "Use `/` to illustrate",
+      "editPrompts": "Edit prompts to change images",
+      "defineConsistentCharacters": "Define consistent characters"
     }
   }
 }

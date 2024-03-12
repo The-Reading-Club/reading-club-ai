@@ -306,7 +306,8 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
                 className="text-[#3c4043]"
               >
                 <Button className="mt-8 px-16 py-8 bg-[#FFF] text-darkFont rounded hover:bg-[#FFF] rounded-full text-2xl font-bold border-4 border-[#FFC122]">
-                  Write a book
+                  {/* Write a book */}
+                  {dictionary.page.landing.writeABook}
                   {/* <ArrowRightIcon className="absolute right-6" /> */}
                 </Button>
               </Link>
@@ -377,18 +378,20 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
           <div>
             {/* Gifs */}
             <div className="flex flex-wrap justify-center p-10 gap-24">
-              <FeatureGifShowcase />
               <FeatureGifShowcase
-                label="Use `/` to illustrate"
+                label={dictionary.page.landing.typePlusForSuggestions}
+              />
+              <FeatureGifShowcase
+                label={dictionary.page.landing.useSlashToIllustrate}
                 gif={gifInstructions2}
                 flexReverse
               />
               <FeatureGifShowcase
-                label="Edit prompts to change images"
+                label={dictionary.page.landing.editPrompts}
                 gif={gifInstructions3}
               />
               <FeatureGifShowcase
-                label="Define consistent characters"
+                label={dictionary.page.landing.defineConsistentCharacters}
                 gif={gifInstructions4}
                 flexReverse
               />
