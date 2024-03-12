@@ -7,7 +7,7 @@ export async function POST(request: NextRequest) {
 
   const validationResponse = await validatePaidSubscription(request, {
     slidingWindowTokens: 10,
-    slidingWindowDuration: "1 d",
+    slidingWindowDuration: "7 d",
     feature: "generation",
   });
 

@@ -51,7 +51,7 @@ const FreeCounter: React.FC<FreeCounterProps> = ({ rateLimits, isPlus }) => {
       >
         <CardContent className="py-3">
           <div className="text-center text-sm text-white mb-4 space-y-2">
-            <p className="text-2xl font-bold">Today:</p>
+            <p className="text-2xl font-bold">This week:</p>
             <p className="text-xl font-semibold">
               {illustrationCount} / {MAX_FREE_COUNT_ILLUSTRATION} free
               illustrations

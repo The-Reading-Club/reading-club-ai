@@ -21,7 +21,7 @@ export async function validatePaidSubscription(
   request: Request,
   options: Options = {
     slidingWindowTokens: 5,
-    slidingWindowDuration: "1 d",
+    slidingWindowDuration: "7 d",
     // rateLimitKey: null,
     feature: "default",
   }

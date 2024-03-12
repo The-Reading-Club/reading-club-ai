@@ -10,7 +10,7 @@ export const dynamic = "force-dynamic";
 export async function POST(request: Request) {
   await validatePaidSubscription(request, {
     slidingWindowTokens: 5,
-    slidingWindowDuration: "1 d",
+    slidingWindowDuration: "7 d",
     feature: "illustration",
   });
 
