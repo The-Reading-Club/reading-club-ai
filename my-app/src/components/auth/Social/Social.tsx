@@ -11,18 +11,21 @@ import TRCButton2 from "@/components/TRCButton2";
 
 const Social = () => {
   const onSocialClick = (provider: "google" = "google" /** | "github" */) => {
-    try {
-      signIn(provider, {
-        callbackUrl: DEFAULT_LOGIN_REDIRECT_URL,
-      });
-    } catch {
+    popupCenter("/auth/google-login", "Google Sign In");
+
+    if (false)
       try {
-        // https://stackoverflow.com/questions/77548942/nextauth-with-google-provider-needs-to-open-a-pop-up
-        popupCenter("/auth/google-login", "Google Sign In");
-      } catch (error) {
-        throw error;
+        signIn(provider, {
+          callbackUrl: DEFAULT_LOGIN_REDIRECT_URL,
+        });
+      } catch {
+        try {
+          // https://stackoverflow.com/questions/77548942/nextauth-with-google-provider-needs-to-open-a-pop-up
+          popupCenter("/auth/google-login", "Google Sign In");
+        } catch (error) {
+          throw error;
+        }
       }
-    }
   };
   return (
     <div
