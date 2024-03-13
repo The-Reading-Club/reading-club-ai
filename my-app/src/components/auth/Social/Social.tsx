@@ -10,10 +10,19 @@ import TRCButton2 from "@/components/TRCButton2";
 // import { FaFacebookF } from "react-icons/fa";
 
 const Social = () => {
-  const onClick = (provider: "google" /** | "github" */) => {
-    signIn(provider, {
-      callbackUrl: DEFAULT_LOGIN_REDIRECT_URL,
-    });
+  const onSocialClick = (provider: "google" = "google" /** | "github" */) => {
+    try {
+      signIn(provider, {
+        callbackUrl: DEFAULT_LOGIN_REDIRECT_URL,
+      });
+    } catch {
+      try {
+        // https://stackoverflow.com/questions/77548942/nextauth-with-google-provider-needs-to-open-a-pop-up
+        popupCenter("/auth/google-login", "Google Sign In");
+      } catch (error) {
+        throw error;
+      }
+    }
   };
   return (
     <div
@@ -27,7 +36,7 @@ const Social = () => {
           size="lg"
           className="w-full"
           variant="outline"
-          onClick={() => onClick("google")}
+          onClick={() => onSocialClick("google")}
         >
           <FcGoogle className="w-5 h-5" />
         </Button>
@@ -36,7 +45,10 @@ const Social = () => {
         outline
         label="Sign in with Google"
         icon={FcGoogle}
-        onClick={() => onClick("google")}
+        onClick={() => {
+          // onClick("google")
+          onSocialClick();
+        }}
       />
       {/* <Button size="lg" className="w-full" variant="outline" onClick={() => {}}>
         <FaFacebookF className="w-5 h-5" />
@@ -56,3 +68,31 @@ const Social = () => {
 };
 
 export default Social;
+
+function popupCenter(url: string, title: string) {
+  const dualScreenLeft = window.screenLeft ?? window.screenX;
+  const dualScreenTop = window.screenTop ?? window.screenY;
+
+  const width =
+    window.innerWidth ?? document.documentElement.clientWidth ?? screen.width;
+
+  const height =
+    window.innerHeight ??
+    document.documentElement.clientHeight ??
+    screen.height;
+
+  const systemZoom = width / window.screen.availWidth;
+
+  const left = (width - 500) / 2 / systemZoom + dualScreenLeft;
+  const top = (height - 550) / 2 / systemZoom + dualScreenTop;
+
+  const newWindow = window.open(
+    url,
+    title,
+    `width=${500 / systemZoom},height=${
+      550 / systemZoom
+    },top=${top},left=${left}`
+  );
+
+  newWindow?.focus();
+}
