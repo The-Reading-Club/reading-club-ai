@@ -80,6 +80,12 @@
     },
     "illustrationModal": {
       "title": "Editar ilustración"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "Conociendo a tus personajes",
+      "creationgYourCharacters": "Creando tus personajes",
+      "choosingYourCharacters": "Eligiendo tus personajes para la ilustración de la escena",
+      "generatingIllustration": "Generando ilustración"
     }
   },
   "components": {
@@ -128,7 +134,9 @@
       "hairColor": "Color de cabello",
       "skinTone": "Tono de piel",
       "outfit": "Atuendo",
-      "placeOfOrigin": "Lugar de origen"
+      "placeOfOrigin": "Lugar de origen",
+      "name": "Nombre",
+      "facialHair": "Vello facial"
     },
     "followButton": {
       "follow": "Seguir",
@@ -141,6 +149,22 @@
       "shareThisStory": "Comparte esta historia",
       "shareWithFamily": "Comparte tus libros con amigos y familiares.",
       "share": "Compartir"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "Generar ilustración",
+        "description": "Genera una ilustración a partir de tu texto",
+        "generateSearchTerm": "generar",
+        "illustrationSearchTerm": "ilustración",
+        "imageSearchTerm": "imagen",
+        "photoSearchTerm": "foto",
+        "mediaSearchTerm": "medios",
+        "pictureSearchTerm": "imagen"
+      },
+      "uploadImage": {
+        "title": "Subir imagen",
+        "description": "Sube una imagen desde tu computadora"
+      }
     }
   }
 }

@@ -4,13 +4,19 @@ import { toast } from "sonner";
 import axios from "axios";
 import { dev } from "@/config";
 import {
+  CharacterTraitType,
   capitalizeFirstLetter,
   devAlert,
   devConsoleLog,
   fetchAndReadStream,
+  getCharacterTraitKeyLabel,
   wrapWithToast,
 } from "@/lib/utils";
-import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
+import {
+  useTRCAppConfigStore,
+  useTRCAppStore,
+  useTRCEditorStore,
+} from "@/stores/store";
 import { use } from "react";
 import { useProModal } from "@/lib/hooks/useModals";
 import { unknown } from "zod";
@@ -25,6 +31,8 @@ export interface CharacterCreationBody {
 }
 
 export async function handleCharacterCreation(body: CharacterCreationBody) {
+  const trcDictionary = useTRCAppConfigStore.getState().dictionary;
+
   // Show a loading toast
   const loadingToast = toast.loading(
     `Creating character... "${body.basicCharacterContext["name"]}"`,
@@ -71,7 +79,13 @@ export async function handleCharacterCreation(body: CharacterCreationBody) {
         return (
           <p key={keyProp}>
             <span className="font-bold">
-              {capitalizeFirstLetter(chunk.key)}
+              {/* {capitalizeFirstLetter(chunk.key)} */}
+              {trcDictionary
+                ? getCharacterTraitKeyLabel(
+                    chunk.key as CharacterTraitType,
+                    trcDictionary
+                  )
+                : capitalizeFirstLetter(chunk.key)}
             </span>
             {`: ${chunk.value}`}
           </p>

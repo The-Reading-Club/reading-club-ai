@@ -10,7 +10,11 @@ import {
   fetchAndReadStream,
   wrapWithToast,
 } from "@/lib/utils";
-import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
+import {
+  useTRCAppConfigStore,
+  useTRCAppStore,
+  useTRCEditorStore,
+} from "@/stores/store";
 import { use } from "react";
 import { useProModal } from "@/lib/hooks/useModals";
 import { unknown } from "zod";
@@ -51,11 +55,18 @@ export function startIllustrationGeneration(
   });
   view.dispatch(tr);
 
+  const illustrationGenModalsDict =
+    useTRCAppConfigStore.getState().dictionary?.page
+      .illustrationGenerationModals;
+
   // We are going to do some JavaScript magic here
   useTRCAppStore.getState().setDefaultModalOpen(true);
   useTRCAppStore
     .getState()
-    .setDefaultModalTitle("Learning about your characters");
+    .setDefaultModalTitle(
+      illustrationGenModalsDict?.learningAboutYourCharacters ??
+        "Learning about your characters"
+    );
 
   useTRCAppStore.getState().setDefaultModalActionLabel("");
   useTRCAppStore.getState().setDefaultModalSecondaryActionLabel("");
@@ -84,7 +95,12 @@ export function startIllustrationGeneration(
     });
 
     //  CHARACTER CREATION
-    useTRCAppStore.getState().setDefaultModalTitle("Creating your characters");
+    useTRCAppStore
+      .getState()
+      .setDefaultModalTitle(
+        illustrationGenModalsDict?.creationgYourCharacters ??
+          "Creating your characters"
+      );
 
     // const characterDataResponses = [];
 
@@ -140,7 +156,8 @@ export function startIllustrationGeneration(
     useTRCAppStore
       .getState()
       .setDefaultModalTitle(
-        "Choosing your characters for the scene illustration"
+        illustrationGenModalsDict?.choosingYourCharacters ??
+          "Choosing your characters for the scene illustration"
       );
 
     const characterChoice = await handleCharacterChoice({
@@ -160,7 +177,12 @@ export function startIllustrationGeneration(
 
     // ILLUSTRATION GENERATION
 
-    useTRCAppStore.getState().setDefaultModalTitle("Generating illustration");
+    useTRCAppStore
+      .getState()
+      .setDefaultModalTitle(
+        illustrationGenModalsDict?.generatingIllustration ??
+          "Generating illustration"
+      );
 
     handleIllustrationGeneration({
       prevContextText: body.prevContextText,

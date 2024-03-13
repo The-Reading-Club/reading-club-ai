@@ -15,7 +15,7 @@ import {
 } from "../../plugins/upload-generate-images";
 import { devAlert } from "@/lib/utils";
 import { Node } from "@tiptap/pm/model";
-import { useTRCEditorStore } from "@/stores/store";
+import { useTRCAppConfigStore, useTRCEditorStore } from "@/stores/store";
 
 interface CommandProps {
   editor: Editor;
@@ -158,17 +158,29 @@ export const updateScrollView = (container: HTMLElement, item: HTMLElement) => {
 };
 
 export const getHintItems = ({ query }: { query: string }) => {
+  const genIllustrationDict =
+    useTRCAppConfigStore.getState().dictionary?.components.slashCommands
+      .generateIllustration;
+
   return [
     {
-      title: "Generate Illustration",
-      description: "Generate an illustration from your text",
+      // title: "Generate Illustration",
+      title: genIllustrationDict?.title,
+      // description: "Generate an illustration from your text",
+      description: genIllustrationDict?.description,
       searchTerms: [
-        "generate",
-        "illustration",
-        "image",
-        "photo",
-        "media",
-        "picture",
+        // "generate",
+        genIllustrationDict?.generateSearchTerm,
+        // "illustration",
+        genIllustrationDict?.illustrationSearchTerm,
+        // "image",
+        genIllustrationDict?.imageSearchTerm,
+        // "photo",
+        genIllustrationDict?.photoSearchTerm,
+        // "media",
+        genIllustrationDict?.mediaSearchTerm,
+        // "picture",
+        genIllustrationDict?.pictureSearchTerm,
       ],
       icon: <ImageIcon size={18} />,
       command: ({ editor, range }: CommandProps) => {

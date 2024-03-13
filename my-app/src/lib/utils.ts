@@ -5,6 +5,7 @@ import { twMerge } from "tailwind-merge";
 
 import { toast } from "sonner";
 import { allowDevAlerts } from "../../config";
+import { TRCDictionary } from "./internationalization/dictionary";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -206,3 +207,24 @@ export function pastTime(resetTimestamp: number): boolean {
 
   return resetTime.getTime() < currentTime.getTime();
 }
+
+export type CharacterTraitType =
+  | "gender"
+  | "species"
+  | "age"
+  | "eyeColor"
+  | "hairLength"
+  | "hairType"
+  | "hairColor"
+  | "skinTone"
+  | "outfit"
+  | "placeOfOrigin"
+  | "name"
+  | "facialHair";
+
+export const getCharacterTraitKeyLabel = (
+  key: CharacterTraitType,
+  dictionary: TRCDictionary
+) => {
+  return dictionary?.components.characterCard[key] || key;
+};

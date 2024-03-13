@@ -42,7 +42,9 @@ type CharacterTraitType =
   | "hairColor"
   | "skinTone"
   | "outfit"
-  | "placeOfOrigin";
+  | "placeOfOrigin"
+  | "name"
+  | "facialHair";
 
 // CharacterCard Component
 const CharacterCard: React.FC<CharacterCardProps> = ({

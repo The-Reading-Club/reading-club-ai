@@ -80,6 +80,12 @@
     },
     "illustrationModal": {
       "title": "编辑插图"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "了解你的角色",
+      "creationgYourCharacters": "创建你的角色",
+      "choosingYourCharacters": "为场景插图选择你的角色",
+      "generatingIllustration": "生成插图"
     }
   },
   "components": {
@@ -128,7 +134,9 @@
       "hairColor": "头发颜色",
       "skinTone": "肤色",
       "outfit": "装束",
-      "placeOfOrigin": "出生地"
+      "placeOfOrigin": "出生地",
+      "name": "姓名",
+      "facialHair": "面部毛发"
     },
     "followButton": {
       "follow": "关注",
@@ -141,6 +149,22 @@
       "shareThisStory": "分享这个故事",
       "shareWithFamily": "与朋友和家人分享您的书籍。",
       "share": "分享"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "生成插图",
+        "description": "根据您的文本生成插图",
+        "generateSearchTerm": "生成",
+        "illustrationSearchTerm": "插图",
+        "imageSearchTerm": "图片",
+        "photoSearchTerm": "照片",
+        "mediaSearchTerm": "媒体",
+        "pictureSearchTerm": "图像"
+      },
+      "uploadImage": {
+        "title": "上传图片",
+        "description": "从您的电脑上传一张图片"
+      }
     }
   }
 }

@@ -46,10 +46,10 @@ const DotsMenu: React.FC<DotsMenuProps> = ({
             href="https://readingclub.canny.io"
             className="text-black absolute top-0 left-0 right-0 bottom-0 py-1.5 pl-2 pr-2"
           >
-            Feedback
+            {dictionary?.components.navbar.feedback}
           </a>
           <a href="https://readingclub.canny.io" className="invisible">
-            Feedback
+            {dictionary?.components.navbar.feedback}
           </a>
         </DropdownMenuItem>
         <DropdownMenuItem>
@@ -57,10 +57,10 @@ const DotsMenu: React.FC<DotsMenuProps> = ({
             href="/settings"
             className="text-black absolute top-0 left-0 right-0 bottom-0 py-1.5 pl-2 pr-2"
           >
-            Settings
+            {dictionary?.components.navbar.settings}
           </Link>
           <Link href="/settings" className="invisible">
-            Settings
+            {dictionary?.components.navbar.settings}
           </Link>
         </DropdownMenuItem>
         {showSignout == true && (
