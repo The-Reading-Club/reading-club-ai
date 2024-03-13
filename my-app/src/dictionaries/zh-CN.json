@@ -1,17 +1,146 @@
 {
   "page": {
     "landing": {
-      "mainBannerTitle": "将睡前故事转变为互动冒险",
-      "mainBannerDescription": "借助AI让儿童的想象力成为现实",
+      "mainBannerTitle": "将睡前故事变为互动冒险",
+      "mainBannerDescription": "借助人工智能让儿童的想象力变为现实",
       "writeABook": "写一本书",
       "typePlusForSuggestions": "输入 `++` 获取建议",
       "useSlashToIllustrate": "使用 `/` 进行插图",
-      "editPrompts": "编辑提示以更改图像",
+      "editPrompts": "编辑提示以更改图片",
       "defineConsistentCharacters": "定义一致的角色",
       "contact": "联系我们",
       "social": "社交媒体",
-      "help": "帮助与支持",
+      "help": "帮助支持",
       "feedback": "给我们反馈"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "发现",
+        "community": "社区",
+        "profile": "个人资料",
+        "aGreatStory": "一个伟大的故事",
+        "byYou": "由你来"
+      },
+      "newsfeed": {
+        "discoverHeader": "发现",
+        "createdStoryAt": "在创建了一个故事",
+        "dateFormat": "yyyy年MM月dd日"
+      },
+      "followbar": {
+        "whoToFollow": "谁值得关注",
+        "seeMore": "查看更多",
+        "upcomingFeatureQuestion": "你最期待readingclub.ai的哪个即将推出的功能？",
+        "emailCTOat": "你可以随时通过电子邮件联系CTO",
+        "withYourIdeas": "分享你的想法。",
+        "promotion": "如果您这样做，我们将很高兴提供50%的订阅促销代码！"
+      },
+      "connect": {
+        "connectWith1": "连接 ",
+        "connectWith2": "会员 — 编辑个人简介，置顶！",
+        "connectWith1Mobile": "连接 (",
+        "connectWith2Mobile": "用户)"
+      },
+      "profile": {
+        "editProfile": "编辑个人资料",
+        "joined": "加入时间",
+        "following": "关注",
+        "followers": "粉丝",
+        "editYourBio": "编辑你的个人简介",
+        "writeALittle": "介绍一下自己",
+        "save": "保存"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "点击编辑标题",
+      "byLineWord": "作者",
+      "shareWithFamily": "与家人分享"
+    },
+    "proModal": {
+      "title": "升级到readingclub.ai",
+      "beProlific": "成为一名多产的故事书作者",
+      "buttonText": "升级到Plus",
+      "noMatterYourAge": "无论您的年龄如何，都可以借助人工智能为（和与！）年轻读者创作故事，支持50多种语言。",
+      "beginnerOrExpertV1": "无论您是初学者还是专家，我们都能满足您的需求。",
+      "beginnerOrExpertV2": "初学者或专家，",
+      "fosterCreativity": "培养您的创造力，克服作家的障碍，享受创意写作",
+      "month": "月",
+      "unlimitedStorybooks": "享受创作无限制的专业品质故事书",
+      "unlimitedIllustrations": "用无限制的个性化插图激励年轻读者"
+    },
+    "settings": {
+      "title": "设置",
+      "freePlan": "您目前处于免费计划。",
+      "paidPlan": "您目前处于Plus计划。"
+    },
+    "instructionsModal": {
+      "instruction1": "输入```++```自动完成",
+      "instruction2": "使用`/`进行插图",
+      "instruction3": "编辑提示以更改图片",
+      "instruction4": "定义一致的角色"
+    },
+    "illustrationModal": {
+      "title": "编辑插图"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "首页",
+      "stories": "故事",
+      "feedback": "反馈",
+      "settings": "设置",
+      "signout": "退出登录"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "请求功能"
+    },
+    "draftItem": {
+      "writeNewBook": "写一本新书",
+      "noTitle": "无标题"
+    },
+    "instructionsPanel": {
+      "startCreating": "开始创作故事",
+      "suggestions": "按'++'获取建议，或者",
+      "slash": "'/'获取插图。"
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "生成PDF",
+      "downloadPDF": "下载故事"
+    },
+    "TRCEditorV2": {
+      "placeholder": "按'++'自动完成，或者'/'进行插图命令..."
+    },
+    "freeCounter": {
+      "thisWeek": "本周",
+      "freeGenerations": "免费建议",
+      "freeIllustrations": "免费插图"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "升级到Plus",
+      "manageSubscription": "管理订阅"
+    },
+    "characterCard": {
+      "gender": "性别",
+      "species": "物种",
+      "age": "年龄",
+      "eyeColor": "眼睛颜色",
+      "hairLength": "头发长度",
+      "hairType": "头发类型",
+      "hairColor": "头发颜色",
+      "skinTone": "肤色",
+      "outfit": "装束",
+      "placeOfOrigin": "出生地"
+    },
+    "followButton": {
+      "follow": "关注",
+      "unfollow": "取消关注"
+    },
+    "share": {
+      "liveOnWeb": "这个故事在网上直播。",
+      "postOnSocial": "在readingclub.ai个人资料上发布",
+      "unshare": "取消分享",
+      "shareThisStory": "分享这个故事",
+      "shareWithFamily": "与朋友和家人分享您的书籍。",
+      "share": "分享"
     }
   }
 }
