@@ -103,9 +103,9 @@ const ProModal = () => {
               </div>
               {true && (
                 <div className="basis-[50%]">
-                  {features.map((feature) => (
+                  {features.map((feature, index) => (
                     <Card
-                      key={`feature-promodal-${feature.label}`}
+                      key={`feature-promodal-${index}`}
                       className="p-3 border-black/5 flex items-center justify-between"
                     >
                       <div className="flex items-center gap-x-4">

@@ -309,7 +309,7 @@ export const RequestAFeaturePanel = () => {
       href="https://readingclub.canny.io"
       target="_blank"
       rel="noopener noreferrer"
-      className="text-white "
+      className="text-white"
     >
       <Button
         //   className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent"

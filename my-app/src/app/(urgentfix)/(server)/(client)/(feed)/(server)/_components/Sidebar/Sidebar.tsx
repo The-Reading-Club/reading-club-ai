@@ -65,7 +65,7 @@ const Sidebar = () => {
 
   const items = [
     {
-      // label: "Discover",
+      defaultLabel: "Discover",
       label: dictionary?.page.feed.sidebar.discover,
       href: "/",
       icon: BsHouseFill,
@@ -81,11 +81,13 @@ const Sidebar = () => {
     //   icon: BsBellFill,
     // },
     {
+      defaultLabel: "Community",
       label: dictionary?.page.feed.sidebar.community,
       href: `/connect`,
       icon: BsPeopleFill,
     },
     {
+      defaultLabel: "Profile",
       label: dictionary?.page.feed.sidebar.profile,
       href: `/users/${currentUser?.id}`,
       icon: FaUser,
@@ -101,7 +103,7 @@ const Sidebar = () => {
             <SidebarItem
               key={item.href}
               href={item.href}
-              label={item.label}
+              label={item.label ?? item.defaultLabel}
               icon={item.icon}
             />
           ))}
@@ -111,8 +113,8 @@ const Sidebar = () => {
       <div className="mt-5 pl-10 scale-90 hidden lg:block">
         <DraftItem
           key={"draft-item-add-book-default-newsfeed"}
-          title={dictionary?.page.feed.sidebar.aGreatStory}
-          author={dictionary?.page.feed.sidebar.byYou}
+          title={dictionary?.page.feed.sidebar.aGreatStory ?? "A Great Story"}
+          author={dictionary?.page.feed.sidebar.byYou ?? "By you"}
           coverUrl={""}
           onClick={onCreate}
           colorClassName="bg-accent2"

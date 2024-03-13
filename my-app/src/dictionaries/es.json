@@ -56,6 +56,12 @@
       "title": "Configuración",
       "freePlan": "Actualmente estás en el plan gratuito.",
       "paidPlan": "Actualmente estás en un plan Plus."
+    },
+    "instructionsModal": {
+      "instruction1": "Presiona ```++``` para autocompletar",
+      "instruction2": "Usa `/` para ilustrar",
+      "instruction3": "Edita textos para cambiar imágenes",
+      "instruction4": "Define personajes consistentes"
     }
   },
   "components": {

@@ -17,7 +17,9 @@ const FeedPage = () => {
 
   return (
     <div>
-      <FeedHeader label={dictionary?.page.feed.newsfeed.discoverHeader} />
+      <FeedHeader
+        label={dictionary?.page.feed.newsfeed.discoverHeader ?? "Discover"}
+      />
       <NewsFeed userId={userId} />
     </div>
   );

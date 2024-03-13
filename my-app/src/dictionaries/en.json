@@ -56,6 +56,12 @@
       "title": "Settings",
       "freePlan": "You are currently on the free plan.",
       "paidPlan": "You are currently on a Plus plan."
+    },
+    "instructionsModal": {
+      "instruction1": "Type ```++``` to autocomplete",
+      "instruction2": "Use `/` to illustrate",
+      "instruction3": "Edit prompts to change images",
+      "instruction4": "Define consistent characters"
     }
   },
   "components": {

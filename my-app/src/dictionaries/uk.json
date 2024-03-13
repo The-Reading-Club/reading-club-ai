@@ -2,16 +2,115 @@
   "page": {
     "landing": {
       "mainBannerTitle": "Перетворюємо історії перед сном на інтерактивні пригоди",
-      "mainBannerDescription": "Оживляємо уяву дітей за допомогою ШІ",
-      "writeABook": "Написати книгу",
-      "typePlusForSuggestions": "Натискайте `++` для пропозицій",
-      "useSlashToIllustrate": "Використовуйте `/` для ілюстрацій",
-      "editPrompts": "Редагуйте запити для зміни зображень",
-      "defineConsistentCharacters": "Визначте послідовних персонажів",
-      "contact": "Зв'язатися з нами",
+      "mainBannerDescription": "Оживляємо уяву дітей за допомогою штучного інтелекту",
+      "writeABook": "Напиши книгу",
+      "typePlusForSuggestions": "Натискай `++` для пропозицій",
+      "useSlashToIllustrate": "Використовуй `/` для ілюстрацій",
+      "editPrompts": "Редагуй запити, щоб змінити зображення",
+      "defineConsistentCharacters": "Визнач послідовних персонажів",
+      "contact": "Зв'яжіться з нами",
       "social": "Соціальні мережі",
       "help": "Допомога та підтримка",
       "feedback": "Залиште відгук"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "Відкрий для себе",
+        "community": "Спільнота",
+        "profile": "Профіль",
+        "aGreatStory": "Чудова історія",
+        "byYou": "Авторства вас"
+      },
+      "newsfeed": {
+        "discoverHeader": "Відкриття",
+        "createdStoryAt": "створена історія на",
+        "dateFormat": "dd MMMM, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "Кого слідувати",
+        "seeMore": "Більше",
+        "upcomingFeatureQuestion": "Якою майбутньою функцією readingclub.ai ви найбільше зацікавлені?",
+        "emailCTOat": "Ви завжди можете написати CTO на",
+        "withYourIdeas": "із вашими ідеями.",
+        "promotion": "Ми будемо раді поділитися промокодом на 50% знижки на нашу підписку, якщо ви це зробите!"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "Натисніть, щоб редагувати заголовок",
+      "byLineWord": "Автор",
+      "shareWithFamily": "Поділитись з сім'єю"
+    },
+    "proModal": {
+      "title": "Оновити до readingclub.ai",
+      "beProlific": "Станьте продуктивним автором книг для дітей",
+      "buttonText": "Оновити до Plus",
+      "noMatterYourAge": "Незалежно від вашого віку, створюйте історії для (та разом з!) юних читачів на 50+ мовах, з допомогою ШІ.",
+      "beginnerOrExpertV1": "Чи ви новачок, чи експерт, ми вас підтримаємо.",
+      "beginnerOrExpertV2": "Новачок чи експерт,",
+      "fosterCreativity": "розвивайте свою креативність, подолайте страх чистого аркуша та насолоджуйтеся творчим письмом",
+      "month": "Місяць",
+      "unlimitedStorybooks": "Насолоджуйтесь написанням необмеженої кількості професійних книг",
+      "unlimitedIllustrations": "Мотивуйте юних читачів необмеженою кількістю персоналізованих ілюстрацій"
+    },
+    "settings": {
+      "title": "Налаштування",
+      "freePlan": "Наразі ви користуєтесь безкоштовним планом.",
+      "paidPlan": "Наразі ви користуєтесь планом Plus."
+    },
+    "instructionsModal": {
+      "instruction1": "Натисніть ```++``` для автозаповнення",
+      "instruction2": "Використовуйте `/` для ілюстрування",
+      "instruction3": "Редагуйте підказки, щоб змінити зображення",
+      "instruction4": "Визначте послідовних персонажів"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "Головна",
+      "stories": "Історії",
+      "feedback": "Зворотній зв'язок",
+      "settings": "Налаштування",
+      "signout": "Вийти"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "Фідбек"
+    },
+    "draftItem": {
+      "writeNewBook": "Написати нову книгу",
+      "noTitle": "Без назви"
+    },
+    "instructionsPanel": {
+      "startCreating": "Почніть створювати історію",
+      "suggestions": "Натисніть '++' для пропозицій, або",
+      "slash": "'/' для ілюстрацій."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "Створити PDF",
+      "downloadPDF": "Завантажити історію"
+    },
+    "TRCEditorV2": {
+      "placeholder": "Натисніть '++' для автозаповнення, або '/' для команд ілюстрацій..."
+    },
+    "freeCounter": {
+      "thisWeek": "Цього тижня",
+      "freeGenerations": "безкоштовних пропозицій",
+      "freeIllustrations": "безкоштовних ілюстрацій"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Оновити до Plus",
+      "manageSubscription": "Керувати підпискою"
+    },
+    "characterCard": {
+      "gender": "Стать",
+      "species": "Вид",
+      "age": "Вік",
+      "eyeColor": "Колір очей",
+      "hairLength": "Довжина волосся",
+      "hairType": "Тип волосся",
+      "hairColor": "Колір волосся",
+      "skinTone": "Тон шкіри",
+      "outfit": "Одяг",
+      "placeOfOrigin": "Місце походження"
     }
   }
 }

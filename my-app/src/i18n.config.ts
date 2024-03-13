@@ -3,7 +3,8 @@ export const i18n = {
   locales: [
     "en",
     "es",
-    // "uk", "zh-CN"
+    "uk",
+    // "zh-CN"
   ],
 } as const;
 
