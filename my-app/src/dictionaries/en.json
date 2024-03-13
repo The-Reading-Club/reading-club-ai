@@ -67,6 +67,27 @@
     },
     "TRCEditorV2": {
       "placeholder": "Press '++' for autocomplete, or '/' for illustration commands..."
+    },
+    "freeCounter": {
+      "thisWeek": "This week",
+      "freeGenerations": "free suggestions",
+      "freeIllustrations": "free illustrations"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Upgrade to Plus",
+      "manageSubscription": "Manage subscription"
+    },
+    "characterCard": {
+      "gender": "Gender",
+      "species": "Species",
+      "age": "Age",
+      "eyeColor": "Eye color",
+      "hairLength": "Hair length",
+      "hairType": "Hair type",
+      "hairColor": "Hair color",
+      "skinTone": "Skin tone",
+      "outfit": "Outfit",
+      "placeOfOrigin": "Place of origin"
     }
   }
 }

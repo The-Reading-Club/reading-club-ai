@@ -262,6 +262,8 @@ export const DownloadPDFPanel = ({
 };
 
 export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
+  const { dictionary } = useTRCAppConfigStore();
+
   const proModal = useProModal();
 
   // const isPro = await checkSubscription();
@@ -278,7 +280,7 @@ export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
           variant="premium"
           size={"lg"}
         >
-          Upgrade to Plus
+          {dictionary?.components.proSubscriptionPanel.upgradeToPlus}
           <Zap className="w-4 h-4 ml-2 fill-white" />
         </Button>
       ) : (
@@ -289,7 +291,7 @@ export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
             variant="premium"
             size={"lg"}
           >
-            Manage Subscription
+            {dictionary?.components.proSubscriptionPanel.manageSubscription}
           </Button>
         </Link>
       )}

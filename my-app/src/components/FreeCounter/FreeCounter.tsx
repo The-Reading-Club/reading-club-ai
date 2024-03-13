@@ -17,6 +17,8 @@ const MAX_FREE_COUNT_ILLUSTRATION_PROMPT = 40;
 const MAX_FREE_COUNT_GENERATION = 10;
 
 const FreeCounter: React.FC<FreeCounterProps> = ({ rateLimits, isPlus }) => {
+  const { dictionary } = useTRCAppConfigStore();
+
   const {
     illustration: remainingIllustrations,
     illustrationPrompt: remainingIllustrationPrompts,
@@ -78,10 +80,13 @@ const FreeCounter: React.FC<FreeCounterProps> = ({ rateLimits, isPlus }) => {
       >
         <CardContent className="py-3">
           <div className="text-center text-sm text-white mb-4 space-y-2">
-            <p className="text-2xl font-bold">This week:</p>
+            <p className="text-2xl font-bold">
+              {dictionary?.components.freeCounter.thisWeek}
+            </p>
             <p className="text-xl font-semibold">
               {pastTime(rateLimits.illustrationReset) ? 0 : illustrationCount} /{" "}
-              {MAX_FREE_COUNT_ILLUSTRATION} free illustrations
+              {MAX_FREE_COUNT_ILLUSTRATION}{" "}
+              {dictionary?.components.freeCounter.freeIllustrations}
             </p>
             {rateLimits.illustrationReset != -10 && (
               <p className="text-sm">
@@ -106,7 +111,8 @@ const FreeCounter: React.FC<FreeCounterProps> = ({ rateLimits, isPlus }) => {
             /> */}
             <p className="text-xl font-semibold">
               {pastTime(rateLimits.generationReset) ? 0 : generationCount} /{" "}
-              {MAX_FREE_COUNT_GENERATION} free generations
+              {MAX_FREE_COUNT_GENERATION}{" "}
+              {dictionary?.components.freeCounter.freeGenerations}
             </p>
             {/* How is this countdown working if this is not a state x.x */}
             {

@@ -54,7 +54,7 @@ const NavBarV1: React.FC<NavBarV1Props> = ({
           <div className="hidden lg:block">
             {showSignout == true && <SignOutForm dictionary={dictionary} />}
           </div>
-          <DotsMenu />
+          <DotsMenu dictionary={dictionary} />
           {/* <Share /> */}
         </div>
       </div>
