@@ -12,7 +12,7 @@ import {
 
 import { useIllustrationModal } from "@/lib/hooks/useModals";
 import EditableText from "@/components/input/EditableText/EditableText";
-import { useTRCEditorStore } from "@/stores/store";
+import { useTRCAppConfigStore, useTRCEditorStore } from "@/stores/store";
 import {
   IllustrationGenerationPromiseType,
   handleIllustrationPrompt,
@@ -28,6 +28,7 @@ import bcrypt from "bcryptjs";
 import { set } from "zod";
 
 const IllustrationModal = () => {
+  const { dictionary } = useTRCAppConfigStore();
   const illustrationModal = useIllustrationModal();
 
   const [promptText, setPromptText] = useState(illustrationModal.revisedPrompt);
@@ -179,7 +180,8 @@ const IllustrationModal = () => {
             // style={{ border: "2px solid red" }}
           >
             <div className="flex items-center gap-x-2 font-bold py-1 text-darkFont">
-              Edit illustration
+              {/* Edit illustration */}
+              {dictionary?.page.illustrationModal.title}
             </div>
           </DialogTitle>
         </DialogHeader>

@@ -33,6 +33,12 @@
         "emailCTOat": "Siempre puedes enviar un email al CTO a",
         "withYourIdeas": "con tus ideas.",
         "promotion": "¡Estaremos encantados de compartir un código promocional de 50 % de descuento en nuestra suscripción si lo haces!"
+      },
+      "connect": {
+        "connectWith1": "Conecta con ",
+        "connectWith2": "miembros",
+        "connectWith1Mobile": "Conectar (",
+        "connectWith2Mobile": "usuarios)"
       }
     },
     "draftDocument": {
@@ -62,6 +68,9 @@
       "instruction2": "Usa `/` para ilustrar",
       "instruction3": "Edita textos para cambiar imágenes",
       "instruction4": "Define personajes consistentes"
+    },
+    "illustrationModal": {
+      "title": "Editar ilustración"
     }
   },
   "components": {
@@ -111,6 +120,17 @@
       "skinTone": "Tono de piel",
       "outfit": "Atuendo",
       "placeOfOrigin": "Lugar de origen"
+    },
+    "followButton": {
+      "follow": "Seguir"
+    },
+    "share": {
+      "liveOnWeb": "Esta historia está en vivo en la web.",
+      "postOnSocial": "Publicar en perfil de readingclub.ai",
+      "unshare": "Dejar de compartir",
+      "shareThisStory": "Comparte esta historia",
+      "shareWithFamily": "Comparte tus libros con amigos y familiares.",
+      "share": "Compartir"
     }
   }
 }

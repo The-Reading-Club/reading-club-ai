@@ -33,6 +33,12 @@
         "emailCTOat": "Ви завжди можете написати CTO на",
         "withYourIdeas": "із вашими ідеями.",
         "promotion": "Ми будемо раді поділитися промокодом на 50% знижки на нашу підписку, якщо ви це зробите!"
+      },
+      "connect": {
+        "connectWith1": "Зв'яжіться з ",
+        "connectWith2": "учасниками",
+        "connectWith1Mobile": "Підключитися (",
+        "connectWith2Mobile": "користувачі)"
       }
     },
     "draftDocument": {
@@ -62,6 +68,9 @@
       "instruction2": "Використовуйте `/` для ілюстрування",
       "instruction3": "Редагуйте підказки, щоб змінити зображення",
       "instruction4": "Визначте послідовних персонажів"
+    },
+    "illustrationModal": {
+      "title": "Редагувати ілюстрацію"
     }
   },
   "components": {
@@ -111,6 +120,17 @@
       "skinTone": "Тон шкіри",
       "outfit": "Одяг",
       "placeOfOrigin": "Місце походження"
+    },
+    "followButton": {
+      "follow": "Слідувати"
+    },
+    "share": {
+      "liveOnWeb": "Ця історія транслюється в інтернеті.",
+      "postOnSocial": "Опублікувати в профілі readingclub.ai",
+      "unshare": "Відмінити спільний доступ",
+      "shareThisStory": "Поділитися цією історією",
+      "shareWithFamily": "Поділіться своїми книгами з друзями та родиною.",
+      "share": "Поділитися"
     }
   }
 }
