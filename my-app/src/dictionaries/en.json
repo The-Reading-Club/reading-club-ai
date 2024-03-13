@@ -134,7 +134,9 @@
       "hairColor": "Hair color",
       "skinTone": "Skin tone",
       "outfit": "Outfit",
-      "placeOfOrigin": "Place of origin"
+      "placeOfOrigin": "Place of origin",
+      "name": "Name",
+      "facialHair": "Facial hair"
     },
     "followButton": {
       "follow": "Follow",

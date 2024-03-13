@@ -134,7 +134,9 @@
       "hairColor": "Color de cabello",
       "skinTone": "Tono de piel",
       "outfit": "Atuendo",
-      "placeOfOrigin": "Lugar de origen"
+      "placeOfOrigin": "Lugar de origen",
+      "name": "Nombre",
+      "facialHair": "Vello facial"
     },
     "followButton": {
       "follow": "Seguir",

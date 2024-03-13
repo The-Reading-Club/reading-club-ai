@@ -134,7 +134,9 @@
       "hairColor": "Колір волосся",
       "skinTone": "Тон шкіри",
       "outfit": "Одяг",
-      "placeOfOrigin": "Місце походження"
+      "placeOfOrigin": "Місце походження",
+      "name": "Ім'я",
+      "facialHair": "Волосся на обличчі"
     },
     "followButton": {
       "follow": "Слідувати",

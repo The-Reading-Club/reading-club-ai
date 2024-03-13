@@ -134,7 +134,9 @@
       "hairColor": "头发颜色",
       "skinTone": "肤色",
       "outfit": "装束",
-      "placeOfOrigin": "出生地"
+      "placeOfOrigin": "出生地",
+      "name": "姓名",
+      "facialHair": "面部毛发"
     },
     "followButton": {
       "follow": "关注",
