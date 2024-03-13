@@ -3,10 +3,13 @@ import React from "react";
 import FeedHeader from "../_components/FeedHeader";
 import { useSession } from "next-auth/react";
 import NewsFeed from "../_components/NewsFeed";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 const FeedPage = () => {
   const session = useSession();
   const userId = session.data?.user?.id;
+
+  const { dictionary } = useTRCAppConfigStore();
 
   if (!userId) {
     return <div>Loading...</div>;
@@ -14,7 +17,7 @@ const FeedPage = () => {
 
   return (
     <div>
-      <FeedHeader label="Discover" />
+      <FeedHeader label={dictionary?.page.feed.newsfeed.discoverHeader} />
       <NewsFeed userId={userId} />
     </div>
   );

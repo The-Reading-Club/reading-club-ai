@@ -12,6 +12,35 @@
       "social": "Social",
       "help": "Help and support",
       "feedback": "Give us feedback"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "Discover",
+        "community": "Community",
+        "profile": "Profile",
+        "aGreatStory": "A great story",
+        "byYou": "By you"
+      },
+      "newsfeed": {
+        "discoverHeader": "Discover",
+        "createdStoryAt": "created a story on",
+        "dateFormat": "MMMM dd, yyyy"
+      }
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "Home",
+      "stories": "Stories",
+      "feedback": "Feedback",
+      "settings": "Settings",
+      "signout": "Sign out"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "Request a feature"
+    },
+    "draftItem": {
+      "writeNewBook": "Write a new book"
     }
   }
 }

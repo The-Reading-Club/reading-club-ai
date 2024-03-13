@@ -6,6 +6,10 @@ import { auth } from "@/auth";
 import { checkSubscription } from "@/lib/subscription";
 import ClientConfigurator from "./_components/ClientConfigurator";
 import { getRateLimitCount, getRateLimitReset } from "@/lib/rate-limit";
+import { headers } from "next/headers";
+import { getLocaleFromHeadersList } from "@/lib/internationalization/utils";
+import { getDictionary } from "@/lib/internationalization/dictionary";
+import { Locale } from "@/i18n.config";
 
 // FYI: The protected folder really doesn't mean that routes outside of it are not protected.
 // It's just a way to organize the layout components.
@@ -32,6 +36,11 @@ const ProtectedLayout = async ({ children }: React.PropsWithChildren) => {
     feature: "generation",
   });
 
+  const headerList = headers();
+  const locale = getLocaleFromHeadersList(headerList);
+
+  const dictionary = await getDictionary(locale as Locale);
+
   return (
     <div
       className="h-screen"
@@ -47,6 +56,7 @@ const ProtectedLayout = async ({ children }: React.PropsWithChildren) => {
           generation: Number(rateLimitGeneration),
           generationReset: Number(rateLimitGenerationReset),
         }}
+        dictionary={dictionary}
       />
       {/* I think navbar shit shouldn't be on the client */}
       {/* <p>{`RATE LIMIT TEST ILLUSTRATION ${rateLimitIllustration}`}</p>
@@ -55,6 +65,7 @@ const ProtectedLayout = async ({ children }: React.PropsWithChildren) => {
         showSignout={
           session?.user.email !== undefined && session?.user.email !== undefined
         }
+        dictionary={dictionary}
       />
       {/* <h1>ProtectedLayout</h1> */}
 

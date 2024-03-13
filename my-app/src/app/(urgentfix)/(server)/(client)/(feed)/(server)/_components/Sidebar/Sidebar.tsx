@@ -15,6 +15,7 @@ import { useRouter } from "next/navigation";
 import { toast } from "sonner";
 import SidebarWriteButton from "./SidebarWriteButton";
 import { RequestAFeaturePanel } from "@/components/EditorPageWrapper/RightPanel";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 const Sidebar = () => {
   // const session = await auth();
@@ -26,6 +27,8 @@ const Sidebar = () => {
   const create = useMutation(api.documents.create);
 
   const router = useRouter();
+
+  const { dictionary } = useTRCAppConfigStore();
 
   const onRedirect = (documentId: string) => {
     router.push(`/drafts/${documentId}`);
@@ -62,7 +65,8 @@ const Sidebar = () => {
 
   const items = [
     {
-      label: "Discover",
+      // label: "Discover",
+      label: dictionary?.page.feed.sidebar.discover,
       href: "/",
       icon: BsHouseFill,
       // icon: async () => {
@@ -77,12 +81,12 @@ const Sidebar = () => {
     //   icon: BsBellFill,
     // },
     {
-      label: "Community",
+      label: dictionary?.page.feed.sidebar.community,
       href: `/connect`,
       icon: BsPeopleFill,
     },
     {
-      label: "Profile",
+      label: dictionary?.page.feed.sidebar.profile,
       href: `/users/${currentUser?.id}`,
       icon: FaUser,
     },
@@ -107,8 +111,8 @@ const Sidebar = () => {
       <div className="mt-5 pl-10 scale-90 hidden lg:block">
         <DraftItem
           key={"draft-item-add-book-default-newsfeed"}
-          title={"A Great Story"}
-          author={"By you"}
+          title={dictionary?.page.feed.sidebar.aGreatStory}
+          author={dictionary?.page.feed.sidebar.byYou}
           coverUrl={""}
           onClick={onCreate}
           colorClassName="bg-accent2"

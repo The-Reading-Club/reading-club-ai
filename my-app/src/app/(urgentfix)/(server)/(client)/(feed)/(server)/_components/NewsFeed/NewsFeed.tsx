@@ -13,12 +13,15 @@ import { format } from "date-fns";
 import fetcher from "@/lib/fetcher";
 import { Doc } from "../../../../../../../../../convex/_generated/dataModel";
 import { ClipLoader } from "react-spinners";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 interface NewsFeedProps {
   userId: string;
 }
 
 const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
+  const { dictionary } = useTRCAppConfigStore();
+
   const { data: fetchedUser, isLoading } = useUser(userId);
 
   // const documents = useQuery(api.documents.getFollowed, {
@@ -140,11 +143,12 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
                   {/* "Add created a story text" */}
                   <p>
                     <span className="font-bold">{document?.author}</span>{" "}
-                    created a story on{" "}
+                    {dictionary?.page.feed.newsfeed.createdStoryAt}{" "}
                     <span className="text-neutral-500">
                       {format(
                         new Date(document?._creationTime),
-                        "MMMM dd, yyyy"
+                        // "MMMM dd, yyyy"
+                        dictionary?.page.feed.newsfeed.dateFormat
                       )}
                     </span>
                   </p>

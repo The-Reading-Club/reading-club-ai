@@ -12,6 +12,35 @@
       "social": "Redes sociales",
       "help": "Ayuda y soporte",
       "feedback": "Enviar comentarios"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "Descubre",
+        "community": "Comunidad",
+        "profile": "Perfil",
+        "aGreatStory": "Un gran historia",
+        "byYou": "Escrita por tí"
+      },
+      "newsfeed": {
+        "discoverHeader": "Descubre",
+        "createdStoryAt": "creó una historia",
+        "dateFormat": "dd-mm-yyyy"
+      }
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "Inicio",
+      "stories": "Libros",
+      "feedback": "Enviar comentarios",
+      "settings": "Configuración",
+      "signout": "Salir"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "Solicitar función"
+    },
+    "draftItem": {
+      "writeNewBook": "Escribe un libro"
     }
   }
 }

@@ -5,6 +5,7 @@ import React from "react";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 import { api } from "../../convex/_generated/api";
+import { TRCDictionary } from "@/lib/internationalization/dictionary";
 
 type Suggestion = {
   id: string;
@@ -178,6 +179,10 @@ interface TRCAppConfig {
   apiSuccessCallsCount: number;
   // setApiSuccessCallsCount: (apiSuccessCallsCount: number) => void;
   addUpApiSuccessCallsCount: () => void;
+
+  // TRC Dictionary
+  dictionary?: TRCDictionary;
+  setDictionary: (dictionary: TRCDictionary) => void;
 }
 
 export const useTRCAppConfigStore = create<TRCAppConfig>((set) => ({
@@ -203,4 +208,7 @@ export const useTRCAppConfigStore = create<TRCAppConfig>((set) => ({
       apiSuccessCallsCount: state.apiSuccessCallsCount + 1,
     }));
   },
+
+  dictionary: undefined,
+  setDictionary: (dictionary) => set({ dictionary }),
 }));

@@ -5,7 +5,11 @@ import { Button } from "@/components/ui/button";
 import MyDocument from "../MyDocument";
 import DownloadStoryPDFLink from "../StoryPDF/DownloadPDFLink";
 import StoryPDF from "../StoryPDF";
-import { StoryData, useTRCEditorStore } from "@/stores/store";
+import {
+  StoryData,
+  useTRCAppConfigStore,
+  useTRCEditorStore,
+} from "@/stores/store";
 import useMounted from "@/lib/hooks/useMounted";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { useProModal } from "@/lib/hooks/useModals";
@@ -285,6 +289,7 @@ export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
 };
 
 export const RequestAFeaturePanel = () => {
+  const { dictionary } = useTRCAppConfigStore();
   return (
     // <div
     // //   style={{ border: "2px solid red" }}
@@ -305,7 +310,7 @@ export const RequestAFeaturePanel = () => {
         // In this case this is necessary because it's wrapped in a link, and I want any effect on the width of that link to take effect on the width of the button too
         className="w-full"
       >
-        Request a feature
+        {dictionary?.components.requestFeaturePanel.buttonText}
       </Button>
     </Link>
     // </div>

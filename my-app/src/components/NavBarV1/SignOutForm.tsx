@@ -1,11 +1,13 @@
 import React from "react";
 import { signOut } from "@/auth";
+import { TRCDictionary } from "@/lib/internationalization/dictionary";
 
 interface SignOutFormProps {
   className?: string;
+  dictionary: TRCDictionary;
 }
 
-const SignOutForm: React.FC<SignOutFormProps> = ({ className }) => {
+const SignOutForm: React.FC<SignOutFormProps> = ({ className, dictionary }) => {
   return (
     <form
       className={className}
@@ -24,7 +26,7 @@ const SignOutForm: React.FC<SignOutFormProps> = ({ className }) => {
         // className="bg-primary text-white rounded-md py-2 px-4"
         // className=""
       >
-        Sign out
+        {dictionary?.components.navbar.signout}
       </button>
     </form>
   );
