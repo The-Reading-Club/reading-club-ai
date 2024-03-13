@@ -11,9 +11,10 @@ import TRCButton2 from "@/components/TRCButton2";
 
 const Social = () => {
   const onSocialClick = (provider: "google" = "google" /** | "github" */) => {
-    popupCenter("/auth/google-login", "Google Sign In");
+    // Let's try first without this
+    // popupCenter("/auth/google-login", "Google Sign In");
 
-    if (false)
+    if (true)
       try {
         signIn(provider, {
           callbackUrl: DEFAULT_LOGIN_REDIRECT_URL,
