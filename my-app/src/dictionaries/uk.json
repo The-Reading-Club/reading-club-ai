@@ -80,6 +80,12 @@
     },
     "illustrationModal": {
       "title": "Редагувати ілюстрацію"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "Вивчення ваших персонажів",
+      "creationgYourCharacters": "Створення ваших персонажів",
+      "choosingYourCharacters": "Вибір ваших персонажів для ілюстрації сцени",
+      "generatingIllustration": "Генерація ілюстрації"
     }
   },
   "components": {

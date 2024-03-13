@@ -80,6 +80,12 @@
     },
     "illustrationModal": {
       "title": "Editar ilustración"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "Conociendo a tus personajes",
+      "creationgYourCharacters": "Creando tus personajes",
+      "choosingYourCharacters": "Eligiendo tus personajes para la ilustración de la escena",
+      "generatingIllustration": "Generando ilustración"
     }
   },
   "components": {

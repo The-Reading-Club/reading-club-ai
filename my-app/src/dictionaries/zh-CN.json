@@ -80,6 +80,12 @@
     },
     "illustrationModal": {
       "title": "编辑插图"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "了解你的角色",
+      "creationgYourCharacters": "创建你的角色",
+      "choosingYourCharacters": "为场景插图选择你的角色",
+      "generatingIllustration": "生成插图"
     }
   },
   "components": {
