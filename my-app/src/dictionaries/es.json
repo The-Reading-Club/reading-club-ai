@@ -39,6 +39,18 @@
       "clickToEditTitle": "Haz click para editar titulo",
       "byLineWord": "Por",
       "shareWithFamily": "Compartir con familia"
+    },
+    "proModal": {
+      "title": "Únete a readingclub.ai",
+      "beProlific": "Hazte un escritor prolífico de cuentos ilustrados",
+      "buttonText": "Actualizar a Plus",
+      "noMatterYourAge": "No importa tu edad, crea historias para (¡y con!) lectores jóvenes en más de 50 idiomas, con la ayuda de IA.",
+      "beginnerOrExpertV1": "Ya seas principiante o experto, lo tenemos cubierto.",
+      "beginnerOrExpertV2": "Principiante o experto,",
+      "fosterCreativity": "fomente su creatividad, supere el bloqueo del escritor y disfrute escribiendo de forma creativa",
+      "month": "Mes",
+      "unlimitedStorybooks": "Disfruta escribiendo libros de cuentos ilimitados de calidad profesional",
+      "unlimitedIllustrations": "Motiva a los lectores jóvenes con ilustraciones personalizadas ilimitadas"
     }
   },
   "components": {

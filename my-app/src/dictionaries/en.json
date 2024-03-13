@@ -39,6 +39,18 @@
       "clickToEditTitle": "Click to edit title",
       "byLineWord": "By",
       "shareWithFamily": "Share with family"
+    },
+    "proModal": {
+      "title": "Upgrade to readingclub.ai",
+      "beProlific": "Be a prolific storybook writer",
+      "buttonText": "Actualizar a Plus",
+      "noMatterYourAge": "No matter your age, craft stories for (and with!) young readers in 50+ languages, assisted by AI.",
+      "beginnerOrExpertV1": "Whether you're a beginner or an expert, we've got you covered.",
+      "beginnerOrExpertV2": "Beginner or expert,",
+      "fosterCreativity": "foster your creativity, overcome writer's block, and enjoy writing creatively",
+      "month": "Month",
+      "unlimitedStorybooks": "Enjoy writing unlimited professional-quality storybooks",
+      "unlimitedIllustrations": "Motivate young readers with unlimited personalized illustrations"
     }
   },
   "components": {
