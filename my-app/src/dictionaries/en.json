@@ -39,6 +39,15 @@
         "connectWith2": "members — Edit bio to be at the top!",
         "connectWith1Mobile": "Connect (",
         "connectWith2Mobile": "users)"
+      },
+      "profile": {
+        "editProfile": "Edit profile",
+        "joined": "Joined",
+        "following": "Following",
+        "followers": "Followers",
+        "editYourBio": "Edit your bio",
+        "writeALittle": "Write a little about yourself",
+        "save": "Save"
       }
     },
     "draftDocument": {
@@ -122,7 +131,8 @@
       "placeOfOrigin": "Place of origin"
     },
     "followButton": {
-      "follow": "Follow"
+      "follow": "Follow",
+      "unfollow": "Unfollow"
     },
     "share": {
       "liveOnWeb": "This story is live on web.",

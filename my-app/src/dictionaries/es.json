@@ -39,6 +39,15 @@
         "connectWith2": "miembros",
         "connectWith1Mobile": "Conectar (",
         "connectWith2Mobile": "usuarios)"
+      },
+      "profile": {
+        "editProfile": "Editar perfil",
+        "joined": "Se unió",
+        "following": "Siguiendo",
+        "followers": "Seguidores",
+        "editYourBio": "Edita tu biografía",
+        "writeALittle": "Escribe un poco sobre ti",
+        "save": "Guardar"
       }
     },
     "draftDocument": {
@@ -122,7 +131,8 @@
       "placeOfOrigin": "Lugar de origen"
     },
     "followButton": {
-      "follow": "Seguir"
+      "follow": "Seguir",
+      "unfollow": "Dejar de seguir"
     },
     "share": {
       "liveOnWeb": "Esta historia está en vivo en la web.",

@@ -16,6 +16,7 @@ import {
   DialogTitle,
 } from "@/components/ui/dialog";
 import { useRouter } from "next/navigation";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 const EditUserModal = () => {
   // This should be a hook of its own
@@ -33,6 +34,8 @@ const EditUserModal = () => {
   const [isLoading, setIsLoading] = useState(false);
 
   const [bio, setBio] = useState("");
+
+  const { dictionary } = useTRCAppConfigStore();
 
   useEffect(() => {
     if (currentUser) {
@@ -74,9 +77,9 @@ const EditUserModal = () => {
     <Dialog open={editModal.isOpen} onOpenChange={editModal.onClose}>
       <DialogContent>
         <DialogHeader>
-          <DialogTitle>Edit your bio</DialogTitle>
+          <DialogTitle>{dictionary?.page.feed.profile.editYourBio}</DialogTitle>
           <DialogDescription>
-            <p>Write a little about yourself</p>
+            <p>{dictionary?.page.feed.profile.writeALittle}</p>
           </DialogDescription>
         </DialogHeader>
         <div className="p-4">
@@ -98,7 +101,7 @@ const EditUserModal = () => {
             onClick={onSubmit}
             disabled={isLoading}
           >
-            {isLoading ? "Loading..." : "Save"}
+            {isLoading ? "Loading..." : dictionary?.page.feed.profile.save}
           </button>
         </DialogFooter>
       </DialogContent>

@@ -39,6 +39,15 @@
         "connectWith2": "учасниками",
         "connectWith1Mobile": "Підключитися (",
         "connectWith2Mobile": "користувачі)"
+      },
+      "profile": {
+        "editProfile": "Редагувати профіль",
+        "joined": "Приєднався",
+        "following": "Читає",
+        "followers": "Підписники",
+        "editYourBio": "Редагувати біографію",
+        "writeALittle": "Напишіть трохи про себе",
+        "save": "Зберегти"
       }
     },
     "draftDocument": {
@@ -122,7 +131,8 @@
       "placeOfOrigin": "Місце походження"
     },
     "followButton": {
-      "follow": "Слідувати"
+      "follow": "Слідувати",
+      "unfollow": "Відписатися"
     },
     "share": {
       "liveOnWeb": "Ця історія транслюється в інтернеті.",
