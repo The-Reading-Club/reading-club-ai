@@ -51,7 +51,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
     documentId: params.documentId,
   });
 
-  const { rateLimits, isPlus } = useTRCAppConfigStore();
+  const { rateLimits, isPlus, dictionary } = useTRCAppConfigStore();
 
   //#region useTiptapEditorContentFromConvex
   // const [initialContent, setInitialContent] = useState<JSONContent | null>(
@@ -295,12 +295,12 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
                 title: storyTitle,
               });
             }}
-            placeholder="Click to edit title"
+            placeholder={dictionary?.page.draftDocument.clickToEditTitle}
             nonEditableElementClassName="text-4xl font-bold"
             editableElement={Input}
           />
           {/* <br /> */}
-          <h1 className="text-2xl font text-darkFont">{`By ${document.author}`}</h1>
+          <h1 className="text-2xl font text-darkFont">{`${dictionary?.page.draftDocument.byLineWord} ${document.author}`}</h1>
           {/* <br /> */}
           <InstructionsPanel />
           {/* <br /> */}
@@ -356,7 +356,7 @@ const DocumentIdPagePage = ({ params }: DocumentIdPageProps) => {
         <div className="basis-1/4 h-[100vh] flex flex-col justify-start items-center pt-8 gap-2 lg:pb-0 pb-8">
           <Share documentId={params.documentId}>
             <Button variant={"accent"} size={"lg"}>
-              Share with family
+              {dictionary?.page.draftDocument.shareWithFamily}
             </Button>
           </Share>
           <RequestAFeaturePanel />

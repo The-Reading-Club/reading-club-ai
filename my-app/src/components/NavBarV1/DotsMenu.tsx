@@ -11,12 +11,17 @@ import { Button } from "../ui/button";
 import { MoreHorizontal } from "lucide-react";
 import SignOutForm from "./SignOutForm";
 import Link from "next/link";
+import { TRCDictionary } from "@/lib/internationalization/dictionary";
 
 interface DotsMenuProps {
   showSignout?: boolean;
+  dictionary: TRCDictionary;
 }
 
-const DotsMenu: React.FC<DotsMenuProps> = ({ showSignout = true }) => {
+const DotsMenu: React.FC<DotsMenuProps> = ({
+  showSignout = true,
+  dictionary,
+}) => {
   return (
     <DropdownMenu>
       <DropdownMenuTrigger
@@ -61,7 +66,9 @@ const DotsMenu: React.FC<DotsMenuProps> = ({ showSignout = true }) => {
         {showSignout == true && (
           <>
             <DropdownMenuSeparator />
-            <DropdownMenuItem>{<SignOutForm className="" />}</DropdownMenuItem>
+            <DropdownMenuItem>
+              {<SignOutForm dictionary={dictionary} className="" />}
+            </DropdownMenuItem>
           </>
         )}
       </DropdownMenuContent>

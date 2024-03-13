@@ -7,7 +7,7 @@ import {
 } from "@/lib/utils";
 import useMounted from "@/lib/hooks/useMounted";
 import { CharacterAttributes } from "@/data/character";
-import { useTRCEditorStore } from "@/stores/store";
+import { useTRCAppConfigStore, useTRCEditorStore } from "@/stores/store";
 import { BasicCharacterAttributes } from "@/app/api/character/identify/utils";
 import { IoMdClose } from "react-icons/io";
 import EditableText from "../input/EditableText/EditableText";
@@ -32,6 +32,18 @@ type CharacterCardProps = {
   onCharacterChange: (character: CharacterAttributes) => void;
 };
 
+type CharacterTraitType =
+  | "gender"
+  | "species"
+  | "age"
+  | "eyeColor"
+  | "hairLength"
+  | "hairType"
+  | "hairColor"
+  | "skinTone"
+  | "outfit"
+  | "placeOfOrigin";
+
 // CharacterCard Component
 const CharacterCard: React.FC<CharacterCardProps> = ({
   character,
@@ -41,6 +53,12 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
   setIsEditingCharacter,
   onCharacterChange,
 }) => {
+  const { dictionary } = useTRCAppConfigStore();
+
+  const getKeyLabel = (key: CharacterTraitType) => {
+    return dictionary?.components.characterCard[key] || key;
+  };
+
   const [characterDefinitionState, setCharacterDefinitionState] =
     useState<CharacterAttributes>(definition);
 
@@ -120,9 +138,10 @@ const CharacterCard: React.FC<CharacterCardProps> = ({
                       className="mb-2"
                       key={`key-character-attribute-card-${index}-${key}`}
                     >
-                      <p key={index} className="text-sm text-justify">
+                      <p key={index} className="text-sm">
                         <span className="font-bold">
-                          {capitalizeFirstLetter(key)}
+                          {/* {capitalizeFirstLetter(key)} */}
+                          {getKeyLabel(key as CharacterTraitType)}
                         </span>
                         {/* {(": " + value + ".").replaceAll("..", ".")} */}
                         {`: `}

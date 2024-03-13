@@ -5,9 +5,18 @@ import { Button } from "../ui/button";
 import DotsMenu from "./DotsMenu";
 import SignOutForm from "./SignOutForm";
 import UnstyledExternalLink from "../UnstyledExternalLink";
+import { TRCDictionary } from "@/lib/internationalization/dictionary";
 // import Share from "../Share/Share";
 
-const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
+interface NavBarV1Props {
+  showSignout?: boolean;
+  dictionary: TRCDictionary;
+}
+
+const NavBarV1: React.FC<NavBarV1Props> = ({
+  showSignout = true,
+  dictionary,
+}) => {
   return (
     <nav className="bg-primary text-white px-5">
       <div className="container mx-auto flex justify-between items-center">
@@ -15,11 +24,11 @@ const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
         <div className="text-2xl font-bold  flex space-x-12">
           <Link href="/" className="text-white">
             {/* <Logo width={150} height={150} padding={0} /> */}
-            Home
+            {dictionary.components.navbar.home}
           </Link>
           <Link href="/drafts" className="text-white">
             {/* <Logo width={150} height={150} padding={0} /> */}
-            Stories
+            {dictionary.components.navbar.stories}
           </Link>
           {false && (
             <Link href="/editor" className="text-white">
@@ -34,16 +43,18 @@ const NavBarV1 = ({ showSignout = true }: { showSignout?: boolean }) => {
           </Link> */}
           <div className="hidden lg:block">
             <UnstyledExternalLink href="https://readingclub.canny.io">
-              <p className="text-white">Feedback</p>
+              <p className="text-white">
+                {dictionary.components.navbar.feedback}
+              </p>
             </UnstyledExternalLink>
           </div>
           <Link href="/settings" className="text-white hidden lg:block">
-            Settings
+            {dictionary.components.navbar.settings}
           </Link>
           <div className="hidden lg:block">
-            {showSignout == true && <SignOutForm />}
+            {showSignout == true && <SignOutForm dictionary={dictionary} />}
           </div>
-          <DotsMenu />
+          <DotsMenu dictionary={dictionary} />
           {/* <Share /> */}
         </div>
       </div>

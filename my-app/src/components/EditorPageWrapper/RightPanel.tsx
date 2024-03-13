@@ -5,7 +5,11 @@ import { Button } from "@/components/ui/button";
 import MyDocument from "../MyDocument";
 import DownloadStoryPDFLink from "../StoryPDF/DownloadPDFLink";
 import StoryPDF from "../StoryPDF";
-import { StoryData, useTRCEditorStore } from "@/stores/store";
+import {
+  StoryData,
+  useTRCAppConfigStore,
+  useTRCEditorStore,
+} from "@/stores/store";
 import useMounted from "@/lib/hooks/useMounted";
 import { PDFDownloadLink } from "@react-pdf/renderer";
 import { useProModal } from "@/lib/hooks/useModals";
@@ -179,17 +183,24 @@ const RightPanel: React.FC<RightPanelProps> = ({
 export default RightPanel;
 
 export const InstructionsPanel = () => {
+  const { dictionary } = useTRCAppConfigStore();
   return (
     <>
       {/* <h1 className="text-2xl font text-darkFont">
         {`Welcome to Reading Club AI!`}
       </h1> */}
       {/* <br /> */}
-      <p className="text-md text-darkFont">{`Start creating a story.`}</p>
       <p className="text-md text-darkFont">
-        {`Press '++' for suggestions, or`}
+        {dictionary?.components.instructionsPanel.startCreating}
       </p>
-      <p className="text-md text-darkFont">{`'/' for illustrations.`}</p>
+      <p className="text-md text-darkFont">
+        {/* {`Press '++' for suggestions, or`} */}
+        {dictionary?.components.instructionsPanel.suggestions}
+      </p>
+      <p className="text-md text-darkFont">
+        {/* {`'/' for illustrations.`} */}
+        {dictionary?.components.instructionsPanel.slash}
+      </p>
     </>
   );
 };
@@ -204,6 +215,8 @@ export const DownloadPDFPanel = ({
   author: string;
 }) => {
   const [documentGenerated, setDocumentGenerated] = React.useState(false);
+
+  const { dictionary } = useTRCAppConfigStore();
 
   useEffect(() => {
     if (documentGenerated == true) setDocumentGenerated(false);
@@ -220,7 +233,7 @@ export const DownloadPDFPanel = ({
           variant={"outline"}
           size={"lg"}
         >
-          Generate PDF
+          {dictionary?.components.downloadPDFPanel.generatePDF}
         </Button>
       ) : (
         // It's very important to remember not rendering this thing too much
@@ -240,7 +253,7 @@ export const DownloadPDFPanel = ({
             size={"lg"}
             className="w-full"
           >
-            Download Story
+            {dictionary?.components.downloadPDFPanel.downloadPDF}
           </Button>
         </DownloadStoryPDFLink>
       )}
@@ -249,6 +262,8 @@ export const DownloadPDFPanel = ({
 };
 
 export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
+  const { dictionary } = useTRCAppConfigStore();
+
   const proModal = useProModal();
 
   // const isPro = await checkSubscription();
@@ -265,7 +280,7 @@ export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
           variant="premium"
           size={"lg"}
         >
-          Upgrade to Plus
+          {dictionary?.components.proSubscriptionPanel.upgradeToPlus}
           <Zap className="w-4 h-4 ml-2 fill-white" />
         </Button>
       ) : (
@@ -276,7 +291,7 @@ export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
             variant="premium"
             size={"lg"}
           >
-            Manage Subscription
+            {dictionary?.components.proSubscriptionPanel.manageSubscription}
           </Button>
         </Link>
       )}
@@ -285,6 +300,7 @@ export const PlusSubscriptionPanel = ({ isPlus }: { isPlus: boolean }) => {
 };
 
 export const RequestAFeaturePanel = () => {
+  const { dictionary } = useTRCAppConfigStore();
   return (
     // <div
     // //   style={{ border: "2px solid red" }}
@@ -293,7 +309,7 @@ export const RequestAFeaturePanel = () => {
       href="https://readingclub.canny.io"
       target="_blank"
       rel="noopener noreferrer"
-      className="text-white "
+      className="text-white"
     >
       <Button
         //   className="bg-accent2 rounded-full font-bold text-xl py-7 px-14 hover:bg-accent"
@@ -305,7 +321,7 @@ export const RequestAFeaturePanel = () => {
         // In this case this is necessary because it's wrapped in a link, and I want any effect on the width of that link to take effect on the width of the button too
         className="w-full"
       >
-        Request a feature
+        {dictionary?.components.requestFeaturePanel.buttonText}
       </Button>
     </Link>
     // </div>

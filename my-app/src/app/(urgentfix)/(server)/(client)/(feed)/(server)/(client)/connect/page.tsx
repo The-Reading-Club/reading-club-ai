@@ -7,9 +7,12 @@ import Avatar from "../../_components/Avatar";
 import Image from "next/image";
 import { Button } from "@/components/ui/button";
 import Link from "next/link";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 const ConnectPage = () => {
   const { data: users, isLoading } = useUsers();
+
+  const { dictionary } = useTRCAppConfigStore();
 
   if (isLoading == true) {
     return (
@@ -24,11 +27,15 @@ const ConnectPage = () => {
       <div className="lg:block hidden">
         <FeedHeader
           showBackArrow
-          label={`Connect w/ ${users.length} members — Edit bio to be at the top!`}
+          // label={`Connect w/ ${users.length} members — Edit bio to be at the top!`}
+          label={`${dictionary?.page.feed.connect.connectWith1} ${users.length} ${dictionary?.page.feed.connect.connectWith2}`}
         />
       </div>
       <div className="lg:hidden block">
-        <FeedHeader showBackArrow label={`Connect (${users.length} users)`} />
+        <FeedHeader
+          showBackArrow
+          label={`${dictionary?.page.feed.connect.connectWith1Mobile}${users.length} ${dictionary?.page.feed.connect.connectWith2Mobile}`}
+        />
       </div>
       <div className="overflow-y-auto h-full">
         {users
@@ -59,7 +66,7 @@ const ConnectPage = () => {
                 </div>
                 <Link href={`/users/${user.id}`}>
                   <Button size={"sm"} variant={"accent"}>
-                    Follow
+                    {dictionary?.components.followButton.follow}
                   </Button>
                 </Link>
               </div>

@@ -8,6 +8,7 @@ import { BiCalendar } from "react-icons/bi";
 import useFollow from "@/lib/hooks/useFollow";
 import { useUserEditModal } from "@/lib/hooks/useModals";
 import EditUserModalProvider from "@/components/modals/EditUserModal/EditUserModalProvider";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 interface UserBioProps {
   userId: string;
@@ -29,6 +30,8 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
   const editModal = useUserEditModal();
 
   const { isFollowing, toggleFollow } = useFollow(userId);
+
+  const { dictionary } = useTRCAppConfigStore();
 
   const createdAt = useMemo(() => {
     if (!fetchedUser?.register_date) {
@@ -62,7 +65,7 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
               //   className="text-accent2 border border-accent2"
               onClick={editModal.onOpen}
             >
-              Edit profile
+              {dictionary?.page.feed.profile.editProfile}
             </Button>
           ) : (
             <Button
@@ -70,7 +73,9 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
               variant={isFollowing ? "ghost2" : "accent"}
               // className={isFollowing ? "text-primary" : "text-neutral-500"}
             >
-              {isFollowing ? "Unfollow" : "Follow"}
+              {isFollowing
+                ? dictionary?.components.followButton.unfollow
+                : dictionary?.components.followButton.follow}
             </Button>
           )}
         </div>
@@ -86,7 +91,9 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
             <p className="">{fetchedUser?.bio}</p>
             <div className="flex flex-row items-center gap-2 mt-4 text-neutral-500">
               <BiCalendar size={24} />
-              <p>Joined {createdAt}</p>
+              <p>
+                {dictionary?.page.feed.profile.joined} {createdAt}
+              </p>
             </div>
           </div>
           {/* Following */}
@@ -95,13 +102,17 @@ const UserBio: React.FC<UserBioProps> = ({ userId }) => {
               <p className="font-semibold">
                 {fetchedUser?.followingCount || 0}
               </p>
-              <p className="text-neutral-500">Following</p>
+              <p className="text-neutral-500">
+                {dictionary?.page.feed.profile.following}
+              </p>
             </div>
             <div className="flex flex-row items-center gap-1">
               <p className="font-semibold">
                 {fetchedUser?.followersCount || 0}
               </p>
-              <p className="text-neutral-500">Followers</p>
+              <p className="text-neutral-500">
+                {dictionary?.page.feed.profile.followers}
+              </p>
             </div>
           </div>
         </div>

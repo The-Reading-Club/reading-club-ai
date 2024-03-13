@@ -35,6 +35,7 @@ import useEmblaCarousel from "embla-carousel-react";
 
 import ReactMarkdown from "react-markdown";
 import { TrackNextIcon, TrackPreviousIcon } from "@radix-ui/react-icons";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 const InlineCode = ({ children }: React.PropsWithChildren) => (
   <code
@@ -73,10 +74,34 @@ const renderers = {
 };
 
 const instructionsTexts = [
-  { label: "Type ```++``` to autocomplete", gif: gifInstructions1 },
-  { label: "Use `/` to illustrate", gif: gifInstructions2 },
-  { label: "Edit prompts to change images", gif: gifInstructions3 },
-  { label: "Define consistent characters", gif: gifInstructions4 },
+  {
+    label:
+      // "Type ```++``` to autocomplete"
+      useTRCAppConfigStore.getState().dictionary?.page.instructionsModal
+        .instruction1,
+    gif: gifInstructions1,
+  },
+  {
+    label:
+      //  "Use `/` to illustrate"
+      useTRCAppConfigStore.getState().dictionary?.page.instructionsModal
+        .instruction2,
+    gif: gifInstructions2,
+  },
+  {
+    label:
+      // "Edit prompts to change images"
+      useTRCAppConfigStore.getState().dictionary?.page.instructionsModal
+        .instruction3,
+    gif: gifInstructions3,
+  },
+  {
+    label:
+      // "Define consistent characters"
+      useTRCAppConfigStore.getState().dictionary?.page.instructionsModal
+        .instruction4,
+    gif: gifInstructions4,
+  },
   //   "Wait for the image to generate",
   //   "Click the Save button to save the image to your gallery",
   //   "Click the Copy button to copy the image to your clipboard",
@@ -199,7 +224,8 @@ const InstructionsModal = () => {
             </button> */}
           </div>
           <div className="py-2 text-center text-sm text-muted-foreground">
-            Slide {current} of {count}
+            {/* Slide {current} of {count} */}
+            {`${current} / ${count}`}
           </div>
           {/* </DialogDescription> */}
           <DialogFooter>
@@ -286,7 +312,8 @@ const InstructionsModal = () => {
             <CarouselNext />
           </Carousel>
           <div className="py-2 text-center text-sm text-muted-foreground">
-            Slide {current} of {count}
+            {/* Slide {current} of {count} */}
+            {`${current} / ${count}`}
           </div>
         </div>
         {/* </DialogDescription> */}

@@ -1,6 +1,7 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import { devAlert } from "@/lib/utils";
+import { useTRCAppConfigStore } from "@/stores/store";
 import axios from "axios";
 import { Zap } from "lucide-react";
 import React, { useState } from "react";
@@ -13,6 +14,8 @@ const SubscriptionButton: React.FC<SubscriptionButtonProps> = ({
   isPlus = false,
 }) => {
   const [loading, setLoading] = useState(false);
+
+  const { dictionary } = useTRCAppConfigStore();
 
   const onClick = async () => {
     try {
@@ -36,7 +39,9 @@ const SubscriptionButton: React.FC<SubscriptionButtonProps> = ({
       variant={isPlus == true ? "accent" : "premium"}
       size={"lg"}
     >
-      {isPlus == true ? "Manage Subscription" : "Upgrade to Plus"}
+      {isPlus == true
+        ? dictionary?.components.proSubscriptionPanel.manageSubscription
+        : dictionary?.components.proSubscriptionPanel.upgradeToPlus}
       {isPlus == true ? null : <Zap className="w-4 h-4 ml-2 fill-white" />}
     </Button>
   );

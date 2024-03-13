@@ -2,6 +2,7 @@ import Image from "next/image";
 import React from "react";
 import { Id } from "../../../../../../../../convex/_generated/dataModel";
 import { PlusCircleIcon } from "lucide-react";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 interface DraftItemProps {
   //   id?: Id;
@@ -37,6 +38,8 @@ const DraftItem: React.FC<DraftItemProps> = ({
   titleColorClassname = "",
   showUnpublishedWatermark: showPublishedWatermark = false,
 }) => {
+  const { dictionary } = useTRCAppConfigStore();
+
   // return <div>THIS IS ANOTHER TEST</div>;
   return (
     <div
@@ -78,7 +81,7 @@ const DraftItem: React.FC<DraftItemProps> = ({
           >
             <div className="pb-2 text-center text-white flex flex-col justify-center items-center">
               <div className="font-bold border-2 border-white rounded-lg  h-[210px] w-full flex flex-col justify-center items-center gap-5">
-                Write a new book
+                {dictionary?.components.draftItem.writeNewBook}
                 <PlusCircleIcon size={50} />
               </div>
               <div></div>
@@ -92,7 +95,7 @@ const DraftItem: React.FC<DraftItemProps> = ({
         {/* <div>{d.coverImage}</div> */}
 
         <div className={`font-bold ${titleColorClassname}`}>
-          {!title ? "Untitled" : title}
+          {!title ? dictionary?.components.draftItem.noTitle : title}
         </div>
         <div className={`${authorColorClassname}`}>{author}</div>
       </div>

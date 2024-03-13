@@ -12,6 +12,135 @@
       "social": "Redes sociales",
       "help": "Ayuda y soporte",
       "feedback": "Enviar comentarios"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "Descubre",
+        "community": "Comunidad",
+        "profile": "Perfil",
+        "aGreatStory": "Un gran historia",
+        "byYou": "Escrita por tí"
+      },
+      "newsfeed": {
+        "discoverHeader": "Descubre",
+        "createdStoryAt": "creó una historia",
+        "dateFormat": "dd-mm-yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "A quién seguir",
+        "seeMore": "Ver más",
+        "upcomingFeatureQuestion": "¿Qué próxima funcionalidad te entusiasma más de readingclub.ai?",
+        "emailCTOat": "Siempre puedes enviar un email al CTO a",
+        "withYourIdeas": "con tus ideas.",
+        "promotion": "¡Estaremos encantados de compartir un código promocional de 50 % de descuento en nuestra suscripción si lo haces!"
+      },
+      "connect": {
+        "connectWith1": "Conecta con ",
+        "connectWith2": "miembros",
+        "connectWith1Mobile": "Conectar (",
+        "connectWith2Mobile": "usuarios)"
+      },
+      "profile": {
+        "editProfile": "Editar perfil",
+        "joined": "Se unió",
+        "following": "Siguiendo",
+        "followers": "Seguidores",
+        "editYourBio": "Edita tu biografía",
+        "writeALittle": "Escribe un poco sobre ti",
+        "save": "Guardar"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "Haz click para editar titulo",
+      "byLineWord": "Por",
+      "shareWithFamily": "Compartir con familia"
+    },
+    "proModal": {
+      "title": "Únete a readingclub.ai",
+      "beProlific": "Hazte un escritor prolífico de cuentos ilustrados",
+      "buttonText": "Actualizar a Plus",
+      "noMatterYourAge": "No importa tu edad, crea historias para (¡y con!) lectores jóvenes en más de 50 idiomas, con la ayuda de IA.",
+      "beginnerOrExpertV1": "Ya seas principiante o experto, lo tenemos cubierto.",
+      "beginnerOrExpertV2": "Principiante o experto,",
+      "fosterCreativity": "fomente su creatividad, supere el bloqueo del escritor y disfrute escribiendo de forma creativa",
+      "month": "Mes",
+      "unlimitedStorybooks": "Disfruta escribiendo libros de cuentos ilimitados de calidad profesional",
+      "unlimitedIllustrations": "Motiva a los lectores jóvenes con ilustraciones personalizadas ilimitadas"
+    },
+    "settings": {
+      "title": "Configuración",
+      "freePlan": "Actualmente estás en el plan gratuito.",
+      "paidPlan": "Actualmente estás en un plan Plus."
+    },
+    "instructionsModal": {
+      "instruction1": "Presiona ```++``` para autocompletar",
+      "instruction2": "Usa `/` para ilustrar",
+      "instruction3": "Edita textos para cambiar imágenes",
+      "instruction4": "Define personajes consistentes"
+    },
+    "illustrationModal": {
+      "title": "Editar ilustración"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "Inicio",
+      "stories": "Libros",
+      "feedback": "Enviar comentarios",
+      "settings": "Configuración",
+      "signout": "Salir"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "Solicitar función"
+    },
+    "draftItem": {
+      "writeNewBook": "Escribe un libro",
+      "noTitle": "Sin título"
+    },
+    "instructionsPanel": {
+      "startCreating": "Empieza creando una historia.",
+      "suggestions": "Presiona '++' para sugerencias, o",
+      "slash": "'/' para ilustraciones."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "Generar PDF",
+      "downloadPDF": "Descargar libro"
+    },
+    "TRCEditorV2": {
+      "placeholder": "Presiona '++' para autocompletar o '/' para comandos de ilustración..."
+    },
+    "freeCounter": {
+      "thisWeek": "Esta semana",
+      "freeGenerations": "sugerencias gratis",
+      "freeIllustrations": "ilustraciones gratis"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Actualizar a Plus",
+      "manageSubscription": "Administrar suscripción"
+    },
+    "characterCard": {
+      "gender": "Género",
+      "species": "Especie",
+      "age": "Edad",
+      "eyeColor": "Color de ojos",
+      "hairLength": "Largo de cabello",
+      "hairType": "Tipo de cabello",
+      "hairColor": "Color de cabello",
+      "skinTone": "Tono de piel",
+      "outfit": "Atuendo",
+      "placeOfOrigin": "Lugar de origen"
+    },
+    "followButton": {
+      "follow": "Seguir",
+      "unfollow": "Dejar de seguir"
+    },
+    "share": {
+      "liveOnWeb": "Esta historia está en vivo en la web.",
+      "postOnSocial": "Publicar en perfil de readingclub.ai",
+      "unshare": "Dejar de compartir",
+      "shareThisStory": "Comparte esta historia",
+      "shareWithFamily": "Comparte tus libros con amigos y familiares.",
+      "share": "Compartir"
     }
   }
 }

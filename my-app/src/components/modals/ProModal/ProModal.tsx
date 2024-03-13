@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { use, useState } from "react";
 import {
   Dialog,
   DialogContent,
@@ -16,11 +16,14 @@ import { cn, devAlert } from "@/lib/utils";
 import { Button } from "../../ui/button";
 import SubscriptionButton from "../../settings/SubscriptionButton";
 import axios from "axios";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 const ProModal = () => {
   const proModal = useProModal();
 
   const [loading, setLoading] = useState(false);
+
+  const { dictionary } = useTRCAppConfigStore();
 
   const upgradeOnClick = async () => {
     try {
@@ -44,7 +47,8 @@ const ProModal = () => {
         <DialogHeader>
           <DialogTitle className="flex justify-center items-center flex-col gap-y-4 pb-2">
             <div className="flex items-center gap-x-2 font-bold py-1 text-darkFont">
-              Upgrade to readingclub.ai
+              {/* Upgrade to readingclub.ai */}
+              {dictionary?.page.proModal.title}
               <Badge
                 className="bg-accent uppercase text-sm py-1 font-bold"
                 variant={"premium"}
@@ -57,7 +61,8 @@ const ProModal = () => {
             {/* Big banner saying "Enable creative writing at any literacy level" */}
             <div className="lg:text-4xl text-2xl font-semibold text-darkFont">
               {/* Enable Creative Writing at any Literacy Level */}
-              {`Be a prolific storybook writer`}
+              {/* {`Be a prolific storybook writer`} */}
+              {dictionary?.page.proModal.beProlific}
             </div>
             {/* Description paragraph */}
             <div className="w-full py-6">
@@ -65,8 +70,9 @@ const ProModal = () => {
                 {/* Unlock the full potential of Reading Club AI with unlimited
               stories, characters, chapters, word count, exports, revisions, and
               everything else. */}
-                No matter your age, craft stories for (and with!) young readers
-                in 50+ languages, assisted by AI.
+                {/* No matter your age, craft stories for (and with!) young readers
+                in 50+ languages, assisted by AI. */}
+                {dictionary?.page.proModal.noMatterYourAge}
               </p>
               <br />
               {/* <p>
@@ -82,9 +88,10 @@ const ProModal = () => {
                 for beginners and experts.
               </p> */}
               <p className="text-lg">
-                Beginner or expert,{" "}
+                {dictionary?.page.proModal.beginnerOrExpertV2}{" "}
                 <span className="font-semibold">
-                  {`foster your creativity, overcome writer's block, and enjoy writing creatively`}
+                  {/* {`foster your creativity, overcome writer's block, and enjoy writing creatively`} */}
+                  {dictionary?.page.proModal.fosterCreativity}
                 </span>
                 .
               </p>
@@ -92,13 +99,13 @@ const ProModal = () => {
             {/* SHOW % 20 / Month pricing */}
             <div className="flex justify-around gap-6">
               <div className="text-3xl font-bold text-darkFont py-6">
-                US$20 / Month
+                US$20 / {dictionary?.page.proModal.month}
               </div>
               {true && (
                 <div className="basis-[50%]">
-                  {features.map((feature) => (
+                  {features.map((feature, index) => (
                     <Card
-                      key={`feature-promodal-${feature.label}`}
+                      key={`feature-promodal-${index}`}
                       className="p-3 border-black/5 flex items-center justify-between"
                     >
                       <div className="flex items-center gap-x-4">
@@ -135,7 +142,7 @@ const ProModal = () => {
             variant="premium"
             className="rounded-full font-bold w-full"
           >
-            Upgrade to Plus
+            {dictionary?.components.proSubscriptionPanel.upgradeToPlus}
             <Zap className="w-4 h-4 ml-2 fill-white" />
           </Button>
           {/* <SubscriptionButton isPlus={false} /> */}
@@ -179,7 +186,10 @@ const features = [
   // Unlimited stories
   {
     // label: "Unlimited stories",
-    label: "Enjoy writing unlimited professional-quality storybooks",
+    // label: "Enjoy writing unlimited professional-quality storybooks",
+    label:
+      useTRCAppConfigStore.getState().dictionary?.page.proModal
+        .unlimitedStorybooks,
     // icon: "📚",
     icon: BookPlusIcon,
     color: "text-accent2",
@@ -188,7 +198,10 @@ const features = [
   // Unlimited characters
   {
     // label: "Unlimited characters",
-    label: "Motivate young readers with unlimited personalized illustrations",
+    // label: "Motivate young readers with unlimited personalized illustrations",
+    label:
+      useTRCAppConfigStore.getState().dictionary?.page.proModal
+        .unlimitedIllustrations,
     // icon: "👥",
     icon: PersonStandingIcon,
     color: "text-accent2",

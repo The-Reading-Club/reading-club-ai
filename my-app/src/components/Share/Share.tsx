@@ -1,5 +1,5 @@
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { use, useEffect, useState } from "react";
 import { Doc, Id } from "@/../convex/_generated/dataModel";
 
 import {
@@ -15,6 +15,7 @@ import { Button } from "../ui/button";
 import { useParams } from "next/navigation";
 import { Check, Copy, Globe } from "lucide-react";
 import { Checkbox } from "../ui/checkbox";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 interface ShareProps {
   initialData: Doc<"documents">;
@@ -39,6 +40,8 @@ const ShareComponent: React.FC<ShareProps> = ({
 
   const [copied, setCopied] = useState(false);
   const [isSubmitting, setIsSubmitting] = useState(false);
+
+  const { dictionary } = useTRCAppConfigStore();
 
   // interesting situation here... but it works better by calling
   // onSharing and onUnshare directly from the button
@@ -117,7 +120,8 @@ const ShareComponent: React.FC<ShareProps> = ({
             <div className="flex items-center gap-x-2">
               <Globe className="text-sky-500 animate-pulse h-4 w-4" />
               <p className="text-xs font-medium text-sky-500">
-                This story is live on web.
+                {/* This story is live on web. */}
+                {dictionary?.components.share.liveOnWeb}
               </p>
             </div>
             <div className="flex items-center">
@@ -162,7 +166,8 @@ const ShareComponent: React.FC<ShareProps> = ({
                 htmlFor="terms2"
                 className="text-sm font-medium leading-none peer-disabled:cursor-not-allowed peer-disabled:opacity-70"
               >
-                Post on readingclub.ai profile
+                {/* Post on readingclub.ai profile */}
+                {dictionary?.components.share.postOnSocial}
               </label>
             </div>
             <Button
@@ -176,7 +181,7 @@ const ShareComponent: React.FC<ShareProps> = ({
               variant={"secondary"}
               disabled={isSubmitting}
             >
-              Unshare
+              {dictionary?.components.share.unshare}
             </Button>
           </div>
         ) : (
@@ -192,8 +197,9 @@ const ShareComponent: React.FC<ShareProps> = ({
           <div className="flex flex-col items-center justify-center">
             <Globe className="w-8 h-8 text-muted-foreground mb-2" />
             <p className="text-sm font-medium mb-2">Share this story</p>
-            <span className="text-xs text-muted-foreground mb-4">
-              Share your books with friends and family.
+            <span className="text-xs text-muted-foreground mb-4 text-center">
+              {/* Share your books with friends and family. */}
+              {dictionary?.components.share.shareWithFamily}
             </span>
             {/* <div className="flex items-center space-x-2  mb-4">
               <Checkbox
@@ -217,7 +223,7 @@ const ShareComponent: React.FC<ShareProps> = ({
               size="sm"
               variant={"accent"}
             >
-              Share
+              {dictionary?.components.share.share}
             </Button>
           </div>
         )}

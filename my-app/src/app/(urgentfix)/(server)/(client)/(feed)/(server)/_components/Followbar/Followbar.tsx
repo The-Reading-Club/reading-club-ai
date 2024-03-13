@@ -7,11 +7,14 @@ import Avatar from "../Avatar";
 import { LoremIpsum } from "lorem-ipsum";
 import { ClipLoader } from "react-spinners";
 import Link from "next/link";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 const Followbar = () => {
   const { data: users, isLoading } = useUsers();
 
   const { data: fetchedUser, isLoading: isLoading2 } = useCurrentUser();
+
+  const { dictionary } = useTRCAppConfigStore();
 
   const lorem = new LoremIpsum({
     sentencesPerParagraph: {
@@ -44,7 +47,9 @@ const Followbar = () => {
   return (
     <div className="px-6 py-4 hidden lg:block">
       <div className="bg-secondary3 rounded-t-xl p-4">
-        <h2 className="text-xl font-semibold">Who to follow</h2>
+        <h2 className="text-xl font-semibold">
+          {dictionary?.page.feed.followbar.whoToFollow}
+        </h2>
         <div className="flex flex-col gap-6 mt-4">
           {/* TODO USER LIST */}
           {users
@@ -188,20 +193,20 @@ const Followbar = () => {
         href={"/connect"}
         className="block bg-secondary3 px-6 py-4 rounded-b-xl hover:bg-secondary2"
       >
-        See more
+        {dictionary?.page.feed.followbar.seeMore}
       </Link>
       <div className="text-darkFont py-10">
         <h1 className="font-bold">
-          Which upcoming feature are you most excited about for readingclub.ai?
+          {/* Which upcoming feature are you most excited about for readingclub.ai? */}
+          {dictionary?.page.feed.followbar.upcomingFeatureQuestion}
         </h1>
         <br />
         <p>
-          You can always email the CTO at{" "}
-          <a href="mailto:jose@readingclub.ai">jose@readingclub.ai</a> with your
-          ideas.{" "}
+          {dictionary?.page.feed.followbar.emailCTOat}{" "}
+          <a href="mailto:jose@readingclub.ai">jose@readingclub.ai</a>{" "}
+          {dictionary?.page.feed.followbar.withYourIdeas}{" "}
           <span className="italic">
-            {`We'll be happy to share a 50% off promo code on our subscription if
-            you do!`}
+            {dictionary?.page.feed.followbar.promotion}
           </span>
         </p>
       </div>
