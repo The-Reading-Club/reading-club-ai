@@ -95,7 +95,7 @@ const DraftItem: React.FC<DraftItemProps> = ({
         {/* <div>{d.coverImage}</div> */}
 
         <div className={`font-bold ${titleColorClassname}`}>
-          {!title ? "Untitled" : title}
+          {!title ? dictionary?.components.draftItem.noTitle : title}
         </div>
         <div className={`${authorColorClassname}`}>{author}</div>
       </div>

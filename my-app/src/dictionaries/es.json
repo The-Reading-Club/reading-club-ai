@@ -25,6 +25,14 @@
         "discoverHeader": "Descubre",
         "createdStoryAt": "creó una historia",
         "dateFormat": "dd-mm-yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "A quién seguir",
+        "seeMore": "Ver más",
+        "upcomingFeatureQuestion": "¿Qué próxima funcionalidad te entusiasma más de readingclub.ai?",
+        "emailCTOat": "Siempre puedes enviar un email al CTO a",
+        "withYourIdeas": "con tus ideas.",
+        "promotion": "¡Estaremos encantados de compartir un código promocional de 50 % de descuento en nuestra suscripción si lo haces!"
       }
     }
   },
@@ -40,7 +48,8 @@
       "buttonText": "Solicitar función"
     },
     "draftItem": {
-      "writeNewBook": "Escribe un libro"
+      "writeNewBook": "Escribe un libro",
+      "noTitle": "Sin título"
     }
   }
 }

@@ -145,11 +145,12 @@ const NewsFeed: React.FC<NewsFeedProps> = ({ userId }) => {
                     <span className="font-bold">{document?.author}</span>{" "}
                     {dictionary?.page.feed.newsfeed.createdStoryAt}{" "}
                     <span className="text-neutral-500">
-                      {format(
-                        new Date(document?._creationTime),
-                        // "MMMM dd, yyyy"
-                        dictionary?.page.feed.newsfeed.dateFormat
-                      )}
+                      {dictionary?.page.feed.newsfeed.dateFormat &&
+                        format(
+                          new Date(document?._creationTime),
+                          // "MMMM dd, yyyy"
+                          dictionary?.page.feed.newsfeed.dateFormat
+                        )}
                     </span>
                   </p>
                 </div>

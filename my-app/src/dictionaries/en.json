@@ -25,6 +25,14 @@
         "discoverHeader": "Discover",
         "createdStoryAt": "created a story on",
         "dateFormat": "MMMM dd, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "Who to follow",
+        "seeMore": "See more",
+        "upcomingFeatureQuestion": "Which upcoming feature are you most excited about for readingclub.ai?",
+        "emailCTOat": "You can always email the CTO at",
+        "withYourIdeas": "with your ideas.",
+        "promotion": "We'll be happy to share a 50% off promo code on our subscription if you do!"
       }
     }
   },
@@ -40,7 +48,8 @@
       "buttonText": "Request a feature"
     },
     "draftItem": {
-      "writeNewBook": "Write a new book"
+      "writeNewBook": "Write a new book",
+      "noTitle": "No title"
     }
   }
 }
