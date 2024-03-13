@@ -75,27 +75,27 @@ export default async function RootLayout({
         {/* <h1>{locale}</h1> */}
         {/* <TestModal /> */}
         <DefaultAppModal />
-        {/* <SessionProvider session={session}> */}
-        <Providers>
-          {/* <p>pathname {pathname}</p> */}
-          {/* {children} */}
-          {/* {children} */}
-          {/* {landing} */}
-          {/* {userIsLoggedIn == false && isLandingPage == true
+        <SessionProvider session={session}>
+          <Providers>
+            {/* <p>pathname {pathname}</p> */}
+            {/* {children} */}
+            {/* {children} */}
+            {/* {landing} */}
+            {/* {userIsLoggedIn == false && isLandingPage == true
             ? landing
             : children} */}
-          {/* SOFT NAVIGATION AND PARALLEL ROUTES */}
-          {/* https://nextjs.org/docs/app/building-your-application/routing/parallel-routes#active-state-and-navigation */}
-          {/* https://github.com/vercel/next.js/issues/48719 */}
-          {/* https://github.com/vercel/next.js/issues/48719#issuecomment-1794680696 */}
-          {/* https://github.com/vercel/next.js/issues/51714#issuecomment-1697615626 */}
-          {/* {landing} */}
-          {userIsLoggedIn == false && landing}
-          {children}
-          {/* {common} */}
-          {/* {userIsLoggedIn == false ? children : feed} */}
-        </Providers>
-        {/* </SessionProvider> */}
+            {/* SOFT NAVIGATION AND PARALLEL ROUTES */}
+            {/* https://nextjs.org/docs/app/building-your-application/routing/parallel-routes#active-state-and-navigation */}
+            {/* https://github.com/vercel/next.js/issues/48719 */}
+            {/* https://github.com/vercel/next.js/issues/48719#issuecomment-1794680696 */}
+            {/* https://github.com/vercel/next.js/issues/51714#issuecomment-1697615626 */}
+            {/* {landing} */}
+            {userIsLoggedIn == false && landing}
+            {children}
+            {/* {common} */}
+            {/* {userIsLoggedIn == false ? children : feed} */}
+          </Providers>
+        </SessionProvider>
       </body>
     </html>
   );
