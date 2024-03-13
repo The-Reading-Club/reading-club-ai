@@ -40,6 +40,7 @@ import { CustomImageView } from "../components/CustomImage";
 import { Node as ProseMirrorNode } from "prosemirror-model";
 import { EditorView } from "@tiptap/pm/view";
 import DragAndDrop from "./drag-and-drop";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 export const defaultTiptapExtensions: Extensions = [
   StarterKit.configure({
@@ -111,7 +112,10 @@ export const defaultTiptapExtensions: Extensions = [
       // if (node.type.name === "heading") {
       //   return `Heading ${node.attrs.level}`;
       // }
-      return "Press '++' for autocomplete, or '/' for illustration commands...";
+      // return "Press '++' for autocomplete, or '/' for illustration commands...";
+      // ZUSTAND MEGA HACK
+      return useTRCAppConfigStore.getState().dictionary!.components.TRCEditorV2
+        .placeholder!;
     },
     includeChildren: true,
   }),

@@ -34,6 +34,11 @@
         "withYourIdeas": "with your ideas.",
         "promotion": "We'll be happy to share a 50% off promo code on our subscription if you do!"
       }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "Click to edit title",
+      "byLineWord": "By",
+      "shareWithFamily": "Share with family"
     }
   },
   "components": {
@@ -50,6 +55,18 @@
     "draftItem": {
       "writeNewBook": "Write a new book",
       "noTitle": "No title"
+    },
+    "instructionsPanel": {
+      "startCreating": "Start creating a story",
+      "suggestions": "Press '++' for suggestions, or",
+      "slash": "'/' for illustrations."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "Generate PDF",
+      "downloadPDF": "Download Story"
+    },
+    "TRCEditorV2": {
+      "placeholder": "Press '++' for autocomplete, or '/' for illustration commands..."
     }
   }
 }

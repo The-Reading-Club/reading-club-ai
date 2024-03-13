@@ -183,17 +183,24 @@ const RightPanel: React.FC<RightPanelProps> = ({
 export default RightPanel;
 
 export const InstructionsPanel = () => {
+  const { dictionary } = useTRCAppConfigStore();
   return (
     <>
       {/* <h1 className="text-2xl font text-darkFont">
         {`Welcome to Reading Club AI!`}
       </h1> */}
       {/* <br /> */}
-      <p className="text-md text-darkFont">{`Start creating a story.`}</p>
       <p className="text-md text-darkFont">
-        {`Press '++' for suggestions, or`}
+        {dictionary?.components.instructionsPanel.startCreating}
       </p>
-      <p className="text-md text-darkFont">{`'/' for illustrations.`}</p>
+      <p className="text-md text-darkFont">
+        {/* {`Press '++' for suggestions, or`} */}
+        {dictionary?.components.instructionsPanel.suggestions}
+      </p>
+      <p className="text-md text-darkFont">
+        {/* {`'/' for illustrations.`} */}
+        {dictionary?.components.instructionsPanel.slash}
+      </p>
     </>
   );
 };
@@ -208,6 +215,8 @@ export const DownloadPDFPanel = ({
   author: string;
 }) => {
   const [documentGenerated, setDocumentGenerated] = React.useState(false);
+
+  const { dictionary } = useTRCAppConfigStore();
 
   useEffect(() => {
     if (documentGenerated == true) setDocumentGenerated(false);
@@ -224,7 +233,7 @@ export const DownloadPDFPanel = ({
           variant={"outline"}
           size={"lg"}
         >
-          Generate PDF
+          {dictionary?.components.downloadPDFPanel.generatePDF}
         </Button>
       ) : (
         // It's very important to remember not rendering this thing too much
@@ -244,7 +253,7 @@ export const DownloadPDFPanel = ({
             size={"lg"}
             className="w-full"
           >
-            Download Story
+            {dictionary?.components.downloadPDFPanel.downloadPDF}
           </Button>
         </DownloadStoryPDFLink>
       )}

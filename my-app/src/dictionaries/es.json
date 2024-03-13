@@ -34,6 +34,11 @@
         "withYourIdeas": "con tus ideas.",
         "promotion": "¡Estaremos encantados de compartir un código promocional de 50 % de descuento en nuestra suscripción si lo haces!"
       }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "Haz click para editar titulo",
+      "byLineWord": "Por",
+      "shareWithFamily": "Compartir con familia"
     }
   },
   "components": {
@@ -50,6 +55,18 @@
     "draftItem": {
       "writeNewBook": "Escribe un libro",
       "noTitle": "Sin título"
+    },
+    "instructionsPanel": {
+      "startCreating": "Empieza creando una historia.",
+      "suggestions": "Presiona '++' para sugerencias, o",
+      "slash": "'/' para ilustraciones."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "Generar PDF",
+      "downloadPDF": "Descargar libro"
+    },
+    "TRCEditorV2": {
+      "placeholder": "Presiona '++' para autocompletar o '/' para comandos de ilustración..."
     }
   }
 }
