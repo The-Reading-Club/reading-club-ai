@@ -51,6 +51,11 @@
       "month": "Mes",
       "unlimitedStorybooks": "Disfruta escribiendo libros de cuentos ilimitados de calidad profesional",
       "unlimitedIllustrations": "Motiva a los lectores jóvenes con ilustraciones personalizadas ilimitadas"
+    },
+    "settings": {
+      "title": "Configuración",
+      "freePlan": "Actualmente estás en el plan gratuito.",
+      "paidPlan": "Actualmente estás en un plan Plus."
     }
   },
   "components": {

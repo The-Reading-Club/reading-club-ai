@@ -51,6 +51,11 @@
       "month": "Month",
       "unlimitedStorybooks": "Enjoy writing unlimited professional-quality storybooks",
       "unlimitedIllustrations": "Motivate young readers with unlimited personalized illustrations"
+    },
+    "settings": {
+      "title": "Settings",
+      "freePlan": "You are currently on the free plan.",
+      "paidPlan": "You are currently on a Plus plan."
     }
   },
   "components": {

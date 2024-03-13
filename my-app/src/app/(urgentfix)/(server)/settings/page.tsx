@@ -4,6 +4,10 @@ import { auth, signOut } from "@/auth";
 import SubscriptionButton from "@/components/settings/SubscriptionButton";
 import { checkSubscription } from "@/lib/subscription";
 import { Button } from "@/components/ui/button";
+import { headers } from "next/headers";
+import { getLocaleFromHeadersList } from "@/lib/internationalization/utils";
+import { getDictionary } from "@/lib/internationalization/dictionary";
+import { Locale } from "@/i18n.config";
 
 const SettingsPage = async () => {
   const session = await auth();
@@ -11,6 +15,11 @@ const SettingsPage = async () => {
   // I feel this shoudl have been a hook and while waiting for the hook to resolve,
   // we should have shown a loading spinner (anything really)
   const isPro = await checkSubscription();
+
+  const headerList = headers();
+  const locale = getLocaleFromHeadersList(headerList);
+
+  const dictionary = await getDictionary(locale as Locale);
 
   return (
     <div className="p-16 flex flex-col gap-6 justify-start items-center">
@@ -27,7 +36,9 @@ const SettingsPage = async () => {
       >
         <button type="submit">Sign out</button>
       </form> */}
-      <h1 className="text-6xl font-bold text-primary">Settings</h1>
+      <h1 className="text-6xl font-bold text-primary">
+        {(await dictionary).page.settings.title}
+      </h1>
 
       {/* Name */}
       <p className="text-2xl text-darkFont">{session?.user.name ?? ""}</p>
@@ -39,8 +50,8 @@ const SettingsPage = async () => {
       {/* Say that you are currently subscribed if so */}
       <p className="text-xl text-darkFont">
         {isPro
-          ? "You are currently on a Plus plan."
-          : "You are currently on a free plan."}
+          ? dictionary.page.settings.paidPlan
+          : dictionary.page.settings.freePlan}
       </p>
       <div
         // className="min-w-[250px]"
