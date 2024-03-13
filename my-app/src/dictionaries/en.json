@@ -141,6 +141,22 @@
       "shareThisStory": "Share this story",
       "shareWithFamily": "Share your books with friends and family.",
       "share": "Share"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "Generate Illustration",
+        "description": "Generate an illustration from your text",
+        "generateSearchTerm": "generate",
+        "illustrationSearchTerm": "illustration",
+        "imageSearchTerm": "image",
+        "photoSearchTerm": "photo",
+        "mediaSearchTerm": "media",
+        "pictureSearchTerm": "picture"
+      },
+      "uploadImage": {
+        "title": "Upload Image",
+        "description": "Upload an image from your computer"
+      }
     }
   }
 }

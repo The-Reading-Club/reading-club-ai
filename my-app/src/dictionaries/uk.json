@@ -141,6 +141,22 @@
       "shareThisStory": "Поділитися цією історією",
       "shareWithFamily": "Поділіться своїми книгами з друзями та родиною.",
       "share": "Поділитися"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "Створити Ілюстрацію",
+        "description": "Створіть ілюстрацію з вашого тексту",
+        "generateSearchTerm": "генерувати",
+        "illustrationSearchTerm": "ілюстрація",
+        "imageSearchTerm": "зображення",
+        "photoSearchTerm": "фото",
+        "mediaSearchTerm": "медіа",
+        "pictureSearchTerm": "картинка"
+      },
+      "uploadImage": {
+        "title": "Завантажити Зображення",
+        "description": "Завантажте зображення з вашого комп'ютера"
+      }
     }
   }
 }

@@ -141,6 +141,22 @@
       "shareThisStory": "分享这个故事",
       "shareWithFamily": "与朋友和家人分享您的书籍。",
       "share": "分享"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "生成插图",
+        "description": "根据您的文本生成插图",
+        "generateSearchTerm": "生成",
+        "illustrationSearchTerm": "插图",
+        "imageSearchTerm": "图片",
+        "photoSearchTerm": "照片",
+        "mediaSearchTerm": "媒体",
+        "pictureSearchTerm": "图像"
+      },
+      "uploadImage": {
+        "title": "上传图片",
+        "description": "从您的电脑上传一张图片"
+      }
     }
   }
 }

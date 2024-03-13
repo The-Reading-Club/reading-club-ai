@@ -141,6 +141,22 @@
       "shareThisStory": "Comparte esta historia",
       "shareWithFamily": "Comparte tus libros con amigos y familiares.",
       "share": "Compartir"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "Generar ilustración",
+        "description": "Genera una ilustración a partir de tu texto",
+        "generateSearchTerm": "generar",
+        "illustrationSearchTerm": "ilustración",
+        "imageSearchTerm": "imagen",
+        "photoSearchTerm": "foto",
+        "mediaSearchTerm": "medios",
+        "pictureSearchTerm": "imagen"
+      },
+      "uploadImage": {
+        "title": "Subir imagen",
+        "description": "Sube una imagen desde tu computadora"
+      }
     }
   }
 }
