@@ -1,0 +1,202 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "ঘুমের আগের গল্পগুলোকে ইন্টার‌্যাক্টিভ অ্যাডভেঞ্চারে রূপান্তর",
+      "mainBannerDescription": "এআই এর সাহায্যে শিশুদের কল্পনাকে জীবন্ত করা",
+      "writeABook": "একটি বই লেখ",
+      "typePlusForSuggestions": "পরামর্শের জন্য `++` টাইপ করুন",
+      "useSlashToIllustrate": "চিত্রিত করতে `/` ব্যবহার করুন",
+      "editPrompts": "ছবি পরিবর্তন করতে প্রম্পট সম্পাদনা করুন",
+      "defineConsistentCharacters": "সুসংগত চরিত্রগুলি নির্ধারণ করুন",
+      "contact": "আমাদের সাথে যোগাযোগ করুন",
+      "social": "সামাজিক",
+      "help": "সাহায্য ও সমর্থন",
+      "feedback": "আমাদের প্রতিক্রিয়া দিন"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "আবিষ্কার",
+        "community": "কমিউনিটি",
+        "profile": "প্রোফাইল",
+        "aGreatStory": "একটি চমৎকার গল্প",
+        "byYou": "আপনার দ্বারা"
+      },
+      "newsfeed": {
+        "discoverHeader": "আবিষ্কার",
+        "createdStoryAt": "একটি গল্প সৃষ্টি করেছে",
+        "dateFormat": "MMMM dd, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "অনুসরণ করা কে",
+        "seeMore": "আরো দেখুন",
+        "upcomingFeatureQuestion": "readingclub.ai এর জন্য আপনি কোন আসন্ন বৈশিষ্ট্য নিয়ে সবচেয়ে উত্তেজিত?",
+        "emailCTOat": "আপনি সবসময় CTO এর কাছে ইমেইল করতে পারেন",
+        "withYourIdeas": "আপনার ধারণা সহ।",
+        "promotion": "আপনি যদি এটি করেন তবে আমাদের সাবস্ক্রিপশনে 50% ছাড়ের প্রচার কোড শেয়ার করতে খুশি হবো!"
+      },
+      "connect": {
+        "connectWith1": "সংযোগ স্থাপন /",
+        "connectWith2": "সদস্য — শীর্ষে থাকতে বায়ো সম্পাদনা করুন!",
+        "connectWith1Mobile": "সংযোগ (",
+        "connectWith2Mobile": "ব্যবহারকারীদের)"
+      },
+      "profile": {
+        "editProfile": "প্রোফাইল সম্পাদনা করুন",
+        "joined": "যোগদান করেছেন",
+        "following": "অনুসরণ করছেন",
+        "followers": "অনুসারীগণ",
+        "editYourBio": "আপনার বায়ো সম্পাদনা করুন",
+        "writeALittle": "নিজের সম্পর্কে একটু লিখুন",
+        "save": "সংরক্ষণ করুন"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "শিরোনাম সম্পাদনা করতে ক্লিক করুন",
+      "byLineWord": "দ্বারা",
+      "shareWithFamily": "পরিবারের সাথে শেয়ার করুন"
+    },
+    "proModal": {
+      "title": "readingclub.ai এ আপগ্রেড করুন",
+      "beProlific": "একজন উর্বর গল্পের বই লেখক হন",
+      "buttonText": "Plus এ আপডেট করুন",
+      "noMatterYourAge": "আপনার বয়স যাই হোক না কেন, AI এর সাহায্যে 50+ ভাষায় ছোটদের জন্য গল্প তৈরি করুন।",
+      "beginnerOrExpertV1": "আপনি একজন শিক্ষানবিস বা দক্ষ হোন, আমরা আপনাকে নিয়ে এসেছি।",
+      "beginnerOrExpertV2": "শিক্ষানবিস বা দক্ষ,",
+      "fosterCreativity": "আপনার সৃজনশীলতাকে লালন করুন, লেখকের ব্লক জয় করুন এবং সৃজনশীল লেখায় আনন্দ উপভোগ করুন",
+      "month": "মাস",
+      "unlimitedStorybooks": "অসীম পেশাদার মানের গল্পের বই লেখার আনন্দ উপভোগ করুন",
+      "unlimitedIllustrations": "অসীম ব্যক্তিগত চিত্রাঙ্কনের মাধ্যমে ছোট পাঠকদের অনুপ্রাণিত করুন"
+    },
+    "settings": {
+      "title": "সেটিংস",
+      "freePlan": "আপনি বর্তমানে ফ্রি প্ল্যানে আছেন।",
+      "paidPlan": "আপনি বর্তমানে Plus প্ল্যানে আছেন।"
+    },
+    "instructionsModal": {
+      "instruction1": "অটোকমপ্লিটের জন্য ```++``` টাইপ করুন",
+      "instruction2": "চিত্রাঙ্কনের জন্য `/` ব্যবহার করুন",
+      "instruction3": "ছবি পরিবর্তনের জন্য প্রম্পটগুলি সম্পাদনা করুন",
+      "instruction4": "ধারাবাহিক চরিত্রগুলি নির্ধারণ করুন"
+    },
+    "illustrationModal": {
+      "title": "চিত্রণ সম্পাদনা করুন"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "আপনার চরিত্রগুলি সম্পর্কে জানুন",
+      "creationgYourCharacters": "আপনার চরিত্রগুলি তৈরি করা",
+      "choosingYourCharacters": "দৃশ্য চিত্রণের জন্য আপনার চরিত্রগুলি চয়ন করা",
+      "generatingIllustration": "চিত্রণ তৈরি করা"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "হোম",
+      "stories": "গল্প",
+      "feedback": "প্রতিক্রিয়া",
+      "settings": "সেটিংস",
+      "signout": "সাইন আউট"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "একটি বৈশিষ্ট্য অনুরোধ করুন"
+    },
+    "draftItem": {
+      "writeNewBook": "একটি নতুন বই লিখুন",
+      "noTitle": "কোনো শিরোনাম নেই"
+    },
+    "instructionsPanel": {
+      "startCreating": "একটি গল্প তৈরি শুরু করুন",
+      "suggestions": "'++' চাপুন সুপারিশের জন্য, অথবা",
+      "slash": "'/' চিত্রাঙ্কনের জন্য।"
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "PDF তৈরি করুন",
+      "downloadPDF": "গল্প ডাউনলোড করুন"
+    },
+    "TRCEditorV2": {
+      "placeholder": "অটোকমপ্লিটের জন্য '++' চাপুন, অথবা চিত্রাঙ্কন কমান্ডের জন্য '/'..."
+    },
+    "freeCounter": {
+      "thisWeek": "এই সপ্তাহে",
+      "freeGenerations": "বিনামূল্যের পরামর্শ",
+      "freeIllustrations": "বিনামূল্যের চিত্রাঙ্কন"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Plus এ আপগ্রেড করুন",
+      "manageSubscription": "সাবস্ক্রিপশন পরিচালনা করুন"
+    },
+    "characterCard": {
+      "gender": "লিঙ্গ",
+      "species": "প্রজাতি",
+      "age": "বয়স",
+      "eyeColor": "চোখের রঙ",
+      "hairLength": "চুলের দৈর্ঘ্য",
+      "hairType": "চুলের ধরণ",
+      "hairColor": "চুলের রঙ",
+      "skinTone": "ত্বকের টোন",
+      "outfit": "পোশাক",
+      "placeOfOrigin": "উৎপত্তি স্থান",
+      "name": "নাম",
+      "facialHair": "মুখের চুল"
+    },
+    "followButton": {
+      "follow": "অনুসরণ করুন",
+      "unfollow": "অনুসরণ বন্ধ করুন"
+    },
+    "share": {
+      "liveOnWeb": "এই গল্পটি ওয়েবে লাইভ আছে।",
+      "postOnSocial": "readingclub.ai প্রোফাইলে পোস্ট করুন",
+      "unshare": "অংশীদারিত্ব বাতিল করুন",
+      "shareThisStory": "এই গল্পটি ভাগ করুন",
+      "shareWithFamily": "আপনার বই বন্ধু ও পরিবারের সাথে ভাগ করুন।",
+      "share": "ভাগ করুন"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "চিত্রাঙ্কন তৈরি করুন",
+        "description": "আপনার টেক্সট থেকে একটি চিত্রাঙ্কন তৈরি করুন",
+        "generateSearchTerm": "উত্পন্ন করুন",
+        "illustrationSearchTerm": "চিত্রাঙ্কন",
+        "imageSearchTerm": "ছবি",
+        "photoSearchTerm": "ফটো",
+        "mediaSearchTerm": "মিডিয়া",
+        "pictureSearchTerm": "ছবি"
+      },
+      "uploadImage": {
+        "title": "ছবি আপলোড করুন",
+        "description": "আপনার কম্পিউটার থেকে একটি ছবি আপলোড করুন"
+      }
+    }
+  },
+  "toasts": {
+    "fileNotSupported": "ফাইলের ধরণ সমর্থিত নয়।",
+    "fileTooLarge": "ফাইলের আকার 20MB এর বেশি।",
+    "uploadingImage": "ছবি আপলোড হচ্ছে...",
+    "imageUploaded": "ছবি সফলভাবে আপলোড হয়েছে!",
+    "generatingNewIllustration": "নতুন চিত্রাঙ্কন তৈরি হচ্ছে...",
+    "newGeneratedIllustration": "চিত্রাঙ্কন সফলভাবে তৈরি হয়েছে!",
+    "illustrationPromptGenerated": "প্রম্পটের ভিত্তিতে চিত্রাঙ্কন সফলভাবে তৈরি হয়েছে।",
+    "identifyingCharacters": "চরিত্র চিনতে...",
+    "charactersIdentified": "চরিত্রগুলি সফলভাবে চিহ্নিত হয়েছে!",
+    "creatingCharacter": "চরিত্র তৈরি হচ্ছে...",
+    "characterCreated": "চরিত্র সফলভাবে তৈরি হয়েছে!",
+    "choosingCharacter": "চিত্রাঙ্কনের জন্য চরিত্র বাছাই করা হচ্ছে...",
+    "characterChosen": "চরিত্র সফলভাবে বাছাই করা হয়েছে!",
+    "creatingNewBook": "নতুন বই তৈরি হচ্ছে...",
+    "bookCreated": "বই তৈরি হয়েছে!",
+    "bookCreationError": "নতুন বই তৈরি করতে ব্যর্থ",
+    "failedUserUpdate": "ব্যবহারকারী আপডেট করতে ব্যর্থ",
+    "sharing": "শেয়ার করা হচ্ছে...",
+    "onlyShared": "শেয়ার করা হয়েছে!",
+    "sharedAndPosted": "শেয়ার এবং পোস্ট করা হয়েছে!",
+    "errorSharingStory": "গল্প শেয়ার করতে ব্যর্থ।",
+    "unsharing": "শেয়ার বাতিল করা হচ্ছে...",
+    "unshared": "শেয়ার বাতিল হয়েছে!",
+    "errorUnsharingStory": "গল্প শেয়ার বাতিল করতে ব্যর্থ।",
+    "errorTranslatingText": "টেক্সট অনুবাদ করতে ব্যর্থ",
+    "translating": "অনুবাদ করা হচ্ছে...",
+    "translated": "অনুবাদিত!",
+    "rateLimited": "রেট সীমিত। দয়া করে পরে আবার চেষ্টা করুন।",
+    "fetchError": "ডেটা আনতে সমস্যা:",
+    "generalError": "ত্রুটি:"
+  }
+}
