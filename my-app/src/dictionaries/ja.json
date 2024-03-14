@@ -1,0 +1,202 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "就寝前の物語をインタラクティブな冒険に変える",
+      "mainBannerDescription": "AIの助けを借りて子供たちの想像力を現実にする",
+      "writeABook": "本を書く",
+      "typePlusForSuggestions": "提案のために`++`と入力する",
+      "useSlashToIllustrate": "イラストに`/`を使用する",
+      "editPrompts": "画像を変更するためのプロンプトを編集する",
+      "defineConsistentCharacters": "一貫したキャラクターを定義する",
+      "contact": "お問い合わせ",
+      "social": "ソーシャル",
+      "help": "ヘルプとサポート",
+      "feedback": "フィードバックを送る"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "発見",
+        "community": "コミュニティ",
+        "profile": "プロフィール",
+        "aGreatStory": "素晴らしい物語",
+        "byYou": "あなたによって"
+      },
+      "newsfeed": {
+        "discoverHeader": "発見",
+        "createdStoryAt": "に物語を作成した",
+        "dateFormat": "yyyy年MM月dd日"
+      },
+      "followbar": {
+        "whoToFollow": "フォローする人",
+        "seeMore": "もっと見る",
+        "upcomingFeatureQuestion": "readingclub.aiのどの今後の機能に最も興奮していますか？",
+        "emailCTOat": "いつでもCTOにメールできます",
+        "withYourIdeas": "あなたのアイデアと共に。",
+        "promotion": "行動すれば、サブスクリプションの50％オフのプロモーションコードを共有します！"
+      },
+      "connect": {
+        "connectWith1": "と接続する",
+        "connectWith2": "メンバー — トップになるためにバイオを編集する！",
+        "connectWith1Mobile": "接続 (",
+        "connectWith2Mobile": "ユーザー)"
+      },
+      "profile": {
+        "editProfile": "プロフィールを編集",
+        "joined": "参加した",
+        "following": "フォロー中",
+        "followers": "フォロワー",
+        "editYourBio": "あなたのバイオを編集する",
+        "writeALittle": "自分のことを少し書く",
+        "save": "保存"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "タイトルを編集するにはクリック",
+      "byLineWord": "著者",
+      "shareWithFamily": "家族と共有する"
+    },
+    "proModal": {
+      "title": "readingclub.aiにアップグレード",
+      "beProlific": "多作な絵本作家になる",
+      "buttonText": "Plusにアップデート",
+      "noMatterYourAge": "年齢に関係なく、AIの支援で50以上の言語で若い読者のための物語を創作する。",
+      "beginnerOrExpertV1": "初心者でも専門家でも、サポートがあります。",
+      "beginnerOrExpertV2": "初心者でも、専門家でも、",
+      "fosterCreativity": "創造性を育み、ライターズブロックを克服し、創造的な執筆を楽しむ",
+      "month": "月",
+      "unlimitedStorybooks": "無制限のプロフェッショナル品質の絵本を書くことを楽しむ",
+      "unlimitedIllustrations": "無制限のパーソナライズされたイラストで若い読者を動機づける"
+    },
+    "settings": {
+      "title": "設定",
+      "freePlan": "現在、無料プランを利用中です。",
+      "paidPlan": "現在、Plusプランを利用中です。"
+    },
+    "instructionsModal": {
+      "instruction1": "自動補完するには```++```と入力",
+      "instruction2": "イラストを描くには`/`を使用",
+      "instruction3": "画像を変更するためのプロンプトを編集",
+      "instruction4": "一貫したキャラクターを定義"
+    },
+    "illustrationModal": {
+      "title": "イラストの編集"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "キャラクターについて学ぶ",
+      "creationgYourCharacters": "キャラクターの作成",
+      "choosingYourCharacters": "シーンのイラストのためのキャラクターを選択",
+      "generatingIllustration": "イラストの生成"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "ホーム",
+      "stories": "ストーリー",
+      "feedback": "フィードバック",
+      "settings": "設定",
+      "signout": "サインアウト"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "機能をリクエスト"
+    },
+    "draftItem": {
+      "writeNewBook": "新しい本を書く",
+      "noTitle": "タイトルなし"
+    },
+    "instructionsPanel": {
+      "startCreating": "物語の作成を開始",
+      "suggestions": "提案を得るために'++'を押す、または",
+      "slash": "イラストには'/'を使用する。"
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "PDFを生成",
+      "downloadPDF": "ストーリーをダウンロード"
+    },
+    "TRCEditorV2": {
+      "placeholder": "オートコンプリートには'++'を押す、またはイラストコマンドには'/'を使用する。"
+    },
+    "freeCounter": {
+      "thisWeek": "今週",
+      "freeGenerations": "無料の提案",
+      "freeIllustrations": "無料のイラスト"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Plusにアップグレード",
+      "manageSubscription": "サブスクリプションを管理"
+    },
+    "characterCard": {
+      "gender": "性別",
+      "species": "種族",
+      "age": "年齢",
+      "eyeColor": "目の色",
+      "hairLength": "髪の長さ",
+      "hairType": "髪のタイプ",
+      "hairColor": "髪の色",
+      "skinTone": "肌のトーン",
+      "outfit": "衣装",
+      "placeOfOrigin": "出身地",
+      "name": "名前",
+      "facialHair": "顔の毛"
+    },
+    "followButton": {
+      "follow": "フォロー",
+      "unfollow": "フォロー解除"
+    },
+    "share": {
+      "liveOnWeb": "この話はウェブ上で公開されています。",
+      "postOnSocial": "readingclub.aiのプロフィールに投稿",
+      "unshare": "共有を解除",
+      "shareThisStory": "この話を共有する",
+      "shareWithFamily": "あなたの本を友人や家族と共有する。",
+      "share": "共有する"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "イラストを生成",
+        "description": "テキストからイラストを生成する",
+        "generateSearchTerm": "生成する",
+        "illustrationSearchTerm": "イラスト",
+        "imageSearchTerm": "画像",
+        "photoSearchTerm": "写真",
+        "mediaSearchTerm": "メディア",
+        "pictureSearchTerm": "ピクチャー"
+      },
+      "uploadImage": {
+        "title": "画像をアップロード",
+        "description": "コンピューターから画像をアップロードする"
+      }
+    }
+  },
+  "toasts": {
+    "fileNotSupported": "ファイルタイプはサポートされていません。",
+    "fileTooLarge": "ファイルサイズが20MBを超えています。",
+    "uploadingImage": "画像をアップロード中...",
+    "imageUploaded": "画像が正常にアップロードされました！",
+    "generatingNewIllustration": "新しいイラストを生成中...",
+    "newGeneratedIllustration": "イラストが正常に生成されました！",
+    "illustrationPromptGenerated": "プロンプトに基づいてイラストが正常に生成されました。",
+    "identifyingCharacters": "キャラクターを特定中...",
+    "charactersIdentified": "キャラクターが正常に特定されました！",
+    "creatingCharacter": "キャラクターを作成中...",
+    "characterCreated": "キャラクターが正常に作成されました！",
+    "choosingCharacter": "イラスト用のキャラクターを選択中...",
+    "characterChosen": "キャラクターが正常に選択されました！",
+    "creatingNewBook": "新しい本を作成中...",
+    "bookCreated": "本が作成されました！",
+    "bookCreationError": "新しい本の作成に失敗しました",
+    "failedUserUpdate": "ユーザー情報の更新に失敗しました",
+    "sharing": "共有中...",
+    "onlyShared": "共有されました！",
+    "sharedAndPosted": "共有および投稿されました！",
+    "errorSharingStory": "ストーリーの共有に失敗しました。",
+    "unsharing": "共有解除中...",
+    "unshared": "共有が解除されました！",
+    "errorUnsharingStory": "ストーリーの共有解除に失敗しました。",
+    "errorTranslatingText": "テキストの翻訳に失敗しました",
+    "translating": "翻訳中...",
+    "translated": "翻訳されました！",
+    "rateLimited": "レートが制限されています。後ほど再試行してください。",
+    "fetchError": "フェッチエラー：",
+    "generalError": "エラー："
+  }
+}
