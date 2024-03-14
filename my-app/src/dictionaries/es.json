@@ -24,7 +24,7 @@
       "newsfeed": {
         "discoverHeader": "Descubre",
         "createdStoryAt": "creó una historia",
-        "dateFormat": "dd-mm-yyyy"
+        "dateFormat": "dd-MM-yyyy"
       },
       "followbar": {
         "whoToFollow": "A quién seguir",

@@ -8,6 +8,7 @@ const dictionaries = {
   "zh-CN": () =>
     import("@/dictionaries/zh-CN.json").then((module) => module.default),
   hi: () => import("@/dictionaries/hi.json").then((module) => module.default),
+  bn: () => import("@/dictionaries/bn.json").then((module) => module.default),
 };
 
 export const getDictionary = async (locale: Locale) => dictionaries[locale]();
