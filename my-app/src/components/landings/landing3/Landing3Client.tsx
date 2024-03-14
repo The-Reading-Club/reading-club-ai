@@ -612,6 +612,10 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
             {/* {dictionary.page.landing.copyRight} */}
             {"Español"}
           </Link>
+          <Link href="/pt" className="opacity-80 text-white">
+            {/* {dictionary.page.landing.copyRight} */}
+            {"Português"}
+          </Link>
           <Link href="/uk" className="opacity-80 text-white">
             {/* {dictionary.page.landing.copyRight} */}
             {"Українська"}
@@ -624,6 +628,10 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
             {/* {dictionary.page.landing.copyRight} */}
             {"繁體中文"}
           </Link>
+          <Link href="/ja" className="opacity-80 text-white">
+            {/* {dictionary.page.landing.copyRight} */}
+            {"日本語"}
+          </Link>
           <Link href="/hi" className="opacity-80 text-white">
             {/* {dictionary.page.landing.copyRight} */}
             {"हिंदी"}
@@ -631,14 +639,6 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
           <Link href="/bn" className="opacity-80 text-white">
             {/* {dictionary.page.landing.copyRight} */}
             {"বাংলা"}
-          </Link>
-          <Link href="/pt" className="opacity-80 text-white">
-            {/* {dictionary.page.landing.copyRight} */}
-            {"Português"}
-          </Link>
-          <Link href="/ja" className="opacity-80 text-white">
-            {/* {dictionary.page.landing.copyRight} */}
-            {"日本語"}
           </Link>
         </div>
         <div
