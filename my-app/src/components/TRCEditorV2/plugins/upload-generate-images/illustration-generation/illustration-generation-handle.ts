@@ -113,8 +113,14 @@ export function handleIllustrationGeneration(body: IllustrationGenerationBody) {
           }
         }),
       {
-        loading: `Generating illustration... (${body.chosenCharacter.name})`,
-        success: "Illustration generated successfully.",
+        loading: `${
+          useTRCAppConfigStore.getState().dictionary?.toasts
+            .generatingNewIllustration
+        } (${body.chosenCharacter.name})`,
+        success: `${
+          useTRCAppConfigStore.getState().dictionary?.toasts
+            .newGeneratedIllustration
+        }`,
         error: (e) => e.message,
         // error: "test",
       }
@@ -166,8 +172,12 @@ export function handleIllustrationPrompt(
           throw new Error("Error uploading image.");
         }),
       {
-        loading: `Generating new illustration...`,
-        success: "Illustration generated successfully based on prompt.",
+        loading:
+          useTRCAppConfigStore.getState().dictionary?.toasts
+            .generatingNewIllustration,
+        success:
+          useTRCAppConfigStore.getState().dictionary?.toasts
+            .illustrationPromptGenerated,
         error: (e) => e.message,
         // error: "test",
       }

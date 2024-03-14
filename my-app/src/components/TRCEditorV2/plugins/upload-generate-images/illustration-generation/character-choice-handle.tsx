@@ -10,7 +10,11 @@ import {
   fetchAndReadStream,
   wrapWithToast,
 } from "@/lib/utils";
-import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
+import {
+  useTRCAppConfigStore,
+  useTRCAppStore,
+  useTRCEditorStore,
+} from "@/stores/store";
 import { use } from "react";
 import { useProModal } from "@/lib/hooks/useModals";
 import { unknown } from "zod";
@@ -27,9 +31,15 @@ export interface CharacterChoiceBody {
 }
 
 export async function handleCharacterChoice(body: CharacterChoiceBody) {
-  const loadingToast = toast.loading("Choosing character for illustration...", {
-    duration: Infinity,
-  });
+  const toastDictionary = useTRCAppConfigStore.getState().dictionary?.toasts;
+
+  const loadingToast = toast.loading(
+    // "Choosing character for illustration..."
+    toastDictionary?.choosingCharacter,
+    {
+      duration: Infinity,
+    }
+  );
 
   try {
     // Good code
@@ -66,7 +76,7 @@ export async function handleCharacterChoice(body: CharacterChoiceBody) {
     ][0];
 
     devAlert("Character choice: " + JSON.stringify(characterChoice));
-    toast.success(`Character chosen successfully! (${characterChoice})`, {
+    toast.success(`${toastDictionary?.characterChosen} (${characterChoice})`, {
       id: loadingToast,
       duration: 5000,
     });
@@ -74,7 +84,7 @@ export async function handleCharacterChoice(body: CharacterChoiceBody) {
     return characterChoice;
   } catch (error: any) {
     console.error("Fetch error:", error);
-    toast.error(`Error: ${error.message}`, {
+    toast.error(`${toastDictionary?.generalError} ${error.message}`, {
       id: loadingToast,
       duration: 5000,
     });

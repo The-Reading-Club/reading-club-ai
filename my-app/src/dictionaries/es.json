@@ -166,5 +166,37 @@
         "description": "Sube una imagen desde tu computadora"
       }
     }
+  },
+  "toasts": {
+    "fileNotSupported": "El tipo de archivo no es compatible.",
+    "fileTooLarge": "El tamaño del archivo excede los 20MB.",
+    "uploadingImage": "Subiendo imagen...",
+    "imageUploaded": "¡Imagen subida con éxito!",
+    "generatingNewIllustration": "Generando nueva ilustración...",
+    "newGeneratedIllustration": "¡Ilustración generada con éxito!",
+    "illustrationPromptGenerated": "Ilustración generada con éxito basada en el prompt.",
+    "identifyingCharacters": "Identificando personajes...",
+    "charactersIdentified": "¡Personajes identificados con éxito!",
+    "creatingCharacter": "Creando personaje...",
+    "characterCreated": "¡Personaje creado con éxito!",
+    "choosingCharacter": "Eligiendo personaje para la ilustración...",
+    "characterChosen": "¡Personaje elegido con éxito!",
+    "creatingNewBook": "Creando un nuevo libro...",
+    "bookCreated": "¡Libro creado!",
+    "bookCreationError": "Error al crear un nuevo libro.",
+    "failedUserUpdate": "Error al actualizar usuario.",
+    "sharing": "Compartiendo...",
+    "onlyShared": "¡Compartido!",
+    "sharedAndPosted": "¡Compartido y publicado!",
+    "errorSharingStory": "Error al compartir la historia.",
+    "unsharing": "Dejando de compartir...",
+    "unshared": "¡No compartido!",
+    "errorUnsharingStory": "Error al dejar de compartir la historia.",
+    "errorTranslatingText": "Error al traducir el texto",
+    "translating": "Traduciendo...",
+    "translated": "¡Traducido!",
+    "rateLimited": "Límite de tasa alcanzado. Por favor, inténtalo de nuevo más tarde.",
+    "fetchError": "Error de obtención:",
+    "generalError": "Error:"
   }
 }

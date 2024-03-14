@@ -10,7 +10,11 @@ import {
   fetchAndReadStream,
   wrapWithToast,
 } from "@/lib/utils";
-import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
+import {
+  useTRCAppConfigStore,
+  useTRCAppStore,
+  useTRCEditorStore,
+} from "@/stores/store";
 import { use } from "react";
 import { useProModal } from "@/lib/hooks/useModals";
 import { unknown } from "zod";
@@ -53,8 +57,10 @@ export const handleImageUpload = (file: File) => {
           }
         }),
       {
-        loading: "Uploading image...",
-        success: "Image uploaded successfully.",
+        loading:
+          useTRCAppConfigStore.getState().dictionary?.toasts.uploadingImage,
+        success:
+          useTRCAppConfigStore.getState().dictionary?.toasts.imageUploaded,
         error: (e) => e.message,
       }
     );

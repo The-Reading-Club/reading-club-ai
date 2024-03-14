@@ -69,9 +69,15 @@ const ShareComponent: React.FC<ShareProps> = ({
     }).finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
-      loading: "Sharing...",
-      success: `Shared${published ? " and posted" : ""}!`,
-      error: "Error sharing story.",
+      // loading: "Sharing...",
+      loading: dictionary?.toasts.sharing,
+      // success: `Shared${published ? " and posted" : ""}!`,
+      // success: published ? `Shared!` : `Shared and posted!`,
+      success: published
+        ? dictionary?.toasts.onlyShared
+        : dictionary?.toasts.sharedAndPosted,
+      // error: "Error sharing story.",
+      error: dictionary?.toasts.errorSharingStory,
     });
   };
 
@@ -86,9 +92,12 @@ const ShareComponent: React.FC<ShareProps> = ({
     }).finally(() => setIsSubmitting(false));
 
     toast.promise(promise, {
-      loading: "Unsharing...",
-      success: "Unshared!",
-      error: "Error unsharing story.",
+      // loading: "Unsharing...",
+      loading: dictionary?.toasts.unsharing,
+      // success: "Unshared!",
+      success: dictionary?.toasts.unshared,
+      // error: "Error unsharing story.",
+      error: dictionary?.toasts.errorUnsharingStory,
     });
   };
 
@@ -196,7 +205,9 @@ const ShareComponent: React.FC<ShareProps> = ({
           //   </Button>
           <div className="flex flex-col items-center justify-center">
             <Globe className="w-8 h-8 text-muted-foreground mb-2" />
-            <p className="text-sm font-medium mb-2">Share this story</p>
+            <p className="text-sm font-medium mb-2">
+              {dictionary?.components.share.shareThisStory}
+            </p>
             <span className="text-xs text-muted-foreground mb-4 text-center">
               {/* Share your books with friends and family. */}
               {dictionary?.components.share.shareWithFamily}

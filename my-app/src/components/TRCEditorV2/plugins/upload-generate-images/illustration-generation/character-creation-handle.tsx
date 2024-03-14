@@ -35,7 +35,7 @@ export async function handleCharacterCreation(body: CharacterCreationBody) {
 
   // Show a loading toast
   const loadingToast = toast.loading(
-    `Creating character... "${body.basicCharacterContext["name"]}"`,
+    `${trcDictionary?.toasts.creatingCharacter} "${body.basicCharacterContext["name"]}"`,
     {
       duration: Infinity,
     }
@@ -109,16 +109,20 @@ export async function handleCharacterCreation(body: CharacterCreationBody) {
 
     // Update the toast to show success message
     devAlert("Character created successfully!" + content);
-    toast.success("Character created successfully!", {
-      id: loadingToast,
-      duration: 5000,
-    });
+    toast.success(
+      // "Character created successfully!"
+      trcDictionary?.toasts.characterCreated,
+      {
+        id: loadingToast,
+        duration: 5000,
+      }
+    );
 
     return content;
   } catch (error: any) {
     console.error("Fetch error:", error);
     // Update the toast to show error message
-    toast.error(`Error: ${error.message}`, {
+    toast.error(`${trcDictionary?.toasts.generalError} ${error.message}`, {
       id: loadingToast,
       duration: 5000,
     });
