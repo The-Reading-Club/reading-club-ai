@@ -10,7 +10,11 @@ import {
   fetchAndReadStream,
   wrapWithToast,
 } from "@/lib/utils";
-import { useTRCAppStore, useTRCEditorStore } from "@/stores/store";
+import {
+  useTRCAppConfigStore,
+  useTRCAppStore,
+  useTRCEditorStore,
+} from "@/stores/store";
 import { use } from "react";
 import { useProModal } from "@/lib/hooks/useModals";
 import { unknown } from "zod";
@@ -142,8 +146,14 @@ export function handleCharacterIdentification(
           // }
         }),
       {
-        loading: "Identifying characters...",
-        success: "Characters identified successfully.",
+        // loading: "Identifying characters...",
+        loading:
+          useTRCAppConfigStore.getState().dictionary?.toasts
+            .identifyingCharacters,
+        // success: "Characters identified successfully.",
+        success:
+          useTRCAppConfigStore.getState().dictionary?.toasts
+            .charactersIdentified,
         error: (e) => e.message,
         // error: "test",
       }

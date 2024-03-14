@@ -166,5 +166,37 @@
         "description": "Завантажте зображення з вашого комп'ютера"
       }
     }
+  },
+  "toasts": {
+    "fileNotSupported": "Тип файлу не підтримується.",
+    "fileTooLarge": "Розмір файлу перевищує 20 МБ.",
+    "uploadingImage": "Завантаження зображення...",
+    "imageUploaded": "Зображення успішно завантажено!",
+    "generatingNewIllustration": "Генерація нової ілюстрації...",
+    "newGeneratedIllustration": "Ілюстрацію успішно створено!",
+    "illustrationPromptGenerated": "Ілюстрацію успішно створено за запитом.",
+    "identifyingCharacters": "Ідентифікація персонажів...",
+    "charactersIdentified": "Персонажі успішно ідентифіковано!",
+    "creatingCharacter": "Створення персонажа...",
+    "characterCreated": "Персонаж успішно створено!",
+    "choosingCharacter": "Вибір персонажа для ілюстрації...",
+    "characterChosen": "Персонаж успішно вибрано!",
+    "creatingNewBook": "Створення нової книги...",
+    "bookCreated": "Книгу створено!",
+    "bookCreationError": "Не вдалося створити нову книгу.",
+    "failedUserUpdate": "Не вдалося оновити користувача.",
+    "sharing": "Поділ...",
+    "onlyShared": "Поділено!",
+    "sharedAndPosted": "Поділено та опубліковано!",
+    "errorSharingStory": "Не вдалося поділитися історією.",
+    "unsharing": "Скасування поділу...",
+    "unshared": "Поділ скасовано!",
+    "errorUnsharingStory": "Не вдалося скасувати поділ історії.",
+    "errorTranslatingText": "Не вдалося перекласти текст.",
+    "translating": "Переклад...",
+    "translated": "Перекладено!",
+    "rateLimited": "Перевищено ліміт швидкості. Будь ласка, спробуйте пізніше.",
+    "fetchError": "Помилка завантаження:",
+    "generalError": "Помилка:"
   }
 }

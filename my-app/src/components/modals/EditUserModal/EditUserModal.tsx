@@ -62,7 +62,10 @@ const EditUserModal = () => {
       editModal.onClose();
     } catch (error) {
       console.error(error);
-      toast.error("Failed to update user");
+      toast.error(
+        // "Failed to update user"
+        dictionary?.toasts.failedUserUpdate
+      );
     } finally {
       setIsLoading(false);
     }

@@ -6,6 +6,7 @@ import { twMerge } from "tailwind-merge";
 import { toast } from "sonner";
 import { allowDevAlerts } from "../../config";
 import { TRCDictionary } from "./internationalization/dictionary";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));

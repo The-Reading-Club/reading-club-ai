@@ -2,6 +2,7 @@ import { useCallback, useMemo } from "react";
 import { useCurrentUser, useUser } from "./useUsers";
 import axios from "axios";
 import { toast } from "sonner";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 const useFollow = (userId: string) => {
   const {
@@ -66,7 +67,13 @@ const useFollow = (userId: string) => {
       mutateCurrentUser();
       mutateUserToFollow();
 
-      toast.success(isFollowing ? "Unfollowed" : "Followed");
+      toast.success(
+        isFollowing
+          ? useTRCAppConfigStore.getState().dictionary?.components.followButton
+              .unfollow
+          : useTRCAppConfigStore.getState().dictionary?.components.followButton
+              .follow
+      );
     } catch (error) {}
   }, [
     currentUser,

@@ -12,6 +12,7 @@ import { IconType } from "react-icons";
 import axios, { AxiosError } from "axios";
 import { toast } from "sonner";
 import { useProModal } from "@/lib/hooks/useModals";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 interface TRCBubbleMenuItem {
   name: string;
@@ -209,7 +210,9 @@ const defaultBubbleMenuItems: TRCBubbleMenuItem[] = [
 
         // Tell the user
         toast.error(
-          "Error translating text"
+          // "Error translating text"
+          useTRCAppConfigStore.getState().dictionary?.toasts
+            .errorTranslatingText
           // + JSON.stringify(error)
         );
 
@@ -223,7 +226,10 @@ const defaultBubbleMenuItems: TRCBubbleMenuItem[] = [
         //   }
         if ((err as any).response) {
           if ((err as any).response.status === 429) {
-            toast.error("Rate limited exceeded for the day.");
+            toast.error(
+              // "Rate limited exceeded for the day."
+              useTRCAppConfigStore.getState().dictionary?.toasts.rateLimited
+            );
             useProModal.getState().onOpen();
           }
         }

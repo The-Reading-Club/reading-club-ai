@@ -11,6 +11,7 @@ import { PlusCircleIcon } from "lucide-react";
 import DraftItem from "../../_components/DraftItem/DraftItem";
 import { useRouter } from "next/navigation";
 import { useEffect } from "react";
+import { useTRCAppConfigStore } from "@/stores/store";
 
 const DraftsPage = () => {
   // https://github.com/nextauthjs/next-auth/issues/7760
@@ -38,6 +39,8 @@ const DraftsPage = () => {
   //     signOut();
   //   }
   // };
+
+  const { dictionary } = useTRCAppConfigStore();
 
   // useEffect to handle session issues
   useEffect(() => {
@@ -75,9 +78,12 @@ const DraftsPage = () => {
       });
 
     toast.promise(promise, {
-      loading: "Creating a new book...",
-      success: "Book created!",
-      error: "Failed to create a new book",
+      // loading: "Creating a new book...",
+      loading: dictionary?.toasts.creatingNewBook,
+      // success: "Book created!",
+      success: dictionary?.toasts.bookCreated,
+      // error: "Failed to create a new book",
+      error: dictionary?.toasts.bookCreationError,
     });
   };
 

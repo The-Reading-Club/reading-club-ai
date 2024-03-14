@@ -166,5 +166,37 @@
         "description": "从您的电脑上传一张图片"
       }
     }
+  },
+  "toasts": {
+    "fileNotSupported": "文件类型不支持。",
+    "fileTooLarge": "文件大小超过20MB。",
+    "uploadingImage": "正在上传图片...",
+    "imageUploaded": "图片上传成功！",
+    "generatingNewIllustration": "正在生成新插图...",
+    "newGeneratedIllustration": "插图成功生成！",
+    "illustrationPromptGenerated": "根据提示成功生成插图。",
+    "identifyingCharacters": "正在识别角色...",
+    "charactersIdentified": "角色识别成功！",
+    "creatingCharacter": "正在创建角色...",
+    "characterCreated": "角色创建成功！",
+    "choosingCharacter": "正在选择插图角色...",
+    "characterChosen": "角色选择成功！",
+    "creatingNewBook": "正在创建新书...",
+    "bookCreated": "书籍创建成功！",
+    "bookCreationError": "创建新书失败",
+    "failedUserUpdate": "用户更新失败",
+    "sharing": "正在分享...",
+    "onlyShared": "已分享！",
+    "sharedAndPosted": "已分享并发布！",
+    "errorSharingStory": "分享故事失败。",
+    "unsharing": "正在取消分享...",
+    "unshared": "取消分享成功！",
+    "errorUnsharingStory": "取消分享故事失败。",
+    "errorTranslatingText": "文本翻译失败",
+    "translating": "正在翻译...",
+    "translated": "翻译成功！",
+    "rateLimited": "受限制，请稍后再试。",
+    "fetchError": "获取错误：",
+    "generalError": "错误："
   }
 }

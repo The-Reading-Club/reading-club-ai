@@ -166,5 +166,37 @@
         "description": "Upload an image from your computer"
       }
     }
+  },
+  "toasts": {
+    "fileNotSupported": "File type is not supported.",
+    "fileTooLarge": "File size exceeds 20MB.",
+    "uploadingImage": "Uploading image...",
+    "imageUploaded": "Image uploaded successfully!",
+    "generatingNewIllustration": "Generating new illustration...",
+    "newGeneratedIllustration": "Illustration generated successfully!",
+    "illustrationPromptGenerated": "Illustration generated successfully based on prompt.",
+    "identifyingCharacters": "Identifying characters...",
+    "charactersIdentified": "Characters identified successfully!",
+    "creatingCharacter": "Creating character...",
+    "characterCreated": "Character created successfully!",
+    "choosingCharacter": "Choosing character for illustration...",
+    "characterChosen": "Character chosen successfully!",
+    "creatingNewBook": "Creating a new book...",
+    "bookCreated": "Book created!",
+    "bookCreationError": "Failed to create a new book",
+    "failedUserUpdate": "Failed to update user",
+    "sharing": "Sharing...",
+    "onlyShared": "Shared!",
+    "sharedAndPosted": "Shared and posted!",
+    "errorSharingStory": "Failed to share story.",
+    "unsharing": "Unsharing...",
+    "unshared": "Unshared!",
+    "errorUnsharingStory": "Failed to unshare story.",
+    "errorTranslatingText": "Failed to translate text",
+    "translating": "Translating...",
+    "translated": "Translated!",
+    "rateLimited": "Rate limited. Please try again later.",
+    "fetchError": "Fetch error:",
+    "generalError": "Error:"
   }
 }

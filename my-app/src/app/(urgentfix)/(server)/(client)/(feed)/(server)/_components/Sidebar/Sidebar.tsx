@@ -57,9 +57,12 @@ const Sidebar = () => {
       });
 
     toast.promise(promise, {
-      loading: "Creating a new book...",
-      success: "Book created!",
-      error: "Failed to create a new book",
+      // loading: "Creating a new book...",
+      loading: dictionary?.toasts.creatingNewBook,
+      // success: "Book created!",
+      success: dictionary?.toasts.bookCreated,
+      // error: "Failed to create a new book",
+      error: dictionary?.toasts.bookCreationError,
     });
   };
 
