@@ -5,12 +5,9 @@ import { getDictionary } from "@/lib/internationalization/dictionary";
 import Landing3 from "@/components/landings/landing3";
 
 export async function generateStaticParams() {
-  return (
-    i18n.locales
-      .map((locale) => ({ lang: locale }))
-      // filter out default locale
-      .filter((locale) => locale.lang !== "en")
-  );
+  return i18n.locales.map((locale) => ({ lang: locale }));
+  // filter out default locale
+  // .filter((locale) => locale.lang !== "en")
 }
 
 const LocalizedHome = async ({
