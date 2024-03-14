@@ -1,0 +1,202 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "Превращение историй перед сном в интерактивные приключения",
+      "mainBannerDescription": "Оживляем воображение детей с помощью ИИ",
+      "writeABook": "Напишите книгу",
+      "typePlusForSuggestions": "Введите `++` для предложений",
+      "useSlashToIllustrate": "Используйте `/` для иллюстраций",
+      "editPrompts": "Редактировать подсказки для смены изображений",
+      "defineConsistentCharacters": "Определите постоянных персонажей",
+      "contact": "Свяжитесь с нами",
+      "social": "Социальные сети",
+      "help": "Помощь и поддержка",
+      "feedback": "Оставьте отзыв"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "Открывайте",
+        "community": "Сообщество",
+        "profile": "Профиль",
+        "aGreatStory": "Замечательная история",
+        "byYou": "Ваша"
+      },
+      "newsfeed": {
+        "discoverHeader": "Открывайте",
+        "createdStoryAt": "создал историю на",
+        "dateFormat": "dd MMMM, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "За кем следовать",
+        "seeMore": "Смотреть больше",
+        "upcomingFeatureQuestion": "Какая предстоящая функция readingclub.ai вас больше всего волнует?",
+        "emailCTOat": "Вы всегда можете отправить электронное письмо CTO на",
+        "withYourIdeas": "с вашими идеями.",
+        "promotion": "Мы будем рады поделиться промокодом на 50% скидку на нашу подписку, если вы это сделаете!"
+      },
+      "connect": {
+        "connectWith1": "Соединитесь с",
+        "connectWith2": "участниками — Редактируйте био, чтобы быть на вершине!",
+        "connectWith1Mobile": "Соединение (",
+        "connectWith2Mobile": "пользователи)"
+      },
+      "profile": {
+        "editProfile": "Редактировать профиль",
+        "joined": "Присоединился",
+        "following": "Подписки",
+        "followers": "Подписчики",
+        "editYourBio": "Редактировать ваше био",
+        "writeALittle": "Напишите немного о себе",
+        "save": "Сохранить"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "Кликните для редактирования заголовка",
+      "byLineWord": "Автор",
+      "shareWithFamily": "Поделиться с семьей"
+    },
+    "proModal": {
+      "title": "Перейдите на readingclub.ai",
+      "beProlific": "Станьте плодовитым автором детских книг",
+      "buttonText": "Обновить до Plus",
+      "noMatterYourAge": "Независимо от вашего возраста, создавайте истории для молодых читателей на 50+ языках с помощью ИИ.",
+      "beginnerOrExpertV1": "Будь вы новичком или экспертом, мы позаботились о вас.",
+      "beginnerOrExpertV2": "Новичок или эксперт,",
+      "fosterCreativity": "развивайте свое творчество, преодолевайте творческий кризис и наслаждайтесь творческим процессом",
+      "month": "Месяц",
+      "unlimitedStorybooks": "Наслаждайтесь написанием неограниченного количества книг профессионального качества",
+      "unlimitedIllustrations": "Мотивируйте молодых читателей неограниченным количеством персонализированных иллюстраций"
+    },
+    "settings": {
+      "title": "Настройки",
+      "freePlan": "Вы сейчас используете бесплатный план.",
+      "paidPlan": "Вы сейчас находитесь на плане Plus."
+    },
+    "instructionsModal": {
+      "instruction1": "Введите ```++``` для автозаполнения",
+      "instruction2": "Используйте `/` для иллюстрации",
+      "instruction3": "Редактируйте подсказки для изменения изображений",
+      "instruction4": "Определите постоянных персонажей"
+    },
+    "illustrationModal": {
+      "title": "Редактирование иллюстрации"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "Изучение ваших персонажей",
+      "creationgYourCharacters": "Создание ваших персонажей",
+      "choosingYourCharacters": "Выбор ваших персонажей для иллюстрации сцены",
+      "generatingIllustration": "Создание иллюстрации"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "Главная",
+      "stories": "Истории",
+      "feedback": "Обратная связь",
+      "settings": "Настройки",
+      "signout": "Выйти"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "Запросить функцию"
+    },
+    "draftItem": {
+      "writeNewBook": "Написать новую книгу",
+      "noTitle": "Без названия"
+    },
+    "instructionsPanel": {
+      "startCreating": "Начать создание истории",
+      "suggestions": "Нажмите '++' для предложений, или",
+      "slash": "'/' для иллюстраций."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "Создать PDF",
+      "downloadPDF": "Скачать историю"
+    },
+    "TRCEditorV2": {
+      "placeholder": "Нажмите '++' для автозаполнения, или '/' для команд иллюстрации..."
+    },
+    "freeCounter": {
+      "thisWeek": "На этой неделе",
+      "freeGenerations": "бесплатные предложения",
+      "freeIllustrations": "бесплатные иллюстрации"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Перейти на Plus",
+      "manageSubscription": "Управление подпиской"
+    },
+    "characterCard": {
+      "gender": "Пол",
+      "species": "Вид",
+      "age": "Возраст",
+      "eyeColor": "Цвет глаз",
+      "hairLength": "Длина волос",
+      "hairType": "Тип волос",
+      "hairColor": "Цвет волос",
+      "skinTone": "Тон кожи",
+      "outfit": "Одежда",
+      "placeOfOrigin": "Место происхождения",
+      "name": "Имя",
+      "facialHair": "Волосы на лице"
+    },
+    "followButton": {
+      "follow": "Подписаться",
+      "unfollow": "Отписаться"
+    },
+    "share": {
+      "liveOnWeb": "Эта история в прямом эфире в интернете.",
+      "postOnSocial": "Опубликовать в профиле readingclub.ai",
+      "unshare": "Отменить общий доступ",
+      "shareThisStory": "Поделиться этой историей",
+      "shareWithFamily": "Поделитесь своими книгами с друзьями и семьей.",
+      "share": "Поделиться"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "Создать иллюстрацию",
+        "description": "Создать иллюстрацию из вашего текста",
+        "generateSearchTerm": "создать",
+        "illustrationSearchTerm": "иллюстрация",
+        "imageSearchTerm": "изображение",
+        "photoSearchTerm": "фото",
+        "mediaSearchTerm": "медиа",
+        "pictureSearchTerm": "картинка"
+      },
+      "uploadImage": {
+        "title": "Загрузить изображение",
+        "description": "Загрузите изображение с вашего компьютера"
+      }
+    }
+  },
+  "toasts": {
+    "fileNotSupported": "Тип файла не поддерживается.",
+    "fileTooLarge": "Размер файла превышает 20МБ.",
+    "uploadingImage": "Загрузка изображения...",
+    "imageUploaded": "Изображение успешно загружено!",
+    "generatingNewIllustration": "Создание новой иллюстрации...",
+    "newGeneratedIllustration": "Иллюстрация успешно создана!",
+    "illustrationPromptGenerated": "Иллюстрация успешно создана на основе запроса.",
+    "identifyingCharacters": "Определение персонажей...",
+    "charactersIdentified": "Персонажи успешно идентифицированы!",
+    "creatingCharacter": "Создание персонажа...",
+    "characterCreated": "Персонаж успешно создан!",
+    "choosingCharacter": "Выбор персонажа для иллюстрации...",
+    "characterChosen": "Персонаж успешно выбран!",
+    "creatingNewBook": "Создание новой книги...",
+    "bookCreated": "Книга создана!",
+    "bookCreationError": "Не удалось создать новую книгу",
+    "failedUserUpdate": "Не удалось обновить пользователя",
+    "sharing": "Поделиться...",
+    "onlyShared": "Поделено!",
+    "sharedAndPosted": "Поделено и опубликовано!",
+    "errorSharingStory": "Не удалось поделиться историей.",
+    "unsharing": "Отмена деления...",
+    "unshared": "Деление отменено!",
+    "errorUnsharingStory": "Не удалось отменить деление истории.",
+    "errorTranslatingText": "Не удалось перевести текст",
+    "translating": "Перевод...",
+    "translated": "Переведено!",
+    "rateLimited": "Превышен лимит запросов. Пожалуйста, попробуйте позже.",
+    "fetchError": "Ошибка получения данных:",
+    "generalError": "Ошибка:"
+  }
+}
