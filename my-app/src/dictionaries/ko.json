@@ -1,0 +1,202 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "취침 전 이야기를 상호 작용하는 모험으로 변환",
+      "mainBannerDescription": "AI의 도움으로 아이들의 상상력을 현실로 만들기",
+      "writeABook": "책을 쓰세요",
+      "typePlusForSuggestions": "제안을 위해 `++` 입력",
+      "useSlashToIllustrate": "그림을 그리기 위해 `/` 사용",
+      "editPrompts": "이미지를 변경하기 위한 프롬프트 수정",
+      "defineConsistentCharacters": "일관된 캐릭터 정의",
+      "contact": "문의하기",
+      "social": "소셜",
+      "help": "도움말 및 지원",
+      "feedback": "피드백 제공"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "발견하기",
+        "community": "커뮤니티",
+        "profile": "프로필",
+        "aGreatStory": "훌륭한 이야기",
+        "byYou": "당신에 의해"
+      },
+      "newsfeed": {
+        "discoverHeader": "발견하기",
+        "createdStoryAt": "에 이야기를 만듦",
+        "dateFormat": "MMMM dd, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "팔로우할 사람",
+        "seeMore": "더 보기",
+        "upcomingFeatureQuestion": "readingclub.ai의 어떤 다가오는 기능이 가장 기대되나요?",
+        "emailCTOat": "언제든지 CTO에게 이메일을 보낼 수 있습니다",
+        "withYourIdeas": "당신의 아이디어와 함께.",
+        "promotion": "진행하시면 구독에 대한 50% 할인 코드를 공유해 드릴게요!"
+      },
+      "connect": {
+        "connectWith1": "와(과) 연결하기",
+        "connectWith2": "멤버 — 상단에 있으려면 바이오를 수정하세요!",
+        "connectWith1Mobile": "연결 (",
+        "connectWith2Mobile": "사용자)"
+      },
+      "profile": {
+        "editProfile": "프로필 편집",
+        "joined": "가입함",
+        "following": "팔로잉",
+        "followers": "팔로워",
+        "editYourBio": "당신의 바이오를 편집하세요",
+        "writeALittle": "자신에 대해 조금 써보세요",
+        "save": "저장"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "제목을 편집하려면 클릭",
+      "byLineWord": "작성자",
+      "shareWithFamily": "가족과 공유하기"
+    },
+    "proModal": {
+      "title": "readingclub.ai로 업그레이드",
+      "beProlific": "다작의 스토리북 작가가 되세요",
+      "buttonText": "Plus로 업데이트",
+      "noMatterYourAge": "나이에 상관없이 AI의 도움으로 50개 이상의 언어로 젊은 독자를 위한 이야기를 만드세요.",
+      "beginnerOrExpertV1": "초보자든 전문가든, 우리가 여러분을 지원합니다.",
+      "beginnerOrExpertV2": "초보자나 전문가나,",
+      "fosterCreativity": "창의력을 길러 작가의 막힘을 극복하고 창의적인 글쓰기를 즐기세요",
+      "month": "월",
+      "unlimitedStorybooks": "무제한으로 전문가 품질의 스토리북 작성을 즐기세요",
+      "unlimitedIllustrations": "무제한 개인화된 일러스트로 젊은 독자들을 동기 부여하세요"
+    },
+    "settings": {
+      "title": "설정",
+      "freePlan": "현재 무료 플랜을 사용 중입니다.",
+      "paidPlan": "현재 Plus 플랜을 사용 중입니다."
+    },
+    "instructionsModal": {
+      "instruction1": "자동 완성을 위해 ```++``` 입력",
+      "instruction2": "일러스트를 위해 `/` 사용",
+      "instruction3": "이미지를 변경하기 위해 프롬프트 수정",
+      "instruction4": "일관된 캐릭터 정의"
+    },
+    "illustrationModal": {
+      "title": "일러스트 수정"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "캐릭터에 대해 배우기",
+      "creationgYourCharacters": "캐릭터 생성",
+      "choosingYourCharacters": "장면 일러스트를 위한 캐릭터 선택",
+      "generatingIllustration": "일러스트 생성"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "홈",
+      "stories": "이야기들",
+      "feedback": "피드백",
+      "settings": "설정",
+      "signout": "로그아웃"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "기능 요청하기"
+    },
+    "draftItem": {
+      "writeNewBook": "새 책 쓰기",
+      "noTitle": "제목 없음"
+    },
+    "instructionsPanel": {
+      "startCreating": "이야기 만들기 시작",
+      "suggestions": "'++'를 눌러 제안 받기, 또는",
+      "slash": "일러스트를 위해 '/' 사용하기."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "PDF 생성",
+      "downloadPDF": "이야기 다운로드"
+    },
+    "TRCEditorV2": {
+      "placeholder": "자동 완성을 위해 '++'를 누르거나, 일러스트 명령어를 위해 '/' 사용하기."
+    },
+    "freeCounter": {
+      "thisWeek": "이번 주",
+      "freeGenerations": "무료 제안",
+      "freeIllustrations": "무료 일러스트"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Plus로 업그레이드",
+      "manageSubscription": "구독 관리"
+    },
+    "characterCard": {
+      "gender": "성별",
+      "species": "종",
+      "age": "나이",
+      "eyeColor": "눈 색깔",
+      "hairLength": "머리 길이",
+      "hairType": "머리 유형",
+      "hairColor": "머리 색깔",
+      "skinTone": "피부 톤",
+      "outfit": "복장",
+      "placeOfOrigin": "출신지",
+      "name": "이름",
+      "facialHair": "수염"
+    },
+    "followButton": {
+      "follow": "팔로우",
+      "unfollow": "언팔로우"
+    },
+    "share": {
+      "liveOnWeb": "이 이야기는 웹에서 실시간으로 진행됩니다.",
+      "postOnSocial": "readingclub.ai 프로필에 게시",
+      "unshare": "공유 취소",
+      "shareThisStory": "이 이야기 공유하기",
+      "shareWithFamily": "친구 및 가족과 책 공유하기",
+      "share": "공유하기"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "일러스트 생성",
+        "description": "텍스트에서 일러스트 생성하기",
+        "generateSearchTerm": "생성하기",
+        "illustrationSearchTerm": "일러스트",
+        "imageSearchTerm": "이미지",
+        "photoSearchTerm": "사진",
+        "mediaSearchTerm": "미디어",
+        "pictureSearchTerm": "사진"
+      },
+      "uploadImage": {
+        "title": "이미지 업로드",
+        "description": "컴퓨터에서 이미지 업로드하기"
+      }
+    }
+  },
+  "toasts": {
+    "fileNotSupported": "파일 유형이 지원되지 않습니다.",
+    "fileTooLarge": "파일 크기가 20MB를 초과합니다.",
+    "uploadingImage": "이미지 업로드 중...",
+    "imageUploaded": "이미지 업로드 성공!",
+    "generatingNewIllustration": "새 일러스트 생성 중...",
+    "newGeneratedIllustration": "새 일러스트 생성 성공!",
+    "illustrationPromptGenerated": "프롬프트를 기반으로 일러스트 생성 성공!",
+    "identifyingCharacters": "캐릭터 식별 중...",
+    "charactersIdentified": "캐릭터 식별 성공!",
+    "creatingCharacter": "캐릭터 생성 중...",
+    "characterCreated": "캐릭터 생성 성공!",
+    "choosingCharacter": "일러스트용 캐릭터 선택 중...",
+    "characterChosen": "캐릭터 선택 성공!",
+    "creatingNewBook": "새 책 생성 중...",
+    "bookCreated": "책 생성 성공!",
+    "bookCreationError": "새 책 생성 실패",
+    "failedUserUpdate": "사용자 업데이트 실패",
+    "sharing": "공유 중...",
+    "onlyShared": "공유됨!",
+    "sharedAndPosted": "공유 및 게시됨!",
+    "errorSharingStory": "이야기 공유 실패.",
+    "unsharing": "공유 취소 중...",
+    "unshared": "공유 취소됨!",
+    "errorUnsharingStory": "이야기 공유 취소 실패.",
+    "errorTranslatingText": "텍스트 번역 실패",
+    "translating": "번역 중...",
+    "translated": "번역됨!",
+    "rateLimited": "속도 제한됨. 나중에 다시 시도하세요.",
+    "fetchError": "불러오기 오류:",
+    "generalError": "오류:"
+  }
+}
