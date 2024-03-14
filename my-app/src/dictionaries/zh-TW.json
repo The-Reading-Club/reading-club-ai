@@ -1,0 +1,202 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "將睡前故事變成互動冒險",
+      "mainBannerDescription": "在AI的幫助下讓兒童的想像力成為現實",
+      "writeABook": "寫一本書",
+      "typePlusForSuggestions": "輸入`++`來獲得建議",
+      "useSlashToIllustrate": "使用`/`來進行插圖",
+      "editPrompts": "編輯提示以更改圖片",
+      "defineConsistentCharacters": "定義一致的角色",
+      "contact": "聯繫我們",
+      "social": "社交",
+      "help": "幫助和支持",
+      "feedback": "給予我們反饋"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "發現",
+        "community": "社區",
+        "profile": "個人資料",
+        "aGreatStory": "一個偉大的故事",
+        "byYou": "由你"
+      },
+      "newsfeed": {
+        "discoverHeader": "發現",
+        "createdStoryAt": "創建了一個故事於",
+        "dateFormat": "MMMM dd, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "關注誰",
+        "seeMore": "查看更多",
+        "upcomingFeatureQuestion": "你最期待readingclub.ai的哪個即將推出的功能？",
+        "emailCTOat": "你可以隨時透過電子郵件聯繫CTO",
+        "withYourIdeas": "與你的想法。",
+        "promotion": "如果你這樣做，我們很樂意分享我們訂閱的50％折扣碼！"
+      },
+      "connect": {
+        "connectWith1": "連接",
+        "connectWith2": "成員 — 編輯個人資料以置頂！",
+        "connectWith1Mobile": "連接（",
+        "connectWith2Mobile": "用戶）"
+      },
+      "profile": {
+        "editProfile": "編輯個人資料",
+        "joined": "加入了",
+        "following": "正在關注",
+        "followers": "追隨者",
+        "editYourBio": "編輯你的生物",
+        "writeALittle": "簡單介紹一下自己",
+        "save": "保存"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "點擊編輯標題",
+      "byLineWord": "由",
+      "shareWithFamily": "與家人分享"
+    },
+    "proModal": {
+      "title": "升級至readingclub.ai",
+      "beProlific": "成為一名多產的故事書作者",
+      "buttonText": "更新至Plus",
+      "noMatterYourAge": "無論您的年齡，都可以利用AI幫助，為年輕讀者創作50多種語言的故事。",
+      "beginnerOrExpertV1": "無論您是初學者還是專家，我們都能為您提供幫助。",
+      "beginnerOrExpertV2": "初學者或專家，",
+      "fosterCreativity": "培養您的創造力，克服創作障礙，享受創意寫作的樂趣",
+      "month": "月份",
+      "unlimitedStorybooks": "享受無限制編寫專業質量的故事書",
+      "unlimitedIllustrations": "用無限的個性化插圖激勵年輕讀者"
+    },
+    "settings": {
+      "title": "設定",
+      "freePlan": "您目前處於免費計劃。",
+      "paidPlan": "您目前處於Plus計劃。"
+    },
+    "instructionsModal": {
+      "instruction1": "輸入```++```以自動完成",
+      "instruction2": "使用`/`進行插畫",
+      "instruction3": "編輯提示以更改圖像",
+      "instruction4": "定義一致的角色"
+    },
+    "illustrationModal": {
+      "title": "編輯插畫"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "了解您的角色",
+      "creationgYourCharacters": "創建您的角色",
+      "choosingYourCharacters": "選擇您的角色進行場景插畫",
+      "generatingIllustration": "生成插畫"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "首頁",
+      "stories": "故事",
+      "feedback": "反饋",
+      "settings": "設定",
+      "signout": "登出"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "請求功能"
+    },
+    "draftItem": {
+      "writeNewBook": "寫一本新書",
+      "noTitle": "無標題"
+    },
+    "instructionsPanel": {
+      "startCreating": "開始創作故事",
+      "suggestions": "按'++'尋求建議，或者",
+      "slash": "使用'/'進行插畫。"
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "生成PDF",
+      "downloadPDF": "下載故事"
+    },
+    "TRCEditorV2": {
+      "placeholder": "按'++'進行自動完成，或者使用'/'進行插畫指令..."
+    },
+    "freeCounter": {
+      "thisWeek": "本週",
+      "freeGenerations": "免費建議",
+      "freeIllustrations": "免費插畫"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "升級至Plus",
+      "manageSubscription": "管理訂閱"
+    },
+    "characterCard": {
+      "gender": "性別",
+      "species": "物種",
+      "age": "年齡",
+      "eyeColor": "眼睛顏色",
+      "hairLength": "頭髮長度",
+      "hairType": "頭髮類型",
+      "hairColor": "頭髮顏色",
+      "skinTone": "膚色",
+      "outfit": "服裝",
+      "placeOfOrigin": "來源地",
+      "name": "名稱",
+      "facialHair": "面部毛髮"
+    },
+    "followButton": {
+      "follow": "關注",
+      "unfollow": "取消關注"
+    },
+    "share": {
+      "liveOnWeb": "這個故事正在網上直播。",
+      "postOnSocial": "在readingclub.ai個人檔案上發布",
+      "unshare": "取消分享",
+      "shareThisStory": "分享這個故事",
+      "shareWithFamily": "與朋友和家人分享您的書籍。",
+      "share": "分享"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "生成插畫",
+        "description": "從您的文字生成插畫",
+        "generateSearchTerm": "生成",
+        "illustrationSearchTerm": "插畫",
+        "imageSearchTerm": "圖片",
+        "photoSearchTerm": "照片",
+        "mediaSearchTerm": "媒體",
+        "pictureSearchTerm": "圖畫"
+      },
+      "uploadImage": {
+        "title": "上傳圖片",
+        "description": "從您的電腦上傳圖片"
+      }
+    }
+  },
+  "toasts": {
+    "fileNotSupported": "不支援檔案類型。",
+    "fileTooLarge": "檔案大小超過20MB。",
+    "uploadingImage": "正在上傳圖片...",
+    "imageUploaded": "圖片上傳成功！",
+    "generatingNewIllustration": "正在生成新插畫...",
+    "newGeneratedIllustration": "插畫成功生成！",
+    "illustrationPromptGenerated": "根據提示成功生成插畫。",
+    "identifyingCharacters": "正在識別角色...",
+    "charactersIdentified": "角色成功識別！",
+    "creatingCharacter": "正在創建角色...",
+    "characterCreated": "角色創建成功！",
+    "choosingCharacter": "選擇插畫中的角色...",
+    "characterChosen": "角色成功選擇！",
+    "creatingNewBook": "正在創建新書...",
+    "bookCreated": "書本創建成功！",
+    "bookCreationError": "創建新書失敗",
+    "failedUserUpdate": "更新用戶失敗",
+    "sharing": "正在分享...",
+    "onlyShared": "已分享！",
+    "sharedAndPosted": "已分享並發布！",
+    "errorSharingStory": "分享故事失敗。",
+    "unsharing": "取消分享...",
+    "unshared": "取消分享！",
+    "errorUnsharingStory": "取消分享故事失敗。",
+    "errorTranslatingText": "翻譯文字失敗",
+    "translating": "正在翻譯...",
+    "translated": "翻譯成功！",
+    "rateLimited": "速率受限。請稍後再試。",
+    "fetchError": "抓取錯誤：",
+    "generalError": "錯誤："
+  }
+}
