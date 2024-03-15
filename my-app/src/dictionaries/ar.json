@@ -1,0 +1,202 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "تحويل قصص ما قبل النوم إلى مغامرات تفاعلية",
+      "mainBannerDescription": "إحياء خيال الأطفال بمساعدة الذكاء الاصطناعي",
+      "writeABook": "اكتب كتابًا",
+      "typePlusForSuggestions": "اكتب `++` للحصول على اقتراحات",
+      "useSlashToIllustrate": "استخدم `/` للتوضيح",
+      "editPrompts": "عدل الأوامر لتغيير الصور",
+      "defineConsistentCharacters": "حدد شخصيات متسقة",
+      "contact": "اتصل بنا",
+      "social": "اجتماعي",
+      "help": "المساعدة والدعم",
+      "feedback": "أعطنا رأيك"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "اكتشف",
+        "community": "المجتمع",
+        "profile": "الملف الشخصي",
+        "aGreatStory": "قصة عظيمة",
+        "byYou": "بواسطتك"
+      },
+      "newsfeed": {
+        "discoverHeader": "اكتشف",
+        "createdStoryAt": "أنشأ قصة في",
+        "dateFormat": "dd MMMM, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "من تتابع",
+        "seeMore": "شاهد المزيد",
+        "upcomingFeatureQuestion": "ما هي الميزة القادمة التي تثير حماسك أكثر لـ readingclub.ai؟",
+        "emailCTOat": "يمكنك دائمًا إرسال بريد إلكتروني إلى المدير التقني على",
+        "withYourIdeas": "مع أفكارك.",
+        "promotion": "سنكون سعداء بمشاركة رمز ترويجي بخصم 50٪ على اشتراكنا إذا فعلت ذلك!"
+      },
+      "connect": {
+        "connectWith1": "تواصل مع",
+        "connectWith2": "أعضاء — عدل السيرة الذاتية لتكون في المقدمة!",
+        "connectWith1Mobile": "تواصل (",
+        "connectWith2Mobile": "مستخدمين)"
+      },
+      "profile": {
+        "editProfile": "تعديل الملف الشخصي",
+        "joined": "انضم",
+        "following": "يتابع",
+        "followers": "المتابعون",
+        "editYourBio": "عدل سيرتك الذاتية",
+        "writeALittle": "اكتب قليلاً عن نفسك",
+        "save": "حفظ"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "انقر لتعديل العنوان",
+      "byLineWord": "بواسطة",
+      "shareWithFamily": "شارك مع العائلة"
+    },
+    "proModal": {
+      "title": "الترقية إلى readingclub.ai",
+      "beProlific": "كن كاتبًا مثمرًا لكتب القصص",
+      "buttonText": "التحديث إلى بلس",
+      "noMatterYourAge": "بغض النظر عن عمرك، ابتكر قصصًا للقراء الصغار بأكثر من 50 لغة، بمساعدة الذكاء الاصطناعي.",
+      "beginnerOrExpertV1": "سواء كنت مبتدئًا أو خبيرًا، لدينا ما يناسبك.",
+      "beginnerOrExpertV2": "مبتدئ أو خبير،",
+      "fosterCreativity": "عزز إبداعك، تغلب على عائق الكاتب، واستمتع بالكتابة الإبداعية",
+      "month": "شهر",
+      "unlimitedStorybooks": "استمتع بكتابة قصص لا حصر لها بجودة احترافية",
+      "unlimitedIllustrations": "حفز القراء الصغار برسومات مخصصة غير محدودة"
+    },
+    "settings": {
+      "title": "الإعدادات",
+      "freePlan": "أنت حاليًا على الخطة المجانية.",
+      "paidPlan": "أنت الآن على خطة بلس."
+    },
+    "instructionsModal": {
+      "instruction1": "اكتب ```++``` للإكمال التلقائي",
+      "instruction2": "استخدم `/` للتوضيح",
+      "instruction3": "عدل الأوامر لتغيير الصور",
+      "instruction4": "حدد شخصيات متسقة"
+    },
+    "illustrationModal": {
+      "title": "تعديل الرسم التوضيحي"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "التعرف على شخصياتك",
+      "creationgYourCharacters": "إنشاء شخصياتك",
+      "choosingYourCharacters": "اختيار شخصياتك لرسم المشهد",
+      "generatingIllustration": "توليد الرسم التوضيحي"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "الرئيسية",
+      "stories": "القصص",
+      "feedback": "التغذية الراجعة",
+      "settings": "الإعدادات",
+      "signout": "تسجيل الخروج"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "طلب ميزة"
+    },
+    "draftItem": {
+      "writeNewBook": "اكتب كتابًا جديدًا",
+      "noTitle": "بدون عنوان"
+    },
+    "instructionsPanel": {
+      "startCreating": "ابدأ في إنشاء قصة",
+      "suggestions": "اضغط '++' للحصول على اقتراحات، أو",
+      "slash": "'/' للرسوم التوضيحية."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "توليد PDF",
+      "downloadPDF": "تحميل القصة"
+    },
+    "TRCEditorV2": {
+      "placeholder": "اضغط '++' للإكمال التلقائي، أو '/' لأوامر الرسم التوضيحي..."
+    },
+    "freeCounter": {
+      "thisWeek": "هذا الأسبوع",
+      "freeGenerations": "اقتراحات مجانية",
+      "freeIllustrations": "رسومات توضيحية مجانية"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "الترقية إلى بلس",
+      "manageSubscription": "إدارة الاشتراك"
+    },
+    "characterCard": {
+      "gender": "الجنس",
+      "species": "النوع",
+      "age": "العمر",
+      "eyeColor": "لون العين",
+      "hairLength": "طول الشعر",
+      "hairType": "نوع الشعر",
+      "hairColor": "لون الشعر",
+      "skinTone": "لون البشرة",
+      "outfit": "الملابس",
+      "placeOfOrigin": "مكان المنشأ",
+      "name": "الاسم",
+      "facialHair": "شعر الوجه"
+    },
+    "followButton": {
+      "follow": "تتبع",
+      "unfollow": "إلغاء المتابعة"
+    },
+    "share": {
+      "liveOnWeb": "هذه القصة متاحة على الويب.",
+      "postOnSocial": "نشر على ملف تعريف readingclub.ai",
+      "unshare": "إلغاء المشاركة",
+      "shareThisStory": "شارك هذه القصة",
+      "shareWithFamily": "شارك كتبك مع الأصدقاء والعائلة.",
+      "share": "مشاركة"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "توليد رسم توضيحي",
+        "description": "إنشاء رسم توضيحي من نصك",
+        "generateSearchTerm": "توليد",
+        "illustrationSearchTerm": "رسم توضيحي",
+        "imageSearchTerm": "صورة",
+        "photoSearchTerm": "صورة فوتوغرافية",
+        "mediaSearchTerm": "وسائط",
+        "pictureSearchTerm": "صورة"
+      },
+      "uploadImage": {
+        "title": "تحميل صورة",
+        "description": "رفع صورة من جهاز الكمبيوتر الخاص بك"
+      }
+    }
+  },
+  "toasts": {
+    "fileNotSupported": "نوع الملف غير مدعوم.",
+    "fileTooLarge": "حجم الملف يتجاوز 20 ميغابايت.",
+    "uploadingImage": "جارٍ تحميل الصورة...",
+    "imageUploaded": "تم تحميل الصورة بنجاح!",
+    "generatingNewIllustration": "جارٍ إنشاء رسم توضيحي جديد...",
+    "newGeneratedIllustration": "تم إنشاء الرسم التوضيحي بنجاح!",
+    "illustrationPromptGenerated": "تم إنشاء الرسم التوضيحي بنجاح بناءً على الطلب.",
+    "identifyingCharacters": "جارٍ تحديد الشخصيات...",
+    "charactersIdentified": "تم تحديد الشخصيات بنجاح!",
+    "creatingCharacter": "جارٍ إنشاء شخصية...",
+    "characterCreated": "تم إنشاء الشخصية بنجاح!",
+    "choosingCharacter": "جارٍ اختيار شخصية للرسم...",
+    "characterChosen": "تم اختيار الشخصية بنجاح!",
+    "creatingNewBook": "جارٍ إنشاء كتاب جديد...",
+    "bookCreated": "تم إنشاء الكتاب!",
+    "bookCreationError": "فشل في إنشاء كتاب جديد",
+    "failedUserUpdate": "فشل في تحديث المستخدم",
+    "sharing": "جارٍ المشاركة...",
+    "onlyShared": "تمت المشاركة!",
+    "sharedAndPosted": "تمت المشاركة والنشر!",
+    "errorSharingStory": "فشل في مشاركة القصة.",
+    "unsharing": "جارٍ إلغاء المشاركة...",
+    "unshared": "تم إلغاء المشاركة!",
+    "errorUnsharingStory": "فشل في إلغاء مشاركة القصة.",
+    "errorTranslatingText": "فشل في ترجمة النص",
+    "translating": "جارٍ الترجمة...",
+    "translated": "تمت الترجمة!",
+    "rateLimited": "تم تجاوز الحد المسموح. الرجاء المحاولة لاحقًا.",
+    "fetchError": "خطأ في جلب البيانات:",
+    "generalError": "خطأ:"
+  }
+}
