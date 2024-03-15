@@ -1,0 +1,202 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "Yatmadan Önceki Hikayeleri Etkileşimli Maceralara Dönüştürme",
+      "mainBannerDescription": "Çocukların hayal gücünü yapay zeka yardımıyla hayata geçirme",
+      "writeABook": "Bir kitap yaz",
+      "typePlusForSuggestions": "Öneriler için `++` yazın",
+      "useSlashToIllustrate": "Resim yapmak için `/` kullanın",
+      "editPrompts": "Görüntüleri değiştirmek için yönlendirmeleri düzenleyin",
+      "defineConsistentCharacters": "Tutarlı karakterler tanımlayın",
+      "contact": "Bizimle iletişime geçin",
+      "social": "Sosyal",
+      "help": "Yardım ve destek",
+      "feedback": "Bize geri bildirim verin"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "Keşfet",
+        "community": "Topluluk",
+        "profile": "Profil",
+        "aGreatStory": "Harika bir hikaye",
+        "byYou": "Tarafından siz"
+      },
+      "newsfeed": {
+        "discoverHeader": "Keşfet",
+        "createdStoryAt": "tarihinde bir hikaye oluşturuldu",
+        "dateFormat": "dd MMMM, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "Kimi takip etmeli",
+        "seeMore": "Daha fazla gör",
+        "upcomingFeatureQuestion": "readingclub.ai için en çok hangi yaklaşan özellik sizi heyecanlandırıyor?",
+        "emailCTOat": "CTO'ya istediğiniz zaman e-posta gönderebilirsiniz",
+        "withYourIdeas": "fikirlerinizle birlikte.",
+        "promotion": "Yaparsanız aboneliğimizde %50 indirim kodunu paylaşmaktan mutluluk duyarız!"
+      },
+      "connect": {
+        "connectWith1": "Bağlan",
+        "connectWith2": "üyeler — En üstte olmak için biyografini düzenle!",
+        "connectWith1Mobile": "Bağlan (",
+        "connectWith2Mobile": "kullanıcılar)"
+      },
+      "profile": {
+        "editProfile": "Profili Düzenle",
+        "joined": "Katıldı",
+        "following": "Takip Edilen",
+        "followers": "Takipçiler",
+        "editYourBio": "Biyografini düzenle",
+        "writeALittle": "Kendiniz hakkında biraz yazın",
+        "save": "Kaydet"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "Başlığı düzenlemek için tıklayın",
+      "byLineWord": "Tarafından",
+      "shareWithFamily": "Aileyi ile paylaş"
+    },
+    "proModal": {
+      "title": "readingclub.ai'ye Yükselt",
+      "beProlific": "Verimli bir masal yazarı olun",
+      "buttonText": "Plus'a Geçiş Yap",
+      "noMatterYourAge": "Yaşınız ne olursa olsun, yapay zeka yardımıyla 50+ dilde genç okuyucular için (ve onlarla birlikte!) hikayeler yaratın.",
+      "beginnerOrExpertV1": "İster acemi ister uzman olun, sizin için bir şeylerimiz var.",
+      "beginnerOrExpertV2": "Acemi veya uzman,",
+      "fosterCreativity": "yaratıcılığınızı geliştirin, yazar blokajını aşın ve yaratıcı yazmanın keyfini çıkarın",
+      "month": "Ay",
+      "unlimitedStorybooks": "Sınırsız profesyonel kalitede masal kitapları yazmanın keyfini çıkarın",
+      "unlimitedIllustrations": "Sınırsız kişiselleştirilmiş resimlerle genç okuyucuları motive edin"
+    },
+    "settings": {
+      "title": "Ayarlar",
+      "freePlan": "Şu anda ücretsiz plandasınız.",
+      "paidPlan": "Şu anda Plus planındasınız."
+    },
+    "instructionsModal": {
+      "instruction1": "Otomatik tamamlamak için ```++``` yazın",
+      "instruction2": "Resim yapmak için `/` kullanın",
+      "instruction3": "Görüntüleri değiştirmek için yönlendirmeleri düzenleyin",
+      "instruction4": "Tutarlı karakterler tanımlayın"
+    },
+    "illustrationModal": {
+      "title": "Resmi Düzenle"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "Karakterleriniz hakkında bilgi edinin",
+      "creationgYourCharacters": "Karakterlerinizi oluşturun",
+      "choosingYourCharacters": "Sahne resmi için karakterlerinizi seçin",
+      "generatingIllustration": "Resim üretimi"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "Ana Sayfa",
+      "stories": "Hikayeler",
+      "feedback": "Geri Bildirim",
+      "settings": "Ayarlar",
+      "signout": "Çıkış Yap"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "Bir özellik iste"
+    },
+    "draftItem": {
+      "writeNewBook": "Yeni bir kitap yaz",
+      "noTitle": "Başlık yok"
+    },
+    "instructionsPanel": {
+      "startCreating": "Bir hikaye oluşturmaya başla",
+      "suggestions": "Öneriler için '++' basın, ya da",
+      "slash": "resimler için '/' kullanın."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "PDF Oluştur",
+      "downloadPDF": "Hikayeyi İndir"
+    },
+    "TRCEditorV2": {
+      "placeholder": "Otomatik tamamlama için '++' basın, ya da resim komutları için '/' kullanın..."
+    },
+    "freeCounter": {
+      "thisWeek": "Bu hafta",
+      "freeGenerations": "ücretsiz öneriler",
+      "freeIllustrations": "ücretsiz illüstrasyonlar"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Plus'a Yükselt",
+      "manageSubscription": "Aboneliği Yönet"
+    },
+    "characterCard": {
+      "gender": "Cinsiyet",
+      "species": "Tür",
+      "age": "Yaş",
+      "eyeColor": "Göz rengi",
+      "hairLength": "Saç uzunluğu",
+      "hairType": "Saç tipi",
+      "hairColor": "Saç rengi",
+      "skinTone": "Cilt tonu",
+      "outfit": "Kıyafet",
+      "placeOfOrigin": "Köken yeri",
+      "name": "Ad",
+      "facialHair": "Yüz kılları"
+    },
+    "followButton": {
+      "follow": "Takip Et",
+      "unfollow": "Takibi Bırak"
+    },
+    "share": {
+      "liveOnWeb": "Bu hikaye web üzerinde canlı.",
+      "postOnSocial": "readingclub.ai profilinde paylaş",
+      "unshare": "Paylaşımı kaldır",
+      "shareThisStory": "Bu hikayeyi paylaş",
+      "shareWithFamily": "Kitaplarını arkadaşların ve ailenle paylaş.",
+      "share": "Paylaş"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "İllüstrasyon Oluştur",
+        "description": "Metninden bir illüstrasyon oluştur",
+        "generateSearchTerm": "oluştur",
+        "illustrationSearchTerm": "illüstrasyon",
+        "imageSearchTerm": "görüntü",
+        "photoSearchTerm": "fotoğraf",
+        "mediaSearchTerm": "medya",
+        "pictureSearchTerm": "resim"
+      },
+      "uploadImage": {
+        "title": "Görüntü Yükle",
+        "description": "Bilgisayarından bir görüntü yükle"
+      }
+    }
+  },
+  "toasts": {
+    "fileNotSupported": "Dosya türü desteklenmiyor.",
+    "fileTooLarge": "Dosya boyutu 20MB'ı aşıyor.",
+    "uploadingImage": "Resim yükleniyor...",
+    "imageUploaded": "Resim başarıyla yüklendi!",
+    "generatingNewIllustration": "Yeni illüstrasyon oluşturuluyor...",
+    "newGeneratedIllustration": "Illüstrasyon başarıyla oluşturuldu!",
+    "illustrationPromptGenerated": "Komutlara dayalı illüstrasyon başarıyla oluşturuldu.",
+    "identifyingCharacters": "Karakterler tanımlanıyor...",
+    "charactersIdentified": "Karakterler başarıyla tanımlandı!",
+    "creatingCharacter": "Karakter oluşturuluyor...",
+    "characterCreated": "Karakter başarıyla oluşturuldu!",
+    "choosingCharacter": "İllüstrasyon için karakter seçiliyor...",
+    "characterChosen": "Karakter başarıyla seçildi!",
+    "creatingNewBook": "Yeni kitap oluşturuluyor...",
+    "bookCreated": "Kitap oluşturuldu!",
+    "bookCreationError": "Yeni kitap oluşturulamadı",
+    "failedUserUpdate": "Kullanıcı güncellemesi başarısız oldu",
+    "sharing": "Paylaşılıyor...",
+    "onlyShared": "Paylaşıldı!",
+    "sharedAndPosted": "Paylaşıldı ve gönderildi!",
+    "errorSharingStory": "Hikaye paylaşımı başarısız oldu.",
+    "unsharing": "Paylaşım kaldırılıyor...",
+    "unshared": "Paylaşım kaldırıldı!",
+    "errorUnsharingStory": "Hikaye paylaşımının kaldırılması başarısız oldu.",
+    "errorTranslatingText": "Metin çevirisi başarısız oldu",
+    "translating": "Çevriliyor...",
+    "translated": "Çevrildi!",
+    "rateLimited": "Sınırlama aşıldı. Lütfen daha sonra tekrar deneyin.",
+    "fetchError": "Veri alımı hatası:",
+    "generalError": "Hata:"
+  }
+}
