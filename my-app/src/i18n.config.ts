@@ -12,6 +12,7 @@ export const i18n = {
     "ja",
     "ko",
     "vi",
+    "fr",
   ],
 } as const;
 
