@@ -624,7 +624,10 @@ const Landing3Client: React.FC<Landing3ClientProps> = ({
             {/* {dictionary.page.landing.copyRight} */}
             {"Italiano"}
           </Link>
-
+          <Link href="/de" className="opacity-80 text-white">
+            {/* {dictionary.page.landing.copyRight} */}
+            {"Deutsch"}
+          </Link>
           <Link href="/uk" className="opacity-80 text-white">
             {/* {dictionary.page.landing.copyRight} */}
             {"Українська"}
