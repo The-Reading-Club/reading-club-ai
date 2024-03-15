@@ -14,6 +14,7 @@ export const i18n = {
     "vi",
     "fr",
     "it",
+    "de",
   ],
 } as const;
 
