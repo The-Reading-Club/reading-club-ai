@@ -14,7 +14,10 @@ const Social = () => {
     // Let's try first without this
     // popupCenter("/auth/google-login", "Google Sign In");
 
-    if (true)
+    // https://stackoverflow.com/questions/326069/how-to-identify-if-a-webpage-is-being-loaded-inside-an-iframe-or-directly-into-t
+    if (window && window.self !== window.top) {
+      popupCenter("/auth/google-login", "Google Sign In");
+    } else {
       try {
         signIn(provider, {
           callbackUrl: DEFAULT_LOGIN_REDIRECT_URL,
@@ -27,6 +30,21 @@ const Social = () => {
           throw error;
         }
       }
+    }
+
+    // if (true)
+    //   try {
+    //     signIn(provider, {
+    //       callbackUrl: DEFAULT_LOGIN_REDIRECT_URL,
+    //     });
+    //   } catch {
+    //     try {
+    //       // https://stackoverflow.com/questions/77548942/nextauth-with-google-provider-needs-to-open-a-pop-up
+    //       popupCenter("/auth/google-login", "Google Sign In");
+    //     } catch (error) {
+    //       throw error;
+    //     }
+    //   }
   };
   return (
     <div
