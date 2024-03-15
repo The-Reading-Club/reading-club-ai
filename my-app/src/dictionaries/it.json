@@ -1,0 +1,202 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "Trasformare le storie della buonanotte in avventure interattive",
+      "mainBannerDescription": "Portare in vita l'immaginazione dei bambini con l'aiuto dell'IA",
+      "writeABook": "Scrivi un libro",
+      "typePlusForSuggestions": "Digita `++` per suggerimenti",
+      "useSlashToIllustrate": "Usa `/` per illustrare",
+      "editPrompts": "Modifica i prompt per cambiare le immagini",
+      "defineConsistentCharacters": "Definisci personaggi coerenti",
+      "contact": "Contattaci",
+      "social": "Social",
+      "help": "Aiuto e supporto",
+      "feedback": "Lasciaci un feedback"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "Scopri",
+        "community": "Comunità",
+        "profile": "Profilo",
+        "aGreatStory": "Una grande storia",
+        "byYou": "Da te"
+      },
+      "newsfeed": {
+        "discoverHeader": "Scopri",
+        "createdStoryAt": "ha creato una storia il",
+        "dateFormat": "dd MMMM, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "Chi seguire",
+        "seeMore": "Vedi altro",
+        "upcomingFeatureQuestion": "Quale nuova funzionalità di readingclub.ai ti entusiasma di più?",
+        "emailCTOat": "Puoi sempre inviare una email al CTO a",
+        "withYourIdeas": "con le tue idee.",
+        "promotion": "Saremo felici di condividere un codice promozionale del 50% di sconto sull'abbonamento se lo fai!"
+      },
+      "connect": {
+        "connectWith1": "Connettiti con",
+        "connectWith2": "membri — Modifica la bio per essere in cima!",
+        "connectWith1Mobile": "Connettiti (",
+        "connectWith2Mobile": "utenti)"
+      },
+      "profile": {
+        "editProfile": "Modifica profilo",
+        "joined": "Iscritto",
+        "following": "Seguendo",
+        "followers": "Follower",
+        "editYourBio": "Modifica la tua bio",
+        "writeALittle": "Scrivi qualcosa su di te",
+        "save": "Salva"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "Clicca per modificare il titolo",
+      "byLineWord": "Di",
+      "shareWithFamily": "Condividi con la famiglia"
+    },
+    "proModal": {
+      "title": "Passa a readingclub.ai",
+      "beProlific": "Diventa uno scrittore di libri per bambini prolifico",
+      "buttonText": "Aggiorna a Plus",
+      "noMatterYourAge": "Indipendentemente dalla tua età, crea storie per (e con!) giovani lettori in più di 50 lingue, con l'aiuto dell'IA.",
+      "beginnerOrExpertV1": "Che tu sia un principiante o un esperto, abbiamo tutto ciò di cui hai bisogno.",
+      "beginnerOrExpertV2": "Principiante o esperto,",
+      "fosterCreativity": "alimenta la tua creatività, supera il blocco dello scrittore e goditi la scrittura creativa",
+      "month": "Mese",
+      "unlimitedStorybooks": "Goditi la scrittura illimitata di libri per bambini di qualità professionale",
+      "unlimitedIllustrations": "Motiva i giovani lettori con illustrazioni personalizzate illimitate"
+    },
+    "settings": {
+      "title": "Impostazioni",
+      "freePlan": "Al momento sei sul piano gratuito.",
+      "paidPlan": "Al momento sei su un piano Plus."
+    },
+    "instructionsModal": {
+      "instruction1": "Digita ```++``` per l'autocompletamento",
+      "instruction2": "Usa `/` per illustrare",
+      "instruction3": "Modifica i prompt per cambiare immagini",
+      "instruction4": "Definisci personaggi coerenti"
+    },
+    "illustrationModal": {
+      "title": "Modifica illustrazione"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "Imparando a conoscere i tuoi personaggi",
+      "creationgYourCharacters": "Creazione dei tuoi personaggi",
+      "choosingYourCharacters": "Scegliere i tuoi personaggi per l'illustrazione della scena",
+      "generatingIllustration": "Generazione dell'illustrazione"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "Home",
+      "stories": "Storie",
+      "feedback": "Feedback",
+      "settings": "Impostazioni",
+      "signout": "Esci"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "Richiedi una funzionalità"
+    },
+    "draftItem": {
+      "writeNewBook": "Scrivi un nuovo libro",
+      "noTitle": "Senza titolo"
+    },
+    "instructionsPanel": {
+      "startCreating": "Inizia a creare una storia",
+      "suggestions": "Premi '++' per suggerimenti, oppure",
+      "slash": "'/' per illustrazioni."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "Genera PDF",
+      "downloadPDF": "Scarica Storia"
+    },
+    "TRCEditorV2": {
+      "placeholder": "Premi '++' per autocompletamento, o '/' per comandi di illustrazione..."
+    },
+    "freeCounter": {
+      "thisWeek": "Questa settimana",
+      "freeGenerations": "suggerimenti gratuiti",
+      "freeIllustrations": "illustrazioni gratuite"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Passa a Plus",
+      "manageSubscription": "Gestisci abbonamento"
+    },
+    "characterCard": {
+      "gender": "Genere",
+      "species": "Specie",
+      "age": "Età",
+      "eyeColor": "Colore degli occhi",
+      "hairLength": "Lunghezza dei capelli",
+      "hairType": "Tipo di capelli",
+      "hairColor": "Colore dei capelli",
+      "skinTone": "Tonalità della pelle",
+      "outfit": "Vestito",
+      "placeOfOrigin": "Luogo di origine",
+      "name": "Nome",
+      "facialHair": "Peli del viso"
+    },
+    "followButton": {
+      "follow": "Segui",
+      "unfollow": "Smetti di seguire"
+    },
+    "share": {
+      "liveOnWeb": "Questa storia è in diretta sul web.",
+      "postOnSocial": "Pubblica sul profilo di readingclub.ai",
+      "unshare": "Smetti di condividere",
+      "shareThisStory": "Condividi questa storia",
+      "shareWithFamily": "Condividi i tuoi libri con amici e famiglia.",
+      "share": "Condividi"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "Genera Illustrazione",
+        "description": "Genera un'illustrazione dal tuo testo",
+        "generateSearchTerm": "genera",
+        "illustrationSearchTerm": "illustrazione",
+        "imageSearchTerm": "immagine",
+        "photoSearchTerm": "foto",
+        "mediaSearchTerm": "media",
+        "pictureSearchTerm": "immagine"
+      },
+      "uploadImage": {
+        "title": "Carica Immagine",
+        "description": "Carica un'immagine dal tuo computer"
+      }
+    }
+  },
+  "toasts": {
+    "fileNotSupported": "Tipo di file non supportato.",
+    "fileTooLarge": "La dimensione del file supera i 20MB.",
+    "uploadingImage": "Caricamento dell'immagine in corso...",
+    "imageUploaded": "Immagine caricata con successo!",
+    "generatingNewIllustration": "Generazione di una nuova illustrazione in corso...",
+    "newGeneratedIllustration": "Illustrazione generata con successo!",
+    "illustrationPromptGenerated": "Illustrazione generata con successo in base al prompt.",
+    "identifyingCharacters": "Identificazione dei personaggi in corso...",
+    "charactersIdentified": "Personaggi identificati con successo!",
+    "creatingCharacter": "Creazione del personaggio in corso...",
+    "characterCreated": "Personaggio creato con successo!",
+    "choosingCharacter": "Scelta del personaggio per l'illustrazione in corso...",
+    "characterChosen": "Personaggio scelto con successo!",
+    "creatingNewBook": "Creazione di un nuovo libro in corso...",
+    "bookCreated": "Libro creato!",
+    "bookCreationError": "Creazione del nuovo libro fallita",
+    "failedUserUpdate": "Aggiornamento dell'utente fallito",
+    "sharing": "Condivisione in corso...",
+    "onlyShared": "Condiviso!",
+    "sharedAndPosted": "Condiviso e pubblicato!",
+    "errorSharingStory": "Condivisione della storia fallita.",
+    "unsharing": "Rimozione della condivisione in corso...",
+    "unshared": "Condivisione rimossa!",
+    "errorUnsharingStory": "Impossibile rimuovere la condivisione della storia.",
+    "errorTranslatingText": "Traduzione del testo fallita",
+    "translating": "Traduzione in corso...",
+    "translated": "Tradotto!",
+    "rateLimited": "Limite di frequenza raggiunto. Si prega di riprovare più tardi.",
+    "fetchError": "Errore nel recupero dati:",
+    "generalError": "Errore:"
+  }
+}
