@@ -1,0 +1,203 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "Transformarea poveștilor de seară în aventuri interactive",
+      "mainBannerDescription": "Aducerea la viață a imaginației copiilor cu ajutorul inteligenței artificiale",
+      "writeABook": "Scrie o carte",
+      "typePlusForSuggestions": "Tastați `++` pentru sugestii",
+      "useSlashToIllustrate": "Utilizați `/` pentru a ilustra",
+      "editPrompts": "Editați prompturile pentru a schimba imaginile",
+      "defineConsistentCharacters": "Definiți personaje consistente",
+      "contact": "Contactați-ne",
+      "social": "Social",
+      "help": "Ajutor și suport",
+      "feedback": "Oferiți feedback"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "Descoperă",
+        "community": "Comunitate",
+        "profile": "Profil",
+        "aGreatStory": "O poveste minunată",
+        "byYou": "De către tine"
+      },
+      "newsfeed": {
+        "discoverHeader": "Descoperă",
+        "createdStoryAt": "a creat o poveste la",
+        "dateFormat": "dd MMMM, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "Pe cine să urmărești",
+        "seeMore": "Vezi mai mult",
+        "upcomingFeatureQuestion": "Ce caracteristică viitoare te entuziasmează cel mai mult pentru readingclub.ai?",
+        "emailCTOat": "Puteți trimite întotdeauna un e-mail CTO-ului la",
+        "withYourIdeas": "cu ideile tale.",
+        "promotion": "Vom fi bucuroși să împărtășim un cod promoțional de 50% reducere la abonamentul nostru dacă faci asta!"
+      },
+      "connect": {
+        "connectWith1": "Conectează-te cu",
+        "connectWith2": "membri — Editează biografia pentru a fi în top!",
+        "connectWith1Mobile": "Conectează-te (",
+        "connectWith2Mobile": "utilizatori)"
+      },
+      "profile": {
+        "editProfile": "Editează profilul",
+        "joined": "S-a alăturat",
+        "following": "Urmărește",
+        "followers": "Urmăritori",
+        "editYourBio": "Editează-ți biografia",
+        "writeALittle": "Scrie ceva despre tine",
+        "save": "Salvează"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "Clic pentru a edita titlul",
+      "byLineWord": "De",
+      "shareWithFamily": "Împărtășește cu familia"
+    },
+    "proModal": {
+      "title": "Trecere la readingclub.ai",
+      "beProlific": "Fii un scriitor prolific de cărți pentru copii",
+      "buttonText": "Actualizează la Plus",
+      "noMatterYourAge": "Indiferent de vârstă, creează povești pentru tinerii cititori în peste 50 de limbi, cu ajutorul inteligenței artificiale.",
+      "beginnerOrExpertV1": "Fie că ești începător sau expert, te avem acoperit.",
+      "beginnerOrExpertV2": "Începător sau expert,",
+      "fosterCreativity": "cultivează-ți creativitatea, depășește blocajul scriitorului și bucură-te de scrisul creativ",
+      "month": "Lună",
+      "unlimitedStorybooks": "Bucură-te de scrierea nelimitată a cărților de povestiri de calitate profesională",
+      "unlimitedIllustrations": "Motivează tinerii cititori cu ilustrații personalizate nelimitate"
+    },
+    "settings": {
+      "title": "Setări",
+      "freePlan": "În prezent, ești pe planul gratuit.",
+      "paidPlan": "În prezent, ești pe planul Plus."
+    },
+    "instructionsModal": {
+      "instruction1": "Tastează ```++``` pentru completare automată",
+      "instruction2": "Folosește `/` pentru a ilustra",
+      "instruction3": "Editează prompturile pentru a schimba imaginile",
+      "instruction4": "Definește personaje consistente"
+    },
+    "illustrationModal": {
+      "title": "Editează ilustrația"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "Află despre personajele tale",
+      "creationgYourCharacters": "Crearea personajelor tale",
+      "choosingYourCharacters": "Alegerea personajelor tale pentru ilustrația scenei",
+      "generatingIllustration": "Generarea ilustrației"
+    }
+  },
+
+  "components": {
+    "navbar": {
+      "home": "Strona główna",
+      "stories": "Opowiadania",
+      "feedback": "Opinie",
+      "settings": "Ustawienia",
+      "signout": "Wyloguj się"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "Zgłoś funkcję"
+    },
+    "draftItem": {
+      "writeNewBook": "Napisz nową książkę",
+      "noTitle": "Bez tytułu"
+    },
+    "instructionsPanel": {
+      "startCreating": "Zacznij tworzyć opowieść",
+      "suggestions": "Naciśnij '++' dla sugestii, lub",
+      "slash": "'/' dla ilustracji."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "Wygeneruj PDF",
+      "downloadPDF": "Pobierz opowieść"
+    },
+    "TRCEditorV2": {
+      "placeholder": "Naciśnij '++' dla autouzupełnienia, lub '/' dla poleceń ilustracji."
+    },
+    "freeCounter": {
+      "thisWeek": "W tym tygodniu",
+      "freeGenerations": "darmowe sugestie",
+      "freeIllustrations": "darmowe ilustracje"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Przejdź na Plus",
+      "manageSubscription": "Zarządzaj subskrypcją"
+    },
+    "characterCard": {
+      "gender": "Płeć",
+      "species": "Gatunek",
+      "age": "Wiek",
+      "eyeColor": "Kolor oczu",
+      "hairLength": "Długość włosów",
+      "hairType": "Typ włosów",
+      "hairColor": "Kolor włosów",
+      "skinTone": "Odcień skóry",
+      "outfit": "Strój",
+      "placeOfOrigin": "Miejsce pochodzenia",
+      "name": "Nazwa",
+      "facialHair": "Zarost"
+    },
+    "followButton": {
+      "follow": "Obserwuj",
+      "unfollow": "Przestań obserwować"
+    },
+    "share": {
+      "liveOnWeb": "Ta historia jest na żywo w sieci.",
+      "postOnSocial": "Opublikuj na profilu readingclub.ai",
+      "unshare": "Cofnij udostępnianie",
+      "shareThisStory": "Udostępnij tę historię",
+      "shareWithFamily": "Udostępnij swoje książki przyjaciołom i rodzinie.",
+      "share": "Udostępnij"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "Wygeneruj ilustrację",
+        "description": "Wygeneruj ilustrację z tekstu",
+        "generateSearchTerm": "generuj",
+        "illustrationSearchTerm": "ilustracja",
+        "imageSearchTerm": "obraz",
+        "photoSearchTerm": "zdjęcie",
+        "mediaSearchTerm": "media",
+        "pictureSearchTerm": "obrazek"
+      },
+      "uploadImage": {
+        "title": "Prześlij obraz",
+        "description": "Prześlij obraz z komputera"
+      }
+    }
+  },
+  "toasts": {
+    "fileNotSupported": "Typ pliku nie jest obsługiwany.",
+    "fileTooLarge": "Rozmiar pliku przekracza 20MB.",
+    "uploadingImage": "Trwa przesyłanie obrazu...",
+    "imageUploaded": "Obraz został pomyślnie przesłany!",
+    "generatingNewIllustration": "Generowanie nowej ilustracji...",
+    "newGeneratedIllustration": "Ilustracja została pomyślnie wygenerowana!",
+    "illustrationPromptGenerated": "Ilustracja została pomyślnie wygenerowana na podstawie podpowiedzi.",
+    "identifyingCharacters": "Identyfikacja postaci...",
+    "charactersIdentified": "Postacie zostały pomyślnie zidentyfikowane!",
+    "creatingCharacter": "Tworzenie postaci...",
+    "characterCreated": "Postać została pomyślnie utworzona!",
+    "choosingCharacter": "Wybór postaci do ilustracji...",
+    "characterChosen": "Postać została pomyślnie wybrana!",
+    "creatingNewBook": "Tworzenie nowej książki...",
+    "bookCreated": "Książka została utworzona!",
+    "bookCreationError": "Nie udało się utworzyć nowej książki",
+    "failedUserUpdate": "Nie udało się zaktualizować użytkownika",
+    "sharing": "Udostępnianie...",
+    "onlyShared": "Udostępnione!",
+    "sharedAndPosted": "Udostępnione i opublikowane!",
+    "errorSharingStory": "Nie udało się udostępnić historii.",
+    "unsharing": "Cofanie udostępnienia...",
+    "unshared": "Cofnięto udostępnienie!",
+    "errorUnsharingStory": "Nie udało się cofnąć udostępnienia historii.",
+    "errorTranslatingText": "Nie udało się przetłumaczyć tekstu",
+    "translating": "Tłumaczenie...",
+    "translated": "Przetłumaczono!",
+    "rateLimited": "Limit szybkości przekroczony. Spróbuj ponownie później.",
+    "fetchError": "Błąd pobierania:",
+    "generalError": "Błąd:"
+  }
+}
