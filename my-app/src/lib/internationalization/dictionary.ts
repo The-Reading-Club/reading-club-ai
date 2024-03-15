@@ -14,6 +14,7 @@ const dictionaries = {
   pt: () => import("@/dictionaries/pt.json").then((module) => module.default),
   ja: () => import("@/dictionaries/ja.json").then((module) => module.default),
   ko: () => import("@/dictionaries/ko.json").then((module) => module.default),
+  vi: () => import("@/dictionaries/vi.json").then((module) => module.default),
 };
 
 export const getDictionary = async (locale: Locale) => dictionaries[locale]();
@@ -26,3 +27,5 @@ type UnwrapPromise<T> = T extends Promise<infer U> ? U : T;
 
 // Use the utility type to unwrap the promise and get the desired type
 export type TRCDictionary = UnwrapPromise<ReturnType<typeof getDictionary>>;
+
+// https://www.w3schools.com/tags/ref_language_codes.asp

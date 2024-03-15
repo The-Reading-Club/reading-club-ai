@@ -1,0 +1,202 @@
+{
+  "page": {
+    "landing": {
+      "mainBannerTitle": "Biến câu chuyện trước giờ đi ngủ thành những cuộc phiêu lưu tương tác",
+      "mainBannerDescription": "Khiến trí tưởng tượng của trẻ em trở nên sống động với sự giúp đỡ của AI",
+      "writeABook": "Viết một quyển sách",
+      "typePlusForSuggestions": "Nhập `++` để gợi ý",
+      "useSlashToIllustrate": "Sử dụng `/` để minh họa",
+      "editPrompts": "Chỉnh sửa lời nhắc để thay đổi hình ảnh",
+      "defineConsistentCharacters": "Xác định nhân vật nhất quán",
+      "contact": "Liên hệ với chúng tôi",
+      "social": "Mạng xã hội",
+      "help": "Hỗ trợ và giúp đỡ",
+      "feedback": "Gửi phản hồi cho chúng tôi"
+    },
+    "feed": {
+      "sidebar": {
+        "discover": "Khám phá",
+        "community": "Cộng đồng",
+        "profile": "Hồ sơ",
+        "aGreatStory": "Một câu chuyện tuyệt vời",
+        "byYou": "Bởi bạn"
+      },
+      "newsfeed": {
+        "discoverHeader": "Khám phá",
+        "createdStoryAt": "đã tạo một câu chuyện vào",
+        "dateFormat": "dd MMMM, yyyy"
+      },
+      "followbar": {
+        "whoToFollow": "Người để theo dõi",
+        "seeMore": "Xem thêm",
+        "upcomingFeatureQuestion": "Bạn mong chờ tính năng nào sắp tới của readingclub.ai nhất?",
+        "emailCTOat": "Bạn luôn có thể gửi email cho CTO tại",
+        "withYourIdeas": "với ý tưởng của bạn.",
+        "promotion": "Chúng tôi sẽ rất vui khi chia sẻ mã giảm giá 50% cho đăng ký của bạn nếu bạn làm vậy!"
+      },
+      "connect": {
+        "connectWith1": "Kết nối với ",
+        "connectWith2": "thành viên — Chỉnh sửa tiểu sử để đứng đầu!",
+        "connectWith1Mobile": "Kết nối (",
+        "connectWith2Mobile": "người dùng)"
+      },
+      "profile": {
+        "editProfile": "Chỉnh sửa hồ sơ",
+        "joined": "Tham gia",
+        "following": "Đang theo dõi",
+        "followers": "Người theo dõi",
+        "editYourBio": "Chỉnh sửa tiểu sử của bạn",
+        "writeALittle": "Viết một chút về bản thân bạn",
+        "save": "Lưu"
+      }
+    },
+    "draftDocument": {
+      "clickToEditTitle": "Nhấn để chỉnh sửa tiêu đề",
+      "byLineWord": "Bởi",
+      "shareWithFamily": "Chia sẻ với gia đình"
+    },
+    "proModal": {
+      "title": "Nâng cấp lên readingclub.ai",
+      "beProlific": "Trở thành một tác giả sách truyện năng suất",
+      "buttonText": "Nâng cấp lên Plus",
+      "noMatterYourAge": "Không phân biệt tuổi tác, sáng tác câu chuyện cho (và cùng với!) độc giả nhỏ tuổi trong hơn 50 ngôn ngữ với sự trợ giúp của AI.",
+      "beginnerOrExpertV1": "Dù bạn là người mới bắt đầu hay một chuyên gia, chúng tôi đều có thể hỗ trợ bạn.",
+      "beginnerOrExpertV2": "Dù là người mới hay chuyên gia,",
+      "fosterCreativity": "nuôi dưỡng sự sáng tạo, vượt qua bế tắc sáng tác, và tận hưởng việc viết sáng tạo",
+      "month": "Tháng",
+      "unlimitedStorybooks": "Tận hưởng việc viết không giới hạn sách truyện chất lượng chuyên nghiệp",
+      "unlimitedIllustrations": "Khích lệ độc giả nhỏ tuổi với vô số hình minh họa cá nhân hóa"
+    },
+    "settings": {
+      "title": "Cài đặt",
+      "freePlan": "Bạn đang ở trên gói miễn phí.",
+      "paidPlan": "Bạn đang ở trên gói Plus."
+    },
+    "instructionsModal": {
+      "instruction1": "Nhập ```++``` để tự động hoàn thành",
+      "instruction2": "Sử dụng `/` để minh họa",
+      "instruction3": "Chỉnh sửa lời nhắc để thay đổi hình ảnh",
+      "instruction4": "Xác định nhân vật nhất quán"
+    },
+    "illustrationModal": {
+      "title": "Chỉnh sửa minh họa"
+    },
+    "illustrationGenerationModals": {
+      "learningAboutYourCharacters": "Tìm hiểu về nhân vật của bạn",
+      "creationgYourCharacters": "Tạo ra nhân vật của bạn",
+      "choosingYourCharacters": "Chọn nhân vật cho minh họa cảnh",
+      "generatingIllustration": "Tạo minh họa"
+    }
+  },
+  "components": {
+    "navbar": {
+      "home": "Trang chủ",
+      "stories": "Câu chuyện",
+      "feedback": "Phản hồi",
+      "settings": "Cài đặt",
+      "signout": "Đăng xuất"
+    },
+    "requestFeaturePanel": {
+      "buttonText": "Yêu cầu tính năng"
+    },
+    "draftItem": {
+      "writeNewBook": "Viết sách mới",
+      "noTitle": "Không có tiêu đề"
+    },
+    "instructionsPanel": {
+      "startCreating": "Bắt đầu tạo câu chuyện",
+      "suggestions": "Nhấn '++' để gợi ý, hoặc",
+      "slash": "'/' để minh họa."
+    },
+    "downloadPDFPanel": {
+      "generatePDF": "Tạo PDF",
+      "downloadPDF": "Tải xuống Câu chuyện"
+    },
+    "TRCEditorV2": {
+      "placeholder": "Nhấn '++' để tự động hoàn thành, hoặc '/' cho lệnh minh họa..."
+    },
+    "freeCounter": {
+      "thisWeek": "Tuần này",
+      "freeGenerations": "gợi ý miễn phí",
+      "freeIllustrations": "hình minh họa miễn phí"
+    },
+    "proSubscriptionPanel": {
+      "upgradeToPlus": "Nâng cấp lên Plus",
+      "manageSubscription": "Quản lý đăng ký"
+    },
+    "characterCard": {
+      "gender": "Giới tính",
+      "species": "Loài",
+      "age": "Tuổi",
+      "eyeColor": "Màu mắt",
+      "hairLength": "Độ dài tóc",
+      "hairType": "Kiểu tóc",
+      "hairColor": "Màu tóc",
+      "skinTone": "Tông màu da",
+      "outfit": "Trang phục",
+      "placeOfOrigin": "Nơi xuất xứ",
+      "name": "Tên",
+      "facialHair": "Râu"
+    },
+    "followButton": {
+      "follow": "Theo dõi",
+      "unfollow": "Bỏ theo dõi"
+    },
+    "share": {
+      "liveOnWeb": "Câu chuyện này đang được phát trên web.",
+      "postOnSocial": "Đăng trên hồ sơ readingclub.ai",
+      "unshare": "Bỏ chia sẻ",
+      "shareThisStory": "Chia sẻ câu chuyện này",
+      "shareWithFamily": "Chia sẻ sách của bạn với bạn bè và gia đình.",
+      "share": "Chia sẻ"
+    },
+    "slashCommands": {
+      "generateIllustration": {
+        "title": "Tạo Hình Minh Họa",
+        "description": "Tạo hình minh họa từ văn bản của bạn",
+        "generateSearchTerm": "tạo",
+        "illustrationSearchTerm": "minh họa",
+        "imageSearchTerm": "hình ảnh",
+        "photoSearchTerm": "ảnh",
+        "mediaSearchTerm": "media",
+        "pictureSearchTerm": "bức hình"
+      },
+      "uploadImage": {
+        "title": "Tải Ảnh Lên",
+        "description": "Tải một ảnh từ máy tính của bạn"
+      }
+    }
+  },
+  "toasts": {
+    "fileNotSupported": "Loại file không được hỗ trợ.",
+    "fileTooLarge": "Kích thước file vượt quá 20MB.",
+    "uploadingImage": "Đang tải ảnh lên...",
+    "imageUploaded": "Tải ảnh lên thành công!",
+    "generatingNewIllustration": "Đang tạo hình minh họa mới...",
+    "newGeneratedIllustration": "Tạo hình minh họa mới thành công!",
+    "illustrationPromptGenerated": "Tạo hình minh họa thành công dựa trên lời nhắc.",
+    "identifyingCharacters": "Đang xác định nhân vật...",
+    "charactersIdentified": "Xác định nhân vật thành công!",
+    "creatingCharacter": "Đang tạo nhân vật...",
+    "characterCreated": "Tạo nhân vật thành công!",
+    "choosingCharacter": "Chọn nhân vật cho hình minh họa...",
+    "characterChosen": "Chọn nhân vật thành công!",
+    "creatingNewBook": "Đang tạo sách mới...",
+    "bookCreated": "Tạo sách thành công!",
+    "bookCreationError": "Tạo sách mới thất bại",
+    "failedUserUpdate": "Cập nhật người dùng thất bại",
+    "sharing": "Đang chia sẻ...",
+    "onlyShared": "Đã chia sẻ!",
+    "sharedAndPosted": "Đã chia sẻ và đăng!",
+    "errorSharingStory": "Chia sẻ câu chuyện thất bại.",
+    "unsharing": "Đang bỏ chia sẻ...",
+    "unshared": "Đã bỏ chia sẻ!",
+    "errorUnsharingStory": "Bỏ chia sẻ câu chuyện thất bại.",
+    "errorTranslatingText": "Dịch văn bản thất bại",
+    "translating": "Đang dịch...",
+    "translated": "Đã dịch!",
+    "rateLimited": "Giới hạn tốc độ. Vui lòng thử lại sau.",
+    "fetchError": "Lỗi tải dữ liệu:",
+    "generalError": "Lỗi:"
+  }
+}
