@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useCallback, useEffect } from "react";
 
 import { BoldIcon, ItalicIcon, LucideIcon } from "lucide-react";
 import {
@@ -6,13 +6,16 @@ import {
   Editor,
   BubbleMenuProps,
 } from "@tiptap/react";
-import { cn } from "@/lib/utils";
-import { BsTranslate } from "react-icons/bs";
+import { cn, devAlert } from "@/lib/utils";
+import { BsPlay, BsTranslate } from "react-icons/bs";
+import { AiFillSound } from "react-icons/ai";
 import { IconType } from "react-icons";
 import axios, { AxiosError } from "axios";
 import { toast } from "sonner";
 import { useProModal } from "@/lib/hooks/useModals";
 import { useTRCAppConfigStore } from "@/stores/store";
+
+import { useAudio, useKey } from "react-use";
 
 interface TRCBubbleMenuItem {
   name: string;
@@ -67,6 +70,24 @@ const TRCEditorBubbleMenu: React.FC<TRCBubbleMenuProps> = (props) => {
     ...customBubbleMenuProps,
   };
 
+  const [audioSrc, setAudioSrc] = React.useState<string>("");
+  const [audio, state, controls, ref] = useAudio({
+    // src: "https://storage.googleapis.com/readingclub-audio/es_man.mp3",
+    src: audioSrc,
+  });
+
+  const handlePlaySoundClick = useCallback(() => {
+    controls.play();
+  }, []);
+
+  useEffect(() => {
+    console.log("audioSrc changed to " + audioSrc);
+    if (audioSrc) {
+      devAlert("audioSrc changed to " + audioSrc);
+      controls.play();
+    }
+  }, [audioSrc]);
+
   return (
     <div>
       {/* <h1>HELLO WORLD TEST 1</h1> */}
@@ -76,30 +97,71 @@ const TRCEditorBubbleMenu: React.FC<TRCBubbleMenuProps> = (props) => {
         {...tiptapBubbleMenuProps}
         className={containerClassName}
       >
+        {audio}
         {/* <h1>HELLO WORLD TEST 2</h1> */}
-        {bubbleMenuItems.map((item, index) => (
-          <button
-            key={"bubble-menu-item-" + index}
-            onClick={() => item.command(editor)}
-            className={cn(buttonClassName, {
-              // "text-blue-500": item.isActive(editor),
-              // "bg-accent2": item.isActive(editor),
-            })}
-            type="button"
-          >
-            <item.icon
-              size={24}
-              className={cn(
-                "novel-h-4 novel-w-4",
-                // this is for when it's bolded already, for example
-                {
-                  // "text-blue-500": item.isActive(editor),
-                  "text-accent2": item.isActive(editor),
-                }
-              )}
-            />
-          </button>
-        ))}
+        {bubbleMenuItems.map((item, index) => {
+          let onClickFunction;
+
+          // if (item.name === "play") onClickFunction = handlePlaySoundClick;
+          if (item.name === "play")
+            onClickFunction = () => {
+              // What is the selected word?
+              const { from, to } = editor.state.selection;
+              const selectedText = editor.state.doc.textBetween(from, to);
+
+              console.log("selectedText", selectedText);
+
+              // Get the audio
+              axios
+                .post(`${process.env.NEXT_PUBLIC_APP_URL}/api/play`, {
+                  textToPlay: selectedText,
+                  targetLocale: "es",
+                })
+                .then((res) => {
+                  const data = res.data as { audioSrc: string };
+
+                  console.log("data", data);
+                  if (data.audioSrc !== audioSrc) setAudioSrc(data.audioSrc);
+                  else controls.play();
+                  // controls.play();
+                })
+                .catch((err) => {
+                  console.error("Error playing audio:", err);
+                  toast.error(
+                    // "Error playing audio"
+                    // useTRCAppConfigStore.getState().dictionary?.toasts
+                    //   .errorPlayingAudio
+                    "Error playing audio"
+                  );
+                });
+            };
+          else onClickFunction = () => item.command(editor);
+
+          return (
+            <button
+              key={"bubble-menu-item-" + index}
+              // onClick={() => item.command(editor)}
+              onClick={onClickFunction}
+              className={cn(buttonClassName, {
+                // "text-blue-500": item.isActive(editor),
+                // "bg-accent2": item.isActive(editor),
+              })}
+              type="button"
+            >
+              <item.icon
+                size={24}
+                className={cn(
+                  "novel-h-4 novel-w-4",
+                  // this is for when it's bolded already, for example
+                  {
+                    // "text-blue-500": item.isActive(editor),
+                    "text-accent2": item.isActive(editor),
+                  }
+                )}
+              />
+            </button>
+          );
+        })}
       </TiptapBubbleMenu>
     </div>
   );
@@ -250,6 +312,12 @@ const defaultBubbleMenuItems: TRCBubbleMenuItem[] = [
       // editor.view.dispatch(tr);
     },
     icon: BsTranslate,
+  },
+  {
+    name: "play",
+    isActive: () => false, //(editor) => editor.isActive("italic"),
+    command: async (editor) => {},
+    icon: AiFillSound,
   },
   //   {
   //     name: "underline",
