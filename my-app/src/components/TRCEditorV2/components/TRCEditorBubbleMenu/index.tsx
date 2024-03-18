@@ -313,12 +313,12 @@ const defaultBubbleMenuItems: TRCBubbleMenuItem[] = [
     },
     icon: BsTranslate,
   },
-  {
-    name: "play",
-    isActive: () => false, //(editor) => editor.isActive("italic"),
-    command: async (editor) => {},
-    icon: AiFillSound,
-  },
+  // {
+  //   name: "play",
+  //   isActive: () => false, //(editor) => editor.isActive("italic"),
+  //   command: async (editor) => {},
+  //   icon: AiFillSound,
+  // },
   //   {
   //     name: "underline",
   //     isActive: (editor) => editor.isActive("underline"),

@@ -273,3 +273,29 @@ export const update = mutation({
     return document;
   },
 });
+
+// Count and order by documents created to find most active users
+export const getMostActiveUsers = query({
+  args: {},
+  handler: async (ctx, args) => {
+    const documents = await ctx.db.query("documents").order("desc").take(1000);
+
+    const users = documents.reduce((acc: any, document: Doc<"documents">) => {
+      if (!document.userId) {
+        return acc;
+      }
+
+      if (!acc[document.userId]) {
+        acc[document.userId] = 0;
+      }
+
+      acc[document.userId]++;
+
+      return acc;
+    }, {});
+
+    const sortedUsers = Object.keys(users).sort((a, b) => users[b] - users[a]);
+
+    return sortedUsers;
+  },
+});
