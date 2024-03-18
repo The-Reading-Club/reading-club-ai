@@ -58,7 +58,7 @@ export async function GET() {
               name: "readingclub.ai Plus",
               description: "Monthly subscription to readingclub.ai Plus",
             },
-            unit_amount: 2000,
+            unit_amount: 999,
             recurring: {
               interval: "month",
             },
