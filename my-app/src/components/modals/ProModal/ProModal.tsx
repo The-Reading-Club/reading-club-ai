@@ -99,7 +99,7 @@ const ProModal = () => {
             {/* SHOW % 20 / Month pricing */}
             <div className="flex justify-around gap-6">
               <div className="text-3xl font-bold text-darkFont py-6">
-                US$20 / {dictionary?.page.proModal.month}
+                US$9.99 / {dictionary?.page.proModal.month}
               </div>
               {true && (
                 <div className="basis-[50%]">
