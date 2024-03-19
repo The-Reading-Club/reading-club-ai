@@ -29,6 +29,13 @@ export function getLocaleFromHeadersList(headers: Headers) {
       return defaultLocale;
     }
 
+    // If it doesn't have the accept language header
+    // Not sure, I wouldn't want to block it unless I'm 100% sure I should expect this header but I am not certain how the Negotiator works
+    if (!headers.has("accept-language")) {
+      console.error("No accept-language header found in headers", headers);
+      // return defaultLocale;
+    }
+
     const negotiatorHeaders: Record<string, string> = {};
     headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
@@ -44,7 +51,8 @@ export function getLocaleFromHeadersList(headers: Headers) {
   } catch (error) {
     console.error("Error in getLocaleFromHeadersList headers", headers);
     console.error("Error in getLocaleFromHeadersList error: ", error);
-    throw error;
+    return defaultLocale;
+    // throw error;
   }
 }
 
