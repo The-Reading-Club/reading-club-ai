@@ -7,6 +7,7 @@ import { db } from "@/lib/db";
 import { stripe } from "@/lib/stripe";
 
 import { absoluteUrl } from "@/lib/utils";
+import Stripe from "stripe";
 
 const settingsUrl = absoluteUrl("/settings");
 
@@ -48,7 +49,7 @@ export async function GET(request: NextRequest) {
     ).get("clientReferenceId");
 
     // CHECKOUT STRIPE SESSION (for first timers)
-    const stripeSession = await stripe.checkout.sessions.create({
+    const stripeSessionCheckoutParams: Stripe.Checkout.SessionCreateParams = {
       success_url: settingsUrl,
       cancel_url: settingsUrl,
       payment_method_types: ["card"],
@@ -85,16 +86,36 @@ export async function GET(request: NextRequest) {
       },
       metadata: {
         userId,
-        ...(clientReferenceId
-          ? {
-              // https://app.getrewardful.com/setup/code?platform=other
-              // https://github.com/rewardful/examples/blob/master/next-ts-app-router/app/page.tsx
-              referral: clientReferenceId,
-            }
-          : {}),
+        // ...(clientReferenceId
+        //   ? {
+        //       // https://app.getrewardful.com/setup/code?platform=other
+        //       // https://github.com/rewardful/examples/blob/master/next-ts-app-router/app/page.tsx
+        //       referral: clientReferenceId,
+        //     }
+        //   : {}),
       },
       allow_promotion_codes: true,
-    });
+    };
+
+    if (
+      clientReferenceId &&
+      stripeSessionCheckoutParams &&
+      stripeSessionCheckoutParams.metadata
+    ) {
+      stripeSessionCheckoutParams.metadata.referral = clientReferenceId;
+      // https://chat.openai.com/c/98249ff4-95f1-48cf-ae01-885cf9beecef
+      // https://docs.stripe.com/billing/subscriptions/coupons?dashboard-or-api=api
+      // https://docs.stripe.com/api/checkout/sessions/create#create_checkout_session-discounts
+      stripeSessionCheckoutParams.discounts = [
+        {
+          promotion_code: "YOUTUBEFAN",
+        },
+      ];
+    }
+
+    const stripeSession = await stripe.checkout.sessions.create(
+      stripeSessionCheckoutParams
+    );
 
     return new NextResponse(JSON.stringify({ url: stripeSession.url }));
   } catch (error) {
