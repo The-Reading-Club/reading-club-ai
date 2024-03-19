@@ -50,6 +50,10 @@ export function getLocaleFromHeadersList(headers: Headers) {
 
     console.log("languages", languages);
 
+    // TODO: Validate something like this because it crashes
+    // when robots.txt makes the request
+    // if (languages === ["*"])
+
     const locale = matchLocale(languages, locales, defaultLocale);
 
     console.log("locale", locale);
