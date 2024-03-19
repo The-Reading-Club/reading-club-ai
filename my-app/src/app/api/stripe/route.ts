@@ -94,7 +94,7 @@ export async function GET(request: NextRequest) {
         //     }
         //   : {}),
       },
-      allow_promotion_codes: true,
+      // allow_promotion_codes: true,
     };
 
     if (
@@ -111,6 +111,10 @@ export async function GET(request: NextRequest) {
           promotion_code: "YOUTUBEFAN",
         },
       ];
+
+      // thinking of removing free trial after so many discounts and comissions
+    } else {
+      stripeSessionCheckoutParams.allow_promotion_codes = true;
     }
 
     const stripeSession = await stripe.checkout.sessions.create(
