@@ -20,7 +20,20 @@ const SubscriptionButton: React.FC<SubscriptionButtonProps> = ({
   const onClick = async () => {
     try {
       setLoading(true);
-      const response = await axios.get("api/stripe");
+
+      const clientReferenceId = (window as any).Rewardful.referral;
+
+      let stripeCheckOutUrl;
+
+      if (clientReferenceId) {
+        stripeCheckOutUrl = "api/stripe?clientReferenceId=" + clientReferenceId;
+        // add `prefilled_promo_code` URL parameter as well
+        // https://docs.stripe.com/payment-links/promotions#:~:text=Add%20promotion%20codes&text=Create%20a%20promotion%20code%20in,when%20sharing%20a%20payment%20link.
+        const promoCode = "YOUTUBEFAN";
+        stripeCheckOutUrl += "&prefilled_promo_code=" + promoCode;
+      } else stripeCheckOutUrl = "api/stripe";
+
+      const response = await axios.get(stripeCheckOutUrl);
 
       window.location.href = response.data.url;
     } catch (error) {

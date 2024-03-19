@@ -13,6 +13,7 @@ import { auth } from "@/auth";
 import { headers } from "next/headers";
 import { SessionProvider } from "next-auth/react";
 import { getLocaleFromHeadersList } from "@/lib/internationalization/utils";
+import Script from "next/script";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -30,6 +31,12 @@ export const metadata: Metadata = {
   title: "readingclub.ai",
   description: "Enable Creative Writing at Any Literacy Level",
 };
+
+// Use your Rewardful API Key
+const REWARDFUL_API_KEY = process.env.NEXT_PUBLIC_REWARDFUL_API_KEY;
+
+// If not setting NEXT_PUBLIC_APP_REWARDFUL_SCRIPT_URL, just use https://r.wdfl.co/rw.js
+const REWARDFUL_SCRIPT_URL = process.env.NEXT_PUBLIC_APP_REWARDFUL_SCRIPT_URL;
 
 export default async function RootLayout({
   children,
@@ -96,6 +103,13 @@ export default async function RootLayout({
             {/* {userIsLoggedIn == false ? children : feed} */}
           </Providers>
         </SessionProvider>
+        <Script
+          src={REWARDFUL_SCRIPT_URL}
+          data-rewardful={REWARDFUL_API_KEY}
+        ></Script>
+        <Script id="rewardful-queue" strategy="beforeInteractive">
+          {`(function(w,r){w._rwq=r;w[r]=w[r]||function(){(w[r].q=w[r].q||[]).push(arguments)}})(window,'rewardful');`}
+        </Script>
       </body>
     </html>
   );

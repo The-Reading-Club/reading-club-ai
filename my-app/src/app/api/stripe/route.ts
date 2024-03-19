@@ -1,6 +1,6 @@
 import { getCurrentUser } from "@/actions/getCurrentUser";
 
-import { NextResponse } from "next/server";
+import { NextRequest, NextResponse } from "next/server";
 
 import { db } from "@/lib/db";
 
@@ -10,7 +10,7 @@ import { absoluteUrl } from "@/lib/utils";
 
 const settingsUrl = absoluteUrl("/settings");
 
-export async function GET() {
+export async function GET(request: NextRequest) {
   try {
     const currentUser = await getCurrentUser();
 
@@ -41,6 +41,11 @@ export async function GET() {
     // Idea for prices and plans
     // Plus - $20/mo
     // School - $500/mo
+
+    // read the clientReferenceId query parameter if any
+    const clientReferenceId = new URLSearchParams(
+      new URL(request.url).search
+    ).get("clientReferenceId");
 
     // CHECKOUT STRIPE SESSION (for first timers)
     const stripeSession = await stripe.checkout.sessions.create({
@@ -78,7 +83,16 @@ export async function GET() {
       automatic_tax: {
         enabled: true,
       },
-      metadata: { userId },
+      metadata: {
+        userId,
+        ...(clientReferenceId
+          ? {
+              // https://app.getrewardful.com/setup/code?platform=other
+              // https://github.com/rewardful/examples/blob/master/next-ts-app-router/app/page.tsx
+              referral: clientReferenceId,
+            }
+          : {}),
+      },
       allow_promotion_codes: true,
     });
 
