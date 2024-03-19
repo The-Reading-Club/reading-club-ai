@@ -52,6 +52,8 @@ export function getLocaleFromHeadersList(headers: Headers) {
 
     const locale = matchLocale(languages, locales, defaultLocale);
 
+    console.log("locale", locale);
+
     return locale;
   } catch (error) {
     console.error("Error in getLocaleFromHeadersList headers", headers);
