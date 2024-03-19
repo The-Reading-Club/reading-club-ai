@@ -296,6 +296,48 @@ export const getMostActiveUsers = query({
 
     const sortedUsers = Object.keys(users).sort((a, b) => users[b] - users[a]);
 
-    return sortedUsers;
+    const userCounts = sortedUsers.map((userId) => ({
+      userId,
+      count: users[userId],
+    }));
+
+    return userCounts;
+  },
+});
+
+// Now I want a function that counts for the number of distinct days they have created a document on the site (as a proxy for frecuency of use)
+export const getMostActiveUsersByDays = query({
+  args: {},
+  handler: async (ctx, args) => {
+    const documents = await ctx.db.query("documents").order("desc").take(1000);
+
+    const users = documents.reduce((acc: any, document: Doc<"documents">) => {
+      if (!document.userId) {
+        return acc;
+      }
+
+      if (!acc[document.userId]) {
+        acc[document.userId] = [];
+      }
+
+      const date = new Date(document._creationTime).toDateString();
+
+      if (!acc[document.userId].includes(date)) {
+        acc[document.userId].push(date);
+      }
+
+      return acc;
+    }, {});
+
+    const sortedUsers = Object.keys(users).sort(
+      (a, b) => users[b].length - users[a].length
+    );
+
+    const userCounts = sortedUsers.map((userId) => ({
+      userId,
+      count: users[userId].length,
+    }));
+
+    return userCounts;
   },
 });
