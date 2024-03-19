@@ -64,7 +64,7 @@ export async function GET(request: NextRequest) {
               name: "readingclub.ai Plus",
               description: "Monthly subscription to readingclub.ai Plus",
             },
-            unit_amount: 999,
+            unit_amount: 1999,
             recurring: {
               interval: "month",
             },
@@ -76,9 +76,9 @@ export async function GET(request: NextRequest) {
       ],
       // https://chat.openai.com/c/338c4130-6c07-4193-9c46-7009d07d2292
       // https://github.com/stripe/stripe-cli/issues/1115
-      subscription_data: {
-        trial_period_days: 3,
-      },
+      // subscription_data: {
+      //   trial_period_days: 3,
+      // },
       // https://dashboard.stripe.com/settings/tax
       // https://docs.stripe.com/billing/taxes/collect-taxes
       automatic_tax: {
@@ -115,6 +115,10 @@ export async function GET(request: NextRequest) {
       // thinking of removing free trial after so many discounts and comissions
     } else {
       stripeSessionCheckoutParams.allow_promotion_codes = true;
+      // add free trial here
+      stripeSessionCheckoutParams.subscription_data = {
+        trial_period_days: 3,
+      };
     }
 
     const stripeSession = await stripe.checkout.sessions.create(
