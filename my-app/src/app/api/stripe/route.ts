@@ -87,7 +87,9 @@ export async function GET(request: NextRequest) {
         userId,
         ...(clientReferenceId
           ? {
-              clientReferenceId: clientReferenceId,
+              // https://app.getrewardful.com/setup/code?platform=other
+              // https://github.com/rewardful/examples/blob/master/next-ts-app-router/app/page.tsx
+              referral: clientReferenceId,
             }
           : {}),
       },
