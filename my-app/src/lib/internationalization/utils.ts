@@ -41,9 +41,14 @@ export function getLocaleFromHeadersList(headers: Headers) {
 
     // @ts-ignore locales are read only
     const locales: string[] = i18n.locales;
+
+    console.log("locales", locales);
+
     const languages = new Negotiator({
       headers: negotiatorHeaders,
     }).languages();
+
+    console.log("languages", languages);
 
     const locale = matchLocale(languages, locales, defaultLocale);
 
