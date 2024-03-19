@@ -25,6 +25,10 @@ export function getLocaleFromRequest(request: NextRequest) {
 
 export function getLocaleFromHeadersList(headers: Headers) {
   try {
+    if (!headers) {
+      return defaultLocale;
+    }
+
     const negotiatorHeaders: Record<string, string> = {};
     headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
