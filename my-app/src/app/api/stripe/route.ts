@@ -108,7 +108,7 @@ export async function GET(request: NextRequest) {
       // https://docs.stripe.com/api/checkout/sessions/create#create_checkout_session-discounts
       stripeSessionCheckoutParams.discounts = [
         {
-          promotion_code: "YOUTUBEFAN",
+          promotion_code: "promo_1Ow8xhKkFIxfyMnMf6R8nbhL",
         },
       ];
 
