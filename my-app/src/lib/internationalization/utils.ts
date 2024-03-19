@@ -24,16 +24,24 @@ export function getLocaleFromRequest(request: NextRequest) {
 }
 
 export function getLocaleFromHeadersList(headers: Headers) {
-  const negotiatorHeaders: Record<string, string> = {};
-  headers.forEach((value, key) => (negotiatorHeaders[key] = value));
+  try {
+    const negotiatorHeaders: Record<string, string> = {};
+    headers.forEach((value, key) => (negotiatorHeaders[key] = value));
 
-  // @ts-ignore locales are read only
-  const locales: string[] = i18n.locales;
-  const languages = new Negotiator({ headers: negotiatorHeaders }).languages();
+    // @ts-ignore locales are read only
+    const locales: string[] = i18n.locales;
+    const languages = new Negotiator({
+      headers: negotiatorHeaders,
+    }).languages();
 
-  const locale = matchLocale(languages, locales, defaultLocale);
+    const locale = matchLocale(languages, locales, defaultLocale);
 
-  return locale;
+    return locale;
+  } catch (error) {
+    console.error("Error in getLocaleFromHeadersList headers", headers);
+    console.error("Error in getLocaleFromHeadersList error: ", error);
+    throw error;
+  }
 }
 
 //   const acceptLanguage = headers.get("accept-language");
