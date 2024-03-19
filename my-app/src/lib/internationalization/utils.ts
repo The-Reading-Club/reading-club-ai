@@ -56,18 +56,24 @@ export function getLocaleFromHeadersList(headers: Headers) {
 // https://chat.openai.com/
 // Extracts the locale from the path if present and returns the locale and the base path
 export function extractLocaleAndBasePath(pathname: string) {
-  const segments = pathname.split("/");
+  try {
+    const segments = pathname.split("/");
 
-  // @ts-ignore locales are read only
-  const locales: string[] = i18n.locales;
+    // @ts-ignore locales are read only
+    const locales: string[] = i18n.locales;
 
-  if (segments.length > 1 && locales.includes(segments[1])) {
-    // If the first segment is a locale, remove it from the path
-    return {
-      locale: segments[1],
-      basePath: "/" + segments.slice(2).join("/"),
-    };
+    if (segments.length > 1 && locales.includes(segments[1])) {
+      // If the first segment is a locale, remove it from the path
+      return {
+        locale: segments[1],
+        basePath: "/" + segments.slice(2).join("/"),
+      };
+    }
+    // No locale found, return the original path as basePath
+    return { locale: null, basePath: pathname };
+  } catch (error) {
+    console.error("Error in extractLocaleAndBasePath pathname", pathname);
+    console.error("Error in extractLocaleAndBasePath error: ", error);
+    throw error;
   }
-  // No locale found, return the original path as basePath
-  return { locale: null, basePath: pathname };
 }
