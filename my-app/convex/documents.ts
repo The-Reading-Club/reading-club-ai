@@ -113,6 +113,11 @@ export const getFollowed = query({
     const documents = await ctx.db
       .query("documents")
       .filter((q) => q.eq(q.field("isPublished"), true))
+      // Also make sure they have titles
+      .filter((q) => q.not(q.eq(q.field("title"), undefined)))
+      .filter((q) => q.not(q.eq(q.field("title"), "")))
+      // same for cover image
+      .filter((q) => q.not(q.eq(q.field("coverImage"), undefined)))
       .order("desc")
       .take(1000);
 
