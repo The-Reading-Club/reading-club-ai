@@ -20,6 +20,9 @@ import { Checkbox } from "../ui/checkbox";
 import { useTRCAppConfigStore } from "@/stores/store";
 import fetcher from "@/lib/fetcher";
 
+// https://chat.openai.com/c/c5d6263e-5c88-4396-9c1f-379e4891102e
+import { useQueryClient as useTanstackQueryClient } from "@tanstack/react-query";
+
 interface ShareProps {
   initialData: Doc<"documents">;
   children: React.ReactNode;
@@ -38,6 +41,8 @@ const ShareComponent: React.FC<ShareProps> = ({
   initialData,
   children: childrenAsPopupTrigger,
 }) => {
+  const tanstackQueryClient = useTanstackQueryClient();
+
   const origin = useOrigin();
   const update = useMutation(api.documents.update);
 
@@ -69,7 +74,13 @@ const ShareComponent: React.FC<ShareProps> = ({
       id: initialData._id,
       isShared: true,
       isPublished: published,
-    }).finally(() => setIsSubmitting(false));
+    }).finally(() => {
+      setIsSubmitting(false);
+      // https://tanstack.com/query/v5/docs/framework/react/guides/query-invalidation
+      tanstackQueryClient.invalidateQueries({
+        queryKey: ["documents", "getById", { documentId: initialData._id }],
+      });
+    });
 
     toast.promise(promise, {
       // loading: "Sharing...",
@@ -92,7 +103,12 @@ const ShareComponent: React.FC<ShareProps> = ({
       id: initialData._id,
       isShared: false,
       isPublished: false,
-    }).finally(() => setIsSubmitting(false));
+    }).finally(() => {
+      setIsSubmitting(false);
+      tanstackQueryClient.invalidateQueries({
+        queryKey: ["documents", "getById", { documentId: initialData._id }],
+      });
+    });
 
     toast.promise(promise, {
       // loading: "Unsharing...",
@@ -277,7 +293,7 @@ const ShareWrapper: React.FC<ShareWrapperProps> = ({
 
   const document = documentQuery.data;
 
-  return <>{"TEST" + JSON.stringify(document)}</>;
+  // return <>{"TEST" + JSON.stringify(document)}</>;
 
   return <ShareComponent initialData={document}>{children}</ShareComponent>;
 };
