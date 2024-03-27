@@ -9,6 +9,8 @@ import {
 } from "@/components/ui/popover";
 import { useOrigin } from "@/lib/hooks/useOrigin";
 import { useMutation, useQuery } from "convex/react";
+import { useQuery as useTanstackQuery } from "@tanstack/react-query";
+
 import { api } from "@/../convex/_generated/api";
 import { toast } from "sonner";
 import { Button } from "../ui/button";
@@ -16,6 +18,7 @@ import { useParams } from "next/navigation";
 import { Check, Copy, Globe } from "lucide-react";
 import { Checkbox } from "../ui/checkbox";
 import { useTRCAppConfigStore } from "@/stores/store";
+import fetcher from "@/lib/fetcher";
 
 interface ShareProps {
   initialData: Doc<"documents">;
@@ -254,16 +257,27 @@ const ShareWrapper: React.FC<ShareWrapperProps> = ({
 }) => {
   // const params = useParams();
 
-  const document = useQuery(api.documents.getById, {
-    // documentId: params.documentId as Id<"documents">,
-    documentId: documentId,
+  // const document = useQuery(api.documents.getById, {
+  //   // documentId: params.documentId as Id<"documents">,
+  //   documentId: documentId,
+  // });
+
+  const documentQuery = useTanstackQuery({
+    queryKey: ["documents", "getById", { documentId }],
+    queryFn: () => fetcher(`/api/documents/${documentId}`),
   });
 
-  if (document === undefined) {
-    return <></>;
+  // if (document === undefined) {
+  if (documentQuery.isSuccess != true) {
+    // return <></>;
+    return <div>Was not a success: {JSON.stringify(documentQuery.error)}</div>;
   }
 
-  if (document === null) return null;
+  // if (document === null) return null;
+
+  const document = documentQuery.data;
+
+  return <>{"TEST" + JSON.stringify(document)}</>;
 
   return <ShareComponent initialData={document}>{children}</ShareComponent>;
 };

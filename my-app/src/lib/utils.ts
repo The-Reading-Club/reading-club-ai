@@ -140,6 +140,19 @@ export function decodeJWT(token: string) {
   return JSON.parse(jsonPayload);
 }
 
+export type ID_TOKEN_DECODED = {
+  iss: string;
+  azp: string;
+  aud: string;
+  sub: string;
+  email: string;
+  email_verified: boolean;
+  at_hash: string;
+  nonce: string;
+  exp: number;
+  iat: number;
+};
+
 // https://chat.openai.com/c/d2607a19-1aae-48fe-9c24-a74be168d543
 export function getRandomIndexes(arrLength: number, count: number): number[] {
   // Create an array of indexes
