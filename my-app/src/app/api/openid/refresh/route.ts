@@ -10,6 +10,7 @@ import { decodeJWT } from "@/lib/utils";
 import { type TokenSet } from "@auth/core/types";
 import { signOut } from "next-auth/react";
 import { NextResponse } from "next/server";
+import { fetchNewTokenSetResponse, getRefreshToken } from "./utils";
 
 export async function GET(req: Request) {
   const session = await auth();
@@ -45,21 +46,27 @@ export async function GET(req: Request) {
   console.log("DECODED ID TOKEN", decoded);
   // Here you could refresh countless shit in the database if you need to
 
-  const userOauthId = decoded.sub;
+  // #region replaced by getRefreshToken
 
-  const providerAccount = await getProviderAccountByUserId(userOauthId);
+  // const userOauthId = decoded.sub;
 
-  console.log(
-    "THIS IS THE PROVIDER ACCOUNT IN REFRESH ROUTE providerAccount",
-    providerAccount
-  );
+  // const providerAccount = await getProviderAccountByUserId(userOauthId);
 
-  const refreshToken = providerAccount?.refresh_token;
+  // console.log(
+  //   "THIS IS THE PROVIDER ACCOUNT IN REFRESH ROUTE providerAccount",
+  //   providerAccount
+  // );
 
-  console.log(
-    "THIS IS THE REFRESH TOKEN IN REFRESH ROUTE refreshToken",
-    refreshToken
-  );
+  // const refreshToken = providerAccount?.refresh_token;
+
+  // console.log(
+  //   "THIS IS THE REFRESH TOKEN IN REFRESH ROUTE refreshToken",
+  //   refreshToken
+  // );
+
+  //#endregion
+
+  const refreshToken = await getRefreshToken(decoded.sub);
 
   if (!refreshToken) {
     // return new NextResponse("no refresh token", { status: 400 });
@@ -90,17 +97,7 @@ export async function GET(req: Request) {
   //   }
 
   if (token) {
-    const response = await fetch("https://oauth2.googleapis.com/token", {
-      headers: { "Content-Type": "application/x-www-form-urlencoded" },
-      body: new URLSearchParams({
-        client_id: process.env.GOOGLE_CLIENT_ID!,
-        client_secret: process.env.GOOGLE_CLIENT_SECRET!,
-        grant_type: "refresh_token",
-        // refresh_token: token.refresh_token,
-        refresh_token: refreshToken,
-      }),
-      method: "POST",
-    });
+    const response = await fetchNewTokenSetResponse(refreshToken);
 
     const tokens = (await response.json()) as TokenSet;
 
