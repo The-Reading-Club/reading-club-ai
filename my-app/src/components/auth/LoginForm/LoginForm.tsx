@@ -73,11 +73,11 @@ const LoginForm = () => {
   return (
     <CardWrapper
       headerLabel="Welcome back"
-      // backButtonLabel="Don't have an account?"
+      backButtonLabel="Don't have an account?"
       backButtonHref="/auth/register"
       showSocial
     >
-      {false && (
+      {true && (
         <Form {...form}>
           <form
             //   onSubmit={form.handleSubmit(() => {
@@ -98,7 +98,7 @@ const LoginForm = () => {
                       <Input
                         {...field}
                         disabled={isPending}
-                        placeholder="john.doe@example.com"
+                        placeholder="harry.potter@example.com"
                         type="email"
                       />
                     </FormControl>
@@ -131,6 +131,7 @@ const LoginForm = () => {
               type="submit"
               className="w-full bg-accent2 font-semibold"
               disabled={isPending}
+              variant={"accent"}
             >
               Login
             </Button>

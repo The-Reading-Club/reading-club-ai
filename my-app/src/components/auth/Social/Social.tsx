@@ -52,6 +52,7 @@ const Social = () => {
       // className="flex items-center w-full gap-x-2"
       // vertical
       className="flex flex-col w-full gap-y-2"
+      // style={{ border: "2px solid red" }}
     >
       {false && (
         <Button

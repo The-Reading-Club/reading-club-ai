@@ -126,6 +126,7 @@ const RegisterForm = () => {
             type="submit"
             className="w-full bg-accent2 font-semibold"
             disabled={isPending}
+            variant={"accent"}
           >
             Create an account
           </Button>

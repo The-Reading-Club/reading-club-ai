@@ -182,6 +182,10 @@ export const {
         token.refresh_token = account.refresh_token;
       }
 
+      if (account?.provider) {
+        token.provider = account.provider;
+      }
+
       // Include account type in token
       if (!token.email) return token;
 
@@ -222,18 +226,23 @@ export const {
         session.user.accountType = token_.accountType as DBAccountType;
         session.user.bio = token_.bio;
 
-        const decodedToken = decodeJWT(token_.id_token);
-        // console.log("auth.ts ");
-        // console.log({ decodedToken });
+        console.log("About to decode JWT");
+        console.log({ token_: token_ });
+        // id_token is undefined when using credentials
+        if (token_.id_token) {
+          const decodedToken = decodeJWT(token_.id_token);
+          // console.log("auth.ts ");
+          // console.log({ decodedToken });
 
-        // if (decodedToken) {
-        //   session.user.email = decodedToken.email;
-        //   session.user.name = decodedToken.name;
-        //   session.user.image = decodedToken.picture;
-        // }
+          // if (decodedToken) {
+          //   session.user.email = decodedToken.email;
+          //   session.user.name = decodedToken.name;
+          //   session.user.image = decodedToken.picture;
+          // }
 
-        session.user.id = decodedToken.sub;
-        session.user.locale = decodedToken.locale;
+          session.user.id = decodedToken.sub;
+          session.user.locale = decodedToken.locale;
+        }
       }
 
       // console.log("WHAT DO WE HAVE ALREADY?", session.user);
@@ -261,19 +270,21 @@ export const {
       session.token = { id_token: token_.id_token };
       // DO I REALLY NEED IT? Yes, I do.
 
-      //  // If there's no refresh token, sign out
-      if (token_ && !token_.refresh_token) {
-        // Throw error and force sign out client side
-        // requires good handling of errors on the client
-        throw new Error("No refresh token");
-        // return {};
-        // I wond do it here
-        // session.
-        // await signOut();
-        // https://chat.openai.com/c/f8ac70fc-9398-4f33-b2f4-7d9af02b5d4d
-        // return null;
-        // session.error = "Session invalid";
-      }
+      // WE ARE ONLY FORCING A SIGNOUT IN THE CONTEXT OF GOOGLE OAUTH
+      if (token_?.provider != "credentials")
+        if (token_ && !token_.refresh_token) {
+          //  // If there's no refresh token, sign out
+          // Throw error and force sign out client side
+          // requires good handling of errors on the client
+          throw new Error("No refresh token");
+          // return {};
+          // I wond do it here
+          // session.
+          // await signOut();
+          // https://chat.openai.com/c/f8ac70fc-9398-4f33-b2f4-7d9af02b5d4d
+          // return null;
+          // session.error = "Session invalid";
+        }
 
       // Asynchronously, update db with token if it's not there
       const fixMissingRefreshToken = async () => {
@@ -310,15 +321,16 @@ export const {
           console.log("no token", token_);
         }
       };
-      console.log("about to fix missing refresh token");
-      // console.log("token", token_);
 
-      try {
-        fixMissingRefreshToken();
-      } catch (error) {
-        console.error("error fixing missing refresh token", error);
-        devAlert("error fixing missing refresh token" + error);
-      }
+      if (token_.provider != "credentials")
+        try {
+          console.log("about to fix missing refresh token");
+          // console.log("token", token_);
+          fixMissingRefreshToken();
+        } catch (error) {
+          console.error("error fixing missing refresh token", error);
+          devAlert("error fixing missing refresh token" + error);
+        }
 
       return sessionParams.session;
 
