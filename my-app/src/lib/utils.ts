@@ -8,6 +8,8 @@ import { allowDevAlerts } from "../../config";
 import { TRCDictionary } from "./internationalization/dictionary";
 import { useTRCAppConfigStore } from "@/stores/store";
 
+export const MAX_FREE_COUNT_ILLUSTRATION = 10;
+
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
 }
