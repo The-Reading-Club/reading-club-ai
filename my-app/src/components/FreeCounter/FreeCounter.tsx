@@ -6,13 +6,16 @@ import { Progress } from "@/components/ui/progress";
 import { PlusSubscriptionPanel } from "../EditorPageWrapper/RightPanel";
 import { useRouter } from "next/navigation";
 import { getTimeUntilReset, pastTime } from "@/lib/utils";
+import { MAX_FREE_COUNT_ILLUSTRATION } from "@/lib/utils";
 
 interface FreeCounterProps {
   rateLimits: TRCRateLimits;
   isPlus: boolean;
 }
 
-export const MAX_FREE_COUNT_ILLUSTRATION = 10; //10;
+// THIS WASN'T WORKING AND WAS BEING USED AS A DAMN NULL
+// THE PROBLEM IS THAT THIS CONSTANT IS BEING DEFINED IN THE CLIENT AND NOT IN THE SERVER
+// export const MAX_FREE_COUNT_ILLUSTRATION = 10; //10;
 const MAX_FREE_COUNT_ILLUSTRATION_PROMPT = 40;
 const MAX_FREE_COUNT_GENERATION = 10;
 
