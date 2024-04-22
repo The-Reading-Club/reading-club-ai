@@ -139,6 +139,8 @@ export function decodeJWT(token: string) {
       .join("")
   );
 
+  console.log("DECODED JWT");
+  console.log(jsonPayload);
   return JSON.parse(jsonPayload);
 }
 

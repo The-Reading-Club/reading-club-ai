@@ -12,7 +12,7 @@ export const useAuthFromNextAuth = () => {
         const response = await fetch("/api/openid/refresh");
 
         const data = await response.json();
-        // console.log("fetchAccessToken DATA", data);
+        console.log("fetchAccessToken DATA refresh", data);
         return data;
       } else {
         const response = await fetch("/api/openid/token");
@@ -21,6 +21,7 @@ export const useAuthFromNextAuth = () => {
           return null;
         }
         const data = await response.json();
+        console.log("fetchAccessToken DATA token", data);
         return data;
       }
     },

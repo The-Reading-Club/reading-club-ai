@@ -11,8 +11,57 @@ import { type TokenSet } from "@auth/core/types";
 import { signOut } from "next-auth/react";
 import { NextResponse } from "next/server";
 import { fetchNewTokenSetResponse, getRefreshToken } from "./utils";
+import { encodeToJWT } from "@/lib/utils-jwt";
 
 export async function GET(req: Request) {
+  // Example of a refreshed hardcoded mock ID token
+
+  // interface Payload {
+  //   iss: string;
+  //   azp: string;
+  //   aud: string;
+  //   sub: string;
+  //   email: string;
+  //   email_verified: boolean;
+  //   at_hash: string;
+  //   name: string;
+  //   picture: string;
+  //   given_name: string;
+  //   family_name: string;
+  //   iat: number;
+  //   exp: number;
+  // }
+
+  // fill out based on payload format above
+
+  const testPayload = {
+    iss: "https://accounts.readingclub.ai",
+    azp: "7890123456-trcapplication.apps.readingclub.ai",
+    aud: "7890123456-trcapplication.apps.readingclub.ai",
+    sub: "cluak7and0000pfoulimrjo44",
+    email: "harry.potter@example.com",
+    email_verified: true,
+    at_hash: "exampleHashValue",
+    name: "Harry Potter",
+    picture: "https://example.com/picture.jpg",
+    given_name: "Harry",
+    family_name: "Potter",
+    iat: Math.floor(Date.now() / 1000),
+    // Setting the expiration to a date far in the future (e.g., year 9999)
+    exp: new Date("9999-12-31").getTime() / 1000,
+  };
+
+  // console.log("private key", process.env.JWT_SECRET);
+  const jwt = encodeToJWT(testPayload);
+
+  // const refreshedMockIdToken =
+  //   "eyJhbGciOiAiSFMyNTYiLCAidHlwIjogIkpXVCJ9.eyJuYW1lIjogIkhhcnJ5IFBvdHRlciIsICJlbWFpbCI6ICJoYXJyeS5wb3R0ZXJAZXhhbXBsZS5jb20iLCAicGljdHVyZSI6ICJodHRwczovL2V4YW1wbGUuY29tL2hhcnJ5LmpwZyIsICJzdWIiOiAiY2x1YWs3YW5kMDAwMHBmb3VsaW1yam80NCIsICJwcm92aWRlciI6ICJjcmVkZW50aWFscyIsICJhY2NvdW50VHlwZSI6ICJzdGFuZGFyZCIsICJiaW8iOiAiSnVzdCBhIHdpemFyZCBsaXZpbmcgaW4gdGhlIG11Z2dsZSB3b3JsZCIsICJpYXQiOiAxNzExNTk0NjczLCAiZXhwIjogMTcxNDE4NjY3MywgImp0aSI6ICJjYmZlODAwNi1hYWNiLTQyNjgtODk4OC0zZGJiN2VmZmFiOTkiLCAiYXVkIjogInlvdXJBcHBDbGllbnRJZEhlcmUiLCAiaXNzIjogImh0dHBzOi8veW91cmF1dGhzZXJ2ZXIuZXhhbXBsZS5jb20iLCAiYXRfaGFzaCI6ICJzYW1wbGVBdEhhc2hIZXJlIiwgImVtYWlsX3ZlcmlmaWVkIjogdHJ1ZSwgImxvY2FsZSI6ICJlbiIsICJnaXZlbl9uYW1lIjogIkhhcnJ5IiwgImZhbWlseV9uYW1lIjogIlBvdHRlciJ9.signature";
+
+  console.log("Test JWT", jwt);
+
+  // return NextResponse.json({ id_token: jwt });
+  return NextResponse.json(jwt);
+
   const session = await auth();
 
   console.log("session", session);
@@ -116,7 +165,7 @@ export async function GET(req: Request) {
 
     console.log("THIS IS THE TOKENS IN REFRESH ROUTE tokens", tokens);
     console.log(
-      "THIS IS THE TOKENS IN REFRESH ROUTE tokens.id_token",
+      ">>>> THIS IS THE TOKENS RETURNED IN REFRESH ROUTE tokens.id_token",
       tokens.id_token
     );
 
