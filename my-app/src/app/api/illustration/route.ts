@@ -33,11 +33,17 @@ import { callDalleAPI } from "./utils";
 // const idLength = 10; // You can choose the length
 // const uniqueID = nanoid(idLength);
 
-const config = {
-  apiKey: process.env.OAI_KEY,
-};
+// const config = {
+//   apiKey: process.env.OAI_KEY,
+// };
 
-const openaiSDK = new OpenAI(config);
+const openaiSDK = new OpenAI({
+  apiKey: process.env.OAI_KEY,
+  baseURL: "https://proxy.getprops.ai/",
+  defaultHeaders: {
+    "x-api-key": process.env.GETPROPSAI_API_KEY,
+  },
+});
 
 // export const runtime = "edge";
 

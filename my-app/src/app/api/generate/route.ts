@@ -16,6 +16,15 @@ import { SLIDING_WINDOW_CONSTANT, validatePaidSubscription } from "../utils";
 
 const config = new Configuration({
   apiKey: process.env.OAI_KEY,
+  // https://www.npmjs.com/package/openai-edge
+
+  // NO IDEA WHY I WAS STILL USING OPEN AI EDGE HERE
+  // Update July 2023: The official openai library will use fetch in v4, hopefully making openai-edge redundant. You can try it in beta now, more info here: https://github.com/openai/openai-node/discussions/182
+
+  // baseURL: "https://proxy.getprops.ai/",
+  // defaultHeaders: {
+  //   "x-api-key": process.env.GETPROPSAI_API_KEY,
+  // },
 });
 
 const openai = new OpenAIApi(config);
