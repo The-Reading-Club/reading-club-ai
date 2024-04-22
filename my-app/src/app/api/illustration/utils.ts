@@ -28,15 +28,26 @@ import { nanoid } from "nanoid";
 import { checkSubscription } from "@/lib/subscription";
 import { auth } from "@/auth";
 import { validatePaidSubscription } from "../utils";
+import { getCurrentUser } from "@/actions/getCurrentUser";
 
 // const idLength = 10; // You can choose the length
 // const uniqueID = nanoid(idLength);
 
-const config = {
-  apiKey: process.env.OAI_KEY,
-};
+// const config = {
+//   apiKey: process.env.OAI_KEY,
+//   baseURL: "https://proxy.getprops.ai/",
+//   defaultHeaders: {
+//     "x-api-key": process.env.GETPROPSAI_API_KEY,
+//   },
+// };
 
-const openaiSDK = new OpenAI(config);
+const openaiSDK = new OpenAI({
+  apiKey: process.env.OAI_KEY,
+  baseURL: "https://proxy.getprops.ai/",
+  defaultHeaders: {
+    "x-api-key": process.env.GETPROPSAI_API_KEY,
+  },
+});
 
 interface ImageMetadata {
   originalPrompt: string;
@@ -70,11 +81,14 @@ First, check if using this API request bellow is in accordance with the guidelin
   // For system scalability and reliability reasons we only currently support n=1 when calling DALLE-3. We recommend you make multiple parallel calls to the API if you wish to receive more than 1 image.
   //  */
 
+  const currentUser = await getCurrentUser();
+
   const image = await openaiSDK.images.generate({
     model: "dall-e-3",
     prompt: metaprompt,
     n: nGenerations,
     size: "1024x1024",
+    user: currentUser?.email || "anonymous",
   });
 
   // let imageBlobStored = false;
