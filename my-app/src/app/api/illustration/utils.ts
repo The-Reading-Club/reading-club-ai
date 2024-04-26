@@ -43,10 +43,10 @@ import { getCurrentUser } from "@/actions/getCurrentUser";
 
 const openaiSDK = new OpenAI({
   apiKey: process.env.OAI_KEY,
-  baseURL: "https://proxy.getprops.ai/",
-  defaultHeaders: {
-    "x-api-key": process.env.GETPROPSAI_API_KEY,
-  },
+  // baseURL: "https://proxy.getprops.ai/",
+  // defaultHeaders: {
+  //   "x-api-key": process.env.GETPROPSAI_API_KEY,
+  // },
 });
 
 interface ImageMetadata {
