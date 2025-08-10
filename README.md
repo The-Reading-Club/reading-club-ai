@@ -11,7 +11,7 @@
 This originally private repository, now open sourced, is provided as-is, organized into multiple packages/projects:
 
 * **`my-app`** – the main Next.js 14 application (frontend + backend) for the product. This contains the web UI, API routes, and all core logic.
-* **`packages/core/novel`** – a custom modified version of the reusable rich text editor package ["Novel" by Steven Tey](https://github.com/steven-tey/novel) built on Tiptap.
+* **`packages/core/novel`** – a section of the code constitutes a custom modified version of the reusable rich text editor package ["Novel" by Steven Tey](https://github.com/steven-tey/novel) built on Tiptap.
 * **`nextjs-app`** – a Next.js demo that tests the `novel` editor in isolation. For example, it imports the `<Editor>` from the `novel` package and renders it with some sample content, demonstrating how the editor can be integrated.
 * **`my-tiptap-project`** – a mere playground Next.js app (from an earlier stage of development) for experimenting with Tiptap-based editor features.
 
@@ -137,7 +137,7 @@ Here’s an overview of the repository’s key folders and files:
   * **`auth.ts`** – NextAuth configuration, defining providers and adapters (the code uses `@auth/prisma-adapter` and likely has GitHub/Google auth options and email/password).
   * **Misc Config**: `next.config.js`, `tsconfig.json`, etc., plus Tailwind config and PostCSS, which are standard for Next.js projects. Also, environment variables (not in repo) would include `OAI_KEY` for OpenAI, `DATABASE_URL` for Prisma, `NEXTAUTH_SECRET`, `STRIPE_API_KEY`, etc.
 
-* **`packages/core/novel/`** – This popular editor package inspired a lot of the code in `TRCEditorV2` but generalized. The presence indeed references to the open-source Novel project in `nextjs-app` since that folder is basically a fork of [steven-tey/novel](https://github.com/steven-tey/novel).
+* **`packages/core/novel/`** – This popular editor package inspired a lot of the code in `TRCEditorV2` but generalized. The presence indeed references to the open-source Novel project by Steven Tey ([steven-tey/novel](https://github.com/steven-tey/novel)) in `nextjs-app`.
 
 * **`nextjs-app/`** – A minimal Next.js app that tests the `novel` editor package. Its `pages` (or `app`) contains just an example usage of the editor. Indeed, in `src/app/page.tsx`, it simply renders `<Editor defaultValue={...} />` with some initial content. This content highlighted the editor’s features (headings, slash commands, code blocks, task list, etc.) and even included a sample image with a URL. This sub-app is great for testing the editor in isolation during development.
 
