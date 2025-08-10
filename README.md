@@ -155,4 +155,8 @@ This project is a testament to [José A. Alvarez Cabrera's (@josealvarez97)](htt
 
 In summary, *Reading Club AI* is more than just a code repository – it’s a showcase of innovative problem solving at the intersection of **web development and artificial intelligence**. The architecture is clean and modular, the features are ambitious and well-implemented, and the codebase clearly reflects José's ability to wear many hats: front-end developer, back-end developer, and AI engineer. José is proud in having created a deeply AI-native product that was both fun and technically ambitious. 🎉🚀
 
-### [Check out Product Hunt 2024 launch](https://www.producthunt.com/posts/readingclub-ai?utm_source=other&utm_medium=social)
+### [⬇️⬇️ Check out Product Hunt 2024 launch ⬇️⬇️](https://www.producthunt.com/posts/readingclub-ai?utm_source=other&utm_medium=social)
+
+[![readingclub.ai Enable Creative Writing at Any Literacy Level](https://img.youtube.com/vi/kU_exK_0oxI/hqdefault.jpg)](https://www.producthunt.com/products/readingclub-ai)
+
+
