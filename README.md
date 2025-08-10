@@ -8,7 +8,7 @@
 
 ## Repository & Architecture
 
-This repository is provided as-is, organized into multiple packages/projects:
+This original private repository, now open sourced, is provided as-is, organized into multiple packages/projects:
 
 * **`my-app`** – the main Next.js 14 application (frontend + backend) for the product. This contains the web UI, API routes, and all core logic.
 * **`packages/core/novel`** – a custom modified version of the reusable rich text editor package ["Novel" by Steven Tey](https://github.com/steven-tey/novel) built on Tiptap.
