@@ -1,3 +1,5 @@
+_By José A. Alvarez Cabrera ([@josealvarez97](https://github.com/josealvarez97))_
+
 # Reading Club AI – An AI-Powered Storytelling Editor 📖✨
 
 ## Introduction
